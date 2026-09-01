@@ -14,10 +14,10 @@
 - [x] 2.5 Preservar `trechos` com `id`, `created_at`, `estacao_origem_id`, `estacao_destino_id`, `linha_id`, `tempo_estimado` e `ativo`; manter referências required not nullable, tempo integer positivo em segundos required not nullable e `ativo` boolean required not nullable com default `true`, já confirmado diretamente na interface do Xano.
 - [x] 2.6 Converter, após backup e autorização explícita, exclusivamente `tempo_estimado` dos trechos IDs 1 a 5 de `2` minutos para `120` segundos, sem alterar outros campos ou registros.
 - [ ] 2.7 Rejeitar origem igual ao destino por validação.
-- [ ] 2.8 Proteger duplicata direta na mesma linha por unique composto de `estacao_origem_id + estacao_destino_id + linha_id`.
+- [x] 2.8 Proteger duplicata direta na mesma linha por unique composto de `estacao_origem_id + estacao_destino_id + linha_id`.
 - [ ] 2.9 Impedir duplicata inversa na mesma linha por normalização canônica dos extremos ou validação lógica equivalente.
 - [ ] 2.10 Tratar cada trecho válido como bidirecional e armazenado uma única vez.
-- [ ] 2.11 Não criar tabela de baldeações; derivar mudanças de linha a partir dos trechos do caminho.
+- [x] 2.11 Não criar tabela de baldeações; derivar mudanças de linha a partir dos trechos do caminho.
 - [ ] 2.12 Inserir dados de teste somente após aprovação, cobrindo Metrô, CPTM e concessionárias, trajetos de uma linha e trajetos com mudanças de linha.
 
 ## 3. Dependência de autenticação
