@@ -7,11 +7,11 @@
 
 ## 2. Dados e estrutura no Xano
 
-- [ ] 2.1 Preservar `estacoes` com `id`, `created_at`, `nome`, `codigo` e `ativa`; manter `nome` text required not nullable com `trim` e sem default, `codigo` text required not nullable com `trim` e unique, e `ativa` boolean required not nullable com default `true`, já confirmado diretamente na interface do Xano.
-- [ ] 2.2 Preservar em `linhas` os campos confirmados `id`, `created_at`, `nome`, `codigo`, `cor` e `ativa`; manter `nome` text required not nullable com `trim`, `codigo` text required not nullable com `trim` e unique, `cor` text opcional com `trim`, e `ativa` boolean required not nullable com default `true`, já confirmado diretamente na interface do Xano.
+- [x] 2.1 Preservar `estacoes` com `id`, `created_at`, `nome`, `codigo` e `ativa`; manter `nome` text required not nullable com `trim` e sem default, `codigo` text required not nullable com `trim` e unique, e `ativa` boolean required not nullable com default `true`, já confirmado diretamente na interface do Xano.
+- [x] 2.2 Preservar em `linhas` os campos confirmados `id`, `created_at`, `nome`, `codigo`, `cor` e `ativa`; manter `nome` text required not nullable com `trim`, `codigo` text required not nullable com `trim` e unique, `cor` text opcional com `trim`, e `ativa` boolean required not nullable com default `true`, já confirmado diretamente na interface do Xano.
 - [x] 2.3 Após backup, revisão e autorização explícita, criar `operadores` com `id`, `created_at`, `nome`, `codigo` e `ativo`, adicionar unique em `codigo` e adicionar `linhas.operador_id` como Table Reference required e not nullable.
-- [ ] 2.4 Preservar `estacoes_linhas` com `id`, `created_at`, `estacao_id`, `linha_id` e `ordem`; exigir Table References required not nullable, `ordem` integer positivo required not nullable e unique composto de `estacao_id + linha_id`.
-- [ ] 2.5 Preservar `trechos` com `id`, `created_at`, `estacao_origem_id`, `estacao_destino_id`, `linha_id`, `tempo_estimado` e `ativo`; manter referências required not nullable, tempo integer positivo em segundos required not nullable e `ativo` boolean required not nullable com default `true`, já confirmado diretamente na interface do Xano.
+- [x] 2.4 Preservar `estacoes_linhas` com `id`, `created_at`, `estacao_id`, `linha_id` e `ordem`; exigir Table References required not nullable, `ordem` integer positivo required not nullable e unique composto de `estacao_id + linha_id`.
+- [x] 2.5 Preservar `trechos` com `id`, `created_at`, `estacao_origem_id`, `estacao_destino_id`, `linha_id`, `tempo_estimado` e `ativo`; manter referências required not nullable, tempo integer positivo em segundos required not nullable e `ativo` boolean required not nullable com default `true`, já confirmado diretamente na interface do Xano.
 - [x] 2.6 Converter, após backup e autorização explícita, exclusivamente `tempo_estimado` dos trechos IDs 1 a 5 de `2` minutos para `120` segundos, sem alterar outros campos ou registros.
 - [ ] 2.7 Rejeitar origem igual ao destino por validação.
 - [ ] 2.8 Proteger duplicata direta na mesma linha por unique composto de `estacao_origem_id + estacao_destino_id + linha_id`.
