@@ -1,67 +1,88 @@
-## 1. Dados e estrutura no Xano
+## 1. Inspeção e aprovação do Xano
 
-- [ ] 1.1 Definir e documentar o modelo de dados necessário para representar estações, linhas, conexões entre estações e pontos de baldeação; verificar os relacionamentos entre essas informações.
+- [x] 1.1 Inspecionar em modo somente leitura o workspace “Raphael's Workspace” (`149130`), ambiente `v1`, incluindo tabelas, campos, relacionamentos, índices, autenticação e APIs existentes.
+- [x] 1.2 Comparar o schema encontrado com a modelagem aprovada e documentar divergências sem alterar dados ou recursos.
+- [ ] 1.3 Apresentar qualquer proposta de alteração do Xano e obter autorização explícita antes de aplicar mudanças.
+- [x] 1.4 Registrar limitações do plano Free e definir uma estratégia segura de revisão e `dry-run`, quando disponível.
 
-- [ ] 1.2 Definir como será armazenado o tempo estimado de percurso de cada trecho da rede, garantindo que os dados necessários para calcular o trajeto principal estejam disponíveis.
+## 2. Dados e estrutura no Xano
 
-- [ ] 1.3 Inserir um conjunto inicial de estações, linhas, conexões e tempos estimados para permitir testes com trajetos de uma única linha e de múltiplas linhas.
+- [ ] 2.1 Preservar `estacoes` com `id`, `created_at`, `nome`, `codigo` e `ativa`; manter `nome` text required not nullable com `trim` e sem default, `codigo` text required not nullable com `trim` e unique, e `ativa` boolean required not nullable com default `true`, já confirmado diretamente na interface do Xano.
+- [ ] 2.2 Preservar em `linhas` os campos confirmados `id`, `created_at`, `nome`, `codigo`, `cor` e `ativa`; manter `nome` text required not nullable com `trim`, `codigo` text required not nullable com `trim` e unique, `cor` text opcional com `trim`, e `ativa` boolean required not nullable com default `true`, já confirmado diretamente na interface do Xano.
+- [ ] 2.3 Após backup, revisão e autorização explícita, criar `operadores` com `id`, `created_at`, `nome`, `codigo` e `ativo`, adicionar unique em `codigo` e adicionar `linhas.operador_id` como Table Reference required e not nullable.
+- [ ] 2.4 Preservar `estacoes_linhas` com `id`, `created_at`, `estacao_id`, `linha_id` e `ordem`; exigir Table References required not nullable, `ordem` integer positivo required not nullable e unique composto de `estacao_id + linha_id`.
+- [ ] 2.5 Preservar `trechos` com `id`, `created_at`, `estacao_origem_id`, `estacao_destino_id`, `linha_id`, `tempo_estimado` e `ativo`; manter referências required not nullable, tempo integer positivo em segundos required not nullable e `ativo` boolean required not nullable com default `true`, já confirmado diretamente na interface do Xano.
+- [x] 2.6 Converter, após backup e autorização explícita, exclusivamente `tempo_estimado` dos trechos IDs 1 a 5 de `2` minutos para `120` segundos, sem alterar outros campos ou registros.
+- [ ] 2.7 Rejeitar origem igual ao destino por validação.
+- [ ] 2.8 Proteger duplicata direta na mesma linha por unique composto de `estacao_origem_id + estacao_destino_id + linha_id`.
+- [ ] 2.9 Impedir duplicata inversa na mesma linha por normalização canônica dos extremos ou validação lógica equivalente.
+- [ ] 2.10 Tratar cada trecho válido como bidirecional e armazenado uma única vez.
+- [ ] 2.11 Não criar tabela de baldeações; derivar mudanças de linha a partir dos trechos do caminho.
+- [ ] 2.12 Inserir dados de teste somente após aprovação, cobrindo Metrô, CPTM e concessionárias, trajetos de uma linha e trajetos com mudanças de linha.
 
-## 2. Lógica de busca do trajeto no Xano
+## 3. Dependência de autenticação
 
-- [ ] 2.1 Implementar a lógica responsável por encontrar caminhos válidos entre a estação de origem e a estação de destino.
+- [ ] 3.1 Criar uma mudança OpenSpec separada para especificar e implementar autenticação por e-mail.
+- [ ] 3.2 Nesta mudança, documentar apenas a dependência de uma sessão autenticada, sem criar tabelas ou endpoints de autenticação.
+- [ ] 3.3 Proteger o planejamento de viagens e a consulta de trajeto para permitir somente usuários autenticados.
+- [ ] 3.4 Definir respostas para sessão ausente, inválida e expirada.
+- [ ] 3.5 Não implementar autenticação como parte desta mudança.
 
-- [ ] 2.2 Implementar o critério de seleção do trajeto principal, priorizando o caminho com menor tempo estimado total.
+## 4. Lógica de busca no Xano
 
-- [ ] 2.3 Implementar o critério de desempate para que, quando dois ou mais trajetos tiverem o mesmo tempo estimado, seja escolhido aquele com menor quantidade de baldeações.
+- [ ] 4.1 Implementar no Xano a busca de caminhos com Dijkstra, usando o estado `(estação, linha atual)` e percorrendo cada trecho ativo em ambos os sentidos sem duplicar registros.
+- [ ] 4.2 Calcular o tempo total exclusivamente pela soma de `tempo_estimado` dos trechos.
+- [ ] 4.3 Não acrescentar custo de caminhada, espera ou transferência no primeiro MVP.
+- [ ] 4.4 Derivar a quantidade e os pontos de baldeação pela mudança de `linha_id` entre trechos consecutivos.
+- [ ] 4.5 Selecionar primeiro o menor tempo total e, somente em empate, a menor quantidade de baldeações.
+- [ ] 4.6 Manter a arquitetura extensível para tempos reais de transferência futuros sem criar tabela específica agora.
 
-- [ ] 2.4 Validar a lógica com exemplos de trajetos de uma única linha, trajetos com baldeação, trajetos com tempos diferentes e trajetos com mesmo tempo estimado.
+## 5. APIs do Xano
 
-## 3. APIs do Xano
+- [ ] 5.1 Criar e documentar, após aprovação, endpoint autenticado de listagem de estações ativas.
+- [ ] 5.2 Criar e documentar, após aprovação, endpoint autenticado de consulta por estação de origem e destino.
+- [ ] 5.3 Retornar origem, destino, estações ordenadas, trechos, linhas, operadores, baldeações derivadas, tempo total em segundos e quantidade de baldeações.
+- [ ] 5.4 Definir exemplos JSON para sucesso, ausência de trajeto, parâmetros inválidos, autenticação inválida e falha do serviço.
 
-- [ ] 3.1 Criar e documentar o endpoint de listagem de estações disponíveis para seleção no frontend.
+## 6. Integração e modelo de domínio no Reflex
 
-- [ ] 3.2 Criar e documentar o endpoint de consulta de trajeto utilizando estação de origem e estação de destino como parâmetros.
+- [ ] 6.1 Instalar e verificar os skills obrigatórios `reflex-docs`, `setup-python-env` e `reflex-process-management` antes de editar código Reflex.
+- [ ] 6.2 Seguir integralmente `setup-python-env` para validar Python, `uv`, ambiente virtual e Reflex.
+- [ ] 6.3 Criar adaptadores para autenticação, estações e trajetos sem expor à interface o formato bruto do Xano.
+- [ ] 6.4 Criar modelos normalizados de estação, linha, operador, trecho, baldeação derivada e resultado.
+- [ ] 6.5 Implementar os estados não autenticado, `idle`, `loading`, `success`, `not_found` e `error`.
+- [ ] 6.6 Validar origem e destino antes da chamada externa.
 
-- [ ] 3.3 Definir o contrato de resposta da consulta contendo origem, destino, estações percorridas, trechos, linhas utilizadas, pontos de baldeação, tempo total estimado e quantidade de baldeações.
+## 7. Fluxo da interface Reflex
 
-- [ ] 3.4 Definir respostas para consulta bem-sucedida, ausência de trajeto, parâmetros inválidos e falha no serviço; verificar o contrato utilizando exemplos JSON.
+- [ ] 7.1 Integrar a sessão fornecida pela mudança separada de autenticação e proteger o planejador de viagens.
+- [ ] 7.2 Carregar e selecionar estações de origem e destino.
+- [ ] 7.3 Solicitar o trajeto com indicação de carregamento e prevenção de solicitações duplicadas.
+- [ ] 7.4 Renderizar estações, linhas, operadores, baldeações derivadas e tempo estimado, convertendo segundos para minutos apenas na exibição.
+- [ ] 7.5 Exibir operador discretamente associado à linha, por exemplo, “Linha 8–Diamante — ViaMobilidade”.
+- [ ] 7.6 Diferenciar seleção inválida, autenticação inválida, ausência de trajeto e falha do serviço.
+- [ ] 7.7 Garantir que nova consulta substitua corretamente o resultado anterior.
+- [ ] 7.8 Não calcular ou exibir lotação, rotas alternativas, custo adicional de transferência ou área administrativa.
 
-## 4. Integração e modelo de domínio no Reflex
+## 8. Testes e validação
 
-- [ ] 4.1 Criar o adaptador de API no frontend Reflex para carregar estações e solicitar trajetos sem expor diretamente à interface o formato bruto retornado pelo Xano.
+- [ ] 8.1 Testar tipos, nulabilidade, obrigatoriedade, `trim`, defaults e unicidade de estações e linhas.
+- [ ] 8.2 Testar Table References, `ordem` positiva required not nullable e unique composto de `estacao_id + linha_id`.
+- [ ] 8.3 Testar referências, tempo positivo em segundos, default de `ativo`, validação de extremos iguais, unique de duplicata direta e validação de duplicata inversa.
+- [ ] 8.4 Testar percurso bidirecional a partir de um único registro de trecho.
+- [ ] 8.5 Testar autenticação obrigatória, sessão válida, ausente, inválida e expirada.
+- [ ] 8.6 Testar trajetos de uma linha, com baldeações e envolvendo operadores distintos.
+- [ ] 8.7 Testar soma dos tempos e ausência de custo adicional de transferência.
+- [ ] 8.8 Testar menor tempo e desempate pela menor quantidade de baldeações.
+- [ ] 8.9 Testar ausência de trajeto, erro do serviço e resposta incompleta.
+- [ ] 8.10 Executar validação integrada Reflex–Xano somente após as implementações autorizadas.
+- [ ] 8.11 Executar a aplicação seguindo `reflex-process-management` e validar manualmente os principais cenários.
 
-- [ ] 4.2 Criar os modelos normalizados de estação, trecho, linha, baldeação e resultado de trajeto; incluir tempo total estimado e quantidade de baldeações.
+## Roadmap futuro — fora dos critérios de conclusão
 
-- [ ] 4.3 Implementar os estados da busca `idle`, `loading`, `success`, `not_found` e `error`, incluindo limpeza ou substituição do resultado anterior durante uma nova consulta.
+- Criar futuramente uma mudança OpenSpec separada, conceitualmente denominada `historico-trajetos`.
+- Depender da definição anterior da autenticação e da tabela de usuários.
+- Preservar na mudança futura as decisões já documentadas sobre os 10 itens mais recentes, repetição consecutiva, exclusão individual, limpeza integral, propriedade exclusiva do usuário e recálculo com a malha atual.
+- Criar futuramente uma mudança OpenSpec separada para avaliar tolerância de tempo ou penalidade por baldeação, evitando trajetos com economia mínima de tempo e quantidade excessiva de trocas de linha.
 
-- [ ] 4.4 Validar origem e destino antes da chamada ao Xano, rejeitando campos ausentes e origem igual ao destino.
-
-## 5. Fluxo de interface Reflex
-
-- [ ] 5.1 Implementar os controles para carregar e selecionar a estação de origem e a estação de destino.
-
-- [ ] 5.2 Implementar a ação de solicitar o trajeto, mostrando o estado de carregamento e evitando solicitações duplicadas durante uma consulta.
-
-- [ ] 5.3 Renderizar o trajeto principal com a sequência ordenada de estações, linhas utilizadas, pontos de baldeação e tempo estimado.
-
-- [ ] 5.4 Renderizar mensagens diferentes para seleção inválida, ausência de trajeto e falha no serviço, permitindo nova tentativa quando necessário.
-
-- [ ] 5.5 Garantir que uma nova consulta substitua corretamente o resultado anterior.
-
-- [ ] 5.6 Garantir que esta versão não calcule nem exiba nível de lotação ou rotas alternativas.
-
-## 6. Testes e validação
-
-- [ ] 6.1 Criar testes para seleção incompleta e origem igual ao destino.
-
-- [ ] 6.2 Criar testes para trajetos de uma única linha e trajetos com baldeação.
-
-- [ ] 6.3 Criar testes confirmando que, entre trajetos com tempos diferentes, o sistema seleciona aquele com menor tempo estimado.
-
-- [ ] 6.4 Criar testes confirmando que, em caso de empate no tempo estimado, o sistema seleciona o trajeto com menor quantidade de baldeações.
-
-- [ ] 6.5 Criar testes para ausência de trajeto, erro do serviço e respostas incompletas da API.
-
-- [ ] 6.6 Executar uma validação integrada entre Reflex e Xano utilizando dados de teste e verificar o fluxo completo de seleção, consulta e apresentação do trajeto.
-
-- [ ] 6.7 Executar a aplicação Reflex e validar manualmente no navegador os principais cenários do MVP antes da entrega.
+Estes itens não pertencem aos critérios de aceite desta mudança, não bloqueiam a conclusão de `busca-trajetos` e não autorizam alterações no Xano.
