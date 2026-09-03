@@ -2,11 +2,11 @@
 
 
 
-- \[ ] 1.1 Comparar o esquema atual do Xano com esta mudança, registrar divergências e confirmar que não existe tabela autenticada ou grupo de API de autenticação.
+- \[x] 1.1 Comparar o esquema atual do Xano com esta mudança, registrar divergências e confirmar que não existe tabela autenticada ou grupo de API de autenticação.
 
-- \[ ] 1.2 Fazer backup do workspace Xano com esquema e registros antes de qualquer alteração e verificar a lista e os hashes dos arquivos.
+- \[x] 1.2 Fazer backup do workspace Xano com esquema e registros antes de qualquer alteração e verificar a lista e os hashes dos arquivos.
 
-- \[ ] 1.3 Obter aprovação explícita antes de criar ou alterar tabelas, endpoints e configurações de autenticação no Xano.
+- \[x] 1.3 Obter aprovação explícita antes de criar ou alterar tabelas, endpoints e configurações de autenticação no Xano.
 
 
 
@@ -14,15 +14,15 @@
 
 
 
-- \[ ] 2.1 Criar a tabela autenticada `usuarios` sem geração automática de CRUD e verificar que ela contém apenas `id`, `created\_at`, `email`, `senha` e `ativo`.
+- \[x] 2.1 Criar a tabela autenticada `usuarios` sem geração automática de CRUD e verificar que ela contém apenas `id`, `created\_at`, `email`, `senha` e `ativo`.
 
-- \[ ] 2.2 Configurar `email` como obrigatório, não anulável, normalizado com `trim` e minúsculas, e verificar a rejeição de valores sem formato válido.
+- \[x] 2.2 Configurar `email` como obrigatório, não anulável, normalizado com `trim` e minúsculas, e verificar a rejeição de valores sem formato válido.
 
-- \[ ] 2.3 Criar índice único para `email` e verificar que variações de caixa ou espaços não permitem contas duplicadas após normalização.
+- \[x] 2.3 Criar índice único para `email` e verificar que variações de caixa ou espaços não permitem contas duplicadas após normalização.
 
-- \[ ] 2.4 Configurar `senha` com o tipo seguro de senha do Xano, mínimo de oito caracteres e exclusão das respostas e históricos.
+- \[x] 2.4 Configurar `senha` com o tipo seguro de senha do Xano, mínimo de oito caracteres e exclusão das respostas e históricos.
 
-- \[ ] 2.5 Configurar `ativo` como booleano obrigatório, não anulável e com padrão `true`, e verificar o valor aplicado em novo cadastro.
+- \[x] 2.5 Configurar `ativo` como booleano obrigatório, não anulável e com padrão `true`, e verificar o valor aplicado em novo cadastro.
 
 
 
@@ -30,15 +30,15 @@
 
 
 
-- \[ ] 3.1 Criar o grupo de API `auth` sem CRUD genérico e verificar que somente os endpoints aprovados estão expostos.
+- \[x] 3.1 Criar o grupo de API `auth` sem CRUD genérico e verificar que somente os endpoints aprovados estão expostos.
 
-- \[ ] 3.2 Implementar o cadastro com normalização, validação, criação da conta e emissão de token, verificando a resposta pública sem senha ou hash.
+- \[x] 3.2 Implementar o cadastro com normalização, validação, criação da conta e emissão de token, verificando a resposta pública sem senha ou hash.
 
-- \[ ] 3.3 Implementar o login com e-mail e senha, conta ativa e mensagem genérica para credenciais inválidas, verificando que a resposta não permite enumerar contas.
+- \[x] 3.3 Implementar o login com e-mail e senha, conta ativa e mensagem genérica para credenciais inválidas, verificando que a resposta não permite enumerar contas.
 
 - \[ ] 3.4 Implementar a consulta da sessão atual com autenticação obrigatória e verificar respostas para token válido, ausente, inválido e expirado.
 
-- \[ ] 3.5 Configurar duração inicial de 24 horas para o token e verificar que ele é aceito somente pelo mecanismo de autorização definido.
+- \[x] 3.5 Configurar duração inicial de 24 horas para o token e verificar que ele é aceito somente pelo mecanismo de autorização definido.
 
 
 
@@ -76,9 +76,9 @@
 
 
 
-- \[ ] 6.1 Testar cadastro válido, normalização do e-mail, e-mail duplicado, formato inválido e senha curta.
+- \[x] 6.1 Testar cadastro válido, normalização do e-mail, e-mail duplicado, formato inválido e senha curta.
 
-- \[ ] 6.2 Testar login válido, senha incorreta, e-mail inexistente e conta inativa, confirmando a mesma resposta pública para credenciais inválidas.
+- \[x] 6.2 Testar login válido, senha incorreta, e-mail inexistente e conta inativa, confirmando a mesma resposta pública para credenciais inválidas.
 
 - \[ ] 6.3 Testar sessão válida, ausente, inválida e expirada e verificar ausência de dados de usuário nas falhas.
 
@@ -86,6 +86,6 @@
 
 - \[ ] 6.5 Testar restauração da sessão, proteção do planejamento e logout no Reflex.
 
-- \[ ] 6.6 Fazer backup pós-implementação do Xano e comparar arquivos e hashes com o backup anterior, documentando somente as mudanças esperadas.
+- \[x] 6.6 Fazer backup pós-implementação do Xano e comparar arquivos e hashes com o backup anterior, documentando somente as mudanças esperadas.
 
-- \[ ] 6.7 Executar a validação estrita das mudanças OpenSpec relacionadas e os testes automatizados do projeto antes do commit.
+- \[x] 6.7 Executar a validação estrita das mudanças OpenSpec relacionadas e os testes automatizados do projeto antes do commit.
