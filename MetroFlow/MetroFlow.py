@@ -2,6 +2,7 @@
 
 import reflex as rx
 
+from MetroFlow.auth_api import auth_api
 from rxconfig import config
 
 
@@ -32,5 +33,5 @@ def index() -> rx.Component:
     )
 
 
-app = rx.App()
+app = rx.App(api_transformer=auth_api)
 app.add_page(index)

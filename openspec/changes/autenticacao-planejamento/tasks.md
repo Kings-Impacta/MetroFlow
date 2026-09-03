@@ -48,7 +48,7 @@
 
 - \[x] 4.1 Implementar no backend Reflex o cliente dos endpoints de autenticação do Xano e verificar que o token não é enviado em URL nem registrado em logs.
 
-- \[ ] 4.2 Armazenar o token em cookie de sessão `HttpOnly` e `SameSite=Lax`, habilitando `Secure` em produção, e verificar as propriedades por ambiente.
+- \[x] 4.2 Armazenar o token em cookie de sessão `HttpOnly` e `SameSite=Lax`, habilitando `Secure` em produção, e verificar as propriedades por ambiente.
 
 - \[ ] 4.3 Implementar os formulários e estados de cadastro e login, verificando carregamento, sucesso, campos inválidos e falhas de credenciais.
 
