@@ -3,14 +3,18 @@
 from fastapi import FastAPI, HTTPException, Request, Response, status
 from pydantic import BaseModel, ConfigDict
 
-from MetroFlow.auth_client import (
+from MetroFlow.auth.infrastructure.xano_client import (
     AuthSession,
     AuthenticatedUser,
     XanoAuthClient,
     XanoAuthError,
     XanoAuthRejected,
 )
-from MetroFlow.session_cookie import get_session_token, set_session_cookie
+from MetroFlow.auth.infrastructure.session_cookie import (
+    clear_session_cookie,
+    get_session_token,
+    set_session_cookie,
+)
 
 
 class CredentialsRequest(BaseModel):
@@ -103,3 +107,10 @@ def me(request: Request) -> PublicUserResponse:
         _raise_public_error(error)
 
     return _public_user(user)
+
+
+@auth_api.post("/api/auth/logout", status_code=status.HTTP_204_NO_CONTENT)
+def logout(response: Response) -> None:
+    """Encerra a sessao no navegador sem expor o token."""
+
+    clear_session_cookie(response)

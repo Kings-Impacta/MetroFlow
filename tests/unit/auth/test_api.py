@@ -5,13 +5,13 @@ from unittest.mock import MagicMock, patch
 
 from fastapi.testclient import TestClient
 
-from MetroFlow.auth_api import auth_api
-from MetroFlow.auth_client import (
+from MetroFlow.auth.infrastructure.session_cookie import SESSION_COOKIE_NAME
+from MetroFlow.auth.infrastructure.xano_client import (
     AuthSession,
     AuthenticatedUser,
     XanoAuthRejected,
 )
-from MetroFlow.session_cookie import SESSION_COOKIE_NAME
+from MetroFlow.auth.presentation.api import auth_api
 
 
 class AuthApiTests(unittest.TestCase):
@@ -30,7 +30,7 @@ class AuthApiTests(unittest.TestCase):
 
         with (
             patch(
-                "MetroFlow.auth_api.XanoAuthClient.from_environment",
+                "MetroFlow.auth.presentation.api.XanoAuthClient.from_environment",
                 return_value=xano,
             ),
             patch.dict("os.environ", {"METROFLOW_ENV": "development"}),
@@ -68,7 +68,7 @@ class AuthApiTests(unittest.TestCase):
 
         with (
             patch(
-                "MetroFlow.auth_api.XanoAuthClient.from_environment",
+                "MetroFlow.auth.presentation.api.XanoAuthClient.from_environment",
                 return_value=xano,
             ),
             TestClient(auth_api) as client,
@@ -91,7 +91,7 @@ class AuthApiTests(unittest.TestCase):
 
         with (
             patch(
-                "MetroFlow.auth_api.XanoAuthClient.from_environment",
+                "MetroFlow.auth.presentation.api.XanoAuthClient.from_environment",
                 return_value=xano,
             ),
             patch.dict("os.environ", {"METROFLOW_ENV": "production"}),
@@ -113,7 +113,7 @@ class AuthApiTests(unittest.TestCase):
 
         with (
             patch(
-                "MetroFlow.auth_api.XanoAuthClient.from_environment",
+                "MetroFlow.auth.presentation.api.XanoAuthClient.from_environment",
                 return_value=xano,
             ),
             TestClient(auth_api) as client,
@@ -135,6 +135,17 @@ class AuthApiTests(unittest.TestCase):
         self.assertEqual(response.status_code, 401)
         self.assertEqual(response.json(), {"detail": "Sessao ausente."})
 
+    def test_logout_remove_cookie(self) -> None:
+        with TestClient(auth_api) as client:
+            client.cookies.set(SESSION_COOKIE_NAME, "token-cookie")
+            response = client.post("/api/auth/logout")
+
+        self.assertEqual(response.status_code, 204)
+        cookie = response.headers["set-cookie"]
+        self.assertIn(f"{SESSION_COOKIE_NAME}=", cookie)
+        self.assertIn("Max-Age=0", cookie)
+        self.assertIn("HttpOnly", cookie)
+
     def test_erro_nao_expoe_token(self) -> None:
         xano = self._xano_client()
         xano.login.side_effect = XanoAuthRejected(
@@ -144,7 +155,7 @@ class AuthApiTests(unittest.TestCase):
 
         with (
             patch(
-                "MetroFlow.auth_api.XanoAuthClient.from_environment",
+                "MetroFlow.auth.presentation.api.XanoAuthClient.from_environment",
                 return_value=xano,
             ),
             TestClient(auth_api) as client,

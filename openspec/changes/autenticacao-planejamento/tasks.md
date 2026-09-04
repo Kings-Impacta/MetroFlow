@@ -50,13 +50,13 @@
 
 - \[x] 4.2 Armazenar o token em cookie de sessão `HttpOnly` e `SameSite=Lax`, habilitando `Secure` em produção, e verificar as propriedades por ambiente.
 
-- \[ ] 4.3 Implementar os formulários e estados de cadastro e login, verificando carregamento, sucesso, campos inválidos e falhas de credenciais.
+- \[x] 4.3 Implementar os formulários e estados de cadastro e login, verificando carregamento, sucesso, campos inválidos e falhas de credenciais.
 
-- \[ ] 4.4 Restaurar a sessão ao iniciar a aplicação por meio da consulta da sessão atual e verificar os estados `idle`, `loading`, `authenticated` e `unauthenticated`.
+- \[x] 4.4 Restaurar a sessão ao iniciar a aplicação por meio da consulta da sessão atual e verificar os estados `idle`, `loading`, `authenticated` e `unauthenticated`.
 
-- \[ ] 4.5 Implementar logout por remoção do cookie e limpeza do estado autenticado, verificando que solicitações posteriores sejam tratadas como não autenticadas.
+- \[x] 4.5 Implementar logout por remoção do cookie e limpeza do estado autenticado, verificando que solicitações posteriores sejam tratadas como não autenticadas.
 
-- \[ ] 4.6 Proteger a interface de planejamento e verificar o redirecionamento ao login quando não houver sessão válida.
+- \[x] 4.6 Proteger a interface de planejamento e verificar o redirecionamento ao login quando não houver sessão válida.
 
 
 
@@ -84,7 +84,7 @@
 
 - \[ ] 6.4 Testar que senha, hash e token não aparecem em respostas indevidas, URLs, históricos ou logs.
 
-- \[ ] 6.5 Testar restauração da sessão, proteção do planejamento e logout no Reflex.
+- \[x] 6.5 Testar restauração da sessão, proteção do planejamento e logout no Reflex.
 
 - \[x] 6.6 Fazer backup pós-implementação do Xano e comparar arquivos e hashes com o backup anterior, documentando somente as mudanças esperadas.
 

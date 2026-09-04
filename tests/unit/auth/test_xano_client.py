@@ -6,7 +6,7 @@ from unittest.mock import patch
 
 import httpx
 
-from MetroFlow.auth_client import (
+from MetroFlow.auth.infrastructure.xano_client import (
     AuthenticatedUser,
     XanoAuthClient,
     XanoAuthError,

@@ -1,6 +1,11 @@
 .web
+.web-stale/
 __pycache__/
 .states
+.states-stale/
 *.db
 *.py[cod]
 assets/external/
+reflex.log
+reflex.stdout.log
+reflex.stderr.log

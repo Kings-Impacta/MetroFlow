@@ -6,7 +6,7 @@ from unittest.mock import patch
 from starlette.requests import Request
 from starlette.responses import Response
 
-from MetroFlow.session_cookie import (
+from MetroFlow.auth.infrastructure.session_cookie import (
     SESSION_COOKIE_MAX_AGE,
     SESSION_COOKIE_NAME,
     clear_session_cookie,
