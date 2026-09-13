@@ -43,6 +43,15 @@ class AuthStateTests(unittest.TestCase):
             }
         )
 
+        self.assertEqual(
+            result,
+            (
+                "success",
+                "Autenticacao concluida com sucesso.",
+                "user@example.com",
+            ),
+        )
+
     def test_script_de_sessao_usa_cookie_http_only(self) -> None:
         script = build_session_script("/api/auth/me")
 
@@ -67,15 +76,6 @@ class AuthStateTests(unittest.TestCase):
         )
 
         self.assertEqual(result, ("unauthenticated", ""))
-
-        self.assertEqual(
-            result,
-            (
-                "success",
-                "Autenticacao concluida com sucesso.",
-                "user@example.com",
-            ),
-        )
 
     def test_credenciais_invalidas(self) -> None:
         result = interpret_auth_result(
