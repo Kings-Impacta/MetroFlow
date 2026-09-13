@@ -1,3 +1,17 @@
+## Nota de estado — 13/09/2026
+
+Este documento preserva decisoes e propostas historicas. As referencias abaixo
+a schema ainda nao inspecionado, URLs indefinidas e recursos por criar nao devem
+ser tomadas isoladamente como o estado atual da implementacao.
+
+Os endpoints de planejamento foram identificados na interface Xano e os clientes
+Python passaram em testes reais de login, estacoes e uma rota com baldeacao.
+A interface de planejamento ainda e demonstrativa. URLs verificadas, evidencias
+e pendencias estao em `README.md` e `docs/validacao-integracao-xano.md`.
+
+Esta nota nao revalida constraints de banco nem transforma o XanoScript local em
+exportacao fiel. As restricoes de alteracao remota continuam aplicaveis.
+
 ## Context
 
 O projeto é atualmente um esqueleto de aplicação Reflex. A interface será construída em Reflex, enquanto autenticação, dados, APIs e regras principais serão fornecidos pelo Xano. O workspace confirmado é “Raphael's Workspace” (`149130`), ambiente `v1`, mas seu schema precisa ser inspecionado em modo somente leitura antes de qualquer alteração.

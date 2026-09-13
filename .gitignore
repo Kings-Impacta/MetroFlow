@@ -9,3 +9,16 @@ assets/external/
 reflex.log
 reflex.stdout.log
 reflex.stderr.log
+
+# Ambientes locais e caches
+.venv/
+.uv-cache/
+.pytest_cache/
+
+# Configuracao local (o exemplo pode ser versionado)
+.env
+.env.*
+!.env.example
+
+# Teste manual criado durante a validacao inicial
+/teste_integracao_xano.py

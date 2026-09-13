@@ -11,6 +11,9 @@ MetroFlow/
 |   |-- infrastructure/             # cliente Xano e cookie HttpOnly
 |   `-- presentation/               # API, estado e paginas Reflex
 `-- planning/
+    |-- domain/                     # modelos normalizados e invariantes
+    |-- application/                # casos de uso e portas
+    |-- infrastructure/             # adaptador da API Xano
     `-- presentation/               # paginas e componentes de trajetos
 
 tests/
@@ -25,6 +28,17 @@ tests/
 - `MetroFlow.py` apenas monta a aplicacao e registra suas rotas.
 - Os testes reproduzem a divisao por modulo e por tipo.
 
-Quando a busca ganhar regras reais, `planning` recebera as camadas `domain`,
-`application` e `infrastructure`. Elas serao adicionadas junto com seus modelos,
-casos de uso e adaptadores concretos.
+O calculo do caminho permanece no Xano. O dominio local valida e normaliza o
+contrato, enquanto a aplicacao impede selecoes invalidas antes da chamada
+externa.
+
+## Estado da integracao em 13/09/2026
+
+Os adaptadores Python foram exercitados contra o Xano com login, listagem de
+estacoes e uma consulta de trajeto com baldeacao. Isso ainda nao valida o fluxo
+completo no navegador: `planning/presentation/pages.py` usa dados demonstrativos
+e ainda nao chama os casos de uso de planejamento.
+
+A proxima etapa funcional deve conectar a interface ao backend preservando a
+sessao HttpOnly e implementar carregamento, sucesso, ausencia de rota e erro.
+Veja `docs/validacao-integracao-xano.md` para evidencias e limitacoes.
