@@ -1,36 +1,76 @@
-"""Welcome to Reflex! This file outlines the steps to create a basic app."""
+"""Aplicacao MetroFlow."""
 
 import reflex as rx
 
-from rxconfig import config
+from MetroFlow.auth.presentation.api import auth_api
+from MetroFlow.auth.presentation.pages import login_page, signup_page
+from MetroFlow.auth.presentation.state import (
+    AuthState,
+    RESTORE_SESSION_SCRIPT,
+)
+from MetroFlow.planning.presentation.pages import (
+    about_page,
+    compare_page,
+    home_page,
+    routes_page,
+    search_page,
+    status_page,
+    trip_page,
+)
 
 
-class State(rx.State):
-    """The app state."""
+app = rx.App(api_transformer=auth_api)
 
+restore_session = rx.call_script(
+    RESTORE_SESSION_SCRIPT,
+    callback=AuthState.handle_session_result,
+)
+require_session = rx.call_script(
+    RESTORE_SESSION_SCRIPT,
+    callback=AuthState.handle_protected_session_result,
+)
 
-def index() -> rx.Component:
-    # Welcome Page (Index)
-    return rx.container(
-        rx.color_mode.button(position="top-right"),
-        rx.vstack(
-            rx.heading("Welcome to Reflex!", size="9"),
-            rx.text(
-                "Get started by editing ",
-                rx.code(f"{config.app_name}/{config.app_name}.py"),
-                size="5",
-            ),
-            rx.link(
-                rx.button("Check out our docs!"),
-                href="https://reflex.dev/docs/getting-started/introduction/",
-                is_external=True,
-            ),
-            spacing="5",
-            justify="center",
-            min_height="85vh",
-        ),
-    )
-
-
-app = rx.App()
-app.add_page(index)
+app.add_page(
+    home_page,
+    route="/",
+    title="MetroFlow | Mobilidade inteligente",
+    on_load=restore_session,
+)
+app.add_page(
+    search_page,
+    route="/buscar-trajeto",
+    title="Buscar trajeto | MetroFlow",
+    on_load=require_session,
+)
+app.add_page(
+    routes_page,
+    route="/rotas",
+    title="Rotas | MetroFlow",
+    on_load=require_session,
+)
+app.add_page(
+    compare_page,
+    route="/comparar",
+    title="Comparar rotas | MetroFlow",
+    on_load=require_session,
+)
+app.add_page(
+    trip_page,
+    route="/trajeto",
+    title="Detalhes do trajeto | MetroFlow",
+    on_load=require_session,
+)
+app.add_page(
+    status_page,
+    route="/status",
+    title="Status da rede | MetroFlow",
+    on_load=restore_session,
+)
+app.add_page(
+    about_page,
+    route="/sobre",
+    title="Sobre | MetroFlow",
+    on_load=restore_session,
+)
+app.add_page(login_page, route="/login", title="Entrar | MetroFlow")
+app.add_page(signup_page, route="/cadastro", title="Cadastro | MetroFlow")
