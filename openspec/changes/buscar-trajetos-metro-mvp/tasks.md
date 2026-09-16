@@ -113,3 +113,18 @@ alterou o comportamento da aplicacao. O registro anterior de bloqueio descreve
 a tentativa no ambiente do assistente. A validacao estrita OpenSpec passou posteriormente para as duas mudancas
 (2 passed, 0 failed), conforme captura do usuario. Os cenarios completos no
 navegador continuam pendentes.
+
+## Implementacao da interface — 14/09/2026
+
+A branch `feature/conectar-interface-planejamento` implementa selecao de estacoes,
+consulta pelo backend com cookie HttpOnly, carregamento, resultado, nova tentativa,
+redirecionamento de sessao expirada e descarte de resultados antigos. Os enderecos
+legados apresentam o mesmo planejador e os resultados ficticios foram removidos.
+
+Os testes automatizados passaram: 59 testes, 6 subtestes, 2 avisos de deprecacao.
+A compilacao Reflex em modo seco passou pela chamada direta do compilador.
+Os itens do fluxo ainda dependem da verificacao manual no navegador com o Xano
+real antes de serem considerados integralmente aceitos. A validacao estrita
+OpenSpec registrada anteriormente refere-se ao estado anterior a esta implementacao.
+
+Procedimento e limites: `docs/integracao-interface-planejamento.md`.

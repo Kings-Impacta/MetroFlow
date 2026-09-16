@@ -42,3 +42,17 @@ e ainda nao chama os casos de uso de planejamento.
 A proxima etapa funcional deve conectar a interface ao backend preservando a
 sessao HttpOnly e implementar carregamento, sucesso, ausencia de rota e erro.
 Veja `docs/validacao-integracao-xano.md` para evidencias e limitacoes.
+
+## Evolucao da interface em 14/09/2026
+
+O estado anterior acima foi substituido por um planejador conectado. O navegador
+consulta `/api/planning/stations` e `/api/planning/route` na mesma origem. O router
+FastAPI valida a sessao pelo cookie HttpOnly e chama `PlanningService` com o token
+apenas no backend. `view_models.py` produz o contrato publico consumido por
+`state.py` e `pages.py`, sem expor o formato bruto ou as credenciais do Xano.
+
+Os estados de lista e rota sao independentes. Uma nova selecao remove o resultado
+anterior; um identificador de solicitacao descarta callbacks antigos, inclusive
+apos logout. As paginas legadas `/rotas`, `/trajeto` e `/comparar` abrem o mesmo
+planejador. Lotacao, alternativas e indicadores operacionais ficticios foram
+retirados. A validacao manual no navegador continua pendente.

@@ -37,11 +37,29 @@ class Segment:
     line: Line
     estimated_time_seconds: int
 
+    # Sentido real calculado pelo backend.
+    # Exemplo: "Vila Madalena", "Vila Prudente",
+    # "Jabaquara" ou "Tucuruvi".
+    direction: str | None = None
+
     def __post_init__(self) -> None:
         if self.estimated_time_seconds <= 0:
-            raise ValueError("O tempo estimado deve ser positivo.")
+            raise ValueError(
+                "O tempo estimado deve ser positivo."
+            )
+
         if self.origin.id == self.destination.id:
-            raise ValueError("Um trecho deve ligar estacoes diferentes.")
+            raise ValueError(
+                "Um trecho deve ligar estacoes diferentes."
+            )
+
+        if (
+            self.direction is not None
+            and not self.direction.strip()
+        ):
+            raise ValueError(
+                "O sentido do trecho nao pode ser vazio."
+            )
 
 
 @dataclass(frozen=True, slots=True)
@@ -62,14 +80,24 @@ class RouteResult:
 
     def __post_init__(self) -> None:
         if self.origin.id == self.destination.id:
-            raise ValueError("Origem e destino devem ser diferentes.")
+            raise ValueError(
+                "Origem e destino devem ser diferentes."
+            )
+
         if self.total_time_seconds <= 0:
-            raise ValueError("O tempo total deve ser positivo.")
+            raise ValueError(
+                "O tempo total deve ser positivo."
+            )
+
         segment_total = sum(
-            segment.estimated_time_seconds for segment in self.segments
+            segment.estimated_time_seconds
+            for segment in self.segments
         )
+
         if segment_total != self.total_time_seconds:
-            raise ValueError("O tempo total deve ser a soma dos trechos.")
+            raise ValueError(
+                "O tempo total deve ser a soma dos trechos."
+            )
 
     @property
     def transfer_count(self) -> int:
@@ -77,4 +105,6 @@ class RouteResult:
 
     @property
     def display_minutes(self) -> int:
-        return (self.total_time_seconds + 59) // 60
+        return (
+            self.total_time_seconds + 59
+        ) // 60

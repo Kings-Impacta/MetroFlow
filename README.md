@@ -6,7 +6,7 @@ Projeto integrador para consulta de trajetos do transporte ferroviário metropol
 
 O cliente Python de autenticação e os adaptadores de estações e trajetos estão implementados. Foram executados testes reais de login, listagem de cinco estações e consulta de Vergueiro até Trianon-Masp (360 segundos, uma baldeação).
 
-As telas de planejamento ainda são demonstrativas: os campos e resultados fixos não estão ligados ao cliente de busca. Informações de lotação, alternativas e operação ao vivo exibidas no protótipo não representam integrações implementadas e estão fora do primeiro MVP.
+O planejador agora carrega estações e solicita trajetos pelo backend local, usando a sessão HttpOnly existente. A tela apresenta carregamento, resultado real, ausência de trajeto e falhas; os resultados demonstrativos foram removidos. A validação completa no navegador com o Xano real ainda precisa ser executada. Consulte [a integração da interface](docs/integracao-interface-planejamento.md).
 
 Consulte [a arquitetura](ARCHITECTURE.md), [o registro de validação](docs/validacao-integracao-xano.md) e as mudanças em `openspec/changes/` para distinguir implementação de pendências.
 
