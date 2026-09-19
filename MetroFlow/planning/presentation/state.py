@@ -32,8 +32,14 @@ def request_script(
     const controller = new AbortController();
     const timer = setTimeout(() => controller.abort(), 35000);
 
+    const apiUrl = new URL({json.dumps(endpoint)}, window.location.origin);
+    if (["localhost", "127.0.0.1"].includes(window.location.hostname)
+            && window.location.port === "3000") {{
+        apiUrl.port = "8000";
+    }}
+
     try {{
-        const response = await fetch({json.dumps(endpoint)}, {{
+        const response = await fetch(apiUrl.toString(), {{
             ...{json.dumps(options)},
             signal: controller.signal
         }});
@@ -106,6 +112,7 @@ class PlanningState(rx.State):
     minutes: int = 0
     seconds: int = 0
     transfer_count: int = 0
+    has_walking_integration: bool = False
 
     _request_id: int = 0
 
@@ -120,6 +127,7 @@ class PlanningState(rx.State):
         self.minutes = 0
         self.seconds = 0
         self.transfer_count = 0
+        self.has_walking_integration = False
 
     def _filter_stations(
         self,
@@ -166,24 +174,39 @@ class PlanningState(rx.State):
             "line": first_segment.line,
             "operator": first_segment.operator,
             "direction": first_segment.direction,
+            "segment_type": first_segment.segment_type,
+            "service_id": first_segment.service_id,
             "stops": 1,
             "seconds": first_segment.seconds,
         }
 
         for segment in route.segments[1:]:
+            direction_compatible = (
+                segment.direction is None
+                or current_group["direction"] is None
+                or segment.direction
+                == current_group["direction"]
+            )
+
             same_service = (
                 segment.line
                 == current_group["line"]
                 and segment.operator
                 == current_group["operator"]
-                and segment.direction
-                == current_group["direction"]
+                and direction_compatible
+                and segment.segment_type
+                == current_group["segment_type"]
+                and segment.service_id
+                == current_group["service_id"]
             )
 
             if same_service:
                 current_group["destination"] = (
                     segment.destination
                 )
+
+                if current_group["direction"] is None:
+                    current_group["direction"] = segment.direction
 
                 current_group["stops"] = (
                     int(
@@ -216,6 +239,12 @@ class PlanningState(rx.State):
                     "direction": (
                         segment.direction
                     ),
+                    "segment_type": (
+                        segment.segment_type
+                    ),
+                    "service_id": (
+                        segment.service_id
+                    ),
                     "stops": 1,
                     "seconds": (
                         segment.seconds
@@ -234,41 +263,29 @@ class PlanningState(rx.State):
 
         first_group = groups[0]
 
-        first_direction = (
-            first_group["direction"]
-        )
+        if first_group["segment_type"] != "transferencia":
+            first_direction = first_group["direction"]
 
-        if first_direction:
-            boarding_meta = (
-                f"Sentido {first_direction}."
+            if first_direction:
+                boarding_meta = f"Sentido {first_direction}."
+            else:
+                boarding_meta = (
+                    "Confirme o sentido na sinalização da estação."
+                )
+
+            instructions.append(
+                {
+                    "step": str(step_number),
+                    "kind": "EMBARQUE",
+                    "title": f"Embarque em {first_group['origin']}",
+                    "detail": (
+                        f"Use a {first_group['line']}, operada por "
+                        f"{first_group['operator']}."
+                    ),
+                    "meta": boarding_meta,
+                }
             )
-        else:
-            boarding_meta = (
-                "Confirme o sentido na "
-                "sinalização da estação."
-            )
-
-        instructions.append(
-            {
-                "step": str(
-                    step_number
-                ),
-                "kind": "EMBARQUE",
-                "title": (
-                    "Embarque em "
-                    f"{first_group['origin']}"
-                ),
-                "detail": (
-                    f"Use a "
-                    f"{first_group['line']}, "
-                    "operada por "
-                    f"{first_group['operator']}."
-                ),
-                "meta": boarding_meta,
-            }
-        )
-
-        step_number += 1
+            step_number += 1
 
         for index, group in enumerate(
             groups
@@ -308,32 +325,44 @@ class PlanningState(rx.State):
             else:
                 direction_text = ""
 
-            instructions.append(
-                {
-                    "step": str(
-                        step_number
-                    ),
-                    "kind": "SIGA",
-                    "title": (
-                        "Siga pela "
-                        f"{group['line']}"
-                    ),
-                    "detail": (
-                        "Permaneça nesta linha"
-                        f"{direction_text} "
-                        f"de {group['origin']} "
-                        "até "
-                        f"{group['destination']}."
-                    ),
-                    "meta": (
-                        f"{stops} "
-                        f"{trecho_text} · "
-                        "aproximadamente "
-                        f"{group_minutes} min · "
-                        f"{group['operator']}"
-                    ),
-                }
-            )
+            is_transfer = group["segment_type"] == "transferencia"
+
+            if is_transfer:
+                instructions.append(
+                    {
+                        "step": str(step_number),
+                        "kind": "INTEGRAÇÃO",
+                        "title": (
+                            "Faça a integração a pé de "
+                            f"{group['origin']} até {group['destination']}"
+                        ),
+                        "detail": (
+                            "Siga a sinalização da estação pela passagem "
+                            "de integração entre as linhas."
+                        ),
+                        "meta": (
+                            "Caminhada de aproximadamente "
+                            f"{group_minutes} min."
+                        ),
+                    }
+                )
+            else:
+                instructions.append(
+                    {
+                        "step": str(step_number),
+                        "kind": "SIGA",
+                        "title": f"Siga pela {group['line']}",
+                        "detail": (
+                            "Permaneça nesta linha"
+                            f"{direction_text} de {group['origin']} "
+                            f"até {group['destination']}."
+                        ),
+                        "meta": (
+                            f"{stops} {trecho_text} · aproximadamente "
+                            f"{group_minutes} min · {group['operator']}"
+                        ),
+                    }
+                )
 
             step_number += 1
 
@@ -350,6 +379,13 @@ class PlanningState(rx.State):
                     ]
                 )
 
+                next_is_transfer = (
+                    next_group["segment_type"] == "transferencia"
+                )
+
+                if next_is_transfer:
+                    continue
+
                 if next_direction:
                     transfer_meta = (
                         "Após a troca, siga pela "
@@ -363,31 +399,23 @@ class PlanningState(rx.State):
                         f"{next_group['line']}."
                     )
 
-                instructions.append(
-                    {
-                        "step": str(
-                            step_number
-                        ),
-                        "kind": (
-                            "BALDEAÇÃO"
-                        ),
-                        "title": (
-                            "Faça baldeação em "
-                            f"{group['destination']}"
-                        ),
-                        "detail": (
-                            "Troque da "
-                            f"{group['line']} "
-                            "para a "
-                            f"{next_group['line']}."
-                        ),
-                        "meta": (
-                            transfer_meta
-                        ),
-                    }
-                )
-
-                step_number += 1
+                if not is_transfer:
+                    instructions.append(
+                        {
+                            "step": str(step_number),
+                            "kind": "BALDEAÇÃO",
+                            "title": (
+                                "Faça baldeação em "
+                                f"{group['destination']}"
+                            ),
+                            "detail": (
+                                f"Troque da {group['line']} para a "
+                                f"{next_group['line']}."
+                            ),
+                            "meta": transfer_meta,
+                        }
+                    )
+                    step_number += 1
 
                 instructions.append(
                     {
@@ -424,15 +452,19 @@ class PlanningState(rx.State):
 
                 step_number += 1
 
+        arrived_on_foot = (
+            groups[-1]["segment_type"] == "transferencia"
+        )
+
         instructions.append(
             {
                 "step": str(
                     step_number
                 ),
-                "kind": "DESEMBARQUE",
+                "kind": "CHEGADA" if arrived_on_foot else "DESEMBARQUE",
                 "title": (
-                    "Desembarque em "
-                    f"{route.destination}"
+                    ("Chegue a " if arrived_on_foot else "Desembarque em ")
+                    + f"{route.destination}"
                 ),
                 "detail": (
                     "Você chegou ao destino "
@@ -583,6 +615,7 @@ class PlanningState(rx.State):
                 "id": str(
                     item.id
                 ),
+                "name": item.name,
                 "label": (
                     item.label
                 ),
@@ -974,6 +1007,11 @@ class PlanningState(rx.State):
             route.transfer_count
         )
 
+        self.has_walking_integration = any(
+            step.segment_type == "transferencia"
+            for step in route.segments
+        )
+
         self.transfers = (
             route.transfers
         )
@@ -986,8 +1024,9 @@ class PlanningState(rx.State):
                     f"{step.destination}"
                 ),
                 "line": (
-                    f"{step.line} — "
-                    f"{step.operator}"
+                    "Integração a pé"
+                    if step.segment_type == "transferencia"
+                    else f"{step.line} — {step.operator}"
                 ),
                 "time": (
                     f"{step.seconds} s"

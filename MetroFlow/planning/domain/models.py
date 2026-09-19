@@ -5,6 +5,9 @@ from __future__ import annotations
 from dataclasses import dataclass
 
 
+TRANSFER_TIME_SECONDS = 600
+
+
 @dataclass(frozen=True, slots=True)
 class Operator:
     id: int
@@ -41,6 +44,9 @@ class Segment:
     # Exemplo: "Vila Madalena", "Vila Prudente",
     # "Jabaquara" ou "Tucuruvi".
     direction: str | None = None
+    segment_type: str = "ferroviario"
+    directed: bool = False
+    service_id: int | None = None
 
     def __post_init__(self) -> None:
         if self.estimated_time_seconds <= 0:
@@ -60,6 +66,9 @@ class Segment:
             raise ValueError(
                 "O sentido do trecho nao pode ser vazio."
             )
+
+        if not self.segment_type.strip():
+            raise ValueError("O tipo do trecho nao pode ser vazio.")
 
 
 @dataclass(frozen=True, slots=True)
@@ -94,9 +103,14 @@ class RouteResult:
             for segment in self.segments
         )
 
-        if segment_total != self.total_time_seconds:
+        expected_total = (
+            segment_total
+            + len(self.transfers) * TRANSFER_TIME_SECONDS
+        )
+
+        if expected_total != self.total_time_seconds:
             raise ValueError(
-                "O tempo total deve ser a soma dos trechos."
+                "O tempo total deve incluir os trechos e as baldeacoes."
             )
 
     @property
