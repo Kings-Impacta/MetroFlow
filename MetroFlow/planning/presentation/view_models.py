@@ -51,6 +51,9 @@ class SegmentView(BaseModel):
     # Exemplo: Vila Madalena, Vila Prudente,
     # Jabaquara ou Tucuruvi.
     direction: str | None = None
+    segment_type: str = "ferroviario"
+    directed: bool = False
+    service_id: int | None = None
 
     seconds: int
 
@@ -157,6 +160,9 @@ class RouteView(BaseModel):
                         step.line.operator.name
                     ),
                     direction=step.direction,
+                    segment_type=step.segment_type,
+                    directed=step.directed,
+                    service_id=step.service_id,
                     seconds=(
                         step.estimated_time_seconds
                     ),

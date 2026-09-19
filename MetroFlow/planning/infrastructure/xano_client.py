@@ -485,6 +485,18 @@ class XanoPlanningClient:
                         item,
                         "sentido",
                     ),
+                    segment_type=(
+                        cls._optional_text(item, "tipo")
+                        or "ferroviario"
+                    ),
+                    directed=bool(
+                        item.get("direcionado", False)
+                    ),
+                    service_id=(
+                        cls._integer(item, "servico_id")
+                        if item.get("servico_id") is not None
+                        else None
+                    ),
                 )
             )
 

@@ -8,6 +8,7 @@ from MetroFlow.planning.domain.models import (
     RouteResult,
     Segment,
     Station,
+    Transfer,
 )
 
 
@@ -63,6 +64,49 @@ class PlanningModelsTests(unittest.TestCase):
                 transfers=(),
                 total_time_seconds=60,
             )
+
+    def test_tempo_total_inclui_baldeacao(self) -> None:
+        interchange = Station(id=12, name="Se", code="SE")
+        next_line = Line(
+            id=3,
+            name="Linha 3 - Vermelha",
+            code="L3",
+            color="#EE3338",
+            operator=self.line.operator,
+        )
+        segments = (
+            Segment(
+                id=20,
+                origin=self.origin,
+                destination=interchange,
+                line=self.line,
+                estimated_time_seconds=120,
+            ),
+            Segment(
+                id=21,
+                origin=interchange,
+                destination=self.destination,
+                line=next_line,
+                estimated_time_seconds=120,
+            ),
+        )
+        transfer = Transfer(
+            station=interchange,
+            previous_line=self.line,
+            next_line=next_line,
+        )
+
+        route = RouteResult(
+            origin=self.origin,
+            destination=self.destination,
+            stations=(self.origin, interchange, self.destination),
+            segments=segments,
+            transfers=(transfer,),
+            total_time_seconds=840,
+        )
+
+        self.assertEqual(route.display_minutes, 14)
+        self.assertEqual(route.transfer_count, 1)
 
 
 if __name__ == "__main__":

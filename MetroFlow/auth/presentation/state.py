@@ -1,4 +1,4 @@
-﻿"""Estado e chamadas client-side dos formularios de autenticacao."""
+"""Estado e chamadas client-side dos formularios de autenticacao."""
 
 from __future__ import annotations
 
@@ -61,8 +61,14 @@ def build_auth_script(
         }};
     }}
 
+    const apiUrl = new URL({json.dumps(endpoint)}, window.location.origin);
+    if (["localhost", "127.0.0.1"].includes(window.location.hostname)
+            && window.location.port === "3000") {{
+        apiUrl.port = "8000";
+    }}
+
     try {{
-        const response = await fetch({json.dumps(endpoint)}, {{
+        const response = await fetch(apiUrl.toString(), {{
             method: "POST",
             credentials: "include",
             headers: {{"Content-Type": "application/json"}},
@@ -138,8 +144,14 @@ def build_session_script(endpoint: str, method: str = "GET") -> str:
 
     return f"""
 (async () => {{
+    const apiUrl = new URL({json.dumps(endpoint)}, window.location.origin);
+    if (["localhost", "127.0.0.1"].includes(window.location.hostname)
+            && window.location.port === "3000") {{
+        apiUrl.port = "8000";
+    }}
+
     try {{
-        const response = await fetch({json.dumps(endpoint)}, {{
+        const response = await fetch(apiUrl.toString(), {{
             method: {json.dumps(method)},
             credentials: "include"
         }});

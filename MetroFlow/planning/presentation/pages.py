@@ -230,7 +230,7 @@ def _station_search(
                                 type="button",
                                 on_click=on_select(
                                     station["id"],
-                                    station["label"],
+                                    station["name"],
                                 ),
                                 variant="ghost",
                                 color=INK,
@@ -408,8 +408,8 @@ def _result() -> rx.Component:
                 "Tempo calculado: ",
                 PlanningState.seconds,
                 (
-                    " segundos. O cálculo atual considera "
-                    "os tempos cadastrados dos trechos."
+                    " segundos. O cálculo considera os tempos dos trechos "
+                    "e uma estimativa de 10 minutos por baldeação."
                 ),
                 size="2",
                 color=MUTED,
@@ -512,13 +512,23 @@ def _result() -> rx.Component:
 
             rx.cond(
                 PlanningState.transfer_count == 0,
-                rx.text(
-                    (
-                        "Não é necessário trocar de linha. "
-                        "Permaneça na mesma linha até "
-                        "o ponto indicado para desembarque."
+                rx.cond(
+                    PlanningState.has_walking_integration,
+                    rx.text(
+                        (
+                            "A rota inclui uma integração a pé. "
+                            "Siga a sinalização da estação."
+                        ),
+                        color=TEXT,
                     ),
-                    color=TEXT,
+                    rx.text(
+                        (
+                            "Não é necessário trocar de linha. "
+                            "Permaneça na mesma linha até "
+                            "o ponto indicado para desembarque."
+                        ),
+                        color=TEXT,
+                    ),
                 ),
                 rx.foreach(
                     PlanningState.transfers,
