@@ -1,5 +1,25 @@
 # Comparação dos rascunhos Xano — 13/09/2026
 
+## Atualização versionada — 18/09/2026
+
+O arquivo `rascunhos/planejamento/trajetos_buscar_post.xs` foi atualizado com
+uma cópia normalizada do XanoScript publicado no endpoint remoto `POST
+/trajetos/buscar` (ID 4035909), branch Xano `v1`, fonte de dados `live`.
+
+Essa versão inclui:
+
+- sentidos crescente e decrescente das linhas;
+- suporte a trechos direcionados, tipos de trecho e serviços;
+- integração com a tabela `estacoes_linhas` para calcular o sentido da viagem;
+- penalidade estimada de 600 segundos por troca de linha;
+- retorno do sentido, tipo, direção e serviço de cada trecho.
+
+SHA-256 da captura atual:
+
+`BA07F143694200F8EF988439A088D1D56911EA45E868E5E93314EC0BBE139F8E`
+
+Os demais arquivos continuam sendo os rascunhos históricos descritos abaixo.
+
 Os três arquivos locais de `xano/api/planejamento/` são rascunhos históricos.
 Eles não são uma exportação fiel do ambiente remoto nem arquivos prontos para
 importação, push ou sincronização com o Xano.
