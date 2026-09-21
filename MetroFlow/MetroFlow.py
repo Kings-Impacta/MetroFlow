@@ -22,7 +22,20 @@ from MetroFlow.planning.presentation.pages import (
 
 
 auth_api.include_router(planning_api)
-app = rx.App(api_transformer=auth_api)
+app = rx.App(
+    api_transformer=auth_api,
+    html_lang="pt-BR",
+    html_custom_attrs={
+        "translate": "no",
+        "class": "notranslate",
+    },
+    head_components=[
+        rx.el.meta(
+            name="google",
+            content="notranslate",
+        ),
+    ],
+)
 
 restore_session = rx.call_script(
     RESTORE_SESSION_SCRIPT,
