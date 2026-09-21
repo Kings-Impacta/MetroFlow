@@ -18,11 +18,18 @@ from MetroFlow.planning.presentation.view_models import RouteRequest, RouteView,
 planning_api = APIRouter(prefix="/api/planning", tags=["planning"])
 
 
-def authenticated_token(request: Request, response: Response) -> str:
+def session_token(request: Request, response: Response) -> str:
     response.headers["Cache-Control"] = "no-store"
     token = get_session_token(request)
     if not token:
         raise HTTPException(401, "Entre na sua conta para planejar um trajeto.")
+    return token
+
+
+SessionToken = Annotated[str, Depends(session_token)]
+
+
+def authenticated_token(token: SessionToken) -> str:
     try:
         with XanoAuthClient.from_environment() as client:
             client.me(token)
@@ -60,7 +67,7 @@ def stations(token: Token) -> list[StationChoice]:
 
 
 @planning_api.post("/route", response_model=RouteView)
-def route(selection: RouteRequest, token: Token) -> RouteView:
+def route(selection: RouteRequest, token: SessionToken) -> RouteView:
     try:
         with XanoPlanningClient.from_environment() as client:
             result = PlanningService(client).plan_route(
