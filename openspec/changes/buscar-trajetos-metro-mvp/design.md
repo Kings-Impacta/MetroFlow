@@ -108,10 +108,10 @@ A configuração de `ativa` foi confirmada diretamente na interface do Xano com 
 - `nome`: `text`, required, not nullable, normalizado com `trim` e sem default.
 - `codigo`: `text`, required, not nullable, normalizado com `trim`, sem default e unique.
 - `cor`: `text` opcional, normalizado com `trim`.
-- `ativa`: `boolean`, required, not nullable e default `true`.
+- `ativa`: `boolean`, not nullable e default `true`; a configuração **Required** ainda precisa ser habilitada para cumprir o modelo aprovado.
 - `operador_id`: Table Reference required e not nullable para `operadores`, aprovada para a modelagem do MVP, mas ainda não existente no Xano. Sua criação dependerá de backup, revisão do plano de alteração e autorização explícita.
 
-A configuração de `ativa` foi confirmada diretamente na interface do Xano com **Allow nullable values** desmarcado, **Default value** igual a `true`, **Required** marcado e **Column visibility** como `Visible`. A representação `bool ativa?=true` exportada pelo CLI não torna o campo opcional para o Database Link e não deverá ser modificada apenas para alterar essa representação.
+A auditoria direta de 21/09/2026 confirmou **Allow nullable values** desmarcado, mas encontrou **Required** desmarcado em `linhas.ativa`. O campo permanece uma pendência de configuração; detalhes em `docs/xano/auditoria-integridade-2026-09-21.md`.
 
 Quando a proposta for aprovada e implementada, o frontend deverá exibir discretamente o operador associado, por exemplo, “Linha 8–Diamante — ViaMobilidade”.
 
@@ -158,9 +158,9 @@ Os nomes `estacao_origem_id` e `estacao_destino_id` SHALL ser preservados.
 
 ### Calcular o trajeto principal
 
-O tempo total SHALL ser exclusivamente a soma de `tempo_estimado` dos trechos percorridos. Não haverá custo adicional de caminhada, espera ou transferência no primeiro MVP.
+O tempo total SHALL ser a soma de `tempo_estimado` dos trechos percorridos com uma penalidade fixa de 600 segundos por mudança de linha. A penalidade aproxima o impacto da baldeação e evita caminhos artificialmente rápidos com muitas trocas. Não haverá tempo real ou específico por estação para caminhada, espera ou transferência no primeiro MVP.
 
-Quando dois ou mais caminhos tiverem o mesmo tempo total, será escolhido aquele com menor quantidade de baldeações. A quantidade de baldeações é o número de mudanças de linha entre trechos consecutivos e não altera o tempo total.
+Quando dois ou mais caminhos tiverem o mesmo tempo total já penalizado, será escolhido aquele com menor quantidade de baldeações. A quantidade de baldeações é o número de mudanças de linha entre trechos consecutivos.
 
 A arquitetura deverá permitir a inclusão futura de tempos reais de transferência sem exigir agora tabela específica ou antecipar seu formato de armazenamento.
 
@@ -168,9 +168,9 @@ A arquitetura deverá permitir a inclusão futura de tempos reais de transferên
 
 O cálculo do trajeto principal será implementado com o algoritmo de Dijkstra. O estado da busca deverá considerar a estação e a linha atual para permitir a contagem correta das mudanças de linha.
 
-O custo será comparado lexicograficamente como `(tempo_total, quantidade_de_baldeações)`: primeiro será escolhido o menor tempo total e, somente em caso de empate, a menor quantidade de baldeações.
+O custo será comparado lexicograficamente como `(tempo_dos_trechos + 600 × baldeações, quantidade_de_baldeações)`: primeiro será escolhido o menor tempo total estimado e, somente em caso de empate, a menor quantidade de baldeações.
 
-Essa regra pode favorecer uma economia mínima de tempo ao custo de várias baldeações. Essa limitação é aceita no primeiro MVP. Após sua conclusão, uma mudança separada deverá avaliar uma tolerância de tempo ou uma penalidade por baldeação, usando a malha real e testes de experiência do usuário. A margem ou penalidade não será definida nesta mudança.
+A penalidade fixa é uma aproximação de produto, não um tempo operacional medido. Uma mudança futura poderá substituí-la por tempos reais ou específicos de integração, após validação com a malha e dados confiáveis.
 
 ### Derivar baldeações
 

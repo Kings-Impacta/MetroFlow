@@ -34,8 +34,9 @@ atualizacao das estacoes, sem alegar que distinguiu esses dois motivos.
 
 ## Verificacoes automatizadas
 
-Resultado em 14/09/2026: **59 testes aprovados, 6 subtestes aprovados e 2 avisos**
-em 2,30 s. Os avisos sao de deprecacao; nenhum pacote foi alterado para oculta-los.
+Resultado mais recente em 21/09/2026: **62 testes aprovados, 6 subtestes
+aprovados e 2 avisos**. Os avisos são de depreciação; nenhum pacote foi alterado
+para ocultá-los.
 
 Testes HTTP usam TestClient e clientes Xano substituidos por mocks, sem acessar
 o backend real. Cobrem autenticacao, parametros invalidos, ordenacao da lista,
@@ -53,7 +54,7 @@ do Codex e as dependencias da `.venv` do projeto. O comando CLI Reflex tambem fo
 limitado pelo acesso a metadados; a compilacao foi exercitada diretamente pelo
 metodo `app._compile(dry_run=True)`. Nao houve instalacao ou atualizacao de pacotes.
 
-## Validacao manual ainda necessaria
+## Validação manual executada
 
 No PowerShell da raiz do projeto, configure as variaveis novamente se o terminal
 for novo:
@@ -69,18 +70,15 @@ Usar o endereco indicado pelo servidor, sem presumir uma porta. Antes de iniciar
 outro processo, verificar se o projeto ja esta em execucao e seguir o skill
 `reflex-process-management` para reinicio seguro.
 
-1. Abrir `/buscar-trajeto` sem sessao e conferir o redirecionamento ao login.
-2. Entrar com uma conta existente e carregar as estacoes.
-3. Selecionar Vergueiro e Trianon-Masp e conferir o trajeto, tempo e baldeacao
-   contra a malha atual. No teste anterior, foram 360 s e uma troca em Paraiso.
-4. Alterar a selecao e conferir que o resultado anterior desaparece.
-5. Testar extremos iguais, consulta inversa e rota na mesma linha.
-6. Sair da conta e conferir que nenhum resultado anterior permanece no planejador.
-7. Conferir a tela em largura pequena, navegacao por teclado e nova tentativa
-   apos falha de rede.
+Foram verificados no navegador o login, o carregamento de estações, a seleção e
+inversão de origem e destino, novas consultas e a apresentação completa do
+resultado. Entre as rotas conferidas estão Vila Madalena ↔ Vila Prudente,
+Paraíso ↔ Palmeiras-Barra Funda, Palmeiras-Barra Funda ↔ Aeroporto-Guarulhos e
+Palmeiras-Barra Funda → Brigadeiro.
 
-Nenhum teste com credenciais reais foi executado pelo assistente nesta etapa.
-As validacoes reais anteriores foram dos clientes Python, nao desta nova tela.
+A correção de renderização no Chrome também foi validada. O teste de liberação
+deve repetir os cenários automatizados e uma amostra dessas rotas no endereço
+publicado, com HTTPS e cookies de produção.
 
 ## Referencias utilizadas
 

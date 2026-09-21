@@ -106,11 +106,11 @@ O sistema SHALL consultar caminhos entre origem e destino e retornar resultado s
 
 ### Requirement: Definição do trajeto principal
 
-O sistema SHALL escolher o caminho com menor tempo total, calculado exclusivamente pela soma de `tempo_estimado` dos trechos, em segundos. Em empate, SHALL escolher o caminho com menor quantidade de mudanças de linha.
+O sistema SHALL escolher o caminho com menor tempo total estimado, calculado pela soma de `tempo_estimado` dos trechos com 600 segundos por mudança de linha. Em empate, SHALL escolher o caminho com menor quantidade de mudanças de linha.
 
 #### Scenario: Soma do tempo dos trechos
 - **WHEN** um caminho possui múltiplos trechos
-- **THEN** seu tempo total é a soma dos valores de `tempo_estimado` desses trechos
+- **THEN** seu tempo total é a soma dos valores de `tempo_estimado` desses trechos acrescida de 600 segundos por mudança de linha
 
 #### Scenario: Trajetos com tempos diferentes
 - **WHEN** existem caminhos com tempos totais diferentes
@@ -120,9 +120,13 @@ O sistema SHALL escolher o caminho com menor tempo total, calculado exclusivamen
 - **WHEN** existem caminhos com o mesmo tempo total
 - **THEN** o sistema seleciona o que possui menor quantidade de baldeações
 
-#### Scenario: Transferência no primeiro MVP
+#### Scenario: Penalidade fixa de transferência no primeiro MVP
 - **WHEN** o caminho contém uma ou mais mudanças de linha
-- **THEN** nenhum custo de caminhada, espera ou transferência é acrescentado ao tempo total
+- **THEN** o sistema acrescenta 600 segundos por mudança ao tempo total usado na seleção e apresentado ao usuário
+
+#### Scenario: Trajeto sem transferência
+- **WHEN** todos os trechos do caminho usam a mesma linha
+- **THEN** nenhum tempo de transferência é acrescentado
 
 ### Requirement: Baldeações derivadas
 
@@ -150,7 +154,7 @@ O sistema SHALL apresentar estações em ordem, trechos, linhas com seus operado
 
 ### Requirement: Escopo do MVP
 
-O sistema SHALL omitir lotação, rotas alternativas e custos adicionais de transferência e SHALL não oferecer área administrativa.
+O sistema SHALL omitir lotação, rotas alternativas e tempos reais ou específicos de caminhada, espera e transferência, SHALL aplicar somente a penalidade fixa definida nesta especificação e SHALL não oferecer área administrativa.
 
 #### Scenario: Resultado do MVP
 - **WHEN** um trajeto é apresentado
