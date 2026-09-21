@@ -8,7 +8,7 @@
 ## 2. Dados e estrutura no Xano
 
 - [x] 2.1 Preservar `estacoes` com `id`, `created_at`, `nome`, `codigo` e `ativa`; manter `nome` text required not nullable com `trim` e sem default, `codigo` text required not nullable com `trim` e unique, e `ativa` boolean required not nullable com default `true`, já confirmado diretamente na interface do Xano.
-- [ ] 2.2 Preservar em `linhas` os campos confirmados `id`, `created_at`, `nome`, `codigo`, `cor` e `ativa`; manter `nome` text required not nullable com `trim`, `codigo` text required not nullable com `trim` e unique, `cor` text opcional com `trim`, e corrigir `ativa`, que está not nullable, mas sem **Required** na interface do Xano.
+- [x] 2.2 Preservar em `linhas` os campos confirmados `id`, `created_at`, `nome`, `codigo`, `cor` e `ativa`; manter `nome` text required not nullable com `trim`, `codigo` text required not nullable com `trim` e unique, `cor` text opcional com `trim`, e `ativa` boolean required not nullable com default `true`, corrigido e reconfirmado em 21/09/2026.
 - [x] 2.3 Após backup, revisão e autorização explícita, criar `operadores` com `id`, `created_at`, `nome`, `codigo` e `ativo`, adicionar unique em `codigo` e adicionar `linhas.operador_id` como Table Reference required e not nullable.
 - [x] 2.4 Preservar `estacoes_linhas` com `id`, `created_at`, `estacao_id`, `linha_id` e `ordem`; exigir Table References required not nullable, `ordem` integer positivo required not nullable e unique composto de `estacao_id + linha_id`.
 - [x] 2.5 Preservar `trechos` com `id`, `created_at`, `estacao_origem_id`, `estacao_destino_id`, `linha_id`, `tempo_estimado` e `ativo`; manter referências required not nullable, tempo integer positivo em segundos required not nullable e `ativo` boolean required not nullable com default `true`, já confirmado diretamente na interface do Xano.
@@ -66,7 +66,7 @@
 
 ## 8. Testes e validação
 
-- [ ] 8.1 Testar tipos, nulabilidade, obrigatoriedade, `trim`, defaults e unicidade de estações e linhas.
+- [x] 8.1 Testar tipos, nulabilidade, obrigatoriedade, `trim`, defaults e unicidade de estações e linhas.
 - [x] 8.2 Testar Table References, `ordem` positiva required not nullable e unique composto de `estacao_id + linha_id`.
 - [ ] 8.3 Testar referências, tempo positivo em segundos, default de `ativo`, validação de extremos iguais, unique de duplicata direta e validação de duplicata inversa.
 - [x] 8.4 Testar percurso bidirecional a partir de um único registro de trecho.
@@ -139,7 +139,7 @@ Procedimento e limites: `docs/integracao-interface-planejamento.md`.
 - A suíte passou com 62 testes, 6 subtestes e 2 avisos de depreciação.
 - A validação estrita do OpenSpec passou: 2 itens aprovados e 0 falhas.
 - A auditoria direta do Xano confirmou `estacoes_linhas`, referências e índices,
-  mas encontrou `linhas.ativa` sem **Required** e ausência de proteção de
+  confirmou a correção de `linhas.ativa` e encontrou ausência de proteção de
   armazenamento para extremos iguais e duplicatas inversas em `trechos`.
 - Permanecem abertos o teste algorítmico exaustivo de desempate e a auditoria
   completa de segredos em históricos e logs.

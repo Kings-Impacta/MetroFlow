@@ -1,6 +1,6 @@
 # Auditoria de integridade do Xano — 21/09/2026
 
-Auditoria somente leitura realizada no workspace `149130`, branch `v1`, data source `live`. Nenhuma tabela, campo, índice, endpoint ou registro foi alterado.
+Auditoria realizada no workspace `149130`, branch `v1`, data source `live`. Antes da correção, foram solicitadas exportações CSV completas das tabelas `linhas` e `trechos`; o Xano informou que os links ficarão disponíveis por e-mail durante 12 horas.
 
 ## Evidências confirmadas
 
@@ -11,16 +11,15 @@ Auditoria somente leitura realizada no workspace `149130`, branch `v1`, data sou
 - `usuarios` (`885320`, 4 registros): `email` é obrigatório, normalizado com `trim` e `lower` e possui índice único; `senha` usa o tipo password, mínimo de oito caracteres, é obrigatória, sensível e interna; `ativo` é obrigatório e não anulável.
 - `POST /trajetos/buscar` (`4035909`) exige autenticação, rejeita origem igual ao destino na entrada, valida que as estações existem e estão ativas, carrega a malha e rejeita resultado vazio.
 
-## Divergências encontradas
+## Correção aplicada
 
-1. `linhas.ativa` está não anulável, porém **Required** está desmarcado na configuração de entrada do Xano. O modelo aprovado exige **Required**.
-2. O índice de `trechos` impede apenas duplicata direta. Ele não impede o mesmo trecho com origem e destino invertidos na mesma linha.
-3. A rejeição de origem igual ao destino está comprovada no endpoint de busca, mas não há constraint ou trigger comprovado no armazenamento de `trechos`.
+`linhas.ativa` estava não anulável e com default `true`, mas sem **Required** na configuração de entrada. **Required** foi habilitado e a configuração foi reaberta para confirmar o estado salvo.
 
-## Correção proposta no Xano
+## Pendências bloqueadas pelo plano Free
 
-- habilitar **Required** em `linhas.ativa`;
-- adicionar validação de armazenamento para rejeitar `estacao_origem_id == estacao_destino_id`;
-- adicionar validação canônica ou lógica equivalente para rejeitar duplicata inversa na mesma linha.
+1. O índice de `trechos` impede apenas duplicata direta. Ele não impede o mesmo trecho com origem e destino invertidos na mesma linha.
+2. A rejeição de origem igual ao destino está comprovada no endpoint de busca, mas não existe constraint na tabela.
 
-Essas alterações remotas exigem backup e autorização específica antes da execução, conforme a modelagem aprovada. Até lá, os itens 2.2, 2.7, 2.9, 8.1 e 8.3 permanecem abertos.
+O painel de Database Triggers exibiu somente **Upgrade now**. Os filtros de entrada disponíveis para campos inteiros oferecem `min` e `max`, sem comparação entre dois campos ou consulta de registros existentes. Portanto, o plano atual não oferece um mecanismo de tabela capaz de implementar corretamente essas duas proteções.
+
+Não foi adicionada uma coluna manual ou validação parcial, pois isso criaria uma falsa garantia de integridade. Até que Database Triggers estejam disponíveis, ou que seja aprovado um único endpoint de gravação com validação obrigatória, os itens 2.7, 2.9 e 8.3 permanecem abertos.

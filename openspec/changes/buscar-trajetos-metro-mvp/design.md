@@ -108,10 +108,10 @@ A configuração de `ativa` foi confirmada diretamente na interface do Xano com 
 - `nome`: `text`, required, not nullable, normalizado com `trim` e sem default.
 - `codigo`: `text`, required, not nullable, normalizado com `trim`, sem default e unique.
 - `cor`: `text` opcional, normalizado com `trim`.
-- `ativa`: `boolean`, not nullable e default `true`; a configuração **Required** ainda precisa ser habilitada para cumprir o modelo aprovado.
+- `ativa`: `boolean`, required, not nullable e default `true`.
 - `operador_id`: Table Reference required e not nullable para `operadores`, aprovada para a modelagem do MVP, mas ainda não existente no Xano. Sua criação dependerá de backup, revisão do plano de alteração e autorização explícita.
 
-A auditoria direta de 21/09/2026 confirmou **Allow nullable values** desmarcado, mas encontrou **Required** desmarcado em `linhas.ativa`. O campo permanece uma pendência de configuração; detalhes em `docs/xano/auditoria-integridade-2026-09-21.md`.
+Em 21/09/2026, **Required** foi habilitado em `linhas.ativa` após o backup solicitado das tabelas afetadas. A interface do Xano foi reaberta e confirmou **Allow nullable values** desmarcado, default `true` e **Required** marcado.
 
 Quando a proposta for aprovada e implementada, o frontend deverá exibir discretamente o operador associado, por exemplo, “Linha 8–Diamante — ViaMobilidade”.
 
