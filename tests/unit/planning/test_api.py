@@ -111,10 +111,11 @@ class PlanningApiTests(unittest.TestCase):
         self.gateway.find_route.return_value = RouteResult(
             self.origin, self.destination, (self.origin, middle, self.destination),
             (Segment(1, self.origin, middle, first_line, 120), Segment(2, middle, self.destination, other_line, 120)),
-            (Transfer(middle, first_line, other_line),), 240,
+            (Transfer(middle, first_line, other_line),), 840,
         )
         response = self.browser.post("/api/planning/route", json={"origin_id": 1, "destination_id": 2})
         self.assertEqual(response.status_code, 200)
+        self.assertEqual(response.json()["seconds"], 840)
         self.assertEqual(response.json()["transfer_count"], 1)
         self.assertEqual(response.json()["segments"][1]["operator"], "Outro operador")
         self.assertIn("Intermediaria", response.json()["transfers"][0])
