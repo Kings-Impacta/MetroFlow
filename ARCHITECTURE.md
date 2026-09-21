@@ -55,4 +55,16 @@ Os estados de lista e rota sao independentes. Uma nova selecao remove o resultad
 anterior; um identificador de solicitacao descarta callbacks antigos, inclusive
 apos logout. As paginas legadas `/rotas`, `/trajeto` e `/comparar` abrem o mesmo
 planejador. Lotacao, alternativas e indicadores operacionais ficticios foram
-retirados. A validacao manual no navegador continua pendente.
+retirados.
+
+## Evolucao da malha e do calculo em 18/09/2026
+
+A malha do Xano foi ampliada para as linhas de Metro, CPTM e concessionarias
+registradas no projeto, incluindo o Expresso Aeroporto. O Dijkstra remoto usa o
+estado `(estacao, linha atual)`, considera trechos direcionados quando aplicavel
+e acrescenta 600 segundos por mudanca de linha. A mesma regra e validada pelo
+modelo local antes de o resultado ser apresentado.
+
+A interface foi exercitada com rotas diretas, inversas e com baldeacoes. O
+documento HTML declara `pt-BR` e bloqueia traducao automatica para evitar que
+extensoes do navegador alterem o DOM controlado pelo React.

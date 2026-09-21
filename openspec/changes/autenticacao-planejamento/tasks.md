@@ -26,7 +26,7 @@
 
 - [x] 3.3 Implementar o login com e-mail e senha, conta ativa e mensagem genérica para credenciais inválidas, verificando que a resposta não permite enumerar contas.
 
-- [ ] 3.4 Implementar a consulta da sessão atual com autenticação obrigatória e verificar respostas para token válido, ausente, inválido e expirado.
+- [x] 3.4 Implementar a consulta da sessão atual com autenticação obrigatória e verificar respostas para token válido, ausente, inválido e expirado.
 
 - [x] 3.5 Configurar duração inicial de 24 horas para o token e verificar que ele é aceito somente pelo mecanismo de autorização definido.
 
@@ -46,11 +46,11 @@
 
 ## 5. Integração com o planejamento
 
-- [ ] 5.1 Aplicar autenticação obrigatória aos endpoints de planejamento quando forem criados e verificar que a identidade seja resolvida antes das validações e do cálculo.
+- [x] 5.1 Aplicar autenticação obrigatória aos endpoints de planejamento e verificar que a identidade seja resolvida antes das validações e do cálculo.
 
-- [ ] 5.2 Diferenciar respostas de não autorizado das respostas de entrada inválida, trajeto inexistente e falha do serviço.
+- [x] 5.2 Diferenciar respostas de não autorizado das respostas de entrada inválida, trajeto inexistente e falha do serviço.
 
-- [ ] 5.3 Atualizar a mudança `buscar-trajetos-metro-mvp` somente após a autenticação estar integrada, marcando apenas as tarefas de dependência efetivamente comprovadas.
+- [x] 5.3 Atualizar a mudança `buscar-trajetos-metro-mvp` após a autenticação integrada, marcando apenas as tarefas de dependência efetivamente comprovadas.
 
 ## 6. Testes e auditoria
 
@@ -58,7 +58,7 @@
 
 - [x] 6.2 Testar login válido, senha incorreta, e-mail inexistente e conta inativa, confirmando a mesma resposta pública para credenciais inválidas.
 
-- [ ] 6.3 Testar sessão válida, ausente, inválida e expirada e verificar ausência de dados de usuário nas falhas.
+- [x] 6.3 Testar sessão válida, ausente, inválida e expirada e verificar ausência de dados de usuário nas falhas.
 
 - [ ] 6.4 Testar que senha, hash e token não aparecem em respostas indevidas, URLs, históricos ou logs.
 

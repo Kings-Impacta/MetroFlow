@@ -4,11 +4,11 @@ Projeto integrador para consulta de trajetos do transporte ferroviário metropol
 
 ## Estado atual
 
-O cliente Python de autenticação e os adaptadores de estações e trajetos estão implementados. Foram executados testes reais de login, listagem de cinco estações e consulta de Vergueiro até Trianon-Masp (360 segundos, uma baldeação).
+O fluxo autenticado de cadastro, login, restauração de sessão e logout está integrado ao Xano. O planejador carrega a malha ferroviária cadastrada, consulta trajetos reais e apresenta estações, linhas, operadores, sentidos, baldeações e tempo estimado.
 
-O planejador agora carrega estações e solicita trajetos pelo backend local, usando a sessão HttpOnly existente. A tela apresenta carregamento, resultado real, ausência de trajeto e falhas; os resultados demonstrativos foram removidos. A validação completa no navegador com o Xano real ainda precisa ser executada. Consulte [a integração da interface](docs/integracao-interface-planejamento.md).
+O cálculo utiliza os tempos dos trechos e acrescenta 600 segundos por mudança de linha. Foram validadas rotas diretas, inversas, com baldeações, integrações a pé e o Expresso Aeroporto. A interface também foi verificada no Chrome após impedir que a tradução automática alterasse o DOM controlado pelo Reflex.
 
-Consulte [a arquitetura](ARCHITECTURE.md), [o registro de validação](docs/validacao-integracao-xano.md) e as mudanças em `openspec/changes/` para distinguir implementação de pendências.
+Consulte [a arquitetura](ARCHITECTURE.md), [o registro de validação](docs/validacao-integracao-xano.md), [a auditoria de integridade do Xano](docs/xano/auditoria-integridade-2026-09-21.md) e as mudanças em `openspec/changes/` para distinguir implementação de pendências.
 
 ## Ambiente e configuração
 
@@ -33,12 +33,16 @@ Com o ambiente virtual e as dependências de desenvolvimento preparados, execute
 .\.venv\Scripts\python.exe -B -m pytest -q -p no:cacheprovider
 ```
 
-Essa chamada usa o Python existente e não depende de `uv` no PATH. Em 13/09/2026, o usuário executou a suíte completa após corrigir uma asserção posicionada no teste errado: 35 testes passaram, com 1 aviso de depreciação, em 1,84 s. Consulte o registro de validação para os limites dessa cobertura.
+Essa chamada usa o Python existente e não depende de `uv` no PATH. Em 21/09/2026, a suíte completa passou com **62 testes, 6 subtestes e 2 avisos de depreciação**. A validação estrita do OpenSpec também passou para as duas mudanças ativas. Consulte o registro de validação para os limites dessa cobertura.
 
 Antes de iniciar, compilar ou depurar o servidor Reflex, siga `.agents/skills/reflex-process-management/SKILL.md`. Antes de editar componentes ou estado, use também `.agents/skills/reflex-docs/SKILL.md`.
 
 ## Xano e escopo
 
-O Xano calcula o caminho por menor tempo e, em empate, menos baldeações. O primeiro MVP não inclui lotação, alternativas, tempo de espera ou custo adicional de transferência.
+O Xano calcula o caminho pelo menor tempo estimado, somando os trechos e 600 segundos por mudança de linha; em empate, escolhe menos baldeações. O primeiro MVP não inclui lotação, alternativas ou tempos reais e específicos de caminhada, espera ou transferência.
 
-Os arquivos locais em `xano/`, quando presentes, ainda precisam ter a procedência conferida contra uma exportação remota. Não devem ser usados para sincronização ou descritos como backup fiel sem essa verificação. Alterações em recursos ou dados remotos exigem autorização específica.
+Os arquivos em `docs/xano/rascunhos/` registram o XanoScript observado e publicado, mas não substituem uma exportação oficial do workspace. Alterações em recursos ou dados remotos exigem autorização específica.
+
+## Qualidade contínua
+
+O workflow `.github/workflows/quality.yml` executa a suíte Python e a validação estrita do OpenSpec em Pull Requests e em atualizações da `main`.
