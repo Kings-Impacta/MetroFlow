@@ -1,7 +1,9 @@
 ﻿"""Rotas backend de autenticacao usadas pela interface Reflex."""
 
 from fastapi import FastAPI, HTTPException, Request, Response, status
+from fastapi.exceptions import RequestValidationError
 from pydantic import BaseModel, ConfigDict
+from starlette.responses import JSONResponse
 
 from MetroFlow.auth.infrastructure.xano_client import (
     AuthSession,
@@ -38,6 +40,16 @@ auth_api = FastAPI(
     redoc_url=None,
     openapi_url=None,
 )
+
+
+@auth_api.exception_handler(RequestValidationError)
+def validation_error(_request: Request, _error: RequestValidationError) -> JSONResponse:
+    """Nao devolve valores de entrada presentes nos erros do Pydantic."""
+
+    return JSONResponse(
+        status_code=422,
+        content={"detail": "Dados da requisicao invalidos."},
+    )
 
 
 def _public_user(user: AuthenticatedUser) -> PublicUserResponse:

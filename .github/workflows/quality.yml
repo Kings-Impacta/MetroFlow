@@ -20,13 +20,15 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-          cache: pip
+
+      - name: Configurar uv
+        uses: astral-sh/setup-uv@v6
 
       - name: Instalar projeto e testes
-        run: python -m pip install -e . pytest
+        run: uv sync --frozen --group dev --python 3.12
 
       - name: Executar testes
-        run: python -B -m pytest -q -p no:cacheprovider
+        run: uv run --no-sync python -B -m pytest -q -p no:cacheprovider
 
   openspec:
     runs-on: ubuntu-latest

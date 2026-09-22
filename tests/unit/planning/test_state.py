@@ -43,6 +43,7 @@ class PlanningStateTests(unittest.TestCase):
         self.assertEqual(self.state.stations, [])
         self.assertEqual(self.state.title, "")
         self.assertEqual(len(events), 2)
+        self.assertEqual(events[1].args[0][1]._var_value, "/login")
 
     def test_resposta_incompleta_vira_erro(self):
         self.state.receive_route({"request_id": self.state._request_id, "status": 200, "ok": True, "data": {}})

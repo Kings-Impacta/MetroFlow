@@ -171,6 +171,26 @@ class AuthApiTests(unittest.TestCase):
             {"detail": "Credenciais ou sessao invalidas."},
         )
 
+    def test_validacao_nao_devolve_entrada_sensivel(self) -> None:
+        for endpoint in ("login", "signup"):
+            with self.subTest(endpoint=endpoint), TestClient(auth_api) as client:
+                response = client.post(
+                    f"/api/auth/{endpoint}",
+                    json={
+                        "email": "user@example.com",
+                        "senha": ["segredo-de-teste"],
+                        "campo_extra": "token-de-teste",
+                    },
+                )
+
+            self.assertEqual(response.status_code, 422)
+            self.assertEqual(
+                response.json(),
+                {"detail": "Dados da requisicao invalidos."},
+            )
+            self.assertNotIn("segredo-de-teste", response.text)
+            self.assertNotIn("token-de-teste", response.text)
+
 
 if __name__ == "__main__":
     unittest.main()
