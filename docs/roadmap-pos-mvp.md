@@ -29,3 +29,11 @@ Cada etapa requer uma mudança OpenSpec própria antes de alterar contratos ou d
 - A configuração publicada de `auth/login` e `auth/signup` continua com `Request History: Disabled`; a própria visualização do histórico de cadastro informa que ele está desativado.
 - Uma chamada HTTP externa de login com e-mail e senha inteiramente fictícios retornou 401. A resposta não repetiu a senha enviada. Como a chamada não emitiu token, ela não substitui a verificação de um login ou cadastro bem-sucedido após a publicação.
 - Permanecem pendentes a auditoria do fluxo bem-sucedido sem expor valores sensíveis e a observação da expiração natural de uma sessão com a busca aberta. Essas tarefas estão em `openspec/changes/auditoria-segredos-sessao/`.
+## Conclusão do P0 em 23/09/2026
+
+- Um cadastro real posterior à desativação do histórico criou o usuário de teste ativo sem expor senha ou token; `auth/login` e `auth/signup` permaneceram com `Request History: Disabled`.
+- A validade dos tokens foi reduzida temporariamente de 86.400 para 60 segundos nos dois endpoints emissores e publicada apenas durante o teste controlado.
+- O teste revelou que a consulta de rota verificava somente a presença do cookie. O endpoint `/api/planning/route` passou a revalidar o token pelo `auth/me` antes do cálculo.
+- Com o processo reiniciado e o token expirado, uma nova consulta foi bloqueada e o navegador foi redirecionado para `/login`.
+- A validade de `auth/login` e `auth/signup` foi restaurada e publicada em 86.400 segundos (24 horas), sem rascunhos pendentes no Xano.
+- A suíte local passou com 63 testes e 8 subtestes; restou apenas um aviso de depreciação do `TestClient`.
