@@ -1,3 +1,5 @@
+> Pendências transferidas para `openspec/changes/auditoria-segredos-sessao/`. Os registros históricos abaixo descrevem a evidência disponível na data indicada, não o estado atual das tarefas.
+
 ## 1. Preparação e segurança
 
 - [x] 1.1 Comparar o esquema atual do Xano com esta mudança, registrar divergências e confirmar que não existe tabela autenticada ou grupo de API de autenticação.
@@ -60,7 +62,6 @@
 
 - [x] 6.3 Testar sessão válida, ausente, inválida e expirada e verificar ausência de dados de usuário nas falhas.
 
-- [ ] 6.4 Testar que senha, hash e token não aparecem em respostas indevidas, URLs, históricos ou logs.
 
 - [x] 6.5 Testar restauração da sessão, proteção do planejamento e logout no Reflex.
 

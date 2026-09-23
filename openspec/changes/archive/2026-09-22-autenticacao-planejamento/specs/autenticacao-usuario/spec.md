@@ -52,7 +52,7 @@ O sistema SHALL permitir o cadastro com um e-mail válido e uma senha de, no mí
 
 
 
-O sistema SHALL armazenar a senha somente por meio de um mecanismo seguro de hash e SHALL excluir a senha e seu hash de todas as respostas, históricos e mensagens de erro.
+O sistema SHALL armazenar a senha somente por meio de um mecanismo seguro de hash e SHALL excluir a senha e seu hash das respostas públicas de cadastro e login. A auditoria de históricos e logs permanece em uma mudança separada.
 
 
 

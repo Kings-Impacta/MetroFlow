@@ -1,56 +1,23 @@
-<!-- reflex managed begin (do not edit inside this block; add custom content outside the markers) -->
-# Agents
+# Orientações para agentes no MetroFlow
 
-This project uses the **Reflex agent skills** � up-to-date knowledge for building full-stack Python web apps with [Reflex](https://reflex.dev). Install them first, then use them as described below.
+Antes de alterar o projeto, leia [a visão geral](docs/project-overview.md), [o modelo de domínio](docs/domain-model.md), [a arquitetura](ARCHITECTURE.md) e a mudança pertinente em `openspec/changes/`.
 
-## Installing the Skills
+## Documentação e idioma
 
-Before working on this project, make sure the Reflex skills are available to you.
+- Escreva documentação, mensagens exibidas ao usuário e comentários explicativos em português do Brasil.
+- Preserve identificadores exigidos por Python, Reflex, Xano, APIs e pelo esquema do OpenSpec. Não traduza caminhos, nomes de campos ou cabeçalhos estruturais cuja alteração quebre a integração ou a validação.
+- Atualize a documentação quando uma regra de negócio ou decisão arquitetural mudar. Diferencie estado atual, histórico e trabalho pendente.
 
-### Claude Code
+## Arquitetura e segurança
 
-If the skills are not already available, install them yourself by running these shell commands:
+- Implemente a interface exclusivamente com Reflex e seus mecanismos de componentes, estado, eventos e páginas.
+- Mantenha o cálculo de trajetos e os dados da malha no Xano; o backend Python valida e normaliza o contrato recebido.
+- Não exponha tokens, senhas ou respostas internas do Xano à interface, às URLs ou aos logs. Preserve a sessão em cookie HttpOnly e o comportamento de redirecionamento quando ela expirar.
+- Evite alterar funcionalidades não relacionadas e mantenha a separação entre domínio, aplicação, infraestrutura e apresentação.
 
-```bash
-claude plugin marketplace add reflex-dev/agent-skills
-claude plugin install reflex@reflex-agent-skills
-```
+## Processo de desenvolvimento
 
-Newly installed plugins load on the next session. After installing, tell the user to restart the session so the skills auto-load; until then, read the skill files directly from `~/.claude/plugins/` when you need them.
-
-### Other agents (Cursor, OpenCode, Codex, Pi)
-
-```
-npx skills add reflex-dev/agent-skills
-```
-
-Or clone https://github.com/reflex-dev/agent-skills and copy the `skills/` folders into your agent's skill directory (see the repo README for paths).
-
-### Verifying
-
-Before writing or editing any Reflex code, confirm these three skills are available: `reflex-docs`, `setup-python-env`, and `reflex-process-management`. If they are not, STOP and run the install step above � do not proceed without them.
-
-## Using the Skills
-
-### Reflex documentation
-
-For anything about Reflex APIs � components, state management, events, styling, database, routing, authentication � use the **reflex-docs** skill rather than relying on memory. It carries current, version-accurate docs.
-
-### Initializing a new Reflex project
-
-When starting a new Reflex project or setting up a development environment, you **must** follow the **setup-python-env** skill before doing anything else.
-
-Do not skip any steps. Do not assume a virtual environment or Reflex is already available � always verify first by following the skill's instructions in order.
-
-After the environment is ready and Reflex is installed, run:
-
-```bash
-reflex init
-```
-
-Then proceed with the user's request.
-
-### Managing a Reflex process
-
-When you need to compile, run, reload, or debug a Reflex application, follow the **reflex-process-management** skill for the correct sequence and error investigation steps.
-<!-- reflex managed end -->
+- Use uma mudança OpenSpec para novas funcionalidades ou alterações de contrato. Registre proposta, desenho, especificação e tarefas antes da implementação; valide e arquive a mudança quando os critérios estiverem concluídos.
+- Execute os testes pertinentes e a validação estrita do OpenSpec antes de concluir a alteração. Registre limitações que os testes não cobrem.
+- Antes de editar código Reflex, consulte os skills locais `reflex-docs`, `setup-python-env` e `reflex-process-management` em `.agents/skills/`. Para instalar os skills em outro ambiente, consulte [os recursos oficiais do Reflex](https://github.com/reflex-dev/agent-skills).
+- `reflex init` serve para inicializar um projeto novo; para executar este projeto, use o ambiente existente e `reflex run`.

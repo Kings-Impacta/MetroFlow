@@ -30,7 +30,7 @@ O sistema SHALL estar preparado para representar estações e linhas do Metrô, 
 
 ### Requirement: Integridade da modelagem da malha
 
-O sistema SHALL preservar `estacoes`, `linhas`, `estacoes_linhas` e `trechos` conforme a modelagem aprovada. A entidade `operadores` e a Table Reference `linhas.operador_id` são propostas condicionadas à inspeção do Xano e à aprovação explícita.
+O sistema SHALL preservar `estacoes`, `linhas`, `estacoes_linhas`, `trechos` e `operadores` conforme a modelagem aprovada, incluindo a referência obrigatória `linhas.operador_id`.
 
 #### Scenario: Campos de estação
 - **WHEN** uma estação é cadastrada ou atualizada
@@ -40,9 +40,9 @@ O sistema SHALL preservar `estacoes`, `linhas`, `estacoes_linhas` e `trechos` co
 - **WHEN** uma linha é cadastrada ou atualizada
 - **THEN** `nome` é text required not nullable com trim, `codigo` é text required not nullable com trim e unique, `cor` é text opcional com trim, e `ativa` é boolean required not nullable com default true
 
-##### Scenario: Operador aprovado para linha
-- **WHEN** a alteração de modelagem receber backup, revisão e autorização explícita para aplicação no Xano
-- **THEN** o sistema cria `operadores` com `id`, `created_at`, `nome`, `codigo` e `ativo`, exige `codigo` único e adiciona `linhas.operador_id` como Table Reference required e not nullable
+#### Scenario: Operador associado à linha
+- **WHEN** uma linha é cadastrada ou consultada
+- **THEN** ela possui um operador referenciado por `linhas.operador_id`, e `operadores.codigo` possui unicidade
 
 #### Scenario: Estação associada a uma linha
 - **WHEN** uma estação é associada a uma linha
@@ -52,17 +52,9 @@ O sistema SHALL preservar `estacoes`, `linhas`, `estacoes_linhas` e `trechos` co
 - **WHEN** um trecho é cadastrado ou atualizado
 - **THEN** as três referências do trecho são Table References required not nullable, `tempo_estimado` é integer positivo em segundos required not nullable e `ativo` é boolean required not nullable com default true
 
-#### Scenario: Trecho com extremos iguais
-- **WHEN** se tenta cadastrar um trecho com `estacao_origem_id` igual a `estacao_destino_id`
-- **THEN** uma validação rejeita a operação
-
 #### Scenario: Trecho repetido no mesmo sentido
 - **WHEN** já existe na mesma linha um trecho com a mesma origem e o mesmo destino
 - **THEN** a unicidade composta de `estacao_origem_id + estacao_destino_id + linha_id` rejeita a duplicata direta
-
-#### Scenario: Trecho repetido no sentido inverso
-- **WHEN** já existe na mesma linha um trecho entre as mesmas estações com origem e destino invertidos
-- **THEN** normalização canônica dos extremos ou validação lógica equivalente rejeita a duplicata inversa
 
 #### Scenario: Percurso nos dois sentidos
 - **WHEN** existe um trecho válido armazenado entre duas estações

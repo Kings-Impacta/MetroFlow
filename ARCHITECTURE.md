@@ -1,70 +1,32 @@
 # Arquitetura do MetroFlow
 
-O projeto usa uma organizacao modular inspirada em arquitetura hexagonal. As
-camadas sao criadas apenas quando existe uma responsabilidade concreta, sem
-diretorios vazios ou abstracoes prematuras.
+O MetroFlow usa uma organização modular para manter a interface, as regras locais e as integrações externas separadas. O frontend é implementado com Reflex; o backend Python protege a sessão e adapta as respostas; o Xano armazena a malha e calcula o caminho.
 
 ```text
 MetroFlow/
-|-- MetroFlow.py                    # composicao e registro de rotas
-|-- auth/
-|   |-- infrastructure/             # cliente Xano e cookie HttpOnly
-|   `-- presentation/               # API, estado e paginas Reflex
-`-- planning/
-    |-- domain/                     # modelos normalizados e invariantes
-    |-- application/                # casos de uso e portas
-    |-- infrastructure/             # adaptador da API Xano
-    `-- presentation/               # paginas e componentes de trajetos
+├── MetroFlow.py              composição da aplicação e registro de rotas
+├── auth/
+│   ├── infrastructure/       cliente Xano e cookie de sessão
+│   └── presentation/         API, estado e páginas de autenticação
+└── planning/
+    ├── domain/               modelos e validações do resultado
+    ├── application/          casos de uso e contratos
+    ├── infrastructure/       cliente da API de planejamento do Xano
+    └── presentation/         API, estado, páginas e instruções de trajeto
 
-tests/
-`-- unit/
-    `-- auth/                        # testes isolados de autenticacao
+tests/unit/                  testes por módulo e responsabilidade
+docs/                        visão geral, domínio, integração e evidências
+openspec/                    configuração, mudanças e especificações
 ```
 
-## Direcao das dependencias
+## Fluxo de autenticação e planejamento
 
-- `presentation` coordena entradas e saidas da interface.
-- `infrastructure` encapsula integracoes externas, como o Xano.
-- `MetroFlow.py` apenas monta a aplicacao e registra suas rotas.
-- Os testes reproduzem a divisao por modulo e por tipo.
+O usuário se autentica pelo Xano. O token permanece no backend e em cookie HttpOnly; a interface recebe apenas os dados públicos necessários. As páginas e os endpoints de planejamento exigem uma sessão válida. Uma resposta de sessão expirada remove o estado autenticado e conduz ao login.
 
-O calculo do caminho permanece no Xano. O dominio local valida e normaliza o
-contrato, enquanto a aplicacao impede selecoes invalidas antes da chamada
-externa.
+O navegador consulta os endpoints locais `/api/planning/stations` e `/api/planning/route`. O backend valida a sessão e os parâmetros, chama o Xano e normaliza a resposta. O domínio local verifica invariantes do trajeto antes de apresentá-lo. A interface descarta resultados de consultas antigas quando o usuário muda a seleção ou encerra a sessão.
 
-## Estado da integracao em 13/09/2026
+## Cálculo e apresentação
 
-Os adaptadores Python foram exercitados contra o Xano com login, listagem de
-estacoes e uma consulta de trajeto com baldeacao. Isso ainda nao valida o fluxo
-completo no navegador: `planning/presentation/pages.py` usa dados demonstrativos
-e ainda nao chama os casos de uso de planejamento.
+O Xano escolhe o caminho pelo menor tempo estimado: soma dos tempos dos trechos mais 600 segundos por mudança de linha. Em empate, prioriza menos baldeações. O resultado apresenta estações, linhas, operadores, sentidos e instruções de viagem. A penalidade fixa não representa tempos reais de caminhada, espera ou transferência.
 
-A proxima etapa funcional deve conectar a interface ao backend preservando a
-sessao HttpOnly e implementar carregamento, sucesso, ausencia de rota e erro.
-Veja `docs/validacao-integracao-xano.md` para evidencias e limitacoes.
-
-## Evolucao da interface em 14/09/2026
-
-O estado anterior acima foi substituido por um planejador conectado. O navegador
-consulta `/api/planning/stations` e `/api/planning/route` na mesma origem. O router
-FastAPI valida a sessao pelo cookie HttpOnly e chama `PlanningService` com o token
-apenas no backend. `view_models.py` produz o contrato publico consumido por
-`state.py` e `pages.py`, sem expor o formato bruto ou as credenciais do Xano.
-
-Os estados de lista e rota sao independentes. Uma nova selecao remove o resultado
-anterior; um identificador de solicitacao descarta callbacks antigos, inclusive
-apos logout. As paginas legadas `/rotas`, `/trajeto` e `/comparar` abrem o mesmo
-planejador. Lotacao, alternativas e indicadores operacionais ficticios foram
-retirados.
-
-## Evolucao da malha e do calculo em 18/09/2026
-
-A malha do Xano foi ampliada para as linhas de Metro, CPTM e concessionarias
-registradas no projeto, incluindo o Expresso Aeroporto. O Dijkstra remoto usa o
-estado `(estacao, linha atual)`, considera trechos direcionados quando aplicavel
-e acrescenta 600 segundos por mudanca de linha. A mesma regra e validada pelo
-modelo local antes de o resultado ser apresentado.
-
-A interface foi exercitada com rotas diretas, inversas e com baldeacoes. O
-documento HTML declara `pt-BR` e bloqueia traducao automatica para evitar que
-extensoes do navegador alterem o DOM controlado pelo React.
+O [modelo de domínio](docs/domain-model.md) detalha esses conceitos. As [evidências de validação](docs/validacao-integracao-xano.md) e a [auditoria do Xano](docs/xano/auditoria-integridade-2026-09-21.md) registram o que foi verificado e as limitações restantes. Registros históricos de implementação permanecem nesses documentos e no histórico do Git.
