@@ -1,3 +1,5 @@
+> Pendências transferidas para `openspec/changes/integridade-trechos-xano/` e `openspec/changes/validacao-complementar-planejamento/`. Os registros históricos abaixo preservam a evidência da data indicada.
+
 ## 1. Inspeção e aprovação do Xano
 
 - [x] 1.1 Inspecionar em modo somente leitura o workspace “Raphael's Workspace” (`149130`), ambiente `v1`, incluindo tabelas, campos, relacionamentos, índices, autenticação e APIs existentes.
@@ -13,9 +15,7 @@
 - [x] 2.4 Preservar `estacoes_linhas` com `id`, `created_at`, `estacao_id`, `linha_id` e `ordem`; exigir Table References required not nullable, `ordem` integer positivo required not nullable e unique composto de `estacao_id + linha_id`.
 - [x] 2.5 Preservar `trechos` com `id`, `created_at`, `estacao_origem_id`, `estacao_destino_id`, `linha_id`, `tempo_estimado` e `ativo`; manter referências required not nullable, tempo integer positivo em segundos required not nullable e `ativo` boolean required not nullable com default `true`, já confirmado diretamente na interface do Xano.
 - [x] 2.6 Converter, após backup e autorização explícita, exclusivamente `tempo_estimado` dos trechos IDs 1 a 5 de `2` minutos para `120` segundos, sem alterar outros campos ou registros.
-- [ ] 2.7 Rejeitar origem igual ao destino no armazenamento de `trechos`; o endpoint de busca já rejeita parâmetros iguais, mas não há constraint ou trigger comprovado na tabela.
 - [x] 2.8 Proteger duplicata direta na mesma linha por unique composto de `estacao_origem_id + estacao_destino_id + linha_id`.
-- [ ] 2.9 Impedir duplicata inversa na mesma linha por normalização canônica dos extremos ou validação lógica equivalente.
 - [x] 2.10 Tratar cada trecho válido como bidirecional e armazenado uma única vez.
 - [x] 2.11 Não criar tabela de baldeações; derivar mudanças de linha a partir dos trechos do caminho.
 - [x] 2.12 Inserir dados somente após aprovação, cobrindo Metrô, CPTM e concessionárias, trajetos de uma linha e trajetos com mudanças de linha.
@@ -46,8 +46,6 @@
 
 ## 6. Integração e modelo de domínio no Reflex
 
-- [ ] 6.1 Instalar e verificar os skills obrigatórios `reflex-docs`, `setup-python-env` e `reflex-process-management` antes de editar código Reflex.
-- [ ] 6.2 Seguir integralmente `setup-python-env` para validar Python, `uv`, ambiente virtual e Reflex.
 - [x] 6.3 Criar adaptadores para autenticação, estações e trajetos sem expor à interface o formato bruto do Xano.
 - [x] 6.4 Criar modelos normalizados de estação, linha, operador, trecho, baldeação derivada e resultado.
 - [x] 6.5 Implementar os estados não autenticado, `idle`, `loading`, `success`, `not_found` e `error`.
@@ -68,12 +66,10 @@
 
 - [x] 8.1 Testar tipos, nulabilidade, obrigatoriedade, `trim`, defaults e unicidade de estações e linhas.
 - [x] 8.2 Testar Table References, `ordem` positiva required not nullable e unique composto de `estacao_id + linha_id`.
-- [ ] 8.3 Testar referências, tempo positivo em segundos, default de `ativo`, validação de extremos iguais, unique de duplicata direta e validação de duplicata inversa.
 - [x] 8.4 Testar percurso bidirecional a partir de um único registro de trecho.
 - [x] 8.5 Testar autenticação obrigatória, sessão válida, ausente, inválida e expirada.
 - [x] 8.6 Testar trajetos de uma linha, com baldeações e envolvendo operadores distintos.
 - [x] 8.7 Testar soma dos tempos dos trechos com 600 segundos por baldeação.
-- [ ] 8.8 Testar menor tempo e desempate pela menor quantidade de baldeações.
 - [x] 8.9 Testar ausência de trajeto, erro do serviço e resposta incompleta.
 - [x] 8.10 Executar validação integrada Reflex–Xano somente após as implementações autorizadas.
 - [x] 8.11 Executar a aplicação e validar manualmente os principais cenários nos navegadores disponíveis.

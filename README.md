@@ -8,7 +8,7 @@ O fluxo autenticado de cadastro, login, restauração de sessão e logout está 
 
 O cálculo utiliza os tempos dos trechos e acrescenta 600 segundos por mudança de linha. Foram validadas rotas diretas, inversas, com baldeações, integrações a pé e o Expresso Aeroporto. A interface também foi verificada no Chrome após impedir que a tradução automática alterasse o DOM controlado pelo Reflex.
 
-Consulte [a arquitetura](ARCHITECTURE.md), [o registro de validação](docs/validacao-integracao-xano.md), [a auditoria de integridade do Xano](docs/xano/auditoria-integridade-2026-09-21.md) e as mudanças em `openspec/changes/` para distinguir implementação de pendências.
+Para conhecer o projeto, leia a [visão geral](docs/project-overview.md), o [modelo de domínio](docs/domain-model.md) e a [arquitetura](ARCHITECTURE.md). O comportamento concluído está em `openspec/specs/`; o histórico das entregas está em `openspec/changes/archive/`; e as pendências continuam em `openspec/changes/`. O [registro de validação](docs/validacao-integracao-xano.md) e a [auditoria de integridade do Xano](docs/xano/auditoria-integridade-2026-09-21.md) detalham evidências e limites.
 
 ## Ambiente e configuração
 

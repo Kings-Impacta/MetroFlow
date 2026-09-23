@@ -2,33 +2,31 @@ schema: spec-driven
 githubCopilot:
   cloudAgent: false
 
-# Project context (optional)
-# This is shown to AI when creating artifacts.
-# Add your tech stack, conventions, style guides, domain knowledge, etc.
-# Example:
-#   context: |
-#     Tech stack: TypeScript, React, Node.js
-#     We use conventional commits
-#     Domain: e-commerce platform
+context: |
+  MetroFlow é um planejador de viagens do transporte ferroviário metropolitano de São Paulo.
+  O frontend é implementado exclusivamente com Reflex; o backend Python protege a sessão,
+  valida entradas e normaliza as respostas. O Xano autentica usuários, armazena a malha e
+  calcula os trajetos. A busca minimiza o tempo dos trechos mais 600 segundos por mudança
+  de linha; em empate, prefere menos baldeações. A consulta exige sessão válida.
+  Documentação e textos exibidos ao usuário devem estar em português do Brasil.
+  Preserve identificadores técnicos de Python, Reflex, Xano, APIs e OpenSpec.
+  Consulte docs/project-overview.md, docs/domain-model.md e AGENTS.md antes de propor mudanças.
 
-# Per-artifact rules (optional)
-# Add custom rules for specific artifacts.
-# Example:
-#   rules:
-#     proposal:
-#       - Keep proposals under 500 words
-#       - Always include a "Non-goals" section
-#     tasks:
-#       - Break tasks into chunks of max 2 hours
+rules:
+  proposal:
+    - Descrever o problema, o alcance e o que fica fora da mudança em português.
+  design:
+    - Explicar as decisões de integração entre Reflex, backend Python e Xano quando pertinentes.
+  specs:
+    - Registrar requisitos verificáveis e cenários para os comportamentos relevantes.
+  tasks:
+    - Escrever tarefas verificáveis e registrar testes e limites da validação.
 
-# Per-operation guidance (optional)
-# Add advisory guidance for how apply and archive work should be conducted.
-# This is separate from artifact rules above.
-# Example:
-#   operations:
-#     apply:
-#       guidance:
-#         - Keep test summaries concise
-#     archive:
-#       guidance:
-#         - Summarize the archive outcome before finishing
+operations:
+  apply:
+    guidance:
+      - Preservar a sessão e impedir exposição de credenciais e tokens.
+      - Executar testes pertinentes e registrar o resultado.
+  archive:
+    guidance:
+      - Arquivar apenas mudanças concluídas e conferir as especificações consolidadas.
