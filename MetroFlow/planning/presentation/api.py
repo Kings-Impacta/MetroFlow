@@ -67,7 +67,7 @@ def stations(token: Token) -> list[StationChoice]:
 
 
 @planning_api.post("/route", response_model=RouteView)
-def route(selection: RouteRequest, token: SessionToken) -> RouteView:
+def route(selection: RouteRequest, token: Token) -> RouteView:
     try:
         with XanoPlanningClient.from_environment() as client:
             result = PlanningService(client).plan_route(

@@ -7,8 +7,9 @@ from fastapi import FastAPI
 from fastapi.testclient import TestClient
 
 from MetroFlow.auth.infrastructure.session_cookie import SESSION_COOKIE_NAME
+from MetroFlow.auth.infrastructure.xano_client import XanoAuthRejected
 from MetroFlow.planning.domain.models import Line, Operator, RouteResult, Segment, Station, Transfer
-from MetroFlow.planning.infrastructure.xano_client import PlanningUnauthorized, PlanningUnavailable
+from MetroFlow.planning.infrastructure.xano_client import PlanningUnavailable
 from MetroFlow.planning.presentation.api import planning_api
 
 
@@ -63,12 +64,12 @@ class PlanningApiTests(unittest.TestCase):
         self.gateway.find_route.assert_not_called()
 
     def test_sessao_expirada_e_rejeitada_pelo_endpoint_de_planejamento(self):
-        self.gateway.find_route.side_effect = PlanningUnauthorized("expired", 401)
+        self.auth.me.side_effect = XanoAuthRejected("expired", 401)
         response = self.browser.post("/api/planning/route", json={"origin_id": 1, "destination_id": 2})
         self.assertEqual(response.status_code, 401)
         self.assertNotIn("private-test-token", response.text)
-        self.auth.me.assert_not_called()
-        self.gateway.find_route.assert_called_once_with(1, 2, "private-test-token")
+        self.auth.me.assert_called_once_with("private-test-token")
+        self.gateway.find_route.assert_not_called()
 
     def test_rota_retorna_tempo_operador_e_estacoes(self):
         response = self.browser.post("/api/planning/route", json={"origin_id": 1, "destination_id": 2})
@@ -78,7 +79,7 @@ class PlanningApiTests(unittest.TestCase):
         self.assertEqual((body["seconds"], body["minutes"], body["transfer_count"]), (120, 2, 0))
         self.assertEqual(body["segments"][0]["operator"], "Metro")
         self.assertNotIn("private-test-token", response.text)
-        self.auth.me.assert_not_called()
+        self.auth.me.assert_called_once_with("private-test-token")
         self.gateway.find_route.assert_called_once_with(1, 2, "private-test-token")
 
     def test_extremos_iguais_rejeitados_antes_da_busca(self):
