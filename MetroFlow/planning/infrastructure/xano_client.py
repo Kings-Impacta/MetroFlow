@@ -18,6 +18,9 @@ from MetroFlow.planning.domain.models import (
 
 
 XANO_PLANNING_API_BASE_URL_ENV = "XANO_PLANNING_API_BASE_URL"
+DEFAULT_XANO_PLANNING_API_BASE_URL = (
+    "https://x8ki-letl-twmt.n7.xano.io/api:metroflow-planejamento"
+)
 
 
 class PlanningError(RuntimeError):
@@ -65,19 +68,10 @@ class XanoPlanningClient:
         *,
         timeout: float = 10.0,
     ) -> "XanoPlanningClient":
-        base_url = os.getenv(
-            XANO_PLANNING_API_BASE_URL_ENV,
-            "",
-        ).strip()
-
-        if not base_url:
-            raise PlanningError(
-                (
-                    f"A variavel "
-                    f"{XANO_PLANNING_API_BASE_URL_ENV} "
-                    "nao foi configurada."
-                )
-            )
+        base_url = (
+            os.getenv(XANO_PLANNING_API_BASE_URL_ENV, "").strip()
+            or DEFAULT_XANO_PLANNING_API_BASE_URL
+        )
 
         return cls(
             base_url,

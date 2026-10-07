@@ -5,7 +5,14 @@ import reflex as rx
 from MetroFlow.auth.presentation.api import auth_api
 from MetroFlow.planning.presentation.api import planning_api
 from MetroFlow.planning.presentation.state import PlanningState
-from MetroFlow.auth.presentation.pages import login_page, signup_page
+from MetroFlow.auth.presentation.pages import (
+    forgot_password_page,
+    login_page,
+    resend_verification_page,
+    reset_password_page,
+    signup_page,
+    verify_email_page,
+)
 from MetroFlow.auth.presentation.state import (
     AuthState,
     RESTORE_SESSION_SCRIPT,
@@ -83,5 +90,39 @@ app.add_page(
     title="Sobre | MetroFlow",
     on_load=restore_session,
 )
-app.add_page(login_page, route="/login", title="Entrar | MetroFlow")
-app.add_page(signup_page, route="/cadastro", title="Cadastro | MetroFlow")
+app.add_page(
+    login_page,
+    route="/login",
+    title="Entrar | MetroFlow",
+    on_load=AuthState.clear_auth_feedback,
+)
+app.add_page(
+    signup_page,
+    route="/cadastro",
+    title="Cadastro | MetroFlow",
+    on_load=AuthState.clear_auth_feedback,
+)
+app.add_page(
+    forgot_password_page,
+    route="/recuperar-senha",
+    title="Recuperar senha | MetroFlow",
+    on_load=AuthState.clear_auth_feedback,
+)
+app.add_page(
+    reset_password_page,
+    route="/redefinir-senha",
+    title="Redefinir senha | MetroFlow",
+    on_load=AuthState.clear_auth_feedback,
+)
+app.add_page(
+    verify_email_page,
+    route="/confirmar-email",
+    title="Confirmar e-mail | MetroFlow",
+    on_load=AuthState.clear_auth_feedback,
+)
+app.add_page(
+    resend_verification_page,
+    route="/reenviar-confirmacao",
+    title="Reenviar confirmação | MetroFlow",
+    on_load=AuthState.clear_auth_feedback,
+)

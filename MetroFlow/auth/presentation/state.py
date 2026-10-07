@@ -62,10 +62,6 @@ def build_auth_script(
     }}
 
     const apiUrl = new URL({json.dumps(endpoint)}, window.location.origin);
-    if (["localhost", "127.0.0.1"].includes(window.location.hostname)
-            && window.location.port === "3000") {{
-        apiUrl.port = "8000";
-    }}
 
     try {{
         const response = await fetch(apiUrl.toString(), {{
@@ -145,10 +141,6 @@ def build_session_script(endpoint: str, method: str = "GET") -> str:
     return f"""
 (async () => {{
     const apiUrl = new URL({json.dumps(endpoint)}, window.location.origin);
-    if (["localhost", "127.0.0.1"].includes(window.location.hostname)
-            && window.location.port === "3000") {{
-        apiUrl.port = "8000";
-    }}
 
     try {{
         const response = await fetch(apiUrl.toString(), {{
@@ -161,6 +153,101 @@ def build_session_script(endpoint: str, method: str = "GET") -> str:
         return {{ok: response.ok, status: response.status, data}};
     }} catch (_error) {{
         return {{ok: false, status: 0, data: {{}}}};
+    }}
+}})()
+""".strip()
+
+
+def build_email_action_script(form_id: str, endpoint: str, loading_label: str) -> str:
+    """Envia somente o e-mail e mantém a resposta pública genérica."""
+
+    return f"""
+(async () => {{
+    const form = document.getElementById({json.dumps(form_id)});
+    const button = form?.querySelector('button[type="submit"]');
+    if (!form || !button) return {{ok: false, status: 0, data: {{}}}};
+    const originalLabel = button.textContent || "";
+    button.disabled = true;
+    button.textContent = {json.dumps(loading_label)};
+    const email = String(new FormData(form).get("email") || "").trim();
+    const apiUrl = new URL({json.dumps(endpoint)}, window.location.origin);
+    try {{
+        const response = await fetch(apiUrl.toString(), {{
+            method: "POST", credentials: "include",
+            headers: {{"Content-Type": "application/json"}},
+            body: JSON.stringify({{email}})
+        }});
+        const data = await response.json().catch(() => ({{}}));
+        return {{ok: response.ok, status: response.status, data}};
+    }} catch (_error) {{
+        return {{ok: false, status: 0, data: {{}}}};
+    }} finally {{
+        button.disabled = false;
+        button.textContent = originalLabel;
+    }}
+}})()
+""".strip()
+
+
+def build_token_capture_script(form_id: str) -> str:
+    """Retira o token da URL e o mantém somente no elemento do formulário."""
+
+    return f"""
+(() => {{
+    const form = document.getElementById({json.dumps(form_id)});
+    if (!form) return;
+    const fragment = new URLSearchParams(window.location.hash.slice(1));
+    const token = fragment.get("token");
+    if (token) form._metroflowActionToken = token;
+    window.history.replaceState(null, "", window.location.pathname);
+}})()
+""".strip()
+
+
+def build_token_action_script(
+    form_id: str, endpoint: str, *, include_password: bool
+) -> str:
+    """Envia o token no corpo e permite repetir falhas recuperáveis."""
+
+    password = (
+        ', senha: String(formData.get("senha") || "")'
+        if include_password
+        else ""
+    )
+    return f"""
+(async () => {{
+    {build_token_capture_script(form_id)};
+    const form = document.getElementById({json.dumps(form_id)});
+    if (!form) return {{ok: false, status: 0, data: {{}}}};
+    if (form._metroflowActionPending) return {{ignored: true}};
+    const token = String(form._metroflowActionToken || "");
+    if (!token) return {{ok: false, status: 400, data: {{detail: "Link inválido ou expirado."}}}};
+    const formData = new FormData(form);
+    const payload = {{token{password}}};
+    if ("senha" in payload && (payload.senha.length < 8 || payload.senha.length > 256)) {{
+        return {{ok: false, status: 422, data: {{detail: "A senha deve ter entre 8 e 256 caracteres."}}}};
+    }}
+    const apiUrl = new URL({json.dumps(endpoint)}, window.location.origin);
+    const button = form.querySelector('button[type="submit"]');
+    form._metroflowActionPending = true;
+    if (button) button.disabled = true;
+    try {{
+        const response = await fetch(apiUrl.toString(), {{
+            method: "POST", credentials: "include",
+            headers: {{"Content-Type": "application/json"}},
+            body: JSON.stringify(payload)
+        }});
+        const data = await response.json().catch(() => ({{}}));
+        if (response.ok || [401, 403, 410].includes(response.status)) {{
+            delete form._metroflowActionToken;
+        }}
+        if (response.ok) form.reset();
+        return {{ok: response.ok, status: response.status, data}};
+    }} catch (_error) {{
+        return {{ok: false, status: 0, data: {{}}}};
+    }} finally {{
+        form._metroflowActionPending = false;
+        if (button) button.disabled = false;
     }}
 }})()
 """.strip()
@@ -201,6 +288,11 @@ class AuthState(rx.State):
         self.authenticated_email = ""
 
     @rx.event
+    def clear_auth_feedback(self) -> None:
+        self.auth_status = "idle"
+        self.auth_message = ""
+
+    @rx.event
     def handle_auth_result(self, result: dict[str, Any]):
         status_value, message, email = interpret_auth_result(result)
         self.auth_status = (
@@ -211,6 +303,28 @@ class AuthState(rx.State):
 
         if status_value == "success":
             return rx.redirect("/")
+
+    @rx.event
+    def handle_signup_result(self, result: dict[str, Any]) -> None:
+        data = result.get("data") if isinstance(result, dict) else None
+        message = data.get("mensagem") if isinstance(data, dict) else None
+        detail = data.get("detail") if isinstance(data, dict) else None
+
+        if isinstance(result, dict) and result.get("ok") is True:
+            self.auth_status = "success"
+            self.authenticated_email = ""
+            self.auth_message = (
+                message
+                if isinstance(message, str)
+                else "Conta criada. Confira seu e-mail."
+            )
+            return
+
+        self.auth_status = "error"
+        self.authenticated_email = ""
+        self.auth_message = (
+            detail if isinstance(detail, str) else "Não foi possível criar a conta."
+        )
 
     @rx.event
     def handle_session_result(self, result: dict[str, Any]) -> None:
@@ -238,3 +352,35 @@ class AuthState(rx.State):
             return rx.redirect("/login")
 
         self.auth_message = "Nao foi possivel encerrar a sessao."
+
+    @rx.event
+    def handle_action_result(self, result: dict[str, Any]) -> None:
+        if isinstance(result, dict) and result.get("ignored") is True:
+            return
+        data = result.get("data") if isinstance(result, dict) else None
+        message = data.get("mensagem") if isinstance(data, dict) else None
+        detail = data.get("detail") if isinstance(data, dict) else None
+        if isinstance(result, dict) and result.get("ok") is True:
+            self.auth_status = "success"
+            self.auth_message = message if isinstance(message, str) else "Solicitação concluída."
+            return
+        self.auth_status = "error"
+        self.auth_message = detail if isinstance(detail, str) else "Não foi possível concluir."
+
+    @rx.event
+    def handle_reset_result(self, result: dict[str, Any]):
+        """Encerra o fluxo de redefinição no login após remover a sessão."""
+
+        if isinstance(result, dict) and result.get("ignored") is True:
+            return
+
+        data = result.get("data") if isinstance(result, dict) else None
+        detail = data.get("detail") if isinstance(data, dict) else None
+        if isinstance(result, dict) and result.get("ok") is True:
+            self.auth_status = "idle"
+            self.auth_message = ""
+            self.authenticated_email = ""
+            return rx.redirect("/login")
+
+        self.auth_status = "error"
+        self.auth_message = detail if isinstance(detail, str) else "Não foi possível concluir."
