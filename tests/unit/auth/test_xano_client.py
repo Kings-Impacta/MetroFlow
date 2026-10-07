@@ -7,6 +7,7 @@ from unittest.mock import patch
 import httpx
 
 from MetroFlow.auth.infrastructure.xano_client import (
+    DEFAULT_XANO_AUTH_API_BASE_URL,
     AuthenticatedUser,
     XanoAuthClient,
     XanoAuthError,
@@ -27,23 +28,15 @@ class XanoAuthClientTests(unittest.TestCase):
                 json.loads(request.content),
                 {"email": "user@example.com", "senha": "segredo123"},
             )
-            return httpx.Response(
-                200,
-                json={
-                    "authToken": "token-cadastro",
-                    "usuario": {"id": 10, "email": "user@example.com"},
-                },
-            )
+            return httpx.Response(200, json={"mensagem": "Confira seu e-mail."})
 
         with XanoAuthClient(
             BASE_URL,
             transport=httpx.MockTransport(handler),
         ) as client:
-            session = client.signup("user@example.com", "segredo123")
+            result = client.signup("user@example.com", "segredo123")
 
-        self.assertEqual(session.user.id, 10)
-        self.assertEqual(session.user.email, "user@example.com")
-        self.assertNotIn("token-cadastro", repr(session))
+        self.assertIsNone(result)
 
     def test_login_usa_endpoint_correto(self) -> None:
         def handler(request: httpx.Request) -> httpx.Response:
@@ -137,6 +130,63 @@ class XanoAuthClientTests(unittest.TestCase):
         ):
             client = XanoAuthClient.from_environment()
             client.close()
+
+    def test_configuracao_padrao_funciona_sem_variavel_de_ambiente(self) -> None:
+        with patch.dict(
+            "os.environ",
+            {"XANO_AUTH_API_BASE_URL": ""},
+            clear=False,
+        ):
+            client = XanoAuthClient.from_environment()
+
+        self.assertEqual(
+            str(client._http.base_url).rstrip("/"),
+            DEFAULT_XANO_AUTH_API_BASE_URL,
+        )
+        client.close()
+
+    def test_fluxos_por_email_enviam_segredos_somente_no_corpo(self) -> None:
+        calls: list[tuple[str, dict[str, str]]] = []
+
+        def handler(request: httpx.Request) -> httpx.Response:
+            self.assertEqual(request.method, "POST")
+            self.assertEqual(request.url.query, b"")
+            calls.append((request.url.path, json.loads(request.content)))
+            return httpx.Response(200, json={})
+
+        with XanoAuthClient(
+            BASE_URL,
+            transport=httpx.MockTransport(handler),
+        ) as client:
+            client.request_email_verification("user@example.com")
+            client.confirm_email("token-confirmacao")
+            client.request_password_reset("user@example.com")
+            client.reset_password("token-recuperacao", "nova-senha-123")
+
+        self.assertEqual(
+            calls,
+            [
+                (
+                    "/api:test/email/reenviar",
+                    {"email": "user@example.com"},
+                ),
+                (
+                    "/api:test/email/confirmar",
+                    {"token": "token-confirmacao"},
+                ),
+                (
+                    "/api:test/senha/recuperar",
+                    {"email": "user@example.com"},
+                ),
+                (
+                    "/api:test/senha/redefinir",
+                    {
+                        "token": "token-recuperacao",
+                        "password": "nova-senha-123",
+                    },
+                ),
+            ],
+        )
 
 
 if __name__ == "__main__":

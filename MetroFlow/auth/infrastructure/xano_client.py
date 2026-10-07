@@ -10,6 +10,9 @@ import httpx
 
 
 XANO_AUTH_API_BASE_URL_ENV = "XANO_AUTH_API_BASE_URL"
+DEFAULT_XANO_AUTH_API_BASE_URL = (
+    "https://x8ki-letl-twmt.n7.xano.io/api:75UptKSb"
+)
 
 
 class XanoAuthError(RuntimeError):
@@ -69,12 +72,10 @@ class XanoAuthClient:
     def from_environment(cls, *, timeout: float = 10.0) -> "XanoAuthClient":
         """Cria o cliente sem manter configuracao sensivel no codigo."""
 
-        base_url = os.getenv(XANO_AUTH_API_BASE_URL_ENV, "").strip()
-
-        if not base_url:
-            raise XanoAuthError(
-                f"A variavel {XANO_AUTH_API_BASE_URL_ENV} nao foi configurada."
-            )
+        base_url = (
+            os.getenv(XANO_AUTH_API_BASE_URL_ENV, "").strip()
+            or DEFAULT_XANO_AUTH_API_BASE_URL
+        )
 
         return cls(base_url, timeout=timeout)
 
@@ -87,13 +88,12 @@ class XanoAuthClient:
     def __exit__(self, *_: object) -> None:
         self.close()
 
-    def signup(self, email: str, password: str) -> AuthSession:
-        payload = self._request(
+    def signup(self, email: str, password: str) -> None:
+        self._request(
             "POST",
             "auth/signup",
             json={"email": email, "senha": password},
         )
-        return self._decode_session(payload)
 
     def login(self, email: str, password: str) -> AuthSession:
         payload = self._request(
@@ -110,6 +110,34 @@ class XanoAuthClient:
             auth_token=auth_token,
         )
         return self._decode_user(payload)
+
+    def request_email_verification(self, email: str) -> None:
+        self._request(
+            "POST",
+            "email/reenviar",
+            json={"email": email},
+        )
+
+    def confirm_email(self, token: str) -> None:
+        self._request(
+            "POST",
+            "email/confirmar",
+            json={"token": token},
+        )
+
+    def request_password_reset(self, email: str) -> None:
+        self._request(
+            "POST",
+            "senha/recuperar",
+            json={"email": email},
+        )
+
+    def reset_password(self, token: str, password: str) -> None:
+        self._request(
+            "POST",
+            "senha/redefinir",
+            json={"token": token, "password": password},
+        )
 
     def _request(
         self,

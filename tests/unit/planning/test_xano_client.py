@@ -2,10 +2,12 @@
 
 import json
 import unittest
+from unittest.mock import patch
 
 import httpx
 
 from MetroFlow.planning.infrastructure.xano_client import (
+    DEFAULT_XANO_PLANNING_API_BASE_URL,
     PlanningUnauthorized,
     XanoPlanningClient,
 )
@@ -38,6 +40,20 @@ def station(identifier: int, name: str, code: str) -> dict[str, object]:
 
 
 class XanoPlanningClientTests(unittest.TestCase):
+    def test_configuracao_padrao_funciona_sem_variavel_de_ambiente(self) -> None:
+        with patch.dict(
+            "os.environ",
+            {"XANO_PLANNING_API_BASE_URL": ""},
+            clear=False,
+        ):
+            client = XanoPlanningClient.from_environment()
+
+        self.assertEqual(
+            str(client._http.base_url).rstrip("/"),
+            DEFAULT_XANO_PLANNING_API_BASE_URL,
+        )
+        client.close()
+
     def test_lista_estacoes_autenticada(self) -> None:
         def handler(request: httpx.Request) -> httpx.Response:
             self.assertEqual(request.url.path, "/api:planning/estacoes")

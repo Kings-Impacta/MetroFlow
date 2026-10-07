@@ -2,7 +2,13 @@
 
 import reflex as rx
 
-from MetroFlow.auth.presentation.state import AuthState, build_auth_script
+from MetroFlow.auth.presentation.state import (
+    AuthState,
+    build_auth_script,
+    build_email_action_script,
+    build_token_action_script,
+    build_token_capture_script,
+)
 
 
 LOGIN_SCRIPT = build_auth_script(
@@ -17,6 +23,19 @@ SIGNUP_SCRIPT = build_auth_script(
     "Criando conta...",
 )
 
+RECOVERY_SCRIPT = build_email_action_script(
+    "recovery-form", "/api/auth/senha/recuperar", "Enviando..."
+)
+RESEND_SCRIPT = build_email_action_script(
+    "resend-form", "/api/auth/email/reenviar", "Enviando..."
+)
+RESET_SCRIPT = build_token_action_script(
+    "reset-form", "/api/auth/senha/redefinir", include_password=True
+)
+VERIFY_SCRIPT = build_token_action_script(
+    "verify-form", "/api/auth/email/confirmar", include_password=False
+)
+
 
 def _feedback() -> rx.Component:
     return rx.cond(
@@ -24,7 +43,8 @@ def _feedback() -> rx.Component:
         rx.callout(
             AuthState.auth_message,
             color_scheme=rx.cond(
-                AuthState.auth_status == "authenticated",
+                (AuthState.auth_status == "authenticated")
+                | (AuthState.auth_status == "success"),
                 "green",
                 "red",
             ),
@@ -144,9 +164,13 @@ def login_page() -> rx.Component:
             no_validate=True,
             width="100%",
         ),
-        rx.text(
-            "Ainda não possui conta? ",
-            rx.link("Cadastre-se", href="/cadastro"),
+        rx.vstack(
+            rx.text(
+                "Ainda não possui conta? ",
+                rx.link("Cadastre-se", href="/cadastro"),
+            ),
+            rx.link("Esqueci minha senha", href="/recuperar-senha"),
+            spacing="2",
         ),
     )
 
@@ -170,7 +194,7 @@ def signup_page() -> rx.Component:
             id="signup-form",
             on_submit=rx.call_script(
                 SIGNUP_SCRIPT,
-                callback=AuthState.handle_auth_result,
+                callback=AuthState.handle_signup_result,
             ),
             no_validate=True,
             width="100%",
@@ -179,4 +203,86 @@ def signup_page() -> rx.Component:
             "Já possui conta? ",
             rx.link("Entrar", href="/login"),
         ),
+    )
+
+
+def _email_action_page(
+    title: str,
+    description: str,
+    form_id: str,
+    button_label: str,
+    script: str,
+) -> rx.Component:
+    return _auth_layout(
+        title,
+        description,
+        rx.form.root(
+            rx.vstack(
+                _email_field(),
+                rx.button(button_label, type="submit", width="100%"),
+                spacing="3",
+                width="100%",
+            ),
+            id=form_id,
+            on_submit=rx.call_script(script, callback=AuthState.handle_action_result),
+            no_validate=True,
+            width="100%",
+        ),
+        rx.link("Voltar para o login", href="/login"),
+    )
+
+
+def forgot_password_page() -> rx.Component:
+    return _email_action_page(
+        "Recuperar senha",
+        "Informe seu e-mail para receber as instruções.",
+        "recovery-form",
+        "Enviar instruções",
+        RECOVERY_SCRIPT,
+    )
+
+
+def resend_verification_page() -> rx.Component:
+    return _email_action_page(
+        "Reenviar confirmação",
+        "Informe o e-mail usado no cadastro.",
+        "resend-form",
+        "Reenviar mensagem",
+        RESEND_SCRIPT,
+    )
+
+
+def reset_password_page() -> rx.Component:
+    return _auth_layout(
+        "Definir nova senha",
+        "Escolha uma nova senha com pelo menos oito caracteres.",
+        rx.form.root(
+            rx.vstack(
+                _password_field("Nova senha"),
+                rx.button("Redefinir senha", type="submit", width="100%"),
+                spacing="3",
+                width="100%",
+            ),
+            id="reset-form",
+            on_mount=rx.call_script(build_token_capture_script("reset-form")),
+            on_submit=rx.call_script(RESET_SCRIPT, callback=AuthState.handle_reset_result),
+            no_validate=True,
+            width="100%",
+        ),
+        rx.link("Voltar para o login", href="/login"),
+    )
+
+
+def verify_email_page() -> rx.Component:
+    return _auth_layout(
+        "Confirmar e-mail",
+        "Confirme o endereço para ativar sua conta.",
+        rx.form.root(
+            rx.button("Confirmar e-mail", type="submit", width="100%"),
+            id="verify-form",
+            on_mount=rx.call_script(build_token_capture_script("verify-form")),
+            on_submit=rx.call_script(VERIFY_SCRIPT, callback=AuthState.handle_action_result),
+            width="100%",
+        ),
+        rx.link("Reenviar mensagem", href="/reenviar-confirmacao"),
     )
