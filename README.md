@@ -6,7 +6,7 @@ Projeto integrador para consulta de trajetos do transporte ferroviário metropol
 
 O fluxo autenticado de cadastro, login, restauração de sessão e logout está integrado ao Xano. O planejador carrega a malha ferroviária cadastrada, consulta trajetos reais e apresenta estações, linhas, operadores, sentidos, baldeações e tempo estimado.
 
-Na branch de trabalho P4, o cadastro passou a solicitar confirmação por e-mail, sem iniciar sessão; foram adicionadas páginas de confirmação e recuperação de senha. Em 06/10/2026, a entrega real de e-mails, a redefinição de senha, o login restaurado e o planejamento autenticado foram validados com o Xano e o Brevo. Consulte [a revisão](docs/revisao-local-2026-10-02.md) antes de considerar essa etapa concluída.
+O cadastro solicita confirmação por e-mail antes do primeiro login. O sistema também permite reenviar a confirmação e recuperar a senha; após a redefinição, a sessão local é encerrada e o usuário retorna ao login. Em 06/10/2026, a entrega real de e-mails, a redefinição de senha, o novo login e o planejamento autenticado foram validados com o Xano e o Brevo. Consulte [a revisão](docs/revisao-local-2026-10-02.md) para conhecer as evidências e pendências complementares.
 
 O cálculo utiliza os tempos dos trechos e acrescenta 600 segundos por mudança de linha. Foram validadas rotas diretas, inversas, com baldeações, integrações a pé e o Expresso Aeroporto. A interface também foi verificada no Chrome após impedir que a tradução automática alterasse o DOM controlado pelo Reflex.
 
@@ -17,6 +17,8 @@ Para conhecer o projeto, leia a [visão geral](docs/project-overview.md), o [mod
 O projeto declara Python >= 3.12 e Reflex 0.9.10.post1; `.python-version` seleciona Python 3.12. Antes de preparar o ambiente, siga `AGENTS.md` e o skill local `.agents/skills/setup-python-env/SKILL.md`.
 
 O gerenciador de dependências adotado neste repositório é o `uv`, com ambiente em `.venv` e versões registradas em `uv.lock`. Não misture instalações manuais com `pip` nem gere `requirements.txt` sem uma mudança explícita dessa decisão. Para preparar ou atualizar o ambiente, use `uv sync --frozen --group dev --python 3.12`.
+
+Quem for apenas executar ou apresentar o projeto pode seguir o [guia de apresentação](GUIA_APRESENTACAO.md). No Windows, o script `iniciar-metroflow.ps1` prepara o ambiente com as versões registradas e inicia o Reflex. As credenciais do Brevo permanecem no Xano e não precisam ser distribuídas aos integrantes.
 
 Configure as URLs no PowerShell que executará o projeto:
 

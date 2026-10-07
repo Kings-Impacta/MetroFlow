@@ -8,13 +8,14 @@ A rede reúne linhas e operadores diferentes. Para planejar uma viagem, o usuár
 
 ## Escopo atual
 
-- Cadastro, login, restauração da sessão e logout integrados ao Xano.
+- Cadastro com confirmação de e-mail, login, restauração da sessão e logout integrados ao Xano.
+- Reenvio da confirmação e recuperação de senha por e-mail, com retorno ao login após a redefinição.
 - Consulta autenticada das estações e do trajeto principal entre origem e destino.
 - Exibição das linhas, operadores, sentidos, estações, trechos, baldeações e tempo estimado.
 - Seleção do menor tempo calculado pelos trechos cadastrados mais 600 segundos por mudança de linha; em empate, menos baldeações.
 - Tratamento de seleção inválida, sessão expirada, ausência de rota e indisponibilidade do serviço.
 
-O projeto não oferece ainda lotação, alternativas de trajeto, recuperação de senha nem estimativas reais de caminhada, espera ou transferência. As próximas entregas e sua ordem estão em [roadmap-pos-mvp.md](roadmap-pos-mvp.md).
+O projeto não oferece ainda lotação, alternativas de trajeto nem estimativas reais de caminhada, espera ou transferência. As próximas entregas e sua ordem estão em [roadmap-pos-mvp.md](roadmap-pos-mvp.md).
 
 ## Arquitetura e restrições
 
