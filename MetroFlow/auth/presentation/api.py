@@ -1,5 +1,7 @@
 ﻿"""Rotas backend de autenticacao usadas pela interface Reflex."""
 
+import time
+
 from fastapi import FastAPI, HTTPException, Request, Response, status
 from fastapi.exceptions import RequestValidationError
 from pydantic import BaseModel, ConfigDict, Field
@@ -17,6 +19,9 @@ from MetroFlow.auth.infrastructure.session_cookie import (
     get_session_token,
     set_session_cookie,
 )
+
+
+GENERIC_EMAIL_RESPONSE_MIN_SECONDS = 2.0
 
 
 class CredentialsRequest(BaseModel):
@@ -144,6 +149,14 @@ def _is_generic_request_rejection(error: XanoAuthError) -> bool:
     }
 
 
+def _wait_for_generic_email_response(started_at: float) -> None:
+    """Evita que a duração revele se uma conta está cadastrada."""
+
+    remaining = GENERIC_EMAIL_RESPONSE_MIN_SECONDS - (time.monotonic() - started_at)
+    if remaining > 0:
+        time.sleep(remaining)
+
+
 def _auth_response(response: Response, session: AuthSession) -> AuthResponse:
     set_session_cookie(response, session.auth_token)
     return AuthResponse(usuario=_public_user(session.user))
@@ -204,6 +217,7 @@ def logout(response: Response) -> None:
     response_model=MessageResponse,
 )
 def resend_email_verification(request: EmailRequest) -> MessageResponse:
+    started_at = time.monotonic()
     try:
         with XanoAuthClient.from_environment() as client:
             client.request_email_verification(request.email)
@@ -211,6 +225,7 @@ def resend_email_verification(request: EmailRequest) -> MessageResponse:
         if not _is_generic_request_rejection(error):
             _raise_public_error(error)
 
+    _wait_for_generic_email_response(started_at)
     return MessageResponse(
         mensagem="Se a conta estiver pendente, enviaremos uma nova mensagem."
     )
@@ -235,6 +250,7 @@ def confirm_email(request: TokenRequest) -> MessageResponse:
     response_model=MessageResponse,
 )
 def request_password_reset(request: EmailRequest) -> MessageResponse:
+    started_at = time.monotonic()
     try:
         with XanoAuthClient.from_environment() as client:
             client.request_password_reset(request.email)
@@ -242,6 +258,7 @@ def request_password_reset(request: EmailRequest) -> MessageResponse:
         if not _is_generic_request_rejection(error):
             _raise_public_error(error)
 
+    _wait_for_generic_email_response(started_at)
     return MessageResponse(
         mensagem="Se a conta for elegível, enviaremos as instruções por e-mail."
     )
