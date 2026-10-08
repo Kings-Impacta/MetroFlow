@@ -12,7 +12,10 @@ from MetroFlow.auth.infrastructure.xano_client import (
     XanoAuthError,
     XanoAuthRejected,
 )
-from MetroFlow.auth.presentation.api import auth_api
+from MetroFlow.auth.presentation.api import (
+    _wait_for_generic_email_response,
+    auth_api,
+)
 
 
 class AuthApiTests(unittest.TestCase):
@@ -222,6 +225,15 @@ class AuthApiTests(unittest.TestCase):
             self.assertNotIn("segredo-de-teste", response.text)
             self.assertNotIn("token-de-teste", response.text)
 
+    def test_resposta_generica_aguarda_tempo_minimo(self) -> None:
+        with (
+            patch("MetroFlow.auth.presentation.api.time.monotonic", return_value=10.75),
+            patch("MetroFlow.auth.presentation.api.time.sleep") as sleep,
+        ):
+            _wait_for_generic_email_response(10.0)
+
+        sleep.assert_called_once_with(1.25)
+
     def test_recuperacao_de_senha_tem_resposta_generica(self) -> None:
         for rejected in (False, True):
             with self.subTest(rejected=rejected):
@@ -235,6 +247,9 @@ class AuthApiTests(unittest.TestCase):
                     patch(
                         "MetroFlow.auth.presentation.api.XanoAuthClient.from_environment",
                         return_value=xano,
+                    ),
+                    patch(
+                        "MetroFlow.auth.presentation.api._wait_for_generic_email_response"
                     ),
                     TestClient(auth_api) as client,
                 ):
@@ -265,6 +280,7 @@ class AuthApiTests(unittest.TestCase):
                 "MetroFlow.auth.presentation.api.XanoAuthClient.from_environment",
                 return_value=xano,
             ),
+            patch("MetroFlow.auth.presentation.api._wait_for_generic_email_response"),
             TestClient(auth_api) as client,
         ):
             response = client.post(
@@ -333,6 +349,44 @@ class AuthApiTests(unittest.TestCase):
         self.assertEqual(response.status_code, 410)
         self.assertEqual(response.json(), {"detail": "Link inválido ou expirado."})
 
+    def test_links_rejeitados_nao_revelam_estado_do_token(self) -> None:
+        cenarios = (
+            ("expirado", 410),
+            ("consumido", 409),
+            ("substituido", 404),
+            ("finalidade-incorreta", 422),
+        )
+        for endpoint, metodo in (
+            ("/api/auth/email/confirmar", "confirm_email"),
+            ("/api/auth/senha/redefinir", "reset_password"),
+        ):
+            for cenario, status_xano in cenarios:
+                with self.subTest(
+                    endpoint=endpoint, cenario=cenario, status_xano=status_xano
+                ):
+                    xano = self._xano_client()
+                    getattr(xano, metodo).side_effect = XanoAuthError(
+                        f"Estado interno: {cenario}.", status_code=status_xano
+                    )
+                    corpo = {
+                        "token": "token-de-teste-com-mais-de-trinta-e-dois-caracteres"
+                    }
+                    if metodo == "reset_password":
+                        corpo["senha"] = "nova-senha-segura"
+                    with (
+                        patch(
+                            "MetroFlow.auth.presentation.api.XanoAuthClient.from_environment",
+                            return_value=xano,
+                        ),
+                        TestClient(auth_api) as client,
+                    ):
+                        response = client.post(endpoint, json=corpo)
+                    self.assertEqual(response.status_code, 410)
+                    self.assertEqual(
+                        response.json(), {"detail": "Link inválido ou expirado."}
+                    )
+                    self.assertNotIn("Estado interno", response.text)
+
     def test_recuperacao_oculta_rejeicoes_de_validacao(self) -> None:
         xano = self._xano_client()
         xano.request_password_reset.side_effect = XanoAuthError(
@@ -344,6 +398,7 @@ class AuthApiTests(unittest.TestCase):
                 "MetroFlow.auth.presentation.api.XanoAuthClient.from_environment",
                 return_value=xano,
             ),
+            patch("MetroFlow.auth.presentation.api._wait_for_generic_email_response"),
             TestClient(auth_api) as client,
         ):
             response = client.post(

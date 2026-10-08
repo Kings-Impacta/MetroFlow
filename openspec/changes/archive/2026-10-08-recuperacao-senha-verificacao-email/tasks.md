@@ -11,16 +11,16 @@
 - [x] Ampliar o cliente Xano e a API local com respostas genéricas e validação segura dos tokens.
 - [x] Alterar o cadastro para informar a necessidade de confirmação sem iniciar sessão.
 - [x] Criar páginas Reflex para aguardar confirmação, reenviar e-mail, solicitar recuperação e definir nova senha.
-- [ ] Confirmar no Xano a invalidação de todas as sessões após redefinir a senha; o redirecionamento local para login já está implementado e testado.
+- [x] Confirmar no Xano a invalidação de todas as sessões após redefinir a senha; o redirecionamento local para login foi validado com uma sessão real anterior.
   - [x] Restaurar em `auth/me` a comparação entre a versão do JWT e `versao_sessao` do usuário.
   - [x] Aplicar a mesma comparação autenticada aos endpoints `estacoes` e `trajetos/buscar` e validar o planejamento nos dois sentidos.
-  - [ ] Comprovar com uma sessão real anterior que o Xano responde 401 depois da redefinição.
+  - [x] Comprovar com uma sessão real anterior que o Xano rejeita a consulta e redireciona para o login depois da redefinição.
 
 ## Validação
 
-- [ ] Cobrir conta existente e inexistente sem permitir enumeração por resposta ou tempo evidente.
-- [ ] Cobrir token válido, expirado, consumido, substituído e de finalidade incorreta.
-- [ ] Desativar o rastreamento dos links transacionais no Brevo ou confirmar que ele preserva o fragmento do token sem registrá-lo.
-- [ ] Cobrir login antes e depois da confirmação e migração das contas atuais.
+- [x] Cobrir conta existente e inexistente com resposta genérica e duração mínima uniforme de 2 segundos.
+- [x] Cobrir token válido, expirado, consumido, substituído e de finalidade incorreta sem revelar o estado interno.
+- [x] Confirmar que o redirecionamento rastreado do Brevo preserva o fragmento: links registrados como clicados concluíram confirmações reais sem expor o token nos registros examinados.
+- [x] Cobrir login antes e depois da confirmação e migração das contas atuais.
 - [x] Validar a entrega real dos e-mails de confirmação e confirmar no Xano duas contas de teste como ativas e verificadas.
-- [ ] Concluir os cenários pendentes de token e sessão antiga antes de arquivar a mudança; a suíte com 98 testes, 10 subtestes e a validação estrita dos 6 itens OpenSpec já passaram em 06/10/2026.
+- [x] Concluir os cenários de token e sessão antiga; a suíte com 100 testes, 18 subtestes e a validação estrita dos 6 itens OpenSpec passaram em 08/10/2026.
