@@ -46,6 +46,29 @@ class PlanningModelsTests(unittest.TestCase):
         self.assertEqual(route.display_minutes, 2)
         self.assertEqual(route.transfer_count, 0)
 
+    def test_rejeita_trecho_com_extremos_iguais(self) -> None:
+        with self.assertRaisesRegex(ValueError, "estacoes diferentes"):
+            Segment(
+                id=20,
+                origin=self.origin,
+                destination=self.origin,
+                line=self.line,
+                estimated_time_seconds=120,
+            )
+
+    def test_rejeita_trecho_com_tempo_nao_positivo(self) -> None:
+        for seconds in (0, -1):
+            with self.subTest(seconds=seconds), self.assertRaisesRegex(
+                ValueError, "tempo estimado deve ser positivo"
+            ):
+                Segment(
+                    id=20,
+                    origin=self.origin,
+                    destination=self.destination,
+                    line=self.line,
+                    estimated_time_seconds=seconds,
+                )
+
     def test_rejeita_tempo_total_diferente_da_soma(self) -> None:
         segment = Segment(
             id=20,

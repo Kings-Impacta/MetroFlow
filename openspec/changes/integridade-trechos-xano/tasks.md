@@ -1,7 +1,7 @@
 ## Garantias de armazenamento
 
-- [ ] Revisar todos os caminhos de gravação de `trechos`, backups e permissões antes de propor alterações ao Xano.
-- [ ] Rejeitar origem igual ao destino no armazenamento, sem depender apenas da validação da busca.
-- [ ] Rejeitar duplicata inversa na mesma linha por normalização canônica ou validação obrigatória equivalente.
+- [x] Revisar os caminhos de gravação, backups e permissões visíveis; registrar os endpoints novos, as referências `Deleted table`, os caminhos administrativos que contornam o endpoint e a necessidade de uma exportação atual.
+- [x] Publicar no endpoint de gravação a rejeição de origem igual ao destino, sem depender da validação da busca.
+- [x] Publicar chave canônica e índice único para rejeitar duplicata inversa não direcionada na mesma linha, preservando serviços explicitamente direcionados.
 - [ ] Testar referências, tempo positivo, padrão de `ativo`, extremos iguais e duplicatas diretas e inversas.
 - [ ] Verificar concorrência, executar validação estrita do OpenSpec e registrar os limites observados.
