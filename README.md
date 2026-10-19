@@ -10,7 +10,7 @@ O cadastro solicita confirmação por e-mail antes do primeiro login. O sistema 
 
 O cálculo utiliza os tempos dos trechos e acrescenta 600 segundos por mudança de linha. Foram validadas rotas diretas, inversas, com baldeações, integrações a pé e o Expresso Aeroporto. A interface também foi verificada no Chrome após impedir que a tradução automática alterasse o DOM controlado pelo Reflex.
 
-Para conhecer o projeto, leia a [visão geral](docs/project-overview.md), o [modelo de domínio](docs/domain-model.md) e a [arquitetura](ARCHITECTURE.md). O comportamento concluído está em `openspec/specs/`; o histórico das entregas está em `openspec/changes/archive/`; e as pendências continuam em `openspec/changes/`. O [registro de validação](docs/validacao-integracao-xano.md) e a [auditoria de integridade do Xano](docs/xano/auditoria-integridade-2026-09-21.md) detalham evidências e limites.
+Para conhecer o projeto, leia a [visão geral](docs/project-overview.md), o [modelo de domínio](docs/domain-model.md) e a [arquitetura](ARCHITECTURE.md). O comportamento concluído está em `openspec/specs/`; o histórico das entregas está em `openspec/changes/archive/`; e novas mudanças ativas, quando existirem, ficam em `openspec/changes/`. O [registro de validação](docs/validacao-integracao-xano.md) e a [auditoria complementar de integridade do Xano](docs/xano/auditoria-integridade-2026-10-08.md) detalham evidências e limites atuais.
 
 ## Ambiente e configuração
 

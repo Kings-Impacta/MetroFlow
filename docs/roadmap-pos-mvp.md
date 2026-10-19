@@ -13,22 +13,30 @@ Ordem definida em 21/09/2026: **P0 → P4 → P1 → P5 → P3 → P2**. A área
 
 Cada etapa requer uma mudança OpenSpec própria antes de alterar contratos ou dados do Xano.
 
-## P0: evidências e pendências
+## Estado atual em 19/10/2026
+
+- **P0 concluído:** CI, proteção de sessão expirada e auditoria de segredos foram validados e arquivados em `2026-09-23-auditoria-segredos-sessao`.
+- **P4 concluído:** confirmação de e-mail, recuperação de senha, uso único dos tokens e invalidação de sessões anteriores foram validados e arquivados em `2026-10-08-recuperacao-senha-verificacao-email`.
+- **Próxima etapa planejada: P1**, ainda sem mudança OpenSpec ativa.
+
+Os registros abaixo preservam a sequência de evidências obtidas durante o P0. Menções a trabalho ainda pendente descrevem o estado naquela data e foram superadas pelas conclusões posteriores registradas neste mesmo documento.
+
+## Histórico do P0: evidências e pendências da época
 
 - O workflow `Qualidade` da `main`, execução [35648638273](https://github.com/Kings-Impacta/MetroFlow/actions/runs/35648638273) no commit `40f20ca`, passou.
 - Uma busca sem cookie respondeu 401. O teste de estado cobre limpeza e redirecionamento para `/login` ao receber 401.
 - A resposta padrão 422 do FastAPI repetia o valor enviado em `senha`. A API agora devolve um detalhe genérico; o teste de regressão cobre login e cadastro. A resposta do serviço local após a alteração também foi conferida com dados fictícios e não repetiu os marcadores enviados.
 - Depois da correção, 63 testes e 8 subtestes passaram, com 2 avisos de depreciação.
-- A expiração natural de 24 horas ainda precisa ser observada no navegador com a busca aberta.
+- Naquele momento, a expiração natural ainda precisava ser observada no navegador com a busca aberta. O teste controlado posterior reduziu temporariamente a validade, comprovou o bloqueio e o redirecionamento e restaurou a validade de 24 horas.
 - No histórico remoto do Xano, a entrada de `auth/login` mascara a senha, mas a saída guardava o token de autenticação completo. Não reproduzir o valor em evidências. O histórico padrão é retido por 24 horas. A opção `Request History` foi alterada de `Inherit Settings` para `Disabled` nos endpoints `auth/login` e `auth/signup`, ambos emissores de token. Os dois rascunhos foram publicados juntos, com confirmação de publicação na interface. Os registros anteriores à alteração ainda podem permanecer até o fim da retenção.
 - Nos logs de erro do Xano, os 6 erros das últimas 24 horas foram de limite de requisições (`429`) em `auth/me`; não havia erro recente de login ou cadastro na visão examinada.
-- No registro de `auth/me` examinado, a seção de cabeçalhos da requisição estava vazia. Um novo usuário de teste foi criado e apareceu na tabela `usuarios`, mas essa chamada ocorreu antes da publicação e, por isso, ainda constava no histórico. Um teste com credenciais fictícias no executor do Xano após a publicação retornou `ERROR_CODE_UNAUTHORIZED`, como esperado; o executor não comprova o comportamento do histórico de chamadas HTTP externas. A página de busca carregou após uma recarga com a sessão existente. Ainda faltam um login/cadastro real após a publicação, a confirmação de que essas novas chamadas não geram histórico e a observação da expiração natural da sessão.
+- No registro de `auth/me` examinado, a seção de cabeçalhos da requisição estava vazia. Um novo usuário de teste foi criado e apareceu na tabela `usuarios`, mas essa chamada ocorreu antes da publicação e, por isso, ainda constava no histórico. Um teste com credenciais fictícias no executor do Xano após a publicação retornou `ERROR_CODE_UNAUTHORIZED`, como esperado. Naquele momento ainda faltavam um fluxo real posterior à publicação e a observação da expiração; ambos foram concluídos no fechamento do P0.
 
 ## Verificação complementar de 22/09/2026
 
 - A configuração publicada de `auth/login` e `auth/signup` continua com `Request History: Disabled`; a própria visualização do histórico de cadastro informa que ele está desativado.
 - Uma chamada HTTP externa de login com e-mail e senha inteiramente fictícios retornou 401. A resposta não repetiu a senha enviada. Como a chamada não emitiu token, ela não substitui a verificação de um login ou cadastro bem-sucedido após a publicação.
-- Permanecem pendentes a auditoria do fluxo bem-sucedido sem expor valores sensíveis e a observação da expiração natural de uma sessão com a busca aberta. Essas tarefas estão em `openspec/changes/auditoria-segredos-sessao/`.
+- Naquela verificação ainda restavam a auditoria do fluxo bem-sucedido e a expiração da sessão. As duas tarefas foram concluídas em 23/09/2026; a mudança correspondente está arquivada em `openspec/changes/archive/2026-09-23-auditoria-segredos-sessao/`.
 ## Conclusão do P0 em 23/09/2026
 
 - Um cadastro real posterior à desativação do histórico criou o usuário de teste ativo sem expor senha ou token; `auth/login` e `auth/signup` permaneceram com `Request History: Disabled`.

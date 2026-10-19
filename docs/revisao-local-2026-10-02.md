@@ -41,16 +41,18 @@ Antes das correções desta auditoria, o estado local foi copiado para `outputs/
 - Cadastro, confirmação, reenvio e recuperação mantinham geração criptográfica, persistência exclusiva do hash, expiração, consumo único e transações atômicas. A sessão continuava com validade de 24 horas.
 - Foi encontrada uma regressão em `auth/me`: a precondição verificava somente se `versao_sessao` existia no usuário e não comparava esse valor com a versão incluída no JWT.
 - A precondição foi restaurada para exigir `auth.extras.versao_sessao == usuarios.versao_sessao`. O Xano aceitou o XanoScript e publicou o endpoint `auth/me` sem deixar rascunhos.
-- Continua pendente o teste ponta a ponta com uma sessão real criada antes da redefinição de senha, para comprovar a rejeição do token antigo após o incremento da versão.
+- Na auditoria de 06/10/2026 ainda faltava o teste ponta a ponta com uma sessão real anterior à redefinição. Ele foi concluído no fechamento de 08/10/2026 e registrado na mudança arquivada `2026-10-08-recuperacao-senha-verificacao-email`.
 - A tabela `usuarios` parecia conter somente uma conta porque a visualização estava filtrada pelo e-mail do aluno. Após remover a pesquisa, foram exibidas três contas, incluindo `metroflow.projeto@gmail.com`, ativa e verificada.
 - O cadastro de um e-mail já existente era traduzido pela API local como “Credenciais ou sessão inválidas”. A resposta foi separada do fluxo de login e agora orienta entrar ou recuperar a senha, mantendo uma mensagem segura para duplicidade.
 
-## Validação manual ainda necessária
+## Roteiro manual registrado antes do fechamento
+
+Esta lista preserva o roteiro definido durante a revisão. Os itens foram posteriormente concluídos ou cobertos pelas evidências e testes indicados no fechamento deste documento e na mudança OpenSpec arquivada.
 
 1. Reiniciar o projeto em porta única e abrir localhost na porta indicada.
 2. Entrar com uma conta existente e consultar origem/destino na malha atual; recarregar e confirmar restauração da sessão.
 3. Sair e confirmar que a busca protegida solicita login.
-4. Desativar o rastreamento dos links transacionais no Brevo ou comprovar que nenhum token fica retido nos históricos do provedor.
+4. Desativar o rastreamento dos links transacionais no Brevo ou comprovar que nenhum token fica retido nos históricos do provedor. A verificação posterior confirmou que o redirecionamento preserva o fragmento e que os registros examinados não expõem o token.
 5. Em ambiente de teste autorizado, concluir recuperação de senha, expiração, uso único e invalidação de sessões anteriores.
 
 O teste antigo de Vergueiro a Trianon-Masp em 360 segundos é histórico: o modelo atual inclui 600 segundos por mudança de linha e uma malha ampliada. Não deve ser usado como resultado esperado fixo.
@@ -69,4 +71,4 @@ A [documentação oficial de hospedagem Reflex](https://reflex.dev/docs/hosting/
 - Os trajetos Palmeiras-Barra Funda → Brigadeiro e Brigadeiro → Palmeiras-Barra Funda foram calculados com sucesso. O resultado utilizou as linhas 3-Vermelha, 4-Amarela e 2-Verde, com a integração Paulista–Consolação.
 - A suíte completa terminou com 98 testes e 10 subtestes aprovados; houve um aviso de depreciação do `TestClient` sem falha funcional.
 - `openspec.cmd validate --all --strict --no-interactive` aprovou os 6 itens existentes, sem falhas.
-- Continua pendente o cenário complementar que cria uma sessão antes de uma nova redefinição e comprova a resposta 401 desse token antigo. Essa pendência permanece explícita nas tarefas da mudança.
+- O cenário complementar com uma sessão criada antes da redefinição foi concluído: o token antigo foi rejeitado, a aplicação redirecionou para o login e a tarefa correspondente foi encerrada antes do arquivamento da mudança.

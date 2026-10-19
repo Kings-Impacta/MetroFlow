@@ -72,19 +72,22 @@ Não foi alterada a ordenação no Xano para fazer o remoto coincidir com o rasc
 Caso a interface exija ordem alfabética, a decisão deve ser implementada e testada
 explicitamente na integração futura.
 
-## Limites e pendências
+## Limites atuais
 
-A identidade das funções não prova o algoritmo em todos os grafos. Continuam
-pendentes os testes de desempate, consulta inversa, ausência de caminho e cenários
-de erro apontados no registro de validação do projeto.
+Os testes de desempate, consulta inversa, ausência de caminho e cenários de erro
+citados na revisão original foram executados posteriormente. O desempate usa a
+função documentada do XanoScript com malhas controladas; os demais cenários têm
+cobertura automatizada e evidências registradas nas mudanças OpenSpec arquivadas.
 
 O endpoint remoto usa `notfound` tanto para estação inexistente quanto para
 ausência de caminho, confirmando no código exibido a ambiguidade já apontada no
 cliente Python, que transforma qualquer HTTP 404 de busca em `None`.
 
-Uma futura gestão de código Xano como fonte versionada de implantação exigirá
-uma exportação oficial identificada, comparação de metadados e um fluxo próprio
-de revisão. Os rascunhos nesta pasta são documentação histórica.
+Permanece pendente a obtenção de uma exportação oficial identificada, com a
+comparação de metadados e um fluxo próprio de revisão, antes de gerir código Xano
+como fonte versionada de implantação. Os rascunhos nesta pasta são documentação
+histórica. A diferença de ordenação do endpoint de estações também continua
+documentada e não deve ser tratada como garantia do remoto.
 
 ## Integridade dos arquivos originais
 

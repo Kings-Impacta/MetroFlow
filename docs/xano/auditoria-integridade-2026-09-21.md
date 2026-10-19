@@ -15,11 +15,16 @@ Auditoria realizada no workspace `149130`, branch `v1`, data source `live`. Ante
 
 `linhas.ativa` estava não anulável e com default `true`, mas sem **Required** na configuração de entrada. **Required** foi habilitado e a configuração foi reaberta para confirmar o estado salvo.
 
-## Pendências bloqueadas pelo plano Free
+## Limitações encontradas em 21/09/2026
+
+Esta seção preserva o estado observado na data da auditoria. As duas limitações
+abaixo foram superadas posteriormente por um endpoint de gravação autenticado,
+uma chave canônica e um índice único, conforme a
+[auditoria complementar de 08/10/2026](auditoria-integridade-2026-10-08.md).
 
 1. O índice de `trechos` impede apenas duplicata direta. Ele não impede o mesmo trecho com origem e destino invertidos na mesma linha.
 2. A rejeição de origem igual ao destino está comprovada no endpoint de busca, mas não existe constraint na tabela.
 
 O painel de Database Triggers exibiu somente **Upgrade now**. Os filtros de entrada disponíveis para campos inteiros oferecem `min` e `max`, sem comparação entre dois campos ou consulta de registros existentes. Portanto, o plano atual não oferece um mecanismo de tabela capaz de implementar corretamente essas duas proteções.
 
-Não foi adicionada uma coluna manual ou validação parcial, pois isso criaria uma falsa garantia de integridade. Até que Database Triggers estejam disponíveis, ou que seja aprovado um único endpoint de gravação com validação obrigatória, os itens 2.7, 2.9 e 8.3 permanecem abertos.
+Não foi adicionada uma coluna manual ou validação parcial naquela revisão, pois isso criaria uma falsa garantia de integridade. A solução posterior adotou o caminho então proposto: um endpoint de gravação validado, com chave canônica e proteção por índice único. Os testes de extremos iguais, duplicatas direta e inversa e concorrência foram concluídos em 19/10/2026.

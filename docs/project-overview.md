@@ -25,4 +25,4 @@ Tokens e senhas não devem aparecer na interface, em URLs ou em logs. O token de
 
 ## Fontes de verdade
 
-O código e os testes representam o comportamento implementado. `openspec/specs/` contém as especificações consolidadas de autenticação e busca de trajetos; `openspec/changes/archive/` guarda as entregas concluídas, e as mudanças ainda ativas em `openspec/changes/` mostram o trabalho pendente. As observações do Xano estão em [docs/xano](xano/README.md), com limites de evidência explicitados. O [README](../README.md) reúne as instruções de instalação, execução e teste.
+O código e os testes representam o comportamento implementado. `openspec/specs/` contém as especificações consolidadas das entregas concluídas; `openspec/changes/archive/` guarda o histórico dessas entregas, e novas mudanças ativas em `openspec/changes/` mostram o trabalho em andamento. No estado registrado em 19/10/2026 não há mudança OpenSpec ativa. As observações do Xano estão em [docs/xano](xano/README.md), com limites de evidência explicitados. O [README](../README.md) reúne as instruções de instalação, execução e teste.
