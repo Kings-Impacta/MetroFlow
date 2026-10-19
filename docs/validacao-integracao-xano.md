@@ -27,14 +27,17 @@ Swagger. Metodos e caminhos foram observados na lista de endpoints e no Swagger.
 Os scripts solicitaram credenciais no terminal e nao imprimiram tokens. Estes
 resultados confirmam os cenarios descritos, sem comprovar todos os criterios do MVP.
 
-## Verificacoes ainda necessarias
+## Situação posterior das verificações
 
-- Validar consulta inversa, rota sem baldeacao e entradas invalidas.
-- Validar sessao ausente, invalida e expirada, falhas de servico e contrato incompleto.
-- Validar menor tempo e desempate por menos baldeacoes com dados adequados.
-- Confirmar protecao de duplicata inversa e validacao de trechos com extremos iguais.
-- Integrar e testar o planejador no navegador, incluindo nova busca e logout.
-- Comparar os arquivos locais XanoScript com uma exportacao remota identificada.
+As pendências funcionais registradas em 13/09/2026 foram cobertas posteriormente:
+
+- consultas nos dois sentidos foram executadas com a malha ampliada, e trajetos sem baldeação foram registrados na validação da malha;
+- seleção inválida, ausência de rota, sessão ausente ou expirada, falha de serviço e contrato incompleto possuem cobertura automatizada;
+- menor tempo e desempate por menos baldeações foram validados com a função documentada do XanoScript e malhas controladas em memória;
+- extremos iguais, duplicatas direta e inversa e concorrência foram exercitados contra o endpoint real de gravação;
+- nova busca, inversão, respostas antigas, recarga, logout e restauração da sessão possuem cobertura de estado e API, complementada por execução real em porta única.
+
+Permanece pendente somente a comparação com uma **exportação oficial e identificada do Xano**, incluindo metadados e versões. Os arquivos `.xs` locais continuam sendo documentação, não fonte de implantação.
 
 ## Limites da revisao automatizada
 

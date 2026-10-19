@@ -29,4 +29,4 @@ O navegador consulta os endpoints locais `/api/planning/stations` e `/api/planni
 
 O Xano escolhe o caminho pelo menor tempo estimado: soma dos tempos dos trechos mais 600 segundos por mudança de linha. Em empate, prioriza menos baldeações. O resultado apresenta estações, linhas, operadores, sentidos e instruções de viagem. A penalidade fixa não representa tempos reais de caminhada, espera ou transferência.
 
-O [modelo de domínio](docs/domain-model.md) detalha esses conceitos. As [evidências de validação](docs/validacao-integracao-xano.md) e a [auditoria do Xano](docs/xano/auditoria-integridade-2026-09-21.md) registram o que foi verificado e as limitações restantes. Registros históricos de implementação permanecem nesses documentos e no histórico do Git.
+O [modelo de domínio](docs/domain-model.md) detalha esses conceitos. As [evidências de validação](docs/validacao-integracao-xano.md) e a [auditoria complementar do Xano](docs/xano/auditoria-integridade-2026-10-08.md) registram o que foi verificado e os limites operacionais restantes. Registros históricos de implementação permanecem nesses documentos e no histórico do Git.

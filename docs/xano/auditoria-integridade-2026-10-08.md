@@ -18,7 +18,7 @@ Revisão do workspace `149130`, branch `v1`, data source `live`, iniciada em 08/
 - A definição XanoScript do endpoint confirmou referências válidas a `servicos` e `trechos`. O texto `Deleted table` era um rótulo desatualizado do diagrama visual, não uma referência ausente no código executável.
 - Há 10 trechos associados a serviços. Alguns são direcionados e formam pares opostos legítimos; por isso a chave preserva a orientação quando `direcionado=true` e usa normalização canônica nos demais casos.
 - As correções dos endpoints `POST /trechos` e `POST /trechos/auditoria` foram publicadas juntas em 11/10/2026. O painel confirmou zero rascunhos após a publicação.
-- Em 14/10/2026, após iniciar o Reflex com `--single-port`, uma sessão real restaurou o acesso autenticado, carregou as estações e calculou Vergueiro → Trianon-Masp em 960 segundos, com quatro estações e uma baldeação. Essa evidência confirma o caminho de leitura usado pela aplicação; ela não substitui os testes pendentes do endpoint administrativo de escrita.
+- Em 14/10/2026, após iniciar o Reflex com `--single-port`, uma sessão real restaurou o acesso autenticado, carregou as estações e calculou Vergueiro → Trianon-Masp em 960 segundos, com quatro estações e uma baldeação. Essa evidência confirmou o caminho de leitura usado pela aplicação; os testes do endpoint administrativo de escrita foram concluídos posteriormente, conforme os itens seguintes.
 - Em 14/10/2026, uma sessão real também foi usada no `POST /trechos` para oito tentativas inválidas. Extremos iguais, referências inexistentes de origem, destino e linha, tempo zero, tempo negativo e duplicatas direta e inversa foram todos rejeitados com `HTTP 400`. Nenhuma tentativa recebeu resposta de sucesso. O token permaneceu apenas na memória do processo local e não foi registrado.
 - Em 19/10/2026, a falha `Unable to locate auth: versao_sessao` foi rastreada até a leitura incorreta do extra do token. Os endpoints `POST /trechos` e `POST /trechos/auditoria` passaram a consultar `$auth.extras.versao_sessao`, em conformidade com o token emitido por `auth/login` e com os demais endpoints autenticados. As duas correções foram publicadas no branch `v1` antes da repetição do teste de concorrência com um token novo.
 - Após a correção de sessão, duas requisições simultâneas tentaram criar a chave canônica `B:1:3:1:0`. Exatamente uma foi aceita (`HTTP 200`, registro temporário `id=211`) e a concorrente foi rejeitada pelo índice único com `Duplicate record detected` (`HTTP 500`). Isso comprova que a proteção no banco impede a segunda persistência mesmo quando ambas as requisições passam juntas pela consulta prévia. O registro temporário foi removido após confirmação, e a tabela voltou de 208 para 207 registros.
@@ -50,12 +50,13 @@ Em 11/10/2026, uma execução do `POST /trechos` pelo painel, selecionando o usu
 | Atualização do próprio registro | aceita sem conflito consigo mesmo |
 | Atualização para chave de outro registro | rejeição sem alterar o original |
 
-## Sequência controlada restante
+## Acompanhamentos operacionais restantes
 
 1. Confirmar o recebimento e armazenamento do CSV exportado.
-2. Executar a matriz com uma sessão real e registros temporários identificados, removendo-os ao final.
-3. Validar que os clientes e integrantes do time usam exclusivamente `POST /trechos` para gravações operacionais.
+2. Validar que os clientes e integrantes do time usam exclusivamente `POST /trechos` para gravações operacionais.
+3. Complementar a evidência de atualização: alteração do próprio registro, rejeição ao tentar assumir a chave de outro e mesmo par de estações em outra linha.
+4. Padronizar a colisão concorrente, hoje rejeitada pelo índice único com `HTTP 500`, para uma resposta de cliente como `HTTP 400` ou `409`.
 
 Para a matriz de escrita, deve ser usado um token recém-emitido pelo endpoint real `auth/login`, mantido somente na sessão de teste e nunca registrado em arquivo, saída de CI, captura de tela ou commit. O total de registros deve ser conferido antes e depois, e os registros temporários devem ser identificados e removidos ao final.
 
-As regras foram publicadas e a base atual passou na auditoria sem alterações. A matriz de referências, tempo, padrão de `ativo`, extremos e duplicatas foi executada por HTTP externo. A proteção concorrente também foi comprovada com uma criação e uma rejeição para a mesma chave, seguida da remoção dos registros temporários. Permanecem como recomendações complementares a atualização controlada e a confirmação de que os clientes não contornam o endpoint por operações administrativas; esses limites estão documentados e não fazem parte das tarefas restantes desta mudança.
+As regras foram publicadas e a base atual passou na auditoria sem alterações. A matriz de referências, tempo, padrão de `ativo`, extremos e duplicatas foi executada por HTTP externo. A proteção concorrente também foi comprovada com uma criação e uma rejeição para a mesma chave, seguida da remoção dos registros temporários. A mudança OpenSpec foi concluída e arquivada em `2026-10-19-integridade-trechos-xano`; os itens acima são acompanhamentos operacionais e melhorias posteriores, não tarefas abertas daquela mudança.
