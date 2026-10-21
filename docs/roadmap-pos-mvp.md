@@ -18,6 +18,11 @@ Cada etapa requer uma mudança OpenSpec própria antes de alterar contratos ou d
 - **P0 concluído:** CI, proteção de sessão expirada e auditoria de segredos foram validados e arquivados em `2026-09-23-auditoria-segredos-sessao`.
 - **P4 concluído:** confirmação de e-mail, recuperação de senha, uso único dos tokens e invalidação de sessões anteriores foram validados e arquivados em `2026-10-08-recuperacao-senha-verificacao-email`.
 - **Próxima etapa planejada: P1**, ainda sem mudança OpenSpec ativa.
+- **P5 avaliada em 21/10/2026:** a ARTESP oferece contrato documentado para a
+  malha delegada, enquanto a fonte agregada observada para Metrô e CPTM ainda exige
+  confirmação de autorização e condições de republicação. A mudança ativa
+  `integrar-status-operacional-multifonte` registra o desenho e as pendências; a
+  implementação permanece condicionada a essas confirmações e não altera a ordem P1 → P5.
 
 Os registros abaixo preservam a sequência de evidências obtidas durante o P0. Menções a trabalho ainda pendente descrevem o estado naquela data e foram superadas pelas conclusões posteriores registradas neste mesmo documento.
 
