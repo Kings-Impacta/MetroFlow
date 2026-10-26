@@ -1,5 +1,6 @@
 """Consultas do planejador com token lido exclusivamente do cookie HttpOnly."""
 
+import logging
 from typing import Annotated, NoReturn
 
 from fastapi import APIRouter, Depends, HTTPException, Request, Response
@@ -8,9 +9,13 @@ from MetroFlow.auth.infrastructure.session_cookie import get_session_token
 from MetroFlow.auth.infrastructure.xano_client import (
     XanoAuthClient, XanoAuthError, XanoAuthRejected,
 )
+from MetroFlow.planning.application.guidance import match_guidance
 from MetroFlow.planning.application.services import (
     InvalidRouteSelection, InvalidTripConfirmation, PlanningService,
 )
+from MetroFlow.planning.domain.guidance import StationGuidance
+from MetroFlow.planning.domain.models import RouteResult
+from MetroFlow.planning.infrastructure.guidance_csv import cached_guidance, guidance_enabled
 from MetroFlow.planning.infrastructure.xano_client import (
     PlanningError, PlanningUnauthorized, PlanningUnavailable, XanoPlanningClient,
 )
@@ -20,6 +25,7 @@ from MetroFlow.planning.presentation.view_models import (
 
 
 planning_api = APIRouter(prefix="/api/planning", tags=["planning"])
+logger = logging.getLogger(__name__)
 
 
 def session_token(request: Request, response: Response) -> str:
@@ -67,6 +73,17 @@ def trip_error(error: Exception) -> NoReturn:
     public_error(error)
 
 
+def route_guidance(result: RouteResult) -> dict[int, StationGuidance]:
+    """Orientacoes opcionais; qualquer falha devolve o trajeto sem elas."""
+    if not guidance_enabled():
+        return {}
+    try:
+        return match_guidance(result, cached_guidance())
+    except Exception:
+        logger.warning("Orientacoes ignoradas por falha na associacao.")
+        return {}
+
+
 @planning_api.get("/stations", response_model=list[StationChoice])
 def stations(token: Token) -> list[StationChoice]:
     try:
@@ -90,7 +107,7 @@ def route(selection: RouteRequest, token: Token) -> RouteView:
             raise HTTPException(404, "Não foi encontrado trajeto para essas estações. Atualize a lista e tente novamente.")
         if (result.origin.id, result.destination.id) != (selection.origin_id, selection.destination_id):
             raise ValueError("Resposta nao corresponde a selecao.")
-        return RouteView.from_route(result)
+        return RouteView.from_route(result, route_guidance(result))
     except (PlanningError, ValueError) as error:
         public_error(error)
 

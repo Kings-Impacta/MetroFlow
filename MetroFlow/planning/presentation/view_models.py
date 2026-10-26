@@ -1,7 +1,10 @@
 """Contrato publico do planejador, independente do formato bruto do Xano."""
 
+from collections.abc import Mapping
+
 from pydantic import BaseModel, ConfigDict, Field, StrictInt
 
+from MetroFlow.planning.domain.guidance import StationGuidance
 from MetroFlow.planning.domain.models import MAX_TRIP_SEGMENTS, RouteResult, Station
 
 
@@ -66,6 +69,22 @@ class StationChoice(BaseModel):
         )
 
 
+class GuidanceView(BaseModel):
+    alighting_side: str | None = None
+    note: str | None = None
+
+    @classmethod
+    def from_guidance(
+        cls,
+        guidance: StationGuidance,
+    ) -> "GuidanceView":
+        # Fonte e data ficam no cadastro; a resposta leva so a orientacao.
+        return cls(
+            alighting_side=guidance.alighting_side,
+            note=guidance.note,
+        )
+
+
 class SegmentView(BaseModel):
     # Identificam o trecho e o sentido percorrido na confirmacao da viagem.
     id: int
@@ -87,6 +106,13 @@ class SegmentView(BaseModel):
 
     seconds: int
 
+    # Omitido da resposta quando nao ha orientacao ou a
+    # funcionalidade foi desligada com METROFLOW_ORIENTACOES=0.
+    guidance: GuidanceView | None = Field(
+        default=None,
+        exclude_if=lambda value: value is None,
+    )
+
 
 class RouteView(BaseModel):
     origin: str
@@ -105,6 +131,7 @@ class RouteView(BaseModel):
     def from_route(
         cls,
         route: RouteResult,
+        guidance: Mapping[int, StationGuidance] | None = None,
     ) -> "RouteView":
         if (
             not route.stations
@@ -199,8 +226,13 @@ class RouteView(BaseModel):
                     seconds=(
                         step.estimated_time_seconds
                     ),
+                    guidance=(
+                        GuidanceView.from_guidance(guidance[index])
+                        if guidance and index in guidance
+                        else None
+                    ),
                 )
-                for step in route.segments
+                for index, step in enumerate(route.segments)
             ],
 
             transfers=[

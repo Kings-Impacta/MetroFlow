@@ -321,6 +321,37 @@ def _instruction_card(
                     font_weight="600",
                     line_height="1.5",
                 ),
+                rx.cond(
+                    (instruction["side"] != "")
+                    | (instruction["note"] != ""),
+                    rx.vstack(
+                        rx.cond(
+                            instruction["side"] != "",
+                            rx.text(
+                                instruction["side"],
+                                size="2",
+                                color=BLUE_DARK,
+                                font_weight="700",
+                                line_height="1.5",
+                            ),
+                        ),
+                        rx.cond(
+                            instruction["note"] != "",
+                            rx.text(
+                                instruction["note"],
+                                size="2",
+                                color=TEXT,
+                                line_height="1.5",
+                            ),
+                        ),
+                        spacing="1",
+                        align="start",
+                        padding="0.5rem 0.75rem",
+                        border_radius="8px",
+                        background="#eef2ff",
+                        width="100%",
+                    ),
+                ),
                 align="start",
                 spacing="2",
                 width="100%",
