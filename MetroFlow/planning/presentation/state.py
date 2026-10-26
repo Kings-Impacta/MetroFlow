@@ -1100,19 +1100,6 @@ class PlanningState(rx.State):
 
         self.message = ""
 
-    @rx.event
-    def confirm_trip(
-        self,
-    ):
-        """Confirma a viagem apresentada; o botao continua disponivel."""
-
-        if (
-            self.route_status
-            != "success"
-            or not self._trip_segments
-        ):
-            return
-
         self._trip_request_id += 1
 
         return rx.call_script(
@@ -1135,8 +1122,11 @@ class PlanningState(rx.State):
         self,
         result: dict,
     ):
-        # A interface nao exibe aviso apos a confirmacao. Somente a sessao
-        # expirada muda a tela, conduzindo ao login.
+        if result.get("request_id") != self._trip_request_id:
+            return
+
+        # A busca permanece disponível mesmo se o registro de concorrência
+        # falhar; somente uma sessão inválida interrompe o planejamento.
         if (
             result.get(
                 "status"

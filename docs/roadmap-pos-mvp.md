@@ -28,7 +28,7 @@ Cada etapa requer uma mudança OpenSpec própria antes de alterar contratos ou d
 
 A mudança `concorrencia-rotas` foi incluída fora da sequência P0–P6. Ela registra as viagens confirmadas no próprio MetroFlow, estima a lotação de cada trecho ferroviário por sentido e, quando o trajeto principal passa por um trecho lotado, apresenta o caminho de menor tempo que o evita. A estimativa é interna e não substitui o P5, que depende de fonte autorizada e de informação ao usuário, nem o P2, que prevê várias opções de trajeto.
 
-- **Concluído:** endpoint local `/api/planning/trip`, botão de confirmação no resultado, testes do backend, da interface e das funções de cálculo, e publicação no Xano das tabelas e dos endpoints descritos em [docs/xano/rascunhos/concorrencia-rotas](xano/rascunhos/concorrencia-rotas/README.md).
+- **Concluído:** endpoint local `/api/planning/trip`, registro automático após uma busca bem-sucedida, testes do backend, da interface e das funções de cálculo, e publicação no Xano das tabelas e dos endpoints descritos em [docs/xano/rascunhos/concorrencia-rotas](xano/rascunhos/concorrencia-rotas/README.md).
 - **Pendente:** reimportar a malha perdida no [incidente da tabela `trechos`](xano/incidente-trechos-2026-10-26.md), validar o fluxo com uma sessão real e substituir os parâmetros de lotação de teste (`1` e `1%`) pelos valores definidos pela equipe.
 
 Os registros abaixo preservam a sequência de evidências obtidas durante o P0. Menções a trabalho ainda pendente descrevem o estado naquela data e foram superadas pelas conclusões posteriores registradas neste mesmo documento.

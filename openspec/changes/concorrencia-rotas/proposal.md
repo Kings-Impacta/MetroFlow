@@ -4,7 +4,7 @@ Quando vários usuários seguem para o mesmo destino, os mesmos trechos concentr
 
 ## What Changes
 
-- Permitir que o usuário confirme, por um botão no resultado do trajeto, que vai fazer a viagem apresentada.
+- Registrar automaticamente como viagem ativa cada trajeto obtido com sucesso pelo usuário autenticado.
 - Registrar no Xano a viagem confirmada. Cada usuário tem no máximo uma viagem ativa; uma nova confirmação substitui a anterior, que deixa de contar imediatamente. Não há cancelamento manual.
 - Estimar, no momento da busca, a ocupação de cada trecho ferroviário em cada sentido a partir das viagens ativas, considerando cada viagem somente no intervalo estimado em que ela passa pelo trecho.
 - Considerar um trecho lotado quando ele atinge, ao mesmo tempo, um mínimo de usuários e um percentual do total de viagens ativas, ambos lidos de uma tabela de configuração no Xano.
@@ -33,4 +33,4 @@ Quando vários usuários seguem para o mesmo destino, os mesmos trechos concentr
 
 ## Impact
 
-Xano: nova tabela de viagens confirmadas, nova tabela de configuração, novo endpoint de confirmação e alteração do endpoint `trajetos/buscar`. Backend Python: novo endpoint local de confirmação com validação de sessão. Reflex: botão de confirmação no resultado. Documentação: roadmap, visão geral e modelo de domínio.
+Xano: nova tabela de viagens confirmadas, nova tabela de configuração, novo endpoint de confirmação e alteração do endpoint `trajetos/buscar`. Backend Python: endpoint local de confirmação com validação de sessão. Reflex: confirmação automática após uma busca bem-sucedida, sem botão adicional. Documentação: roadmap, visão geral e modelo de domínio.

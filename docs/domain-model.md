@@ -26,7 +26,7 @@ O tempo total resulta da soma dos tempos dos trechos mais **600 segundos por mud
 
 ## Viagem confirmada e lotação estimada
 
-A **viagem confirmada** registra que o usuário vai fazer o trajeto apresentado. Guarda o usuário da sessão, o momento da confirmação e os trechos em ordem, com o sentido percorrido e o tempo estimado. Cada usuário tem no máximo uma viagem ativa: uma nova confirmação, mesmo do mesmo trajeto, substitui a anterior e reinicia a janela. Não há cancelamento manual. Os registros são mantidos depois do fim da janela, mas só ficam acessíveis no Xano.
+A **viagem ativa** é registrada automaticamente quando uma busca apresenta um trajeto válido. Guarda o usuário da sessão, o momento do registro e os trechos em ordem, com o sentido percorrido e o tempo estimado. Cada usuário tem no máximo uma viagem ativa: uma nova busca bem-sucedida, mesmo do mesmo trajeto, substitui a anterior e reinicia a janela. Não há confirmação ou cancelamento manual. Os registros são mantidos depois do fim da janela, mas só ficam acessíveis no Xano.
 
 A **janela** da viagem vai da confirmação até a soma dos tempos dos trechos, sem a penalidade de baldeação. Dentro dela, a viagem ocupa cada trecho somente no intervalo estimado em que passa por ele.
 

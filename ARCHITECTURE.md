@@ -24,7 +24,7 @@ openspec/                    configuração, mudanças e especificações
 
 O usuário se autentica pelo Xano. O token permanece no backend e em cookie HttpOnly; a interface recebe apenas os dados públicos necessários. As páginas e os endpoints de planejamento exigem uma sessão válida. Uma resposta de sessão expirada remove o estado autenticado e conduz ao login.
 
-O navegador consulta os endpoints locais `/api/planning/stations` e `/api/planning/route` e confirma viagens em `/api/planning/trip`. O backend valida a sessão e os parâmetros, chama o Xano e normaliza a resposta. Na confirmação, o navegador envia somente os trechos e o sentido percorrido; o Xano obtém o usuário pela sessão e o tempo pelo cadastro. O domínio local verifica invariantes do trajeto antes de apresentá-lo. A interface descarta resultados de consultas antigas quando o usuário muda a seleção ou encerra a sessão.
+O navegador consulta os endpoints locais `/api/planning/stations` e `/api/planning/route` e, após uma busca bem-sucedida, registra automaticamente a viagem em `/api/planning/trip`. O backend valida a sessão e os parâmetros, chama o Xano e normaliza a resposta. No registro, o navegador envia somente os trechos e o sentido percorrido; o Xano obtém o usuário pela sessão e o tempo pelo cadastro. O domínio local verifica invariantes do trajeto antes de apresentá-lo. A interface descarta resultados e confirmações de consultas antigas quando o usuário muda a seleção ou encerra a sessão.
 
 ## Cálculo e apresentação
 
