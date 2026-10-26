@@ -174,3 +174,51 @@ class PlanningStateTests(unittest.TestCase):
         self.assertEqual(self.state.title, "")
         self.assertEqual(events[1].args[0][1]._var_value, "/login")
         self.assertIsNone(self.state.confirm_trip())
+
+    def receive_segments(self, segments, destination):
+        # Identificadores exigidos pelo contrato da confirmacao de viagem.
+        segments = [
+            {"id": index, "origin_id": index, "destination_id": index + 1, **item}
+            for index, item in enumerate(segments, 1)
+        ]
+        self.state.receive_route({"request_id": self.state._request_id, "status": 200, "ok": True, "data": {
+            "origin": segments[0]["origin"], "destination": destination,
+            "stations": [segments[0]["origin"], *[item["destination"] for item in segments]],
+            "seconds": 1000, "minutes": 17, "transfer_count": len(segments) - 1,
+            "segments": segments, "transfers": [],
+        }})
+        return self.state.instructions
+
+    def test_cartoes_sem_orientacao_tem_campos_vazios(self):
+        instructions = self.receive_segments([
+            {"origin": "Vergueiro", "destination": "Paraiso", "line": "Azul", "operator": "Metro", "seconds": 120},
+        ], "Paraiso")
+        self.assertEqual({(item["side"], item["note"]) for item in instructions}, {("", "")})
+
+    def test_orientacoes_aparecem_na_baldeacao_e_no_desembarque(self):
+        instructions = self.receive_segments([
+            {"origin": "Lapa", "destination": "Barra Funda", "line": "Linha 8", "operator": "Via",
+             "direction": "Júlio Prestes", "seconds": 300,
+             "guidance": {"alighting_side": "direito", "note": "Siga pela passarela"}},
+            {"origin": "Barra Funda", "destination": "Sé", "line": "Linha 3", "operator": "Metro",
+             "direction": "Corinthians-Itaquera", "seconds": 600,
+             "guidance": {"alighting_side": "ambos", "note": None}},
+        ], "Sé")
+        by_kind = {}
+        for item in instructions:
+            by_kind.setdefault(item["kind"], []).append((item["side"], item["note"]))
+        self.assertEqual(by_kind["BALDEAÇÃO"], [("Desembarque pelo lado direito", "Siga pela passarela")])
+        self.assertEqual(by_kind["DESEMBARQUE"], [("As portas abrem dos dois lados", "")])
+        # Embarque e trajeto no trem nao repetem a orientacao de descida.
+        self.assertEqual(set(by_kind["EMBARQUE"] + by_kind["SIGA"]), {("", "")})
+
+    def test_integracao_a_pe_recebe_orientacao_da_descida_anterior(self):
+        instructions = self.receive_segments([
+            {"origin": "Consolação", "destination": "Paulista", "line": "Linha 2", "operator": "Metro",
+             "direction": "Vila Prudente", "seconds": 120,
+             "guidance": {"alighting_side": None, "note": "Siga as placas da Linha 4"}},
+            {"origin": "Paulista", "destination": "Consolação", "line": "Integração", "operator": "Metro",
+             "segment_type": "transferencia", "seconds": 240},
+        ], "Consolação")
+        walk = next(item for item in instructions if item["kind"] == "INTEGRAÇÃO")
+        self.assertEqual((walk["side"], walk["note"]), ("", "Siga as placas da Linha 4"))

@@ -7,7 +7,29 @@ import reflex as rx
 from pydantic import TypeAdapter, ValidationError
 
 from MetroFlow.auth.presentation.state import AuthState
-from MetroFlow.planning.presentation.view_models import RouteView, StationChoice
+from MetroFlow.planning.presentation.view_models import (
+    GuidanceView,
+    RouteView,
+    StationChoice,
+)
+
+
+ALIGHTING_SIDE_TEXT = {
+    "esquerdo": "Desembarque pelo lado esquerdo",
+    "direito": "Desembarque pelo lado direito",
+    "ambos": "As portas abrem dos dois lados",
+}
+
+
+def guidance_fields(guidance: GuidanceView | None) -> dict[str, str]:
+    """Lado de desembarque em destaque e observacao; vazios quando ausentes."""
+
+    if guidance is None:
+        return {"side": "", "note": ""}
+    return {
+        "side": ALIGHTING_SIDE_TEXT.get(guidance.alighting_side or "", ""),
+        "note": guidance.note or "",
+    }
 
 
 def request_script(
@@ -180,6 +202,7 @@ class PlanningState(rx.State):
             "service_id": first_segment.service_id,
             "stops": 1,
             "seconds": first_segment.seconds,
+            "guidance": first_segment.guidance,
         }
 
         for segment in route.segments[1:]:
@@ -206,6 +229,8 @@ class PlanningState(rx.State):
                 current_group["destination"] = (
                     segment.destination
                 )
+
+                current_group["guidance"] = segment.guidance
 
                 if current_group["direction"] is None:
                     current_group["direction"] = segment.direction
@@ -251,6 +276,7 @@ class PlanningState(rx.State):
                     "seconds": (
                         segment.seconds
                     ),
+                    "guidance": segment.guidance,
                 }
 
         groups.append(
@@ -285,6 +311,7 @@ class PlanningState(rx.State):
                         f"{first_group['operator']}."
                     ),
                     "meta": boarding_meta,
+                    **guidance_fields(None),
                 }
             )
             step_number += 1
@@ -346,6 +373,11 @@ class PlanningState(rx.State):
                             "Caminhada de aproximadamente "
                             f"{group_minutes} min."
                         ),
+                        **guidance_fields(
+                            groups[index - 1]["guidance"]
+                            if index > 0
+                            else None
+                        ),
                     }
                 )
             else:
@@ -363,6 +395,7 @@ class PlanningState(rx.State):
                             f"{stops} {trecho_text} · aproximadamente "
                             f"{group_minutes} min · {group['operator']}"
                         ),
+                        **guidance_fields(None),
                     }
                 )
 
@@ -415,6 +448,7 @@ class PlanningState(rx.State):
                                 f"{next_group['line']}."
                             ),
                             "meta": transfer_meta,
+                            **guidance_fields(group["guidance"]),
                         }
                     )
                     step_number += 1
@@ -449,6 +483,7 @@ class PlanningState(rx.State):
                                 "da estação."
                             )
                         ),
+                        **guidance_fields(None),
                     }
                 )
 
@@ -475,6 +510,11 @@ class PlanningState(rx.State):
                 "meta": (
                     "Finalize sua viagem "
                     "nesta estação."
+                ),
+                **guidance_fields(
+                    None
+                    if arrived_on_foot
+                    else groups[-1]["guidance"]
                 ),
             }
         )

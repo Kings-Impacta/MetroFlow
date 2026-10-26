@@ -16,6 +16,7 @@ MetroFlow/
 
 tests/unit/                  testes por módulo e responsabilidade
 docs/                        visão geral, domínio, integração e evidências
+docs/dados/                  orientações de estação coletadas pelo grupo (CSV)
 openspec/                    configuração, mudanças e especificações
 ```
 
@@ -30,5 +31,11 @@ O navegador consulta os endpoints locais `/api/planning/stations` e `/api/planni
 O Xano escolhe o caminho pelo menor tempo estimado: soma dos tempos dos trechos mais 600 segundos por mudança de linha. Em empate, prioriza menos baldeações. O resultado apresenta estações, linhas, operadores, sentidos e instruções de viagem. A penalidade fixa não representa tempos reais de caminhada, espera ou transferência.
 
 Com a mudança `concorrencia-rotas`, publicada no Xano em 26/10/2026, a busca também estima a lotação de cada trecho ferroviário a partir das viagens confirmadas. Se o trajeto principal passar por um trecho lotado, o Xano devolve o caminho de menor tempo que o evita. A estimativa permanece no Xano e não faz parte da resposta pública.
+
+## Orientações de estação (origem local temporária)
+
+As orientações de estação, com o lado de desembarque como informação principal e uma observação adicional em texto livre, vêm do arquivo `docs/dados/orientacoes-estacoes.csv`, lido pelo backend Python, e não do Xano. A funcionalidade fica ligada por padrão; com `METROFLOW_ORIENTACOES=0`, a resposta e a interface permanecem como antes.
+
+Essa origem local é uma decisão temporária. As orientações não são dados da malha: não definem estações, linhas, trechos ou tempos e não participam do cálculo, que continua no Xano. O backend associa as dicas a um trajeto já calculado, por nome normalizado de estação, linha e sentido, e qualquer falha na leitura devolve o trajeto sem elas. Uma mudança futura poderá migrar o cadastro para o Xano. O [guia de coleta](docs/dados/README.md) descreve o formato e o estado atual dos dados.
 
 O [modelo de domínio](docs/domain-model.md) detalha esses conceitos. As [evidências de validação](docs/validacao-integracao-xano.md) e a [auditoria complementar do Xano](docs/xano/auditoria-integridade-2026-10-08.md) registram o que foi verificado e os limites operacionais restantes. Registros históricos de implementação permanecem nesses documentos e no histórico do Git.

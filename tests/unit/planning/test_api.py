@@ -1,6 +1,7 @@
 """Fronteira HTTP: autenticacao, entradas e contrato publico do planejador."""
 
 import unittest
+from datetime import date
 from unittest.mock import MagicMock, patch
 
 from fastapi import FastAPI
@@ -8,6 +9,7 @@ from fastapi.testclient import TestClient
 
 from MetroFlow.auth.infrastructure.session_cookie import SESSION_COOKIE_NAME
 from MetroFlow.auth.infrastructure.xano_client import XanoAuthRejected
+from MetroFlow.planning.domain.guidance import StationGuidance
 from MetroFlow.planning.domain.models import Line, Operator, RouteResult, Segment, Station, Transfer
 from MetroFlow.planning.domain.models import TripConfirmation, TripSegment
 from MetroFlow.planning.infrastructure.xano_client import PlanningError, PlanningUnauthorized, PlanningUnavailable
@@ -223,3 +225,65 @@ class PlanningApiTests(unittest.TestCase):
         response = self.browser.post("/api/planning/trip", json=TRIP)
         self.assertEqual(response.status_code, 503)
         self.assertNotIn("internal-secret", response.text)
+
+class PlanningApiGuidanceTests(unittest.TestCase):
+    def setUp(self):
+        PlanningApiTests.setUp(self)
+        line = self.origin.lines[0]
+        self.gateway.find_route.return_value = RouteResult(
+            self.origin, self.destination, (self.origin, self.destination),
+            (Segment(1, self.origin, self.destination, line, 120, direction="Jabaquara"),), (), 120,
+        )
+        self.entry = StationGuidance(
+            station="Paraíso", line="linha azul", direction="Jabaquara",
+            source="observação em campo", collected_on=date(2026, 10, 25),
+            alighting_side="esquerdo", note="Carro 4, perto da escada rolante",
+        )
+
+    def post_route(self, enabled, entries=None, error=None):
+        loader = MagicMock(return_value=entries if entries is not None else (self.entry,))
+        if error is not None:
+            loader.side_effect = error
+        environ = {"METROFLOW_ORIENTACOES": "1" if enabled else "0"}
+        with patch.dict("os.environ", environ), \
+                patch("MetroFlow.planning.presentation.api.cached_guidance", loader):
+            response = self.browser.post("/api/planning/route", json={"origin_id": 1, "destination_id": 2})
+        return response, loader
+
+    def test_ligada_por_padrao_sem_variavel(self):
+        loader = MagicMock(return_value=(self.entry,))
+        with patch("MetroFlow.planning.infrastructure.guidance_csv.os.environ", {}),                 patch("MetroFlow.planning.presentation.api.cached_guidance", loader):
+            response = self.browser.post("/api/planning/route", json={"origin_id": 1, "destination_id": 2})
+        self.assertEqual(response.json()["segments"][0]["guidance"]["alighting_side"], "esquerdo")
+
+    def test_desligada_resposta_sem_campo_novo_e_sem_leitura(self):
+        response, loader = self.post_route(enabled=False)
+        self.assertEqual(response.status_code, 200)
+        self.assertNotIn("guidance", response.json()["segments"][0])
+        loader.assert_not_called()
+
+    def test_ligada_inclui_somente_campos_publicos(self):
+        response, _ = self.post_route(enabled=True)
+        self.assertEqual(response.status_code, 200)
+        self.assertEqual(response.json()["segments"][0]["guidance"], {
+            "alighting_side": "esquerdo", "note": "Carro 4, perto da escada rolante",
+        })
+        self.assertNotIn("observação em campo", response.text)
+        self.assertNotIn("private-test-token", response.text)
+
+    def test_ligada_sem_cadastro_mantem_resposta_atual(self):
+        enabled, _ = self.post_route(enabled=True, entries=())
+        disabled, _ = self.post_route(enabled=False)
+        self.assertEqual(enabled.json(), disabled.json())
+
+    def test_falha_nas_orientacoes_nao_bloqueia_o_trajeto(self):
+        response, _ = self.post_route(enabled=True, error=RuntimeError("internal-guidance"))
+        self.assertEqual(response.status_code, 200)
+        self.assertNotIn("guidance", response.json()["segments"][0])
+        self.assertNotIn("internal-guidance", response.text)
+
+    def test_orientacoes_nao_alteram_tempo_nem_trechos(self):
+        enabled, _ = self.post_route(enabled=True)
+        disabled, _ = self.post_route(enabled=False)
+        for key in ["seconds", "minutes", "stations", "transfers", "transfer_count"]:
+            self.assertEqual(enabled.json()[key], disabled.json()[key])

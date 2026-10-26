@@ -83,6 +83,39 @@ Resposta `204`, sem corpo. O usuário é obtido da sessão pelo Xano, e o tempo 
 cada trecho vem do cadastro. O corpo não aceita outros campos, como usuário ou
 tempo. Os trechos devem ser consecutivos, com no máximo 200 itens.
 
+### Orientações de estação
+
+O trecho que encerra uma etapa pode trazer o campo opcional `guidance`, com as
+dicas da estação onde o passageiro desce. O campo é omitido quando não há
+orientação cadastrada ou quando a funcionalidade é desligada com
+`METROFLOW_ORIENTACOES=0`. Fonte e data de coleta não fazem parte da resposta.
+
+```json
+{
+  "id": 15,
+  "origin_id": 1,
+  "destination_id": 2,
+  "origin": "Vergueiro",
+  "destination": "Paraíso",
+  "line": "Linha 1 - Azul",
+  "operator": "Metrô",
+  "direction": "Jabaquara",
+  "segment_type": "ferroviario",
+  "directed": false,
+  "service_id": null,
+  "seconds": 120,
+  "guidance": {
+    "alighting_side": "esquerdo",
+    "note": "Desça no carro 4, em frente à escada rolante da saída Rua Tutóia."
+  }
+}
+```
+
+Os valores acima são ilustrativos. `alighting_side` aceita `esquerdo`, `direito`
+ou `ambos`; `note` é a observação adicional, com até 200 caracteres. Qualquer um
+dos dois pode ser `null`. Uma falha na leitura das orientações não altera o status da resposta:
+o trajeto é devolvido sem o campo.
+
 ## Respostas de erro
 
 As respostas seguem o formato padrão de erro do FastAPI:
