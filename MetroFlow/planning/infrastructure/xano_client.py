@@ -14,6 +14,7 @@ from MetroFlow.planning.domain.models import (
     Segment,
     Station,
     Transfer,
+    TripConfirmation,
 )
 
 
@@ -136,13 +137,40 @@ class XanoPlanningClient:
 
         return self._decode_route(payload)
 
+    def confirm_trip(
+        self,
+        trip: TripConfirmation,
+        auth_token: str,
+    ) -> None:
+        # O Xano obtem o usuario pela sessao e le o tempo dos trechos cadastrados.
+        payload = self._request(
+            "POST",
+            "viagens/confirmar",
+            auth_token=auth_token,
+            json={
+                "trechos": [
+                    {
+                        "id": step.segment_id,
+                        "estacao_origem_id": step.origin_id,
+                        "estacao_destino_id": step.destination_id,
+                    }
+                    for step in trip.segments
+                ],
+            },
+        )
+
+        if payload is None or payload.get("confirmada") is not True:
+            raise PlanningError(
+                "Resposta de confirmacao invalida."
+            )
+
     def _request(
         self,
         method: str,
         path: str,
         *,
         auth_token: str,
-        json: dict[str, int] | None = None,
+        json: dict[str, Any] | None = None,
         allow_not_found: bool = False,
     ) -> dict[str, Any] | None:
         if not auth_token:

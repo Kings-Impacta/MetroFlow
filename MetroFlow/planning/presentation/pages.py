@@ -338,6 +338,22 @@ def _instruction_card(
     )
 
 
+def _confirm_trip_button() -> rx.Component:
+    # Sem aviso apos a confirmacao: o botao permanece disponivel.
+    return rx.button(
+        "Confirmar viagem",
+        type="button",
+        size="3",
+        background=BLUE,
+        color=WHITE,
+        _hover={
+            "background": BLUE_DARK,
+        },
+        aria_label="Confirmar que vou fazer esta viagem",
+        on_click=PlanningState.confirm_trip,
+    )
+
+
 def _result() -> rx.Component:
     return rx.card(
         rx.vstack(
@@ -414,6 +430,8 @@ def _result() -> rx.Component:
                 size="2",
                 color=MUTED,
             ),
+
+            _confirm_trip_button(),
 
             rx.divider(),
 

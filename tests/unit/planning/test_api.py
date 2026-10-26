@@ -9,8 +9,14 @@ from fastapi.testclient import TestClient
 from MetroFlow.auth.infrastructure.session_cookie import SESSION_COOKIE_NAME
 from MetroFlow.auth.infrastructure.xano_client import XanoAuthRejected
 from MetroFlow.planning.domain.models import Line, Operator, RouteResult, Segment, Station, Transfer
-from MetroFlow.planning.infrastructure.xano_client import PlanningUnavailable
+from MetroFlow.planning.domain.models import TripConfirmation, TripSegment
+from MetroFlow.planning.infrastructure.xano_client import PlanningError, PlanningUnauthorized, PlanningUnavailable
 from MetroFlow.planning.presentation.api import planning_api
+
+TRIP = {"segments": [
+    {"id": 10, "origin_id": 1, "destination_id": 3},
+    {"id": 11, "origin_id": 3, "destination_id": 2},
+]}
 
 
 class PlanningApiTests(unittest.TestCase):
@@ -78,6 +84,10 @@ class PlanningApiTests(unittest.TestCase):
         self.assertEqual(body["stations"], ["Vergueiro", "Paraiso"])
         self.assertEqual((body["seconds"], body["minutes"], body["transfer_count"]), (120, 2, 0))
         self.assertEqual(body["segments"][0]["operator"], "Metro")
+        self.assertEqual(
+            (body["segments"][0]["id"], body["segments"][0]["origin_id"], body["segments"][0]["destination_id"]),
+            (1, 1, 2),
+        )
         self.assertNotIn("private-test-token", response.text)
         self.auth.me.assert_called_once_with("private-test-token")
         self.gateway.find_route.assert_called_once_with(1, 2, "private-test-token")
@@ -137,3 +147,79 @@ class PlanningApiTests(unittest.TestCase):
     def test_rota_de_outra_selecao_nao_e_exibida(self):
         response = self.browser.post("/api/planning/route", json={"origin_id": 2, "destination_id": 1})
         self.assertEqual(response.status_code, 502)
+
+    def test_rota_nao_expoe_dados_de_lotacao(self):
+        response = self.browser.post("/api/planning/route", json={"origin_id": 1, "destination_id": 2})
+        body = response.json()
+        public_keys = set(body) | {key for segment in body["segments"] for key in segment}
+        for forbidden in ("lotac", "ocupac", "substitu", "viage", "crowd", "occupancy", "replaced"):
+            self.assertFalse(any(forbidden in key for key in public_keys), forbidden)
+
+    def test_confirmacao_registra_viagem_sem_devolver_registros(self):
+        response = self.browser.post("/api/planning/trip", json=TRIP)
+        self.assertEqual(response.status_code, 204)
+        self.assertEqual(response.content, b"")
+        self.assertEqual(response.headers["cache-control"], "no-store")
+        self.auth.me.assert_called_once_with("private-test-token")
+        self.gateway.confirm_trip.assert_called_once_with(
+            TripConfirmation((TripSegment(10, 1, 3), TripSegment(11, 3, 2))),
+            "private-test-token",
+        )
+
+    def test_confirmacao_sem_cookie_nao_registra(self):
+        self.browser.cookies.clear()
+        response = self.browser.post("/api/planning/trip", json=TRIP)
+        self.assertEqual(response.status_code, 401)
+        self.auth.me.assert_not_called()
+        self.gateway.confirm_trip.assert_not_called()
+
+    def test_confirmacao_com_sessao_expirada_nao_registra(self):
+        self.auth.me.side_effect = XanoAuthRejected("expired", 401)
+        response = self.browser.post("/api/planning/trip", json=TRIP)
+        self.assertEqual(response.status_code, 401)
+        self.assertNotIn("private-test-token", response.text)
+        self.gateway.confirm_trip.assert_not_called()
+
+    def test_confirmacao_rejeitada_pela_sessao_do_xano(self):
+        self.gateway.confirm_trip.side_effect = PlanningUnauthorized("internal-secret", 403)
+        response = self.browser.post("/api/planning/trip", json=TRIP)
+        self.assertEqual(response.status_code, 401)
+        self.assertNotIn("internal-secret", response.text)
+
+    def test_confirmacao_nao_aceita_usuario_ou_tempo_do_navegador(self):
+        invalid_bodies = [
+            {**TRIP, "usuario_id": 7},
+            {"segments": [{**TRIP["segments"][0], "tempo_estimado": 1}]},
+            {"segments": []},
+            {"segments": [{"id": 10, "origin_id": 1, "destination_id": 3}] * 201},
+            {"segments": [{"id": True, "origin_id": 1, "destination_id": 3}]},
+            {"segments": [{"id": 10, "origin_id": 0, "destination_id": 3}]},
+            {"segments": [{"id": "10", "origin_id": 1, "destination_id": 3}]},
+        ]
+        for body in invalid_bodies:
+            with self.subTest(body=body):
+                response = self.browser.post("/api/planning/trip", json=body)
+                self.assertEqual(response.status_code, 422)
+        self.gateway.confirm_trip.assert_not_called()
+
+    def test_confirmacao_de_trechos_desconexos_e_rejeitada(self):
+        for segments in [
+            [{"id": 10, "origin_id": 1, "destination_id": 3}, {"id": 11, "origin_id": 2, "destination_id": 4}],
+            [{"id": 10, "origin_id": 1, "destination_id": 1}],
+        ]:
+            with self.subTest(segments=segments):
+                response = self.browser.post("/api/planning/trip", json={"segments": segments})
+                self.assertEqual(response.status_code, 400)
+        self.gateway.confirm_trip.assert_not_called()
+
+    def test_confirmacao_recusada_pelo_xano_nao_expoe_mensagem_interna(self):
+        self.gateway.confirm_trip.side_effect = PlanningError("internal-payload", 400)
+        response = self.browser.post("/api/planning/trip", json=TRIP)
+        self.assertEqual(response.status_code, 400)
+        self.assertNotIn("internal-payload", response.text)
+
+    def test_confirmacao_com_xano_indisponivel(self):
+        self.gateway.confirm_trip.side_effect = PlanningUnavailable("internal-secret")
+        response = self.browser.post("/api/planning/trip", json=TRIP)
+        self.assertEqual(response.status_code, 503)
+        self.assertNotIn("internal-secret", response.text)
