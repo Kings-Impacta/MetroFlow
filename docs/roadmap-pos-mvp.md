@@ -30,6 +30,7 @@ A mudança `concorrencia-rotas` foi incluída fora da sequência P0–P6. Ela re
 
 - **Concluído:** endpoint local `/api/planning/trip`, botão de confirmação no resultado, testes do backend, da interface e das funções de cálculo, e publicação no Xano das tabelas e dos endpoints descritos em [docs/xano/rascunhos/concorrencia-rotas](xano/rascunhos/concorrencia-rotas/README.md).
 - **Pendente:** reimportar a malha perdida no [incidente da tabela `trechos`](xano/incidente-trechos-2026-10-26.md), validar o fluxo com uma sessão real e substituir os parâmetros de lotação de teste (`1` e `1%`) pelos valores definidos pela equipe.
+- **Em andamento:** a mudança `retorno-confirmacao-viagem` exibe o retorno da confirmação no botão do resultado, que antes não indicava se a viagem tinha sido registrada.
 
 Os registros abaixo preservam a sequência de evidências obtidas durante o P0. Menções a trabalho ainda pendente descrevem o estado naquela data e foram superadas pelas conclusões posteriores registradas neste mesmo documento.
 

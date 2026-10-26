@@ -32,7 +32,7 @@ O Xano calcula o trajeto principal pela regra atual. Se algum trecho dele, no se
 
 ### Integração
 
-O Reflex exibe o botão de confirmação no resultado. O backend Python expõe um endpoint local de confirmação que revalida a sessão como em `/api/planning/route`, valida o corpo e chama o novo endpoint autenticado do Xano. O usuário da viagem é obtido da sessão no Xano, nunca de um campo enviado pela interface. Após a confirmação, a interface não exibe aviso e mantém o botão disponível.
+O Reflex exibe o botão de confirmação no resultado. O backend Python expõe um endpoint local de confirmação que revalida a sessão como em `/api/planning/route`, valida o corpo e chama o novo endpoint autenticado do Xano. O usuário da viagem é obtido da sessão no Xano, nunca de um campo enviado pela interface. Após a confirmação, a interface não exibe aviso e mantém o botão disponível. A mudança `retorno-confirmacao-viagem` substituiu essa decisão: o botão indica o envio, fica desativado com "Viagem confirmada" após o registro e, em caso de falha, exibe uma mensagem e volta a ficar disponível.
 
 ### Retenção dos registros
 
@@ -49,4 +49,4 @@ Os registros de viagens confirmadas são mantidos sem prazo de exclusão e ficam
 
 ## Open Questions
 
-- O que a interface mostra quando a confirmação falha por erro do serviço, já que não há aviso de sucesso?
+- O que a interface mostra quando a confirmação falha por erro do serviço, já que não há aviso de sucesso? Respondida na mudança `retorno-confirmacao-viagem`: uma mensagem de erro abaixo do botão, que volta a ficar disponível.

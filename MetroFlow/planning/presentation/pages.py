@@ -370,18 +370,72 @@ def _instruction_card(
 
 
 def _confirm_trip_button() -> rx.Component:
-    # Sem aviso apos a confirmacao: o botao permanece disponivel.
-    return rx.button(
-        "Confirmar viagem",
-        type="button",
-        size="3",
-        background=BLUE,
-        color=WHITE,
-        _hover={
-            "background": BLUE_DARK,
-        },
-        aria_label="Confirmar que vou fazer esta viagem",
-        on_click=PlanningState.confirm_trip,
+    # Desativado durante o envio e apos a confirmacao; uma falha exibe a
+    # mensagem e libera o botao. Um novo resultado volta ao estado inicial.
+    confirmed = PlanningState.trip_status == "confirmed"
+    loading = PlanningState.trip_status == "loading"
+
+    return rx.vstack(
+        rx.box(
+            rx.button(
+                rx.cond(
+                    confirmed,
+                    rx.icon(
+                        "check",
+                        size=18,
+                    ),
+                ),
+                rx.cond(
+                    confirmed,
+                    "Viagem confirmada",
+                    "Confirmar viagem",
+                ),
+                type="button",
+                size="3",
+                background=rx.cond(
+                    confirmed,
+                    "#dcfce7",
+                    BLUE,
+                ),
+                color=rx.cond(
+                    confirmed,
+                    "#166534",
+                    WHITE,
+                ),
+                _hover={
+                    "background": rx.cond(
+                        confirmed,
+                        "#dcfce7",
+                        BLUE_DARK,
+                    ),
+                },
+                aria_label=rx.cond(
+                    confirmed,
+                    "Viagem confirmada",
+                    "Confirmar que vou fazer esta viagem",
+                ),
+                loading=loading,
+                disabled=(
+                    loading
+                    | confirmed
+                ),
+                on_click=PlanningState.confirm_trip,
+            ),
+            aria_live="polite",
+        ),
+        rx.cond(
+            PlanningState.trip_message != "",
+            rx.callout(
+                PlanningState.trip_message,
+                icon="triangle_alert",
+                color_scheme="red",
+                role="alert",
+                width="100%",
+            ),
+        ),
+        align="start",
+        spacing="2",
+        width="100%",
     )
 
 

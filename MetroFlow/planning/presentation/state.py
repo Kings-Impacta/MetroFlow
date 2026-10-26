@@ -134,6 +134,11 @@ class PlanningState(rx.State):
 
     _request_id: int = 0
 
+    # Retorno da confirmacao do resultado apresentado:
+    # idle, loading, confirmed ou error.
+    trip_status: str = "idle"
+    trip_message: str = ""
+
     # Trechos do resultado apresentado, enviados ao confirmar a viagem.
     _trip_segments: list[dict[str, int]] = []
     _trip_request_id: int = 0
@@ -152,6 +157,11 @@ class PlanningState(rx.State):
         self.has_walking_integration = False
 
         self._trip_segments = []
+
+        # Descarta a resposta de uma confirmacao do resultado anterior.
+        self._trip_request_id += 1
+        self.trip_status = "idle"
+        self.trip_message = ""
 
     def _filter_stations(
         self,
@@ -1104,16 +1114,21 @@ class PlanningState(rx.State):
     def confirm_trip(
         self,
     ):
-        """Confirma a viagem apresentada; o botao continua disponivel."""
+        """Confirma a viagem apresentada uma unica vez por resultado."""
 
         if (
             self.route_status
             != "success"
             or not self._trip_segments
+            or self.trip_status
+            in ("loading", "confirmed")
         ):
             return
 
         self._trip_request_id += 1
+
+        self.trip_status = "loading"
+        self.trip_message = ""
 
         return rx.call_script(
             request_script(
@@ -1135,8 +1150,14 @@ class PlanningState(rx.State):
         self,
         result: dict,
     ):
-        # A interface nao exibe aviso apos a confirmacao. Somente a sessao
-        # expirada muda a tela, conduzindo ao login.
+        if (
+            result.get(
+                "request_id"
+            )
+            != self._trip_request_id
+        ):
+            return
+
         if (
             result.get(
                 "status"
@@ -1146,3 +1167,40 @@ class PlanningState(rx.State):
             return (
                 self._unauthenticated()
             )
+
+        if (
+            result.get(
+                "ok"
+            )
+            is True
+        ):
+            self.trip_status = (
+                "confirmed"
+            )
+
+            return
+
+        # As mensagens nao repetem o detalhe recebido do backend.
+        self.trip_status = "error"
+
+        self.trip_message = {
+            400: (
+                "Não foi possível "
+                "confirmar esta viagem. "
+                "Busque o trajeto novamente."
+            ),
+            422: (
+                "Não foi possível "
+                "confirmar esta viagem. "
+                "Busque o trajeto novamente."
+            ),
+        }.get(
+            result.get(
+                "status"
+            ),
+            (
+                "Não foi possível "
+                "confirmar a viagem agora. "
+                "Tente novamente."
+            ),
+        )

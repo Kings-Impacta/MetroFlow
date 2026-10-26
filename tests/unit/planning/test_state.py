@@ -150,19 +150,79 @@ class PlanningStateTests(unittest.TestCase):
         self.state.select_origin("2")
         self.assertIsNone(self.state.confirm_trip())
 
-    def test_confirmacao_nao_exibe_aviso_e_mantem_botao_disponivel(self):
+    def _receive_trip(self, status, ok, request_id=None):
+        return self.state.receive_trip_confirmation({
+            "request_id": self.state._trip_request_id if request_id is None else request_id,
+            "status": status, "ok": ok, "data": None,
+        })
+
+    def test_confirmacao_em_andamento_nao_envia_de_novo(self):
         self._receive_success()
-        for status, ok in [(204, True), (503, False), (0, False)]:
+        self.assertIsNotNone(self.state.confirm_trip())
+        self.assertEqual(self.state.trip_status, "loading")
+        self.assertIsNone(self.state.confirm_trip())
+
+    def test_confirmacao_registrada_exibe_viagem_confirmada(self):
+        self._receive_success()
+        self.state.confirm_trip()
+        self.assertIsNone(self._receive_trip(204, True))
+        self.assertEqual(self.state.trip_status, "confirmed")
+        self.assertEqual(self.state.trip_message, "")
+        self.assertEqual(self.state.route_status, "success")
+        self.assertEqual(self.state.title, "Vergueiro → Paraiso")
+        self.assertIsNone(self.state.confirm_trip())
+
+    def test_falha_na_confirmacao_exibe_mensagem_e_libera_o_botao(self):
+        recusada = "Não foi possível confirmar esta viagem. Busque o trajeto novamente."
+        indisponivel = "Não foi possível confirmar a viagem agora. Tente novamente."
+        self._receive_success()
+        for status, message in [
+            (400, recusada), (422, recusada), (502, indisponivel), (503, indisponivel), (0, indisponivel),
+        ]:
             with self.subTest(status=status):
-                event = self.state.confirm_trip()
-                self.assertIsNotNone(event)
-                self.assertIsNone(self.state.receive_trip_confirmation(
-                    {"request_id": self.state._trip_request_id, "status": status, "ok": ok, "data": None}
-                ))
+                self.assertIsNotNone(self.state.confirm_trip())
+                self.assertIsNone(self._receive_trip(status, False))
+                self.assertEqual(self.state.trip_status, "error")
+                self.assertEqual(self.state.trip_message, message)
                 self.assertEqual(self.state.route_status, "success")
                 self.assertEqual(self.state.message, "")
-                self.assertEqual(self.state.title, "Vergueiro → Paraiso")
         self.assertIsNotNone(self.state.confirm_trip())
+        self.assertEqual(self.state.trip_message, "")
+
+    def test_novo_resultado_libera_o_botao(self):
+        self._receive_success()
+        self.state.confirm_trip()
+        self._receive_trip(204, True)
+        self.state.search({})
+        self._receive_success()
+        self.assertEqual(self.state.trip_status, "idle")
+        self.assertIsNotNone(self.state.confirm_trip())
+
+    def test_trocar_selecao_ou_sair_limpa_o_retorno(self):
+        for name in ("select_origin", "swap_route_selection", "clear_planner"):
+            with self.subTest(name=name):
+                self.setUp()
+                self._receive_success()
+                self.state.confirm_trip()
+                self._receive_trip(503, False)
+                getattr(self.state, name)(*(["2"] if name == "select_origin" else []))
+                self.assertEqual(self.state.trip_status, "idle")
+                self.assertEqual(self.state.trip_message, "")
+
+    def test_resposta_de_confirmacao_antiga_e_descartada(self):
+        for name, args in (("search", [{}]), ("clear_planner", [])):
+            with self.subTest(name=name):
+                self.setUp()
+                self._receive_success()
+                self.state.confirm_trip()
+                previous_id = self.state._trip_request_id
+                getattr(self.state, name)(*args)
+                self._receive_success()
+                for status, ok in [(204, True), (503, False), (401, False)]:
+                    self.assertIsNone(self._receive_trip(status, ok, previous_id))
+                    self.assertEqual(self.state.trip_status, "idle")
+                    self.assertEqual(self.state.trip_message, "")
+                    self.assertEqual(self.state.route_status, "success")
 
     def test_confirmacao_com_sessao_expirada_redireciona(self):
         self._receive_success()
