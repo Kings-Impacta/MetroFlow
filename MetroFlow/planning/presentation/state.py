@@ -112,6 +112,10 @@ class PlanningState(rx.State):
 
     _request_id: int = 0
 
+    # Trechos do resultado apresentado, enviados ao confirmar a viagem.
+    _trip_segments: list[dict[str, int]] = []
+    _trip_request_id: int = 0
+
     def _clear_result(self) -> None:
         self.title = ""
         self.station_names = []
@@ -124,6 +128,8 @@ class PlanningState(rx.State):
         self.seconds = 0
         self.transfer_count = 0
         self.has_walking_integration = False
+
+        self._trip_segments = []
 
     def _filter_stations(
         self,
@@ -1038,8 +1044,65 @@ class PlanningState(rx.State):
             )
         )
 
+        self._trip_segments = [
+            {
+                "id": step.id,
+                "origin_id": step.origin_id,
+                "destination_id": step.destination_id,
+            }
+            for step
+            in route.segments
+        ]
+
         self.route_status = (
             "success"
         )
 
         self.message = ""
+
+    @rx.event
+    def confirm_trip(
+        self,
+    ):
+        """Confirma a viagem apresentada; o botao continua disponivel."""
+
+        if (
+            self.route_status
+            != "success"
+            or not self._trip_segments
+        ):
+            return
+
+        self._trip_request_id += 1
+
+        return rx.call_script(
+            request_script(
+                "/api/planning/trip",
+                self._trip_request_id,
+                {
+                    "segments": (
+                        self._trip_segments
+                    ),
+                },
+            ),
+            callback=(
+                PlanningState.receive_trip_confirmation
+            ),
+        )
+
+    @rx.event
+    def receive_trip_confirmation(
+        self,
+        result: dict,
+    ):
+        # A interface nao exibe aviso apos a confirmacao. Somente a sessao
+        # expirada muda a tela, conduzindo ao login.
+        if (
+            result.get(
+                "status"
+            )
+            == 401
+        ):
+            return (
+                self._unauthenticated()
+            )

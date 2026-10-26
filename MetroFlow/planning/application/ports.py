@@ -2,7 +2,7 @@
 
 from typing import Protocol
 
-from MetroFlow.planning.domain.models import RouteResult, Station
+from MetroFlow.planning.domain.models import RouteResult, Station, TripConfirmation
 
 
 class PlanningGateway(Protocol):
@@ -14,3 +14,9 @@ class PlanningGateway(Protocol):
         destination_id: int,
         auth_token: str,
     ) -> RouteResult | None: ...
+
+    def confirm_trip(
+        self,
+        trip: TripConfirmation,
+        auth_token: str,
+    ) -> None: ...

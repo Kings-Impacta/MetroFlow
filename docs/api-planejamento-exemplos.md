@@ -40,6 +40,9 @@ Resposta `200`:
   "transfer_count": 0,
   "segments": [
     {
+      "id": 15,
+      "origin_id": 1,
+      "destination_id": 2,
       "origin": "Vergueiro",
       "destination": "Paraíso",
       "line": "Linha 1 - Azul",
@@ -56,7 +59,29 @@ Resposta `200`:
 ```
 
 Quando há mudança de linha, `seconds` inclui 600 segundos por baldeação e
-`transfers` informa a estação e as linhas envolvidas.
+`transfers` informa a estação e as linhas envolvidas. Em cada trecho, `id`,
+`origin_id` e `destination_id` identificam o trecho e o sentido percorrido,
+usados na confirmação da viagem.
+
+O trajeto apresentado pode ser o principal ou, conforme a mudança
+`concorrencia-rotas`, o caminho que o substitui por lotação. A resposta tem a
+mesma forma nos dois casos e não informa lotação nem substituição.
+
+## Confirmação de viagem
+
+`POST /api/planning/trip`
+
+```json
+{
+  "segments": [
+    {"id": 15, "origin_id": 1, "destination_id": 2}
+  ]
+}
+```
+
+Resposta `204`, sem corpo. O usuário é obtido da sessão pelo Xano, e o tempo de
+cada trecho vem do cadastro. O corpo não aceita outros campos, como usuário ou
+tempo. Os trechos devem ser consecutivos, com no máximo 200 itens.
 
 ## Respostas de erro
 
@@ -79,6 +104,8 @@ As respostas seguem o formato padrão de erro do FastAPI:
 | Xano indisponível | 503 | O serviço de trajetos está indisponível. Tente novamente. |
 | Falha ao verificar a sessão | 503 | Não foi possível verificar sua sessão. Tente novamente. |
 | Resposta inconsistente ou incompleta | 502 | Não foi possível obter um resultado válido. Tente novamente. |
+| Viagem com trechos desconexos ou recusada pelo Xano | 400 | Não foi possível confirmar esta viagem. Busque o trajeto novamente. |
+| Corpo da confirmação vazio, com campo extra ou ID inválido | 422 | Erro de validação do corpo da requisição. |
 
 Mensagens internas do Xano, credenciais e tokens não devem ser incluídos nessas
 respostas.

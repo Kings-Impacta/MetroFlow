@@ -8,11 +8,15 @@ from MetroFlow.auth.infrastructure.session_cookie import get_session_token
 from MetroFlow.auth.infrastructure.xano_client import (
     XanoAuthClient, XanoAuthError, XanoAuthRejected,
 )
-from MetroFlow.planning.application.services import InvalidRouteSelection, PlanningService
+from MetroFlow.planning.application.services import (
+    InvalidRouteSelection, InvalidTripConfirmation, PlanningService,
+)
 from MetroFlow.planning.infrastructure.xano_client import (
     PlanningError, PlanningUnauthorized, PlanningUnavailable, XanoPlanningClient,
 )
-from MetroFlow.planning.presentation.view_models import RouteRequest, RouteView, StationChoice
+from MetroFlow.planning.presentation.view_models import (
+    RouteRequest, RouteView, StationChoice, TripConfirmationRequest,
+)
 
 
 planning_api = APIRouter(prefix="/api/planning", tags=["planning"])
@@ -55,6 +59,14 @@ def public_error(error: Exception) -> NoReturn:
     raise HTTPException(502, "Não foi possível obter um resultado válido. Tente novamente.") from error
 
 
+def trip_error(error: Exception) -> NoReturn:
+    if isinstance(error, InvalidTripConfirmation) or (
+        isinstance(error, PlanningError) and error.status_code in {400, 404, 422}
+    ):
+        raise HTTPException(400, "Não foi possível confirmar esta viagem. Busque o trajeto novamente.") from error
+    public_error(error)
+
+
 @planning_api.get("/stations", response_model=list[StationChoice])
 def stations(token: Token) -> list[StationChoice]:
     try:
@@ -81,3 +93,13 @@ def route(selection: RouteRequest, token: Token) -> RouteView:
         return RouteView.from_route(result)
     except (PlanningError, ValueError) as error:
         public_error(error)
+
+
+@planning_api.post("/trip", status_code=204, response_class=Response)
+def trip(confirmation: TripConfirmationRequest, token: Token) -> None:
+    # A resposta nao tem corpo: nenhum registro de viagem volta ao navegador.
+    try:
+        with XanoPlanningClient.from_environment() as client:
+            PlanningService(client).confirm_trip(confirmation.steps(), token)
+    except (PlanningError, ValueError) as error:
+        trip_error(error)

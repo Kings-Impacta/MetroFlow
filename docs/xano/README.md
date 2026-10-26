@@ -1,5 +1,22 @@
 # Comparação dos rascunhos Xano — 13/09/2026
 
+## Incidente da tabela `trechos` — 26/10/2026
+
+Uma alteração pela Metadata API removeu as colunas da tabela `trechos` e a
+autenticação de `POST trechos`. A autenticação e as colunas foram restauradas,
+mas os valores dos 207 trechos precisam ser reimportados. O
+[registro do incidente](incidente-trechos-2026-10-26.md) traz a linha do tempo,
+a causa provável e as pendências.
+
+## Concorrência de rotas publicada — 26/10/2026
+
+A pasta `rascunhos/concorrencia-rotas/` contém as cópias publicadas das tabelas
+e dos endpoints da mudança OpenSpec `concorrencia-rotas`: confirmação de viagem,
+configuração da lotação e a versão atual de `trajetos/buscar`. A publicação foi
+feita com o Xano CLI. O [README da pasta](rascunhos/concorrencia-rotas/README.md)
+descreve as regras, a publicação e a validação ainda pendente no Xano. A captura
+de 18/09/2026 de `trajetos/buscar`, descrita abaixo, passou a ser histórica.
+
 ## Atualização versionada — 18/09/2026
 
 O arquivo `rascunhos/planejamento/trajetos_buscar_post.xs` foi atualizado com

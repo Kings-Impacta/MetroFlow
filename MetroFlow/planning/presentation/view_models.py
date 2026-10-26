@@ -2,7 +2,7 @@
 
 from pydantic import BaseModel, ConfigDict, Field, StrictInt
 
-from MetroFlow.planning.domain.models import RouteResult, Station
+from MetroFlow.planning.domain.models import MAX_TRIP_SEGMENTS, RouteResult, Station
 
 
 class RouteRequest(BaseModel):
@@ -10,6 +10,31 @@ class RouteRequest(BaseModel):
 
     origin_id: StrictInt = Field(gt=0)
     destination_id: StrictInt = Field(gt=0)
+
+
+class TripSegmentRequest(BaseModel):
+    model_config = ConfigDict(extra="forbid")
+
+    id: StrictInt = Field(gt=0)
+    origin_id: StrictInt = Field(gt=0)
+    destination_id: StrictInt = Field(gt=0)
+
+
+class TripConfirmationRequest(BaseModel):
+    """Trechos do trajeto apresentado, na ordem e no sentido percorridos."""
+
+    model_config = ConfigDict(extra="forbid")
+
+    segments: list[TripSegmentRequest] = Field(
+        min_length=1,
+        max_length=MAX_TRIP_SEGMENTS,
+    )
+
+    def steps(self) -> list[tuple[int, int, int]]:
+        return [
+            (step.id, step.origin_id, step.destination_id)
+            for step in self.segments
+        ]
 
 
 class StationChoice(BaseModel):
@@ -42,6 +67,11 @@ class StationChoice(BaseModel):
 
 
 class SegmentView(BaseModel):
+    # Identificam o trecho e o sentido percorrido na confirmacao da viagem.
+    id: int
+    origin_id: int
+    destination_id: int
+
     origin: str
     destination: str
     line: str
@@ -151,6 +181,9 @@ class RouteView(BaseModel):
 
             segments=[
                 SegmentView(
+                    id=step.id,
+                    origin_id=step.origin.id,
+                    destination_id=step.destination.id,
                     origin=step.origin.name,
                     destination=(
                         step.destination.name

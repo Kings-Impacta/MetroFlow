@@ -1,8 +1,24 @@
 """Estado do planejador: selecao, concorrencia, falhas e descarte de resultados."""
 
+import json
 import unittest
 
 from MetroFlow.planning.presentation.state import PlanningState
+
+
+ROUTE = {
+    "origin": "Vergueiro", "destination": "Paraiso", "stations": ["Vergueiro", "Paraiso"],
+    "seconds": 120, "minutes": 2, "transfer_count": 0,
+    "segments": [{
+        "id": 7, "origin_id": 1, "destination_id": 2,
+        "origin": "Vergueiro", "destination": "Paraiso", "line": "Azul", "operator": "Metro", "seconds": 120,
+    }],
+    "transfers": [],
+}
+
+
+def script_of(event) -> str:
+    return event.args[0][1]._var_value
 
 
 class PlanningStateTests(unittest.TestCase):
@@ -110,13 +126,51 @@ class PlanningStateTests(unittest.TestCase):
         self.assertEqual(self.state.route_status, "idle")
         self.assertEqual(self.state.message, "")
 
+    def _receive_success(self):
+        self.state.receive_route({"request_id": self.state._request_id, "status": 200, "ok": True, "data": ROUTE})
+
     def test_resultado_de_sucesso(self):
-        self.state.receive_route({"request_id": self.state._request_id, "status": 200, "ok": True, "data": {
-            "origin": "Vergueiro", "destination": "Paraiso", "stations": ["Vergueiro", "Paraiso"],
-            "seconds": 120, "minutes": 2, "transfer_count": 0,
-            "segments": [{"origin": "Vergueiro", "destination": "Paraiso", "line": "Azul", "operator": "Metro", "seconds": 120}],
-            "transfers": [],
-        }})
+        self._receive_success()
         self.assertEqual(self.state.route_status, "success")
         self.assertEqual(self.state.minutes, 2)
         self.assertEqual(self.state.segments[0]["line"], "Azul — Metro")
+
+    def test_confirmacao_envia_os_trechos_do_resultado_apresentado(self):
+        self._receive_success()
+        script = script_of(self.state.confirm_trip())
+        self.assertIn('"/api/planning/trip"', script)
+        self.assertIn(
+            json.dumps(json.dumps({"segments": [{"id": 7, "origin_id": 1, "destination_id": 2}]})),
+            script,
+        )
+
+    def test_confirmacao_sem_resultado_nao_dispara(self):
+        self.assertIsNone(self.state.confirm_trip())
+        self._receive_success()
+        self.state.select_origin("2")
+        self.assertIsNone(self.state.confirm_trip())
+
+    def test_confirmacao_nao_exibe_aviso_e_mantem_botao_disponivel(self):
+        self._receive_success()
+        for status, ok in [(204, True), (503, False), (0, False)]:
+            with self.subTest(status=status):
+                event = self.state.confirm_trip()
+                self.assertIsNotNone(event)
+                self.assertIsNone(self.state.receive_trip_confirmation(
+                    {"request_id": self.state._trip_request_id, "status": status, "ok": ok, "data": None}
+                ))
+                self.assertEqual(self.state.route_status, "success")
+                self.assertEqual(self.state.message, "")
+                self.assertEqual(self.state.title, "Vergueiro → Paraiso")
+        self.assertIsNotNone(self.state.confirm_trip())
+
+    def test_confirmacao_com_sessao_expirada_redireciona(self):
+        self._receive_success()
+        self.state.confirm_trip()
+        events = self.state.receive_trip_confirmation(
+            {"request_id": self.state._trip_request_id, "status": 401, "ok": False, "data": None}
+        )
+        self.assertEqual(self.state.route_status, "unauthenticated")
+        self.assertEqual(self.state.title, "")
+        self.assertEqual(events[1].args[0][1]._var_value, "/login")
+        self.assertIsNone(self.state.confirm_trip())

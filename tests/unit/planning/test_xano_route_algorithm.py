@@ -1,49 +1,10 @@
 """Executa a função de cálculo registrada no XanoScript com malhas controladas."""
 
-import json
-from pathlib import Path
-import re
-import shutil
-import subprocess
-
-import pytest
+from tests.unit.planning.xano_lambda import XANO_DRAFTS, requires_node, run_lambda
 
 
-NODE = shutil.which("node")
-XANO_SCRIPT = (
-    Path(__file__).parents[3]
-    / "docs"
-    / "xano"
-    / "rascunhos"
-    / "planejamento"
-    / "trajetos_buscar_post.xs"
-)
-pytestmark = pytest.mark.skipif(
-    NODE is None,
-    reason="Node.js é necessário para executar a função do XanoScript.",
-)
-
-HARNESS = r"""
-let source = '';
-process.stdin.on('data', chunk => source += chunk);
-process.stdin.on('end', () => {
-  try {
-    const {body, input} = JSON.parse(source);
-    const calculate = new Function('$this', body);
-    process.stdout.write(JSON.stringify(calculate(input)));
-  } catch (error) {
-    console.error(error);
-    process.exitCode = 1;
-  }
-});
-"""
-
-
-def _algorithm_body() -> str:
-    source = XANO_SCRIPT.read_text(encoding="utf-8-sig")
-    match = re.search(r'\|lambda:("(?:\\.|[^"\\])*")', source)
-    assert match is not None, "A função lambda do endpoint não foi encontrada."
-    return json.loads(match.group(1))
+XANO_SCRIPT = XANO_DRAFTS / "planejamento" / "trajetos_buscar_post.xs"
+pytestmark = requires_node
 
 
 def _line(identifier: int) -> dict[str, object]:
@@ -96,15 +57,7 @@ def _mesh(segments: list[dict[str, object]]) -> dict[str, object]:
 
 
 def _calculate(input_data: dict[str, object]) -> dict[str, object]:
-    result = subprocess.run(
-        [NODE, "-e", HARNESS],
-        input=json.dumps({"body": _algorithm_body(), "input": input_data}),
-        capture_output=True,
-        text=True,
-        timeout=15,
-    )
-    assert result.returncode == 0, result.stderr
-    decoded = json.loads(result.stdout)
+    decoded = run_lambda(XANO_SCRIPT, input_data)
     assert isinstance(decoded, dict)
     return decoded
 

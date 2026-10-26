@@ -6,8 +6,10 @@ from unittest.mock import patch
 
 import httpx
 
+from MetroFlow.planning.domain.models import TripConfirmation, TripSegment
 from MetroFlow.planning.infrastructure.xano_client import (
     DEFAULT_XANO_PLANNING_API_BASE_URL,
+    PlanningError,
     PlanningUnauthorized,
     XanoPlanningClient,
 )
@@ -128,6 +130,45 @@ class XanoPlanningClientTests(unittest.TestCase):
         with XanoPlanningClient(BASE_URL, transport=transport) as client:
             with self.assertRaises(PlanningUnauthorized):
                 client.list_active_stations("token-invalido")
+
+    def test_confirmacao_envia_trechos_sem_usuario_nem_tempo(self) -> None:
+        trip = TripConfirmation((TripSegment(20, 10, 11), TripSegment(21, 11, 12)))
+
+        def handler(request: httpx.Request) -> httpx.Response:
+            self.assertEqual(request.method, "POST")
+            self.assertEqual(request.url.path, "/api:planning/viagens/confirmar")
+            self.assertEqual(request.headers["Authorization"], "Bearer token")
+            self.assertEqual(
+                json.loads(request.content),
+                {
+                    "trechos": [
+                        {"id": 20, "estacao_origem_id": 10, "estacao_destino_id": 11},
+                        {"id": 21, "estacao_origem_id": 11, "estacao_destino_id": 12},
+                    ]
+                },
+            )
+            return httpx.Response(200, json={"confirmada": True})
+
+        with XanoPlanningClient(
+            BASE_URL,
+            transport=httpx.MockTransport(handler),
+        ) as client:
+            self.assertIsNone(client.confirm_trip(trip, "token"))
+
+    def test_confirmacao_exige_resposta_esperada(self) -> None:
+        trip = TripConfirmation((TripSegment(20, 10, 11),))
+        for status, body, error in [
+            (200, {}, PlanningError),
+            (400, {"message": "Trajeto confirmado invalido."}, PlanningError),
+            (403, {"message": "Sessao invalida ou expirada."}, PlanningUnauthorized),
+        ]:
+            with self.subTest(status=status):
+                transport = httpx.MockTransport(
+                    lambda _, status=status, body=body: httpx.Response(status, json=body)
+                )
+                with XanoPlanningClient(BASE_URL, transport=transport) as client:
+                    with self.assertRaises(error):
+                        client.confirm_trip(trip, "token")
 
 
 if __name__ == "__main__":

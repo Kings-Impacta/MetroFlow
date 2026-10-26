@@ -1,11 +1,22 @@
-"""Casos de uso de consulta de estacoes e trajeto principal."""
+"""Casos de uso de consulta de estacoes, trajeto principal e confirmacao de viagem."""
+
+from collections.abc import Iterable
 
 from MetroFlow.planning.application.ports import PlanningGateway
-from MetroFlow.planning.domain.models import RouteResult, Station
+from MetroFlow.planning.domain.models import (
+    RouteResult,
+    Station,
+    TripConfirmation,
+    TripSegment,
+)
 
 
 class InvalidRouteSelection(ValueError):
     """Selecao incompleta ou inconsistente feita pelo usuario."""
+
+
+class InvalidTripConfirmation(ValueError):
+    """Viagem confirmada vazia, longa demais ou com trechos desconexos."""
 
 
 class PlanningService:
@@ -37,3 +48,24 @@ class PlanningService:
             destination_id,
             auth_token,
         )
+
+    def confirm_trip(
+        self,
+        steps: Iterable[tuple[int, int, int]],
+        auth_token: str,
+    ) -> None:
+        """Registra a viagem; o usuario e identificado pela sessao no Xano."""
+
+        if not auth_token:
+            raise ValueError("A sessao autenticada e obrigatoria.")
+
+        try:
+            trip = TripConfirmation(
+                tuple(TripSegment(*step) for step in steps)
+            )
+        except ValueError as error:
+            raise InvalidTripConfirmation(
+                "Viagem confirmada invalida."
+            ) from error
+
+        self._gateway.confirm_trip(trip, auth_token)

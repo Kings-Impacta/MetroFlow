@@ -6,6 +6,7 @@ from dataclasses import dataclass
 
 
 TRANSFER_TIME_SECONDS = 600
+MAX_TRIP_SEGMENTS = 200
 
 
 @dataclass(frozen=True, slots=True)
@@ -122,3 +123,54 @@ class RouteResult:
         return (
             self.total_time_seconds + 59
         ) // 60
+
+
+@dataclass(frozen=True, slots=True)
+class TripSegment:
+    """Trecho de uma viagem confirmada, no sentido em que foi percorrido."""
+
+    segment_id: int
+    origin_id: int
+    destination_id: int
+
+    def __post_init__(self) -> None:
+        if min(
+            self.segment_id,
+            self.origin_id,
+            self.destination_id,
+        ) <= 0:
+            raise ValueError(
+                "Os identificadores do trecho devem ser positivos."
+            )
+
+        if self.origin_id == self.destination_id:
+            raise ValueError(
+                "Um trecho deve ligar estacoes diferentes."
+            )
+
+
+@dataclass(frozen=True, slots=True)
+class TripConfirmation:
+    """Viagem apresentada que o usuario confirmou que vai fazer."""
+
+    segments: tuple[TripSegment, ...]
+
+    def __post_init__(self) -> None:
+        if not self.segments:
+            raise ValueError(
+                "A viagem deve ter ao menos um trecho."
+            )
+
+        if len(self.segments) > MAX_TRIP_SEGMENTS:
+            raise ValueError(
+                "A viagem possui trechos demais."
+            )
+
+        for previous, following in zip(
+            self.segments,
+            self.segments[1:],
+        ):
+            if previous.destination_id != following.origin_id:
+                raise ValueError(
+                    "Os trechos da viagem devem ser consecutivos."
+                )
