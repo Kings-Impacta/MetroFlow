@@ -19,7 +19,7 @@ O projeto não oferece ainda lotação de fontes oficiais ou em tempo real, vár
 
 ## Em andamento
 
-A mudança `concorrencia-rotas` permite confirmar a viagem apresentada e usa as viagens confirmadas para estimar, de forma interna, a lotação de cada trecho. Quando o trajeto principal passa por um trecho lotado, a busca apresenta um caminho que o evita. Em 26/10/2026, o backend Python, a interface Reflex e os testes estão prontos, e as [tabelas e os endpoints do Xano](xano/rascunhos/concorrencia-rotas/README.md) foram publicados com parâmetros de lotação de teste. A validação com uma sessão real ainda está pendente.
+A mudança `concorrencia-rotas` registra automaticamente cada trajeto obtido com sucesso e usa as viagens ativas para estimar, de forma interna, a lotação de cada trecho. Quando o trajeto principal passa por um trecho lotado, a busca apresenta um caminho que o evita. Em 26/10/2026, o backend Python, a interface Reflex e os testes estão prontos, e as [tabelas e os endpoints do Xano](xano/rascunhos/concorrencia-rotas/README.md) foram publicados com parâmetros de lotação de teste. A validação completa com duas sessões reais ainda está pendente.
 
 No mesmo dia, um [incidente na tabela `trechos`](xano/incidente-trechos-2026-10-26.md) apagou os valores da malha no Xano. Até a reimportação dos 207 trechos, a busca não encontra trajetos.
 

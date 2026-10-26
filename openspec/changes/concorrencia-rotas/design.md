@@ -32,7 +32,7 @@ O Xano calcula o trajeto principal pela regra atual. Se algum trecho dele, no se
 
 ### Integração
 
-O Reflex exibe o botão de confirmação no resultado. O backend Python expõe um endpoint local de confirmação que revalida a sessão como em `/api/planning/route`, valida o corpo e chama o novo endpoint autenticado do Xano. O usuário da viagem é obtido da sessão no Xano, nunca de um campo enviado pela interface. Após a confirmação, a interface não exibe aviso e mantém o botão disponível.
+Após receber um trajeto válido, o Reflex chama automaticamente o endpoint local de confirmação. O backend revalida a sessão como em `/api/planning/route`, valida o corpo e chama o endpoint autenticado do Xano. O usuário da viagem é obtido da sessão no Xano, nunca de um campo enviado pela interface. A busca continua apresentando o trajeto mesmo se o registro de concorrência falhar; uma sessão inválida conduz ao login.
 
 ### Retenção dos registros
 
@@ -45,8 +45,8 @@ Os registros de viagens confirmadas são mantidos sem prazo de exclusão e ficam
 - Sem limite de tempo extra, a rota alternativa pode ser bem mais longa que a principal, e o usuário não sabe o motivo da troca.
 - Desviar todos os próximos usuários para o mesmo caminho alternativo pode deslocar a lotação para ele.
 - Guardar viagens indefinidamente retém dados de deslocamento associados a usuários; o acesso restrito ao Xano reduz, mas não elimina, esse risco.
-- Sem aviso após a confirmação, o usuário não sabe se ela foi registrada, e reconfirmar o mesmo trajeto reinicia a janela.
+- Cada nova busca bem-sucedida reinicia a janela da viagem ativa do usuário, inclusive quando repete o mesmo trajeto.
 
 ## Open Questions
 
-- O que a interface mostra quando a confirmação falha por erro do serviço, já que não há aviso de sucesso?
+- Como observar falhas do registro automático sem expor detalhes internos nem bloquear o resultado da busca?

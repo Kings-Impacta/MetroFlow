@@ -2,11 +2,11 @@
 
 ### Requirement: Confirmação de viagem
 
-O sistema SHALL permitir que o usuário autenticado confirme, por um botão no resultado do trajeto, que vai fazer a viagem apresentada, e SHALL registrar no Xano o usuário, o momento da confirmação e os trechos em ordem com seu sentido e `tempo_estimado`. Após a confirmação, a interface SHALL não exibir aviso e SHALL manter o botão disponível.
+O sistema SHALL registrar automaticamente como viagem ativa cada trajeto obtido com sucesso por um usuário autenticado e SHALL armazenar no Xano o usuário, o momento da confirmação e os trechos em ordem com seu sentido e `tempo_estimado`. A interface SHALL não exigir um botão adicional de confirmação.
 
 #### Scenario: Confirmação bem-sucedida
 
-- **WHEN** o usuário autenticado aciona o botão de confirmação no resultado do trajeto
+- **WHEN** o usuário autenticado obtém um trajeto válido
 - **THEN** o sistema registra a viagem apresentada como viagem ativa desse usuário
 
 #### Scenario: Sessão inválida na confirmação
@@ -19,10 +19,10 @@ O sistema SHALL permitir que o usuário autenticado confirme, por um botão no r
 - **WHEN** uma viagem é registrada
 - **THEN** o usuário associado é obtido da sessão autenticada e não de um dado enviado pela interface
 
-#### Scenario: Interface após a confirmação
+#### Scenario: Interface após a busca
 
-- **WHEN** a viagem é registrada
-- **THEN** a interface não exibe aviso de confirmação e o botão continua disponível
+- **WHEN** a viagem é registrada automaticamente
+- **THEN** a interface apresenta o trajeto sem exibir um botão de confirmação
 
 ### Requirement: Uma viagem ativa por usuário
 

@@ -10,7 +10,7 @@
 ## Backend Python e Reflex
 
 - [x] Criar o endpoint local de confirmação com revalidação de sessão e validação do corpo, sem expor tokens.
-- [x] Adicionar o botão de confirmação ao resultado do trajeto, sem aviso após a confirmação e mantendo o botão disponível.
+- [x] Confirmar automaticamente o trajeto após uma busca bem-sucedida, sem exibir botão adicional.
 
 ## Testes
 
@@ -22,7 +22,7 @@
 - [x] Testar exclusão da viagem ativa de quem busca.
 - [x] Testar trajeto sem lotação, alternativa disponível e alternativa indisponível.
 - [x] Testar confirmação sem sessão válida e ausência de dados de lotação na resposta.
-- [x] Testar que a interface não exibe aviso após a confirmação e mantém o botão disponível.
+- [x] Testar que a busca dispara uma única confirmação automática e a interface não exibe botão adicional.
 - [x] Testar que nenhuma resposta pública devolve registros de viagens confirmadas.
 
 ## Documentação e validação
