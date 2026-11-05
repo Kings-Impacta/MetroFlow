@@ -436,16 +436,26 @@ def _result() -> rx.Component:
             ),
 
             rx.text(
-                "Tempo calculado: ",
+                "Tempo estimado: ",
                 PlanningState.seconds,
                 (
-                    " segundos. O cálculo considera os tempos dos trechos "
-                    "e uma estimativa de 10 minutos por baldeação."
+                    " segundos. Inclui os tempos dos trechos, as esperas "
+                    "estimadas disponíveis e as baldeações. "
+                    "A duração pode variar conforme a operação, a lotação "
+                    "e outras condições externas."
                 ),
                 size="2",
                 color=MUTED,
             ),
 
+            rx.foreach(
+                PlanningState.notices,
+                lambda notice: rx.box(
+                    rx.text(notice, size="2", color="#854d0e"),
+                    padding="0.75rem", background="#fef9c3",
+                    border_radius="8px", width="100%",
+                ),
+            ),
             rx.divider(),
 
             rx.vstack(
@@ -813,10 +823,9 @@ def about_page() -> rx.Component:
 
             rx.text(
                 (
-                    "O tempo estimado soma os trechos "
-                    "do caminho. Neste MVP, não inclui "
-                    "espera, caminhada ou tempo adicional "
-                    "de transferência."
+                    "O tempo estimado soma os trechos, as esperas dos serviços "
+                    "com horários disponíveis e uma estimativa por baldeação. "
+                    "As partidas e passagens previstas podem variar na operação real."
                 ),
                 color=TEXT,
             ),

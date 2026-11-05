@@ -149,6 +149,19 @@ class PlanningStateTests(unittest.TestCase):
             script,
         )
 
+    def test_espera_aparece_antes_do_embarque_e_referencia_vai_ao_registro(self):
+        route = json.loads(json.dumps(ROUTE))
+        route.update(seconds=390, minutes=7, wait_seconds=270, calculated_at_ms=1793199600000)
+        route["segments"][0]["wait_seconds"] = 270
+        event = self.state.receive_route({
+            "request_id": self.state._request_id, "status": 200,
+            "ok": True, "data": route,
+        })
+        kinds = [item["kind"] for item in self.state.instructions]
+        self.assertLess(kinds.index("ESPERA"), kinds.index("EMBARQUE"))
+        self.assertEqual(self.state.seconds, 390)
+        self.assertIn("1793199600000", script_of(event))
+
     def test_confirmacao_automatica_nao_apaga_resultado(self):
         self._receive_success()
         for status, ok in [(204, True), (503, False), (0, False)]:

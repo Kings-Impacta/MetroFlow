@@ -4,6 +4,7 @@ from collections.abc import Iterable
 
 from MetroFlow.planning.application.ports import PlanningGateway
 from MetroFlow.planning.domain.models import (
+    CalibrationReference,
     RouteResult,
     Station,
     TripConfirmation,
@@ -53,6 +54,9 @@ class PlanningService:
         self,
         steps: Iterable[tuple[int, int, int]],
         auth_token: str,
+        *,
+        calculated_at_ms: int | None = None,
+        calibration: CalibrationReference | None = None,
     ) -> None:
         """Registra a viagem; o usuario e identificado pela sessao no Xano."""
 
@@ -61,7 +65,9 @@ class PlanningService:
 
         try:
             trip = TripConfirmation(
-                tuple(TripSegment(*step) for step in steps)
+                tuple(TripSegment(*step) for step in steps),
+                calculated_at_ms=calculated_at_ms,
+                calibration=calibration,
             )
         except ValueError as error:
             raise InvalidTripConfirmation(

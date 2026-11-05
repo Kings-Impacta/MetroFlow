@@ -124,6 +124,7 @@ class PlanningState(rx.State):
     segments: list[dict[str, str]] = []
 
     instructions: list[dict[str, str]] = []
+    notices: list[str] = []
 
     transfers: list[str] = []
 
@@ -144,6 +145,7 @@ class PlanningState(rx.State):
 
         self.segments = []
         self.instructions = []
+        self.notices = []
         self.transfers = []
 
         self.minutes = 0
@@ -202,10 +204,13 @@ class PlanningState(rx.State):
             "service_id": first_segment.service_id,
             "stops": 1,
             "seconds": first_segment.seconds,
+            "wait_seconds": first_segment.wait_seconds,
             "guidance": first_segment.guidance,
+            "train_pattern": route.calibration.patterns[0] if route.calibration else None,
         }
 
-        for segment in route.segments[1:]:
+        for index, segment in enumerate(route.segments[1:], 1):
+            train_pattern = route.calibration.patterns[index] if route.calibration else None
             direction_compatible = (
                 segment.direction is None
                 or current_group["direction"] is None
@@ -223,6 +228,8 @@ class PlanningState(rx.State):
                 == current_group["segment_type"]
                 and segment.service_id
                 == current_group["service_id"]
+                and segment.wait_seconds == 0
+                and train_pattern == current_group["train_pattern"]
             )
 
             if same_service:
@@ -276,7 +283,9 @@ class PlanningState(rx.State):
                     "seconds": (
                         segment.seconds
                     ),
+                    "wait_seconds": segment.wait_seconds,
                     "guidance": segment.guidance,
+                    "train_pattern": train_pattern,
                 }
 
         groups.append(
@@ -444,8 +453,12 @@ class PlanningState(rx.State):
                                 f"{group['destination']}"
                             ),
                             "detail": (
-                                f"Troque da {group['line']} para a "
-                                f"{next_group['line']}."
+                                f"Troque de trem na {group['line']}."
+                                if group["line"] == next_group["line"]
+                                else (
+                                    f"Troque da {group['line']} para a "
+                                    f"{next_group['line']}."
+                                )
                             ),
                             "meta": transfer_meta,
                             **guidance_fields(group["guidance"]),
@@ -519,7 +532,26 @@ class PlanningState(rx.State):
             }
         )
 
-        return instructions
+        groups_to_board = iter(
+            group for group in groups if group["segment_type"] != "transferencia"
+        )
+        result: list[dict[str, str]] = []
+        for instruction in instructions:
+            if instruction["kind"] == "EMBARQUE":
+                group = next(groups_to_board, None)
+                if group is not None and int(group["wait_seconds"]) > 0:
+                    minutes = (int(group["wait_seconds"]) + 59) // 60
+                    result.append({
+                        "step": "", "kind": "ESPERA",
+                        "title": f"Aguarde em {group['origin']}",
+                        "detail": f"Espera estimada de {minutes} min antes de embarcar.",
+                        "meta": "Acompanhe o horário de partida na sinalização da estação.",
+                        **guidance_fields(None),
+                    })
+            result.append(instruction)
+        for index, instruction in enumerate(result, 1):
+            instruction["step"] = str(index)
+        return result
 
     @rx.event
     def clear_planner(
@@ -1036,6 +1068,7 @@ class PlanningState(rx.State):
         self.station_names = (
             route.stations
         )
+        self.notices = route.notices
 
         self.minutes = (
             route.minutes
@@ -1110,6 +1143,10 @@ class PlanningState(rx.State):
                     "segments": (
                         self._trip_segments
                     ),
+                    **({"calculated_at_ms": route.calculated_at_ms}
+                       if route.calculated_at_ms is not None else {}),
+                    **({"calibration": route.calibration.model_dump()}
+                       if route.calibration is not None else {}),
                 },
             ),
             callback=(

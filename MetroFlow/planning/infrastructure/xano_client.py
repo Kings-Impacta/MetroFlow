@@ -3,11 +3,13 @@
 from __future__ import annotations
 
 import os
+from urllib.parse import urlsplit
 from typing import Any
 
 import httpx
 
 from MetroFlow.planning.domain.models import (
+    CalibrationReference,
     Line,
     Operator,
     RouteResult,
@@ -49,6 +51,7 @@ class XanoPlanningClient:
         *,
         timeout: float = 10.0,
         transport: httpx.BaseTransport | None = None,
+        calibration_enabled: bool = False,
     ) -> None:
         normalized = base_url.strip().rstrip("/")
 
@@ -56,6 +59,13 @@ class XanoPlanningClient:
             raise ValueError(
                 "A URL da API de planejamento e obrigatoria."
             )
+        if (
+            calibration_enabled
+            and normalized != DEFAULT_XANO_PLANNING_API_BASE_URL
+            and urlsplit(normalized).hostname not in {"localhost", "127.0.0.1", "::1"}
+        ):
+            raise ValueError("A calibração exige a API oficial ou uma API local.")
+        self._calibration_enabled = calibration_enabled
 
         self._http = httpx.Client(
             base_url=f"{normalized}/",
@@ -77,6 +87,10 @@ class XanoPlanningClient:
         return cls(
             base_url,
             timeout=timeout,
+            calibration_enabled=(
+                base_url.rstrip("/") == DEFAULT_XANO_PLANNING_API_BASE_URL
+                or os.getenv("METROFLOW_CALIBRACAO_LOCAL", "") == "1"
+            ),
         )
 
     def close(self) -> None:
@@ -99,6 +113,7 @@ class XanoPlanningClient:
             "GET",
             "estacoes",
             auth_token=auth_token,
+            params={"suporta_calibracao": "true"} if self._calibration_enabled else None,
         )
 
         items = payload.get(
@@ -128,6 +143,10 @@ class XanoPlanningClient:
             json={
                 "estacao_origem_id": origin_id,
                 "estacao_destino_id": destination_id,
+                "suporta_troca_mesma_linha": True,
+                "suporta_espera_partidas": True,
+                "suporta_extensao_linha8": True,
+                **({"suporta_calibracao": True} if self._calibration_enabled else {}),
             },
             allow_not_found=True,
         )
@@ -135,6 +154,8 @@ class XanoPlanningClient:
         if payload is None:
             return None
 
+        if payload.get("versao_calibracao") is not None and not self._calibration_enabled:
+            raise PlanningError("Contrato de calibração local não habilitado.")
         return self._decode_route(payload)
 
     def confirm_trip(
@@ -143,6 +164,8 @@ class XanoPlanningClient:
         auth_token: str,
     ) -> None:
         # O Xano obtem o usuario pela sessao e le o tempo dos trechos cadastrados.
+        if trip.calibration is not None and not self._calibration_enabled:
+            raise PlanningError("Contrato de calibração local não habilitado.")
         payload = self._request(
             "POST",
             "viagens/confirmar",
@@ -156,6 +179,9 @@ class XanoPlanningClient:
                     }
                     for step in trip.segments
                 ],
+                **({"calculado_em": trip.calculated_at_ms} if trip.calculated_at_ms is not None else {}),
+                **({"versao_calibracao": trip.calibration.version,
+                    "padroes_experimentais": list(trip.calibration.patterns)} if trip.calibration is not None else {}),
             },
         )
 
@@ -171,6 +197,7 @@ class XanoPlanningClient:
         *,
         auth_token: str,
         json: dict[str, Any] | None = None,
+        params: dict[str, str] | None = None,
         allow_not_found: bool = False,
     ) -> dict[str, Any] | None:
         if not auth_token:
@@ -184,6 +211,7 @@ class XanoPlanningClient:
                 method,
                 path,
                 json=json,
+                params=params,
                 headers={
                     "Authorization": (
                         f"Bearer {auth_token}"
@@ -464,8 +492,14 @@ class XanoPlanningClient:
                 ) from exc
 
         segments: list[Segment] = []
+        calibration = None
+        if payload.get("versao_calibracao") is not None:
+            patterns = payload.get("padroes_experimentais")
+            if not isinstance(patterns, list) or len(patterns) != len(segments_raw):
+                raise PlanningError("Padrões de calibração incompletos.")
+            calibration = CalibrationReference(payload["versao_calibracao"], tuple(patterns))
 
-        for item in segments_raw:
+        for index, item in enumerate(segments_raw):
             if not isinstance(
                 item,
                 dict,
@@ -519,8 +553,20 @@ class XanoPlanningClient:
                         if item.get("servico_id") is not None
                         else None
                     ),
+                    waiting_time_seconds=(
+                        cls._integer(item, "espera_estimada_segundos")
+                        if item.get("espera_estimada_segundos") is not None else 0
+                    ),
+                    train_pattern=calibration.patterns[index] if calibration else None,
+                    transfer_before_seconds=cls._integer(item, "baldeacao_antes_segundos") if calibration else None,
                 )
             )
+
+        if payload.get("tempo_espera_segundos") is not None and (
+            cls._integer(payload, "tempo_espera_segundos")
+            != sum(segment.waiting_time_seconds for segment in segments)
+        ):
+            raise PlanningError("Espera total inconsistente.")
 
         transfers: list[Transfer] = []
 
@@ -572,6 +618,10 @@ class XanoPlanningClient:
             )
         )
 
+        notices = payload.get("avisos", [])
+        if not isinstance(notices, list) or any(not isinstance(note, str) or not note.strip() or len(note) > 500 for note in notices):
+            raise PlanningError("Avisos do trajeto inválidos.")
+
         return RouteResult(
             origin=origin,
             destination=destination,
@@ -587,5 +637,15 @@ class XanoPlanningClient:
                     payload,
                     "tempo_total_segundos",
                 )
+            ),
+            calculated_at_ms=(
+                cls._integer(payload, "calculado_em")
+                if payload.get("calculado_em") is not None else None
+            ),
+            notices=tuple(notices),
+            calibration=calibration,
+            public_estimate_seconds=(
+                cls._integer(payload, "tempo_estimado_total_segundos")
+                if "tempo_estimado_total_segundos" in payload else None
             ),
         )

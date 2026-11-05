@@ -79,7 +79,7 @@ class XanoPlanningClientTests(unittest.TestCase):
             self.assertEqual(request.url.path, "/api:planning/trajetos/buscar")
             self.assertEqual(
                 json.loads(request.content),
-                {"estacao_origem_id": 10, "estacao_destino_id": 11},
+                {"estacao_origem_id": 10, "estacao_destino_id": 11, "suporta_troca_mesma_linha": True, "suporta_espera_partidas": True, "suporta_extensao_linha8": True},
             )
             return httpx.Response(
                 200,
@@ -153,6 +153,19 @@ class XanoPlanningClientTests(unittest.TestCase):
             BASE_URL,
             transport=httpx.MockTransport(handler),
         ) as client:
+            self.assertIsNone(client.confirm_trip(trip, "token"))
+
+    def test_confirmacao_envia_referencia_sem_enviar_tempos(self) -> None:
+        trip = TripConfirmation((TripSegment(20, 10, 11),), calculated_at_ms=1793199600000)
+
+        def handler(request: httpx.Request) -> httpx.Response:
+            self.assertEqual(json.loads(request.content), {
+                "trechos": [{"id": 20, "estacao_origem_id": 10, "estacao_destino_id": 11}],
+                "calculado_em": 1793199600000,
+            })
+            return httpx.Response(200, json={"confirmada": True})
+
+        with XanoPlanningClient(BASE_URL, transport=httpx.MockTransport(handler)) as client:
             self.assertIsNone(client.confirm_trip(trip, "token"))
 
     def test_confirmacao_exige_resposta_esperada(self) -> None:

@@ -117,6 +117,10 @@ def trip(confirmation: TripConfirmationRequest, token: Token) -> None:
     # A resposta nao tem corpo: nenhum registro de viagem volta ao navegador.
     try:
         with XanoPlanningClient.from_environment() as client:
-            PlanningService(client).confirm_trip(confirmation.steps(), token)
+            PlanningService(client).confirm_trip(
+                confirmation.steps(), token,
+                calculated_at_ms=confirmation.calculated_at_ms,
+                **({"calibration": confirmation.calibration.reference()} if confirmation.calibration is not None else {}),
+            )
     except (PlanningError, ValueError) as error:
         trip_error(error)
