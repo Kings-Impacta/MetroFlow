@@ -3,7 +3,7 @@
 from collections.abc import Iterable
 
 from MetroFlow.planning.domain.guidance import StationGuidance, normalize_name
-from MetroFlow.planning.domain.models import RouteResult
+from MetroFlow.planning.domain.models import RouteResult, requires_train_change
 
 
 WALKING_SEGMENT_TYPE = "transferencia"
@@ -36,6 +36,7 @@ def match_guidance(
             following is not None
             and following.line.id == segment.line.id
             and following.segment_type == segment.segment_type
+            and not requires_train_change(segment, following)
         ):
             # O passageiro continua no mesmo trem; nao ha desembarque aqui.
             continue
