@@ -110,6 +110,7 @@ class PlanningApiTests(unittest.TestCase):
         self.gateway.find_route.return_value = None
         response = self.browser.post("/api/planning/route", json={"origin_id": 1, "destination_id": 2})
         self.assertEqual(response.status_code, 404)
+        self.assertIn("podem estar fora do horário de funcionamento", response.json()["detail"])
 
     def test_falha_de_servico_nao_expoe_mensagem_interna(self):
         self.gateway.find_route.side_effect = PlanningUnavailable("internal-secret")
