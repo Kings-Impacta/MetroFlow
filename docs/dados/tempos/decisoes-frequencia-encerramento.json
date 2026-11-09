@@ -1,0 +1,32 @@
+{
+  "somente_local": true,
+  "aprovado_para_xano": false,
+  "margem_aplicada": false,
+  "decisoes": [
+    {
+      "componente": "L9-frequencia",
+      "estado": "estimativa_base_escolhida_para_simulacao",
+      "valor": "7min diautil11h30-15h30;10min demaisfaixas e finsdesemana",
+      "confianca": "baixa",
+      "limite": "Referencias datadas e extrapolacoes explicitas; substituir quando houver dado melhor, sem fingir medicao atual."
+    },
+    {
+      "componente": "L9-excecoes-datadas",
+      "estado": "implementadas_na_copia",
+      "valor": "08maio20maio03-04outubro",
+      "limite": "Nao e lista completa de todas as obras ou incidentes; calendario nao abre estacoes durante horario de obra por suposicao."
+    },
+    {
+      "componente": "L17-encerramento",
+      "estado": "tratamento_local_definido",
+      "valor": "Cronologia nominal ate22h;aviso quando cenário comHcompleto e percurso20porcentomaislento excede22h",
+      "limite": "Nao e hora exata do ultimo trem; sem margem adicional e sem mudar ocupacao."
+    },
+    {
+      "componente": "L6",
+      "estado": "aguardando_cobertura_anterior",
+      "valor": "Proxima fase apenas apos concluir cobertura anterior",
+      "limite": "Instrucao mais recente autoriza seguir depois; nao incorporar por antecipacao nem declarar cobertura global concluida."
+    }
+  ]
+}

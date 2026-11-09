@@ -1,0 +1,54 @@
+{
+  "somente_local": true,
+  "excecoes": [
+    {
+      "data": "2026-05-08",
+      "linha": "L9",
+      "faixa": [
+        "12:30",
+        "15:00"
+      ],
+      "trecho": [
+        "Socorro",
+        "Varginha"
+      ],
+      "intervalo_obras_segundos": 720,
+      "intervalo_regular_demais_segundos": 360,
+      "aplicar_permanente": false,
+      "fonte": "https://trilhos.motiva.com.br/viamobilidade8e9/noticias/2026/maio/viamobilidade-realiza-manutencoes-nas-linhas-8-e-9/"
+    },
+    {
+      "data": "2026-05-20",
+      "linha": "L9",
+      "faixa": [
+        "11:30",
+        "15:30"
+      ],
+      "trecho": [
+        "Socorro",
+        "Varginha"
+      ],
+      "intervalo_obras_segundos": 840,
+      "intervalo_regular_linha_segundos": 420,
+      "aplicar_permanente": false,
+      "fonte": "https://trilhos.motiva.com.br/viamobilidade8e9/noticias/2026/maio/confira-as-manutencoes-programadas-nas-linhas-8-diamante-e-9-esm/"
+    },
+    {
+      "data": "2026-10-03/2026-10-04",
+      "linha": "L9",
+      "faixa": [
+        "21:00",
+        "07:00"
+      ],
+      "trecho": [
+        "Jurubatuba-Senac",
+        "Varginha"
+      ],
+      "intervalo_obras_segundos": 1200,
+      "aplicar_permanente": false,
+      "fonte": "https://trilhos.motiva.com.br/viamobilidade8e9/noticias/2026/setembro/confira-as-manutencoes-programadas-das-linhas-8--diamante-e-9-es/",
+      "intervalo_osasco_jurubatuba_segundos": 600
+    }
+  ],
+  "limite": "Referencias preservadas; nao executadas como calendario permanente, nao alteram malha."
+}

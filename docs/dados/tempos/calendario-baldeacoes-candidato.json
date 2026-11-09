@@ -1,0 +1,76 @@
+{
+  "somente_local": true,
+  "aprovado_para_xano": false,
+  "fechamentos": [
+    {
+      "linha": "L10",
+      "origem": "Palmeiras-Barra Funda",
+      "destino": "Luz",
+      "inicio": "2026-10-31T08:00:00-03:00",
+      "fim": "2026-10-31T18:00:00-03:00",
+      "inicio_ms": 1793444400000,
+      "fim_ms": 1793480400000,
+      "fonte": "https://www.cptm.sp.gov.br/cptm/!ut/p/z0/04_Sj9CPykssy0xPLMnMz0vMAfIjo8ziDSzMTIyM3Q2MPVz9XQzMQkMMg9xcjEICfc31gzOK9AuyHRUBqOhUBQ!!/?1dmy=&urile=wcm%3Apath%3A%2Fwcm%2Fconnect%2Fcptm_content%2Fcptm%2Fnoticias%2Fcptm-tera-alteracoes-na-circulacao-de-trens-no-feriado-prolongado-de-finados"
+    },
+    {
+      "linha": "L11",
+      "origem": "Tatuapé",
+      "destino": "Corinthians-Itaquera",
+      "inicio": "2026-11-02T09:00:00-03:00",
+      "fim": "2026-11-02T16:00:00-03:00",
+      "inicio_ms": 1793620800000,
+      "fim_ms": 1793646000000,
+      "fonte": "https://www.cptm.sp.gov.br/cptm/!ut/p/z0/04_Sj9CPykssy0xPLMnMz0vMAfIjo8ziDSzMTIyM3Q2MPVz9XQzMQkMMg9xcjEICfc31gzOK9AuyHRUBqOhUBQ!!/?1dmy=&urile=wcm%3Apath%3A%2Fwcm%2Fconnect%2Fcptm_content%2Fcptm%2Fnoticias%2Fcptm-tera-alteracoes-na-circulacao-de-trens-no-feriado-prolongado-de-finados"
+    }
+  ],
+  "troca_datada": {
+    "estacao": "Palmeiras-Barra Funda",
+    "linha_origem": "L7",
+    "linha_destino": "L11",
+    "anterior": "Água Branca",
+    "proxima": "Luz",
+    "inicio_ms": 1793444400000,
+    "fim_ms": 1793480400000,
+    "segundos_candidatos": 120,
+    "fonte": "https://www.cptm.sp.gov.br/cptm/!ut/p/z0/04_Sj9CPykssy0xPLMnMz0vMAfIjo8ziDSzMTIyM3Q2MPVz9XQzMQkMMg9xcjEICfc31gzOK9AuyHRUBqOhUBQ!!/?1dmy=&urile=wcm%3Apath%3A%2Fwcm%2Fconnect%2Fcptm_content%2Fcptm%2Fnoticias%2Fcptm-tera-alteracoes-na-circulacao-de-trens-no-feriado-prolongado-de-finados",
+    "limite": "Alternância programada das plataformas6/7 para embarque na mesma plataforma.120s de circulação são hipótese; confirmar plataforma nos avisos. Sem generalizar o sentido inverso."
+  },
+  "plataformas_referencias": [
+    {
+      "data": "2026-10-31T23:00/2026-11-01T00:00",
+      "estacoes": [
+        "Tamanduateí",
+        "Ipiranga"
+      ],
+      "plataformas": [
+        "4",
+        "2"
+      ],
+      "fonte": "https://www.cptm.sp.gov.br/cptm/!ut/p/z0/04_Sj9CPykssy0xPLMnMz0vMAfIjo8ziDSzMTIyM3Q2MPVz9XQzMQkMMg9xcjEICfc31gzOK9AuyHRUBqOhUBQ!!/?1dmy=&urile=wcm%3Apath%3A%2Fwcm%2Fconnect%2Fcptm_content%2Fcptm%2Fnoticias%2Fcptm-tera-alteracoes-na-circulacao-de-trens-no-feriado-prolongado-de-finados",
+      "aplicar_tempo": false
+    },
+    {
+      "data": "2026-10-31T21:00/2026-11-01T00:00",
+      "estacoes": [
+        "Tatuapé"
+      ],
+      "plataformas": [
+        "1"
+      ],
+      "fonte": "https://www.cptm.sp.gov.br/cptm/!ut/p/z0/04_Sj9CPykssy0xPLMnMz0vMAfIjo8ziDSzMTIyM3Q2MPVz9XQzMQkMMg9xcjEICfc31gzOK9AuyHRUBqOhUBQ!!/?1dmy=&urile=wcm%3Apath%3A%2Fwcm%2Fconnect%2Fcptm_content%2Fcptm%2Fnoticias%2Fcptm-tera-alteracoes-na-circulacao-de-trens-no-feriado-prolongado-de-finados",
+      "aplicar_tempo": false
+    },
+    {
+      "data": "2026-11-01T04:00/2026-11-01T08:00",
+      "estacoes": [
+        "Tatuapé"
+      ],
+      "plataformas": [
+        "1"
+      ],
+      "fonte": "https://www.cptm.sp.gov.br/cptm/!ut/p/z0/04_Sj9CPykssy0xPLMnMz0vMAfIjo8ziDSzMTIyM3Q2MPVz9XQzMQkMMg9xcjEICfc31gzOK9AuyHRUBqOhUBQ!!/?1dmy=&urile=wcm%3Apath%3A%2Fwcm%2Fconnect%2Fcptm_content%2Fcptm%2Fnoticias%2Fcptm-tera-alteracoes-na-circulacao-de-trens-no-feriado-prolongado-de-finados",
+      "aplicar_tempo": false
+    }
+  ],
+  "limite": "Mudança de plataforma sem percurso interno conhecido é referência, não cronometagem. Calendário não é inventário completo de incidentes futuros."
+}

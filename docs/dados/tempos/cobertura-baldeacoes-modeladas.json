@@ -1,0 +1,1159 @@
+{
+  "data": "2026-11-04",
+  "aprovado_para_xano": false,
+  "cobertura_operacional_completa": false,
+  "itens": [
+    {
+      "estacao": "Paraíso",
+      "linha_origem": "L1",
+      "linha_destino": "L2",
+      "combinacoes_candidatas": 4,
+      "estado": "combinacoes_modeladas_a_avaliar",
+      "caminhada_candidata_segundos": 300,
+      "aprovado_para_xano": false
+    },
+    {
+      "estacao": "Paraíso",
+      "linha_origem": "L2",
+      "linha_destino": "L1",
+      "combinacoes_candidatas": 4,
+      "estado": "combinacoes_modeladas_a_avaliar",
+      "caminhada_candidata_segundos": 300,
+      "aprovado_para_xano": false
+    },
+    {
+      "estacao": "Ana Rosa",
+      "linha_origem": "L1",
+      "linha_destino": "L2",
+      "combinacoes_candidatas": 4,
+      "estado": "combinacoes_modeladas_a_avaliar",
+      "caminhada_candidata_segundos": 180,
+      "aprovado_para_xano": false
+    },
+    {
+      "estacao": "Ana Rosa",
+      "linha_origem": "L2",
+      "linha_destino": "L1",
+      "combinacoes_candidatas": 4,
+      "estado": "combinacoes_modeladas_a_avaliar",
+      "caminhada_candidata_segundos": 180,
+      "aprovado_para_xano": false
+    },
+    {
+      "estacao": "Santa Cruz",
+      "linha_origem": "L1",
+      "linha_destino": "L5",
+      "combinacoes_candidatas": 4,
+      "estado": "combinacoes_modeladas_a_avaliar",
+      "caminhada_candidata_segundos": 480,
+      "aprovado_para_xano": false
+    },
+    {
+      "estacao": "Santa Cruz",
+      "linha_origem": "L5",
+      "linha_destino": "L1",
+      "combinacoes_candidatas": 4,
+      "estado": "combinacoes_modeladas_a_avaliar",
+      "caminhada_candidata_segundos": 480,
+      "aprovado_para_xano": false
+    },
+    {
+      "estacao": "Chácara Klabin",
+      "linha_origem": "L2",
+      "linha_destino": "L5",
+      "combinacoes_candidatas": 2,
+      "estado": "combinacoes_modeladas_a_avaliar",
+      "caminhada_candidata_segundos": 300,
+      "aprovado_para_xano": false
+    },
+    {
+      "estacao": "Chácara Klabin",
+      "linha_origem": "L5",
+      "linha_destino": "L2",
+      "combinacoes_candidatas": 2,
+      "estado": "combinacoes_modeladas_a_avaliar",
+      "caminhada_candidata_segundos": 300,
+      "aprovado_para_xano": false
+    },
+    {
+      "estacao": "Sé",
+      "linha_origem": "L1",
+      "linha_destino": "L3",
+      "combinacoes_candidatas": 4,
+      "estado": "combinacoes_modeladas_a_avaliar",
+      "caminhada_candidata_segundos": 180,
+      "aprovado_para_xano": false
+    },
+    {
+      "estacao": "Sé",
+      "linha_origem": "L3",
+      "linha_destino": "L1",
+      "combinacoes_candidatas": 4,
+      "estado": "combinacoes_modeladas_a_avaliar",
+      "caminhada_candidata_segundos": 180,
+      "aprovado_para_xano": false
+    },
+    {
+      "estacao": "Luz",
+      "linha_origem": "L1",
+      "linha_destino": "L4",
+      "combinacoes_candidatas": 2,
+      "estado": "combinacoes_modeladas_a_avaliar",
+      "caminhada_candidata_segundos": 420,
+      "aprovado_para_xano": false
+    },
+    {
+      "estacao": "Luz",
+      "linha_origem": "L1",
+      "linha_destino": "L10",
+      "combinacoes_candidatas": 4,
+      "estado": "combinacoes_modeladas_a_avaliar",
+      "caminhada_candidata_segundos": 420,
+      "aprovado_para_xano": false
+    },
+    {
+      "estacao": "Luz",
+      "linha_origem": "L1",
+      "linha_destino": "L11",
+      "combinacoes_candidatas": 4,
+      "estado": "combinacoes_modeladas_a_avaliar",
+      "caminhada_candidata_segundos": 420,
+      "aprovado_para_xano": false
+    },
+    {
+      "estacao": "Luz",
+      "linha_origem": "L1",
+      "linha_destino": "EXP-AER",
+      "combinacoes_candidatas": 4,
+      "estado": "combinacoes_modeladas_a_avaliar",
+      "caminhada_candidata_segundos": 420,
+      "aprovado_para_xano": false
+    },
+    {
+      "estacao": "Luz",
+      "linha_origem": "L4",
+      "linha_destino": "L1",
+      "combinacoes_candidatas": 2,
+      "estado": "combinacoes_modeladas_a_avaliar",
+      "caminhada_candidata_segundos": 420,
+      "aprovado_para_xano": false
+    },
+    {
+      "estacao": "Luz",
+      "linha_origem": "L4",
+      "linha_destino": "L10",
+      "combinacoes_candidatas": 2,
+      "estado": "combinacoes_modeladas_a_avaliar",
+      "caminhada_candidata_segundos": 420,
+      "aprovado_para_xano": false
+    },
+    {
+      "estacao": "Luz",
+      "linha_origem": "L4",
+      "linha_destino": "L11",
+      "combinacoes_candidatas": 2,
+      "estado": "combinacoes_modeladas_a_avaliar",
+      "caminhada_candidata_segundos": 420,
+      "aprovado_para_xano": false
+    },
+    {
+      "estacao": "Luz",
+      "linha_origem": "L4",
+      "linha_destino": "EXP-AER",
+      "combinacoes_candidatas": 2,
+      "estado": "combinacoes_modeladas_a_avaliar",
+      "caminhada_candidata_segundos": 420,
+      "aprovado_para_xano": false
+    },
+    {
+      "estacao": "Luz",
+      "linha_origem": "L10",
+      "linha_destino": "L1",
+      "combinacoes_candidatas": 4,
+      "estado": "combinacoes_modeladas_a_avaliar",
+      "caminhada_candidata_segundos": 420,
+      "aprovado_para_xano": false
+    },
+    {
+      "estacao": "Luz",
+      "linha_origem": "L10",
+      "linha_destino": "L4",
+      "combinacoes_candidatas": 2,
+      "estado": "combinacoes_modeladas_a_avaliar",
+      "caminhada_candidata_segundos": 420,
+      "aprovado_para_xano": false
+    },
+    {
+      "estacao": "Luz",
+      "linha_origem": "L10",
+      "linha_destino": "L11",
+      "combinacoes_candidatas": 4,
+      "estado": "combinacoes_modeladas_a_avaliar",
+      "caminhada_candidata_segundos": 420,
+      "aprovado_para_xano": false
+    },
+    {
+      "estacao": "Luz",
+      "linha_origem": "L10",
+      "linha_destino": "EXP-AER",
+      "combinacoes_candidatas": 4,
+      "estado": "combinacoes_modeladas_a_avaliar",
+      "caminhada_candidata_segundos": 420,
+      "aprovado_para_xano": false
+    },
+    {
+      "estacao": "Luz",
+      "linha_origem": "L11",
+      "linha_destino": "L1",
+      "combinacoes_candidatas": 4,
+      "estado": "combinacoes_modeladas_a_avaliar",
+      "caminhada_candidata_segundos": 420,
+      "aprovado_para_xano": false
+    },
+    {
+      "estacao": "Luz",
+      "linha_origem": "L11",
+      "linha_destino": "L4",
+      "combinacoes_candidatas": 2,
+      "estado": "combinacoes_modeladas_a_avaliar",
+      "caminhada_candidata_segundos": 420,
+      "aprovado_para_xano": false
+    },
+    {
+      "estacao": "Luz",
+      "linha_origem": "L11",
+      "linha_destino": "L10",
+      "combinacoes_candidatas": 4,
+      "estado": "combinacoes_modeladas_a_avaliar",
+      "caminhada_candidata_segundos": 420,
+      "aprovado_para_xano": false
+    },
+    {
+      "estacao": "Luz",
+      "linha_origem": "L11",
+      "linha_destino": "EXP-AER",
+      "combinacoes_candidatas": 4,
+      "estado": "combinacoes_modeladas_a_avaliar",
+      "caminhada_candidata_segundos": 420,
+      "aprovado_para_xano": false
+    },
+    {
+      "estacao": "Luz",
+      "linha_origem": "EXP-AER",
+      "linha_destino": "L1",
+      "combinacoes_candidatas": 4,
+      "estado": "combinacoes_modeladas_a_avaliar",
+      "caminhada_candidata_segundos": 420,
+      "aprovado_para_xano": false
+    },
+    {
+      "estacao": "Luz",
+      "linha_origem": "EXP-AER",
+      "linha_destino": "L4",
+      "combinacoes_candidatas": 2,
+      "estado": "combinacoes_modeladas_a_avaliar",
+      "caminhada_candidata_segundos": 420,
+      "aprovado_para_xano": false
+    },
+    {
+      "estacao": "Luz",
+      "linha_origem": "EXP-AER",
+      "linha_destino": "L10",
+      "combinacoes_candidatas": 4,
+      "estado": "combinacoes_modeladas_a_avaliar",
+      "caminhada_candidata_segundos": 420,
+      "aprovado_para_xano": false
+    },
+    {
+      "estacao": "Luz",
+      "linha_origem": "EXP-AER",
+      "linha_destino": "L11",
+      "combinacoes_candidatas": 4,
+      "estado": "combinacoes_modeladas_a_avaliar",
+      "caminhada_candidata_segundos": 420,
+      "aprovado_para_xano": false
+    },
+    {
+      "estacao": "Vila Prudente",
+      "linha_origem": "L2",
+      "linha_destino": "L15",
+      "combinacoes_candidatas": 1,
+      "estado": "combinacoes_modeladas_a_avaliar",
+      "caminhada_candidata_segundos": 300,
+      "aprovado_para_xano": false
+    },
+    {
+      "estacao": "Vila Prudente",
+      "linha_origem": "L15",
+      "linha_destino": "L2",
+      "combinacoes_candidatas": 1,
+      "estado": "combinacoes_modeladas_a_avaliar",
+      "caminhada_candidata_segundos": 300,
+      "aprovado_para_xano": false
+    },
+    {
+      "estacao": "Tamanduateí",
+      "linha_origem": "L2",
+      "linha_destino": "L10",
+      "combinacoes_candidatas": 4,
+      "estado": "combinacoes_modeladas_a_avaliar",
+      "caminhada_candidata_segundos": 300,
+      "aprovado_para_xano": false
+    },
+    {
+      "estacao": "Tamanduateí",
+      "linha_origem": "L2",
+      "linha_destino": "EXP-L10",
+      "combinacoes_candidatas": 2,
+      "estado": "combinacoes_modeladas_a_avaliar",
+      "caminhada_candidata_segundos": 300,
+      "aprovado_para_xano": false
+    },
+    {
+      "estacao": "Tamanduateí",
+      "linha_origem": "L10",
+      "linha_destino": "L2",
+      "combinacoes_candidatas": 4,
+      "estado": "combinacoes_modeladas_a_avaliar",
+      "caminhada_candidata_segundos": 300,
+      "aprovado_para_xano": false
+    },
+    {
+      "estacao": "Tamanduateí",
+      "linha_origem": "L10",
+      "linha_destino": "EXP-L10",
+      "combinacoes_candidatas": 2,
+      "estado": "combinacoes_modeladas_a_avaliar",
+      "caminhada_candidata_segundos": 300,
+      "aprovado_para_xano": false
+    },
+    {
+      "estacao": "Tamanduateí",
+      "linha_origem": "EXP-L10",
+      "linha_destino": "L2",
+      "combinacoes_candidatas": 2,
+      "estado": "combinacoes_modeladas_a_avaliar",
+      "caminhada_candidata_segundos": 300,
+      "aprovado_para_xano": false
+    },
+    {
+      "estacao": "Tamanduateí",
+      "linha_origem": "EXP-L10",
+      "linha_destino": "L10",
+      "combinacoes_candidatas": 2,
+      "estado": "combinacoes_modeladas_a_avaliar",
+      "caminhada_candidata_segundos": 300,
+      "aprovado_para_xano": false
+    },
+    {
+      "estacao": "Palmeiras-Barra Funda",
+      "linha_origem": "L3",
+      "linha_destino": "L7",
+      "combinacoes_candidatas": 1,
+      "estado": "combinacoes_modeladas_a_avaliar",
+      "caminhada_candidata_segundos": 420,
+      "aprovado_para_xano": false
+    },
+    {
+      "estacao": "Palmeiras-Barra Funda",
+      "linha_origem": "L3",
+      "linha_destino": "L8",
+      "combinacoes_candidatas": 2,
+      "estado": "combinacoes_modeladas_a_avaliar",
+      "caminhada_candidata_segundos": 420,
+      "aprovado_para_xano": false
+    },
+    {
+      "estacao": "Palmeiras-Barra Funda",
+      "linha_origem": "L3",
+      "linha_destino": "L10",
+      "combinacoes_candidatas": 1,
+      "estado": "combinacoes_modeladas_a_avaliar",
+      "caminhada_candidata_segundos": 420,
+      "aprovado_para_xano": false
+    },
+    {
+      "estacao": "Palmeiras-Barra Funda",
+      "linha_origem": "L3",
+      "linha_destino": "L11",
+      "combinacoes_candidatas": 1,
+      "estado": "combinacoes_modeladas_a_avaliar",
+      "caminhada_candidata_segundos": 420,
+      "aprovado_para_xano": false
+    },
+    {
+      "estacao": "Palmeiras-Barra Funda",
+      "linha_origem": "L3",
+      "linha_destino": "EXP-AER",
+      "combinacoes_candidatas": 1,
+      "estado": "combinacoes_modeladas_a_avaliar",
+      "caminhada_candidata_segundos": 420,
+      "aprovado_para_xano": false
+    },
+    {
+      "estacao": "Palmeiras-Barra Funda",
+      "linha_origem": "L7",
+      "linha_destino": "L3",
+      "combinacoes_candidatas": 1,
+      "estado": "combinacoes_modeladas_a_avaliar",
+      "caminhada_candidata_segundos": 420,
+      "aprovado_para_xano": false
+    },
+    {
+      "estacao": "Palmeiras-Barra Funda",
+      "linha_origem": "L7",
+      "linha_destino": "L8",
+      "combinacoes_candidatas": 2,
+      "estado": "combinacoes_modeladas_a_avaliar",
+      "caminhada_candidata_segundos": 420,
+      "aprovado_para_xano": false
+    },
+    {
+      "estacao": "Palmeiras-Barra Funda",
+      "linha_origem": "L7",
+      "linha_destino": "L10",
+      "combinacoes_candidatas": 1,
+      "estado": "combinacoes_modeladas_a_avaliar",
+      "caminhada_candidata_segundos": 420,
+      "aprovado_para_xano": false
+    },
+    {
+      "estacao": "Palmeiras-Barra Funda",
+      "linha_origem": "L7",
+      "linha_destino": "L11",
+      "combinacoes_candidatas": 1,
+      "estado": "combinacoes_modeladas_a_avaliar",
+      "caminhada_candidata_segundos": 420,
+      "aprovado_para_xano": false
+    },
+    {
+      "estacao": "Palmeiras-Barra Funda",
+      "linha_origem": "L7",
+      "linha_destino": "EXP-AER",
+      "combinacoes_candidatas": 1,
+      "estado": "combinacoes_modeladas_a_avaliar",
+      "caminhada_candidata_segundos": 420,
+      "aprovado_para_xano": false
+    },
+    {
+      "estacao": "Palmeiras-Barra Funda",
+      "linha_origem": "L8",
+      "linha_destino": "L3",
+      "combinacoes_candidatas": 2,
+      "estado": "combinacoes_modeladas_a_avaliar",
+      "caminhada_candidata_segundos": 420,
+      "aprovado_para_xano": false
+    },
+    {
+      "estacao": "Palmeiras-Barra Funda",
+      "linha_origem": "L8",
+      "linha_destino": "L7",
+      "combinacoes_candidatas": 2,
+      "estado": "combinacoes_modeladas_a_avaliar",
+      "caminhada_candidata_segundos": 420,
+      "aprovado_para_xano": false
+    },
+    {
+      "estacao": "Palmeiras-Barra Funda",
+      "linha_origem": "L8",
+      "linha_destino": "L10",
+      "combinacoes_candidatas": 2,
+      "estado": "combinacoes_modeladas_a_avaliar",
+      "caminhada_candidata_segundos": 420,
+      "aprovado_para_xano": false
+    },
+    {
+      "estacao": "Palmeiras-Barra Funda",
+      "linha_origem": "L8",
+      "linha_destino": "L11",
+      "combinacoes_candidatas": 2,
+      "estado": "combinacoes_modeladas_a_avaliar",
+      "caminhada_candidata_segundos": 420,
+      "aprovado_para_xano": false
+    },
+    {
+      "estacao": "Palmeiras-Barra Funda",
+      "linha_origem": "L8",
+      "linha_destino": "EXP-AER",
+      "combinacoes_candidatas": 2,
+      "estado": "combinacoes_modeladas_a_avaliar",
+      "caminhada_candidata_segundos": 420,
+      "aprovado_para_xano": false
+    },
+    {
+      "estacao": "Palmeiras-Barra Funda",
+      "linha_origem": "L10",
+      "linha_destino": "L3",
+      "combinacoes_candidatas": 1,
+      "estado": "combinacoes_modeladas_a_avaliar",
+      "caminhada_candidata_segundos": 420,
+      "aprovado_para_xano": false
+    },
+    {
+      "estacao": "Palmeiras-Barra Funda",
+      "linha_origem": "L10",
+      "linha_destino": "L7",
+      "combinacoes_candidatas": 1,
+      "estado": "combinacoes_modeladas_a_avaliar",
+      "caminhada_candidata_segundos": 420,
+      "aprovado_para_xano": false
+    },
+    {
+      "estacao": "Palmeiras-Barra Funda",
+      "linha_origem": "L10",
+      "linha_destino": "L8",
+      "combinacoes_candidatas": 2,
+      "estado": "combinacoes_modeladas_a_avaliar",
+      "caminhada_candidata_segundos": 420,
+      "aprovado_para_xano": false
+    },
+    {
+      "estacao": "Palmeiras-Barra Funda",
+      "linha_origem": "L10",
+      "linha_destino": "L11",
+      "combinacoes_candidatas": 1,
+      "estado": "combinacoes_modeladas_a_avaliar",
+      "caminhada_candidata_segundos": 420,
+      "aprovado_para_xano": false
+    },
+    {
+      "estacao": "Palmeiras-Barra Funda",
+      "linha_origem": "L10",
+      "linha_destino": "EXP-AER",
+      "combinacoes_candidatas": 1,
+      "estado": "combinacoes_modeladas_a_avaliar",
+      "caminhada_candidata_segundos": 420,
+      "aprovado_para_xano": false
+    },
+    {
+      "estacao": "Palmeiras-Barra Funda",
+      "linha_origem": "L11",
+      "linha_destino": "L3",
+      "combinacoes_candidatas": 1,
+      "estado": "combinacoes_modeladas_a_avaliar",
+      "caminhada_candidata_segundos": 420,
+      "aprovado_para_xano": false
+    },
+    {
+      "estacao": "Palmeiras-Barra Funda",
+      "linha_origem": "L11",
+      "linha_destino": "L7",
+      "combinacoes_candidatas": 1,
+      "estado": "combinacoes_modeladas_a_avaliar",
+      "caminhada_candidata_segundos": 420,
+      "aprovado_para_xano": false
+    },
+    {
+      "estacao": "Palmeiras-Barra Funda",
+      "linha_origem": "L11",
+      "linha_destino": "L8",
+      "combinacoes_candidatas": 2,
+      "estado": "combinacoes_modeladas_a_avaliar",
+      "caminhada_candidata_segundos": 420,
+      "aprovado_para_xano": false
+    },
+    {
+      "estacao": "Palmeiras-Barra Funda",
+      "linha_origem": "L11",
+      "linha_destino": "L10",
+      "combinacoes_candidatas": 1,
+      "estado": "combinacoes_modeladas_a_avaliar",
+      "caminhada_candidata_segundos": 420,
+      "aprovado_para_xano": false
+    },
+    {
+      "estacao": "Palmeiras-Barra Funda",
+      "linha_origem": "L11",
+      "linha_destino": "EXP-AER",
+      "combinacoes_candidatas": 1,
+      "estado": "combinacoes_modeladas_a_avaliar",
+      "caminhada_candidata_segundos": 420,
+      "aprovado_para_xano": false
+    },
+    {
+      "estacao": "Palmeiras-Barra Funda",
+      "linha_origem": "EXP-AER",
+      "linha_destino": "L3",
+      "combinacoes_candidatas": 1,
+      "estado": "combinacoes_modeladas_a_avaliar",
+      "caminhada_candidata_segundos": 420,
+      "aprovado_para_xano": false
+    },
+    {
+      "estacao": "Palmeiras-Barra Funda",
+      "linha_origem": "EXP-AER",
+      "linha_destino": "L7",
+      "combinacoes_candidatas": 1,
+      "estado": "combinacoes_modeladas_a_avaliar",
+      "caminhada_candidata_segundos": 420,
+      "aprovado_para_xano": false
+    },
+    {
+      "estacao": "Palmeiras-Barra Funda",
+      "linha_origem": "EXP-AER",
+      "linha_destino": "L8",
+      "combinacoes_candidatas": 2,
+      "estado": "combinacoes_modeladas_a_avaliar",
+      "caminhada_candidata_segundos": 420,
+      "aprovado_para_xano": false
+    },
+    {
+      "estacao": "Palmeiras-Barra Funda",
+      "linha_origem": "EXP-AER",
+      "linha_destino": "L10",
+      "combinacoes_candidatas": 1,
+      "estado": "combinacoes_modeladas_a_avaliar",
+      "caminhada_candidata_segundos": 420,
+      "aprovado_para_xano": false
+    },
+    {
+      "estacao": "Palmeiras-Barra Funda",
+      "linha_origem": "EXP-AER",
+      "linha_destino": "L11",
+      "combinacoes_candidatas": 1,
+      "estado": "combinacoes_modeladas_a_avaliar",
+      "caminhada_candidata_segundos": 420,
+      "aprovado_para_xano": false
+    },
+    {
+      "estacao": "República",
+      "linha_origem": "L3",
+      "linha_destino": "L4",
+      "combinacoes_candidatas": 4,
+      "estado": "combinacoes_modeladas_a_avaliar",
+      "caminhada_candidata_segundos": 180,
+      "aprovado_para_xano": false
+    },
+    {
+      "estacao": "República",
+      "linha_origem": "L4",
+      "linha_destino": "L3",
+      "combinacoes_candidatas": 4,
+      "estado": "combinacoes_modeladas_a_avaliar",
+      "caminhada_candidata_segundos": 180,
+      "aprovado_para_xano": false
+    },
+    {
+      "estacao": "Brás",
+      "linha_origem": "L3",
+      "linha_destino": "L10",
+      "combinacoes_candidatas": 4,
+      "estado": "combinacoes_modeladas_a_avaliar",
+      "caminhada_candidata_segundos": 420,
+      "aprovado_para_xano": false
+    },
+    {
+      "estacao": "Brás",
+      "linha_origem": "L3",
+      "linha_destino": "L11",
+      "combinacoes_candidatas": 4,
+      "estado": "combinacoes_modeladas_a_avaliar",
+      "caminhada_candidata_segundos": 420,
+      "aprovado_para_xano": false
+    },
+    {
+      "estacao": "Brás",
+      "linha_origem": "L3",
+      "linha_destino": "L12",
+      "combinacoes_candidatas": 2,
+      "estado": "combinacoes_modeladas_a_avaliar",
+      "caminhada_candidata_segundos": 420,
+      "aprovado_para_xano": false
+    },
+    {
+      "estacao": "Brás",
+      "linha_origem": "L3",
+      "linha_destino": "EXP-AER",
+      "combinacoes_candidatas": 2,
+      "estado": "combinacoes_modeladas_a_avaliar",
+      "caminhada_candidata_segundos": 420,
+      "aprovado_para_xano": false
+    },
+    {
+      "estacao": "Brás",
+      "linha_origem": "L10",
+      "linha_destino": "L3",
+      "combinacoes_candidatas": 4,
+      "estado": "combinacoes_modeladas_a_avaliar",
+      "caminhada_candidata_segundos": 420,
+      "aprovado_para_xano": false
+    },
+    {
+      "estacao": "Brás",
+      "linha_origem": "L10",
+      "linha_destino": "L11",
+      "combinacoes_candidatas": 4,
+      "estado": "combinacoes_modeladas_a_avaliar",
+      "caminhada_candidata_segundos": 420,
+      "aprovado_para_xano": false
+    },
+    {
+      "estacao": "Brás",
+      "linha_origem": "L10",
+      "linha_destino": "L12",
+      "combinacoes_candidatas": 2,
+      "estado": "combinacoes_modeladas_a_avaliar",
+      "caminhada_candidata_segundos": 420,
+      "aprovado_para_xano": false
+    },
+    {
+      "estacao": "Brás",
+      "linha_origem": "L10",
+      "linha_destino": "EXP-AER",
+      "combinacoes_candidatas": 2,
+      "estado": "combinacoes_modeladas_a_avaliar",
+      "caminhada_candidata_segundos": 420,
+      "aprovado_para_xano": false
+    },
+    {
+      "estacao": "Brás",
+      "linha_origem": "L11",
+      "linha_destino": "L3",
+      "combinacoes_candidatas": 4,
+      "estado": "combinacoes_modeladas_a_avaliar",
+      "caminhada_candidata_segundos": 420,
+      "aprovado_para_xano": false
+    },
+    {
+      "estacao": "Brás",
+      "linha_origem": "L11",
+      "linha_destino": "L10",
+      "combinacoes_candidatas": 4,
+      "estado": "combinacoes_modeladas_a_avaliar",
+      "caminhada_candidata_segundos": 420,
+      "aprovado_para_xano": false
+    },
+    {
+      "estacao": "Brás",
+      "linha_origem": "L11",
+      "linha_destino": "L12",
+      "combinacoes_candidatas": 2,
+      "estado": "combinacoes_modeladas_a_avaliar",
+      "caminhada_candidata_segundos": 420,
+      "aprovado_para_xano": false
+    },
+    {
+      "estacao": "Brás",
+      "linha_origem": "L11",
+      "linha_destino": "EXP-AER",
+      "combinacoes_candidatas": 2,
+      "estado": "combinacoes_modeladas_a_avaliar",
+      "caminhada_candidata_segundos": 420,
+      "aprovado_para_xano": false
+    },
+    {
+      "estacao": "Brás",
+      "linha_origem": "L12",
+      "linha_destino": "L3",
+      "combinacoes_candidatas": 2,
+      "estado": "combinacoes_modeladas_a_avaliar",
+      "caminhada_candidata_segundos": 420,
+      "aprovado_para_xano": false
+    },
+    {
+      "estacao": "Brás",
+      "linha_origem": "L12",
+      "linha_destino": "L10",
+      "combinacoes_candidatas": 2,
+      "estado": "combinacoes_modeladas_a_avaliar",
+      "caminhada_candidata_segundos": 420,
+      "aprovado_para_xano": false
+    },
+    {
+      "estacao": "Brás",
+      "linha_origem": "L12",
+      "linha_destino": "L11",
+      "combinacoes_candidatas": 2,
+      "estado": "combinacoes_modeladas_a_avaliar",
+      "caminhada_candidata_segundos": 420,
+      "aprovado_para_xano": false
+    },
+    {
+      "estacao": "Brás",
+      "linha_origem": "L12",
+      "linha_destino": "EXP-AER",
+      "combinacoes_candidatas": 1,
+      "estado": "combinacoes_modeladas_a_avaliar",
+      "caminhada_candidata_segundos": 420,
+      "aprovado_para_xano": false
+    },
+    {
+      "estacao": "Brás",
+      "linha_origem": "EXP-AER",
+      "linha_destino": "L3",
+      "combinacoes_candidatas": 2,
+      "estado": "combinacoes_modeladas_a_avaliar",
+      "caminhada_candidata_segundos": 420,
+      "aprovado_para_xano": false
+    },
+    {
+      "estacao": "Brás",
+      "linha_origem": "EXP-AER",
+      "linha_destino": "L10",
+      "combinacoes_candidatas": 2,
+      "estado": "combinacoes_modeladas_a_avaliar",
+      "caminhada_candidata_segundos": 420,
+      "aprovado_para_xano": false
+    },
+    {
+      "estacao": "Brás",
+      "linha_origem": "EXP-AER",
+      "linha_destino": "L11",
+      "combinacoes_candidatas": 2,
+      "estado": "combinacoes_modeladas_a_avaliar",
+      "caminhada_candidata_segundos": 420,
+      "aprovado_para_xano": false
+    },
+    {
+      "estacao": "Brás",
+      "linha_origem": "EXP-AER",
+      "linha_destino": "L12",
+      "combinacoes_candidatas": 1,
+      "estado": "combinacoes_modeladas_a_avaliar",
+      "caminhada_candidata_segundos": 420,
+      "aprovado_para_xano": false
+    },
+    {
+      "estacao": "Tatuapé",
+      "linha_origem": "L3",
+      "linha_destino": "L11",
+      "combinacoes_candidatas": 4,
+      "estado": "combinacoes_modeladas_a_avaliar",
+      "caminhada_candidata_segundos": 300,
+      "aprovado_para_xano": false
+    },
+    {
+      "estacao": "Tatuapé",
+      "linha_origem": "L3",
+      "linha_destino": "L12",
+      "combinacoes_candidatas": 4,
+      "estado": "combinacoes_modeladas_a_avaliar",
+      "caminhada_candidata_segundos": 300,
+      "aprovado_para_xano": false
+    },
+    {
+      "estacao": "Tatuapé",
+      "linha_origem": "L11",
+      "linha_destino": "L3",
+      "combinacoes_candidatas": 4,
+      "estado": "combinacoes_modeladas_a_avaliar",
+      "caminhada_candidata_segundos": 300,
+      "aprovado_para_xano": false
+    },
+    {
+      "estacao": "Tatuapé",
+      "linha_origem": "L11",
+      "linha_destino": "L12",
+      "combinacoes_candidatas": 4,
+      "estado": "combinacoes_modeladas_a_avaliar",
+      "caminhada_candidata_segundos": 300,
+      "aprovado_para_xano": false
+    },
+    {
+      "estacao": "Tatuapé",
+      "linha_origem": "L12",
+      "linha_destino": "L3",
+      "combinacoes_candidatas": 4,
+      "estado": "combinacoes_modeladas_a_avaliar",
+      "caminhada_candidata_segundos": 300,
+      "aprovado_para_xano": false
+    },
+    {
+      "estacao": "Tatuapé",
+      "linha_origem": "L12",
+      "linha_destino": "L11",
+      "combinacoes_candidatas": 4,
+      "estado": "combinacoes_modeladas_a_avaliar",
+      "caminhada_candidata_segundos": 300,
+      "aprovado_para_xano": false
+    },
+    {
+      "estacao": "Corinthians-Itaquera",
+      "linha_origem": "L3",
+      "linha_destino": "L11",
+      "combinacoes_candidatas": 2,
+      "estado": "combinacoes_modeladas_a_avaliar",
+      "caminhada_candidata_segundos": 300,
+      "aprovado_para_xano": false
+    },
+    {
+      "estacao": "Corinthians-Itaquera",
+      "linha_origem": "L11",
+      "linha_destino": "L3",
+      "combinacoes_candidatas": 2,
+      "estado": "combinacoes_modeladas_a_avaliar",
+      "caminhada_candidata_segundos": 300,
+      "aprovado_para_xano": false
+    },
+    {
+      "estacao": "Pinheiros",
+      "linha_origem": "L4",
+      "linha_destino": "L9",
+      "combinacoes_candidatas": 4,
+      "estado": "combinacoes_modeladas_a_avaliar",
+      "caminhada_candidata_segundos": 480,
+      "aprovado_para_xano": false
+    },
+    {
+      "estacao": "Pinheiros",
+      "linha_origem": "L9",
+      "linha_destino": "L4",
+      "combinacoes_candidatas": 4,
+      "estado": "combinacoes_modeladas_a_avaliar",
+      "caminhada_candidata_segundos": 480,
+      "aprovado_para_xano": false
+    },
+    {
+      "estacao": "Santo Amaro",
+      "linha_origem": "L5",
+      "linha_destino": "L9",
+      "combinacoes_candidatas": 4,
+      "estado": "combinacoes_modeladas_a_avaliar",
+      "caminhada_candidata_segundos": 300,
+      "aprovado_para_xano": false
+    },
+    {
+      "estacao": "Santo Amaro",
+      "linha_origem": "L9",
+      "linha_destino": "L5",
+      "combinacoes_candidatas": 4,
+      "estado": "combinacoes_modeladas_a_avaliar",
+      "caminhada_candidata_segundos": 300,
+      "aprovado_para_xano": false
+    },
+    {
+      "estacao": "Campo Belo",
+      "linha_origem": "L5",
+      "linha_destino": "L17",
+      "combinacoes_candidatas": 4,
+      "estado": "combinacoes_modeladas_a_avaliar",
+      "caminhada_candidata_segundos": 420,
+      "aprovado_para_xano": false
+    },
+    {
+      "estacao": "Campo Belo",
+      "linha_origem": "L17",
+      "linha_destino": "L5",
+      "combinacoes_candidatas": 4,
+      "estado": "combinacoes_modeladas_a_avaliar",
+      "caminhada_candidata_segundos": 420,
+      "aprovado_para_xano": false
+    },
+    {
+      "estacao": "Presidente Altino",
+      "linha_origem": "L8",
+      "linha_destino": "L9",
+      "combinacoes_candidatas": 4,
+      "estado": "combinacoes_modeladas_a_avaliar",
+      "caminhada_candidata_segundos": 180,
+      "aprovado_para_xano": false
+    },
+    {
+      "estacao": "Presidente Altino",
+      "linha_origem": "L9",
+      "linha_destino": "L8",
+      "combinacoes_candidatas": 4,
+      "estado": "combinacoes_modeladas_a_avaliar",
+      "caminhada_candidata_segundos": 180,
+      "aprovado_para_xano": false
+    },
+    {
+      "estacao": "Osasco",
+      "linha_origem": "L8",
+      "linha_destino": "L9",
+      "combinacoes_candidatas": 2,
+      "estado": "combinacoes_modeladas_a_avaliar",
+      "caminhada_candidata_segundos": 180,
+      "aprovado_para_xano": false
+    },
+    {
+      "estacao": "Osasco",
+      "linha_origem": "L9",
+      "linha_destino": "L8",
+      "combinacoes_candidatas": 2,
+      "estado": "combinacoes_modeladas_a_avaliar",
+      "caminhada_candidata_segundos": 180,
+      "aprovado_para_xano": false
+    },
+    {
+      "estacao": "Morumbi - Claro",
+      "linha_origem": "L9",
+      "linha_destino": "L17",
+      "combinacoes_candidatas": 2,
+      "estado": "combinacoes_modeladas_a_avaliar",
+      "caminhada_candidata_segundos": 300,
+      "aprovado_para_xano": false
+    },
+    {
+      "estacao": "Morumbi - Claro",
+      "linha_origem": "L17",
+      "linha_destino": "L9",
+      "combinacoes_candidatas": 2,
+      "estado": "combinacoes_modeladas_a_avaliar",
+      "caminhada_candidata_segundos": 300,
+      "aprovado_para_xano": false
+    },
+    {
+      "estacao": "São Caetano do Sul-Prefeito Walter Braido",
+      "linha_origem": "L10",
+      "linha_destino": "EXP-L10",
+      "combinacoes_candidatas": 4,
+      "estado": "combinacoes_modeladas_a_avaliar",
+      "caminhada_candidata_segundos": 420,
+      "aprovado_para_xano": false
+    },
+    {
+      "estacao": "São Caetano do Sul-Prefeito Walter Braido",
+      "linha_origem": "EXP-L10",
+      "linha_destino": "L10",
+      "combinacoes_candidatas": 4,
+      "estado": "combinacoes_modeladas_a_avaliar",
+      "caminhada_candidata_segundos": 420,
+      "aprovado_para_xano": false
+    },
+    {
+      "estacao": "Santo André",
+      "linha_origem": "L10",
+      "linha_destino": "EXP-L10",
+      "combinacoes_candidatas": 2,
+      "estado": "combinacoes_modeladas_a_avaliar",
+      "caminhada_candidata_segundos": 420,
+      "aprovado_para_xano": false
+    },
+    {
+      "estacao": "Santo André",
+      "linha_origem": "EXP-L10",
+      "linha_destino": "L10",
+      "combinacoes_candidatas": 2,
+      "estado": "combinacoes_modeladas_a_avaliar",
+      "caminhada_candidata_segundos": 420,
+      "aprovado_para_xano": false
+    },
+    {
+      "estacao": "Calmon Viana",
+      "linha_origem": "L11",
+      "linha_destino": "L12",
+      "combinacoes_candidatas": 2,
+      "estado": "combinacoes_modeladas_a_avaliar",
+      "caminhada_candidata_segundos": 180,
+      "aprovado_para_xano": false
+    },
+    {
+      "estacao": "Calmon Viana",
+      "linha_origem": "L12",
+      "linha_destino": "L11",
+      "combinacoes_candidatas": 2,
+      "estado": "combinacoes_modeladas_a_avaliar",
+      "caminhada_candidata_segundos": 180,
+      "aprovado_para_xano": false
+    },
+    {
+      "estacao": "Engenheiro Goulart",
+      "linha_origem": "L12",
+      "linha_destino": "L13",
+      "combinacoes_candidatas": 2,
+      "estado": "combinacoes_modeladas_a_avaliar",
+      "caminhada_candidata_segundos": 180,
+      "aprovado_para_xano": false
+    },
+    {
+      "estacao": "Engenheiro Goulart",
+      "linha_origem": "L13",
+      "linha_destino": "L12",
+      "combinacoes_candidatas": 2,
+      "estado": "combinacoes_modeladas_a_avaliar",
+      "caminhada_candidata_segundos": 180,
+      "aprovado_para_xano": false
+    },
+    {
+      "estacao": "Guarulhos-Cecap",
+      "linha_origem": "L13",
+      "linha_destino": "EXP-AER",
+      "combinacoes_candidatas": 4,
+      "estado": "combinacoes_modeladas_a_avaliar",
+      "caminhada_candidata_segundos": 180,
+      "aprovado_para_xano": false
+    },
+    {
+      "estacao": "Guarulhos-Cecap",
+      "linha_origem": "EXP-AER",
+      "linha_destino": "L13",
+      "combinacoes_candidatas": 4,
+      "estado": "combinacoes_modeladas_a_avaliar",
+      "caminhada_candidata_segundos": 180,
+      "aprovado_para_xano": false
+    },
+    {
+      "estacao": "Aeroporto-Guarulhos",
+      "linha_origem": "L13",
+      "linha_destino": "EXP-AER",
+      "combinacoes_candidatas": 1,
+      "estado": "combinacoes_modeladas_a_avaliar",
+      "caminhada_candidata_segundos": 180,
+      "aprovado_para_xano": false
+    },
+    {
+      "estacao": "Aeroporto-Guarulhos",
+      "linha_origem": "EXP-AER",
+      "linha_destino": "L13",
+      "combinacoes_candidatas": 1,
+      "estado": "combinacoes_modeladas_a_avaliar",
+      "caminhada_candidata_segundos": 180,
+      "aprovado_para_xano": false
+    },
+    {
+      "estacao": "Itapevi",
+      "linha_origem": "L8:tronco",
+      "linha_destino": "L8:extensao",
+      "combinacoes_candidatas": 1,
+      "estado": "combinacoes_modeladas_a_avaliar",
+      "caminhada_candidata_segundos": 300,
+      "aprovado_para_xano": false
+    },
+    {
+      "estacao": "Itapevi",
+      "linha_origem": "L8:extensao",
+      "linha_destino": "L8:tronco",
+      "combinacoes_candidatas": 1,
+      "estado": "combinacoes_modeladas_a_avaliar",
+      "caminhada_candidata_segundos": 300,
+      "aprovado_para_xano": false
+    },
+    {
+      "estacao": "Brooklin Paulista",
+      "linha_origem": "L17:tronco",
+      "linha_destino": "L17:ramal_Washington_Luis",
+      "combinacoes_candidatas": 2,
+      "estado": "combinacoes_modeladas_a_avaliar",
+      "caminhada_candidata_segundos": 300,
+      "aprovado_para_xano": false
+    },
+    {
+      "estacao": "Brooklin Paulista",
+      "linha_origem": "L17:ramal_Washington_Luis",
+      "linha_destino": "L17:tronco",
+      "combinacoes_candidatas": 2,
+      "estado": "combinacoes_modeladas_a_avaliar",
+      "caminhada_candidata_segundos": 300,
+      "aprovado_para_xano": false
+    },
+    {
+      "estacao": "Paulista → Consolação",
+      "linha_origem": "L4",
+      "linha_destino": "L2",
+      "combinacoes_candidatas": 0,
+      "estado": "corredor_explicito_sem_penalidade_duplicada",
+      "caminhada_candidata_segundos": 300,
+      "aprovado_para_xano": false
+    },
+    {
+      "estacao": "Consolação → Paulista",
+      "linha_origem": "L2",
+      "linha_destino": "L4",
+      "combinacoes_candidatas": 0,
+      "estado": "corredor_explicito_sem_penalidade_duplicada",
+      "caminhada_candidata_segundos": 300,
+      "aprovado_para_xano": false
+    }
+  ]
+}

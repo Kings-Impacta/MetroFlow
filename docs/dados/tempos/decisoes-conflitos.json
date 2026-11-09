@@ -1,0 +1,47 @@
+{
+  "somente_local": true,
+  "aprovado_para_xano": false,
+  "margem_aplicada": false,
+  "decisoes": [
+    {
+      "id": "L7-PROJETO-OPERACAO",
+      "estado": "conflito_de_contexto_separado",
+      "base": "Cenario fisico85min30s",
+      "alternativa": "Projeto61min e referencia historica70min nao sao medicao atual do mesmo corredor",
+      "decisao": "Nao usar meta futura como tempo observado;70min somente sensibilidade",
+      "pendencia": "Precisao atual do percurso e faixas parciais permanecem estimadas"
+    },
+    {
+      "id": "L8-53-65",
+      "estado": "alcance_e_epoca_separados",
+      "base": "53minJPItapevi historico",
+      "alternativa": "65min programados posteriormente com terminais a esclarecer",
+      "decisao": "Manter ancora identificada e estressar65min; sem substituir por valor de terminal ambiguo",
+      "pendencia": "Escolha operacional atual nao comprovada"
+    },
+    {
+      "id": "L9-45-60",
+      "estado": "extensao_separada",
+      "base": "45minOsascoGrajau historico mais extensao modelada",
+      "alternativa": "60min posteriores com alcance nao estabelecido",
+      "decisao": "Nao atribuir45min ateVarginha;60min testados somente no nucleo",
+      "pendencia": "Frequencia integral ateVarginha usa piso candidato9min"
+    },
+    {
+      "id": "L17-INTERVALO-PERCURSO",
+      "estado": "grandezas_separadas",
+      "base": "9min entre trens; percurso por modelo fisico separado",
+      "alternativa": "35kmh e hipotese de familia; nao medicao propria",
+      "decisao": "Preservar9min como intervalo;cenario20porcentomaislento torna21h45inviavel",
+      "pendencia": "Nao garantir ultima conexao com essa hipotese"
+    },
+    {
+      "id": "REGISTRO-CRONOLOGIA",
+      "estado": "alinhado_no_laboratorio",
+      "base": "Mesmas regras executaveis da busca e mesma versao",
+      "alternativa": "Registro legado divergiu nos34casos exercitados",
+      "decisao": "Reproducao exige versao e padrao por passo; rejeita referencia vencida e recalcula custos",
+      "pendencia": "Integracao futura cliente/backend e endpoint; nenhum foi publicado"
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "data": "2026-11-04",
+  "aprovado_para_xano": false,
+  "margem_aplicada": false,
+  "linha": "L10",
+  "caminho_fisico": ["Palmeiras-Barra Funda", "Luz", "Brás", "Juventus-Mooca", "Ipiranga", "Tamanduateí", "São Caetano do Sul-Prefeito Walter Braido", "Utinga", "Prefeito Saladino", "Santo André", "Capuava", "Mauá", "Guapituba", "Ribeirão Pires-Antônio Bespalec", "Rio Grande da Serra"],
+  "limite_tronco": "Mauá",
+  "faixas_pico_dias_uteis_segundos": [[18000,30600],[57600,71400]],
+  "intervalo_tronco_segundos": 360,
+  "intervalo_integral_pico_segundos": 720,
+  "troca_padrao_candidata_segundos": 300,
+  "fonte": "https://www.cptm.sp.gov.br/dx/api/dam/v1/collections/05321fd9-3791-4689-a8ac-9e2adde39c4b/items/b6e68f57-4f4f-444d-b483-075f910e2c1b/renditions/4298df26-497c-47fd-a480-0b1812d6bb66?binary=true",
+  "copia_fonte": "../outputs/calibracao-oficial-20261101/intervalos-l10.pdf",
+  "metodo": "Oferecer serviço integral com meio intervalo de 12 min no pico e alternativa agregada de 6 min somente no tronco Barra Funda–Mauá. O agregado não promete continuar além de Mauá: exige novo embarque se usado antes de prosseguir. Fora do pico, somente o perfil integral usa as faixas por dia já preservadas.",
+  "limites": "Agregado de trens disponíveis no tronco, não grade individual nem afirmação de que todos terminam em Mauá. Não há fase de alternância entre trens integrais e parciais; a opção agregada é deliberadamente limitada ao tronco. Troca estimada em cinco minutos, sem plataforma ou acessibilidade medida. Ordem física local corrige apêndice inconsistente de Luz/Barra Funda no cadastro; nenhuma tabela remota é alterada."
+}

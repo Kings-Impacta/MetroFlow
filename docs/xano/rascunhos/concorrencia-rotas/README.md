@@ -81,3 +81,7 @@ reimportação da malha, repetir com uma sessão real, sem registrar o token:
 Também é preciso conferir se o `db.transaction` impede duas viagens ativas para
 o mesmo usuário em confirmações simultâneas. A busca já considera somente a
 viagem mais recente de cada usuário.
+
+## Atualização em 09/11/2026
+
+A malha foi reimportada e calibrada; a confirmação positiva, a substituição da viagem anterior e a alternativa com duas contas distintas foram confirmadas nos registros 52/53. O teste não encerra toda a matriz remota nem comprova a disputa de confirmações simultâneas do mesmo usuário. As regras antigas de alternativa sem limite descritas acima foram substituídas pelos limites publicados em 09/11. Consulte `../../fechamento-trajetos-concorrencia-2026-11-09.md` para as pendências atuais.

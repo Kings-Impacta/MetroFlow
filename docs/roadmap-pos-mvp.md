@@ -2,6 +2,14 @@
 
 Ordem definida em 21/09/2026: **P0 → P4 → P1 → P5 → P3 → P2**. A área administrativa (P6) fica em espera.
 
+## Prioridade de trajetos em 29/10/2026
+
+Por decisão do usuário, corrigir primeiro a qualidade dos trajetos existentes: desvios excessivos por concorrência, voltas na madrugada, ocupação prevista, troca na extensão de Itapevi e informação sobre acesso nas integrações. A mudança `corrigir-qualidade-trajetos` registra critérios e validação.
+
+A calibração de deslocamentos, frequências regulares e transferências específicas depende de dados atuais por trecho e sentido; não usar médias genéricas como se fossem medições. A integração de status segue em sua mudança própria, sem presumir normalidade quando a fonte estiver ausente.
+
+**Atualização em 09/11:** a Linha 6 foi tratada por último e sua operação parcial modelada foi incluída na publicação de 05/11. Conexões futuras não são oferecidas. As prioridades de 29/10 abaixo são históricas.
+
 | Etapa | Entrega | Critério de conclusão |
 | --- | --- | --- |
 | P0 | CI, sessão expirada e auditoria de segredos | Checks verdes; sessão inválida bloqueada; credenciais ausentes de respostas, URLs, históricos e logs examinados |
@@ -13,11 +21,11 @@ Ordem definida em 21/09/2026: **P0 → P4 → P1 → P5 → P3 → P2**. A área
 
 Cada etapa requer uma mudança OpenSpec própria antes de alterar contratos ou dados do Xano.
 
-## Estado atual em 19/10/2026
+## Estado histórico de 19/10 e atualizações até 09/11/2026
 
 - **P0 concluído:** CI, proteção de sessão expirada e auditoria de segredos foram validados e arquivados em `2026-09-23-auditoria-segredos-sessao`.
 - **P4 concluído:** confirmação de e-mail, recuperação de senha, uso único dos tokens e invalidação de sessões anteriores foram validados e arquivados em `2026-10-08-recuperacao-senha-verificacao-email`.
-- **Próxima etapa planejada: P1**, ainda sem mudança OpenSpec ativa.
+- **P1 entregue posteriormente:** cobertura estimada da malha ativa e publicação calibrada em 05/11; fechamento do teste de concorrência em 09/11. A próxima frente é P5, nos limites da mudança ativa de status.
 - **P5 avaliada em 21/10/2026:** a ARTESP oferece contrato documentado para a
   malha delegada, enquanto a fonte agregada observada para Metrô e CPTM ainda exige
   confirmação de autorização e condições de republicação. A mudança ativa
@@ -29,7 +37,7 @@ Cada etapa requer uma mudança OpenSpec própria antes de alterar contratos ou d
 A mudança `concorrencia-rotas` foi incluída fora da sequência P0–P6. Ela registra as viagens confirmadas no próprio MetroFlow, estima a lotação de cada trecho ferroviário por sentido e, quando o trajeto principal passa por um trecho lotado, apresenta o caminho de menor tempo que o evita. A estimativa é interna e não substitui o P5, que depende de fonte autorizada e de informação ao usuário, nem o P2, que prevê várias opções de trajeto.
 
 - **Concluído:** endpoint local `/api/planning/trip`, registro automático após uma busca bem-sucedida, testes do backend, da interface e das funções de cálculo, e publicação no Xano das tabelas e dos endpoints descritos em [docs/xano/rascunhos/concorrencia-rotas](xano/rascunhos/concorrencia-rotas/README.md).
-- **Pendente:** reimportar a malha perdida no [incidente da tabela `trechos`](xano/incidente-trechos-2026-10-26.md), validar o fluxo com uma sessão real e substituir os parâmetros de lotação de teste (`1` e `1%`) pelos valores definidos pela equipe.
+- **Atualização em 09/11:** malha restaurada e calibrada; fluxo com duas contas e alternativa por República confirmado. Os parâmetros `1` e `1%` continuam autorizados para demonstração. Valores de produção e verificações remotas complementares permanecem no [fechamento de trajetos e concorrência](xano/fechamento-trajetos-concorrencia-2026-11-09.md).
 
 Os registros abaixo preservam a sequência de evidências obtidas durante o P0. Menções a trabalho ainda pendente descrevem o estado naquela data e foram superadas pelas conclusões posteriores registradas neste mesmo documento.
 

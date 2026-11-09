@@ -28,7 +28,7 @@ O navegador consulta os endpoints locais `/api/planning/stations` e `/api/planni
 
 ## Cálculo e apresentação
 
-O Xano escolhe o caminho pelo menor tempo estimado: soma dos tempos dos trechos mais 600 segundos por mudança de linha. Em empate, prioriza menos baldeações. O resultado apresenta estações, linhas, operadores, sentidos e instruções de viagem. A penalidade fixa não representa tempos reais de caminhada, espera ou transferência.
+O Xano escolhe pelo menor horário estimado de chegada: deslocamento, esperas de embarque e custos calibrados por combinação de transferência. O contrato legado conserva seus custos anteriores. Em empate, prefere menos serviços especiais e menos baldeações. A cronologia é compartilhada com o registro da viagem e distingue os trens da Linha 17 e da extensão da Linha 8. A concorrência compara intervalos previstos e respeita os limites descritos na [correção de qualidade dos trajetos](docs/xano/correcao-qualidade-trajetos-2026-10-29.md). O resultado também pode conter avisos públicos de acesso em integrações. Tempos genéricos e penalidade fixa continuam sendo estimativas, não medições.
 
 Com a mudança `concorrencia-rotas`, publicada no Xano em 26/10/2026, a busca também estima a lotação de cada trecho ferroviário a partir das viagens confirmadas. Se o trajeto principal passar por um trecho lotado, o Xano devolve o caminho de menor tempo que o evita. A estimativa permanece no Xano e não faz parte da resposta pública.
 
@@ -39,3 +39,11 @@ As orientações de estação, com o lado de desembarque como informação princ
 Essa origem local é uma decisão temporária. As orientações não são dados da malha: não definem estações, linhas, trechos ou tempos e não participam do cálculo, que continua no Xano. O backend associa as dicas a um trajeto já calculado, por nome normalizado de estação, linha e sentido, e qualquer falha na leitura devolve o trajeto sem elas. Uma mudança futura poderá migrar o cadastro para o Xano. O [guia de coleta](docs/dados/README.md) descreve o formato e o estado atual dos dados.
 
 O [modelo de domínio](docs/domain-model.md) detalha esses conceitos. As [evidências de validação](docs/validacao-integracao-xano.md) e a [auditoria complementar do Xano](docs/xano/auditoria-integridade-2026-10-08.md) registram o que foi verificado e os limites operacionais restantes. Registros históricos de implementação permanecem nesses documentos e no histórico do Git.
+
+## Contrato calibrado publicado
+
+O cliente da main declara suporte à calibração na API oficial. Busca e registro compartilham versão, padrões de trem e cronologia física; o registro aceita a referência por até 30 segundos e rejeita versão incompatível. Sem referência preenchida, o contrato legado permanece disponível. A margem de 60 segundos é aplicada somente ao total público, sem prolongar a ocupação.
+
+A política de concorrência publicada em 09/11 admite redução parcial mínima de 40% da exposição, min(9 minutos, 45%) de acréscimo e uma baldeação extra; prefere percurso inteiramente pelo Metrô até um minuto mais lento que a alternativa elegível original. Os limites da alternativa totalmente livre permanecem separados, conforme o modelo de domínio. O [reteste real](docs/xano/publicacao-preferencia-metro-2026-11-09.md) confirmou os dois registros com a mesma versão e a alternativa por República.
+
+O laboratório em loopback continua separado da API oficial. O status das linhas ainda não participa do cálculo; a integração informativa é uma entrega própria.

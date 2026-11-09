@@ -1,0 +1,138 @@
+{
+  "somente_local": true,
+  "levantamento_iniciado_apos_cobertura_numerica_anterior": true,
+  "aprovado_para_xano": false,
+  "incluir_no_grafo_atual": false,
+  "estado_operacional": "alcance_e_horarios_por_trecho_nao_confirmados_nas_fontes_consultadas",
+  "fonte": "https://www.linhauni.com.br/linha-6-laranja?unidade-construtiva=estacao-brasilandia",
+  "data_atualizacao_exibida_pagina": "2026-08-12",
+  "referencia_projeto": {
+    "extensao_km": 15.3,
+    "total_minutos": 23,
+    "limite": "Duração anunciada de projeto completo; não medição de operação atual nem tempo de um trecho parcial."
+  },
+  "estacoes_projetadas": [
+    "Brasilândia",
+    "Maristela",
+    "Itaberaba-Hospital Vila Penteado",
+    "João Paulo I",
+    "Freguesia do Ó",
+    "Santa Marina",
+    "Água Branca",
+    "SESC-Pompeia",
+    "Perdizes",
+    "PUC-Cardoso de Almeida",
+    "FAAP-Pacaembu",
+    "Higienópolis-Mackenzie",
+    "14 Bis-Saracura",
+    "Bela Vista",
+    "São Joaquim"
+  ],
+  "intervalos_projetados": [
+    {
+      "origem": "Brasilândia",
+      "destino": "Maristela",
+      "tempo_operacional_segundos": null
+    },
+    {
+      "origem": "Maristela",
+      "destino": "Itaberaba-Hospital Vila Penteado",
+      "tempo_operacional_segundos": null
+    },
+    {
+      "origem": "Itaberaba-Hospital Vila Penteado",
+      "destino": "João Paulo I",
+      "tempo_operacional_segundos": null
+    },
+    {
+      "origem": "João Paulo I",
+      "destino": "Freguesia do Ó",
+      "tempo_operacional_segundos": null
+    },
+    {
+      "origem": "Freguesia do Ó",
+      "destino": "Santa Marina",
+      "tempo_operacional_segundos": null
+    },
+    {
+      "origem": "Santa Marina",
+      "destino": "Água Branca",
+      "tempo_operacional_segundos": null
+    },
+    {
+      "origem": "Água Branca",
+      "destino": "SESC-Pompeia",
+      "tempo_operacional_segundos": null
+    },
+    {
+      "origem": "SESC-Pompeia",
+      "destino": "Perdizes",
+      "tempo_operacional_segundos": null
+    },
+    {
+      "origem": "Perdizes",
+      "destino": "PUC-Cardoso de Almeida",
+      "tempo_operacional_segundos": null
+    },
+    {
+      "origem": "PUC-Cardoso de Almeida",
+      "destino": "FAAP-Pacaembu",
+      "tempo_operacional_segundos": null
+    },
+    {
+      "origem": "FAAP-Pacaembu",
+      "destino": "Higienópolis-Mackenzie",
+      "tempo_operacional_segundos": null
+    },
+    {
+      "origem": "Higienópolis-Mackenzie",
+      "destino": "14 Bis-Saracura",
+      "tempo_operacional_segundos": null
+    },
+    {
+      "origem": "14 Bis-Saracura",
+      "destino": "Bela Vista",
+      "tempo_operacional_segundos": null
+    },
+    {
+      "origem": "Bela Vista",
+      "destino": "São Joaquim",
+      "tempo_operacional_segundos": null
+    }
+  ],
+  "conexoes_projetadas": [
+    {
+      "estacao": "Água Branca",
+      "linha": "L7"
+    },
+    {
+      "estacao": "Higienópolis-Mackenzie",
+      "linha": "L4"
+    },
+    {
+      "estacao": "São Joaquim",
+      "linha": "L1"
+    }
+  ],
+  "referencias": [
+    {
+      "url": "https://www.linhauni.com.br/perguntas-frequentes",
+      "utilidade": "Previsão de entrega parcial2026 e total2027; previsão não confirma abertura por trecho."
+    },
+    {
+      "url": "https://www.linhauni.com.br/comunidade/desvio-de-trafego-estacao-joao-paulo-i-2812",
+      "utilidade": "Comunicado3nov2026 descreve obras e desvio de trânsito prorrogado; não é horário comercial de trens."
+    }
+  ],
+  "limites": [
+    "Indicador genérico Operação Encerrada não comprova quais estações já atendem passageiros.",
+    "Não dividir23min igualmente pelos14intervalos para fabricar tempos atuais.",
+    "Não liberar conexões projetadas ou copiar frequência de outra linha sem definir cenário."
+  ],
+  "proximos_dados": [
+    "Estações e conexões com acesso de passageiros confirmado por trecho",
+    "Dias e horários de operação",
+    "Frequência ou grade estimável do trecho efetivo",
+    "Percursos internos nas conexões efetivamente abertas"
+  ]
+}

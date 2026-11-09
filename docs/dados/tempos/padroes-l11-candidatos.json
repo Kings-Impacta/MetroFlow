@@ -1,0 +1,17 @@
+{
+  "data": "2026-11-04",
+  "aprovado_para_xano": false,
+  "margem_aplicada": false,
+  "linha": "L11",
+  "caminho_fisico": ["Palmeiras-Barra Funda", "Luz", "Brás", "Tatuapé", "Corinthians-Itaquera", "Dom Bosco", "José Bonifácio", "Guaianases", "Antônio Gianetti Neto", "Ferraz de Vasconcelos", "Poá", "Calmon Viana", "Suzano", "Jundiapeba", "Braz Cubas", "Mogi das Cruzes", "Estudantes"],
+  "limite_tronco": "Guaianases",
+  "perfis_tronco": {
+    "dias_uteis": [[14400,28800,210],[28800,55800,330],[55800,72000,210]],
+    "sabado": [[14400,36000,330]],
+    "domingo_feriado": []
+  },
+  "troca_padrao_candidata_segundos": 300,
+  "fonte": "https://www.cptm.sp.gov.br/dx/api/dam/v1/collections/05321fd9-3791-4689-a8ac-9e2adde39c4b/items/a3f44abf-6e70-49f7-bb3b-97bdc864f5c6/renditions/46d4c0bf-cb38-490d-b7c5-cb23ba496cc6?binary=true",
+  "metodo": "Separar integral até Estudantes do agregado Barra Funda–Guaianases, com meio intervalo por tipo de dia e faixa. O agregado aceita trens para Guaianases ou Estudantes, mas não promete permanência no mesmo trem além de Guaianases.",
+  "limites": "Quadro programado sem data explícita de vigência extraída. Comunicado histórico usa horários e alcance diferentes; preservar ambos sem misturar. Sem fase individual de partidas, não afirmar qual composição chega primeiro. Troca de cinco minutos é candidata, não medição."
+}

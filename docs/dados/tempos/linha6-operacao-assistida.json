@@ -1,0 +1,43 @@
+{
+  "verificado_em": "2026-11-05",
+  "somente_local": true,
+  "inicio": "2026-07-03",
+  "inicio_minuto": 600,
+  "fim_minuto": 900,
+  "intervalo_segundos": 780,
+  "intervalo_gtfs_segundos": 900,
+  "intervalo_gtfs_entre_estacoes_segundos": 480,
+  "ultimas_partidas": {
+    "terminal_minuto_candidato": 885,
+    "confianca": "estimativa para simulação, sem grade da LinhaUni por plataforma",
+    "fonte_sentido_perdizes": "https://linhas-preview.cittamobi.com.br/linha/transporte_publico-SaoPaulo-SPTRANS-METROL6-PERDIZES-e633f26a1924",
+    "fonte_sentido_joao_paulo": "https://linhas-preview.cittamobi.com.br/linha/transporte_publico-SaoPaulo-SPTRANS-METROL6-JOAOPAULOI-3195cfe79ade",
+    "fonte_status_encerramento": "https://ccm.artesp.sp.gov.br/metroferroviario/historico-status/",
+    "observacoes": "Cittamobi indica 14h45 nos dois terminais no quadro de 03/11. O GTFS tem fim de faixa às 14h59, que não equivale à última partida. ARTESP registrou operação encerrada às 15h03 em 03/11 e às 15h01 em 04/11; esses são horários de registro de status."
+  },
+  "estacoes": [
+    ["João Paulo I", "L6-JPI", -23.493626, -46.691468],
+    ["Freguesia do Ó", "L6-FDO", -23.501756, -46.693714],
+    ["Santa Marina", "L6-SMA", -23.514102, -46.691658],
+    ["Água Branca (Linha 6)", "L6-ABR", -23.520550, -46.688138],
+    ["Sesc-Pompeia", "L6-SEP", -23.527248, -46.683295],
+    ["Perdizes", "L6-PER", -23.532080, -46.676621]
+  ],
+  "hipotese_trem": {"fator_distancia": 1.1, "km_h": 35, "parada_e_manobra_segundos": 25, "arredondamento_segundos": 5},
+  "caminhada_agua_branca": {
+    "externa": true,
+    "segundos": 420,
+    "componentes_segundos": {"rua": 90, "circulacao_vertical": 210, "acessos_e_orientacao": 120},
+    "tarifa_ao_embarcar_l7": true
+  },
+  "fontes": {
+    "abertura": "https://prefeitura.sp.gov.br/w/linha-6-laranja-inaugura-nova-fase-para-a-brasil%C3%A2ndia-e-aproxima-a-zona-norte-do-centro-de-s%C3%A3o-paulo",
+    "horario_e_tarifa": "https://www.linhauni.com.br/guia-do-passageiro",
+    "intervalo_inaugural": "https://www.casacivil.sp.gov.br/sec_casa_civil/noticias/metrolinha6",
+    "intervalo_inaugural_corroboração": "https://agenciabrasil.ebc.com.br/geral/noticia/2026-07/linha-6-laranja-do-metro-de-sp-inicia-operacao-nesta-sexta-feira",
+    "coordenadas_e_referencia_gtfs": "https://www.sptrans.com.br/desenvolvedores/",
+    "acesso_e_profundidade": "https://www.linhauni.com.br/linha-6-laranja?unidade-construtiva=estacao-agua-branca",
+    "caminhada_e_obra": "https://www.metrocptm.com.br/construcao-de-conexao-entre-linhas-6-e-7-em-agua-branca-tem-empresa-contratada/",
+    "integracoes_futuras": "https://www.tictrens.com.br/noticias/tic-trens-vai-modernizar-estacao-agua-branca-que-se-tornara-o-principal-hub-de-mobilidade-paulista-2602"
+  }
+}
