@@ -1,0 +1,488 @@
+{
+  "data": "2026-11-04",
+  "estado": "candidatos_para_simulacao",
+  "aprovado_para_xano": false,
+  "margem_no_componente_segundos": 0,
+  "margem_total_planejada_segundos": 60,
+  "margem_aplicada": false,
+  "estimativas": [
+    {
+      "id": "MODELO-L8-Itapevi-Santa Rita",
+      "linha": "L8",
+      "origem": "Itapevi",
+      "destino": "Santa Rita",
+      "segundos_base_candidato": 165,
+      "confianca": "baixa",
+      "medido": false,
+      "metodo": "Distribuir total secundário de 12 min proporcionalmente às distâncias geodésicas dos três intervalos; ida/volta estimadas simétricas.",
+      "parametros": {
+        "total_referencia_segundos": 720,
+        "distancia_geodesica_metros": 1249,
+        "coordenadas": {
+          "Amador Bueno": [
+            -23.5307,
+            -46.983928
+          ],
+          "Santa Rita": [
+            -23.545115,
+            -46.947651
+          ],
+          "Itapevi": [
+            -23.545728,
+            -46.935416
+          ],
+          "Ambuitá": [
+            -23.52986111111111,
+            -46.97277777777778
+          ]
+        }
+      },
+      "fontes": [
+        "https://pt.wikipedia.org/wiki/Linha_8_do_Trem_Metropolitano_de_S%C3%A3o_Paulo",
+        "https://pt.wikipedia.org/wiki/Esta%C3%A7%C3%A3o_Ambuit%C3%A1",
+        "https://www.sptrans.com.br/desenvolvedores/"
+      ],
+      "limites": "Total secundário pode estar antigo; distância em linha reta não é traçado de via; paradas/manobras não medidas; não aprovar sem simulação."
+    },
+    {
+      "id": "MODELO-L8-Santa Rita-Itapevi",
+      "linha": "L8",
+      "origem": "Santa Rita",
+      "destino": "Itapevi",
+      "segundos_base_candidato": 165,
+      "confianca": "baixa",
+      "medido": false,
+      "metodo": "Distribuir total secundário de 12 min proporcionalmente às distâncias geodésicas dos três intervalos; ida/volta estimadas simétricas.",
+      "parametros": {
+        "total_referencia_segundos": 720,
+        "distancia_geodesica_metros": 1249,
+        "coordenadas": {
+          "Amador Bueno": [
+            -23.5307,
+            -46.983928
+          ],
+          "Santa Rita": [
+            -23.545115,
+            -46.947651
+          ],
+          "Itapevi": [
+            -23.545728,
+            -46.935416
+          ],
+          "Ambuitá": [
+            -23.52986111111111,
+            -46.97277777777778
+          ]
+        }
+      },
+      "fontes": [
+        "https://pt.wikipedia.org/wiki/Linha_8_do_Trem_Metropolitano_de_S%C3%A3o_Paulo",
+        "https://pt.wikipedia.org/wiki/Esta%C3%A7%C3%A3o_Ambuit%C3%A1",
+        "https://www.sptrans.com.br/desenvolvedores/"
+      ],
+      "limites": "Total secundário pode estar antigo; distância em linha reta não é traçado de via; paradas/manobras não medidas; não aprovar sem simulação."
+    },
+    {
+      "id": "MODELO-L8-Santa Rita-Ambuitá",
+      "linha": "L8",
+      "origem": "Santa Rita",
+      "destino": "Ambuitá",
+      "segundos_base_candidato": 405,
+      "confianca": "baixa",
+      "medido": false,
+      "metodo": "Distribuir total secundário de 12 min proporcionalmente às distâncias geodésicas dos três intervalos; ida/volta estimadas simétricas.",
+      "parametros": {
+        "total_referencia_segundos": 720,
+        "distancia_geodesica_metros": 3072,
+        "coordenadas": {
+          "Amador Bueno": [
+            -23.5307,
+            -46.983928
+          ],
+          "Santa Rita": [
+            -23.545115,
+            -46.947651
+          ],
+          "Itapevi": [
+            -23.545728,
+            -46.935416
+          ],
+          "Ambuitá": [
+            -23.52986111111111,
+            -46.97277777777778
+          ]
+        }
+      },
+      "fontes": [
+        "https://pt.wikipedia.org/wiki/Linha_8_do_Trem_Metropolitano_de_S%C3%A3o_Paulo",
+        "https://pt.wikipedia.org/wiki/Esta%C3%A7%C3%A3o_Ambuit%C3%A1",
+        "https://www.sptrans.com.br/desenvolvedores/"
+      ],
+      "limites": "Total secundário pode estar antigo; distância em linha reta não é traçado de via; paradas/manobras não medidas; não aprovar sem simulação."
+    },
+    {
+      "id": "MODELO-L8-Ambuitá-Santa Rita",
+      "linha": "L8",
+      "origem": "Ambuitá",
+      "destino": "Santa Rita",
+      "segundos_base_candidato": 405,
+      "confianca": "baixa",
+      "medido": false,
+      "metodo": "Distribuir total secundário de 12 min proporcionalmente às distâncias geodésicas dos três intervalos; ida/volta estimadas simétricas.",
+      "parametros": {
+        "total_referencia_segundos": 720,
+        "distancia_geodesica_metros": 3072,
+        "coordenadas": {
+          "Amador Bueno": [
+            -23.5307,
+            -46.983928
+          ],
+          "Santa Rita": [
+            -23.545115,
+            -46.947651
+          ],
+          "Itapevi": [
+            -23.545728,
+            -46.935416
+          ],
+          "Ambuitá": [
+            -23.52986111111111,
+            -46.97277777777778
+          ]
+        }
+      },
+      "fontes": [
+        "https://pt.wikipedia.org/wiki/Linha_8_do_Trem_Metropolitano_de_S%C3%A3o_Paulo",
+        "https://pt.wikipedia.org/wiki/Esta%C3%A7%C3%A3o_Ambuit%C3%A1",
+        "https://www.sptrans.com.br/desenvolvedores/"
+      ],
+      "limites": "Total secundário pode estar antigo; distância em linha reta não é traçado de via; paradas/manobras não medidas; não aprovar sem simulação."
+    },
+    {
+      "id": "MODELO-L8-Ambuitá-Amador Bueno",
+      "linha": "L8",
+      "origem": "Ambuitá",
+      "destino": "Amador Bueno",
+      "segundos_base_candidato": 150,
+      "confianca": "baixa",
+      "medido": false,
+      "metodo": "Distribuir total secundário de 12 min proporcionalmente às distâncias geodésicas dos três intervalos; ida/volta estimadas simétricas.",
+      "parametros": {
+        "total_referencia_segundos": 720,
+        "distancia_geodesica_metros": 1141,
+        "coordenadas": {
+          "Amador Bueno": [
+            -23.5307,
+            -46.983928
+          ],
+          "Santa Rita": [
+            -23.545115,
+            -46.947651
+          ],
+          "Itapevi": [
+            -23.545728,
+            -46.935416
+          ],
+          "Ambuitá": [
+            -23.52986111111111,
+            -46.97277777777778
+          ]
+        }
+      },
+      "fontes": [
+        "https://pt.wikipedia.org/wiki/Linha_8_do_Trem_Metropolitano_de_S%C3%A3o_Paulo",
+        "https://pt.wikipedia.org/wiki/Esta%C3%A7%C3%A3o_Ambuit%C3%A1",
+        "https://www.sptrans.com.br/desenvolvedores/"
+      ],
+      "limites": "Total secundário pode estar antigo; distância em linha reta não é traçado de via; paradas/manobras não medidas; não aprovar sem simulação."
+    },
+    {
+      "id": "MODELO-L8-Amador Bueno-Ambuitá",
+      "linha": "L8",
+      "origem": "Amador Bueno",
+      "destino": "Ambuitá",
+      "segundos_base_candidato": 150,
+      "confianca": "baixa",
+      "medido": false,
+      "metodo": "Distribuir total secundário de 12 min proporcionalmente às distâncias geodésicas dos três intervalos; ida/volta estimadas simétricas.",
+      "parametros": {
+        "total_referencia_segundos": 720,
+        "distancia_geodesica_metros": 1141,
+        "coordenadas": {
+          "Amador Bueno": [
+            -23.5307,
+            -46.983928
+          ],
+          "Santa Rita": [
+            -23.545115,
+            -46.947651
+          ],
+          "Itapevi": [
+            -23.545728,
+            -46.935416
+          ],
+          "Ambuitá": [
+            -23.52986111111111,
+            -46.97277777777778
+          ]
+        }
+      },
+      "fontes": [
+        "https://pt.wikipedia.org/wiki/Linha_8_do_Trem_Metropolitano_de_S%C3%A3o_Paulo",
+        "https://pt.wikipedia.org/wiki/Esta%C3%A7%C3%A3o_Ambuit%C3%A1",
+        "https://www.sptrans.com.br/desenvolvedores/"
+      ],
+      "limites": "Total secundário pode estar antigo; distância em linha reta não é traçado de via; paradas/manobras não medidas; não aprovar sem simulação."
+    },
+    {
+      "id": "MODELO-EXP10-Tamanduateí-São Caetano do Sul-Prefeito Walter Braido",
+      "linha": "EXP-L10",
+      "origem": "Tamanduateí",
+      "destino": "São Caetano do Sul-Prefeito Walter Braido",
+      "segundos_base_candidato": 150,
+      "confianca": "baixa",
+      "medido": false,
+      "metodo": "Usar relato de 390 s no Expresso L10+ para São Caetano–Santo André e total histórico aproximado de 540 s do Expresso L10; estimar complemento de 150 s e simetria.",
+      "fontes": [
+        "https://www.commu.site/blog/2019/04/06/cptm_flexibilizacao/",
+        "https://www.dgabc.com.br/Noticia/2864077/cptm-analisa-modelo-de-trem-expresso-que-atenda-maua"
+      ],
+      "limites": "Inferência entre viagens e padrões diferentes, não subtração de amostras de uma mesma viagem; observar contrafluxo sem parada em São Caetano; não criar serviços de retorno."
+    },
+    {
+      "id": "MODELO-EXP10-São Caetano do Sul-Prefeito Walter Braido-Tamanduateí",
+      "linha": "EXP-L10",
+      "origem": "São Caetano do Sul-Prefeito Walter Braido",
+      "destino": "Tamanduateí",
+      "segundos_base_candidato": 150,
+      "confianca": "baixa",
+      "medido": false,
+      "metodo": "Usar relato de 390 s no Expresso L10+ para São Caetano–Santo André e total histórico aproximado de 540 s do Expresso L10; estimar complemento de 150 s e simetria.",
+      "fontes": [
+        "https://www.commu.site/blog/2019/04/06/cptm_flexibilizacao/",
+        "https://www.dgabc.com.br/Noticia/2864077/cptm-analisa-modelo-de-trem-expresso-que-atenda-maua"
+      ],
+      "limites": "Inferência entre viagens e padrões diferentes, não subtração de amostras de uma mesma viagem; observar contrafluxo sem parada em São Caetano; não criar serviços de retorno."
+    },
+    {
+      "id": "MODELO-EXP10-São Caetano do Sul-Prefeito Walter Braido-Santo André",
+      "linha": "EXP-L10",
+      "origem": "São Caetano do Sul-Prefeito Walter Braido",
+      "destino": "Santo André",
+      "segundos_base_candidato": 390,
+      "confianca": "baixa",
+      "medido": false,
+      "metodo": "Usar relato de 390 s no Expresso L10+ para São Caetano–Santo André e total histórico aproximado de 540 s do Expresso L10; estimar complemento de 150 s e simetria.",
+      "fontes": [
+        "https://www.commu.site/blog/2019/04/06/cptm_flexibilizacao/",
+        "https://www.dgabc.com.br/Noticia/2864077/cptm-analisa-modelo-de-trem-expresso-que-atenda-maua"
+      ],
+      "limites": "Inferência entre viagens e padrões diferentes, não subtração de amostras de uma mesma viagem; observar contrafluxo sem parada em São Caetano; não criar serviços de retorno."
+    },
+    {
+      "id": "MODELO-EXP10-Santo André-São Caetano do Sul-Prefeito Walter Braido",
+      "linha": "EXP-L10",
+      "origem": "Santo André",
+      "destino": "São Caetano do Sul-Prefeito Walter Braido",
+      "segundos_base_candidato": 390,
+      "confianca": "baixa",
+      "medido": false,
+      "metodo": "Usar relato de 390 s no Expresso L10+ para São Caetano–Santo André e total histórico aproximado de 540 s do Expresso L10; estimar complemento de 150 s e simetria.",
+      "fontes": [
+        "https://www.commu.site/blog/2019/04/06/cptm_flexibilizacao/",
+        "https://www.dgabc.com.br/Noticia/2864077/cptm-analisa-modelo-de-trem-expresso-que-atenda-maua"
+      ],
+      "limites": "Inferência entre viagens e padrões diferentes, não subtração de amostras de uma mesma viagem; observar contrafluxo sem parada em São Caetano; não criar serviços de retorno."
+    },
+    {
+      "id": "MODELO-CONS-PAU",
+      "linha": "L4",
+      "origem": "Consolação",
+      "destino": "Paulista",
+      "segundos_base_candidato": 300,
+      "confianca": "baixa",
+      "medido": false,
+      "metodo": "Referência de corredor de aproximadamente 300 m; caminhada assumida 1,2 m/s (250 s) e 50 s de circulação vertical/transição; aproximação de 5 min.",
+      "fontes": [
+        "https://noticias.uol.com.br/cotidiano/ultimas-noticias/2011/11/01/esteiras-rolantes-da-estacao-paulista-do-metro-deixam-usuarios-a-pe-em-horarios-de-pico.amp.htm",
+        "https://www.metrozinho.com.br/sao-paulo/linhas/linha-2-verde/"
+      ],
+      "limites": "Velocidade e 50 s são parâmetros de modelo, não medição; congestionamento e mobilidade reduzida exigem estimativa própria; evitar dupla cobrança com penalidade de linha."
+    },
+    {
+      "id": "MODELO-PAU-CONS",
+      "linha": "L4",
+      "origem": "Paulista",
+      "destino": "Consolação",
+      "segundos_base_candidato": 300,
+      "confianca": "baixa",
+      "medido": false,
+      "metodo": "Cenário de cinco minutos para caminhada completa, coerente com o candidato inverso e superior ao segmento parcial de vídeo de 215 s.",
+      "fontes": [
+        "docs/dados/tempos/inspecoes-video.csv"
+      ],
+      "limites": "O vídeo começa já em deslocamento; 300 s é modelo da caminhada completa, não medição nem margem adicional. Suprimir somente a penalidade genérica duplicada na entrada/saída do corredor."
+    },
+    {
+      "id": "MODELO-AERO-Palmeiras-Barra Funda-Luz",
+      "linha": "EXP-AER",
+      "origem": "Palmeiras-Barra Funda",
+      "destino": "Luz",
+      "segundos_base_candidato": 480,
+      "confianca": "baixa",
+      "medido": false,
+      "metodo": "Manter pesos do cadastro restaurado (8/22/5 min na ida; 5/18/4/8 na volta) como estimativa de distribuição, confrontando soma de 35 min com estudo de 2025.",
+      "fontes": [
+        "https://semanadetecnologia.com.br/31semana/files/artigos/915_artigo_acessoaeroferroviario.pdf",
+        "docs/xano/correcao-malha-2026-10-28.md"
+      ],
+      "limites": "A fonte externa confirma apenas o total aproximado; não mede cada intervalo. Os pesos são hipótese herdada explicitada, não validação independente. Não incluir Brás na ida nem Engenheiro Goulart no Expresso."
+    },
+    {
+      "id": "MODELO-AERO-Luz-Guarulhos-Cecap",
+      "linha": "EXP-AER",
+      "origem": "Luz",
+      "destino": "Guarulhos-Cecap",
+      "segundos_base_candidato": 1320,
+      "confianca": "baixa",
+      "medido": false,
+      "metodo": "Manter pesos do cadastro restaurado (8/22/5 min na ida; 5/18/4/8 na volta) como estimativa de distribuição, confrontando soma de 35 min com estudo de 2025.",
+      "fontes": [
+        "https://semanadetecnologia.com.br/31semana/files/artigos/915_artigo_acessoaeroferroviario.pdf",
+        "docs/xano/correcao-malha-2026-10-28.md"
+      ],
+      "limites": "A fonte externa confirma apenas o total aproximado; não mede cada intervalo. Os pesos são hipótese herdada explicitada, não validação independente. Não incluir Brás na ida nem Engenheiro Goulart no Expresso."
+    },
+    {
+      "id": "MODELO-AERO-Guarulhos-Cecap-Aeroporto-Guarulhos",
+      "linha": "EXP-AER",
+      "origem": "Guarulhos-Cecap",
+      "destino": "Aeroporto-Guarulhos",
+      "segundos_base_candidato": 300,
+      "confianca": "baixa",
+      "medido": false,
+      "metodo": "Manter pesos do cadastro restaurado (8/22/5 min na ida; 5/18/4/8 na volta) como estimativa de distribuição, confrontando soma de 35 min com estudo de 2025.",
+      "fontes": [
+        "https://semanadetecnologia.com.br/31semana/files/artigos/915_artigo_acessoaeroferroviario.pdf",
+        "docs/xano/correcao-malha-2026-10-28.md"
+      ],
+      "limites": "A fonte externa confirma apenas o total aproximado; não mede cada intervalo. Os pesos são hipótese herdada explicitada, não validação independente. Não incluir Brás na ida nem Engenheiro Goulart no Expresso."
+    },
+    {
+      "id": "MODELO-AERO-Aeroporto-Guarulhos-Guarulhos-Cecap",
+      "linha": "EXP-AER",
+      "origem": "Aeroporto-Guarulhos",
+      "destino": "Guarulhos-Cecap",
+      "segundos_base_candidato": 300,
+      "confianca": "baixa",
+      "medido": false,
+      "metodo": "Manter pesos do cadastro restaurado (8/22/5 min na ida; 5/18/4/8 na volta) como estimativa de distribuição, confrontando soma de 35 min com estudo de 2025.",
+      "fontes": [
+        "https://semanadetecnologia.com.br/31semana/files/artigos/915_artigo_acessoaeroferroviario.pdf",
+        "docs/xano/correcao-malha-2026-10-28.md"
+      ],
+      "limites": "A fonte externa confirma apenas o total aproximado; não mede cada intervalo. Os pesos são hipótese herdada explicitada, não validação independente. Não incluir Brás na ida nem Engenheiro Goulart no Expresso."
+    },
+    {
+      "id": "MODELO-AERO-Guarulhos-Cecap-Brás",
+      "linha": "EXP-AER",
+      "origem": "Guarulhos-Cecap",
+      "destino": "Brás",
+      "segundos_base_candidato": 1080,
+      "confianca": "baixa",
+      "medido": false,
+      "metodo": "Manter pesos do cadastro restaurado (8/22/5 min na ida; 5/18/4/8 na volta) como estimativa de distribuição, confrontando soma de 35 min com estudo de 2025.",
+      "fontes": [
+        "https://semanadetecnologia.com.br/31semana/files/artigos/915_artigo_acessoaeroferroviario.pdf",
+        "docs/xano/correcao-malha-2026-10-28.md"
+      ],
+      "limites": "A fonte externa confirma apenas o total aproximado; não mede cada intervalo. Os pesos são hipótese herdada explicitada, não validação independente. Não incluir Brás na ida nem Engenheiro Goulart no Expresso."
+    },
+    {
+      "id": "MODELO-AERO-Brás-Luz",
+      "linha": "EXP-AER",
+      "origem": "Brás",
+      "destino": "Luz",
+      "segundos_base_candidato": 240,
+      "confianca": "baixa",
+      "medido": false,
+      "metodo": "Manter pesos do cadastro restaurado (8/22/5 min na ida; 5/18/4/8 na volta) como estimativa de distribuição, confrontando soma de 35 min com estudo de 2025.",
+      "fontes": [
+        "https://semanadetecnologia.com.br/31semana/files/artigos/915_artigo_acessoaeroferroviario.pdf",
+        "docs/xano/correcao-malha-2026-10-28.md"
+      ],
+      "limites": "A fonte externa confirma apenas o total aproximado; não mede cada intervalo. Os pesos são hipótese herdada explicitada, não validação independente. Não incluir Brás na ida nem Engenheiro Goulart no Expresso."
+    },
+    {
+      "id": "MODELO-AERO-Luz-Palmeiras-Barra Funda",
+      "linha": "EXP-AER",
+      "origem": "Luz",
+      "destino": "Palmeiras-Barra Funda",
+      "segundos_base_candidato": 480,
+      "confianca": "baixa",
+      "medido": false,
+      "metodo": "Manter pesos do cadastro restaurado (8/22/5 min na ida; 5/18/4/8 na volta) como estimativa de distribuição, confrontando soma de 35 min com estudo de 2025.",
+      "fontes": [
+        "https://semanadetecnologia.com.br/31semana/files/artigos/915_artigo_acessoaeroferroviario.pdf",
+        "docs/xano/correcao-malha-2026-10-28.md"
+      ],
+      "limites": "A fonte externa confirma apenas o total aproximado; não mede cada intervalo. Os pesos são hipótese herdada explicitada, não validação independente. Não incluir Brás na ida nem Engenheiro Goulart no Expresso."
+    },
+    {
+      "id": "MODELO-L13-Engenheiro Goulart-Guarulhos-Cecap",
+      "linha": "L13",
+      "origem": "Engenheiro Goulart",
+      "destino": "Guarulhos-Cecap",
+      "segundos_base_candidato": 720,
+      "confianca": "baixa",
+      "medido": false,
+      "metodo": "Cenário histórico de projeto: total CPTM de 17 min; Cecap–Aeroporto estimado em 5 min como no Expresso; complemento de 12 min e simetria assumida.",
+      "fontes": [
+        "https://www.cptm.sp.gov.br/a-companhia/obras-modern/Documents/Apresenta%C3%A7%C3%A3o%20Linha%2013%20-%20Completa.pdf"
+      ],
+      "limites": "Trecho do documento localizado no índice; abertura redireciona ao portal. Valor de projeto, não medição vigente. Distribuição e simetria são hipóteses; testar sensibilidade antes de selecionar base."
+    },
+    {
+      "id": "MODELO-L13-Guarulhos-Cecap-Engenheiro Goulart",
+      "linha": "L13",
+      "origem": "Guarulhos-Cecap",
+      "destino": "Engenheiro Goulart",
+      "segundos_base_candidato": 720,
+      "confianca": "baixa",
+      "medido": false,
+      "metodo": "Cenário histórico de projeto: total CPTM de 17 min; Cecap–Aeroporto estimado em 5 min como no Expresso; complemento de 12 min e simetria assumida.",
+      "fontes": [
+        "https://www.cptm.sp.gov.br/a-companhia/obras-modern/Documents/Apresenta%C3%A7%C3%A3o%20Linha%2013%20-%20Completa.pdf"
+      ],
+      "limites": "Trecho do documento localizado no índice; abertura redireciona ao portal. Valor de projeto, não medição vigente. Distribuição e simetria são hipóteses; testar sensibilidade antes de selecionar base."
+    },
+    {
+      "id": "MODELO-L13-Guarulhos-Cecap-Aeroporto-Guarulhos",
+      "linha": "L13",
+      "origem": "Guarulhos-Cecap",
+      "destino": "Aeroporto-Guarulhos",
+      "segundos_base_candidato": 300,
+      "confianca": "baixa",
+      "medido": false,
+      "metodo": "Cenário histórico de projeto: total CPTM de 17 min; Cecap–Aeroporto estimado em 5 min como no Expresso; complemento de 12 min e simetria assumida.",
+      "fontes": [
+        "https://www.cptm.sp.gov.br/a-companhia/obras-modern/Documents/Apresenta%C3%A7%C3%A3o%20Linha%2013%20-%20Completa.pdf"
+      ],
+      "limites": "Trecho do documento localizado no índice; abertura redireciona ao portal. Valor de projeto, não medição vigente. Distribuição e simetria são hipóteses; testar sensibilidade antes de selecionar base."
+    },
+    {
+      "id": "MODELO-L13-Aeroporto-Guarulhos-Guarulhos-Cecap",
+      "linha": "L13",
+      "origem": "Aeroporto-Guarulhos",
+      "destino": "Guarulhos-Cecap",
+      "segundos_base_candidato": 300,
+      "confianca": "baixa",
+      "medido": false,
+      "metodo": "Cenário histórico de projeto: total CPTM de 17 min; Cecap–Aeroporto estimado em 5 min como no Expresso; complemento de 12 min e simetria assumida.",
+      "fontes": [
+        "https://www.cptm.sp.gov.br/a-companhia/obras-modern/Documents/Apresenta%C3%A7%C3%A3o%20Linha%2013%20-%20Completa.pdf"
+      ],
+      "limites": "Trecho do documento localizado no índice; abertura redireciona ao portal. Valor de projeto, não medição vigente. Distribuição e simetria são hipóteses; testar sensibilidade antes de selecionar base."
+    }
+  ]
+}

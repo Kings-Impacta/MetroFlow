@@ -1,0 +1,59 @@
+{
+  "somente_local": true,
+  "aprovado_para_xano": false,
+  "margem_aplicada": false,
+  "excecoes": [
+    {
+      "id": "L9-20260508",
+      "linha_id": 8,
+      "inicio": "2026-05-08T12:30:00-03:00",
+      "fim": "2026-05-08T15:00:00-03:00",
+      "inicio_ms": 1778254200000,
+      "fim_ms": 1778263200000,
+      "intervalo_integral_segundos": 720,
+      "intervalo_agregado_segundos": 360,
+      "inicio_agregado": "Osasco",
+      "fim_agregado": "Socorro",
+      "fonte": "https://trilhos.motiva.com.br/viamobilidade8e9/noticias/2026/maio/viamobilidade-realiza-manutencoes-nas-linhas-8-e-9/",
+      "limite": "Integral modela atendimento que atravessa o trecho de menor frequencia; agregado nao promete continuidade alem do alcance. Nao e grade individual. Excecao vale apenas nas datas declaradas."
+    },
+    {
+      "id": "L9-20260520",
+      "linha_id": 8,
+      "inicio": "2026-05-20T11:30:00-03:00",
+      "fim": "2026-05-20T15:30:00-03:00",
+      "inicio_ms": 1779287400000,
+      "fim_ms": 1779301800000,
+      "intervalo_integral_segundos": 840,
+      "intervalo_agregado_segundos": 420,
+      "inicio_agregado": "Osasco",
+      "fim_agregado": "Socorro",
+      "fonte": "https://trilhos.motiva.com.br/viamobilidade8e9/noticias/2026/maio/confira-as-manutencoes-programadas-nas-linhas-8-diamante-e-9-esm/",
+      "limite": "Integral modela atendimento que atravessa o trecho de menor frequencia; agregado nao promete continuidade alem do alcance. Nao e grade individual. Excecao vale apenas nas datas declaradas."
+    },
+    {
+      "id": "L9-20261003",
+      "linha_id": 8,
+      "inicio": "2026-10-03T21:00:00-03:00",
+      "fim": "2026-10-04T07:00:00-03:00",
+      "inicio_ms": 1791072000000,
+      "fim_ms": 1791108000000,
+      "intervalo_integral_segundos": 1200,
+      "intervalo_agregado_segundos": 600,
+      "inicio_agregado": "Osasco",
+      "fim_agregado": "Jurubatuba-Senac",
+      "fonte": "https://trilhos.motiva.com.br/viamobilidade8e9/noticias/2026/setembro/confira-as-manutencoes-programadas-das-linhas-8--diamante-e-9-es/",
+      "limite": "Integral modela atendimento que atravessa o trecho de menor frequencia; agregado nao promete continuidade alem do alcance. Nao e grade individual. Excecao vale apenas nas datas declaradas."
+    }
+  ],
+  "linha17": {
+    "fonte": "https://www.metro.sp.gov.br/sua-viagem/horarios/",
+    "inicio": "06:00",
+    "fim": "22:00",
+    "dias": "segunda-sabado",
+    "intervalo_candidato_segundos": 540,
+    "fator_sensibilidade_percurso": 1.2,
+    "ultimo_trem_por_estacao_publicado": false,
+    "decisao": "Manter cronologia nominal e aviso perto do limite; nao inferir horario exato do ultimo trem nem somar margem por trecho."
+  }
+}

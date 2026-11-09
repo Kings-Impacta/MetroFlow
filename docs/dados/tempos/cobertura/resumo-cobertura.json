@@ -1,0 +1,94 @@
+{
+  "data": "2026-11-04",
+  "exportacao": "2026-11-01",
+  "somente_local": true,
+  "linha6_adiada": true,
+  "deslocamentos_por_sentido": 407,
+  "deslocamentos_estados": {
+    "estimativa_modelada_para_simular": 407
+  },
+  "esperas_por_origem_servico_proxima_estacao": 405,
+  "esperas_estados": {
+    "referencia_de_linha_validar_faixas_e_servico": 405
+  },
+  "baldeacoes_candidatas_ordenadas": 128,
+  "baldeacoes_estados": {
+    "sem_duracao_por_plataforma": 121,
+    "video_por_marcos_a_validar": 1,
+    "troca_mesma_linha_sem_duracao": 4,
+    "corredor_entre_estacoes_medicao_parcial": 1,
+    "corredor_sem_medicao": 1
+  },
+  "tempos_aprovados_para_publicacao": 0,
+  "novos_valores_publicados": 0,
+  "margem_total_planejada_segundos": 60,
+  "margem_aplicada": false,
+  "cobertura_completa_para_publicacao": false,
+  "faixas_e_plataformas_ainda_precisam_ser_desdobradas": true,
+  "cobertura_por_linha": {
+    "EXP-AER": {
+      "total": 7,
+      "sem_referencia": 0
+    },
+    "EXP-L10": {
+      "total": 4,
+      "sem_referencia": 0
+    },
+    "L1": {
+      "total": 44,
+      "sem_referencia": 0
+    },
+    "L10": {
+      "total": 28,
+      "sem_referencia": 0
+    },
+    "L11": {
+      "total": 32,
+      "sem_referencia": 0
+    },
+    "L12": {
+      "total": 24,
+      "sem_referencia": 0
+    },
+    "L13": {
+      "total": 4,
+      "sem_referencia": 0
+    },
+    "L15": {
+      "total": 20,
+      "sem_referencia": 0
+    },
+    "L17": {
+      "total": 14,
+      "sem_referencia": 0
+    },
+    "L2": {
+      "total": 26,
+      "sem_referencia": 0
+    },
+    "L3": {
+      "total": 34,
+      "sem_referencia": 0
+    },
+    "L4": {
+      "total": 22,
+      "sem_referencia": 0
+    },
+    "L5": {
+      "total": 32,
+      "sem_referencia": 0
+    },
+    "L7": {
+      "total": 32,
+      "sem_referencia": 0
+    },
+    "L8": {
+      "total": 44,
+      "sem_referencia": 0
+    },
+    "L9": {
+      "total": 40,
+      "sem_referencia": 0
+    }
+  }
+}

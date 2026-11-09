@@ -1,0 +1,3140 @@
+{
+  "data": "2026-11-04",
+  "aprovado_para_xano": false,
+  "margem_aplicada": false,
+  "cobertura_numerica_nao_equivale_a_operacional": true,
+  "estimativas": [
+    {
+      "id": "RESTANTE-L7-Jundiaí-Várzea Paulista",
+      "linha": "L7",
+      "origem": "Jundiaí",
+      "destino": "Várzea Paulista",
+      "segundos_base_candidato": 450,
+      "medido": false,
+      "confianca": "baixa",
+      "metodo": "Distribuição por distância geodésica com parcela fixa de 20 s dentro da âncora total; simetria assumida, não medida.",
+      "fontes": [
+        "https://www.parceriaseminvestimentos.sp.gov.br/dx/api/dam/v1/collections/c608e9e1-cc41-4239-9abb-c14de1135591/items/349ee66f-c6cc-4141-9ab5-d477d3ff31c4/renditions/d440d43b-b5fc-4856-aee8-cec6f2cee90f?binary=true",
+        "https://www.gov.br/transportes/pt-br/centrais-de-conteudo/sp-2000-pdf"
+      ],
+      "limites": "Cenário físico de 57 km / 40 km/h = 85min30s. Extensão consta do projeto; 40 km/h é hipótese apoiada em referência ferroviária histórica, não velocidade atual da Linha 7. Meta futura de 61 min não foi aplicada como medição. Parcela fixa não é margem nem parada cronometrada; distância reta não é traçado.",
+      "parametros": {
+        "total_ancora_segundos": 5130,
+        "distancia_geodesica_metros": 4622
+      }
+    },
+    {
+      "id": "RESTANTE-L7-Várzea Paulista-Jundiaí",
+      "linha": "L7",
+      "origem": "Várzea Paulista",
+      "destino": "Jundiaí",
+      "segundos_base_candidato": 450,
+      "medido": false,
+      "confianca": "baixa",
+      "metodo": "Distribuição por distância geodésica com parcela fixa de 20 s dentro da âncora total; simetria assumida, não medida.",
+      "fontes": [
+        "https://www.parceriaseminvestimentos.sp.gov.br/dx/api/dam/v1/collections/c608e9e1-cc41-4239-9abb-c14de1135591/items/349ee66f-c6cc-4141-9ab5-d477d3ff31c4/renditions/d440d43b-b5fc-4856-aee8-cec6f2cee90f?binary=true",
+        "https://www.gov.br/transportes/pt-br/centrais-de-conteudo/sp-2000-pdf"
+      ],
+      "limites": "Cenário físico de 57 km / 40 km/h = 85min30s. Extensão consta do projeto; 40 km/h é hipótese apoiada em referência ferroviária histórica, não velocidade atual da Linha 7. Meta futura de 61 min não foi aplicada como medição. Parcela fixa não é margem nem parada cronometrada; distância reta não é traçado.",
+      "parametros": {
+        "total_ancora_segundos": 5130,
+        "distancia_geodesica_metros": 4622
+      }
+    },
+    {
+      "id": "RESTANTE-L7-Várzea Paulista-Campo Limpo Paulista",
+      "linha": "L7",
+      "origem": "Várzea Paulista",
+      "destino": "Campo Limpo Paulista",
+      "segundos_base_candidato": 440,
+      "medido": false,
+      "confianca": "baixa",
+      "metodo": "Distribuição por distância geodésica com parcela fixa de 20 s dentro da âncora total; simetria assumida, não medida.",
+      "fontes": [
+        "https://www.parceriaseminvestimentos.sp.gov.br/dx/api/dam/v1/collections/c608e9e1-cc41-4239-9abb-c14de1135591/items/349ee66f-c6cc-4141-9ab5-d477d3ff31c4/renditions/d440d43b-b5fc-4856-aee8-cec6f2cee90f?binary=true",
+        "https://www.gov.br/transportes/pt-br/centrais-de-conteudo/sp-2000-pdf"
+      ],
+      "limites": "Cenário físico de 57 km / 40 km/h = 85min30s. Extensão consta do projeto; 40 km/h é hipótese apoiada em referência ferroviária histórica, não velocidade atual da Linha 7. Meta futura de 61 min não foi aplicada como medição. Parcela fixa não é margem nem parada cronometrada; distância reta não é traçado.",
+      "parametros": {
+        "total_ancora_segundos": 5130,
+        "distancia_geodesica_metros": 4514
+      }
+    },
+    {
+      "id": "RESTANTE-L7-Campo Limpo Paulista-Várzea Paulista",
+      "linha": "L7",
+      "origem": "Campo Limpo Paulista",
+      "destino": "Várzea Paulista",
+      "segundos_base_candidato": 440,
+      "medido": false,
+      "confianca": "baixa",
+      "metodo": "Distribuição por distância geodésica com parcela fixa de 20 s dentro da âncora total; simetria assumida, não medida.",
+      "fontes": [
+        "https://www.parceriaseminvestimentos.sp.gov.br/dx/api/dam/v1/collections/c608e9e1-cc41-4239-9abb-c14de1135591/items/349ee66f-c6cc-4141-9ab5-d477d3ff31c4/renditions/d440d43b-b5fc-4856-aee8-cec6f2cee90f?binary=true",
+        "https://www.gov.br/transportes/pt-br/centrais-de-conteudo/sp-2000-pdf"
+      ],
+      "limites": "Cenário físico de 57 km / 40 km/h = 85min30s. Extensão consta do projeto; 40 km/h é hipótese apoiada em referência ferroviária histórica, não velocidade atual da Linha 7. Meta futura de 61 min não foi aplicada como medição. Parcela fixa não é margem nem parada cronometrada; distância reta não é traçado.",
+      "parametros": {
+        "total_ancora_segundos": 5130,
+        "distancia_geodesica_metros": 4514
+      }
+    },
+    {
+      "id": "RESTANTE-L7-Campo Limpo Paulista-Botujuru",
+      "linha": "L7",
+      "origem": "Campo Limpo Paulista",
+      "destino": "Botujuru",
+      "segundos_base_candidato": 350,
+      "medido": false,
+      "confianca": "baixa",
+      "metodo": "Distribuição por distância geodésica com parcela fixa de 20 s dentro da âncora total; simetria assumida, não medida.",
+      "fontes": [
+        "https://www.parceriaseminvestimentos.sp.gov.br/dx/api/dam/v1/collections/c608e9e1-cc41-4239-9abb-c14de1135591/items/349ee66f-c6cc-4141-9ab5-d477d3ff31c4/renditions/d440d43b-b5fc-4856-aee8-cec6f2cee90f?binary=true",
+        "https://www.gov.br/transportes/pt-br/centrais-de-conteudo/sp-2000-pdf"
+      ],
+      "limites": "Cenário físico de 57 km / 40 km/h = 85min30s. Extensão consta do projeto; 40 km/h é hipótese apoiada em referência ferroviária histórica, não velocidade atual da Linha 7. Meta futura de 61 min não foi aplicada como medição. Parcela fixa não é margem nem parada cronometrada; distância reta não é traçado.",
+      "parametros": {
+        "total_ancora_segundos": 5130,
+        "distancia_geodesica_metros": 3577
+      }
+    },
+    {
+      "id": "RESTANTE-L7-Botujuru-Campo Limpo Paulista",
+      "linha": "L7",
+      "origem": "Botujuru",
+      "destino": "Campo Limpo Paulista",
+      "segundos_base_candidato": 350,
+      "medido": false,
+      "confianca": "baixa",
+      "metodo": "Distribuição por distância geodésica com parcela fixa de 20 s dentro da âncora total; simetria assumida, não medida.",
+      "fontes": [
+        "https://www.parceriaseminvestimentos.sp.gov.br/dx/api/dam/v1/collections/c608e9e1-cc41-4239-9abb-c14de1135591/items/349ee66f-c6cc-4141-9ab5-d477d3ff31c4/renditions/d440d43b-b5fc-4856-aee8-cec6f2cee90f?binary=true",
+        "https://www.gov.br/transportes/pt-br/centrais-de-conteudo/sp-2000-pdf"
+      ],
+      "limites": "Cenário físico de 57 km / 40 km/h = 85min30s. Extensão consta do projeto; 40 km/h é hipótese apoiada em referência ferroviária histórica, não velocidade atual da Linha 7. Meta futura de 61 min não foi aplicada como medição. Parcela fixa não é margem nem parada cronometrada; distância reta não é traçado.",
+      "parametros": {
+        "total_ancora_segundos": 5130,
+        "distancia_geodesica_metros": 3577
+      }
+    },
+    {
+      "id": "RESTANTE-L7-Botujuru-Francisco Morato",
+      "linha": "L7",
+      "origem": "Botujuru",
+      "destino": "Francisco Morato",
+      "segundos_base_candidato": 580,
+      "medido": false,
+      "confianca": "baixa",
+      "metodo": "Distribuição por distância geodésica com parcela fixa de 20 s dentro da âncora total; simetria assumida, não medida.",
+      "fontes": [
+        "https://www.parceriaseminvestimentos.sp.gov.br/dx/api/dam/v1/collections/c608e9e1-cc41-4239-9abb-c14de1135591/items/349ee66f-c6cc-4141-9ab5-d477d3ff31c4/renditions/d440d43b-b5fc-4856-aee8-cec6f2cee90f?binary=true",
+        "https://www.gov.br/transportes/pt-br/centrais-de-conteudo/sp-2000-pdf"
+      ],
+      "limites": "Cenário físico de 57 km / 40 km/h = 85min30s. Extensão consta do projeto; 40 km/h é hipótese apoiada em referência ferroviária histórica, não velocidade atual da Linha 7. Meta futura de 61 min não foi aplicada como medição. Parcela fixa não é margem nem parada cronometrada; distância reta não é traçado.",
+      "parametros": {
+        "total_ancora_segundos": 5130,
+        "distancia_geodesica_metros": 6105
+      }
+    },
+    {
+      "id": "RESTANTE-L7-Francisco Morato-Botujuru",
+      "linha": "L7",
+      "origem": "Francisco Morato",
+      "destino": "Botujuru",
+      "segundos_base_candidato": 580,
+      "medido": false,
+      "confianca": "baixa",
+      "metodo": "Distribuição por distância geodésica com parcela fixa de 20 s dentro da âncora total; simetria assumida, não medida.",
+      "fontes": [
+        "https://www.parceriaseminvestimentos.sp.gov.br/dx/api/dam/v1/collections/c608e9e1-cc41-4239-9abb-c14de1135591/items/349ee66f-c6cc-4141-9ab5-d477d3ff31c4/renditions/d440d43b-b5fc-4856-aee8-cec6f2cee90f?binary=true",
+        "https://www.gov.br/transportes/pt-br/centrais-de-conteudo/sp-2000-pdf"
+      ],
+      "limites": "Cenário físico de 57 km / 40 km/h = 85min30s. Extensão consta do projeto; 40 km/h é hipótese apoiada em referência ferroviária histórica, não velocidade atual da Linha 7. Meta futura de 61 min não foi aplicada como medição. Parcela fixa não é margem nem parada cronometrada; distância reta não é traçado.",
+      "parametros": {
+        "total_ancora_segundos": 5130,
+        "distancia_geodesica_metros": 6105
+      }
+    },
+    {
+      "id": "RESTANTE-L7-Francisco Morato-Baltazar Fidélis",
+      "linha": "L7",
+      "origem": "Francisco Morato",
+      "destino": "Baltazar Fidélis",
+      "segundos_base_candidato": 340,
+      "medido": false,
+      "confianca": "baixa",
+      "metodo": "Distribuição por distância geodésica com parcela fixa de 20 s dentro da âncora total; simetria assumida, não medida.",
+      "fontes": [
+        "https://www.parceriaseminvestimentos.sp.gov.br/dx/api/dam/v1/collections/c608e9e1-cc41-4239-9abb-c14de1135591/items/349ee66f-c6cc-4141-9ab5-d477d3ff31c4/renditions/d440d43b-b5fc-4856-aee8-cec6f2cee90f?binary=true",
+        "https://www.gov.br/transportes/pt-br/centrais-de-conteudo/sp-2000-pdf"
+      ],
+      "limites": "Cenário físico de 57 km / 40 km/h = 85min30s. Extensão consta do projeto; 40 km/h é hipótese apoiada em referência ferroviária histórica, não velocidade atual da Linha 7. Meta futura de 61 min não foi aplicada como medição. Parcela fixa não é margem nem parada cronometrada; distância reta não é traçado.",
+      "parametros": {
+        "total_ancora_segundos": 5130,
+        "distancia_geodesica_metros": 3464
+      }
+    },
+    {
+      "id": "RESTANTE-L7-Baltazar Fidélis-Francisco Morato",
+      "linha": "L7",
+      "origem": "Baltazar Fidélis",
+      "destino": "Francisco Morato",
+      "segundos_base_candidato": 340,
+      "medido": false,
+      "confianca": "baixa",
+      "metodo": "Distribuição por distância geodésica com parcela fixa de 20 s dentro da âncora total; simetria assumida, não medida.",
+      "fontes": [
+        "https://www.parceriaseminvestimentos.sp.gov.br/dx/api/dam/v1/collections/c608e9e1-cc41-4239-9abb-c14de1135591/items/349ee66f-c6cc-4141-9ab5-d477d3ff31c4/renditions/d440d43b-b5fc-4856-aee8-cec6f2cee90f?binary=true",
+        "https://www.gov.br/transportes/pt-br/centrais-de-conteudo/sp-2000-pdf"
+      ],
+      "limites": "Cenário físico de 57 km / 40 km/h = 85min30s. Extensão consta do projeto; 40 km/h é hipótese apoiada em referência ferroviária histórica, não velocidade atual da Linha 7. Meta futura de 61 min não foi aplicada como medição. Parcela fixa não é margem nem parada cronometrada; distância reta não é traçado.",
+      "parametros": {
+        "total_ancora_segundos": 5130,
+        "distancia_geodesica_metros": 3464
+      }
+    },
+    {
+      "id": "RESTANTE-L7-Baltazar Fidélis-Franco da Rocha",
+      "linha": "L7",
+      "origem": "Baltazar Fidélis",
+      "destino": "Franco da Rocha",
+      "segundos_base_candidato": 250,
+      "medido": false,
+      "confianca": "baixa",
+      "metodo": "Distribuição por distância geodésica com parcela fixa de 20 s dentro da âncora total; simetria assumida, não medida.",
+      "fontes": [
+        "https://www.parceriaseminvestimentos.sp.gov.br/dx/api/dam/v1/collections/c608e9e1-cc41-4239-9abb-c14de1135591/items/349ee66f-c6cc-4141-9ab5-d477d3ff31c4/renditions/d440d43b-b5fc-4856-aee8-cec6f2cee90f?binary=true",
+        "https://www.gov.br/transportes/pt-br/centrais-de-conteudo/sp-2000-pdf"
+      ],
+      "limites": "Cenário físico de 57 km / 40 km/h = 85min30s. Extensão consta do projeto; 40 km/h é hipótese apoiada em referência ferroviária histórica, não velocidade atual da Linha 7. Meta futura de 61 min não foi aplicada como medição. Parcela fixa não é margem nem parada cronometrada; distância reta não é traçado.",
+      "parametros": {
+        "total_ancora_segundos": 5130,
+        "distancia_geodesica_metros": 2450
+      }
+    },
+    {
+      "id": "RESTANTE-L7-Franco da Rocha-Baltazar Fidélis",
+      "linha": "L7",
+      "origem": "Franco da Rocha",
+      "destino": "Baltazar Fidélis",
+      "segundos_base_candidato": 250,
+      "medido": false,
+      "confianca": "baixa",
+      "metodo": "Distribuição por distância geodésica com parcela fixa de 20 s dentro da âncora total; simetria assumida, não medida.",
+      "fontes": [
+        "https://www.parceriaseminvestimentos.sp.gov.br/dx/api/dam/v1/collections/c608e9e1-cc41-4239-9abb-c14de1135591/items/349ee66f-c6cc-4141-9ab5-d477d3ff31c4/renditions/d440d43b-b5fc-4856-aee8-cec6f2cee90f?binary=true",
+        "https://www.gov.br/transportes/pt-br/centrais-de-conteudo/sp-2000-pdf"
+      ],
+      "limites": "Cenário físico de 57 km / 40 km/h = 85min30s. Extensão consta do projeto; 40 km/h é hipótese apoiada em referência ferroviária histórica, não velocidade atual da Linha 7. Meta futura de 61 min não foi aplicada como medição. Parcela fixa não é margem nem parada cronometrada; distância reta não é traçado.",
+      "parametros": {
+        "total_ancora_segundos": 5130,
+        "distancia_geodesica_metros": 2450
+      }
+    },
+    {
+      "id": "RESTANTE-L7-Franco da Rocha-Caieiras",
+      "linha": "L7",
+      "origem": "Franco da Rocha",
+      "destino": "Caieiras",
+      "segundos_base_candidato": 455,
+      "medido": false,
+      "confianca": "baixa",
+      "metodo": "Distribuição por distância geodésica com parcela fixa de 20 s dentro da âncora total; simetria assumida, não medida.",
+      "fontes": [
+        "https://www.parceriaseminvestimentos.sp.gov.br/dx/api/dam/v1/collections/c608e9e1-cc41-4239-9abb-c14de1135591/items/349ee66f-c6cc-4141-9ab5-d477d3ff31c4/renditions/d440d43b-b5fc-4856-aee8-cec6f2cee90f?binary=true",
+        "https://www.gov.br/transportes/pt-br/centrais-de-conteudo/sp-2000-pdf"
+      ],
+      "limites": "Cenário físico de 57 km / 40 km/h = 85min30s. Extensão consta do projeto; 40 km/h é hipótese apoiada em referência ferroviária histórica, não velocidade atual da Linha 7. Meta futura de 61 min não foi aplicada como medição. Parcela fixa não é margem nem parada cronometrada; distância reta não é traçado.",
+      "parametros": {
+        "total_ancora_segundos": 5130,
+        "distancia_geodesica_metros": 4665
+      }
+    },
+    {
+      "id": "RESTANTE-L7-Caieiras-Franco da Rocha",
+      "linha": "L7",
+      "origem": "Caieiras",
+      "destino": "Franco da Rocha",
+      "segundos_base_candidato": 455,
+      "medido": false,
+      "confianca": "baixa",
+      "metodo": "Distribuição por distância geodésica com parcela fixa de 20 s dentro da âncora total; simetria assumida, não medida.",
+      "fontes": [
+        "https://www.parceriaseminvestimentos.sp.gov.br/dx/api/dam/v1/collections/c608e9e1-cc41-4239-9abb-c14de1135591/items/349ee66f-c6cc-4141-9ab5-d477d3ff31c4/renditions/d440d43b-b5fc-4856-aee8-cec6f2cee90f?binary=true",
+        "https://www.gov.br/transportes/pt-br/centrais-de-conteudo/sp-2000-pdf"
+      ],
+      "limites": "Cenário físico de 57 km / 40 km/h = 85min30s. Extensão consta do projeto; 40 km/h é hipótese apoiada em referência ferroviária histórica, não velocidade atual da Linha 7. Meta futura de 61 min não foi aplicada como medição. Parcela fixa não é margem nem parada cronometrada; distância reta não é traçado.",
+      "parametros": {
+        "total_ancora_segundos": 5130,
+        "distancia_geodesica_metros": 4665
+      }
+    },
+    {
+      "id": "RESTANTE-L7-Caieiras-Perus",
+      "linha": "L7",
+      "origem": "Caieiras",
+      "destino": "Perus",
+      "segundos_base_candidato": 400,
+      "medido": false,
+      "confianca": "baixa",
+      "metodo": "Distribuição por distância geodésica com parcela fixa de 20 s dentro da âncora total; simetria assumida, não medida.",
+      "fontes": [
+        "https://www.parceriaseminvestimentos.sp.gov.br/dx/api/dam/v1/collections/c608e9e1-cc41-4239-9abb-c14de1135591/items/349ee66f-c6cc-4141-9ab5-d477d3ff31c4/renditions/d440d43b-b5fc-4856-aee8-cec6f2cee90f?binary=true",
+        "https://www.gov.br/transportes/pt-br/centrais-de-conteudo/sp-2000-pdf"
+      ],
+      "limites": "Cenário físico de 57 km / 40 km/h = 85min30s. Extensão consta do projeto; 40 km/h é hipótese apoiada em referência ferroviária histórica, não velocidade atual da Linha 7. Meta futura de 61 min não foi aplicada como medição. Parcela fixa não é margem nem parada cronometrada; distância reta não é traçado.",
+      "parametros": {
+        "total_ancora_segundos": 5130,
+        "distancia_geodesica_metros": 4104
+      }
+    },
+    {
+      "id": "RESTANTE-L7-Perus-Caieiras",
+      "linha": "L7",
+      "origem": "Perus",
+      "destino": "Caieiras",
+      "segundos_base_candidato": 400,
+      "medido": false,
+      "confianca": "baixa",
+      "metodo": "Distribuição por distância geodésica com parcela fixa de 20 s dentro da âncora total; simetria assumida, não medida.",
+      "fontes": [
+        "https://www.parceriaseminvestimentos.sp.gov.br/dx/api/dam/v1/collections/c608e9e1-cc41-4239-9abb-c14de1135591/items/349ee66f-c6cc-4141-9ab5-d477d3ff31c4/renditions/d440d43b-b5fc-4856-aee8-cec6f2cee90f?binary=true",
+        "https://www.gov.br/transportes/pt-br/centrais-de-conteudo/sp-2000-pdf"
+      ],
+      "limites": "Cenário físico de 57 km / 40 km/h = 85min30s. Extensão consta do projeto; 40 km/h é hipótese apoiada em referência ferroviária histórica, não velocidade atual da Linha 7. Meta futura de 61 min não foi aplicada como medição. Parcela fixa não é margem nem parada cronometrada; distância reta não é traçado.",
+      "parametros": {
+        "total_ancora_segundos": 5130,
+        "distancia_geodesica_metros": 4104
+      }
+    },
+    {
+      "id": "RESTANTE-L7-Perus-Vila Aurora",
+      "linha": "L7",
+      "origem": "Perus",
+      "destino": "Vila Aurora",
+      "segundos_base_candidato": 375,
+      "medido": false,
+      "confianca": "baixa",
+      "metodo": "Distribuição por distância geodésica com parcela fixa de 20 s dentro da âncora total; simetria assumida, não medida.",
+      "fontes": [
+        "https://www.parceriaseminvestimentos.sp.gov.br/dx/api/dam/v1/collections/c608e9e1-cc41-4239-9abb-c14de1135591/items/349ee66f-c6cc-4141-9ab5-d477d3ff31c4/renditions/d440d43b-b5fc-4856-aee8-cec6f2cee90f?binary=true",
+        "https://www.gov.br/transportes/pt-br/centrais-de-conteudo/sp-2000-pdf"
+      ],
+      "limites": "Cenário físico de 57 km / 40 km/h = 85min30s. Extensão consta do projeto; 40 km/h é hipótese apoiada em referência ferroviária histórica, não velocidade atual da Linha 7. Meta futura de 61 min não foi aplicada como medição. Parcela fixa não é margem nem parada cronometrada; distância reta não é traçado.",
+      "parametros": {
+        "total_ancora_segundos": 5130,
+        "distancia_geodesica_metros": 3803
+      }
+    },
+    {
+      "id": "RESTANTE-L7-Vila Aurora-Perus",
+      "linha": "L7",
+      "origem": "Vila Aurora",
+      "destino": "Perus",
+      "segundos_base_candidato": 375,
+      "medido": false,
+      "confianca": "baixa",
+      "metodo": "Distribuição por distância geodésica com parcela fixa de 20 s dentro da âncora total; simetria assumida, não medida.",
+      "fontes": [
+        "https://www.parceriaseminvestimentos.sp.gov.br/dx/api/dam/v1/collections/c608e9e1-cc41-4239-9abb-c14de1135591/items/349ee66f-c6cc-4141-9ab5-d477d3ff31c4/renditions/d440d43b-b5fc-4856-aee8-cec6f2cee90f?binary=true",
+        "https://www.gov.br/transportes/pt-br/centrais-de-conteudo/sp-2000-pdf"
+      ],
+      "limites": "Cenário físico de 57 km / 40 km/h = 85min30s. Extensão consta do projeto; 40 km/h é hipótese apoiada em referência ferroviária histórica, não velocidade atual da Linha 7. Meta futura de 61 min não foi aplicada como medição. Parcela fixa não é margem nem parada cronometrada; distância reta não é traçado.",
+      "parametros": {
+        "total_ancora_segundos": 5130,
+        "distancia_geodesica_metros": 3803
+      }
+    },
+    {
+      "id": "RESTANTE-L7-Vila Aurora-Jaraguá",
+      "linha": "L7",
+      "origem": "Vila Aurora",
+      "destino": "Jaraguá",
+      "segundos_base_candidato": 225,
+      "medido": false,
+      "confianca": "baixa",
+      "metodo": "Distribuição por distância geodésica com parcela fixa de 20 s dentro da âncora total; simetria assumida, não medida.",
+      "fontes": [
+        "https://www.parceriaseminvestimentos.sp.gov.br/dx/api/dam/v1/collections/c608e9e1-cc41-4239-9abb-c14de1135591/items/349ee66f-c6cc-4141-9ab5-d477d3ff31c4/renditions/d440d43b-b5fc-4856-aee8-cec6f2cee90f?binary=true",
+        "https://www.gov.br/transportes/pt-br/centrais-de-conteudo/sp-2000-pdf"
+      ],
+      "limites": "Cenário físico de 57 km / 40 km/h = 85min30s. Extensão consta do projeto; 40 km/h é hipótese apoiada em referência ferroviária histórica, não velocidade atual da Linha 7. Meta futura de 61 min não foi aplicada como medição. Parcela fixa não é margem nem parada cronometrada; distância reta não é traçado.",
+      "parametros": {
+        "total_ancora_segundos": 5130,
+        "distancia_geodesica_metros": 2182
+      }
+    },
+    {
+      "id": "RESTANTE-L7-Jaraguá-Vila Aurora",
+      "linha": "L7",
+      "origem": "Jaraguá",
+      "destino": "Vila Aurora",
+      "segundos_base_candidato": 225,
+      "medido": false,
+      "confianca": "baixa",
+      "metodo": "Distribuição por distância geodésica com parcela fixa de 20 s dentro da âncora total; simetria assumida, não medida.",
+      "fontes": [
+        "https://www.parceriaseminvestimentos.sp.gov.br/dx/api/dam/v1/collections/c608e9e1-cc41-4239-9abb-c14de1135591/items/349ee66f-c6cc-4141-9ab5-d477d3ff31c4/renditions/d440d43b-b5fc-4856-aee8-cec6f2cee90f?binary=true",
+        "https://www.gov.br/transportes/pt-br/centrais-de-conteudo/sp-2000-pdf"
+      ],
+      "limites": "Cenário físico de 57 km / 40 km/h = 85min30s. Extensão consta do projeto; 40 km/h é hipótese apoiada em referência ferroviária histórica, não velocidade atual da Linha 7. Meta futura de 61 min não foi aplicada como medição. Parcela fixa não é margem nem parada cronometrada; distância reta não é traçado.",
+      "parametros": {
+        "total_ancora_segundos": 5130,
+        "distancia_geodesica_metros": 2182
+      }
+    },
+    {
+      "id": "RESTANTE-L7-Jaraguá-Vila Clarice",
+      "linha": "L7",
+      "origem": "Jaraguá",
+      "destino": "Vila Clarice",
+      "segundos_base_candidato": 180,
+      "medido": false,
+      "confianca": "baixa",
+      "metodo": "Distribuição por distância geodésica com parcela fixa de 20 s dentro da âncora total; simetria assumida, não medida.",
+      "fontes": [
+        "https://www.parceriaseminvestimentos.sp.gov.br/dx/api/dam/v1/collections/c608e9e1-cc41-4239-9abb-c14de1135591/items/349ee66f-c6cc-4141-9ab5-d477d3ff31c4/renditions/d440d43b-b5fc-4856-aee8-cec6f2cee90f?binary=true",
+        "https://www.gov.br/transportes/pt-br/centrais-de-conteudo/sp-2000-pdf"
+      ],
+      "limites": "Cenário físico de 57 km / 40 km/h = 85min30s. Extensão consta do projeto; 40 km/h é hipótese apoiada em referência ferroviária histórica, não velocidade atual da Linha 7. Meta futura de 61 min não foi aplicada como medição. Parcela fixa não é margem nem parada cronometrada; distância reta não é traçado.",
+      "parametros": {
+        "total_ancora_segundos": 5130,
+        "distancia_geodesica_metros": 1719
+      }
+    },
+    {
+      "id": "RESTANTE-L7-Vila Clarice-Jaraguá",
+      "linha": "L7",
+      "origem": "Vila Clarice",
+      "destino": "Jaraguá",
+      "segundos_base_candidato": 180,
+      "medido": false,
+      "confianca": "baixa",
+      "metodo": "Distribuição por distância geodésica com parcela fixa de 20 s dentro da âncora total; simetria assumida, não medida.",
+      "fontes": [
+        "https://www.parceriaseminvestimentos.sp.gov.br/dx/api/dam/v1/collections/c608e9e1-cc41-4239-9abb-c14de1135591/items/349ee66f-c6cc-4141-9ab5-d477d3ff31c4/renditions/d440d43b-b5fc-4856-aee8-cec6f2cee90f?binary=true",
+        "https://www.gov.br/transportes/pt-br/centrais-de-conteudo/sp-2000-pdf"
+      ],
+      "limites": "Cenário físico de 57 km / 40 km/h = 85min30s. Extensão consta do projeto; 40 km/h é hipótese apoiada em referência ferroviária histórica, não velocidade atual da Linha 7. Meta futura de 61 min não foi aplicada como medição. Parcela fixa não é margem nem parada cronometrada; distância reta não é traçado.",
+      "parametros": {
+        "total_ancora_segundos": 5130,
+        "distancia_geodesica_metros": 1719
+      }
+    },
+    {
+      "id": "RESTANTE-L7-Vila Clarice-Pirituba",
+      "linha": "L7",
+      "origem": "Vila Clarice",
+      "destino": "Pirituba",
+      "segundos_base_candidato": 275,
+      "medido": false,
+      "confianca": "baixa",
+      "metodo": "Distribuição por distância geodésica com parcela fixa de 20 s dentro da âncora total; simetria assumida, não medida.",
+      "fontes": [
+        "https://www.parceriaseminvestimentos.sp.gov.br/dx/api/dam/v1/collections/c608e9e1-cc41-4239-9abb-c14de1135591/items/349ee66f-c6cc-4141-9ab5-d477d3ff31c4/renditions/d440d43b-b5fc-4856-aee8-cec6f2cee90f?binary=true",
+        "https://www.gov.br/transportes/pt-br/centrais-de-conteudo/sp-2000-pdf"
+      ],
+      "limites": "Cenário físico de 57 km / 40 km/h = 85min30s. Extensão consta do projeto; 40 km/h é hipótese apoiada em referência ferroviária histórica, não velocidade atual da Linha 7. Meta futura de 61 min não foi aplicada como medição. Parcela fixa não é margem nem parada cronometrada; distância reta não é traçado.",
+      "parametros": {
+        "total_ancora_segundos": 5130,
+        "distancia_geodesica_metros": 2761
+      }
+    },
+    {
+      "id": "RESTANTE-L7-Pirituba-Vila Clarice",
+      "linha": "L7",
+      "origem": "Pirituba",
+      "destino": "Vila Clarice",
+      "segundos_base_candidato": 275,
+      "medido": false,
+      "confianca": "baixa",
+      "metodo": "Distribuição por distância geodésica com parcela fixa de 20 s dentro da âncora total; simetria assumida, não medida.",
+      "fontes": [
+        "https://www.parceriaseminvestimentos.sp.gov.br/dx/api/dam/v1/collections/c608e9e1-cc41-4239-9abb-c14de1135591/items/349ee66f-c6cc-4141-9ab5-d477d3ff31c4/renditions/d440d43b-b5fc-4856-aee8-cec6f2cee90f?binary=true",
+        "https://www.gov.br/transportes/pt-br/centrais-de-conteudo/sp-2000-pdf"
+      ],
+      "limites": "Cenário físico de 57 km / 40 km/h = 85min30s. Extensão consta do projeto; 40 km/h é hipótese apoiada em referência ferroviária histórica, não velocidade atual da Linha 7. Meta futura de 61 min não foi aplicada como medição. Parcela fixa não é margem nem parada cronometrada; distância reta não é traçado.",
+      "parametros": {
+        "total_ancora_segundos": 5130,
+        "distancia_geodesica_metros": 2761
+      }
+    },
+    {
+      "id": "RESTANTE-L7-Pirituba-Piqueri",
+      "linha": "L7",
+      "origem": "Pirituba",
+      "destino": "Piqueri",
+      "segundos_base_candidato": 215,
+      "medido": false,
+      "confianca": "baixa",
+      "metodo": "Distribuição por distância geodésica com parcela fixa de 20 s dentro da âncora total; simetria assumida, não medida.",
+      "fontes": [
+        "https://www.parceriaseminvestimentos.sp.gov.br/dx/api/dam/v1/collections/c608e9e1-cc41-4239-9abb-c14de1135591/items/349ee66f-c6cc-4141-9ab5-d477d3ff31c4/renditions/d440d43b-b5fc-4856-aee8-cec6f2cee90f?binary=true",
+        "https://www.gov.br/transportes/pt-br/centrais-de-conteudo/sp-2000-pdf"
+      ],
+      "limites": "Cenário físico de 57 km / 40 km/h = 85min30s. Extensão consta do projeto; 40 km/h é hipótese apoiada em referência ferroviária histórica, não velocidade atual da Linha 7. Meta futura de 61 min não foi aplicada como medição. Parcela fixa não é margem nem parada cronometrada; distância reta não é traçado.",
+      "parametros": {
+        "total_ancora_segundos": 5130,
+        "distancia_geodesica_metros": 2082
+      }
+    },
+    {
+      "id": "RESTANTE-L7-Piqueri-Pirituba",
+      "linha": "L7",
+      "origem": "Piqueri",
+      "destino": "Pirituba",
+      "segundos_base_candidato": 215,
+      "medido": false,
+      "confianca": "baixa",
+      "metodo": "Distribuição por distância geodésica com parcela fixa de 20 s dentro da âncora total; simetria assumida, não medida.",
+      "fontes": [
+        "https://www.parceriaseminvestimentos.sp.gov.br/dx/api/dam/v1/collections/c608e9e1-cc41-4239-9abb-c14de1135591/items/349ee66f-c6cc-4141-9ab5-d477d3ff31c4/renditions/d440d43b-b5fc-4856-aee8-cec6f2cee90f?binary=true",
+        "https://www.gov.br/transportes/pt-br/centrais-de-conteudo/sp-2000-pdf"
+      ],
+      "limites": "Cenário físico de 57 km / 40 km/h = 85min30s. Extensão consta do projeto; 40 km/h é hipótese apoiada em referência ferroviária histórica, não velocidade atual da Linha 7. Meta futura de 61 min não foi aplicada como medição. Parcela fixa não é margem nem parada cronometrada; distância reta não é traçado.",
+      "parametros": {
+        "total_ancora_segundos": 5130,
+        "distancia_geodesica_metros": 2082
+      }
+    },
+    {
+      "id": "RESTANTE-L7-Piqueri-Lapa - Linha 7",
+      "linha": "L7",
+      "origem": "Piqueri",
+      "destino": "Lapa - Linha 7",
+      "segundos_base_candidato": 195,
+      "medido": false,
+      "confianca": "baixa",
+      "metodo": "Distribuição por distância geodésica com parcela fixa de 20 s dentro da âncora total; simetria assumida, não medida.",
+      "fontes": [
+        "https://www.parceriaseminvestimentos.sp.gov.br/dx/api/dam/v1/collections/c608e9e1-cc41-4239-9abb-c14de1135591/items/349ee66f-c6cc-4141-9ab5-d477d3ff31c4/renditions/d440d43b-b5fc-4856-aee8-cec6f2cee90f?binary=true",
+        "https://www.gov.br/transportes/pt-br/centrais-de-conteudo/sp-2000-pdf"
+      ],
+      "limites": "Cenário físico de 57 km / 40 km/h = 85min30s. Extensão consta do projeto; 40 km/h é hipótese apoiada em referência ferroviária histórica, não velocidade atual da Linha 7. Meta futura de 61 min não foi aplicada como medição. Parcela fixa não é margem nem parada cronometrada; distância reta não é traçado.",
+      "parametros": {
+        "total_ancora_segundos": 5130,
+        "distancia_geodesica_metros": 1862
+      }
+    },
+    {
+      "id": "RESTANTE-L7-Lapa - Linha 7-Piqueri",
+      "linha": "L7",
+      "origem": "Lapa - Linha 7",
+      "destino": "Piqueri",
+      "segundos_base_candidato": 195,
+      "medido": false,
+      "confianca": "baixa",
+      "metodo": "Distribuição por distância geodésica com parcela fixa de 20 s dentro da âncora total; simetria assumida, não medida.",
+      "fontes": [
+        "https://www.parceriaseminvestimentos.sp.gov.br/dx/api/dam/v1/collections/c608e9e1-cc41-4239-9abb-c14de1135591/items/349ee66f-c6cc-4141-9ab5-d477d3ff31c4/renditions/d440d43b-b5fc-4856-aee8-cec6f2cee90f?binary=true",
+        "https://www.gov.br/transportes/pt-br/centrais-de-conteudo/sp-2000-pdf"
+      ],
+      "limites": "Cenário físico de 57 km / 40 km/h = 85min30s. Extensão consta do projeto; 40 km/h é hipótese apoiada em referência ferroviária histórica, não velocidade atual da Linha 7. Meta futura de 61 min não foi aplicada como medição. Parcela fixa não é margem nem parada cronometrada; distância reta não é traçado.",
+      "parametros": {
+        "total_ancora_segundos": 5130,
+        "distancia_geodesica_metros": 1862
+      }
+    },
+    {
+      "id": "RESTANTE-L7-Lapa - Linha 7-Água Branca",
+      "linha": "L7",
+      "origem": "Lapa - Linha 7",
+      "destino": "Água Branca",
+      "segundos_base_candidato": 165,
+      "medido": false,
+      "confianca": "baixa",
+      "metodo": "Distribuição por distância geodésica com parcela fixa de 20 s dentro da âncora total; simetria assumida, não medida.",
+      "fontes": [
+        "https://www.parceriaseminvestimentos.sp.gov.br/dx/api/dam/v1/collections/c608e9e1-cc41-4239-9abb-c14de1135591/items/349ee66f-c6cc-4141-9ab5-d477d3ff31c4/renditions/d440d43b-b5fc-4856-aee8-cec6f2cee90f?binary=true",
+        "https://www.gov.br/transportes/pt-br/centrais-de-conteudo/sp-2000-pdf"
+      ],
+      "limites": "Cenário físico de 57 km / 40 km/h = 85min30s. Extensão consta do projeto; 40 km/h é hipótese apoiada em referência ferroviária histórica, não velocidade atual da Linha 7. Meta futura de 61 min não foi aplicada como medição. Parcela fixa não é margem nem parada cronometrada; distância reta não é traçado.",
+      "parametros": {
+        "total_ancora_segundos": 5130,
+        "distancia_geodesica_metros": 1555
+      }
+    },
+    {
+      "id": "RESTANTE-L7-Água Branca-Lapa - Linha 7",
+      "linha": "L7",
+      "origem": "Água Branca",
+      "destino": "Lapa - Linha 7",
+      "segundos_base_candidato": 165,
+      "medido": false,
+      "confianca": "baixa",
+      "metodo": "Distribuição por distância geodésica com parcela fixa de 20 s dentro da âncora total; simetria assumida, não medida.",
+      "fontes": [
+        "https://www.parceriaseminvestimentos.sp.gov.br/dx/api/dam/v1/collections/c608e9e1-cc41-4239-9abb-c14de1135591/items/349ee66f-c6cc-4141-9ab5-d477d3ff31c4/renditions/d440d43b-b5fc-4856-aee8-cec6f2cee90f?binary=true",
+        "https://www.gov.br/transportes/pt-br/centrais-de-conteudo/sp-2000-pdf"
+      ],
+      "limites": "Cenário físico de 57 km / 40 km/h = 85min30s. Extensão consta do projeto; 40 km/h é hipótese apoiada em referência ferroviária histórica, não velocidade atual da Linha 7. Meta futura de 61 min não foi aplicada como medição. Parcela fixa não é margem nem parada cronometrada; distância reta não é traçado.",
+      "parametros": {
+        "total_ancora_segundos": 5130,
+        "distancia_geodesica_metros": 1555
+      }
+    },
+    {
+      "id": "RESTANTE-L7-Água Branca-Palmeiras-Barra Funda",
+      "linha": "L7",
+      "origem": "Água Branca",
+      "destino": "Palmeiras-Barra Funda",
+      "segundos_base_candidato": 235,
+      "medido": false,
+      "confianca": "baixa",
+      "metodo": "Distribuição por distância geodésica com parcela fixa de 20 s dentro da âncora total; simetria assumida, não medida.",
+      "fontes": [
+        "https://www.parceriaseminvestimentos.sp.gov.br/dx/api/dam/v1/collections/c608e9e1-cc41-4239-9abb-c14de1135591/items/349ee66f-c6cc-4141-9ab5-d477d3ff31c4/renditions/d440d43b-b5fc-4856-aee8-cec6f2cee90f?binary=true",
+        "https://www.gov.br/transportes/pt-br/centrais-de-conteudo/sp-2000-pdf"
+      ],
+      "limites": "Cenário físico de 57 km / 40 km/h = 85min30s. Extensão consta do projeto; 40 km/h é hipótese apoiada em referência ferroviária histórica, não velocidade atual da Linha 7. Meta futura de 61 min não foi aplicada como medição. Parcela fixa não é margem nem parada cronometrada; distância reta não é traçado.",
+      "parametros": {
+        "total_ancora_segundos": 5130,
+        "distancia_geodesica_metros": 2294
+      }
+    },
+    {
+      "id": "RESTANTE-L7-Palmeiras-Barra Funda-Água Branca",
+      "linha": "L7",
+      "origem": "Palmeiras-Barra Funda",
+      "destino": "Água Branca",
+      "segundos_base_candidato": 235,
+      "medido": false,
+      "confianca": "baixa",
+      "metodo": "Distribuição por distância geodésica com parcela fixa de 20 s dentro da âncora total; simetria assumida, não medida.",
+      "fontes": [
+        "https://www.parceriaseminvestimentos.sp.gov.br/dx/api/dam/v1/collections/c608e9e1-cc41-4239-9abb-c14de1135591/items/349ee66f-c6cc-4141-9ab5-d477d3ff31c4/renditions/d440d43b-b5fc-4856-aee8-cec6f2cee90f?binary=true",
+        "https://www.gov.br/transportes/pt-br/centrais-de-conteudo/sp-2000-pdf"
+      ],
+      "limites": "Cenário físico de 57 km / 40 km/h = 85min30s. Extensão consta do projeto; 40 km/h é hipótese apoiada em referência ferroviária histórica, não velocidade atual da Linha 7. Meta futura de 61 min não foi aplicada como medição. Parcela fixa não é margem nem parada cronometrada; distância reta não é traçado.",
+      "parametros": {
+        "total_ancora_segundos": 5130,
+        "distancia_geodesica_metros": 2294
+      }
+    },
+    {
+      "id": "RESTANTE-L8-Júlio Prestes-Palmeiras-Barra Funda",
+      "linha": "L8",
+      "origem": "Júlio Prestes",
+      "destino": "Palmeiras-Barra Funda",
+      "segundos_base_candidato": 260,
+      "medido": false,
+      "confianca": "baixa",
+      "metodo": "Distribuição por distância geodésica com parcela fixa de 20 s dentro da âncora total; simetria assumida, não medida.",
+      "fontes": [
+        "https://www.tce.sp.gov.br/sites/default/files/portal/6.%20Fiscaliza%C3%A7%C3%A3o%20Operacional%20-%20Transporte%20sobre%20Trilhos%20-%20TC-021575.989.23-1.pdf"
+      ],
+      "limites": "Âncora programada histórica de 53 min Júlio Prestes–Itapevi (jun/22). Fiscalização aponta problemas e posterior programação de 65 min; usar ambas na sensibilidade, sem chamar de medição atual. Extensão Itapevi–Amador Bueno preservada separadamente. Parcela fixa não é margem nem parada cronometrada; distância reta não é traçado.",
+      "parametros": {
+        "total_ancora_segundos": 3180,
+        "distancia_geodesica_metros": 2764
+      }
+    },
+    {
+      "id": "RESTANTE-L8-Palmeiras-Barra Funda-Júlio Prestes",
+      "linha": "L8",
+      "origem": "Palmeiras-Barra Funda",
+      "destino": "Júlio Prestes",
+      "segundos_base_candidato": 260,
+      "medido": false,
+      "confianca": "baixa",
+      "metodo": "Distribuição por distância geodésica com parcela fixa de 20 s dentro da âncora total; simetria assumida, não medida.",
+      "fontes": [
+        "https://www.tce.sp.gov.br/sites/default/files/portal/6.%20Fiscaliza%C3%A7%C3%A3o%20Operacional%20-%20Transporte%20sobre%20Trilhos%20-%20TC-021575.989.23-1.pdf"
+      ],
+      "limites": "Âncora programada histórica de 53 min Júlio Prestes–Itapevi (jun/22). Fiscalização aponta problemas e posterior programação de 65 min; usar ambas na sensibilidade, sem chamar de medição atual. Extensão Itapevi–Amador Bueno preservada separadamente. Parcela fixa não é margem nem parada cronometrada; distância reta não é traçado.",
+      "parametros": {
+        "total_ancora_segundos": 3180,
+        "distancia_geodesica_metros": 2764
+      }
+    },
+    {
+      "id": "RESTANTE-L8-Palmeiras-Barra Funda-Lapa - Linha 8",
+      "linha": "L8",
+      "origem": "Palmeiras-Barra Funda",
+      "destino": "Lapa - Linha 8",
+      "segundos_base_candidato": 315,
+      "medido": false,
+      "confianca": "baixa",
+      "metodo": "Distribuição por distância geodésica com parcela fixa de 20 s dentro da âncora total; simetria assumida, não medida.",
+      "fontes": [
+        "https://www.tce.sp.gov.br/sites/default/files/portal/6.%20Fiscaliza%C3%A7%C3%A3o%20Operacional%20-%20Transporte%20sobre%20Trilhos%20-%20TC-021575.989.23-1.pdf"
+      ],
+      "limites": "Âncora programada histórica de 53 min Júlio Prestes–Itapevi (jun/22). Fiscalização aponta problemas e posterior programação de 65 min; usar ambas na sensibilidade, sem chamar de medição atual. Extensão Itapevi–Amador Bueno preservada separadamente. Parcela fixa não é margem nem parada cronometrada; distância reta não é traçado.",
+      "parametros": {
+        "total_ancora_segundos": 3180,
+        "distancia_geodesica_metros": 3477
+      }
+    },
+    {
+      "id": "RESTANTE-L8-Lapa - Linha 8-Palmeiras-Barra Funda",
+      "linha": "L8",
+      "origem": "Lapa - Linha 8",
+      "destino": "Palmeiras-Barra Funda",
+      "segundos_base_candidato": 315,
+      "medido": false,
+      "confianca": "baixa",
+      "metodo": "Distribuição por distância geodésica com parcela fixa de 20 s dentro da âncora total; simetria assumida, não medida.",
+      "fontes": [
+        "https://www.tce.sp.gov.br/sites/default/files/portal/6.%20Fiscaliza%C3%A7%C3%A3o%20Operacional%20-%20Transporte%20sobre%20Trilhos%20-%20TC-021575.989.23-1.pdf"
+      ],
+      "limites": "Âncora programada histórica de 53 min Júlio Prestes–Itapevi (jun/22). Fiscalização aponta problemas e posterior programação de 65 min; usar ambas na sensibilidade, sem chamar de medição atual. Extensão Itapevi–Amador Bueno preservada separadamente. Parcela fixa não é margem nem parada cronometrada; distância reta não é traçado.",
+      "parametros": {
+        "total_ancora_segundos": 3180,
+        "distancia_geodesica_metros": 3477
+      }
+    },
+    {
+      "id": "RESTANTE-L8-Lapa - Linha 8-Domingos de Moraes",
+      "linha": "L8",
+      "origem": "Lapa - Linha 8",
+      "destino": "Domingos de Moraes",
+      "segundos_base_candidato": 210,
+      "medido": false,
+      "confianca": "baixa",
+      "metodo": "Distribuição por distância geodésica com parcela fixa de 20 s dentro da âncora total; simetria assumida, não medida.",
+      "fontes": [
+        "https://www.tce.sp.gov.br/sites/default/files/portal/6.%20Fiscaliza%C3%A7%C3%A3o%20Operacional%20-%20Transporte%20sobre%20Trilhos%20-%20TC-021575.989.23-1.pdf"
+      ],
+      "limites": "Âncora programada histórica de 53 min Júlio Prestes–Itapevi (jun/22). Fiscalização aponta problemas e posterior programação de 65 min; usar ambas na sensibilidade, sem chamar de medição atual. Extensão Itapevi–Amador Bueno preservada separadamente. Parcela fixa não é margem nem parada cronometrada; distância reta não é traçado.",
+      "parametros": {
+        "total_ancora_segundos": 3180,
+        "distancia_geodesica_metros": 2198
+      }
+    },
+    {
+      "id": "RESTANTE-L8-Domingos de Moraes-Lapa - Linha 8",
+      "linha": "L8",
+      "origem": "Domingos de Moraes",
+      "destino": "Lapa - Linha 8",
+      "segundos_base_candidato": 210,
+      "medido": false,
+      "confianca": "baixa",
+      "metodo": "Distribuição por distância geodésica com parcela fixa de 20 s dentro da âncora total; simetria assumida, não medida.",
+      "fontes": [
+        "https://www.tce.sp.gov.br/sites/default/files/portal/6.%20Fiscaliza%C3%A7%C3%A3o%20Operacional%20-%20Transporte%20sobre%20Trilhos%20-%20TC-021575.989.23-1.pdf"
+      ],
+      "limites": "Âncora programada histórica de 53 min Júlio Prestes–Itapevi (jun/22). Fiscalização aponta problemas e posterior programação de 65 min; usar ambas na sensibilidade, sem chamar de medição atual. Extensão Itapevi–Amador Bueno preservada separadamente. Parcela fixa não é margem nem parada cronometrada; distância reta não é traçado.",
+      "parametros": {
+        "total_ancora_segundos": 3180,
+        "distancia_geodesica_metros": 2198
+      }
+    },
+    {
+      "id": "RESTANTE-L8-Domingos de Moraes-Imperatriz Leopoldina",
+      "linha": "L8",
+      "origem": "Domingos de Moraes",
+      "destino": "Imperatriz Leopoldina",
+      "segundos_base_candidato": 170,
+      "medido": false,
+      "confianca": "baixa",
+      "metodo": "Distribuição por distância geodésica com parcela fixa de 20 s dentro da âncora total; simetria assumida, não medida.",
+      "fontes": [
+        "https://www.tce.sp.gov.br/sites/default/files/portal/6.%20Fiscaliza%C3%A7%C3%A3o%20Operacional%20-%20Transporte%20sobre%20Trilhos%20-%20TC-021575.989.23-1.pdf"
+      ],
+      "limites": "Âncora programada histórica de 53 min Júlio Prestes–Itapevi (jun/22). Fiscalização aponta problemas e posterior programação de 65 min; usar ambas na sensibilidade, sem chamar de medição atual. Extensão Itapevi–Amador Bueno preservada separadamente. Parcela fixa não é margem nem parada cronometrada; distância reta não é traçado.",
+      "parametros": {
+        "total_ancora_segundos": 3180,
+        "distancia_geodesica_metros": 1722
+      }
+    },
+    {
+      "id": "RESTANTE-L8-Imperatriz Leopoldina-Domingos de Moraes",
+      "linha": "L8",
+      "origem": "Imperatriz Leopoldina",
+      "destino": "Domingos de Moraes",
+      "segundos_base_candidato": 170,
+      "medido": false,
+      "confianca": "baixa",
+      "metodo": "Distribuição por distância geodésica com parcela fixa de 20 s dentro da âncora total; simetria assumida, não medida.",
+      "fontes": [
+        "https://www.tce.sp.gov.br/sites/default/files/portal/6.%20Fiscaliza%C3%A7%C3%A3o%20Operacional%20-%20Transporte%20sobre%20Trilhos%20-%20TC-021575.989.23-1.pdf"
+      ],
+      "limites": "Âncora programada histórica de 53 min Júlio Prestes–Itapevi (jun/22). Fiscalização aponta problemas e posterior programação de 65 min; usar ambas na sensibilidade, sem chamar de medição atual. Extensão Itapevi–Amador Bueno preservada separadamente. Parcela fixa não é margem nem parada cronometrada; distância reta não é traçado.",
+      "parametros": {
+        "total_ancora_segundos": 3180,
+        "distancia_geodesica_metros": 1722
+      }
+    },
+    {
+      "id": "RESTANTE-L8-Imperatriz Leopoldina-Presidente Altino",
+      "linha": "L8",
+      "origem": "Imperatriz Leopoldina",
+      "destino": "Presidente Altino",
+      "segundos_base_candidato": 235,
+      "medido": false,
+      "confianca": "baixa",
+      "metodo": "Distribuição por distância geodésica com parcela fixa de 20 s dentro da âncora total; simetria assumida, não medida.",
+      "fontes": [
+        "https://www.tce.sp.gov.br/sites/default/files/portal/6.%20Fiscaliza%C3%A7%C3%A3o%20Operacional%20-%20Transporte%20sobre%20Trilhos%20-%20TC-021575.989.23-1.pdf"
+      ],
+      "limites": "Âncora programada histórica de 53 min Júlio Prestes–Itapevi (jun/22). Fiscalização aponta problemas e posterior programação de 65 min; usar ambas na sensibilidade, sem chamar de medição atual. Extensão Itapevi–Amador Bueno preservada separadamente. Parcela fixa não é margem nem parada cronometrada; distância reta não é traçado.",
+      "parametros": {
+        "total_ancora_segundos": 3180,
+        "distancia_geodesica_metros": 2456
+      }
+    },
+    {
+      "id": "RESTANTE-L8-Presidente Altino-Imperatriz Leopoldina",
+      "linha": "L8",
+      "origem": "Presidente Altino",
+      "destino": "Imperatriz Leopoldina",
+      "segundos_base_candidato": 235,
+      "medido": false,
+      "confianca": "baixa",
+      "metodo": "Distribuição por distância geodésica com parcela fixa de 20 s dentro da âncora total; simetria assumida, não medida.",
+      "fontes": [
+        "https://www.tce.sp.gov.br/sites/default/files/portal/6.%20Fiscaliza%C3%A7%C3%A3o%20Operacional%20-%20Transporte%20sobre%20Trilhos%20-%20TC-021575.989.23-1.pdf"
+      ],
+      "limites": "Âncora programada histórica de 53 min Júlio Prestes–Itapevi (jun/22). Fiscalização aponta problemas e posterior programação de 65 min; usar ambas na sensibilidade, sem chamar de medição atual. Extensão Itapevi–Amador Bueno preservada separadamente. Parcela fixa não é margem nem parada cronometrada; distância reta não é traçado.",
+      "parametros": {
+        "total_ancora_segundos": 3180,
+        "distancia_geodesica_metros": 2456
+      }
+    },
+    {
+      "id": "RESTANTE-L8-Presidente Altino-Osasco",
+      "linha": "L8",
+      "origem": "Presidente Altino",
+      "destino": "Osasco",
+      "segundos_base_candidato": 155,
+      "medido": false,
+      "confianca": "baixa",
+      "metodo": "Distribuição por distância geodésica com parcela fixa de 20 s dentro da âncora total; simetria assumida, não medida.",
+      "fontes": [
+        "https://www.tce.sp.gov.br/sites/default/files/portal/6.%20Fiscaliza%C3%A7%C3%A3o%20Operacional%20-%20Transporte%20sobre%20Trilhos%20-%20TC-021575.989.23-1.pdf"
+      ],
+      "limites": "Âncora programada histórica de 53 min Júlio Prestes–Itapevi (jun/22). Fiscalização aponta problemas e posterior programação de 65 min; usar ambas na sensibilidade, sem chamar de medição atual. Extensão Itapevi–Amador Bueno preservada separadamente. Parcela fixa não é margem nem parada cronometrada; distância reta não é traçado.",
+      "parametros": {
+        "total_ancora_segundos": 3180,
+        "distancia_geodesica_metros": 1585
+      }
+    },
+    {
+      "id": "RESTANTE-L8-Osasco-Presidente Altino",
+      "linha": "L8",
+      "origem": "Osasco",
+      "destino": "Presidente Altino",
+      "segundos_base_candidato": 155,
+      "medido": false,
+      "confianca": "baixa",
+      "metodo": "Distribuição por distância geodésica com parcela fixa de 20 s dentro da âncora total; simetria assumida, não medida.",
+      "fontes": [
+        "https://www.tce.sp.gov.br/sites/default/files/portal/6.%20Fiscaliza%C3%A7%C3%A3o%20Operacional%20-%20Transporte%20sobre%20Trilhos%20-%20TC-021575.989.23-1.pdf"
+      ],
+      "limites": "Âncora programada histórica de 53 min Júlio Prestes–Itapevi (jun/22). Fiscalização aponta problemas e posterior programação de 65 min; usar ambas na sensibilidade, sem chamar de medição atual. Extensão Itapevi–Amador Bueno preservada separadamente. Parcela fixa não é margem nem parada cronometrada; distância reta não é traçado.",
+      "parametros": {
+        "total_ancora_segundos": 3180,
+        "distancia_geodesica_metros": 1585
+      }
+    },
+    {
+      "id": "RESTANTE-L8-Osasco-Comandante Sampaio",
+      "linha": "L8",
+      "origem": "Osasco",
+      "destino": "Comandante Sampaio",
+      "segundos_base_candidato": 200,
+      "medido": false,
+      "confianca": "baixa",
+      "metodo": "Distribuição por distância geodésica com parcela fixa de 20 s dentro da âncora total; simetria assumida, não medida.",
+      "fontes": [
+        "https://www.tce.sp.gov.br/sites/default/files/portal/6.%20Fiscaliza%C3%A7%C3%A3o%20Operacional%20-%20Transporte%20sobre%20Trilhos%20-%20TC-021575.989.23-1.pdf"
+      ],
+      "limites": "Âncora programada histórica de 53 min Júlio Prestes–Itapevi (jun/22). Fiscalização aponta problemas e posterior programação de 65 min; usar ambas na sensibilidade, sem chamar de medição atual. Extensão Itapevi–Amador Bueno preservada separadamente. Parcela fixa não é margem nem parada cronometrada; distância reta não é traçado.",
+      "parametros": {
+        "total_ancora_segundos": 3180,
+        "distancia_geodesica_metros": 2055
+      }
+    },
+    {
+      "id": "RESTANTE-L8-Comandante Sampaio-Osasco",
+      "linha": "L8",
+      "origem": "Comandante Sampaio",
+      "destino": "Osasco",
+      "segundos_base_candidato": 200,
+      "medido": false,
+      "confianca": "baixa",
+      "metodo": "Distribuição por distância geodésica com parcela fixa de 20 s dentro da âncora total; simetria assumida, não medida.",
+      "fontes": [
+        "https://www.tce.sp.gov.br/sites/default/files/portal/6.%20Fiscaliza%C3%A7%C3%A3o%20Operacional%20-%20Transporte%20sobre%20Trilhos%20-%20TC-021575.989.23-1.pdf"
+      ],
+      "limites": "Âncora programada histórica de 53 min Júlio Prestes–Itapevi (jun/22). Fiscalização aponta problemas e posterior programação de 65 min; usar ambas na sensibilidade, sem chamar de medição atual. Extensão Itapevi–Amador Bueno preservada separadamente. Parcela fixa não é margem nem parada cronometrada; distância reta não é traçado.",
+      "parametros": {
+        "total_ancora_segundos": 3180,
+        "distancia_geodesica_metros": 2055
+      }
+    },
+    {
+      "id": "RESTANTE-L8-Comandante Sampaio-Quitaúna",
+      "linha": "L8",
+      "origem": "Comandante Sampaio",
+      "destino": "Quitaúna",
+      "segundos_base_candidato": 120,
+      "medido": false,
+      "confianca": "baixa",
+      "metodo": "Distribuição por distância geodésica com parcela fixa de 20 s dentro da âncora total; simetria assumida, não medida.",
+      "fontes": [
+        "https://www.tce.sp.gov.br/sites/default/files/portal/6.%20Fiscaliza%C3%A7%C3%A3o%20Operacional%20-%20Transporte%20sobre%20Trilhos%20-%20TC-021575.989.23-1.pdf"
+      ],
+      "limites": "Âncora programada histórica de 53 min Júlio Prestes–Itapevi (jun/22). Fiscalização aponta problemas e posterior programação de 65 min; usar ambas na sensibilidade, sem chamar de medição atual. Extensão Itapevi–Amador Bueno preservada separadamente. Parcela fixa não é margem nem parada cronometrada; distância reta não é traçado.",
+      "parametros": {
+        "total_ancora_segundos": 3180,
+        "distancia_geodesica_metros": 1176
+      }
+    },
+    {
+      "id": "RESTANTE-L8-Quitaúna-Comandante Sampaio",
+      "linha": "L8",
+      "origem": "Quitaúna",
+      "destino": "Comandante Sampaio",
+      "segundos_base_candidato": 120,
+      "medido": false,
+      "confianca": "baixa",
+      "metodo": "Distribuição por distância geodésica com parcela fixa de 20 s dentro da âncora total; simetria assumida, não medida.",
+      "fontes": [
+        "https://www.tce.sp.gov.br/sites/default/files/portal/6.%20Fiscaliza%C3%A7%C3%A3o%20Operacional%20-%20Transporte%20sobre%20Trilhos%20-%20TC-021575.989.23-1.pdf"
+      ],
+      "limites": "Âncora programada histórica de 53 min Júlio Prestes–Itapevi (jun/22). Fiscalização aponta problemas e posterior programação de 65 min; usar ambas na sensibilidade, sem chamar de medição atual. Extensão Itapevi–Amador Bueno preservada separadamente. Parcela fixa não é margem nem parada cronometrada; distância reta não é traçado.",
+      "parametros": {
+        "total_ancora_segundos": 3180,
+        "distancia_geodesica_metros": 1176
+      }
+    },
+    {
+      "id": "RESTANTE-L8-Quitaúna-General Miguel Costa",
+      "linha": "L8",
+      "origem": "Quitaúna",
+      "destino": "General Miguel Costa",
+      "segundos_base_candidato": 100,
+      "medido": false,
+      "confianca": "baixa",
+      "metodo": "Distribuição por distância geodésica com parcela fixa de 20 s dentro da âncora total; simetria assumida, não medida.",
+      "fontes": [
+        "https://www.tce.sp.gov.br/sites/default/files/portal/6.%20Fiscaliza%C3%A7%C3%A3o%20Operacional%20-%20Transporte%20sobre%20Trilhos%20-%20TC-021575.989.23-1.pdf"
+      ],
+      "limites": "Âncora programada histórica de 53 min Júlio Prestes–Itapevi (jun/22). Fiscalização aponta problemas e posterior programação de 65 min; usar ambas na sensibilidade, sem chamar de medição atual. Extensão Itapevi–Amador Bueno preservada separadamente. Parcela fixa não é margem nem parada cronometrada; distância reta não é traçado.",
+      "parametros": {
+        "total_ancora_segundos": 3180,
+        "distancia_geodesica_metros": 913
+      }
+    },
+    {
+      "id": "RESTANTE-L8-General Miguel Costa-Quitaúna",
+      "linha": "L8",
+      "origem": "General Miguel Costa",
+      "destino": "Quitaúna",
+      "segundos_base_candidato": 100,
+      "medido": false,
+      "confianca": "baixa",
+      "metodo": "Distribuição por distância geodésica com parcela fixa de 20 s dentro da âncora total; simetria assumida, não medida.",
+      "fontes": [
+        "https://www.tce.sp.gov.br/sites/default/files/portal/6.%20Fiscaliza%C3%A7%C3%A3o%20Operacional%20-%20Transporte%20sobre%20Trilhos%20-%20TC-021575.989.23-1.pdf"
+      ],
+      "limites": "Âncora programada histórica de 53 min Júlio Prestes–Itapevi (jun/22). Fiscalização aponta problemas e posterior programação de 65 min; usar ambas na sensibilidade, sem chamar de medição atual. Extensão Itapevi–Amador Bueno preservada separadamente. Parcela fixa não é margem nem parada cronometrada; distância reta não é traçado.",
+      "parametros": {
+        "total_ancora_segundos": 3180,
+        "distancia_geodesica_metros": 913
+      }
+    },
+    {
+      "id": "RESTANTE-L8-General Miguel Costa-Carapicuíba",
+      "linha": "L8",
+      "origem": "General Miguel Costa",
+      "destino": "Carapicuíba",
+      "segundos_base_candidato": 200,
+      "medido": false,
+      "confianca": "baixa",
+      "metodo": "Distribuição por distância geodésica com parcela fixa de 20 s dentro da âncora total; simetria assumida, não medida.",
+      "fontes": [
+        "https://www.tce.sp.gov.br/sites/default/files/portal/6.%20Fiscaliza%C3%A7%C3%A3o%20Operacional%20-%20Transporte%20sobre%20Trilhos%20-%20TC-021575.989.23-1.pdf"
+      ],
+      "limites": "Âncora programada histórica de 53 min Júlio Prestes–Itapevi (jun/22). Fiscalização aponta problemas e posterior programação de 65 min; usar ambas na sensibilidade, sem chamar de medição atual. Extensão Itapevi–Amador Bueno preservada separadamente. Parcela fixa não é margem nem parada cronometrada; distância reta não é traçado.",
+      "parametros": {
+        "total_ancora_segundos": 3180,
+        "distancia_geodesica_metros": 2053
+      }
+    },
+    {
+      "id": "RESTANTE-L8-Carapicuíba-General Miguel Costa",
+      "linha": "L8",
+      "origem": "Carapicuíba",
+      "destino": "General Miguel Costa",
+      "segundos_base_candidato": 200,
+      "medido": false,
+      "confianca": "baixa",
+      "metodo": "Distribuição por distância geodésica com parcela fixa de 20 s dentro da âncora total; simetria assumida, não medida.",
+      "fontes": [
+        "https://www.tce.sp.gov.br/sites/default/files/portal/6.%20Fiscaliza%C3%A7%C3%A3o%20Operacional%20-%20Transporte%20sobre%20Trilhos%20-%20TC-021575.989.23-1.pdf"
+      ],
+      "limites": "Âncora programada histórica de 53 min Júlio Prestes–Itapevi (jun/22). Fiscalização aponta problemas e posterior programação de 65 min; usar ambas na sensibilidade, sem chamar de medição atual. Extensão Itapevi–Amador Bueno preservada separadamente. Parcela fixa não é margem nem parada cronometrada; distância reta não é traçado.",
+      "parametros": {
+        "total_ancora_segundos": 3180,
+        "distancia_geodesica_metros": 2053
+      }
+    },
+    {
+      "id": "RESTANTE-L8-Carapicuíba-Santa Terezinha",
+      "linha": "L8",
+      "origem": "Carapicuíba",
+      "destino": "Santa Terezinha",
+      "segundos_base_candidato": 135,
+      "medido": false,
+      "confianca": "baixa",
+      "metodo": "Distribuição por distância geodésica com parcela fixa de 20 s dentro da âncora total; simetria assumida, não medida.",
+      "fontes": [
+        "https://www.tce.sp.gov.br/sites/default/files/portal/6.%20Fiscaliza%C3%A7%C3%A3o%20Operacional%20-%20Transporte%20sobre%20Trilhos%20-%20TC-021575.989.23-1.pdf"
+      ],
+      "limites": "Âncora programada histórica de 53 min Júlio Prestes–Itapevi (jun/22). Fiscalização aponta problemas e posterior programação de 65 min; usar ambas na sensibilidade, sem chamar de medição atual. Extensão Itapevi–Amador Bueno preservada separadamente. Parcela fixa não é margem nem parada cronometrada; distância reta não é traçado.",
+      "parametros": {
+        "total_ancora_segundos": 3180,
+        "distancia_geodesica_metros": 1317
+      }
+    },
+    {
+      "id": "RESTANTE-L8-Santa Terezinha-Carapicuíba",
+      "linha": "L8",
+      "origem": "Santa Terezinha",
+      "destino": "Carapicuíba",
+      "segundos_base_candidato": 135,
+      "medido": false,
+      "confianca": "baixa",
+      "metodo": "Distribuição por distância geodésica com parcela fixa de 20 s dentro da âncora total; simetria assumida, não medida.",
+      "fontes": [
+        "https://www.tce.sp.gov.br/sites/default/files/portal/6.%20Fiscaliza%C3%A7%C3%A3o%20Operacional%20-%20Transporte%20sobre%20Trilhos%20-%20TC-021575.989.23-1.pdf"
+      ],
+      "limites": "Âncora programada histórica de 53 min Júlio Prestes–Itapevi (jun/22). Fiscalização aponta problemas e posterior programação de 65 min; usar ambas na sensibilidade, sem chamar de medição atual. Extensão Itapevi–Amador Bueno preservada separadamente. Parcela fixa não é margem nem parada cronometrada; distância reta não é traçado.",
+      "parametros": {
+        "total_ancora_segundos": 3180,
+        "distancia_geodesica_metros": 1317
+      }
+    },
+    {
+      "id": "RESTANTE-L8-Santa Terezinha-Antônio João",
+      "linha": "L8",
+      "origem": "Santa Terezinha",
+      "destino": "Antônio João",
+      "segundos_base_candidato": 115,
+      "medido": false,
+      "confianca": "baixa",
+      "metodo": "Distribuição por distância geodésica com parcela fixa de 20 s dentro da âncora total; simetria assumida, não medida.",
+      "fontes": [
+        "https://www.tce.sp.gov.br/sites/default/files/portal/6.%20Fiscaliza%C3%A7%C3%A3o%20Operacional%20-%20Transporte%20sobre%20Trilhos%20-%20TC-021575.989.23-1.pdf"
+      ],
+      "limites": "Âncora programada histórica de 53 min Júlio Prestes–Itapevi (jun/22). Fiscalização aponta problemas e posterior programação de 65 min; usar ambas na sensibilidade, sem chamar de medição atual. Extensão Itapevi–Amador Bueno preservada separadamente. Parcela fixa não é margem nem parada cronometrada; distância reta não é traçado.",
+      "parametros": {
+        "total_ancora_segundos": 3180,
+        "distancia_geodesica_metros": 1096
+      }
+    },
+    {
+      "id": "RESTANTE-L8-Antônio João-Santa Terezinha",
+      "linha": "L8",
+      "origem": "Antônio João",
+      "destino": "Santa Terezinha",
+      "segundos_base_candidato": 115,
+      "medido": false,
+      "confianca": "baixa",
+      "metodo": "Distribuição por distância geodésica com parcela fixa de 20 s dentro da âncora total; simetria assumida, não medida.",
+      "fontes": [
+        "https://www.tce.sp.gov.br/sites/default/files/portal/6.%20Fiscaliza%C3%A7%C3%A3o%20Operacional%20-%20Transporte%20sobre%20Trilhos%20-%20TC-021575.989.23-1.pdf"
+      ],
+      "limites": "Âncora programada histórica de 53 min Júlio Prestes–Itapevi (jun/22). Fiscalização aponta problemas e posterior programação de 65 min; usar ambas na sensibilidade, sem chamar de medição atual. Extensão Itapevi–Amador Bueno preservada separadamente. Parcela fixa não é margem nem parada cronometrada; distância reta não é traçado.",
+      "parametros": {
+        "total_ancora_segundos": 3180,
+        "distancia_geodesica_metros": 1096
+      }
+    },
+    {
+      "id": "RESTANTE-L8-Antônio João-Barueri",
+      "linha": "L8",
+      "origem": "Antônio João",
+      "destino": "Barueri",
+      "segundos_base_candidato": 170,
+      "medido": false,
+      "confianca": "baixa",
+      "metodo": "Distribuição por distância geodésica com parcela fixa de 20 s dentro da âncora total; simetria assumida, não medida.",
+      "fontes": [
+        "https://www.tce.sp.gov.br/sites/default/files/portal/6.%20Fiscaliza%C3%A7%C3%A3o%20Operacional%20-%20Transporte%20sobre%20Trilhos%20-%20TC-021575.989.23-1.pdf"
+      ],
+      "limites": "Âncora programada histórica de 53 min Júlio Prestes–Itapevi (jun/22). Fiscalização aponta problemas e posterior programação de 65 min; usar ambas na sensibilidade, sem chamar de medição atual. Extensão Itapevi–Amador Bueno preservada separadamente. Parcela fixa não é margem nem parada cronometrada; distância reta não é traçado.",
+      "parametros": {
+        "total_ancora_segundos": 3180,
+        "distancia_geodesica_metros": 1728
+      }
+    },
+    {
+      "id": "RESTANTE-L8-Barueri-Antônio João",
+      "linha": "L8",
+      "origem": "Barueri",
+      "destino": "Antônio João",
+      "segundos_base_candidato": 170,
+      "medido": false,
+      "confianca": "baixa",
+      "metodo": "Distribuição por distância geodésica com parcela fixa de 20 s dentro da âncora total; simetria assumida, não medida.",
+      "fontes": [
+        "https://www.tce.sp.gov.br/sites/default/files/portal/6.%20Fiscaliza%C3%A7%C3%A3o%20Operacional%20-%20Transporte%20sobre%20Trilhos%20-%20TC-021575.989.23-1.pdf"
+      ],
+      "limites": "Âncora programada histórica de 53 min Júlio Prestes–Itapevi (jun/22). Fiscalização aponta problemas e posterior programação de 65 min; usar ambas na sensibilidade, sem chamar de medição atual. Extensão Itapevi–Amador Bueno preservada separadamente. Parcela fixa não é margem nem parada cronometrada; distância reta não é traçado.",
+      "parametros": {
+        "total_ancora_segundos": 3180,
+        "distancia_geodesica_metros": 1728
+      }
+    },
+    {
+      "id": "RESTANTE-L8-Barueri-Jardim Belval",
+      "linha": "L8",
+      "origem": "Barueri",
+      "destino": "Jardim Belval",
+      "segundos_base_candidato": 145,
+      "medido": false,
+      "confianca": "baixa",
+      "metodo": "Distribuição por distância geodésica com parcela fixa de 20 s dentro da âncora total; simetria assumida, não medida.",
+      "fontes": [
+        "https://www.tce.sp.gov.br/sites/default/files/portal/6.%20Fiscaliza%C3%A7%C3%A3o%20Operacional%20-%20Transporte%20sobre%20Trilhos%20-%20TC-021575.989.23-1.pdf"
+      ],
+      "limites": "Âncora programada histórica de 53 min Júlio Prestes–Itapevi (jun/22). Fiscalização aponta problemas e posterior programação de 65 min; usar ambas na sensibilidade, sem chamar de medição atual. Extensão Itapevi–Amador Bueno preservada separadamente. Parcela fixa não é margem nem parada cronometrada; distância reta não é traçado.",
+      "parametros": {
+        "total_ancora_segundos": 3180,
+        "distancia_geodesica_metros": 1457
+      }
+    },
+    {
+      "id": "RESTANTE-L8-Jardim Belval-Barueri",
+      "linha": "L8",
+      "origem": "Jardim Belval",
+      "destino": "Barueri",
+      "segundos_base_candidato": 145,
+      "medido": false,
+      "confianca": "baixa",
+      "metodo": "Distribuição por distância geodésica com parcela fixa de 20 s dentro da âncora total; simetria assumida, não medida.",
+      "fontes": [
+        "https://www.tce.sp.gov.br/sites/default/files/portal/6.%20Fiscaliza%C3%A7%C3%A3o%20Operacional%20-%20Transporte%20sobre%20Trilhos%20-%20TC-021575.989.23-1.pdf"
+      ],
+      "limites": "Âncora programada histórica de 53 min Júlio Prestes–Itapevi (jun/22). Fiscalização aponta problemas e posterior programação de 65 min; usar ambas na sensibilidade, sem chamar de medição atual. Extensão Itapevi–Amador Bueno preservada separadamente. Parcela fixa não é margem nem parada cronometrada; distância reta não é traçado.",
+      "parametros": {
+        "total_ancora_segundos": 3180,
+        "distancia_geodesica_metros": 1457
+      }
+    },
+    {
+      "id": "RESTANTE-L8-Jardim Belval-Jardim Silveira",
+      "linha": "L8",
+      "origem": "Jardim Belval",
+      "destino": "Jardim Silveira",
+      "segundos_base_candidato": 115,
+      "medido": false,
+      "confianca": "baixa",
+      "metodo": "Distribuição por distância geodésica com parcela fixa de 20 s dentro da âncora total; simetria assumida, não medida.",
+      "fontes": [
+        "https://www.tce.sp.gov.br/sites/default/files/portal/6.%20Fiscaliza%C3%A7%C3%A3o%20Operacional%20-%20Transporte%20sobre%20Trilhos%20-%20TC-021575.989.23-1.pdf"
+      ],
+      "limites": "Âncora programada histórica de 53 min Júlio Prestes–Itapevi (jun/22). Fiscalização aponta problemas e posterior programação de 65 min; usar ambas na sensibilidade, sem chamar de medição atual. Extensão Itapevi–Amador Bueno preservada separadamente. Parcela fixa não é margem nem parada cronometrada; distância reta não é traçado.",
+      "parametros": {
+        "total_ancora_segundos": 3180,
+        "distancia_geodesica_metros": 1115
+      }
+    },
+    {
+      "id": "RESTANTE-L8-Jardim Silveira-Jardim Belval",
+      "linha": "L8",
+      "origem": "Jardim Silveira",
+      "destino": "Jardim Belval",
+      "segundos_base_candidato": 115,
+      "medido": false,
+      "confianca": "baixa",
+      "metodo": "Distribuição por distância geodésica com parcela fixa de 20 s dentro da âncora total; simetria assumida, não medida.",
+      "fontes": [
+        "https://www.tce.sp.gov.br/sites/default/files/portal/6.%20Fiscaliza%C3%A7%C3%A3o%20Operacional%20-%20Transporte%20sobre%20Trilhos%20-%20TC-021575.989.23-1.pdf"
+      ],
+      "limites": "Âncora programada histórica de 53 min Júlio Prestes–Itapevi (jun/22). Fiscalização aponta problemas e posterior programação de 65 min; usar ambas na sensibilidade, sem chamar de medição atual. Extensão Itapevi–Amador Bueno preservada separadamente. Parcela fixa não é margem nem parada cronometrada; distância reta não é traçado.",
+      "parametros": {
+        "total_ancora_segundos": 3180,
+        "distancia_geodesica_metros": 1115
+      }
+    },
+    {
+      "id": "RESTANTE-L8-Jardim Silveira-Jandira",
+      "linha": "L8",
+      "origem": "Jardim Silveira",
+      "destino": "Jandira",
+      "segundos_base_candidato": 110,
+      "medido": false,
+      "confianca": "baixa",
+      "metodo": "Distribuição por distância geodésica com parcela fixa de 20 s dentro da âncora total; simetria assumida, não medida.",
+      "fontes": [
+        "https://www.tce.sp.gov.br/sites/default/files/portal/6.%20Fiscaliza%C3%A7%C3%A3o%20Operacional%20-%20Transporte%20sobre%20Trilhos%20-%20TC-021575.989.23-1.pdf"
+      ],
+      "limites": "Âncora programada histórica de 53 min Júlio Prestes–Itapevi (jun/22). Fiscalização aponta problemas e posterior programação de 65 min; usar ambas na sensibilidade, sem chamar de medição atual. Extensão Itapevi–Amador Bueno preservada separadamente. Parcela fixa não é margem nem parada cronometrada; distância reta não é traçado.",
+      "parametros": {
+        "total_ancora_segundos": 3180,
+        "distancia_geodesica_metros": 1029
+      }
+    },
+    {
+      "id": "RESTANTE-L8-Jandira-Jardim Silveira",
+      "linha": "L8",
+      "origem": "Jandira",
+      "destino": "Jardim Silveira",
+      "segundos_base_candidato": 110,
+      "medido": false,
+      "confianca": "baixa",
+      "metodo": "Distribuição por distância geodésica com parcela fixa de 20 s dentro da âncora total; simetria assumida, não medida.",
+      "fontes": [
+        "https://www.tce.sp.gov.br/sites/default/files/portal/6.%20Fiscaliza%C3%A7%C3%A3o%20Operacional%20-%20Transporte%20sobre%20Trilhos%20-%20TC-021575.989.23-1.pdf"
+      ],
+      "limites": "Âncora programada histórica de 53 min Júlio Prestes–Itapevi (jun/22). Fiscalização aponta problemas e posterior programação de 65 min; usar ambas na sensibilidade, sem chamar de medição atual. Extensão Itapevi–Amador Bueno preservada separadamente. Parcela fixa não é margem nem parada cronometrada; distância reta não é traçado.",
+      "parametros": {
+        "total_ancora_segundos": 3180,
+        "distancia_geodesica_metros": 1029
+      }
+    },
+    {
+      "id": "RESTANTE-L8-Jandira-Sagrado Coração",
+      "linha": "L8",
+      "origem": "Jandira",
+      "destino": "Sagrado Coração",
+      "segundos_base_candidato": 150,
+      "medido": false,
+      "confianca": "baixa",
+      "metodo": "Distribuição por distância geodésica com parcela fixa de 20 s dentro da âncora total; simetria assumida, não medida.",
+      "fontes": [
+        "https://www.tce.sp.gov.br/sites/default/files/portal/6.%20Fiscaliza%C3%A7%C3%A3o%20Operacional%20-%20Transporte%20sobre%20Trilhos%20-%20TC-021575.989.23-1.pdf"
+      ],
+      "limites": "Âncora programada histórica de 53 min Júlio Prestes–Itapevi (jun/22). Fiscalização aponta problemas e posterior programação de 65 min; usar ambas na sensibilidade, sem chamar de medição atual. Extensão Itapevi–Amador Bueno preservada separadamente. Parcela fixa não é margem nem parada cronometrada; distância reta não é traçado.",
+      "parametros": {
+        "total_ancora_segundos": 3180,
+        "distancia_geodesica_metros": 1514
+      }
+    },
+    {
+      "id": "RESTANTE-L8-Sagrado Coração-Jandira",
+      "linha": "L8",
+      "origem": "Sagrado Coração",
+      "destino": "Jandira",
+      "segundos_base_candidato": 150,
+      "medido": false,
+      "confianca": "baixa",
+      "metodo": "Distribuição por distância geodésica com parcela fixa de 20 s dentro da âncora total; simetria assumida, não medida.",
+      "fontes": [
+        "https://www.tce.sp.gov.br/sites/default/files/portal/6.%20Fiscaliza%C3%A7%C3%A3o%20Operacional%20-%20Transporte%20sobre%20Trilhos%20-%20TC-021575.989.23-1.pdf"
+      ],
+      "limites": "Âncora programada histórica de 53 min Júlio Prestes–Itapevi (jun/22). Fiscalização aponta problemas e posterior programação de 65 min; usar ambas na sensibilidade, sem chamar de medição atual. Extensão Itapevi–Amador Bueno preservada separadamente. Parcela fixa não é margem nem parada cronometrada; distância reta não é traçado.",
+      "parametros": {
+        "total_ancora_segundos": 3180,
+        "distancia_geodesica_metros": 1514
+      }
+    },
+    {
+      "id": "RESTANTE-L8-Sagrado Coração-Engenheiro Cardoso",
+      "linha": "L8",
+      "origem": "Sagrado Coração",
+      "destino": "Engenheiro Cardoso",
+      "segundos_base_candidato": 135,
+      "medido": false,
+      "confianca": "baixa",
+      "metodo": "Distribuição por distância geodésica com parcela fixa de 20 s dentro da âncora total; simetria assumida, não medida.",
+      "fontes": [
+        "https://www.tce.sp.gov.br/sites/default/files/portal/6.%20Fiscaliza%C3%A7%C3%A3o%20Operacional%20-%20Transporte%20sobre%20Trilhos%20-%20TC-021575.989.23-1.pdf"
+      ],
+      "limites": "Âncora programada histórica de 53 min Júlio Prestes–Itapevi (jun/22). Fiscalização aponta problemas e posterior programação de 65 min; usar ambas na sensibilidade, sem chamar de medição atual. Extensão Itapevi–Amador Bueno preservada separadamente. Parcela fixa não é margem nem parada cronometrada; distância reta não é traçado.",
+      "parametros": {
+        "total_ancora_segundos": 3180,
+        "distancia_geodesica_metros": 1315
+      }
+    },
+    {
+      "id": "RESTANTE-L8-Engenheiro Cardoso-Sagrado Coração",
+      "linha": "L8",
+      "origem": "Engenheiro Cardoso",
+      "destino": "Sagrado Coração",
+      "segundos_base_candidato": 135,
+      "medido": false,
+      "confianca": "baixa",
+      "metodo": "Distribuição por distância geodésica com parcela fixa de 20 s dentro da âncora total; simetria assumida, não medida.",
+      "fontes": [
+        "https://www.tce.sp.gov.br/sites/default/files/portal/6.%20Fiscaliza%C3%A7%C3%A3o%20Operacional%20-%20Transporte%20sobre%20Trilhos%20-%20TC-021575.989.23-1.pdf"
+      ],
+      "limites": "Âncora programada histórica de 53 min Júlio Prestes–Itapevi (jun/22). Fiscalização aponta problemas e posterior programação de 65 min; usar ambas na sensibilidade, sem chamar de medição atual. Extensão Itapevi–Amador Bueno preservada separadamente. Parcela fixa não é margem nem parada cronometrada; distância reta não é traçado.",
+      "parametros": {
+        "total_ancora_segundos": 3180,
+        "distancia_geodesica_metros": 1315
+      }
+    },
+    {
+      "id": "RESTANTE-L8-Engenheiro Cardoso-Itapevi",
+      "linha": "L8",
+      "origem": "Engenheiro Cardoso",
+      "destino": "Itapevi",
+      "segundos_base_candidato": 140,
+      "medido": false,
+      "confianca": "baixa",
+      "metodo": "Distribuição por distância geodésica com parcela fixa de 20 s dentro da âncora total; simetria assumida, não medida.",
+      "fontes": [
+        "https://www.tce.sp.gov.br/sites/default/files/portal/6.%20Fiscaliza%C3%A7%C3%A3o%20Operacional%20-%20Transporte%20sobre%20Trilhos%20-%20TC-021575.989.23-1.pdf"
+      ],
+      "limites": "Âncora programada histórica de 53 min Júlio Prestes–Itapevi (jun/22). Fiscalização aponta problemas e posterior programação de 65 min; usar ambas na sensibilidade, sem chamar de medição atual. Extensão Itapevi–Amador Bueno preservada separadamente. Parcela fixa não é margem nem parada cronometrada; distância reta não é traçado.",
+      "parametros": {
+        "total_ancora_segundos": 3180,
+        "distancia_geodesica_metros": 1373
+      }
+    },
+    {
+      "id": "RESTANTE-L8-Itapevi-Engenheiro Cardoso",
+      "linha": "L8",
+      "origem": "Itapevi",
+      "destino": "Engenheiro Cardoso",
+      "segundos_base_candidato": 140,
+      "medido": false,
+      "confianca": "baixa",
+      "metodo": "Distribuição por distância geodésica com parcela fixa de 20 s dentro da âncora total; simetria assumida, não medida.",
+      "fontes": [
+        "https://www.tce.sp.gov.br/sites/default/files/portal/6.%20Fiscaliza%C3%A7%C3%A3o%20Operacional%20-%20Transporte%20sobre%20Trilhos%20-%20TC-021575.989.23-1.pdf"
+      ],
+      "limites": "Âncora programada histórica de 53 min Júlio Prestes–Itapevi (jun/22). Fiscalização aponta problemas e posterior programação de 65 min; usar ambas na sensibilidade, sem chamar de medição atual. Extensão Itapevi–Amador Bueno preservada separadamente. Parcela fixa não é margem nem parada cronometrada; distância reta não é traçado.",
+      "parametros": {
+        "total_ancora_segundos": 3180,
+        "distancia_geodesica_metros": 1373
+      }
+    },
+    {
+      "id": "RESTANTE-L9-Osasco-Presidente Altino",
+      "linha": "L9",
+      "origem": "Osasco",
+      "destino": "Presidente Altino",
+      "segundos_base_candidato": 145,
+      "medido": false,
+      "confianca": "baixa",
+      "metodo": "Distribuição por distância geodésica com parcela fixa de 20 s dentro da âncora total; simetria assumida, não medida.",
+      "fontes": [
+        "https://www.tce.sp.gov.br/sites/default/files/portal/6.%20Fiscaliza%C3%A7%C3%A3o%20Operacional%20-%20Transporte%20sobre%20Trilhos%20-%20TC-021575.989.23-1.pdf"
+      ],
+      "limites": "Programação histórica de 45 min Osasco–Grajaú (jun/22), não Osasco–Varginha. Há críticas à qualidade dos registros. Não transplantar o total à extensão. Parcela fixa não é margem nem parada cronometrada; distância reta não é traçado.",
+      "parametros": {
+        "total_ancora_segundos": 2700,
+        "distancia_geodesica_metros": 1599
+      }
+    },
+    {
+      "id": "RESTANTE-L9-Presidente Altino-Osasco",
+      "linha": "L9",
+      "origem": "Presidente Altino",
+      "destino": "Osasco",
+      "segundos_base_candidato": 145,
+      "medido": false,
+      "confianca": "baixa",
+      "metodo": "Distribuição por distância geodésica com parcela fixa de 20 s dentro da âncora total; simetria assumida, não medida.",
+      "fontes": [
+        "https://www.tce.sp.gov.br/sites/default/files/portal/6.%20Fiscaliza%C3%A7%C3%A3o%20Operacional%20-%20Transporte%20sobre%20Trilhos%20-%20TC-021575.989.23-1.pdf"
+      ],
+      "limites": "Programação histórica de 45 min Osasco–Grajaú (jun/22), não Osasco–Varginha. Há críticas à qualidade dos registros. Não transplantar o total à extensão. Parcela fixa não é margem nem parada cronometrada; distância reta não é traçado.",
+      "parametros": {
+        "total_ancora_segundos": 2700,
+        "distancia_geodesica_metros": 1599
+      }
+    },
+    {
+      "id": "RESTANTE-L9-Presidente Altino-Ceasa",
+      "linha": "L9",
+      "origem": "Presidente Altino",
+      "destino": "Ceasa",
+      "segundos_base_candidato": 185,
+      "medido": false,
+      "confianca": "baixa",
+      "metodo": "Distribuição por distância geodésica com parcela fixa de 20 s dentro da âncora total; simetria assumida, não medida.",
+      "fontes": [
+        "https://www.tce.sp.gov.br/sites/default/files/portal/6.%20Fiscaliza%C3%A7%C3%A3o%20Operacional%20-%20Transporte%20sobre%20Trilhos%20-%20TC-021575.989.23-1.pdf"
+      ],
+      "limites": "Programação histórica de 45 min Osasco–Grajaú (jun/22), não Osasco–Varginha. Há críticas à qualidade dos registros. Não transplantar o total à extensão. Parcela fixa não é margem nem parada cronometrada; distância reta não é traçado.",
+      "parametros": {
+        "total_ancora_segundos": 2700,
+        "distancia_geodesica_metros": 2132
+      }
+    },
+    {
+      "id": "RESTANTE-L9-Ceasa-Presidente Altino",
+      "linha": "L9",
+      "origem": "Ceasa",
+      "destino": "Presidente Altino",
+      "segundos_base_candidato": 185,
+      "medido": false,
+      "confianca": "baixa",
+      "metodo": "Distribuição por distância geodésica com parcela fixa de 20 s dentro da âncora total; simetria assumida, não medida.",
+      "fontes": [
+        "https://www.tce.sp.gov.br/sites/default/files/portal/6.%20Fiscaliza%C3%A7%C3%A3o%20Operacional%20-%20Transporte%20sobre%20Trilhos%20-%20TC-021575.989.23-1.pdf"
+      ],
+      "limites": "Programação histórica de 45 min Osasco–Grajaú (jun/22), não Osasco–Varginha. Há críticas à qualidade dos registros. Não transplantar o total à extensão. Parcela fixa não é margem nem parada cronometrada; distância reta não é traçado.",
+      "parametros": {
+        "total_ancora_segundos": 2700,
+        "distancia_geodesica_metros": 2132
+      }
+    },
+    {
+      "id": "RESTANTE-L9-Ceasa-Villa Lobos-Jaguaré",
+      "linha": "L9",
+      "origem": "Ceasa",
+      "destino": "Villa Lobos-Jaguaré",
+      "segundos_base_candidato": 125,
+      "medido": false,
+      "confianca": "baixa",
+      "metodo": "Distribuição por distância geodésica com parcela fixa de 20 s dentro da âncora total; simetria assumida, não medida.",
+      "fontes": [
+        "https://www.tce.sp.gov.br/sites/default/files/portal/6.%20Fiscaliza%C3%A7%C3%A3o%20Operacional%20-%20Transporte%20sobre%20Trilhos%20-%20TC-021575.989.23-1.pdf"
+      ],
+      "limites": "Programação histórica de 45 min Osasco–Grajaú (jun/22), não Osasco–Varginha. Há críticas à qualidade dos registros. Não transplantar o total à extensão. Parcela fixa não é margem nem parada cronometrada; distância reta não é traçado.",
+      "parametros": {
+        "total_ancora_segundos": 2700,
+        "distancia_geodesica_metros": 1339
+      }
+    },
+    {
+      "id": "RESTANTE-L9-Villa Lobos-Jaguaré-Ceasa",
+      "linha": "L9",
+      "origem": "Villa Lobos-Jaguaré",
+      "destino": "Ceasa",
+      "segundos_base_candidato": 125,
+      "medido": false,
+      "confianca": "baixa",
+      "metodo": "Distribuição por distância geodésica com parcela fixa de 20 s dentro da âncora total; simetria assumida, não medida.",
+      "fontes": [
+        "https://www.tce.sp.gov.br/sites/default/files/portal/6.%20Fiscaliza%C3%A7%C3%A3o%20Operacional%20-%20Transporte%20sobre%20Trilhos%20-%20TC-021575.989.23-1.pdf"
+      ],
+      "limites": "Programação histórica de 45 min Osasco–Grajaú (jun/22), não Osasco–Varginha. Há críticas à qualidade dos registros. Não transplantar o total à extensão. Parcela fixa não é margem nem parada cronometrada; distância reta não é traçado.",
+      "parametros": {
+        "total_ancora_segundos": 2700,
+        "distancia_geodesica_metros": 1339
+      }
+    },
+    {
+      "id": "RESTANTE-L9-Villa Lobos-Jaguaré-Cidade Universitária",
+      "linha": "L9",
+      "origem": "Villa Lobos-Jaguaré",
+      "destino": "Cidade Universitária",
+      "segundos_base_candidato": 200,
+      "medido": false,
+      "confianca": "baixa",
+      "metodo": "Distribuição por distância geodésica com parcela fixa de 20 s dentro da âncora total; simetria assumida, não medida.",
+      "fontes": [
+        "https://www.tce.sp.gov.br/sites/default/files/portal/6.%20Fiscaliza%C3%A7%C3%A3o%20Operacional%20-%20Transporte%20sobre%20Trilhos%20-%20TC-021575.989.23-1.pdf"
+      ],
+      "limites": "Programação histórica de 45 min Osasco–Grajaú (jun/22), não Osasco–Varginha. Há críticas à qualidade dos registros. Não transplantar o total à extensão. Parcela fixa não é margem nem parada cronometrada; distância reta não é traçado.",
+      "parametros": {
+        "total_ancora_segundos": 2700,
+        "distancia_geodesica_metros": 2338
+      }
+    },
+    {
+      "id": "RESTANTE-L9-Cidade Universitária-Villa Lobos-Jaguaré",
+      "linha": "L9",
+      "origem": "Cidade Universitária",
+      "destino": "Villa Lobos-Jaguaré",
+      "segundos_base_candidato": 200,
+      "medido": false,
+      "confianca": "baixa",
+      "metodo": "Distribuição por distância geodésica com parcela fixa de 20 s dentro da âncora total; simetria assumida, não medida.",
+      "fontes": [
+        "https://www.tce.sp.gov.br/sites/default/files/portal/6.%20Fiscaliza%C3%A7%C3%A3o%20Operacional%20-%20Transporte%20sobre%20Trilhos%20-%20TC-021575.989.23-1.pdf"
+      ],
+      "limites": "Programação histórica de 45 min Osasco–Grajaú (jun/22), não Osasco–Varginha. Há críticas à qualidade dos registros. Não transplantar o total à extensão. Parcela fixa não é margem nem parada cronometrada; distância reta não é traçado.",
+      "parametros": {
+        "total_ancora_segundos": 2700,
+        "distancia_geodesica_metros": 2338
+      }
+    },
+    {
+      "id": "RESTANTE-L9-Cidade Universitária-Pinheiros",
+      "linha": "L9",
+      "origem": "Cidade Universitária",
+      "destino": "Pinheiros",
+      "segundos_base_candidato": 125,
+      "medido": false,
+      "confianca": "baixa",
+      "metodo": "Distribuição por distância geodésica com parcela fixa de 20 s dentro da âncora total; simetria assumida, não medida.",
+      "fontes": [
+        "https://www.tce.sp.gov.br/sites/default/files/portal/6.%20Fiscaliza%C3%A7%C3%A3o%20Operacional%20-%20Transporte%20sobre%20Trilhos%20-%20TC-021575.989.23-1.pdf"
+      ],
+      "limites": "Programação histórica de 45 min Osasco–Grajaú (jun/22), não Osasco–Varginha. Há críticas à qualidade dos registros. Não transplantar o total à extensão. Parcela fixa não é margem nem parada cronometrada; distância reta não é traçado.",
+      "parametros": {
+        "total_ancora_segundos": 2700,
+        "distancia_geodesica_metros": 1387
+      }
+    },
+    {
+      "id": "RESTANTE-L9-Pinheiros-Cidade Universitária",
+      "linha": "L9",
+      "origem": "Pinheiros",
+      "destino": "Cidade Universitária",
+      "segundos_base_candidato": 125,
+      "medido": false,
+      "confianca": "baixa",
+      "metodo": "Distribuição por distância geodésica com parcela fixa de 20 s dentro da âncora total; simetria assumida, não medida.",
+      "fontes": [
+        "https://www.tce.sp.gov.br/sites/default/files/portal/6.%20Fiscaliza%C3%A7%C3%A3o%20Operacional%20-%20Transporte%20sobre%20Trilhos%20-%20TC-021575.989.23-1.pdf"
+      ],
+      "limites": "Programação histórica de 45 min Osasco–Grajaú (jun/22), não Osasco–Varginha. Há críticas à qualidade dos registros. Não transplantar o total à extensão. Parcela fixa não é margem nem parada cronometrada; distância reta não é traçado.",
+      "parametros": {
+        "total_ancora_segundos": 2700,
+        "distancia_geodesica_metros": 1387
+      }
+    },
+    {
+      "id": "RESTANTE-L9-Pinheiros-Hebraica-Rebouças",
+      "linha": "L9",
+      "origem": "Pinheiros",
+      "destino": "Hebraica-Rebouças",
+      "segundos_base_candidato": 90,
+      "medido": false,
+      "confianca": "baixa",
+      "metodo": "Distribuição por distância geodésica com parcela fixa de 20 s dentro da âncora total; simetria assumida, não medida.",
+      "fontes": [
+        "https://www.tce.sp.gov.br/sites/default/files/portal/6.%20Fiscaliza%C3%A7%C3%A3o%20Operacional%20-%20Transporte%20sobre%20Trilhos%20-%20TC-021575.989.23-1.pdf"
+      ],
+      "limites": "Programação histórica de 45 min Osasco–Grajaú (jun/22), não Osasco–Varginha. Há críticas à qualidade dos registros. Não transplantar o total à extensão. Parcela fixa não é margem nem parada cronometrada; distância reta não é traçado.",
+      "parametros": {
+        "total_ancora_segundos": 2700,
+        "distancia_geodesica_metros": 919
+      }
+    },
+    {
+      "id": "RESTANTE-L9-Hebraica-Rebouças-Pinheiros",
+      "linha": "L9",
+      "origem": "Hebraica-Rebouças",
+      "destino": "Pinheiros",
+      "segundos_base_candidato": 90,
+      "medido": false,
+      "confianca": "baixa",
+      "metodo": "Distribuição por distância geodésica com parcela fixa de 20 s dentro da âncora total; simetria assumida, não medida.",
+      "fontes": [
+        "https://www.tce.sp.gov.br/sites/default/files/portal/6.%20Fiscaliza%C3%A7%C3%A3o%20Operacional%20-%20Transporte%20sobre%20Trilhos%20-%20TC-021575.989.23-1.pdf"
+      ],
+      "limites": "Programação histórica de 45 min Osasco–Grajaú (jun/22), não Osasco–Varginha. Há críticas à qualidade dos registros. Não transplantar o total à extensão. Parcela fixa não é margem nem parada cronometrada; distância reta não é traçado.",
+      "parametros": {
+        "total_ancora_segundos": 2700,
+        "distancia_geodesica_metros": 919
+      }
+    },
+    {
+      "id": "RESTANTE-L9-Hebraica-Rebouças-Cidade Jardim",
+      "linha": "L9",
+      "origem": "Hebraica-Rebouças",
+      "destino": "Cidade Jardim",
+      "segundos_base_candidato": 135,
+      "medido": false,
+      "confianca": "baixa",
+      "metodo": "Distribuição por distância geodésica com parcela fixa de 20 s dentro da âncora total; simetria assumida, não medida.",
+      "fontes": [
+        "https://www.tce.sp.gov.br/sites/default/files/portal/6.%20Fiscaliza%C3%A7%C3%A3o%20Operacional%20-%20Transporte%20sobre%20Trilhos%20-%20TC-021575.989.23-1.pdf"
+      ],
+      "limites": "Programação histórica de 45 min Osasco–Grajaú (jun/22), não Osasco–Varginha. Há críticas à qualidade dos registros. Não transplantar o total à extensão. Parcela fixa não é margem nem parada cronometrada; distância reta não é traçado.",
+      "parametros": {
+        "total_ancora_segundos": 2700,
+        "distancia_geodesica_metros": 1483
+      }
+    },
+    {
+      "id": "RESTANTE-L9-Cidade Jardim-Hebraica-Rebouças",
+      "linha": "L9",
+      "origem": "Cidade Jardim",
+      "destino": "Hebraica-Rebouças",
+      "segundos_base_candidato": 135,
+      "medido": false,
+      "confianca": "baixa",
+      "metodo": "Distribuição por distância geodésica com parcela fixa de 20 s dentro da âncora total; simetria assumida, não medida.",
+      "fontes": [
+        "https://www.tce.sp.gov.br/sites/default/files/portal/6.%20Fiscaliza%C3%A7%C3%A3o%20Operacional%20-%20Transporte%20sobre%20Trilhos%20-%20TC-021575.989.23-1.pdf"
+      ],
+      "limites": "Programação histórica de 45 min Osasco–Grajaú (jun/22), não Osasco–Varginha. Há críticas à qualidade dos registros. Não transplantar o total à extensão. Parcela fixa não é margem nem parada cronometrada; distância reta não é traçado.",
+      "parametros": {
+        "total_ancora_segundos": 2700,
+        "distancia_geodesica_metros": 1483
+      }
+    },
+    {
+      "id": "RESTANTE-L9-Cidade Jardim-Vila Olímpia",
+      "linha": "L9",
+      "origem": "Cidade Jardim",
+      "destino": "Vila Olímpia",
+      "segundos_base_candidato": 90,
+      "medido": false,
+      "confianca": "baixa",
+      "metodo": "Distribuição por distância geodésica com parcela fixa de 20 s dentro da âncora total; simetria assumida, não medida.",
+      "fontes": [
+        "https://www.tce.sp.gov.br/sites/default/files/portal/6.%20Fiscaliza%C3%A7%C3%A3o%20Operacional%20-%20Transporte%20sobre%20Trilhos%20-%20TC-021575.989.23-1.pdf"
+      ],
+      "limites": "Programação histórica de 45 min Osasco–Grajaú (jun/22), não Osasco–Varginha. Há críticas à qualidade dos registros. Não transplantar o total à extensão. Parcela fixa não é margem nem parada cronometrada; distância reta não é traçado.",
+      "parametros": {
+        "total_ancora_segundos": 2700,
+        "distancia_geodesica_metros": 887
+      }
+    },
+    {
+      "id": "RESTANTE-L9-Vila Olímpia-Cidade Jardim",
+      "linha": "L9",
+      "origem": "Vila Olímpia",
+      "destino": "Cidade Jardim",
+      "segundos_base_candidato": 90,
+      "medido": false,
+      "confianca": "baixa",
+      "metodo": "Distribuição por distância geodésica com parcela fixa de 20 s dentro da âncora total; simetria assumida, não medida.",
+      "fontes": [
+        "https://www.tce.sp.gov.br/sites/default/files/portal/6.%20Fiscaliza%C3%A7%C3%A3o%20Operacional%20-%20Transporte%20sobre%20Trilhos%20-%20TC-021575.989.23-1.pdf"
+      ],
+      "limites": "Programação histórica de 45 min Osasco–Grajaú (jun/22), não Osasco–Varginha. Há críticas à qualidade dos registros. Não transplantar o total à extensão. Parcela fixa não é margem nem parada cronometrada; distância reta não é traçado.",
+      "parametros": {
+        "total_ancora_segundos": 2700,
+        "distancia_geodesica_metros": 887
+      }
+    },
+    {
+      "id": "RESTANTE-L9-Vila Olímpia-Berrini - Casas Bahia",
+      "linha": "L9",
+      "origem": "Vila Olímpia",
+      "destino": "Berrini - Casas Bahia",
+      "segundos_base_candidato": 125,
+      "medido": false,
+      "confianca": "baixa",
+      "metodo": "Distribuição por distância geodésica com parcela fixa de 20 s dentro da âncora total; simetria assumida, não medida.",
+      "fontes": [
+        "https://www.tce.sp.gov.br/sites/default/files/portal/6.%20Fiscaliza%C3%A7%C3%A3o%20Operacional%20-%20Transporte%20sobre%20Trilhos%20-%20TC-021575.989.23-1.pdf"
+      ],
+      "limites": "Programação histórica de 45 min Osasco–Grajaú (jun/22), não Osasco–Varginha. Há críticas à qualidade dos registros. Não transplantar o total à extensão. Parcela fixa não é margem nem parada cronometrada; distância reta não é traçado.",
+      "parametros": {
+        "total_ancora_segundos": 2700,
+        "distancia_geodesica_metros": 1339
+      }
+    },
+    {
+      "id": "RESTANTE-L9-Berrini - Casas Bahia-Vila Olímpia",
+      "linha": "L9",
+      "origem": "Berrini - Casas Bahia",
+      "destino": "Vila Olímpia",
+      "segundos_base_candidato": 125,
+      "medido": false,
+      "confianca": "baixa",
+      "metodo": "Distribuição por distância geodésica com parcela fixa de 20 s dentro da âncora total; simetria assumida, não medida.",
+      "fontes": [
+        "https://www.tce.sp.gov.br/sites/default/files/portal/6.%20Fiscaliza%C3%A7%C3%A3o%20Operacional%20-%20Transporte%20sobre%20Trilhos%20-%20TC-021575.989.23-1.pdf"
+      ],
+      "limites": "Programação histórica de 45 min Osasco–Grajaú (jun/22), não Osasco–Varginha. Há críticas à qualidade dos registros. Não transplantar o total à extensão. Parcela fixa não é margem nem parada cronometrada; distância reta não é traçado.",
+      "parametros": {
+        "total_ancora_segundos": 2700,
+        "distancia_geodesica_metros": 1339
+      }
+    },
+    {
+      "id": "RESTANTE-L9-Berrini - Casas Bahia-Morumbi - Claro",
+      "linha": "L9",
+      "origem": "Berrini - Casas Bahia",
+      "destino": "Morumbi - Claro",
+      "segundos_base_candidato": 170,
+      "medido": false,
+      "confianca": "baixa",
+      "metodo": "Distribuição por distância geodésica com parcela fixa de 20 s dentro da âncora total; simetria assumida, não medida.",
+      "fontes": [
+        "https://www.tce.sp.gov.br/sites/default/files/portal/6.%20Fiscaliza%C3%A7%C3%A3o%20Operacional%20-%20Transporte%20sobre%20Trilhos%20-%20TC-021575.989.23-1.pdf"
+      ],
+      "limites": "Programação histórica de 45 min Osasco–Grajaú (jun/22), não Osasco–Varginha. Há críticas à qualidade dos registros. Não transplantar o total à extensão. Parcela fixa não é margem nem parada cronometrada; distância reta não é traçado.",
+      "parametros": {
+        "total_ancora_segundos": 2700,
+        "distancia_geodesica_metros": 1937
+      }
+    },
+    {
+      "id": "RESTANTE-L9-Morumbi - Claro-Berrini - Casas Bahia",
+      "linha": "L9",
+      "origem": "Morumbi - Claro",
+      "destino": "Berrini - Casas Bahia",
+      "segundos_base_candidato": 170,
+      "medido": false,
+      "confianca": "baixa",
+      "metodo": "Distribuição por distância geodésica com parcela fixa de 20 s dentro da âncora total; simetria assumida, não medida.",
+      "fontes": [
+        "https://www.tce.sp.gov.br/sites/default/files/portal/6.%20Fiscaliza%C3%A7%C3%A3o%20Operacional%20-%20Transporte%20sobre%20Trilhos%20-%20TC-021575.989.23-1.pdf"
+      ],
+      "limites": "Programação histórica de 45 min Osasco–Grajaú (jun/22), não Osasco–Varginha. Há críticas à qualidade dos registros. Não transplantar o total à extensão. Parcela fixa não é margem nem parada cronometrada; distância reta não é traçado.",
+      "parametros": {
+        "total_ancora_segundos": 2700,
+        "distancia_geodesica_metros": 1937
+      }
+    },
+    {
+      "id": "RESTANTE-L9-Morumbi - Claro-Granja Julieta",
+      "linha": "L9",
+      "origem": "Morumbi - Claro",
+      "destino": "Granja Julieta",
+      "segundos_base_candidato": 120,
+      "medido": false,
+      "confianca": "baixa",
+      "metodo": "Distribuição por distância geodésica com parcela fixa de 20 s dentro da âncora total; simetria assumida, não medida.",
+      "fontes": [
+        "https://www.tce.sp.gov.br/sites/default/files/portal/6.%20Fiscaliza%C3%A7%C3%A3o%20Operacional%20-%20Transporte%20sobre%20Trilhos%20-%20TC-021575.989.23-1.pdf"
+      ],
+      "limites": "Programação histórica de 45 min Osasco–Grajaú (jun/22), não Osasco–Varginha. Há críticas à qualidade dos registros. Não transplantar o total à extensão. Parcela fixa não é margem nem parada cronometrada; distância reta não é traçado.",
+      "parametros": {
+        "total_ancora_segundos": 2700,
+        "distancia_geodesica_metros": 1261
+      }
+    },
+    {
+      "id": "RESTANTE-L9-Granja Julieta-Morumbi - Claro",
+      "linha": "L9",
+      "origem": "Granja Julieta",
+      "destino": "Morumbi - Claro",
+      "segundos_base_candidato": 120,
+      "medido": false,
+      "confianca": "baixa",
+      "metodo": "Distribuição por distância geodésica com parcela fixa de 20 s dentro da âncora total; simetria assumida, não medida.",
+      "fontes": [
+        "https://www.tce.sp.gov.br/sites/default/files/portal/6.%20Fiscaliza%C3%A7%C3%A3o%20Operacional%20-%20Transporte%20sobre%20Trilhos%20-%20TC-021575.989.23-1.pdf"
+      ],
+      "limites": "Programação histórica de 45 min Osasco–Grajaú (jun/22), não Osasco–Varginha. Há críticas à qualidade dos registros. Não transplantar o total à extensão. Parcela fixa não é margem nem parada cronometrada; distância reta não é traçado.",
+      "parametros": {
+        "total_ancora_segundos": 2700,
+        "distancia_geodesica_metros": 1261
+      }
+    },
+    {
+      "id": "RESTANTE-L9-Granja Julieta-João Dias",
+      "linha": "L9",
+      "origem": "Granja Julieta",
+      "destino": "João Dias",
+      "segundos_base_candidato": 160,
+      "medido": false,
+      "confianca": "baixa",
+      "metodo": "Distribuição por distância geodésica com parcela fixa de 20 s dentro da âncora total; simetria assumida, não medida.",
+      "fontes": [
+        "https://www.tce.sp.gov.br/sites/default/files/portal/6.%20Fiscaliza%C3%A7%C3%A3o%20Operacional%20-%20Transporte%20sobre%20Trilhos%20-%20TC-021575.989.23-1.pdf"
+      ],
+      "limites": "Programação histórica de 45 min Osasco–Grajaú (jun/22), não Osasco–Varginha. Há críticas à qualidade dos registros. Não transplantar o total à extensão. Parcela fixa não é margem nem parada cronometrada; distância reta não é traçado.",
+      "parametros": {
+        "total_ancora_segundos": 2700,
+        "distancia_geodesica_metros": 1787
+      }
+    },
+    {
+      "id": "RESTANTE-L9-João Dias-Granja Julieta",
+      "linha": "L9",
+      "origem": "João Dias",
+      "destino": "Granja Julieta",
+      "segundos_base_candidato": 160,
+      "medido": false,
+      "confianca": "baixa",
+      "metodo": "Distribuição por distância geodésica com parcela fixa de 20 s dentro da âncora total; simetria assumida, não medida.",
+      "fontes": [
+        "https://www.tce.sp.gov.br/sites/default/files/portal/6.%20Fiscaliza%C3%A7%C3%A3o%20Operacional%20-%20Transporte%20sobre%20Trilhos%20-%20TC-021575.989.23-1.pdf"
+      ],
+      "limites": "Programação histórica de 45 min Osasco–Grajaú (jun/22), não Osasco–Varginha. Há críticas à qualidade dos registros. Não transplantar o total à extensão. Parcela fixa não é margem nem parada cronometrada; distância reta não é traçado.",
+      "parametros": {
+        "total_ancora_segundos": 2700,
+        "distancia_geodesica_metros": 1787
+      }
+    },
+    {
+      "id": "RESTANTE-L9-João Dias-Santo Amaro",
+      "linha": "L9",
+      "origem": "João Dias",
+      "destino": "Santo Amaro",
+      "segundos_base_candidato": 160,
+      "medido": false,
+      "confianca": "baixa",
+      "metodo": "Distribuição por distância geodésica com parcela fixa de 20 s dentro da âncora total; simetria assumida, não medida.",
+      "fontes": [
+        "https://www.tce.sp.gov.br/sites/default/files/portal/6.%20Fiscaliza%C3%A7%C3%A3o%20Operacional%20-%20Transporte%20sobre%20Trilhos%20-%20TC-021575.989.23-1.pdf"
+      ],
+      "limites": "Programação histórica de 45 min Osasco–Grajaú (jun/22), não Osasco–Varginha. Há críticas à qualidade dos registros. Não transplantar o total à extensão. Parcela fixa não é margem nem parada cronometrada; distância reta não é traçado.",
+      "parametros": {
+        "total_ancora_segundos": 2700,
+        "distancia_geodesica_metros": 1828
+      }
+    },
+    {
+      "id": "RESTANTE-L9-Santo Amaro-João Dias",
+      "linha": "L9",
+      "origem": "Santo Amaro",
+      "destino": "João Dias",
+      "segundos_base_candidato": 160,
+      "medido": false,
+      "confianca": "baixa",
+      "metodo": "Distribuição por distância geodésica com parcela fixa de 20 s dentro da âncora total; simetria assumida, não medida.",
+      "fontes": [
+        "https://www.tce.sp.gov.br/sites/default/files/portal/6.%20Fiscaliza%C3%A7%C3%A3o%20Operacional%20-%20Transporte%20sobre%20Trilhos%20-%20TC-021575.989.23-1.pdf"
+      ],
+      "limites": "Programação histórica de 45 min Osasco–Grajaú (jun/22), não Osasco–Varginha. Há críticas à qualidade dos registros. Não transplantar o total à extensão. Parcela fixa não é margem nem parada cronometrada; distância reta não é traçado.",
+      "parametros": {
+        "total_ancora_segundos": 2700,
+        "distancia_geodesica_metros": 1828
+      }
+    },
+    {
+      "id": "RESTANTE-L9-Santo Amaro-Socorro",
+      "linha": "L9",
+      "origem": "Santo Amaro",
+      "destino": "Socorro",
+      "segundos_base_candidato": 115,
+      "medido": false,
+      "confianca": "baixa",
+      "metodo": "Distribuição por distância geodésica com parcela fixa de 20 s dentro da âncora total; simetria assumida, não medida.",
+      "fontes": [
+        "https://www.tce.sp.gov.br/sites/default/files/portal/6.%20Fiscaliza%C3%A7%C3%A3o%20Operacional%20-%20Transporte%20sobre%20Trilhos%20-%20TC-021575.989.23-1.pdf"
+      ],
+      "limites": "Programação histórica de 45 min Osasco–Grajaú (jun/22), não Osasco–Varginha. Há críticas à qualidade dos registros. Não transplantar o total à extensão. Parcela fixa não é margem nem parada cronometrada; distância reta não é traçado.",
+      "parametros": {
+        "total_ancora_segundos": 2700,
+        "distancia_geodesica_metros": 1221
+      }
+    },
+    {
+      "id": "RESTANTE-L9-Socorro-Santo Amaro",
+      "linha": "L9",
+      "origem": "Socorro",
+      "destino": "Santo Amaro",
+      "segundos_base_candidato": 115,
+      "medido": false,
+      "confianca": "baixa",
+      "metodo": "Distribuição por distância geodésica com parcela fixa de 20 s dentro da âncora total; simetria assumida, não medida.",
+      "fontes": [
+        "https://www.tce.sp.gov.br/sites/default/files/portal/6.%20Fiscaliza%C3%A7%C3%A3o%20Operacional%20-%20Transporte%20sobre%20Trilhos%20-%20TC-021575.989.23-1.pdf"
+      ],
+      "limites": "Programação histórica de 45 min Osasco–Grajaú (jun/22), não Osasco–Varginha. Há críticas à qualidade dos registros. Não transplantar o total à extensão. Parcela fixa não é margem nem parada cronometrada; distância reta não é traçado.",
+      "parametros": {
+        "total_ancora_segundos": 2700,
+        "distancia_geodesica_metros": 1221
+      }
+    },
+    {
+      "id": "RESTANTE-L9-Socorro-Jurubatuba - Senac",
+      "linha": "L9",
+      "origem": "Socorro",
+      "destino": "Jurubatuba - Senac",
+      "segundos_base_candidato": 160,
+      "medido": false,
+      "confianca": "baixa",
+      "metodo": "Distribuição por distância geodésica com parcela fixa de 20 s dentro da âncora total; simetria assumida, não medida.",
+      "fontes": [
+        "https://www.tce.sp.gov.br/sites/default/files/portal/6.%20Fiscaliza%C3%A7%C3%A3o%20Operacional%20-%20Transporte%20sobre%20Trilhos%20-%20TC-021575.989.23-1.pdf"
+      ],
+      "limites": "Programação histórica de 45 min Osasco–Grajaú (jun/22), não Osasco–Varginha. Há críticas à qualidade dos registros. Não transplantar o total à extensão. Parcela fixa não é margem nem parada cronometrada; distância reta não é traçado.",
+      "parametros": {
+        "total_ancora_segundos": 2700,
+        "distancia_geodesica_metros": 1797
+      }
+    },
+    {
+      "id": "RESTANTE-L9-Jurubatuba - Senac-Socorro",
+      "linha": "L9",
+      "origem": "Jurubatuba - Senac",
+      "destino": "Socorro",
+      "segundos_base_candidato": 160,
+      "medido": false,
+      "confianca": "baixa",
+      "metodo": "Distribuição por distância geodésica com parcela fixa de 20 s dentro da âncora total; simetria assumida, não medida.",
+      "fontes": [
+        "https://www.tce.sp.gov.br/sites/default/files/portal/6.%20Fiscaliza%C3%A7%C3%A3o%20Operacional%20-%20Transporte%20sobre%20Trilhos%20-%20TC-021575.989.23-1.pdf"
+      ],
+      "limites": "Programação histórica de 45 min Osasco–Grajaú (jun/22), não Osasco–Varginha. Há críticas à qualidade dos registros. Não transplantar o total à extensão. Parcela fixa não é margem nem parada cronometrada; distância reta não é traçado.",
+      "parametros": {
+        "total_ancora_segundos": 2700,
+        "distancia_geodesica_metros": 1797
+      }
+    },
+    {
+      "id": "RESTANTE-L9-Jurubatuba - Senac-Autódromo",
+      "linha": "L9",
+      "origem": "Jurubatuba - Senac",
+      "destino": "Autódromo",
+      "segundos_base_candidato": 285,
+      "medido": false,
+      "confianca": "baixa",
+      "metodo": "Distribuição por distância geodésica com parcela fixa de 20 s dentro da âncora total; simetria assumida, não medida.",
+      "fontes": [
+        "https://www.tce.sp.gov.br/sites/default/files/portal/6.%20Fiscaliza%C3%A7%C3%A3o%20Operacional%20-%20Transporte%20sobre%20Trilhos%20-%20TC-021575.989.23-1.pdf"
+      ],
+      "limites": "Programação histórica de 45 min Osasco–Grajaú (jun/22), não Osasco–Varginha. Há críticas à qualidade dos registros. Não transplantar o total à extensão. Parcela fixa não é margem nem parada cronometrada; distância reta não é traçado.",
+      "parametros": {
+        "total_ancora_segundos": 2700,
+        "distancia_geodesica_metros": 3487
+      }
+    },
+    {
+      "id": "RESTANTE-L9-Autódromo-Jurubatuba - Senac",
+      "linha": "L9",
+      "origem": "Autódromo",
+      "destino": "Jurubatuba - Senac",
+      "segundos_base_candidato": 285,
+      "medido": false,
+      "confianca": "baixa",
+      "metodo": "Distribuição por distância geodésica com parcela fixa de 20 s dentro da âncora total; simetria assumida, não medida.",
+      "fontes": [
+        "https://www.tce.sp.gov.br/sites/default/files/portal/6.%20Fiscaliza%C3%A7%C3%A3o%20Operacional%20-%20Transporte%20sobre%20Trilhos%20-%20TC-021575.989.23-1.pdf"
+      ],
+      "limites": "Programação histórica de 45 min Osasco–Grajaú (jun/22), não Osasco–Varginha. Há críticas à qualidade dos registros. Não transplantar o total à extensão. Parcela fixa não é margem nem parada cronometrada; distância reta não é traçado.",
+      "parametros": {
+        "total_ancora_segundos": 2700,
+        "distancia_geodesica_metros": 3487
+      }
+    },
+    {
+      "id": "RESTANTE-L9-Autódromo-Primavera-Interlagos",
+      "linha": "L9",
+      "origem": "Autódromo",
+      "destino": "Primavera-Interlagos",
+      "segundos_base_candidato": 165,
+      "medido": false,
+      "confianca": "baixa",
+      "metodo": "Distribuição por distância geodésica com parcela fixa de 20 s dentro da âncora total; simetria assumida, não medida.",
+      "fontes": [
+        "https://www.tce.sp.gov.br/sites/default/files/portal/6.%20Fiscaliza%C3%A7%C3%A3o%20Operacional%20-%20Transporte%20sobre%20Trilhos%20-%20TC-021575.989.23-1.pdf"
+      ],
+      "limites": "Programação histórica de 45 min Osasco–Grajaú (jun/22), não Osasco–Varginha. Há críticas à qualidade dos registros. Não transplantar o total à extensão. Parcela fixa não é margem nem parada cronometrada; distância reta não é traçado.",
+      "parametros": {
+        "total_ancora_segundos": 2700,
+        "distancia_geodesica_metros": 1894
+      }
+    },
+    {
+      "id": "RESTANTE-L9-Primavera-Interlagos-Autódromo",
+      "linha": "L9",
+      "origem": "Primavera-Interlagos",
+      "destino": "Autódromo",
+      "segundos_base_candidato": 165,
+      "medido": false,
+      "confianca": "baixa",
+      "metodo": "Distribuição por distância geodésica com parcela fixa de 20 s dentro da âncora total; simetria assumida, não medida.",
+      "fontes": [
+        "https://www.tce.sp.gov.br/sites/default/files/portal/6.%20Fiscaliza%C3%A7%C3%A3o%20Operacional%20-%20Transporte%20sobre%20Trilhos%20-%20TC-021575.989.23-1.pdf"
+      ],
+      "limites": "Programação histórica de 45 min Osasco–Grajaú (jun/22), não Osasco–Varginha. Há críticas à qualidade dos registros. Não transplantar o total à extensão. Parcela fixa não é margem nem parada cronometrada; distância reta não é traçado.",
+      "parametros": {
+        "total_ancora_segundos": 2700,
+        "distancia_geodesica_metros": 1894
+      }
+    },
+    {
+      "id": "RESTANTE-L9-Primavera-Interlagos-Grajaú",
+      "linha": "L9",
+      "origem": "Primavera-Interlagos",
+      "destino": "Grajaú",
+      "segundos_base_candidato": 145,
+      "medido": false,
+      "confianca": "baixa",
+      "metodo": "Distribuição por distância geodésica com parcela fixa de 20 s dentro da âncora total; simetria assumida, não medida.",
+      "fontes": [
+        "https://www.tce.sp.gov.br/sites/default/files/portal/6.%20Fiscaliza%C3%A7%C3%A3o%20Operacional%20-%20Transporte%20sobre%20Trilhos%20-%20TC-021575.989.23-1.pdf"
+      ],
+      "limites": "Programação histórica de 45 min Osasco–Grajaú (jun/22), não Osasco–Varginha. Há críticas à qualidade dos registros. Não transplantar o total à extensão. Parcela fixa não é margem nem parada cronometrada; distância reta não é traçado.",
+      "parametros": {
+        "total_ancora_segundos": 2700,
+        "distancia_geodesica_metros": 1583
+      }
+    },
+    {
+      "id": "RESTANTE-L9-Grajaú-Primavera-Interlagos",
+      "linha": "L9",
+      "origem": "Grajaú",
+      "destino": "Primavera-Interlagos",
+      "segundos_base_candidato": 145,
+      "medido": false,
+      "confianca": "baixa",
+      "metodo": "Distribuição por distância geodésica com parcela fixa de 20 s dentro da âncora total; simetria assumida, não medida.",
+      "fontes": [
+        "https://www.tce.sp.gov.br/sites/default/files/portal/6.%20Fiscaliza%C3%A7%C3%A3o%20Operacional%20-%20Transporte%20sobre%20Trilhos%20-%20TC-021575.989.23-1.pdf"
+      ],
+      "limites": "Programação histórica de 45 min Osasco–Grajaú (jun/22), não Osasco–Varginha. Há críticas à qualidade dos registros. Não transplantar o total à extensão. Parcela fixa não é margem nem parada cronometrada; distância reta não é traçado.",
+      "parametros": {
+        "total_ancora_segundos": 2700,
+        "distancia_geodesica_metros": 1583
+      }
+    },
+    {
+      "id": "RESTANTE-L9-Grajaú-Bruno Covas-Mendes-Vila Natal",
+      "linha": "L9",
+      "origem": "Grajaú",
+      "destino": "Bruno Covas-Mendes-Vila Natal",
+      "segundos_base_candidato": 270,
+      "medido": false,
+      "confianca": "baixa",
+      "metodo": "Extrapolação física da extensão: distância geodésica × 1,15; velocidade assumida 40 km/h e 20 s de circulação/parada.",
+      "fontes": [
+        "https://www.gov.br/transportes/pt-br/centrais-de-conteudo/sp-2000-pdf",
+        "https://www.sptrans.com.br/noticias/prefeitura-e-governo-do-estado-inauguram-terminal-estacao-varginha-com-integracao-direta-aos-trilhos-e-reducao-de-tempo-de-viagem/"
+      ],
+      "limites": "Fator de via e velocidade são hipóteses de cenário, não medição nem especificação operacional local. A fonte municipal confirma a integração, não este tempo.",
+      "parametros": {
+        "distancia_geodesica_metros": 2394,
+        "fator_via": 1.15,
+        "velocidade_assumida_kmh": 40
+      }
+    },
+    {
+      "id": "RESTANTE-L9-Bruno Covas-Mendes-Vila Natal-Grajaú",
+      "linha": "L9",
+      "origem": "Bruno Covas-Mendes-Vila Natal",
+      "destino": "Grajaú",
+      "segundos_base_candidato": 270,
+      "medido": false,
+      "confianca": "baixa",
+      "metodo": "Extrapolação física da extensão: distância geodésica × 1,15; velocidade assumida 40 km/h e 20 s de circulação/parada.",
+      "fontes": [
+        "https://www.gov.br/transportes/pt-br/centrais-de-conteudo/sp-2000-pdf",
+        "https://www.sptrans.com.br/noticias/prefeitura-e-governo-do-estado-inauguram-terminal-estacao-varginha-com-integracao-direta-aos-trilhos-e-reducao-de-tempo-de-viagem/"
+      ],
+      "limites": "Fator de via e velocidade são hipóteses de cenário, não medição nem especificação operacional local. A fonte municipal confirma a integração, não este tempo.",
+      "parametros": {
+        "distancia_geodesica_metros": 2394,
+        "fator_via": 1.15,
+        "velocidade_assumida_kmh": 40
+      }
+    },
+    {
+      "id": "RESTANTE-L9-Bruno Covas-Mendes-Vila Natal-Varginha",
+      "linha": "L9",
+      "origem": "Bruno Covas-Mendes-Vila Natal",
+      "destino": "Varginha",
+      "segundos_base_candidato": 205,
+      "medido": false,
+      "confianca": "baixa",
+      "metodo": "Extrapolação física da extensão: distância geodésica × 1,15; velocidade assumida 40 km/h e 20 s de circulação/parada.",
+      "fontes": [
+        "https://www.gov.br/transportes/pt-br/centrais-de-conteudo/sp-2000-pdf",
+        "https://www.sptrans.com.br/noticias/prefeitura-e-governo-do-estado-inauguram-terminal-estacao-varginha-com-integracao-direta-aos-trilhos-e-reducao-de-tempo-de-viagem/"
+      ],
+      "limites": "Fator de via e velocidade são hipóteses de cenário, não medição nem especificação operacional local. A fonte municipal confirma a integração, não este tempo.",
+      "parametros": {
+        "distancia_geodesica_metros": 1771,
+        "fator_via": 1.15,
+        "velocidade_assumida_kmh": 40
+      }
+    },
+    {
+      "id": "RESTANTE-L9-Varginha-Bruno Covas-Mendes-Vila Natal",
+      "linha": "L9",
+      "origem": "Varginha",
+      "destino": "Bruno Covas-Mendes-Vila Natal",
+      "segundos_base_candidato": 205,
+      "medido": false,
+      "confianca": "baixa",
+      "metodo": "Extrapolação física da extensão: distância geodésica × 1,15; velocidade assumida 40 km/h e 20 s de circulação/parada.",
+      "fontes": [
+        "https://www.gov.br/transportes/pt-br/centrais-de-conteudo/sp-2000-pdf",
+        "https://www.sptrans.com.br/noticias/prefeitura-e-governo-do-estado-inauguram-terminal-estacao-varginha-com-integracao-direta-aos-trilhos-e-reducao-de-tempo-de-viagem/"
+      ],
+      "limites": "Fator de via e velocidade são hipóteses de cenário, não medição nem especificação operacional local. A fonte municipal confirma a integração, não este tempo.",
+      "parametros": {
+        "distancia_geodesica_metros": 1771,
+        "fator_via": 1.15,
+        "velocidade_assumida_kmh": 40
+      }
+    },
+    {
+      "id": "RESTANTE-L10-Brás-Juventus-Mooca",
+      "linha": "L10",
+      "origem": "Brás",
+      "destino": "Juventus-Mooca",
+      "segundos_base_candidato": 130,
+      "medido": false,
+      "confianca": "baixa",
+      "metodo": "Distribuição por distância geodésica com parcela fixa de 20 s dentro da âncora total; simetria assumida, não medida.",
+      "fontes": [
+        "https://www.abcdoabc.com.br/linha-10-turquesa-tera-novas-alteracoes-a-partir-desta-terca-feira-13/"
+      ],
+      "limites": "Comunicado atribuído à CPTM relata 43 min Brás–Rio Grande da Serra ao final de 2021. Não inclui Luz/Barra Funda; não é cronometragem atual por intervalo. Parcela fixa não é margem nem parada cronometrada; distância reta não é traçado.",
+      "parametros": {
+        "total_ancora_segundos": 2580,
+        "distancia_geodesica_metros": 1579
+      }
+    },
+    {
+      "id": "RESTANTE-L10-Juventus-Mooca-Brás",
+      "linha": "L10",
+      "origem": "Juventus-Mooca",
+      "destino": "Brás",
+      "segundos_base_candidato": 130,
+      "medido": false,
+      "confianca": "baixa",
+      "metodo": "Distribuição por distância geodésica com parcela fixa de 20 s dentro da âncora total; simetria assumida, não medida.",
+      "fontes": [
+        "https://www.abcdoabc.com.br/linha-10-turquesa-tera-novas-alteracoes-a-partir-desta-terca-feira-13/"
+      ],
+      "limites": "Comunicado atribuído à CPTM relata 43 min Brás–Rio Grande da Serra ao final de 2021. Não inclui Luz/Barra Funda; não é cronometragem atual por intervalo. Parcela fixa não é margem nem parada cronometrada; distância reta não é traçado.",
+      "parametros": {
+        "total_ancora_segundos": 2580,
+        "distancia_geodesica_metros": 1579
+      }
+    },
+    {
+      "id": "RESTANTE-L10-Juventus-Mooca-Ipiranga",
+      "linha": "L10",
+      "origem": "Juventus-Mooca",
+      "destino": "Ipiranga",
+      "segundos_base_candidato": 230,
+      "medido": false,
+      "confianca": "baixa",
+      "metodo": "Distribuição por distância geodésica com parcela fixa de 20 s dentro da âncora total; simetria assumida, não medida.",
+      "fontes": [
+        "https://www.abcdoabc.com.br/linha-10-turquesa-tera-novas-alteracoes-a-partir-desta-terca-feira-13/"
+      ],
+      "limites": "Comunicado atribuído à CPTM relata 43 min Brás–Rio Grande da Serra ao final de 2021. Não inclui Luz/Barra Funda; não é cronometragem atual por intervalo. Parcela fixa não é margem nem parada cronometrada; distância reta não é traçado.",
+      "parametros": {
+        "total_ancora_segundos": 2580,
+        "distancia_geodesica_metros": 2982
+      }
+    },
+    {
+      "id": "RESTANTE-L10-Ipiranga-Juventus-Mooca",
+      "linha": "L10",
+      "origem": "Ipiranga",
+      "destino": "Juventus-Mooca",
+      "segundos_base_candidato": 230,
+      "medido": false,
+      "confianca": "baixa",
+      "metodo": "Distribuição por distância geodésica com parcela fixa de 20 s dentro da âncora total; simetria assumida, não medida.",
+      "fontes": [
+        "https://www.abcdoabc.com.br/linha-10-turquesa-tera-novas-alteracoes-a-partir-desta-terca-feira-13/"
+      ],
+      "limites": "Comunicado atribuído à CPTM relata 43 min Brás–Rio Grande da Serra ao final de 2021. Não inclui Luz/Barra Funda; não é cronometragem atual por intervalo. Parcela fixa não é margem nem parada cronometrada; distância reta não é traçado.",
+      "parametros": {
+        "total_ancora_segundos": 2580,
+        "distancia_geodesica_metros": 2982
+      }
+    },
+    {
+      "id": "RESTANTE-L10-Ipiranga-Tamanduateí",
+      "linha": "L10",
+      "origem": "Ipiranga",
+      "destino": "Tamanduateí",
+      "segundos_base_candidato": 120,
+      "medido": false,
+      "confianca": "baixa",
+      "metodo": "Distribuição por distância geodésica com parcela fixa de 20 s dentro da âncora total; simetria assumida, não medida.",
+      "fontes": [
+        "https://www.abcdoabc.com.br/linha-10-turquesa-tera-novas-alteracoes-a-partir-desta-terca-feira-13/"
+      ],
+      "limites": "Comunicado atribuído à CPTM relata 43 min Brás–Rio Grande da Serra ao final de 2021. Não inclui Luz/Barra Funda; não é cronometragem atual por intervalo. Parcela fixa não é margem nem parada cronometrada; distância reta não é traçado.",
+      "parametros": {
+        "total_ancora_segundos": 2580,
+        "distancia_geodesica_metros": 1397
+      }
+    },
+    {
+      "id": "RESTANTE-L10-Tamanduateí-Ipiranga",
+      "linha": "L10",
+      "origem": "Tamanduateí",
+      "destino": "Ipiranga",
+      "segundos_base_candidato": 120,
+      "medido": false,
+      "confianca": "baixa",
+      "metodo": "Distribuição por distância geodésica com parcela fixa de 20 s dentro da âncora total; simetria assumida, não medida.",
+      "fontes": [
+        "https://www.abcdoabc.com.br/linha-10-turquesa-tera-novas-alteracoes-a-partir-desta-terca-feira-13/"
+      ],
+      "limites": "Comunicado atribuído à CPTM relata 43 min Brás–Rio Grande da Serra ao final de 2021. Não inclui Luz/Barra Funda; não é cronometragem atual por intervalo. Parcela fixa não é margem nem parada cronometrada; distância reta não é traçado.",
+      "parametros": {
+        "total_ancora_segundos": 2580,
+        "distancia_geodesica_metros": 1397
+      }
+    },
+    {
+      "id": "RESTANTE-L10-Tamanduateí-São Caetano do Sul-Prefeito Walter Braido",
+      "linha": "L10",
+      "origem": "Tamanduateí",
+      "destino": "São Caetano do Sul-Prefeito Walter Braido",
+      "segundos_base_candidato": 210,
+      "medido": false,
+      "confianca": "baixa",
+      "metodo": "Distribuição por distância geodésica com parcela fixa de 20 s dentro da âncora total; simetria assumida, não medida.",
+      "fontes": [
+        "https://www.abcdoabc.com.br/linha-10-turquesa-tera-novas-alteracoes-a-partir-desta-terca-feira-13/"
+      ],
+      "limites": "Comunicado atribuído à CPTM relata 43 min Brás–Rio Grande da Serra ao final de 2021. Não inclui Luz/Barra Funda; não é cronometragem atual por intervalo. Parcela fixa não é margem nem parada cronometrada; distância reta não é traçado.",
+      "parametros": {
+        "total_ancora_segundos": 2580,
+        "distancia_geodesica_metros": 2730
+      }
+    },
+    {
+      "id": "RESTANTE-L10-São Caetano do Sul-Prefeito Walter Braido-Tamanduateí",
+      "linha": "L10",
+      "origem": "São Caetano do Sul-Prefeito Walter Braido",
+      "destino": "Tamanduateí",
+      "segundos_base_candidato": 210,
+      "medido": false,
+      "confianca": "baixa",
+      "metodo": "Distribuição por distância geodésica com parcela fixa de 20 s dentro da âncora total; simetria assumida, não medida.",
+      "fontes": [
+        "https://www.abcdoabc.com.br/linha-10-turquesa-tera-novas-alteracoes-a-partir-desta-terca-feira-13/"
+      ],
+      "limites": "Comunicado atribuído à CPTM relata 43 min Brás–Rio Grande da Serra ao final de 2021. Não inclui Luz/Barra Funda; não é cronometragem atual por intervalo. Parcela fixa não é margem nem parada cronometrada; distância reta não é traçado.",
+      "parametros": {
+        "total_ancora_segundos": 2580,
+        "distancia_geodesica_metros": 2730
+      }
+    },
+    {
+      "id": "RESTANTE-L10-São Caetano do Sul-Prefeito Walter Braido-Utinga",
+      "linha": "L10",
+      "origem": "São Caetano do Sul-Prefeito Walter Braido",
+      "destino": "Utinga",
+      "segundos_base_candidato": 245,
+      "medido": false,
+      "confianca": "baixa",
+      "metodo": "Distribuição por distância geodésica com parcela fixa de 20 s dentro da âncora total; simetria assumida, não medida.",
+      "fontes": [
+        "https://www.abcdoabc.com.br/linha-10-turquesa-tera-novas-alteracoes-a-partir-desta-terca-feira-13/"
+      ],
+      "limites": "Comunicado atribuído à CPTM relata 43 min Brás–Rio Grande da Serra ao final de 2021. Não inclui Luz/Barra Funda; não é cronometragem atual por intervalo. Parcela fixa não é margem nem parada cronometrada; distância reta não é traçado.",
+      "parametros": {
+        "total_ancora_segundos": 2580,
+        "distancia_geodesica_metros": 3246
+      }
+    },
+    {
+      "id": "RESTANTE-L10-Utinga-São Caetano do Sul-Prefeito Walter Braido",
+      "linha": "L10",
+      "origem": "Utinga",
+      "destino": "São Caetano do Sul-Prefeito Walter Braido",
+      "segundos_base_candidato": 245,
+      "medido": false,
+      "confianca": "baixa",
+      "metodo": "Distribuição por distância geodésica com parcela fixa de 20 s dentro da âncora total; simetria assumida, não medida.",
+      "fontes": [
+        "https://www.abcdoabc.com.br/linha-10-turquesa-tera-novas-alteracoes-a-partir-desta-terca-feira-13/"
+      ],
+      "limites": "Comunicado atribuído à CPTM relata 43 min Brás–Rio Grande da Serra ao final de 2021. Não inclui Luz/Barra Funda; não é cronometragem atual por intervalo. Parcela fixa não é margem nem parada cronometrada; distância reta não é traçado.",
+      "parametros": {
+        "total_ancora_segundos": 2580,
+        "distancia_geodesica_metros": 3246
+      }
+    },
+    {
+      "id": "RESTANTE-L10-Utinga-Prefeito Saladino",
+      "linha": "L10",
+      "origem": "Utinga",
+      "destino": "Prefeito Saladino",
+      "segundos_base_candidato": 130,
+      "medido": false,
+      "confianca": "baixa",
+      "metodo": "Distribuição por distância geodésica com parcela fixa de 20 s dentro da âncora total; simetria assumida, não medida.",
+      "fontes": [
+        "https://www.abcdoabc.com.br/linha-10-turquesa-tera-novas-alteracoes-a-partir-desta-terca-feira-13/"
+      ],
+      "limites": "Comunicado atribuído à CPTM relata 43 min Brás–Rio Grande da Serra ao final de 2021. Não inclui Luz/Barra Funda; não é cronometragem atual por intervalo. Parcela fixa não é margem nem parada cronometrada; distância reta não é traçado.",
+      "parametros": {
+        "total_ancora_segundos": 2580,
+        "distancia_geodesica_metros": 1558
+      }
+    },
+    {
+      "id": "RESTANTE-L10-Prefeito Saladino-Utinga",
+      "linha": "L10",
+      "origem": "Prefeito Saladino",
+      "destino": "Utinga",
+      "segundos_base_candidato": 130,
+      "medido": false,
+      "confianca": "baixa",
+      "metodo": "Distribuição por distância geodésica com parcela fixa de 20 s dentro da âncora total; simetria assumida, não medida.",
+      "fontes": [
+        "https://www.abcdoabc.com.br/linha-10-turquesa-tera-novas-alteracoes-a-partir-desta-terca-feira-13/"
+      ],
+      "limites": "Comunicado atribuído à CPTM relata 43 min Brás–Rio Grande da Serra ao final de 2021. Não inclui Luz/Barra Funda; não é cronometragem atual por intervalo. Parcela fixa não é margem nem parada cronometrada; distância reta não é traçado.",
+      "parametros": {
+        "total_ancora_segundos": 2580,
+        "distancia_geodesica_metros": 1558
+      }
+    },
+    {
+      "id": "RESTANTE-L10-Prefeito Saladino-Santo André",
+      "linha": "L10",
+      "origem": "Prefeito Saladino",
+      "destino": "Santo André",
+      "segundos_base_candidato": 140,
+      "medido": false,
+      "confianca": "baixa",
+      "metodo": "Distribuição por distância geodésica com parcela fixa de 20 s dentro da âncora total; simetria assumida, não medida.",
+      "fontes": [
+        "https://www.abcdoabc.com.br/linha-10-turquesa-tera-novas-alteracoes-a-partir-desta-terca-feira-13/"
+      ],
+      "limites": "Comunicado atribuído à CPTM relata 43 min Brás–Rio Grande da Serra ao final de 2021. Não inclui Luz/Barra Funda; não é cronometragem atual por intervalo. Parcela fixa não é margem nem parada cronometrada; distância reta não é traçado.",
+      "parametros": {
+        "total_ancora_segundos": 2580,
+        "distancia_geodesica_metros": 1743
+      }
+    },
+    {
+      "id": "RESTANTE-L10-Santo André-Prefeito Saladino",
+      "linha": "L10",
+      "origem": "Santo André",
+      "destino": "Prefeito Saladino",
+      "segundos_base_candidato": 140,
+      "medido": false,
+      "confianca": "baixa",
+      "metodo": "Distribuição por distância geodésica com parcela fixa de 20 s dentro da âncora total; simetria assumida, não medida.",
+      "fontes": [
+        "https://www.abcdoabc.com.br/linha-10-turquesa-tera-novas-alteracoes-a-partir-desta-terca-feira-13/"
+      ],
+      "limites": "Comunicado atribuído à CPTM relata 43 min Brás–Rio Grande da Serra ao final de 2021. Não inclui Luz/Barra Funda; não é cronometragem atual por intervalo. Parcela fixa não é margem nem parada cronometrada; distância reta não é traçado.",
+      "parametros": {
+        "total_ancora_segundos": 2580,
+        "distancia_geodesica_metros": 1743
+      }
+    },
+    {
+      "id": "RESTANTE-L10-Santo André-Capuava",
+      "linha": "L10",
+      "origem": "Santo André",
+      "destino": "Capuava",
+      "segundos_base_candidato": 295,
+      "medido": false,
+      "confianca": "baixa",
+      "metodo": "Distribuição por distância geodésica com parcela fixa de 20 s dentro da âncora total; simetria assumida, não medida.",
+      "fontes": [
+        "https://www.abcdoabc.com.br/linha-10-turquesa-tera-novas-alteracoes-a-partir-desta-terca-feira-13/"
+      ],
+      "limites": "Comunicado atribuído à CPTM relata 43 min Brás–Rio Grande da Serra ao final de 2021. Não inclui Luz/Barra Funda; não é cronometragem atual por intervalo. Parcela fixa não é margem nem parada cronometrada; distância reta não é traçado.",
+      "parametros": {
+        "total_ancora_segundos": 2580,
+        "distancia_geodesica_metros": 3931
+      }
+    },
+    {
+      "id": "RESTANTE-L10-Capuava-Santo André",
+      "linha": "L10",
+      "origem": "Capuava",
+      "destino": "Santo André",
+      "segundos_base_candidato": 295,
+      "medido": false,
+      "confianca": "baixa",
+      "metodo": "Distribuição por distância geodésica com parcela fixa de 20 s dentro da âncora total; simetria assumida, não medida.",
+      "fontes": [
+        "https://www.abcdoabc.com.br/linha-10-turquesa-tera-novas-alteracoes-a-partir-desta-terca-feira-13/"
+      ],
+      "limites": "Comunicado atribuído à CPTM relata 43 min Brás–Rio Grande da Serra ao final de 2021. Não inclui Luz/Barra Funda; não é cronometragem atual por intervalo. Parcela fixa não é margem nem parada cronometrada; distância reta não é traçado.",
+      "parametros": {
+        "total_ancora_segundos": 2580,
+        "distancia_geodesica_metros": 3931
+      }
+    },
+    {
+      "id": "RESTANTE-L10-Capuava-Mauá",
+      "linha": "L10",
+      "origem": "Capuava",
+      "destino": "Mauá",
+      "segundos_base_candidato": 240,
+      "medido": false,
+      "confianca": "baixa",
+      "metodo": "Distribuição por distância geodésica com parcela fixa de 20 s dentro da âncora total; simetria assumida, não medida.",
+      "fontes": [
+        "https://www.abcdoabc.com.br/linha-10-turquesa-tera-novas-alteracoes-a-partir-desta-terca-feira-13/"
+      ],
+      "limites": "Comunicado atribuído à CPTM relata 43 min Brás–Rio Grande da Serra ao final de 2021. Não inclui Luz/Barra Funda; não é cronometragem atual por intervalo. Parcela fixa não é margem nem parada cronometrada; distância reta não é traçado.",
+      "parametros": {
+        "total_ancora_segundos": 2580,
+        "distancia_geodesica_metros": 3115
+      }
+    },
+    {
+      "id": "RESTANTE-L10-Mauá-Capuava",
+      "linha": "L10",
+      "origem": "Mauá",
+      "destino": "Capuava",
+      "segundos_base_candidato": 240,
+      "medido": false,
+      "confianca": "baixa",
+      "metodo": "Distribuição por distância geodésica com parcela fixa de 20 s dentro da âncora total; simetria assumida, não medida.",
+      "fontes": [
+        "https://www.abcdoabc.com.br/linha-10-turquesa-tera-novas-alteracoes-a-partir-desta-terca-feira-13/"
+      ],
+      "limites": "Comunicado atribuído à CPTM relata 43 min Brás–Rio Grande da Serra ao final de 2021. Não inclui Luz/Barra Funda; não é cronometragem atual por intervalo. Parcela fixa não é margem nem parada cronometrada; distância reta não é traçado.",
+      "parametros": {
+        "total_ancora_segundos": 2580,
+        "distancia_geodesica_metros": 3115
+      }
+    },
+    {
+      "id": "RESTANTE-L10-Mauá-Guapituba",
+      "linha": "L10",
+      "origem": "Mauá",
+      "destino": "Guapituba",
+      "segundos_base_candidato": 220,
+      "medido": false,
+      "confianca": "baixa",
+      "metodo": "Distribuição por distância geodésica com parcela fixa de 20 s dentro da âncora total; simetria assumida, não medida.",
+      "fontes": [
+        "https://www.abcdoabc.com.br/linha-10-turquesa-tera-novas-alteracoes-a-partir-desta-terca-feira-13/"
+      ],
+      "limites": "Comunicado atribuído à CPTM relata 43 min Brás–Rio Grande da Serra ao final de 2021. Não inclui Luz/Barra Funda; não é cronometragem atual por intervalo. Parcela fixa não é margem nem parada cronometrada; distância reta não é traçado.",
+      "parametros": {
+        "total_ancora_segundos": 2580,
+        "distancia_geodesica_metros": 2887
+      }
+    },
+    {
+      "id": "RESTANTE-L10-Guapituba-Mauá",
+      "linha": "L10",
+      "origem": "Guapituba",
+      "destino": "Mauá",
+      "segundos_base_candidato": 220,
+      "medido": false,
+      "confianca": "baixa",
+      "metodo": "Distribuição por distância geodésica com parcela fixa de 20 s dentro da âncora total; simetria assumida, não medida.",
+      "fontes": [
+        "https://www.abcdoabc.com.br/linha-10-turquesa-tera-novas-alteracoes-a-partir-desta-terca-feira-13/"
+      ],
+      "limites": "Comunicado atribuído à CPTM relata 43 min Brás–Rio Grande da Serra ao final de 2021. Não inclui Luz/Barra Funda; não é cronometragem atual por intervalo. Parcela fixa não é margem nem parada cronometrada; distância reta não é traçado.",
+      "parametros": {
+        "total_ancora_segundos": 2580,
+        "distancia_geodesica_metros": 2887
+      }
+    },
+    {
+      "id": "RESTANTE-L10-Guapituba-Ribeirão Pires-Antônio Bespalec",
+      "linha": "L10",
+      "origem": "Guapituba",
+      "destino": "Ribeirão Pires-Antônio Bespalec",
+      "segundos_base_candidato": 320,
+      "medido": false,
+      "confianca": "baixa",
+      "metodo": "Distribuição por distância geodésica com parcela fixa de 20 s dentro da âncora total; simetria assumida, não medida.",
+      "fontes": [
+        "https://www.abcdoabc.com.br/linha-10-turquesa-tera-novas-alteracoes-a-partir-desta-terca-feira-13/"
+      ],
+      "limites": "Comunicado atribuído à CPTM relata 43 min Brás–Rio Grande da Serra ao final de 2021. Não inclui Luz/Barra Funda; não é cronometragem atual por intervalo. Parcela fixa não é margem nem parada cronometrada; distância reta não é traçado.",
+      "parametros": {
+        "total_ancora_segundos": 2580,
+        "distancia_geodesica_metros": 4294
+      }
+    },
+    {
+      "id": "RESTANTE-L10-Ribeirão Pires-Antônio Bespalec-Guapituba",
+      "linha": "L10",
+      "origem": "Ribeirão Pires-Antônio Bespalec",
+      "destino": "Guapituba",
+      "segundos_base_candidato": 320,
+      "medido": false,
+      "confianca": "baixa",
+      "metodo": "Distribuição por distância geodésica com parcela fixa de 20 s dentro da âncora total; simetria assumida, não medida.",
+      "fontes": [
+        "https://www.abcdoabc.com.br/linha-10-turquesa-tera-novas-alteracoes-a-partir-desta-terca-feira-13/"
+      ],
+      "limites": "Comunicado atribuído à CPTM relata 43 min Brás–Rio Grande da Serra ao final de 2021. Não inclui Luz/Barra Funda; não é cronometragem atual por intervalo. Parcela fixa não é margem nem parada cronometrada; distância reta não é traçado.",
+      "parametros": {
+        "total_ancora_segundos": 2580,
+        "distancia_geodesica_metros": 4294
+      }
+    },
+    {
+      "id": "RESTANTE-L10-Ribeirão Pires-Antônio Bespalec-Rio Grande da Serra",
+      "linha": "L10",
+      "origem": "Ribeirão Pires-Antônio Bespalec",
+      "destino": "Rio Grande da Serra",
+      "segundos_base_candidato": 300,
+      "medido": false,
+      "confianca": "baixa",
+      "metodo": "Distribuição por distância geodésica com parcela fixa de 20 s dentro da âncora total; simetria assumida, não medida.",
+      "fontes": [
+        "https://www.abcdoabc.com.br/linha-10-turquesa-tera-novas-alteracoes-a-partir-desta-terca-feira-13/"
+      ],
+      "limites": "Comunicado atribuído à CPTM relata 43 min Brás–Rio Grande da Serra ao final de 2021. Não inclui Luz/Barra Funda; não é cronometragem atual por intervalo. Parcela fixa não é margem nem parada cronometrada; distância reta não é traçado.",
+      "parametros": {
+        "total_ancora_segundos": 2580,
+        "distancia_geodesica_metros": 4008
+      }
+    },
+    {
+      "id": "RESTANTE-L10-Rio Grande da Serra-Ribeirão Pires-Antônio Bespalec",
+      "linha": "L10",
+      "origem": "Rio Grande da Serra",
+      "destino": "Ribeirão Pires-Antônio Bespalec",
+      "segundos_base_candidato": 300,
+      "medido": false,
+      "confianca": "baixa",
+      "metodo": "Distribuição por distância geodésica com parcela fixa de 20 s dentro da âncora total; simetria assumida, não medida.",
+      "fontes": [
+        "https://www.abcdoabc.com.br/linha-10-turquesa-tera-novas-alteracoes-a-partir-desta-terca-feira-13/"
+      ],
+      "limites": "Comunicado atribuído à CPTM relata 43 min Brás–Rio Grande da Serra ao final de 2021. Não inclui Luz/Barra Funda; não é cronometragem atual por intervalo. Parcela fixa não é margem nem parada cronometrada; distância reta não é traçado.",
+      "parametros": {
+        "total_ancora_segundos": 2580,
+        "distancia_geodesica_metros": 4008
+      }
+    },
+    {
+      "id": "RESTANTE-L10-Palmeiras-Barra Funda-Luz",
+      "linha": "L10",
+      "origem": "Palmeiras-Barra Funda",
+      "destino": "Luz",
+      "segundos_base_candidato": 480,
+      "medido": false,
+      "confianca": "baixa",
+      "metodo": "Estimativa de trecho compartilhado com Expresso Aeroporto: conservar 8 min Barra Funda–Luz e assumir 4 min Luz–Brás.",
+      "fontes": [
+        "docs/dados/tempos/estimativas-lacunas.json",
+        "docs/xano/correcao-malha-2026-10-28.md"
+      ],
+      "limites": "Reutilização de hipótese documentada, não nova medição. Mesmo leito não garante igualdade de operação; Luz–Brás inverso assumido.",
+      "parametros": {}
+    },
+    {
+      "id": "RESTANTE-L10-Luz-Palmeiras-Barra Funda",
+      "linha": "L10",
+      "origem": "Luz",
+      "destino": "Palmeiras-Barra Funda",
+      "segundos_base_candidato": 480,
+      "medido": false,
+      "confianca": "baixa",
+      "metodo": "Estimativa de trecho compartilhado com Expresso Aeroporto: conservar 8 min Barra Funda–Luz e assumir 4 min Luz–Brás.",
+      "fontes": [
+        "docs/dados/tempos/estimativas-lacunas.json",
+        "docs/xano/correcao-malha-2026-10-28.md"
+      ],
+      "limites": "Reutilização de hipótese documentada, não nova medição. Mesmo leito não garante igualdade de operação; Luz–Brás inverso assumido.",
+      "parametros": {}
+    },
+    {
+      "id": "RESTANTE-L10-Luz-Brás",
+      "linha": "L10",
+      "origem": "Luz",
+      "destino": "Brás",
+      "segundos_base_candidato": 240,
+      "medido": false,
+      "confianca": "baixa",
+      "metodo": "Estimativa de trecho compartilhado com Expresso Aeroporto: conservar 8 min Barra Funda–Luz e assumir 4 min Luz–Brás.",
+      "fontes": [
+        "docs/dados/tempos/estimativas-lacunas.json",
+        "docs/xano/correcao-malha-2026-10-28.md"
+      ],
+      "limites": "Reutilização de hipótese documentada, não nova medição. Mesmo leito não garante igualdade de operação; Luz–Brás inverso assumido.",
+      "parametros": {}
+    },
+    {
+      "id": "RESTANTE-L10-Brás-Luz",
+      "linha": "L10",
+      "origem": "Brás",
+      "destino": "Luz",
+      "segundos_base_candidato": 240,
+      "medido": false,
+      "confianca": "baixa",
+      "metodo": "Estimativa de trecho compartilhado com Expresso Aeroporto: conservar 8 min Barra Funda–Luz e assumir 4 min Luz–Brás.",
+      "fontes": [
+        "docs/dados/tempos/estimativas-lacunas.json",
+        "docs/xano/correcao-malha-2026-10-28.md"
+      ],
+      "limites": "Reutilização de hipótese documentada, não nova medição. Mesmo leito não garante igualdade de operação; Luz–Brás inverso assumido.",
+      "parametros": {}
+    },
+    {
+      "id": "RESTANTE-L11-Palmeiras-Barra Funda-Luz",
+      "linha": "L11",
+      "origem": "Palmeiras-Barra Funda",
+      "destino": "Luz",
+      "segundos_base_candidato": 480,
+      "medido": false,
+      "confianca": "baixa",
+      "metodo": "Estimativa de trecho compartilhado com Expresso Aeroporto: conservar 8 min Barra Funda–Luz e assumir 4 min Luz–Brás.",
+      "fontes": [
+        "docs/dados/tempos/estimativas-lacunas.json",
+        "docs/xano/correcao-malha-2026-10-28.md"
+      ],
+      "limites": "Reutilização de hipótese documentada, não nova medição. Mesmo leito não garante igualdade de operação; Luz–Brás inverso assumido.",
+      "parametros": {}
+    },
+    {
+      "id": "RESTANTE-L11-Luz-Palmeiras-Barra Funda",
+      "linha": "L11",
+      "origem": "Luz",
+      "destino": "Palmeiras-Barra Funda",
+      "segundos_base_candidato": 480,
+      "medido": false,
+      "confianca": "baixa",
+      "metodo": "Estimativa de trecho compartilhado com Expresso Aeroporto: conservar 8 min Barra Funda–Luz e assumir 4 min Luz–Brás.",
+      "fontes": [
+        "docs/dados/tempos/estimativas-lacunas.json",
+        "docs/xano/correcao-malha-2026-10-28.md"
+      ],
+      "limites": "Reutilização de hipótese documentada, não nova medição. Mesmo leito não garante igualdade de operação; Luz–Brás inverso assumido.",
+      "parametros": {}
+    },
+    {
+      "id": "RESTANTE-L12-Brás-Tatuapé",
+      "linha": "L12",
+      "origem": "Brás",
+      "destino": "Tatuapé",
+      "segundos_base_candidato": 360,
+      "medido": false,
+      "confianca": "baixa",
+      "metodo": "Transcrever colunas de junho de 2020 das tabelas BAS–CVN e CVN–BAS: tempos por intervalo ao minuto, sem rateio geográfico.",
+      "fontes": [
+        "https://anptrilhos.org.br/wp-content/uploads/2020/11/melhores-praticas-anptrilhos-2020-cptm-sergio-barbosa.pdf"
+      ],
+      "limites": "Referência histórica da CPTM, não cronometragem de 2026. As duas tabelas publicadas têm os mesmos valores por intervalo; precisão ao minuto.",
+      "parametros": {}
+    },
+    {
+      "id": "RESTANTE-L12-Tatuapé-Brás",
+      "linha": "L12",
+      "origem": "Tatuapé",
+      "destino": "Brás",
+      "segundos_base_candidato": 360,
+      "medido": false,
+      "confianca": "baixa",
+      "metodo": "Transcrever colunas de junho de 2020 das tabelas BAS–CVN e CVN–BAS: tempos por intervalo ao minuto, sem rateio geográfico.",
+      "fontes": [
+        "https://anptrilhos.org.br/wp-content/uploads/2020/11/melhores-praticas-anptrilhos-2020-cptm-sergio-barbosa.pdf"
+      ],
+      "limites": "Referência histórica da CPTM, não cronometragem de 2026. As duas tabelas publicadas têm os mesmos valores por intervalo; precisão ao minuto.",
+      "parametros": {}
+    },
+    {
+      "id": "RESTANTE-L12-Tatuapé-Engenheiro Goulart",
+      "linha": "L12",
+      "origem": "Tatuapé",
+      "destino": "Engenheiro Goulart",
+      "segundos_base_candidato": 720,
+      "medido": false,
+      "confianca": "baixa",
+      "metodo": "Transcrever colunas de junho de 2020 das tabelas BAS–CVN e CVN–BAS: tempos por intervalo ao minuto, sem rateio geográfico.",
+      "fontes": [
+        "https://anptrilhos.org.br/wp-content/uploads/2020/11/melhores-praticas-anptrilhos-2020-cptm-sergio-barbosa.pdf"
+      ],
+      "limites": "Referência histórica da CPTM, não cronometragem de 2026. As duas tabelas publicadas têm os mesmos valores por intervalo; precisão ao minuto.",
+      "parametros": {}
+    },
+    {
+      "id": "RESTANTE-L12-Engenheiro Goulart-Tatuapé",
+      "linha": "L12",
+      "origem": "Engenheiro Goulart",
+      "destino": "Tatuapé",
+      "segundos_base_candidato": 720,
+      "medido": false,
+      "confianca": "baixa",
+      "metodo": "Transcrever colunas de junho de 2020 das tabelas BAS–CVN e CVN–BAS: tempos por intervalo ao minuto, sem rateio geográfico.",
+      "fontes": [
+        "https://anptrilhos.org.br/wp-content/uploads/2020/11/melhores-praticas-anptrilhos-2020-cptm-sergio-barbosa.pdf"
+      ],
+      "limites": "Referência histórica da CPTM, não cronometragem de 2026. As duas tabelas publicadas têm os mesmos valores por intervalo; precisão ao minuto.",
+      "parametros": {}
+    },
+    {
+      "id": "RESTANTE-L12-Engenheiro Goulart-USP Leste",
+      "linha": "L12",
+      "origem": "Engenheiro Goulart",
+      "destino": "USP Leste",
+      "segundos_base_candidato": 240,
+      "medido": false,
+      "confianca": "baixa",
+      "metodo": "Transcrever colunas de junho de 2020 das tabelas BAS–CVN e CVN–BAS: tempos por intervalo ao minuto, sem rateio geográfico.",
+      "fontes": [
+        "https://anptrilhos.org.br/wp-content/uploads/2020/11/melhores-praticas-anptrilhos-2020-cptm-sergio-barbosa.pdf"
+      ],
+      "limites": "Referência histórica da CPTM, não cronometragem de 2026. As duas tabelas publicadas têm os mesmos valores por intervalo; precisão ao minuto.",
+      "parametros": {}
+    },
+    {
+      "id": "RESTANTE-L12-USP Leste-Engenheiro Goulart",
+      "linha": "L12",
+      "origem": "USP Leste",
+      "destino": "Engenheiro Goulart",
+      "segundos_base_candidato": 240,
+      "medido": false,
+      "confianca": "baixa",
+      "metodo": "Transcrever colunas de junho de 2020 das tabelas BAS–CVN e CVN–BAS: tempos por intervalo ao minuto, sem rateio geográfico.",
+      "fontes": [
+        "https://anptrilhos.org.br/wp-content/uploads/2020/11/melhores-praticas-anptrilhos-2020-cptm-sergio-barbosa.pdf"
+      ],
+      "limites": "Referência histórica da CPTM, não cronometragem de 2026. As duas tabelas publicadas têm os mesmos valores por intervalo; precisão ao minuto.",
+      "parametros": {}
+    },
+    {
+      "id": "RESTANTE-L12-USP Leste-Comendador Ermelino",
+      "linha": "L12",
+      "origem": "USP Leste",
+      "destino": "Comendador Ermelino",
+      "segundos_base_candidato": 180,
+      "medido": false,
+      "confianca": "baixa",
+      "metodo": "Transcrever colunas de junho de 2020 das tabelas BAS–CVN e CVN–BAS: tempos por intervalo ao minuto, sem rateio geográfico.",
+      "fontes": [
+        "https://anptrilhos.org.br/wp-content/uploads/2020/11/melhores-praticas-anptrilhos-2020-cptm-sergio-barbosa.pdf"
+      ],
+      "limites": "Referência histórica da CPTM, não cronometragem de 2026. As duas tabelas publicadas têm os mesmos valores por intervalo; precisão ao minuto.",
+      "parametros": {}
+    },
+    {
+      "id": "RESTANTE-L12-Comendador Ermelino-USP Leste",
+      "linha": "L12",
+      "origem": "Comendador Ermelino",
+      "destino": "USP Leste",
+      "segundos_base_candidato": 180,
+      "medido": false,
+      "confianca": "baixa",
+      "metodo": "Transcrever colunas de junho de 2020 das tabelas BAS–CVN e CVN–BAS: tempos por intervalo ao minuto, sem rateio geográfico.",
+      "fontes": [
+        "https://anptrilhos.org.br/wp-content/uploads/2020/11/melhores-praticas-anptrilhos-2020-cptm-sergio-barbosa.pdf"
+      ],
+      "limites": "Referência histórica da CPTM, não cronometragem de 2026. As duas tabelas publicadas têm os mesmos valores por intervalo; precisão ao minuto.",
+      "parametros": {}
+    },
+    {
+      "id": "RESTANTE-L12-Comendador Ermelino-São Miguel Paulista",
+      "linha": "L12",
+      "origem": "Comendador Ermelino",
+      "destino": "São Miguel Paulista",
+      "segundos_base_candidato": 360,
+      "medido": false,
+      "confianca": "baixa",
+      "metodo": "Transcrever colunas de junho de 2020 das tabelas BAS–CVN e CVN–BAS: tempos por intervalo ao minuto, sem rateio geográfico.",
+      "fontes": [
+        "https://anptrilhos.org.br/wp-content/uploads/2020/11/melhores-praticas-anptrilhos-2020-cptm-sergio-barbosa.pdf"
+      ],
+      "limites": "Referência histórica da CPTM, não cronometragem de 2026. As duas tabelas publicadas têm os mesmos valores por intervalo; precisão ao minuto.",
+      "parametros": {}
+    },
+    {
+      "id": "RESTANTE-L12-São Miguel Paulista-Comendador Ermelino",
+      "linha": "L12",
+      "origem": "São Miguel Paulista",
+      "destino": "Comendador Ermelino",
+      "segundos_base_candidato": 360,
+      "medido": false,
+      "confianca": "baixa",
+      "metodo": "Transcrever colunas de junho de 2020 das tabelas BAS–CVN e CVN–BAS: tempos por intervalo ao minuto, sem rateio geográfico.",
+      "fontes": [
+        "https://anptrilhos.org.br/wp-content/uploads/2020/11/melhores-praticas-anptrilhos-2020-cptm-sergio-barbosa.pdf"
+      ],
+      "limites": "Referência histórica da CPTM, não cronometragem de 2026. As duas tabelas publicadas têm os mesmos valores por intervalo; precisão ao minuto.",
+      "parametros": {}
+    },
+    {
+      "id": "RESTANTE-L12-São Miguel Paulista-Jardim Helena-Vila Mara",
+      "linha": "L12",
+      "origem": "São Miguel Paulista",
+      "destino": "Jardim Helena-Vila Mara",
+      "segundos_base_candidato": 180,
+      "medido": false,
+      "confianca": "baixa",
+      "metodo": "Transcrever colunas de junho de 2020 das tabelas BAS–CVN e CVN–BAS: tempos por intervalo ao minuto, sem rateio geográfico.",
+      "fontes": [
+        "https://anptrilhos.org.br/wp-content/uploads/2020/11/melhores-praticas-anptrilhos-2020-cptm-sergio-barbosa.pdf"
+      ],
+      "limites": "Referência histórica da CPTM, não cronometragem de 2026. As duas tabelas publicadas têm os mesmos valores por intervalo; precisão ao minuto.",
+      "parametros": {}
+    },
+    {
+      "id": "RESTANTE-L12-Jardim Helena-Vila Mara-São Miguel Paulista",
+      "linha": "L12",
+      "origem": "Jardim Helena-Vila Mara",
+      "destino": "São Miguel Paulista",
+      "segundos_base_candidato": 180,
+      "medido": false,
+      "confianca": "baixa",
+      "metodo": "Transcrever colunas de junho de 2020 das tabelas BAS–CVN e CVN–BAS: tempos por intervalo ao minuto, sem rateio geográfico.",
+      "fontes": [
+        "https://anptrilhos.org.br/wp-content/uploads/2020/11/melhores-praticas-anptrilhos-2020-cptm-sergio-barbosa.pdf"
+      ],
+      "limites": "Referência histórica da CPTM, não cronometragem de 2026. As duas tabelas publicadas têm os mesmos valores por intervalo; precisão ao minuto.",
+      "parametros": {}
+    },
+    {
+      "id": "RESTANTE-L12-Jardim Helena-Vila Mara-Itaim Paulista",
+      "linha": "L12",
+      "origem": "Jardim Helena-Vila Mara",
+      "destino": "Itaim Paulista",
+      "segundos_base_candidato": 120,
+      "medido": false,
+      "confianca": "baixa",
+      "metodo": "Transcrever colunas de junho de 2020 das tabelas BAS–CVN e CVN–BAS: tempos por intervalo ao minuto, sem rateio geográfico.",
+      "fontes": [
+        "https://anptrilhos.org.br/wp-content/uploads/2020/11/melhores-praticas-anptrilhos-2020-cptm-sergio-barbosa.pdf"
+      ],
+      "limites": "Referência histórica da CPTM, não cronometragem de 2026. As duas tabelas publicadas têm os mesmos valores por intervalo; precisão ao minuto.",
+      "parametros": {}
+    },
+    {
+      "id": "RESTANTE-L12-Itaim Paulista-Jardim Helena-Vila Mara",
+      "linha": "L12",
+      "origem": "Itaim Paulista",
+      "destino": "Jardim Helena-Vila Mara",
+      "segundos_base_candidato": 120,
+      "medido": false,
+      "confianca": "baixa",
+      "metodo": "Transcrever colunas de junho de 2020 das tabelas BAS–CVN e CVN–BAS: tempos por intervalo ao minuto, sem rateio geográfico.",
+      "fontes": [
+        "https://anptrilhos.org.br/wp-content/uploads/2020/11/melhores-praticas-anptrilhos-2020-cptm-sergio-barbosa.pdf"
+      ],
+      "limites": "Referência histórica da CPTM, não cronometragem de 2026. As duas tabelas publicadas têm os mesmos valores por intervalo; precisão ao minuto.",
+      "parametros": {}
+    },
+    {
+      "id": "RESTANTE-L12-Itaim Paulista-Jardim Romano",
+      "linha": "L12",
+      "origem": "Itaim Paulista",
+      "destino": "Jardim Romano",
+      "segundos_base_candidato": 180,
+      "medido": false,
+      "confianca": "baixa",
+      "metodo": "Transcrever colunas de junho de 2020 das tabelas BAS–CVN e CVN–BAS: tempos por intervalo ao minuto, sem rateio geográfico.",
+      "fontes": [
+        "https://anptrilhos.org.br/wp-content/uploads/2020/11/melhores-praticas-anptrilhos-2020-cptm-sergio-barbosa.pdf"
+      ],
+      "limites": "Referência histórica da CPTM, não cronometragem de 2026. As duas tabelas publicadas têm os mesmos valores por intervalo; precisão ao minuto.",
+      "parametros": {}
+    },
+    {
+      "id": "RESTANTE-L12-Jardim Romano-Itaim Paulista",
+      "linha": "L12",
+      "origem": "Jardim Romano",
+      "destino": "Itaim Paulista",
+      "segundos_base_candidato": 180,
+      "medido": false,
+      "confianca": "baixa",
+      "metodo": "Transcrever colunas de junho de 2020 das tabelas BAS–CVN e CVN–BAS: tempos por intervalo ao minuto, sem rateio geográfico.",
+      "fontes": [
+        "https://anptrilhos.org.br/wp-content/uploads/2020/11/melhores-praticas-anptrilhos-2020-cptm-sergio-barbosa.pdf"
+      ],
+      "limites": "Referência histórica da CPTM, não cronometragem de 2026. As duas tabelas publicadas têm os mesmos valores por intervalo; precisão ao minuto.",
+      "parametros": {}
+    },
+    {
+      "id": "RESTANTE-L12-Jardim Romano-Engenheiro Manoel Feio",
+      "linha": "L12",
+      "origem": "Jardim Romano",
+      "destino": "Engenheiro Manoel Feio",
+      "segundos_base_candidato": 180,
+      "medido": false,
+      "confianca": "baixa",
+      "metodo": "Transcrever colunas de junho de 2020 das tabelas BAS–CVN e CVN–BAS: tempos por intervalo ao minuto, sem rateio geográfico.",
+      "fontes": [
+        "https://anptrilhos.org.br/wp-content/uploads/2020/11/melhores-praticas-anptrilhos-2020-cptm-sergio-barbosa.pdf"
+      ],
+      "limites": "Referência histórica da CPTM, não cronometragem de 2026. As duas tabelas publicadas têm os mesmos valores por intervalo; precisão ao minuto.",
+      "parametros": {}
+    },
+    {
+      "id": "RESTANTE-L12-Engenheiro Manoel Feio-Jardim Romano",
+      "linha": "L12",
+      "origem": "Engenheiro Manoel Feio",
+      "destino": "Jardim Romano",
+      "segundos_base_candidato": 180,
+      "medido": false,
+      "confianca": "baixa",
+      "metodo": "Transcrever colunas de junho de 2020 das tabelas BAS–CVN e CVN–BAS: tempos por intervalo ao minuto, sem rateio geográfico.",
+      "fontes": [
+        "https://anptrilhos.org.br/wp-content/uploads/2020/11/melhores-praticas-anptrilhos-2020-cptm-sergio-barbosa.pdf"
+      ],
+      "limites": "Referência histórica da CPTM, não cronometragem de 2026. As duas tabelas publicadas têm os mesmos valores por intervalo; precisão ao minuto.",
+      "parametros": {}
+    },
+    {
+      "id": "RESTANTE-L12-Engenheiro Manoel Feio-Itaquaquecetuba",
+      "linha": "L12",
+      "origem": "Engenheiro Manoel Feio",
+      "destino": "Itaquaquecetuba",
+      "segundos_base_candidato": 180,
+      "medido": false,
+      "confianca": "baixa",
+      "metodo": "Transcrever colunas de junho de 2020 das tabelas BAS–CVN e CVN–BAS: tempos por intervalo ao minuto, sem rateio geográfico.",
+      "fontes": [
+        "https://anptrilhos.org.br/wp-content/uploads/2020/11/melhores-praticas-anptrilhos-2020-cptm-sergio-barbosa.pdf"
+      ],
+      "limites": "Referência histórica da CPTM, não cronometragem de 2026. As duas tabelas publicadas têm os mesmos valores por intervalo; precisão ao minuto.",
+      "parametros": {}
+    },
+    {
+      "id": "RESTANTE-L12-Itaquaquecetuba-Engenheiro Manoel Feio",
+      "linha": "L12",
+      "origem": "Itaquaquecetuba",
+      "destino": "Engenheiro Manoel Feio",
+      "segundos_base_candidato": 180,
+      "medido": false,
+      "confianca": "baixa",
+      "metodo": "Transcrever colunas de junho de 2020 das tabelas BAS–CVN e CVN–BAS: tempos por intervalo ao minuto, sem rateio geográfico.",
+      "fontes": [
+        "https://anptrilhos.org.br/wp-content/uploads/2020/11/melhores-praticas-anptrilhos-2020-cptm-sergio-barbosa.pdf"
+      ],
+      "limites": "Referência histórica da CPTM, não cronometragem de 2026. As duas tabelas publicadas têm os mesmos valores por intervalo; precisão ao minuto.",
+      "parametros": {}
+    },
+    {
+      "id": "RESTANTE-L12-Itaquaquecetuba-Aracaré",
+      "linha": "L12",
+      "origem": "Itaquaquecetuba",
+      "destino": "Aracaré",
+      "segundos_base_candidato": 240,
+      "medido": false,
+      "confianca": "baixa",
+      "metodo": "Transcrever colunas de junho de 2020 das tabelas BAS–CVN e CVN–BAS: tempos por intervalo ao minuto, sem rateio geográfico.",
+      "fontes": [
+        "https://anptrilhos.org.br/wp-content/uploads/2020/11/melhores-praticas-anptrilhos-2020-cptm-sergio-barbosa.pdf"
+      ],
+      "limites": "Referência histórica da CPTM, não cronometragem de 2026. As duas tabelas publicadas têm os mesmos valores por intervalo; precisão ao minuto.",
+      "parametros": {}
+    },
+    {
+      "id": "RESTANTE-L12-Aracaré-Itaquaquecetuba",
+      "linha": "L12",
+      "origem": "Aracaré",
+      "destino": "Itaquaquecetuba",
+      "segundos_base_candidato": 240,
+      "medido": false,
+      "confianca": "baixa",
+      "metodo": "Transcrever colunas de junho de 2020 das tabelas BAS–CVN e CVN–BAS: tempos por intervalo ao minuto, sem rateio geográfico.",
+      "fontes": [
+        "https://anptrilhos.org.br/wp-content/uploads/2020/11/melhores-praticas-anptrilhos-2020-cptm-sergio-barbosa.pdf"
+      ],
+      "limites": "Referência histórica da CPTM, não cronometragem de 2026. As duas tabelas publicadas têm os mesmos valores por intervalo; precisão ao minuto.",
+      "parametros": {}
+    },
+    {
+      "id": "RESTANTE-L12-Aracaré-Calmon Viana",
+      "linha": "L12",
+      "origem": "Aracaré",
+      "destino": "Calmon Viana",
+      "segundos_base_candidato": 240,
+      "medido": false,
+      "confianca": "baixa",
+      "metodo": "Transcrever colunas de junho de 2020 das tabelas BAS–CVN e CVN–BAS: tempos por intervalo ao minuto, sem rateio geográfico.",
+      "fontes": [
+        "https://anptrilhos.org.br/wp-content/uploads/2020/11/melhores-praticas-anptrilhos-2020-cptm-sergio-barbosa.pdf"
+      ],
+      "limites": "Referência histórica da CPTM, não cronometragem de 2026. As duas tabelas publicadas têm os mesmos valores por intervalo; precisão ao minuto.",
+      "parametros": {}
+    },
+    {
+      "id": "RESTANTE-L12-Calmon Viana-Aracaré",
+      "linha": "L12",
+      "origem": "Calmon Viana",
+      "destino": "Aracaré",
+      "segundos_base_candidato": 240,
+      "medido": false,
+      "confianca": "baixa",
+      "metodo": "Transcrever colunas de junho de 2020 das tabelas BAS–CVN e CVN–BAS: tempos por intervalo ao minuto, sem rateio geográfico.",
+      "fontes": [
+        "https://anptrilhos.org.br/wp-content/uploads/2020/11/melhores-praticas-anptrilhos-2020-cptm-sergio-barbosa.pdf"
+      ],
+      "limites": "Referência histórica da CPTM, não cronometragem de 2026. As duas tabelas publicadas têm os mesmos valores por intervalo; precisão ao minuto.",
+      "parametros": {}
+    },
+    {
+      "id": "RESTANTE-L17-Morumbi - Claro-Chucri Zaidan",
+      "linha": "L17",
+      "origem": "Morumbi - Claro",
+      "destino": "Chucri Zaidan",
+      "segundos_base_candidato": 125,
+      "medido": false,
+      "confianca": "baixa",
+      "metodo": "Cenário físico: rede de 6,7 km a 35 km/h assumidos, distribuída nas sete ligações físicas, inclusive ramal; soma de 690 s não é um itinerário único.",
+      "fontes": [
+        "https://www.metro.sp.gov.br/2026/10/01/linha-17-ouro-transporta-mais-de-25-mil-passageiros-no-primeiro-dia-com-horario-ampliado/",
+        "https://www.metro.sp.gov.br/obras/linha-15-prata/caracteristicas/"
+      ],
+      "limites": "35 km/h é referência de projeto da Linha 15 usada como hipótese, não velocidade medida da Linha 17. Substitui referência GTFS conflitante só no ensaio. Espera de 9 min de intervalo não foi usada como deslocamento.",
+      "parametros": {}
+    },
+    {
+      "id": "RESTANTE-L17-Chucri Zaidan-Morumbi - Claro",
+      "linha": "L17",
+      "origem": "Chucri Zaidan",
+      "destino": "Morumbi - Claro",
+      "segundos_base_candidato": 125,
+      "medido": false,
+      "confianca": "baixa",
+      "metodo": "Cenário físico: rede de 6,7 km a 35 km/h assumidos, distribuída nas sete ligações físicas, inclusive ramal; soma de 690 s não é um itinerário único.",
+      "fontes": [
+        "https://www.metro.sp.gov.br/2026/10/01/linha-17-ouro-transporta-mais-de-25-mil-passageiros-no-primeiro-dia-com-horario-ampliado/",
+        "https://www.metro.sp.gov.br/obras/linha-15-prata/caracteristicas/"
+      ],
+      "limites": "35 km/h é referência de projeto da Linha 15 usada como hipótese, não velocidade medida da Linha 17. Substitui referência GTFS conflitante só no ensaio. Espera de 9 min de intervalo não foi usada como deslocamento.",
+      "parametros": {}
+    },
+    {
+      "id": "RESTANTE-L17-Chucri Zaidan-Vila Cordeiro",
+      "linha": "L17",
+      "origem": "Chucri Zaidan",
+      "destino": "Vila Cordeiro",
+      "segundos_base_candidato": 85,
+      "medido": false,
+      "confianca": "baixa",
+      "metodo": "Cenário físico: rede de 6,7 km a 35 km/h assumidos, distribuída nas sete ligações físicas, inclusive ramal; soma de 690 s não é um itinerário único.",
+      "fontes": [
+        "https://www.metro.sp.gov.br/2026/10/01/linha-17-ouro-transporta-mais-de-25-mil-passageiros-no-primeiro-dia-com-horario-ampliado/",
+        "https://www.metro.sp.gov.br/obras/linha-15-prata/caracteristicas/"
+      ],
+      "limites": "35 km/h é referência de projeto da Linha 15 usada como hipótese, não velocidade medida da Linha 17. Substitui referência GTFS conflitante só no ensaio. Espera de 9 min de intervalo não foi usada como deslocamento.",
+      "parametros": {}
+    },
+    {
+      "id": "RESTANTE-L17-Vila Cordeiro-Chucri Zaidan",
+      "linha": "L17",
+      "origem": "Vila Cordeiro",
+      "destino": "Chucri Zaidan",
+      "segundos_base_candidato": 85,
+      "medido": false,
+      "confianca": "baixa",
+      "metodo": "Cenário físico: rede de 6,7 km a 35 km/h assumidos, distribuída nas sete ligações físicas, inclusive ramal; soma de 690 s não é um itinerário único.",
+      "fontes": [
+        "https://www.metro.sp.gov.br/2026/10/01/linha-17-ouro-transporta-mais-de-25-mil-passageiros-no-primeiro-dia-com-horario-ampliado/",
+        "https://www.metro.sp.gov.br/obras/linha-15-prata/caracteristicas/"
+      ],
+      "limites": "35 km/h é referência de projeto da Linha 15 usada como hipótese, não velocidade medida da Linha 17. Substitui referência GTFS conflitante só no ensaio. Espera de 9 min de intervalo não foi usada como deslocamento.",
+      "parametros": {}
+    },
+    {
+      "id": "RESTANTE-L17-Vila Cordeiro-Campo Belo",
+      "linha": "L17",
+      "origem": "Vila Cordeiro",
+      "destino": "Campo Belo",
+      "segundos_base_candidato": 75,
+      "medido": false,
+      "confianca": "baixa",
+      "metodo": "Cenário físico: rede de 6,7 km a 35 km/h assumidos, distribuída nas sete ligações físicas, inclusive ramal; soma de 690 s não é um itinerário único.",
+      "fontes": [
+        "https://www.metro.sp.gov.br/2026/10/01/linha-17-ouro-transporta-mais-de-25-mil-passageiros-no-primeiro-dia-com-horario-ampliado/",
+        "https://www.metro.sp.gov.br/obras/linha-15-prata/caracteristicas/"
+      ],
+      "limites": "35 km/h é referência de projeto da Linha 15 usada como hipótese, não velocidade medida da Linha 17. Substitui referência GTFS conflitante só no ensaio. Espera de 9 min de intervalo não foi usada como deslocamento.",
+      "parametros": {}
+    },
+    {
+      "id": "RESTANTE-L17-Campo Belo-Vila Cordeiro",
+      "linha": "L17",
+      "origem": "Campo Belo",
+      "destino": "Vila Cordeiro",
+      "segundos_base_candidato": 75,
+      "medido": false,
+      "confianca": "baixa",
+      "metodo": "Cenário físico: rede de 6,7 km a 35 km/h assumidos, distribuída nas sete ligações físicas, inclusive ramal; soma de 690 s não é um itinerário único.",
+      "fontes": [
+        "https://www.metro.sp.gov.br/2026/10/01/linha-17-ouro-transporta-mais-de-25-mil-passageiros-no-primeiro-dia-com-horario-ampliado/",
+        "https://www.metro.sp.gov.br/obras/linha-15-prata/caracteristicas/"
+      ],
+      "limites": "35 km/h é referência de projeto da Linha 15 usada como hipótese, não velocidade medida da Linha 17. Substitui referência GTFS conflitante só no ensaio. Espera de 9 min de intervalo não foi usada como deslocamento.",
+      "parametros": {}
+    },
+    {
+      "id": "RESTANTE-L17-Campo Belo-Vereador José Diniz",
+      "linha": "L17",
+      "origem": "Campo Belo",
+      "destino": "Vereador José Diniz",
+      "segundos_base_candidato": 75,
+      "medido": false,
+      "confianca": "baixa",
+      "metodo": "Cenário físico: rede de 6,7 km a 35 km/h assumidos, distribuída nas sete ligações físicas, inclusive ramal; soma de 690 s não é um itinerário único.",
+      "fontes": [
+        "https://www.metro.sp.gov.br/2026/10/01/linha-17-ouro-transporta-mais-de-25-mil-passageiros-no-primeiro-dia-com-horario-ampliado/",
+        "https://www.metro.sp.gov.br/obras/linha-15-prata/caracteristicas/"
+      ],
+      "limites": "35 km/h é referência de projeto da Linha 15 usada como hipótese, não velocidade medida da Linha 17. Substitui referência GTFS conflitante só no ensaio. Espera de 9 min de intervalo não foi usada como deslocamento.",
+      "parametros": {}
+    },
+    {
+      "id": "RESTANTE-L17-Vereador José Diniz-Campo Belo",
+      "linha": "L17",
+      "origem": "Vereador José Diniz",
+      "destino": "Campo Belo",
+      "segundos_base_candidato": 75,
+      "medido": false,
+      "confianca": "baixa",
+      "metodo": "Cenário físico: rede de 6,7 km a 35 km/h assumidos, distribuída nas sete ligações físicas, inclusive ramal; soma de 690 s não é um itinerário único.",
+      "fontes": [
+        "https://www.metro.sp.gov.br/2026/10/01/linha-17-ouro-transporta-mais-de-25-mil-passageiros-no-primeiro-dia-com-horario-ampliado/",
+        "https://www.metro.sp.gov.br/obras/linha-15-prata/caracteristicas/"
+      ],
+      "limites": "35 km/h é referência de projeto da Linha 15 usada como hipótese, não velocidade medida da Linha 17. Substitui referência GTFS conflitante só no ensaio. Espera de 9 min de intervalo não foi usada como deslocamento.",
+      "parametros": {}
+    },
+    {
+      "id": "RESTANTE-L17-Vereador José Diniz-Brooklin Paulista",
+      "linha": "L17",
+      "origem": "Vereador José Diniz",
+      "destino": "Brooklin Paulista",
+      "segundos_base_candidato": 110,
+      "medido": false,
+      "confianca": "baixa",
+      "metodo": "Cenário físico: rede de 6,7 km a 35 km/h assumidos, distribuída nas sete ligações físicas, inclusive ramal; soma de 690 s não é um itinerário único.",
+      "fontes": [
+        "https://www.metro.sp.gov.br/2026/10/01/linha-17-ouro-transporta-mais-de-25-mil-passageiros-no-primeiro-dia-com-horario-ampliado/",
+        "https://www.metro.sp.gov.br/obras/linha-15-prata/caracteristicas/"
+      ],
+      "limites": "35 km/h é referência de projeto da Linha 15 usada como hipótese, não velocidade medida da Linha 17. Substitui referência GTFS conflitante só no ensaio. Espera de 9 min de intervalo não foi usada como deslocamento.",
+      "parametros": {}
+    },
+    {
+      "id": "RESTANTE-L17-Brooklin Paulista-Vereador José Diniz",
+      "linha": "L17",
+      "origem": "Brooklin Paulista",
+      "destino": "Vereador José Diniz",
+      "segundos_base_candidato": 110,
+      "medido": false,
+      "confianca": "baixa",
+      "metodo": "Cenário físico: rede de 6,7 km a 35 km/h assumidos, distribuída nas sete ligações físicas, inclusive ramal; soma de 690 s não é um itinerário único.",
+      "fontes": [
+        "https://www.metro.sp.gov.br/2026/10/01/linha-17-ouro-transporta-mais-de-25-mil-passageiros-no-primeiro-dia-com-horario-ampliado/",
+        "https://www.metro.sp.gov.br/obras/linha-15-prata/caracteristicas/"
+      ],
+      "limites": "35 km/h é referência de projeto da Linha 15 usada como hipótese, não velocidade medida da Linha 17. Substitui referência GTFS conflitante só no ensaio. Espera de 9 min de intervalo não foi usada como deslocamento.",
+      "parametros": {}
+    },
+    {
+      "id": "RESTANTE-L17-Brooklin Paulista-Aeroporto de Congonhas",
+      "linha": "L17",
+      "origem": "Brooklin Paulista",
+      "destino": "Aeroporto de Congonhas",
+      "segundos_base_candidato": 130,
+      "medido": false,
+      "confianca": "baixa",
+      "metodo": "Cenário físico: rede de 6,7 km a 35 km/h assumidos, distribuída nas sete ligações físicas, inclusive ramal; soma de 690 s não é um itinerário único.",
+      "fontes": [
+        "https://www.metro.sp.gov.br/2026/10/01/linha-17-ouro-transporta-mais-de-25-mil-passageiros-no-primeiro-dia-com-horario-ampliado/",
+        "https://www.metro.sp.gov.br/obras/linha-15-prata/caracteristicas/"
+      ],
+      "limites": "35 km/h é referência de projeto da Linha 15 usada como hipótese, não velocidade medida da Linha 17. Substitui referência GTFS conflitante só no ensaio. Espera de 9 min de intervalo não foi usada como deslocamento.",
+      "parametros": {}
+    },
+    {
+      "id": "RESTANTE-L17-Aeroporto de Congonhas-Brooklin Paulista",
+      "linha": "L17",
+      "origem": "Aeroporto de Congonhas",
+      "destino": "Brooklin Paulista",
+      "segundos_base_candidato": 130,
+      "medido": false,
+      "confianca": "baixa",
+      "metodo": "Cenário físico: rede de 6,7 km a 35 km/h assumidos, distribuída nas sete ligações físicas, inclusive ramal; soma de 690 s não é um itinerário único.",
+      "fontes": [
+        "https://www.metro.sp.gov.br/2026/10/01/linha-17-ouro-transporta-mais-de-25-mil-passageiros-no-primeiro-dia-com-horario-ampliado/",
+        "https://www.metro.sp.gov.br/obras/linha-15-prata/caracteristicas/"
+      ],
+      "limites": "35 km/h é referência de projeto da Linha 15 usada como hipótese, não velocidade medida da Linha 17. Substitui referência GTFS conflitante só no ensaio. Espera de 9 min de intervalo não foi usada como deslocamento.",
+      "parametros": {}
+    },
+    {
+      "id": "RESTANTE-L17-Brooklin Paulista-Washington Luís",
+      "linha": "L17",
+      "origem": "Brooklin Paulista",
+      "destino": "Washington Luís",
+      "segundos_base_candidato": 90,
+      "medido": false,
+      "confianca": "baixa",
+      "metodo": "Cenário físico: rede de 6,7 km a 35 km/h assumidos, distribuída nas sete ligações físicas, inclusive ramal; soma de 690 s não é um itinerário único.",
+      "fontes": [
+        "https://www.metro.sp.gov.br/2026/10/01/linha-17-ouro-transporta-mais-de-25-mil-passageiros-no-primeiro-dia-com-horario-ampliado/",
+        "https://www.metro.sp.gov.br/obras/linha-15-prata/caracteristicas/"
+      ],
+      "limites": "35 km/h é referência de projeto da Linha 15 usada como hipótese, não velocidade medida da Linha 17. Substitui referência GTFS conflitante só no ensaio. Espera de 9 min de intervalo não foi usada como deslocamento.",
+      "parametros": {}
+    },
+    {
+      "id": "RESTANTE-L17-Washington Luís-Brooklin Paulista",
+      "linha": "L17",
+      "origem": "Washington Luís",
+      "destino": "Brooklin Paulista",
+      "segundos_base_candidato": 90,
+      "medido": false,
+      "confianca": "baixa",
+      "metodo": "Cenário físico: rede de 6,7 km a 35 km/h assumidos, distribuída nas sete ligações físicas, inclusive ramal; soma de 690 s não é um itinerário único.",
+      "fontes": [
+        "https://www.metro.sp.gov.br/2026/10/01/linha-17-ouro-transporta-mais-de-25-mil-passageiros-no-primeiro-dia-com-horario-ampliado/",
+        "https://www.metro.sp.gov.br/obras/linha-15-prata/caracteristicas/"
+      ],
+      "limites": "35 km/h é referência de projeto da Linha 15 usada como hipótese, não velocidade medida da Linha 17. Substitui referência GTFS conflitante só no ensaio. Espera de 9 min de intervalo não foi usada como deslocamento.",
+      "parametros": {}
+    }
+  ]
+}

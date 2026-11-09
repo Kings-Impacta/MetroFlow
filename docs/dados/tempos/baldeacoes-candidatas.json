@@ -1,0 +1,3330 @@
+{
+  "data": "2026-11-04",
+  "aprovado_para_xano": false,
+  "margem_aplicada": false,
+  "cobertura_numerica_nao_equivale_a_cobertura_operacional": true,
+  "itens": [
+    {
+      "estacao": "Paraíso",
+      "estacao_id": 2,
+      "linha_origem": "L1",
+      "linha_destino": "L2",
+      "referencias": [],
+      "estado": "sem_duracao_por_plataforma",
+      "pendencia": "Desdobrar plataformas/sentidos e acessibilidade; verificar acesso físico e caminhar sem espera.",
+      "base_aprovada_segundos": null,
+      "margem_no_componente_segundos": 0,
+      "confianca": "baixa",
+      "aprovado_para_xano": false,
+      "verificar_plataformas": true,
+      "caminhada_candidata_segundos": 300,
+      "metodo": "modelo_classe_de_conexao",
+      "faixa_sensibilidade_segundos": [
+        180,
+        480
+      ],
+      "fontes": [
+        "https://www.reddit.com/r/saopaulo/comments/1rjqzgi/baldea%C3%A7%C3%B5es/",
+        "https://www.metrozinho.com.br/sao-paulo/guias/baldeacoes-e-integracoes/",
+        "docs/dados/tempos/inspecoes-video.csv"
+      ],
+      "limite": "Valores de classe estimados, não medidos por par/plataforma. Não inclui espera pelo trem. Confirmar conexão, corredor sem duplicação e direções de Paraíso antes de usar no aplicativo."
+    },
+    {
+      "estacao": "Paraíso",
+      "estacao_id": 2,
+      "linha_origem": "L2",
+      "linha_destino": "L1",
+      "referencias": [],
+      "estado": "sem_duracao_por_plataforma",
+      "pendencia": "Desdobrar plataformas/sentidos e acessibilidade; verificar acesso físico e caminhar sem espera.",
+      "base_aprovada_segundos": null,
+      "margem_no_componente_segundos": 0,
+      "confianca": "baixa",
+      "aprovado_para_xano": false,
+      "verificar_plataformas": true,
+      "caminhada_candidata_segundos": 300,
+      "metodo": "modelo_classe_de_conexao",
+      "faixa_sensibilidade_segundos": [
+        180,
+        480
+      ],
+      "fontes": [
+        "https://www.reddit.com/r/saopaulo/comments/1rjqzgi/baldea%C3%A7%C3%B5es/",
+        "https://www.metrozinho.com.br/sao-paulo/guias/baldeacoes-e-integracoes/",
+        "docs/dados/tempos/inspecoes-video.csv"
+      ],
+      "limite": "Valores de classe estimados, não medidos por par/plataforma. Não inclui espera pelo trem. Confirmar conexão, corredor sem duplicação e direções de Paraíso antes de usar no aplicativo."
+    },
+    {
+      "estacao": "Ana Rosa",
+      "estacao_id": 3,
+      "linha_origem": "L1",
+      "linha_destino": "L2",
+      "referencias": [],
+      "estado": "sem_duracao_por_plataforma",
+      "pendencia": "Desdobrar plataformas/sentidos e acessibilidade; verificar acesso físico e caminhar sem espera.",
+      "base_aprovada_segundos": null,
+      "margem_no_componente_segundos": 0,
+      "confianca": "baixa",
+      "aprovado_para_xano": false,
+      "verificar_plataformas": true,
+      "caminhada_candidata_segundos": 180,
+      "metodo": "modelo_classe_de_conexao",
+      "faixa_sensibilidade_segundos": [
+        60,
+        360
+      ],
+      "fontes": [
+        "https://www.reddit.com/r/saopaulo/comments/1rjqzgi/baldea%C3%A7%C3%B5es/",
+        "https://www.metrozinho.com.br/sao-paulo/guias/baldeacoes-e-integracoes/",
+        "docs/dados/tempos/inspecoes-video.csv"
+      ],
+      "limite": "Valores de classe estimados, não medidos por par/plataforma. Não inclui espera pelo trem. Confirmar conexão, corredor sem duplicação e direções de Paraíso antes de usar no aplicativo."
+    },
+    {
+      "estacao": "Ana Rosa",
+      "estacao_id": 3,
+      "linha_origem": "L2",
+      "linha_destino": "L1",
+      "referencias": [],
+      "estado": "sem_duracao_por_plataforma",
+      "pendencia": "Desdobrar plataformas/sentidos e acessibilidade; verificar acesso físico e caminhar sem espera.",
+      "base_aprovada_segundos": null,
+      "margem_no_componente_segundos": 0,
+      "confianca": "baixa",
+      "aprovado_para_xano": false,
+      "verificar_plataformas": true,
+      "caminhada_candidata_segundos": 180,
+      "metodo": "modelo_classe_de_conexao",
+      "faixa_sensibilidade_segundos": [
+        60,
+        360
+      ],
+      "fontes": [
+        "https://www.reddit.com/r/saopaulo/comments/1rjqzgi/baldea%C3%A7%C3%B5es/",
+        "https://www.metrozinho.com.br/sao-paulo/guias/baldeacoes-e-integracoes/",
+        "docs/dados/tempos/inspecoes-video.csv"
+      ],
+      "limite": "Valores de classe estimados, não medidos por par/plataforma. Não inclui espera pelo trem. Confirmar conexão, corredor sem duplicação e direções de Paraíso antes de usar no aplicativo."
+    },
+    {
+      "estacao": "Santa Cruz",
+      "estacao_id": 7,
+      "linha_origem": "L1",
+      "linha_destino": "L5",
+      "referencias": [],
+      "estado": "sem_duracao_por_plataforma",
+      "pendencia": "Desdobrar plataformas/sentidos e acessibilidade; verificar acesso físico e caminhar sem espera.",
+      "base_aprovada_segundos": null,
+      "margem_no_componente_segundos": 0,
+      "confianca": "baixa",
+      "aprovado_para_xano": false,
+      "verificar_plataformas": true,
+      "caminhada_candidata_segundos": 480,
+      "metodo": "modelo_classe_de_conexao",
+      "faixa_sensibilidade_segundos": [
+        360,
+        660
+      ],
+      "fontes": [
+        "https://www.reddit.com/r/saopaulo/comments/1rjqzgi/baldea%C3%A7%C3%B5es/",
+        "https://www.metrozinho.com.br/sao-paulo/guias/baldeacoes-e-integracoes/",
+        "docs/dados/tempos/inspecoes-video.csv"
+      ],
+      "limite": "Valores de classe estimados, não medidos por par/plataforma. Não inclui espera pelo trem. Confirmar conexão, corredor sem duplicação e direções de Paraíso antes de usar no aplicativo."
+    },
+    {
+      "estacao": "Santa Cruz",
+      "estacao_id": 7,
+      "linha_origem": "L5",
+      "linha_destino": "L1",
+      "referencias": [],
+      "estado": "sem_duracao_por_plataforma",
+      "pendencia": "Desdobrar plataformas/sentidos e acessibilidade; verificar acesso físico e caminhar sem espera.",
+      "base_aprovada_segundos": null,
+      "margem_no_componente_segundos": 0,
+      "confianca": "baixa",
+      "aprovado_para_xano": false,
+      "verificar_plataformas": true,
+      "caminhada_candidata_segundos": 480,
+      "metodo": "modelo_classe_de_conexao",
+      "faixa_sensibilidade_segundos": [
+        360,
+        660
+      ],
+      "fontes": [
+        "https://www.reddit.com/r/saopaulo/comments/1rjqzgi/baldea%C3%A7%C3%B5es/",
+        "https://www.metrozinho.com.br/sao-paulo/guias/baldeacoes-e-integracoes/",
+        "docs/dados/tempos/inspecoes-video.csv"
+      ],
+      "limite": "Valores de classe estimados, não medidos por par/plataforma. Não inclui espera pelo trem. Confirmar conexão, corredor sem duplicação e direções de Paraíso antes de usar no aplicativo."
+    },
+    {
+      "estacao": "Chácara Klabin",
+      "estacao_id": 8,
+      "linha_origem": "L2",
+      "linha_destino": "L5",
+      "referencias": [],
+      "estado": "sem_duracao_por_plataforma",
+      "pendencia": "Desdobrar plataformas/sentidos e acessibilidade; verificar acesso físico e caminhar sem espera.",
+      "base_aprovada_segundos": null,
+      "margem_no_componente_segundos": 0,
+      "confianca": "baixa",
+      "aprovado_para_xano": false,
+      "verificar_plataformas": true,
+      "caminhada_candidata_segundos": 300,
+      "metodo": "modelo_classe_de_conexao",
+      "faixa_sensibilidade_segundos": [
+        180,
+        480
+      ],
+      "fontes": [
+        "https://www.reddit.com/r/saopaulo/comments/1rjqzgi/baldea%C3%A7%C3%B5es/",
+        "https://www.metrozinho.com.br/sao-paulo/guias/baldeacoes-e-integracoes/",
+        "docs/dados/tempos/inspecoes-video.csv"
+      ],
+      "limite": "Valores de classe estimados, não medidos por par/plataforma. Não inclui espera pelo trem. Confirmar conexão, corredor sem duplicação e direções de Paraíso antes de usar no aplicativo."
+    },
+    {
+      "estacao": "Chácara Klabin",
+      "estacao_id": 8,
+      "linha_origem": "L5",
+      "linha_destino": "L2",
+      "referencias": [],
+      "estado": "sem_duracao_por_plataforma",
+      "pendencia": "Desdobrar plataformas/sentidos e acessibilidade; verificar acesso físico e caminhar sem espera.",
+      "base_aprovada_segundos": null,
+      "margem_no_componente_segundos": 0,
+      "confianca": "baixa",
+      "aprovado_para_xano": false,
+      "verificar_plataformas": true,
+      "caminhada_candidata_segundos": 300,
+      "metodo": "modelo_classe_de_conexao",
+      "faixa_sensibilidade_segundos": [
+        180,
+        480
+      ],
+      "fontes": [
+        "https://www.reddit.com/r/saopaulo/comments/1rjqzgi/baldea%C3%A7%C3%B5es/",
+        "https://www.metrozinho.com.br/sao-paulo/guias/baldeacoes-e-integracoes/",
+        "docs/dados/tempos/inspecoes-video.csv"
+      ],
+      "limite": "Valores de classe estimados, não medidos por par/plataforma. Não inclui espera pelo trem. Confirmar conexão, corredor sem duplicação e direções de Paraíso antes de usar no aplicativo."
+    },
+    {
+      "estacao": "Sé",
+      "estacao_id": 17,
+      "linha_origem": "L1",
+      "linha_destino": "L3",
+      "referencias": [],
+      "estado": "sem_duracao_por_plataforma",
+      "pendencia": "Desdobrar plataformas/sentidos e acessibilidade; verificar acesso físico e caminhar sem espera.",
+      "base_aprovada_segundos": null,
+      "margem_no_componente_segundos": 0,
+      "confianca": "baixa",
+      "aprovado_para_xano": false,
+      "verificar_plataformas": true,
+      "caminhada_candidata_segundos": 180,
+      "metodo": "modelo_classe_de_conexao",
+      "faixa_sensibilidade_segundos": [
+        60,
+        360
+      ],
+      "fontes": [
+        "https://www.reddit.com/r/saopaulo/comments/1rjqzgi/baldea%C3%A7%C3%B5es/",
+        "https://www.metrozinho.com.br/sao-paulo/guias/baldeacoes-e-integracoes/",
+        "docs/dados/tempos/inspecoes-video.csv"
+      ],
+      "limite": "Valores de classe estimados, não medidos por par/plataforma. Não inclui espera pelo trem. Confirmar conexão, corredor sem duplicação e direções de Paraíso antes de usar no aplicativo."
+    },
+    {
+      "estacao": "Sé",
+      "estacao_id": 17,
+      "linha_origem": "L3",
+      "linha_destino": "L1",
+      "referencias": [],
+      "estado": "sem_duracao_por_plataforma",
+      "pendencia": "Desdobrar plataformas/sentidos e acessibilidade; verificar acesso físico e caminhar sem espera.",
+      "base_aprovada_segundos": null,
+      "margem_no_componente_segundos": 0,
+      "confianca": "baixa",
+      "aprovado_para_xano": false,
+      "verificar_plataformas": true,
+      "caminhada_candidata_segundos": 180,
+      "metodo": "modelo_classe_de_conexao",
+      "faixa_sensibilidade_segundos": [
+        60,
+        360
+      ],
+      "fontes": [
+        "https://www.reddit.com/r/saopaulo/comments/1rjqzgi/baldea%C3%A7%C3%B5es/",
+        "https://www.metrozinho.com.br/sao-paulo/guias/baldeacoes-e-integracoes/",
+        "docs/dados/tempos/inspecoes-video.csv"
+      ],
+      "limite": "Valores de classe estimados, não medidos por par/plataforma. Não inclui espera pelo trem. Confirmar conexão, corredor sem duplicação e direções de Paraíso antes de usar no aplicativo."
+    },
+    {
+      "estacao": "Luz",
+      "estacao_id": 19,
+      "linha_origem": "L1",
+      "linha_destino": "L4",
+      "referencias": [],
+      "estado": "sem_duracao_por_plataforma",
+      "pendencia": "Desdobrar plataformas/sentidos e acessibilidade; verificar acesso físico e caminhar sem espera.",
+      "base_aprovada_segundos": null,
+      "margem_no_componente_segundos": 0,
+      "confianca": "baixa",
+      "aprovado_para_xano": false,
+      "verificar_plataformas": true,
+      "caminhada_candidata_segundos": 420,
+      "metodo": "modelo_classe_de_conexao",
+      "faixa_sensibilidade_segundos": [
+        300,
+        600
+      ],
+      "fontes": [
+        "https://www.reddit.com/r/saopaulo/comments/1rjqzgi/baldea%C3%A7%C3%B5es/",
+        "https://www.metrozinho.com.br/sao-paulo/guias/baldeacoes-e-integracoes/",
+        "docs/dados/tempos/inspecoes-video.csv"
+      ],
+      "limite": "Valores de classe estimados, não medidos por par/plataforma. Não inclui espera pelo trem. Confirmar conexão, corredor sem duplicação e direções de Paraíso antes de usar no aplicativo."
+    },
+    {
+      "estacao": "Luz",
+      "estacao_id": 19,
+      "linha_origem": "L1",
+      "linha_destino": "L10",
+      "referencias": [],
+      "estado": "sem_duracao_por_plataforma",
+      "pendencia": "Desdobrar plataformas/sentidos e acessibilidade; verificar acesso físico e caminhar sem espera.",
+      "base_aprovada_segundos": null,
+      "margem_no_componente_segundos": 0,
+      "confianca": "baixa",
+      "aprovado_para_xano": false,
+      "verificar_plataformas": true,
+      "caminhada_candidata_segundos": 420,
+      "metodo": "modelo_classe_de_conexao",
+      "faixa_sensibilidade_segundos": [
+        300,
+        600
+      ],
+      "fontes": [
+        "https://www.reddit.com/r/saopaulo/comments/1rjqzgi/baldea%C3%A7%C3%B5es/",
+        "https://www.metrozinho.com.br/sao-paulo/guias/baldeacoes-e-integracoes/",
+        "docs/dados/tempos/inspecoes-video.csv"
+      ],
+      "limite": "Valores de classe estimados, não medidos por par/plataforma. Não inclui espera pelo trem. Confirmar conexão, corredor sem duplicação e direções de Paraíso antes de usar no aplicativo."
+    },
+    {
+      "estacao": "Luz",
+      "estacao_id": 19,
+      "linha_origem": "L1",
+      "linha_destino": "L11",
+      "referencias": [],
+      "estado": "sem_duracao_por_plataforma",
+      "pendencia": "Desdobrar plataformas/sentidos e acessibilidade; verificar acesso físico e caminhar sem espera.",
+      "base_aprovada_segundos": null,
+      "margem_no_componente_segundos": 0,
+      "confianca": "baixa",
+      "aprovado_para_xano": false,
+      "verificar_plataformas": true,
+      "caminhada_candidata_segundos": 420,
+      "metodo": "modelo_classe_de_conexao",
+      "faixa_sensibilidade_segundos": [
+        300,
+        600
+      ],
+      "fontes": [
+        "https://www.reddit.com/r/saopaulo/comments/1rjqzgi/baldea%C3%A7%C3%B5es/",
+        "https://www.metrozinho.com.br/sao-paulo/guias/baldeacoes-e-integracoes/",
+        "docs/dados/tempos/inspecoes-video.csv"
+      ],
+      "limite": "Valores de classe estimados, não medidos por par/plataforma. Não inclui espera pelo trem. Confirmar conexão, corredor sem duplicação e direções de Paraíso antes de usar no aplicativo."
+    },
+    {
+      "estacao": "Luz",
+      "estacao_id": 19,
+      "linha_origem": "L1",
+      "linha_destino": "EXP-AER",
+      "referencias": [],
+      "estado": "sem_duracao_por_plataforma",
+      "pendencia": "Desdobrar plataformas/sentidos e acessibilidade; verificar acesso físico e caminhar sem espera.",
+      "base_aprovada_segundos": null,
+      "margem_no_componente_segundos": 0,
+      "confianca": "baixa",
+      "aprovado_para_xano": false,
+      "verificar_plataformas": true,
+      "caminhada_candidata_segundos": 420,
+      "metodo": "modelo_classe_de_conexao",
+      "faixa_sensibilidade_segundos": [
+        300,
+        600
+      ],
+      "fontes": [
+        "https://www.reddit.com/r/saopaulo/comments/1rjqzgi/baldea%C3%A7%C3%B5es/",
+        "https://www.metrozinho.com.br/sao-paulo/guias/baldeacoes-e-integracoes/",
+        "docs/dados/tempos/inspecoes-video.csv"
+      ],
+      "limite": "Valores de classe estimados, não medidos por par/plataforma. Não inclui espera pelo trem. Confirmar conexão, corredor sem duplicação e direções de Paraíso antes de usar no aplicativo."
+    },
+    {
+      "estacao": "Luz",
+      "estacao_id": 19,
+      "linha_origem": "L4",
+      "linha_destino": "L1",
+      "referencias": [],
+      "estado": "sem_duracao_por_plataforma",
+      "pendencia": "Desdobrar plataformas/sentidos e acessibilidade; verificar acesso físico e caminhar sem espera.",
+      "base_aprovada_segundos": null,
+      "margem_no_componente_segundos": 0,
+      "confianca": "baixa",
+      "aprovado_para_xano": false,
+      "verificar_plataformas": true,
+      "caminhada_candidata_segundos": 420,
+      "metodo": "modelo_classe_de_conexao",
+      "faixa_sensibilidade_segundos": [
+        300,
+        600
+      ],
+      "fontes": [
+        "https://www.reddit.com/r/saopaulo/comments/1rjqzgi/baldea%C3%A7%C3%B5es/",
+        "https://www.metrozinho.com.br/sao-paulo/guias/baldeacoes-e-integracoes/",
+        "docs/dados/tempos/inspecoes-video.csv"
+      ],
+      "limite": "Valores de classe estimados, não medidos por par/plataforma. Não inclui espera pelo trem. Confirmar conexão, corredor sem duplicação e direções de Paraíso antes de usar no aplicativo."
+    },
+    {
+      "estacao": "Luz",
+      "estacao_id": 19,
+      "linha_origem": "L4",
+      "linha_destino": "L10",
+      "referencias": [],
+      "estado": "sem_duracao_por_plataforma",
+      "pendencia": "Desdobrar plataformas/sentidos e acessibilidade; verificar acesso físico e caminhar sem espera.",
+      "base_aprovada_segundos": null,
+      "margem_no_componente_segundos": 0,
+      "confianca": "baixa",
+      "aprovado_para_xano": false,
+      "verificar_plataformas": true,
+      "caminhada_candidata_segundos": 420,
+      "metodo": "modelo_classe_de_conexao",
+      "faixa_sensibilidade_segundos": [
+        300,
+        600
+      ],
+      "fontes": [
+        "https://www.reddit.com/r/saopaulo/comments/1rjqzgi/baldea%C3%A7%C3%B5es/",
+        "https://www.metrozinho.com.br/sao-paulo/guias/baldeacoes-e-integracoes/",
+        "docs/dados/tempos/inspecoes-video.csv"
+      ],
+      "limite": "Valores de classe estimados, não medidos por par/plataforma. Não inclui espera pelo trem. Confirmar conexão, corredor sem duplicação e direções de Paraíso antes de usar no aplicativo."
+    },
+    {
+      "estacao": "Luz",
+      "estacao_id": 19,
+      "linha_origem": "L4",
+      "linha_destino": "L11",
+      "referencias": [],
+      "estado": "sem_duracao_por_plataforma",
+      "pendencia": "Desdobrar plataformas/sentidos e acessibilidade; verificar acesso físico e caminhar sem espera.",
+      "base_aprovada_segundos": null,
+      "margem_no_componente_segundos": 0,
+      "confianca": "baixa",
+      "aprovado_para_xano": false,
+      "verificar_plataformas": true,
+      "caminhada_candidata_segundos": 420,
+      "metodo": "modelo_classe_de_conexao",
+      "faixa_sensibilidade_segundos": [
+        300,
+        600
+      ],
+      "fontes": [
+        "https://www.reddit.com/r/saopaulo/comments/1rjqzgi/baldea%C3%A7%C3%B5es/",
+        "https://www.metrozinho.com.br/sao-paulo/guias/baldeacoes-e-integracoes/",
+        "docs/dados/tempos/inspecoes-video.csv"
+      ],
+      "limite": "Valores de classe estimados, não medidos por par/plataforma. Não inclui espera pelo trem. Confirmar conexão, corredor sem duplicação e direções de Paraíso antes de usar no aplicativo."
+    },
+    {
+      "estacao": "Luz",
+      "estacao_id": 19,
+      "linha_origem": "L4",
+      "linha_destino": "EXP-AER",
+      "referencias": [],
+      "estado": "sem_duracao_por_plataforma",
+      "pendencia": "Desdobrar plataformas/sentidos e acessibilidade; verificar acesso físico e caminhar sem espera.",
+      "base_aprovada_segundos": null,
+      "margem_no_componente_segundos": 0,
+      "confianca": "baixa",
+      "aprovado_para_xano": false,
+      "verificar_plataformas": true,
+      "caminhada_candidata_segundos": 420,
+      "metodo": "modelo_classe_de_conexao",
+      "faixa_sensibilidade_segundos": [
+        300,
+        600
+      ],
+      "fontes": [
+        "https://www.reddit.com/r/saopaulo/comments/1rjqzgi/baldea%C3%A7%C3%B5es/",
+        "https://www.metrozinho.com.br/sao-paulo/guias/baldeacoes-e-integracoes/",
+        "docs/dados/tempos/inspecoes-video.csv"
+      ],
+      "limite": "Valores de classe estimados, não medidos por par/plataforma. Não inclui espera pelo trem. Confirmar conexão, corredor sem duplicação e direções de Paraíso antes de usar no aplicativo."
+    },
+    {
+      "estacao": "Luz",
+      "estacao_id": 19,
+      "linha_origem": "L10",
+      "linha_destino": "L1",
+      "referencias": [],
+      "estado": "sem_duracao_por_plataforma",
+      "pendencia": "Desdobrar plataformas/sentidos e acessibilidade; verificar acesso físico e caminhar sem espera.",
+      "base_aprovada_segundos": null,
+      "margem_no_componente_segundos": 0,
+      "confianca": "baixa",
+      "aprovado_para_xano": false,
+      "verificar_plataformas": true,
+      "caminhada_candidata_segundos": 420,
+      "metodo": "modelo_classe_de_conexao",
+      "faixa_sensibilidade_segundos": [
+        300,
+        600
+      ],
+      "fontes": [
+        "https://www.reddit.com/r/saopaulo/comments/1rjqzgi/baldea%C3%A7%C3%B5es/",
+        "https://www.metrozinho.com.br/sao-paulo/guias/baldeacoes-e-integracoes/",
+        "docs/dados/tempos/inspecoes-video.csv"
+      ],
+      "limite": "Valores de classe estimados, não medidos por par/plataforma. Não inclui espera pelo trem. Confirmar conexão, corredor sem duplicação e direções de Paraíso antes de usar no aplicativo."
+    },
+    {
+      "estacao": "Luz",
+      "estacao_id": 19,
+      "linha_origem": "L10",
+      "linha_destino": "L4",
+      "referencias": [],
+      "estado": "sem_duracao_por_plataforma",
+      "pendencia": "Desdobrar plataformas/sentidos e acessibilidade; verificar acesso físico e caminhar sem espera.",
+      "base_aprovada_segundos": null,
+      "margem_no_componente_segundos": 0,
+      "confianca": "baixa",
+      "aprovado_para_xano": false,
+      "verificar_plataformas": true,
+      "caminhada_candidata_segundos": 420,
+      "metodo": "modelo_classe_de_conexao",
+      "faixa_sensibilidade_segundos": [
+        300,
+        600
+      ],
+      "fontes": [
+        "https://www.reddit.com/r/saopaulo/comments/1rjqzgi/baldea%C3%A7%C3%B5es/",
+        "https://www.metrozinho.com.br/sao-paulo/guias/baldeacoes-e-integracoes/",
+        "docs/dados/tempos/inspecoes-video.csv"
+      ],
+      "limite": "Valores de classe estimados, não medidos por par/plataforma. Não inclui espera pelo trem. Confirmar conexão, corredor sem duplicação e direções de Paraíso antes de usar no aplicativo."
+    },
+    {
+      "estacao": "Luz",
+      "estacao_id": 19,
+      "linha_origem": "L10",
+      "linha_destino": "L11",
+      "referencias": [],
+      "estado": "sem_duracao_por_plataforma",
+      "pendencia": "Desdobrar plataformas/sentidos e acessibilidade; verificar acesso físico e caminhar sem espera.",
+      "base_aprovada_segundos": null,
+      "margem_no_componente_segundos": 0,
+      "confianca": "baixa",
+      "aprovado_para_xano": false,
+      "verificar_plataformas": true,
+      "caminhada_candidata_segundos": 420,
+      "metodo": "modelo_classe_de_conexao",
+      "faixa_sensibilidade_segundos": [
+        300,
+        600
+      ],
+      "fontes": [
+        "https://www.reddit.com/r/saopaulo/comments/1rjqzgi/baldea%C3%A7%C3%B5es/",
+        "https://www.metrozinho.com.br/sao-paulo/guias/baldeacoes-e-integracoes/",
+        "docs/dados/tempos/inspecoes-video.csv"
+      ],
+      "limite": "Valores de classe estimados, não medidos por par/plataforma. Não inclui espera pelo trem. Confirmar conexão, corredor sem duplicação e direções de Paraíso antes de usar no aplicativo."
+    },
+    {
+      "estacao": "Luz",
+      "estacao_id": 19,
+      "linha_origem": "L10",
+      "linha_destino": "EXP-AER",
+      "referencias": [],
+      "estado": "sem_duracao_por_plataforma",
+      "pendencia": "Desdobrar plataformas/sentidos e acessibilidade; verificar acesso físico e caminhar sem espera.",
+      "base_aprovada_segundos": null,
+      "margem_no_componente_segundos": 0,
+      "confianca": "baixa",
+      "aprovado_para_xano": false,
+      "verificar_plataformas": true,
+      "caminhada_candidata_segundos": 420,
+      "metodo": "modelo_classe_de_conexao",
+      "faixa_sensibilidade_segundos": [
+        300,
+        600
+      ],
+      "fontes": [
+        "https://www.reddit.com/r/saopaulo/comments/1rjqzgi/baldea%C3%A7%C3%B5es/",
+        "https://www.metrozinho.com.br/sao-paulo/guias/baldeacoes-e-integracoes/",
+        "docs/dados/tempos/inspecoes-video.csv"
+      ],
+      "limite": "Valores de classe estimados, não medidos por par/plataforma. Não inclui espera pelo trem. Confirmar conexão, corredor sem duplicação e direções de Paraíso antes de usar no aplicativo."
+    },
+    {
+      "estacao": "Luz",
+      "estacao_id": 19,
+      "linha_origem": "L11",
+      "linha_destino": "L1",
+      "referencias": [],
+      "estado": "sem_duracao_por_plataforma",
+      "pendencia": "Desdobrar plataformas/sentidos e acessibilidade; verificar acesso físico e caminhar sem espera.",
+      "base_aprovada_segundos": null,
+      "margem_no_componente_segundos": 0,
+      "confianca": "baixa",
+      "aprovado_para_xano": false,
+      "verificar_plataformas": true,
+      "caminhada_candidata_segundos": 420,
+      "metodo": "modelo_classe_de_conexao",
+      "faixa_sensibilidade_segundos": [
+        300,
+        600
+      ],
+      "fontes": [
+        "https://www.reddit.com/r/saopaulo/comments/1rjqzgi/baldea%C3%A7%C3%B5es/",
+        "https://www.metrozinho.com.br/sao-paulo/guias/baldeacoes-e-integracoes/",
+        "docs/dados/tempos/inspecoes-video.csv"
+      ],
+      "limite": "Valores de classe estimados, não medidos por par/plataforma. Não inclui espera pelo trem. Confirmar conexão, corredor sem duplicação e direções de Paraíso antes de usar no aplicativo."
+    },
+    {
+      "estacao": "Luz",
+      "estacao_id": 19,
+      "linha_origem": "L11",
+      "linha_destino": "L4",
+      "referencias": [],
+      "estado": "sem_duracao_por_plataforma",
+      "pendencia": "Desdobrar plataformas/sentidos e acessibilidade; verificar acesso físico e caminhar sem espera.",
+      "base_aprovada_segundos": null,
+      "margem_no_componente_segundos": 0,
+      "confianca": "baixa",
+      "aprovado_para_xano": false,
+      "verificar_plataformas": true,
+      "caminhada_candidata_segundos": 420,
+      "metodo": "modelo_classe_de_conexao",
+      "faixa_sensibilidade_segundos": [
+        300,
+        600
+      ],
+      "fontes": [
+        "https://www.reddit.com/r/saopaulo/comments/1rjqzgi/baldea%C3%A7%C3%B5es/",
+        "https://www.metrozinho.com.br/sao-paulo/guias/baldeacoes-e-integracoes/",
+        "docs/dados/tempos/inspecoes-video.csv"
+      ],
+      "limite": "Valores de classe estimados, não medidos por par/plataforma. Não inclui espera pelo trem. Confirmar conexão, corredor sem duplicação e direções de Paraíso antes de usar no aplicativo."
+    },
+    {
+      "estacao": "Luz",
+      "estacao_id": 19,
+      "linha_origem": "L11",
+      "linha_destino": "L10",
+      "referencias": [],
+      "estado": "sem_duracao_por_plataforma",
+      "pendencia": "Desdobrar plataformas/sentidos e acessibilidade; verificar acesso físico e caminhar sem espera.",
+      "base_aprovada_segundos": null,
+      "margem_no_componente_segundos": 0,
+      "confianca": "baixa",
+      "aprovado_para_xano": false,
+      "verificar_plataformas": true,
+      "caminhada_candidata_segundos": 420,
+      "metodo": "modelo_classe_de_conexao",
+      "faixa_sensibilidade_segundos": [
+        300,
+        600
+      ],
+      "fontes": [
+        "https://www.reddit.com/r/saopaulo/comments/1rjqzgi/baldea%C3%A7%C3%B5es/",
+        "https://www.metrozinho.com.br/sao-paulo/guias/baldeacoes-e-integracoes/",
+        "docs/dados/tempos/inspecoes-video.csv"
+      ],
+      "limite": "Valores de classe estimados, não medidos por par/plataforma. Não inclui espera pelo trem. Confirmar conexão, corredor sem duplicação e direções de Paraíso antes de usar no aplicativo."
+    },
+    {
+      "estacao": "Luz",
+      "estacao_id": 19,
+      "linha_origem": "L11",
+      "linha_destino": "EXP-AER",
+      "referencias": [],
+      "estado": "sem_duracao_por_plataforma",
+      "pendencia": "Desdobrar plataformas/sentidos e acessibilidade; verificar acesso físico e caminhar sem espera.",
+      "base_aprovada_segundos": null,
+      "margem_no_componente_segundos": 0,
+      "confianca": "baixa",
+      "aprovado_para_xano": false,
+      "verificar_plataformas": true,
+      "caminhada_candidata_segundos": 420,
+      "metodo": "modelo_classe_de_conexao",
+      "faixa_sensibilidade_segundos": [
+        300,
+        600
+      ],
+      "fontes": [
+        "https://www.reddit.com/r/saopaulo/comments/1rjqzgi/baldea%C3%A7%C3%B5es/",
+        "https://www.metrozinho.com.br/sao-paulo/guias/baldeacoes-e-integracoes/",
+        "docs/dados/tempos/inspecoes-video.csv"
+      ],
+      "limite": "Valores de classe estimados, não medidos por par/plataforma. Não inclui espera pelo trem. Confirmar conexão, corredor sem duplicação e direções de Paraíso antes de usar no aplicativo."
+    },
+    {
+      "estacao": "Luz",
+      "estacao_id": 19,
+      "linha_origem": "EXP-AER",
+      "linha_destino": "L1",
+      "referencias": [],
+      "estado": "sem_duracao_por_plataforma",
+      "pendencia": "Desdobrar plataformas/sentidos e acessibilidade; verificar acesso físico e caminhar sem espera.",
+      "base_aprovada_segundos": null,
+      "margem_no_componente_segundos": 0,
+      "confianca": "baixa",
+      "aprovado_para_xano": false,
+      "verificar_plataformas": true,
+      "caminhada_candidata_segundos": 420,
+      "metodo": "modelo_classe_de_conexao",
+      "faixa_sensibilidade_segundos": [
+        300,
+        600
+      ],
+      "fontes": [
+        "https://www.reddit.com/r/saopaulo/comments/1rjqzgi/baldea%C3%A7%C3%B5es/",
+        "https://www.metrozinho.com.br/sao-paulo/guias/baldeacoes-e-integracoes/",
+        "docs/dados/tempos/inspecoes-video.csv"
+      ],
+      "limite": "Valores de classe estimados, não medidos por par/plataforma. Não inclui espera pelo trem. Confirmar conexão, corredor sem duplicação e direções de Paraíso antes de usar no aplicativo."
+    },
+    {
+      "estacao": "Luz",
+      "estacao_id": 19,
+      "linha_origem": "EXP-AER",
+      "linha_destino": "L4",
+      "referencias": [],
+      "estado": "sem_duracao_por_plataforma",
+      "pendencia": "Desdobrar plataformas/sentidos e acessibilidade; verificar acesso físico e caminhar sem espera.",
+      "base_aprovada_segundos": null,
+      "margem_no_componente_segundos": 0,
+      "confianca": "baixa",
+      "aprovado_para_xano": false,
+      "verificar_plataformas": true,
+      "caminhada_candidata_segundos": 420,
+      "metodo": "modelo_classe_de_conexao",
+      "faixa_sensibilidade_segundos": [
+        300,
+        600
+      ],
+      "fontes": [
+        "https://www.reddit.com/r/saopaulo/comments/1rjqzgi/baldea%C3%A7%C3%B5es/",
+        "https://www.metrozinho.com.br/sao-paulo/guias/baldeacoes-e-integracoes/",
+        "docs/dados/tempos/inspecoes-video.csv"
+      ],
+      "limite": "Valores de classe estimados, não medidos por par/plataforma. Não inclui espera pelo trem. Confirmar conexão, corredor sem duplicação e direções de Paraíso antes de usar no aplicativo."
+    },
+    {
+      "estacao": "Luz",
+      "estacao_id": 19,
+      "linha_origem": "EXP-AER",
+      "linha_destino": "L10",
+      "referencias": [],
+      "estado": "sem_duracao_por_plataforma",
+      "pendencia": "Desdobrar plataformas/sentidos e acessibilidade; verificar acesso físico e caminhar sem espera.",
+      "base_aprovada_segundos": null,
+      "margem_no_componente_segundos": 0,
+      "confianca": "baixa",
+      "aprovado_para_xano": false,
+      "verificar_plataformas": true,
+      "caminhada_candidata_segundos": 420,
+      "metodo": "modelo_classe_de_conexao",
+      "faixa_sensibilidade_segundos": [
+        300,
+        600
+      ],
+      "fontes": [
+        "https://www.reddit.com/r/saopaulo/comments/1rjqzgi/baldea%C3%A7%C3%B5es/",
+        "https://www.metrozinho.com.br/sao-paulo/guias/baldeacoes-e-integracoes/",
+        "docs/dados/tempos/inspecoes-video.csv"
+      ],
+      "limite": "Valores de classe estimados, não medidos por par/plataforma. Não inclui espera pelo trem. Confirmar conexão, corredor sem duplicação e direções de Paraíso antes de usar no aplicativo."
+    },
+    {
+      "estacao": "Luz",
+      "estacao_id": 19,
+      "linha_origem": "EXP-AER",
+      "linha_destino": "L11",
+      "referencias": [],
+      "estado": "sem_duracao_por_plataforma",
+      "pendencia": "Desdobrar plataformas/sentidos e acessibilidade; verificar acesso físico e caminhar sem espera.",
+      "base_aprovada_segundos": null,
+      "margem_no_componente_segundos": 0,
+      "confianca": "baixa",
+      "aprovado_para_xano": false,
+      "verificar_plataformas": true,
+      "caminhada_candidata_segundos": 420,
+      "metodo": "modelo_classe_de_conexao",
+      "faixa_sensibilidade_segundos": [
+        300,
+        600
+      ],
+      "fontes": [
+        "https://www.reddit.com/r/saopaulo/comments/1rjqzgi/baldea%C3%A7%C3%B5es/",
+        "https://www.metrozinho.com.br/sao-paulo/guias/baldeacoes-e-integracoes/",
+        "docs/dados/tempos/inspecoes-video.csv"
+      ],
+      "limite": "Valores de classe estimados, não medidos por par/plataforma. Não inclui espera pelo trem. Confirmar conexão, corredor sem duplicação e direções de Paraíso antes de usar no aplicativo."
+    },
+    {
+      "estacao": "Vila Prudente",
+      "estacao_id": 28,
+      "linha_origem": "L2",
+      "linha_destino": "L15",
+      "referencias": [],
+      "estado": "sem_duracao_por_plataforma",
+      "pendencia": "Desdobrar plataformas/sentidos e acessibilidade; verificar acesso físico e caminhar sem espera.",
+      "base_aprovada_segundos": null,
+      "margem_no_componente_segundos": 0,
+      "confianca": "baixa",
+      "aprovado_para_xano": false,
+      "verificar_plataformas": true,
+      "caminhada_candidata_segundos": 300,
+      "metodo": "modelo_classe_de_conexao",
+      "faixa_sensibilidade_segundos": [
+        180,
+        480
+      ],
+      "fontes": [
+        "https://www.reddit.com/r/saopaulo/comments/1rjqzgi/baldea%C3%A7%C3%B5es/",
+        "https://www.metrozinho.com.br/sao-paulo/guias/baldeacoes-e-integracoes/",
+        "docs/dados/tempos/inspecoes-video.csv"
+      ],
+      "limite": "Valores de classe estimados, não medidos por par/plataforma. Não inclui espera pelo trem. Confirmar conexão, corredor sem duplicação e direções de Paraíso antes de usar no aplicativo."
+    },
+    {
+      "estacao": "Vila Prudente",
+      "estacao_id": 28,
+      "linha_origem": "L15",
+      "linha_destino": "L2",
+      "referencias": [],
+      "estado": "sem_duracao_por_plataforma",
+      "pendencia": "Desdobrar plataformas/sentidos e acessibilidade; verificar acesso físico e caminhar sem espera.",
+      "base_aprovada_segundos": null,
+      "margem_no_componente_segundos": 0,
+      "confianca": "baixa",
+      "aprovado_para_xano": false,
+      "verificar_plataformas": true,
+      "caminhada_candidata_segundos": 300,
+      "metodo": "modelo_classe_de_conexao",
+      "faixa_sensibilidade_segundos": [
+        180,
+        480
+      ],
+      "fontes": [
+        "https://www.reddit.com/r/saopaulo/comments/1rjqzgi/baldea%C3%A7%C3%B5es/",
+        "https://www.metrozinho.com.br/sao-paulo/guias/baldeacoes-e-integracoes/",
+        "docs/dados/tempos/inspecoes-video.csv"
+      ],
+      "limite": "Valores de classe estimados, não medidos por par/plataforma. Não inclui espera pelo trem. Confirmar conexão, corredor sem duplicação e direções de Paraíso antes de usar no aplicativo."
+    },
+    {
+      "estacao": "Tamanduateí",
+      "estacao_id": 29,
+      "linha_origem": "L2",
+      "linha_destino": "L10",
+      "referencias": [],
+      "estado": "sem_duracao_por_plataforma",
+      "pendencia": "Desdobrar plataformas/sentidos e acessibilidade; verificar acesso físico e caminhar sem espera.",
+      "base_aprovada_segundos": null,
+      "margem_no_componente_segundos": 0,
+      "confianca": "baixa",
+      "aprovado_para_xano": false,
+      "verificar_plataformas": true,
+      "caminhada_candidata_segundos": 300,
+      "metodo": "modelo_classe_de_conexao",
+      "faixa_sensibilidade_segundos": [
+        180,
+        480
+      ],
+      "fontes": [
+        "https://www.reddit.com/r/saopaulo/comments/1rjqzgi/baldea%C3%A7%C3%B5es/",
+        "https://www.metrozinho.com.br/sao-paulo/guias/baldeacoes-e-integracoes/",
+        "docs/dados/tempos/inspecoes-video.csv"
+      ],
+      "limite": "Valores de classe estimados, não medidos por par/plataforma. Não inclui espera pelo trem. Confirmar conexão, corredor sem duplicação e direções de Paraíso antes de usar no aplicativo."
+    },
+    {
+      "estacao": "Tamanduateí",
+      "estacao_id": 29,
+      "linha_origem": "L2",
+      "linha_destino": "EXP-L10",
+      "referencias": [],
+      "estado": "sem_duracao_por_plataforma",
+      "pendencia": "Desdobrar plataformas/sentidos e acessibilidade; verificar acesso físico e caminhar sem espera.",
+      "base_aprovada_segundos": null,
+      "margem_no_componente_segundos": 0,
+      "confianca": "baixa",
+      "aprovado_para_xano": false,
+      "verificar_plataformas": true,
+      "caminhada_candidata_segundos": 300,
+      "metodo": "modelo_classe_de_conexao",
+      "faixa_sensibilidade_segundos": [
+        180,
+        480
+      ],
+      "fontes": [
+        "https://www.reddit.com/r/saopaulo/comments/1rjqzgi/baldea%C3%A7%C3%B5es/",
+        "https://www.metrozinho.com.br/sao-paulo/guias/baldeacoes-e-integracoes/",
+        "docs/dados/tempos/inspecoes-video.csv"
+      ],
+      "limite": "Valores de classe estimados, não medidos por par/plataforma. Não inclui espera pelo trem. Confirmar conexão, corredor sem duplicação e direções de Paraíso antes de usar no aplicativo."
+    },
+    {
+      "estacao": "Tamanduateí",
+      "estacao_id": 29,
+      "linha_origem": "L10",
+      "linha_destino": "L2",
+      "referencias": [],
+      "estado": "sem_duracao_por_plataforma",
+      "pendencia": "Desdobrar plataformas/sentidos e acessibilidade; verificar acesso físico e caminhar sem espera.",
+      "base_aprovada_segundos": null,
+      "margem_no_componente_segundos": 0,
+      "confianca": "baixa",
+      "aprovado_para_xano": false,
+      "verificar_plataformas": true,
+      "caminhada_candidata_segundos": 300,
+      "metodo": "modelo_classe_de_conexao",
+      "faixa_sensibilidade_segundos": [
+        180,
+        480
+      ],
+      "fontes": [
+        "https://www.reddit.com/r/saopaulo/comments/1rjqzgi/baldea%C3%A7%C3%B5es/",
+        "https://www.metrozinho.com.br/sao-paulo/guias/baldeacoes-e-integracoes/",
+        "docs/dados/tempos/inspecoes-video.csv"
+      ],
+      "limite": "Valores de classe estimados, não medidos por par/plataforma. Não inclui espera pelo trem. Confirmar conexão, corredor sem duplicação e direções de Paraíso antes de usar no aplicativo."
+    },
+    {
+      "estacao": "Tamanduateí",
+      "estacao_id": 29,
+      "linha_origem": "L10",
+      "linha_destino": "EXP-L10",
+      "referencias": [],
+      "estado": "sem_duracao_por_plataforma",
+      "pendencia": "Desdobrar plataformas/sentidos e acessibilidade; verificar acesso físico e caminhar sem espera.",
+      "base_aprovada_segundos": null,
+      "margem_no_componente_segundos": 0,
+      "confianca": "baixa",
+      "aprovado_para_xano": false,
+      "verificar_plataformas": true,
+      "caminhada_candidata_segundos": 300,
+      "metodo": "modelo_classe_de_conexao",
+      "faixa_sensibilidade_segundos": [
+        180,
+        480
+      ],
+      "fontes": [
+        "https://www.reddit.com/r/saopaulo/comments/1rjqzgi/baldea%C3%A7%C3%B5es/",
+        "https://www.metrozinho.com.br/sao-paulo/guias/baldeacoes-e-integracoes/",
+        "docs/dados/tempos/inspecoes-video.csv"
+      ],
+      "limite": "Valores de classe estimados, não medidos por par/plataforma. Não inclui espera pelo trem. Confirmar conexão, corredor sem duplicação e direções de Paraíso antes de usar no aplicativo."
+    },
+    {
+      "estacao": "Tamanduateí",
+      "estacao_id": 29,
+      "linha_origem": "EXP-L10",
+      "linha_destino": "L2",
+      "referencias": [],
+      "estado": "sem_duracao_por_plataforma",
+      "pendencia": "Desdobrar plataformas/sentidos e acessibilidade; verificar acesso físico e caminhar sem espera.",
+      "base_aprovada_segundos": null,
+      "margem_no_componente_segundos": 0,
+      "confianca": "baixa",
+      "aprovado_para_xano": false,
+      "verificar_plataformas": true,
+      "caminhada_candidata_segundos": 300,
+      "metodo": "modelo_classe_de_conexao",
+      "faixa_sensibilidade_segundos": [
+        180,
+        480
+      ],
+      "fontes": [
+        "https://www.reddit.com/r/saopaulo/comments/1rjqzgi/baldea%C3%A7%C3%B5es/",
+        "https://www.metrozinho.com.br/sao-paulo/guias/baldeacoes-e-integracoes/",
+        "docs/dados/tempos/inspecoes-video.csv"
+      ],
+      "limite": "Valores de classe estimados, não medidos por par/plataforma. Não inclui espera pelo trem. Confirmar conexão, corredor sem duplicação e direções de Paraíso antes de usar no aplicativo."
+    },
+    {
+      "estacao": "Tamanduateí",
+      "estacao_id": 29,
+      "linha_origem": "EXP-L10",
+      "linha_destino": "L10",
+      "referencias": [],
+      "estado": "sem_duracao_por_plataforma",
+      "pendencia": "Desdobrar plataformas/sentidos e acessibilidade; verificar acesso físico e caminhar sem espera.",
+      "base_aprovada_segundos": null,
+      "margem_no_componente_segundos": 0,
+      "confianca": "baixa",
+      "aprovado_para_xano": false,
+      "verificar_plataformas": true,
+      "caminhada_candidata_segundos": 300,
+      "metodo": "modelo_classe_de_conexao",
+      "faixa_sensibilidade_segundos": [
+        180,
+        480
+      ],
+      "fontes": [
+        "https://www.reddit.com/r/saopaulo/comments/1rjqzgi/baldea%C3%A7%C3%B5es/",
+        "https://www.metrozinho.com.br/sao-paulo/guias/baldeacoes-e-integracoes/",
+        "docs/dados/tempos/inspecoes-video.csv"
+      ],
+      "limite": "Valores de classe estimados, não medidos por par/plataforma. Não inclui espera pelo trem. Confirmar conexão, corredor sem duplicação e direções de Paraíso antes de usar no aplicativo."
+    },
+    {
+      "estacao": "Palmeiras-Barra Funda",
+      "estacao_id": 36,
+      "linha_origem": "L3",
+      "linha_destino": "L7",
+      "referencias": [],
+      "estado": "sem_duracao_por_plataforma",
+      "pendencia": "Desdobrar plataformas/sentidos e acessibilidade; verificar acesso físico e caminhar sem espera.",
+      "base_aprovada_segundos": null,
+      "margem_no_componente_segundos": 0,
+      "confianca": "baixa",
+      "aprovado_para_xano": false,
+      "verificar_plataformas": true,
+      "caminhada_candidata_segundos": 420,
+      "metodo": "modelo_classe_de_conexao",
+      "faixa_sensibilidade_segundos": [
+        300,
+        600
+      ],
+      "fontes": [
+        "https://www.reddit.com/r/saopaulo/comments/1rjqzgi/baldea%C3%A7%C3%B5es/",
+        "https://www.metrozinho.com.br/sao-paulo/guias/baldeacoes-e-integracoes/",
+        "docs/dados/tempos/inspecoes-video.csv"
+      ],
+      "limite": "Valores de classe estimados, não medidos por par/plataforma. Não inclui espera pelo trem. Confirmar conexão, corredor sem duplicação e direções de Paraíso antes de usar no aplicativo."
+    },
+    {
+      "estacao": "Palmeiras-Barra Funda",
+      "estacao_id": 36,
+      "linha_origem": "L3",
+      "linha_destino": "L8",
+      "referencias": [],
+      "estado": "sem_duracao_por_plataforma",
+      "pendencia": "Desdobrar plataformas/sentidos e acessibilidade; verificar acesso físico e caminhar sem espera.",
+      "base_aprovada_segundos": null,
+      "margem_no_componente_segundos": 0,
+      "confianca": "baixa",
+      "aprovado_para_xano": false,
+      "verificar_plataformas": true,
+      "caminhada_candidata_segundos": 420,
+      "metodo": "modelo_classe_de_conexao",
+      "faixa_sensibilidade_segundos": [
+        300,
+        600
+      ],
+      "fontes": [
+        "https://www.reddit.com/r/saopaulo/comments/1rjqzgi/baldea%C3%A7%C3%B5es/",
+        "https://www.metrozinho.com.br/sao-paulo/guias/baldeacoes-e-integracoes/",
+        "docs/dados/tempos/inspecoes-video.csv"
+      ],
+      "limite": "Valores de classe estimados, não medidos por par/plataforma. Não inclui espera pelo trem. Confirmar conexão, corredor sem duplicação e direções de Paraíso antes de usar no aplicativo."
+    },
+    {
+      "estacao": "Palmeiras-Barra Funda",
+      "estacao_id": 36,
+      "linha_origem": "L3",
+      "linha_destino": "L10",
+      "referencias": [],
+      "estado": "sem_duracao_por_plataforma",
+      "pendencia": "Desdobrar plataformas/sentidos e acessibilidade; verificar acesso físico e caminhar sem espera.",
+      "base_aprovada_segundos": null,
+      "margem_no_componente_segundos": 0,
+      "confianca": "baixa",
+      "aprovado_para_xano": false,
+      "verificar_plataformas": true,
+      "caminhada_candidata_segundos": 420,
+      "metodo": "modelo_classe_de_conexao",
+      "faixa_sensibilidade_segundos": [
+        300,
+        600
+      ],
+      "fontes": [
+        "https://www.reddit.com/r/saopaulo/comments/1rjqzgi/baldea%C3%A7%C3%B5es/",
+        "https://www.metrozinho.com.br/sao-paulo/guias/baldeacoes-e-integracoes/",
+        "docs/dados/tempos/inspecoes-video.csv"
+      ],
+      "limite": "Valores de classe estimados, não medidos por par/plataforma. Não inclui espera pelo trem. Confirmar conexão, corredor sem duplicação e direções de Paraíso antes de usar no aplicativo."
+    },
+    {
+      "estacao": "Palmeiras-Barra Funda",
+      "estacao_id": 36,
+      "linha_origem": "L3",
+      "linha_destino": "L11",
+      "referencias": [],
+      "estado": "sem_duracao_por_plataforma",
+      "pendencia": "Desdobrar plataformas/sentidos e acessibilidade; verificar acesso físico e caminhar sem espera.",
+      "base_aprovada_segundos": null,
+      "margem_no_componente_segundos": 0,
+      "confianca": "baixa",
+      "aprovado_para_xano": false,
+      "verificar_plataformas": true,
+      "caminhada_candidata_segundos": 420,
+      "metodo": "modelo_classe_de_conexao",
+      "faixa_sensibilidade_segundos": [
+        300,
+        600
+      ],
+      "fontes": [
+        "https://www.reddit.com/r/saopaulo/comments/1rjqzgi/baldea%C3%A7%C3%B5es/",
+        "https://www.metrozinho.com.br/sao-paulo/guias/baldeacoes-e-integracoes/",
+        "docs/dados/tempos/inspecoes-video.csv"
+      ],
+      "limite": "Valores de classe estimados, não medidos por par/plataforma. Não inclui espera pelo trem. Confirmar conexão, corredor sem duplicação e direções de Paraíso antes de usar no aplicativo."
+    },
+    {
+      "estacao": "Palmeiras-Barra Funda",
+      "estacao_id": 36,
+      "linha_origem": "L3",
+      "linha_destino": "EXP-AER",
+      "referencias": [],
+      "estado": "sem_duracao_por_plataforma",
+      "pendencia": "Desdobrar plataformas/sentidos e acessibilidade; verificar acesso físico e caminhar sem espera.",
+      "base_aprovada_segundos": null,
+      "margem_no_componente_segundos": 0,
+      "confianca": "baixa",
+      "aprovado_para_xano": false,
+      "verificar_plataformas": true,
+      "caminhada_candidata_segundos": 420,
+      "metodo": "modelo_classe_de_conexao",
+      "faixa_sensibilidade_segundos": [
+        300,
+        600
+      ],
+      "fontes": [
+        "https://www.reddit.com/r/saopaulo/comments/1rjqzgi/baldea%C3%A7%C3%B5es/",
+        "https://www.metrozinho.com.br/sao-paulo/guias/baldeacoes-e-integracoes/",
+        "docs/dados/tempos/inspecoes-video.csv"
+      ],
+      "limite": "Valores de classe estimados, não medidos por par/plataforma. Não inclui espera pelo trem. Confirmar conexão, corredor sem duplicação e direções de Paraíso antes de usar no aplicativo."
+    },
+    {
+      "estacao": "Palmeiras-Barra Funda",
+      "estacao_id": 36,
+      "linha_origem": "L7",
+      "linha_destino": "L3",
+      "referencias": [],
+      "estado": "sem_duracao_por_plataforma",
+      "pendencia": "Desdobrar plataformas/sentidos e acessibilidade; verificar acesso físico e caminhar sem espera.",
+      "base_aprovada_segundos": null,
+      "margem_no_componente_segundos": 0,
+      "confianca": "baixa",
+      "aprovado_para_xano": false,
+      "verificar_plataformas": true,
+      "caminhada_candidata_segundos": 420,
+      "metodo": "modelo_classe_de_conexao",
+      "faixa_sensibilidade_segundos": [
+        300,
+        600
+      ],
+      "fontes": [
+        "https://www.reddit.com/r/saopaulo/comments/1rjqzgi/baldea%C3%A7%C3%B5es/",
+        "https://www.metrozinho.com.br/sao-paulo/guias/baldeacoes-e-integracoes/",
+        "docs/dados/tempos/inspecoes-video.csv"
+      ],
+      "limite": "Valores de classe estimados, não medidos por par/plataforma. Não inclui espera pelo trem. Confirmar conexão, corredor sem duplicação e direções de Paraíso antes de usar no aplicativo."
+    },
+    {
+      "estacao": "Palmeiras-Barra Funda",
+      "estacao_id": 36,
+      "linha_origem": "L7",
+      "linha_destino": "L8",
+      "referencias": [],
+      "estado": "sem_duracao_por_plataforma",
+      "pendencia": "Desdobrar plataformas/sentidos e acessibilidade; verificar acesso físico e caminhar sem espera.",
+      "base_aprovada_segundos": null,
+      "margem_no_componente_segundos": 0,
+      "confianca": "baixa",
+      "aprovado_para_xano": false,
+      "verificar_plataformas": true,
+      "caminhada_candidata_segundos": 420,
+      "metodo": "modelo_classe_de_conexao",
+      "faixa_sensibilidade_segundos": [
+        300,
+        600
+      ],
+      "fontes": [
+        "https://www.reddit.com/r/saopaulo/comments/1rjqzgi/baldea%C3%A7%C3%B5es/",
+        "https://www.metrozinho.com.br/sao-paulo/guias/baldeacoes-e-integracoes/",
+        "docs/dados/tempos/inspecoes-video.csv"
+      ],
+      "limite": "Valores de classe estimados, não medidos por par/plataforma. Não inclui espera pelo trem. Confirmar conexão, corredor sem duplicação e direções de Paraíso antes de usar no aplicativo."
+    },
+    {
+      "estacao": "Palmeiras-Barra Funda",
+      "estacao_id": 36,
+      "linha_origem": "L7",
+      "linha_destino": "L10",
+      "referencias": [],
+      "estado": "sem_duracao_por_plataforma",
+      "pendencia": "Desdobrar plataformas/sentidos e acessibilidade; verificar acesso físico e caminhar sem espera.",
+      "base_aprovada_segundos": null,
+      "margem_no_componente_segundos": 0,
+      "confianca": "baixa",
+      "aprovado_para_xano": false,
+      "verificar_plataformas": true,
+      "caminhada_candidata_segundos": 420,
+      "metodo": "modelo_classe_de_conexao",
+      "faixa_sensibilidade_segundos": [
+        300,
+        600
+      ],
+      "fontes": [
+        "https://www.reddit.com/r/saopaulo/comments/1rjqzgi/baldea%C3%A7%C3%B5es/",
+        "https://www.metrozinho.com.br/sao-paulo/guias/baldeacoes-e-integracoes/",
+        "docs/dados/tempos/inspecoes-video.csv"
+      ],
+      "limite": "Valores de classe estimados, não medidos por par/plataforma. Não inclui espera pelo trem. Confirmar conexão, corredor sem duplicação e direções de Paraíso antes de usar no aplicativo."
+    },
+    {
+      "estacao": "Palmeiras-Barra Funda",
+      "estacao_id": 36,
+      "linha_origem": "L7",
+      "linha_destino": "L11",
+      "referencias": [],
+      "estado": "sem_duracao_por_plataforma",
+      "pendencia": "Desdobrar plataformas/sentidos e acessibilidade; verificar acesso físico e caminhar sem espera.",
+      "base_aprovada_segundos": null,
+      "margem_no_componente_segundos": 0,
+      "confianca": "baixa",
+      "aprovado_para_xano": false,
+      "verificar_plataformas": true,
+      "caminhada_candidata_segundos": 420,
+      "metodo": "modelo_classe_de_conexao",
+      "faixa_sensibilidade_segundos": [
+        300,
+        600
+      ],
+      "fontes": [
+        "https://www.reddit.com/r/saopaulo/comments/1rjqzgi/baldea%C3%A7%C3%B5es/",
+        "https://www.metrozinho.com.br/sao-paulo/guias/baldeacoes-e-integracoes/",
+        "docs/dados/tempos/inspecoes-video.csv"
+      ],
+      "limite": "Valores de classe estimados, não medidos por par/plataforma. Não inclui espera pelo trem. Confirmar conexão, corredor sem duplicação e direções de Paraíso antes de usar no aplicativo."
+    },
+    {
+      "estacao": "Palmeiras-Barra Funda",
+      "estacao_id": 36,
+      "linha_origem": "L7",
+      "linha_destino": "EXP-AER",
+      "referencias": [],
+      "estado": "sem_duracao_por_plataforma",
+      "pendencia": "Desdobrar plataformas/sentidos e acessibilidade; verificar acesso físico e caminhar sem espera.",
+      "base_aprovada_segundos": null,
+      "margem_no_componente_segundos": 0,
+      "confianca": "baixa",
+      "aprovado_para_xano": false,
+      "verificar_plataformas": true,
+      "caminhada_candidata_segundos": 420,
+      "metodo": "modelo_classe_de_conexao",
+      "faixa_sensibilidade_segundos": [
+        300,
+        600
+      ],
+      "fontes": [
+        "https://www.reddit.com/r/saopaulo/comments/1rjqzgi/baldea%C3%A7%C3%B5es/",
+        "https://www.metrozinho.com.br/sao-paulo/guias/baldeacoes-e-integracoes/",
+        "docs/dados/tempos/inspecoes-video.csv"
+      ],
+      "limite": "Valores de classe estimados, não medidos por par/plataforma. Não inclui espera pelo trem. Confirmar conexão, corredor sem duplicação e direções de Paraíso antes de usar no aplicativo."
+    },
+    {
+      "estacao": "Palmeiras-Barra Funda",
+      "estacao_id": 36,
+      "linha_origem": "L8",
+      "linha_destino": "L3",
+      "referencias": [],
+      "estado": "sem_duracao_por_plataforma",
+      "pendencia": "Desdobrar plataformas/sentidos e acessibilidade; verificar acesso físico e caminhar sem espera.",
+      "base_aprovada_segundos": null,
+      "margem_no_componente_segundos": 0,
+      "confianca": "baixa",
+      "aprovado_para_xano": false,
+      "verificar_plataformas": true,
+      "caminhada_candidata_segundos": 420,
+      "metodo": "modelo_classe_de_conexao",
+      "faixa_sensibilidade_segundos": [
+        300,
+        600
+      ],
+      "fontes": [
+        "https://www.reddit.com/r/saopaulo/comments/1rjqzgi/baldea%C3%A7%C3%B5es/",
+        "https://www.metrozinho.com.br/sao-paulo/guias/baldeacoes-e-integracoes/",
+        "docs/dados/tempos/inspecoes-video.csv"
+      ],
+      "limite": "Valores de classe estimados, não medidos por par/plataforma. Não inclui espera pelo trem. Confirmar conexão, corredor sem duplicação e direções de Paraíso antes de usar no aplicativo."
+    },
+    {
+      "estacao": "Palmeiras-Barra Funda",
+      "estacao_id": 36,
+      "linha_origem": "L8",
+      "linha_destino": "L7",
+      "referencias": [],
+      "estado": "sem_duracao_por_plataforma",
+      "pendencia": "Desdobrar plataformas/sentidos e acessibilidade; verificar acesso físico e caminhar sem espera.",
+      "base_aprovada_segundos": null,
+      "margem_no_componente_segundos": 0,
+      "confianca": "baixa",
+      "aprovado_para_xano": false,
+      "verificar_plataformas": true,
+      "caminhada_candidata_segundos": 420,
+      "metodo": "modelo_classe_de_conexao",
+      "faixa_sensibilidade_segundos": [
+        300,
+        600
+      ],
+      "fontes": [
+        "https://www.reddit.com/r/saopaulo/comments/1rjqzgi/baldea%C3%A7%C3%B5es/",
+        "https://www.metrozinho.com.br/sao-paulo/guias/baldeacoes-e-integracoes/",
+        "docs/dados/tempos/inspecoes-video.csv"
+      ],
+      "limite": "Valores de classe estimados, não medidos por par/plataforma. Não inclui espera pelo trem. Confirmar conexão, corredor sem duplicação e direções de Paraíso antes de usar no aplicativo."
+    },
+    {
+      "estacao": "Palmeiras-Barra Funda",
+      "estacao_id": 36,
+      "linha_origem": "L8",
+      "linha_destino": "L10",
+      "referencias": [],
+      "estado": "sem_duracao_por_plataforma",
+      "pendencia": "Desdobrar plataformas/sentidos e acessibilidade; verificar acesso físico e caminhar sem espera.",
+      "base_aprovada_segundos": null,
+      "margem_no_componente_segundos": 0,
+      "confianca": "baixa",
+      "aprovado_para_xano": false,
+      "verificar_plataformas": true,
+      "caminhada_candidata_segundos": 420,
+      "metodo": "modelo_classe_de_conexao",
+      "faixa_sensibilidade_segundos": [
+        300,
+        600
+      ],
+      "fontes": [
+        "https://www.reddit.com/r/saopaulo/comments/1rjqzgi/baldea%C3%A7%C3%B5es/",
+        "https://www.metrozinho.com.br/sao-paulo/guias/baldeacoes-e-integracoes/",
+        "docs/dados/tempos/inspecoes-video.csv"
+      ],
+      "limite": "Valores de classe estimados, não medidos por par/plataforma. Não inclui espera pelo trem. Confirmar conexão, corredor sem duplicação e direções de Paraíso antes de usar no aplicativo."
+    },
+    {
+      "estacao": "Palmeiras-Barra Funda",
+      "estacao_id": 36,
+      "linha_origem": "L8",
+      "linha_destino": "L11",
+      "referencias": [],
+      "estado": "sem_duracao_por_plataforma",
+      "pendencia": "Desdobrar plataformas/sentidos e acessibilidade; verificar acesso físico e caminhar sem espera.",
+      "base_aprovada_segundos": null,
+      "margem_no_componente_segundos": 0,
+      "confianca": "baixa",
+      "aprovado_para_xano": false,
+      "verificar_plataformas": true,
+      "caminhada_candidata_segundos": 420,
+      "metodo": "modelo_classe_de_conexao",
+      "faixa_sensibilidade_segundos": [
+        300,
+        600
+      ],
+      "fontes": [
+        "https://www.reddit.com/r/saopaulo/comments/1rjqzgi/baldea%C3%A7%C3%B5es/",
+        "https://www.metrozinho.com.br/sao-paulo/guias/baldeacoes-e-integracoes/",
+        "docs/dados/tempos/inspecoes-video.csv"
+      ],
+      "limite": "Valores de classe estimados, não medidos por par/plataforma. Não inclui espera pelo trem. Confirmar conexão, corredor sem duplicação e direções de Paraíso antes de usar no aplicativo."
+    },
+    {
+      "estacao": "Palmeiras-Barra Funda",
+      "estacao_id": 36,
+      "linha_origem": "L8",
+      "linha_destino": "EXP-AER",
+      "referencias": [],
+      "estado": "sem_duracao_por_plataforma",
+      "pendencia": "Desdobrar plataformas/sentidos e acessibilidade; verificar acesso físico e caminhar sem espera.",
+      "base_aprovada_segundos": null,
+      "margem_no_componente_segundos": 0,
+      "confianca": "baixa",
+      "aprovado_para_xano": false,
+      "verificar_plataformas": true,
+      "caminhada_candidata_segundos": 420,
+      "metodo": "modelo_classe_de_conexao",
+      "faixa_sensibilidade_segundos": [
+        300,
+        600
+      ],
+      "fontes": [
+        "https://www.reddit.com/r/saopaulo/comments/1rjqzgi/baldea%C3%A7%C3%B5es/",
+        "https://www.metrozinho.com.br/sao-paulo/guias/baldeacoes-e-integracoes/",
+        "docs/dados/tempos/inspecoes-video.csv"
+      ],
+      "limite": "Valores de classe estimados, não medidos por par/plataforma. Não inclui espera pelo trem. Confirmar conexão, corredor sem duplicação e direções de Paraíso antes de usar no aplicativo."
+    },
+    {
+      "estacao": "Palmeiras-Barra Funda",
+      "estacao_id": 36,
+      "linha_origem": "L10",
+      "linha_destino": "L3",
+      "referencias": [],
+      "estado": "sem_duracao_por_plataforma",
+      "pendencia": "Desdobrar plataformas/sentidos e acessibilidade; verificar acesso físico e caminhar sem espera.",
+      "base_aprovada_segundos": null,
+      "margem_no_componente_segundos": 0,
+      "confianca": "baixa",
+      "aprovado_para_xano": false,
+      "verificar_plataformas": true,
+      "caminhada_candidata_segundos": 420,
+      "metodo": "modelo_classe_de_conexao",
+      "faixa_sensibilidade_segundos": [
+        300,
+        600
+      ],
+      "fontes": [
+        "https://www.reddit.com/r/saopaulo/comments/1rjqzgi/baldea%C3%A7%C3%B5es/",
+        "https://www.metrozinho.com.br/sao-paulo/guias/baldeacoes-e-integracoes/",
+        "docs/dados/tempos/inspecoes-video.csv"
+      ],
+      "limite": "Valores de classe estimados, não medidos por par/plataforma. Não inclui espera pelo trem. Confirmar conexão, corredor sem duplicação e direções de Paraíso antes de usar no aplicativo."
+    },
+    {
+      "estacao": "Palmeiras-Barra Funda",
+      "estacao_id": 36,
+      "linha_origem": "L10",
+      "linha_destino": "L7",
+      "referencias": [],
+      "estado": "sem_duracao_por_plataforma",
+      "pendencia": "Desdobrar plataformas/sentidos e acessibilidade; verificar acesso físico e caminhar sem espera.",
+      "base_aprovada_segundos": null,
+      "margem_no_componente_segundos": 0,
+      "confianca": "baixa",
+      "aprovado_para_xano": false,
+      "verificar_plataformas": true,
+      "caminhada_candidata_segundos": 420,
+      "metodo": "modelo_classe_de_conexao",
+      "faixa_sensibilidade_segundos": [
+        300,
+        600
+      ],
+      "fontes": [
+        "https://www.reddit.com/r/saopaulo/comments/1rjqzgi/baldea%C3%A7%C3%B5es/",
+        "https://www.metrozinho.com.br/sao-paulo/guias/baldeacoes-e-integracoes/",
+        "docs/dados/tempos/inspecoes-video.csv"
+      ],
+      "limite": "Valores de classe estimados, não medidos por par/plataforma. Não inclui espera pelo trem. Confirmar conexão, corredor sem duplicação e direções de Paraíso antes de usar no aplicativo."
+    },
+    {
+      "estacao": "Palmeiras-Barra Funda",
+      "estacao_id": 36,
+      "linha_origem": "L10",
+      "linha_destino": "L8",
+      "referencias": [],
+      "estado": "sem_duracao_por_plataforma",
+      "pendencia": "Desdobrar plataformas/sentidos e acessibilidade; verificar acesso físico e caminhar sem espera.",
+      "base_aprovada_segundos": null,
+      "margem_no_componente_segundos": 0,
+      "confianca": "baixa",
+      "aprovado_para_xano": false,
+      "verificar_plataformas": true,
+      "caminhada_candidata_segundos": 420,
+      "metodo": "modelo_classe_de_conexao",
+      "faixa_sensibilidade_segundos": [
+        300,
+        600
+      ],
+      "fontes": [
+        "https://www.reddit.com/r/saopaulo/comments/1rjqzgi/baldea%C3%A7%C3%B5es/",
+        "https://www.metrozinho.com.br/sao-paulo/guias/baldeacoes-e-integracoes/",
+        "docs/dados/tempos/inspecoes-video.csv"
+      ],
+      "limite": "Valores de classe estimados, não medidos por par/plataforma. Não inclui espera pelo trem. Confirmar conexão, corredor sem duplicação e direções de Paraíso antes de usar no aplicativo."
+    },
+    {
+      "estacao": "Palmeiras-Barra Funda",
+      "estacao_id": 36,
+      "linha_origem": "L10",
+      "linha_destino": "L11",
+      "referencias": [],
+      "estado": "sem_duracao_por_plataforma",
+      "pendencia": "Desdobrar plataformas/sentidos e acessibilidade; verificar acesso físico e caminhar sem espera.",
+      "base_aprovada_segundos": null,
+      "margem_no_componente_segundos": 0,
+      "confianca": "baixa",
+      "aprovado_para_xano": false,
+      "verificar_plataformas": true,
+      "caminhada_candidata_segundos": 420,
+      "metodo": "modelo_classe_de_conexao",
+      "faixa_sensibilidade_segundos": [
+        300,
+        600
+      ],
+      "fontes": [
+        "https://www.reddit.com/r/saopaulo/comments/1rjqzgi/baldea%C3%A7%C3%B5es/",
+        "https://www.metrozinho.com.br/sao-paulo/guias/baldeacoes-e-integracoes/",
+        "docs/dados/tempos/inspecoes-video.csv"
+      ],
+      "limite": "Valores de classe estimados, não medidos por par/plataforma. Não inclui espera pelo trem. Confirmar conexão, corredor sem duplicação e direções de Paraíso antes de usar no aplicativo."
+    },
+    {
+      "estacao": "Palmeiras-Barra Funda",
+      "estacao_id": 36,
+      "linha_origem": "L10",
+      "linha_destino": "EXP-AER",
+      "referencias": [],
+      "estado": "sem_duracao_por_plataforma",
+      "pendencia": "Desdobrar plataformas/sentidos e acessibilidade; verificar acesso físico e caminhar sem espera.",
+      "base_aprovada_segundos": null,
+      "margem_no_componente_segundos": 0,
+      "confianca": "baixa",
+      "aprovado_para_xano": false,
+      "verificar_plataformas": true,
+      "caminhada_candidata_segundos": 420,
+      "metodo": "modelo_classe_de_conexao",
+      "faixa_sensibilidade_segundos": [
+        300,
+        600
+      ],
+      "fontes": [
+        "https://www.reddit.com/r/saopaulo/comments/1rjqzgi/baldea%C3%A7%C3%B5es/",
+        "https://www.metrozinho.com.br/sao-paulo/guias/baldeacoes-e-integracoes/",
+        "docs/dados/tempos/inspecoes-video.csv"
+      ],
+      "limite": "Valores de classe estimados, não medidos por par/plataforma. Não inclui espera pelo trem. Confirmar conexão, corredor sem duplicação e direções de Paraíso antes de usar no aplicativo."
+    },
+    {
+      "estacao": "Palmeiras-Barra Funda",
+      "estacao_id": 36,
+      "linha_origem": "L11",
+      "linha_destino": "L3",
+      "referencias": [],
+      "estado": "sem_duracao_por_plataforma",
+      "pendencia": "Desdobrar plataformas/sentidos e acessibilidade; verificar acesso físico e caminhar sem espera.",
+      "base_aprovada_segundos": null,
+      "margem_no_componente_segundos": 0,
+      "confianca": "baixa",
+      "aprovado_para_xano": false,
+      "verificar_plataformas": true,
+      "caminhada_candidata_segundos": 420,
+      "metodo": "modelo_classe_de_conexao",
+      "faixa_sensibilidade_segundos": [
+        300,
+        600
+      ],
+      "fontes": [
+        "https://www.reddit.com/r/saopaulo/comments/1rjqzgi/baldea%C3%A7%C3%B5es/",
+        "https://www.metrozinho.com.br/sao-paulo/guias/baldeacoes-e-integracoes/",
+        "docs/dados/tempos/inspecoes-video.csv"
+      ],
+      "limite": "Valores de classe estimados, não medidos por par/plataforma. Não inclui espera pelo trem. Confirmar conexão, corredor sem duplicação e direções de Paraíso antes de usar no aplicativo."
+    },
+    {
+      "estacao": "Palmeiras-Barra Funda",
+      "estacao_id": 36,
+      "linha_origem": "L11",
+      "linha_destino": "L7",
+      "referencias": [],
+      "estado": "sem_duracao_por_plataforma",
+      "pendencia": "Desdobrar plataformas/sentidos e acessibilidade; verificar acesso físico e caminhar sem espera.",
+      "base_aprovada_segundos": null,
+      "margem_no_componente_segundos": 0,
+      "confianca": "baixa",
+      "aprovado_para_xano": false,
+      "verificar_plataformas": true,
+      "caminhada_candidata_segundos": 420,
+      "metodo": "modelo_classe_de_conexao",
+      "faixa_sensibilidade_segundos": [
+        300,
+        600
+      ],
+      "fontes": [
+        "https://www.reddit.com/r/saopaulo/comments/1rjqzgi/baldea%C3%A7%C3%B5es/",
+        "https://www.metrozinho.com.br/sao-paulo/guias/baldeacoes-e-integracoes/",
+        "docs/dados/tempos/inspecoes-video.csv"
+      ],
+      "limite": "Valores de classe estimados, não medidos por par/plataforma. Não inclui espera pelo trem. Confirmar conexão, corredor sem duplicação e direções de Paraíso antes de usar no aplicativo."
+    },
+    {
+      "estacao": "Palmeiras-Barra Funda",
+      "estacao_id": 36,
+      "linha_origem": "L11",
+      "linha_destino": "L8",
+      "referencias": [],
+      "estado": "sem_duracao_por_plataforma",
+      "pendencia": "Desdobrar plataformas/sentidos e acessibilidade; verificar acesso físico e caminhar sem espera.",
+      "base_aprovada_segundos": null,
+      "margem_no_componente_segundos": 0,
+      "confianca": "baixa",
+      "aprovado_para_xano": false,
+      "verificar_plataformas": true,
+      "caminhada_candidata_segundos": 420,
+      "metodo": "modelo_classe_de_conexao",
+      "faixa_sensibilidade_segundos": [
+        300,
+        600
+      ],
+      "fontes": [
+        "https://www.reddit.com/r/saopaulo/comments/1rjqzgi/baldea%C3%A7%C3%B5es/",
+        "https://www.metrozinho.com.br/sao-paulo/guias/baldeacoes-e-integracoes/",
+        "docs/dados/tempos/inspecoes-video.csv"
+      ],
+      "limite": "Valores de classe estimados, não medidos por par/plataforma. Não inclui espera pelo trem. Confirmar conexão, corredor sem duplicação e direções de Paraíso antes de usar no aplicativo."
+    },
+    {
+      "estacao": "Palmeiras-Barra Funda",
+      "estacao_id": 36,
+      "linha_origem": "L11",
+      "linha_destino": "L10",
+      "referencias": [],
+      "estado": "sem_duracao_por_plataforma",
+      "pendencia": "Desdobrar plataformas/sentidos e acessibilidade; verificar acesso físico e caminhar sem espera.",
+      "base_aprovada_segundos": null,
+      "margem_no_componente_segundos": 0,
+      "confianca": "baixa",
+      "aprovado_para_xano": false,
+      "verificar_plataformas": true,
+      "caminhada_candidata_segundos": 420,
+      "metodo": "modelo_classe_de_conexao",
+      "faixa_sensibilidade_segundos": [
+        300,
+        600
+      ],
+      "fontes": [
+        "https://www.reddit.com/r/saopaulo/comments/1rjqzgi/baldea%C3%A7%C3%B5es/",
+        "https://www.metrozinho.com.br/sao-paulo/guias/baldeacoes-e-integracoes/",
+        "docs/dados/tempos/inspecoes-video.csv"
+      ],
+      "limite": "Valores de classe estimados, não medidos por par/plataforma. Não inclui espera pelo trem. Confirmar conexão, corredor sem duplicação e direções de Paraíso antes de usar no aplicativo."
+    },
+    {
+      "estacao": "Palmeiras-Barra Funda",
+      "estacao_id": 36,
+      "linha_origem": "L11",
+      "linha_destino": "EXP-AER",
+      "referencias": [],
+      "estado": "sem_duracao_por_plataforma",
+      "pendencia": "Desdobrar plataformas/sentidos e acessibilidade; verificar acesso físico e caminhar sem espera.",
+      "base_aprovada_segundos": null,
+      "margem_no_componente_segundos": 0,
+      "confianca": "baixa",
+      "aprovado_para_xano": false,
+      "verificar_plataformas": true,
+      "caminhada_candidata_segundos": 420,
+      "metodo": "modelo_classe_de_conexao",
+      "faixa_sensibilidade_segundos": [
+        300,
+        600
+      ],
+      "fontes": [
+        "https://www.reddit.com/r/saopaulo/comments/1rjqzgi/baldea%C3%A7%C3%B5es/",
+        "https://www.metrozinho.com.br/sao-paulo/guias/baldeacoes-e-integracoes/",
+        "docs/dados/tempos/inspecoes-video.csv"
+      ],
+      "limite": "Valores de classe estimados, não medidos por par/plataforma. Não inclui espera pelo trem. Confirmar conexão, corredor sem duplicação e direções de Paraíso antes de usar no aplicativo."
+    },
+    {
+      "estacao": "Palmeiras-Barra Funda",
+      "estacao_id": 36,
+      "linha_origem": "EXP-AER",
+      "linha_destino": "L3",
+      "referencias": [],
+      "estado": "sem_duracao_por_plataforma",
+      "pendencia": "Desdobrar plataformas/sentidos e acessibilidade; verificar acesso físico e caminhar sem espera.",
+      "base_aprovada_segundos": null,
+      "margem_no_componente_segundos": 0,
+      "confianca": "baixa",
+      "aprovado_para_xano": false,
+      "verificar_plataformas": true,
+      "caminhada_candidata_segundos": 420,
+      "metodo": "modelo_classe_de_conexao",
+      "faixa_sensibilidade_segundos": [
+        300,
+        600
+      ],
+      "fontes": [
+        "https://www.reddit.com/r/saopaulo/comments/1rjqzgi/baldea%C3%A7%C3%B5es/",
+        "https://www.metrozinho.com.br/sao-paulo/guias/baldeacoes-e-integracoes/",
+        "docs/dados/tempos/inspecoes-video.csv"
+      ],
+      "limite": "Valores de classe estimados, não medidos por par/plataforma. Não inclui espera pelo trem. Confirmar conexão, corredor sem duplicação e direções de Paraíso antes de usar no aplicativo."
+    },
+    {
+      "estacao": "Palmeiras-Barra Funda",
+      "estacao_id": 36,
+      "linha_origem": "EXP-AER",
+      "linha_destino": "L7",
+      "referencias": [],
+      "estado": "sem_duracao_por_plataforma",
+      "pendencia": "Desdobrar plataformas/sentidos e acessibilidade; verificar acesso físico e caminhar sem espera.",
+      "base_aprovada_segundos": null,
+      "margem_no_componente_segundos": 0,
+      "confianca": "baixa",
+      "aprovado_para_xano": false,
+      "verificar_plataformas": true,
+      "caminhada_candidata_segundos": 420,
+      "metodo": "modelo_classe_de_conexao",
+      "faixa_sensibilidade_segundos": [
+        300,
+        600
+      ],
+      "fontes": [
+        "https://www.reddit.com/r/saopaulo/comments/1rjqzgi/baldea%C3%A7%C3%B5es/",
+        "https://www.metrozinho.com.br/sao-paulo/guias/baldeacoes-e-integracoes/",
+        "docs/dados/tempos/inspecoes-video.csv"
+      ],
+      "limite": "Valores de classe estimados, não medidos por par/plataforma. Não inclui espera pelo trem. Confirmar conexão, corredor sem duplicação e direções de Paraíso antes de usar no aplicativo."
+    },
+    {
+      "estacao": "Palmeiras-Barra Funda",
+      "estacao_id": 36,
+      "linha_origem": "EXP-AER",
+      "linha_destino": "L8",
+      "referencias": [],
+      "estado": "sem_duracao_por_plataforma",
+      "pendencia": "Desdobrar plataformas/sentidos e acessibilidade; verificar acesso físico e caminhar sem espera.",
+      "base_aprovada_segundos": null,
+      "margem_no_componente_segundos": 0,
+      "confianca": "baixa",
+      "aprovado_para_xano": false,
+      "verificar_plataformas": true,
+      "caminhada_candidata_segundos": 420,
+      "metodo": "modelo_classe_de_conexao",
+      "faixa_sensibilidade_segundos": [
+        300,
+        600
+      ],
+      "fontes": [
+        "https://www.reddit.com/r/saopaulo/comments/1rjqzgi/baldea%C3%A7%C3%B5es/",
+        "https://www.metrozinho.com.br/sao-paulo/guias/baldeacoes-e-integracoes/",
+        "docs/dados/tempos/inspecoes-video.csv"
+      ],
+      "limite": "Valores de classe estimados, não medidos por par/plataforma. Não inclui espera pelo trem. Confirmar conexão, corredor sem duplicação e direções de Paraíso antes de usar no aplicativo."
+    },
+    {
+      "estacao": "Palmeiras-Barra Funda",
+      "estacao_id": 36,
+      "linha_origem": "EXP-AER",
+      "linha_destino": "L10",
+      "referencias": [],
+      "estado": "sem_duracao_por_plataforma",
+      "pendencia": "Desdobrar plataformas/sentidos e acessibilidade; verificar acesso físico e caminhar sem espera.",
+      "base_aprovada_segundos": null,
+      "margem_no_componente_segundos": 0,
+      "confianca": "baixa",
+      "aprovado_para_xano": false,
+      "verificar_plataformas": true,
+      "caminhada_candidata_segundos": 420,
+      "metodo": "modelo_classe_de_conexao",
+      "faixa_sensibilidade_segundos": [
+        300,
+        600
+      ],
+      "fontes": [
+        "https://www.reddit.com/r/saopaulo/comments/1rjqzgi/baldea%C3%A7%C3%B5es/",
+        "https://www.metrozinho.com.br/sao-paulo/guias/baldeacoes-e-integracoes/",
+        "docs/dados/tempos/inspecoes-video.csv"
+      ],
+      "limite": "Valores de classe estimados, não medidos por par/plataforma. Não inclui espera pelo trem. Confirmar conexão, corredor sem duplicação e direções de Paraíso antes de usar no aplicativo."
+    },
+    {
+      "estacao": "Palmeiras-Barra Funda",
+      "estacao_id": 36,
+      "linha_origem": "EXP-AER",
+      "linha_destino": "L11",
+      "referencias": [],
+      "estado": "sem_duracao_por_plataforma",
+      "pendencia": "Desdobrar plataformas/sentidos e acessibilidade; verificar acesso físico e caminhar sem espera.",
+      "base_aprovada_segundos": null,
+      "margem_no_componente_segundos": 0,
+      "confianca": "baixa",
+      "aprovado_para_xano": false,
+      "verificar_plataformas": true,
+      "caminhada_candidata_segundos": 420,
+      "metodo": "modelo_classe_de_conexao",
+      "faixa_sensibilidade_segundos": [
+        300,
+        600
+      ],
+      "fontes": [
+        "https://www.reddit.com/r/saopaulo/comments/1rjqzgi/baldea%C3%A7%C3%B5es/",
+        "https://www.metrozinho.com.br/sao-paulo/guias/baldeacoes-e-integracoes/",
+        "docs/dados/tempos/inspecoes-video.csv"
+      ],
+      "limite": "Valores de classe estimados, não medidos por par/plataforma. Não inclui espera pelo trem. Confirmar conexão, corredor sem duplicação e direções de Paraíso antes de usar no aplicativo."
+    },
+    {
+      "estacao": "República",
+      "estacao_id": 39,
+      "linha_origem": "L3",
+      "linha_destino": "L4",
+      "referencias": [],
+      "estado": "sem_duracao_por_plataforma",
+      "pendencia": "Desdobrar plataformas/sentidos e acessibilidade; verificar acesso físico e caminhar sem espera.",
+      "base_aprovada_segundos": null,
+      "margem_no_componente_segundos": 0,
+      "confianca": "baixa",
+      "aprovado_para_xano": false,
+      "verificar_plataformas": true,
+      "caminhada_candidata_segundos": 180,
+      "metodo": "modelo_classe_de_conexao",
+      "faixa_sensibilidade_segundos": [
+        60,
+        360
+      ],
+      "fontes": [
+        "https://www.reddit.com/r/saopaulo/comments/1rjqzgi/baldea%C3%A7%C3%B5es/",
+        "https://www.metrozinho.com.br/sao-paulo/guias/baldeacoes-e-integracoes/",
+        "docs/dados/tempos/inspecoes-video.csv"
+      ],
+      "limite": "Valores de classe estimados, não medidos por par/plataforma. Não inclui espera pelo trem. Confirmar conexão, corredor sem duplicação e direções de Paraíso antes de usar no aplicativo."
+    },
+    {
+      "estacao": "República",
+      "estacao_id": 39,
+      "linha_origem": "L4",
+      "linha_destino": "L3",
+      "referencias": [
+        "VIDEO-REP-20240220"
+      ],
+      "estado": "video_por_marcos_a_validar",
+      "pendencia": "Desdobrar plataformas/sentidos e acessibilidade; verificar acesso físico e caminhar sem espera.",
+      "base_aprovada_segundos": null,
+      "margem_no_componente_segundos": 0,
+      "confianca": "baixa",
+      "aprovado_para_xano": false,
+      "verificar_plataformas": true,
+      "caminhada_candidata_segundos": 180,
+      "metodo": "modelo_classe_de_conexao",
+      "faixa_sensibilidade_segundos": [
+        60,
+        360
+      ],
+      "fontes": [
+        "https://www.reddit.com/r/saopaulo/comments/1rjqzgi/baldea%C3%A7%C3%B5es/",
+        "https://www.metrozinho.com.br/sao-paulo/guias/baldeacoes-e-integracoes/",
+        "docs/dados/tempos/inspecoes-video.csv"
+      ],
+      "limite": "Valores de classe estimados, não medidos por par/plataforma. Não inclui espera pelo trem. Confirmar conexão, corredor sem duplicação e direções de Paraíso antes de usar no aplicativo."
+    },
+    {
+      "estacao": "Brás",
+      "estacao_id": 42,
+      "linha_origem": "L3",
+      "linha_destino": "L10",
+      "referencias": [],
+      "estado": "sem_duracao_por_plataforma",
+      "pendencia": "Desdobrar plataformas/sentidos e acessibilidade; verificar acesso físico e caminhar sem espera.",
+      "base_aprovada_segundos": null,
+      "margem_no_componente_segundos": 0,
+      "confianca": "baixa",
+      "aprovado_para_xano": false,
+      "verificar_plataformas": true,
+      "caminhada_candidata_segundos": 420,
+      "metodo": "modelo_classe_de_conexao",
+      "faixa_sensibilidade_segundos": [
+        300,
+        600
+      ],
+      "fontes": [
+        "https://www.reddit.com/r/saopaulo/comments/1rjqzgi/baldea%C3%A7%C3%B5es/",
+        "https://www.metrozinho.com.br/sao-paulo/guias/baldeacoes-e-integracoes/",
+        "docs/dados/tempos/inspecoes-video.csv"
+      ],
+      "limite": "Valores de classe estimados, não medidos por par/plataforma. Não inclui espera pelo trem. Confirmar conexão, corredor sem duplicação e direções de Paraíso antes de usar no aplicativo."
+    },
+    {
+      "estacao": "Brás",
+      "estacao_id": 42,
+      "linha_origem": "L3",
+      "linha_destino": "L11",
+      "referencias": [],
+      "estado": "sem_duracao_por_plataforma",
+      "pendencia": "Desdobrar plataformas/sentidos e acessibilidade; verificar acesso físico e caminhar sem espera.",
+      "base_aprovada_segundos": null,
+      "margem_no_componente_segundos": 0,
+      "confianca": "baixa",
+      "aprovado_para_xano": false,
+      "verificar_plataformas": true,
+      "caminhada_candidata_segundos": 420,
+      "metodo": "modelo_classe_de_conexao",
+      "faixa_sensibilidade_segundos": [
+        300,
+        600
+      ],
+      "fontes": [
+        "https://www.reddit.com/r/saopaulo/comments/1rjqzgi/baldea%C3%A7%C3%B5es/",
+        "https://www.metrozinho.com.br/sao-paulo/guias/baldeacoes-e-integracoes/",
+        "docs/dados/tempos/inspecoes-video.csv"
+      ],
+      "limite": "Valores de classe estimados, não medidos por par/plataforma. Não inclui espera pelo trem. Confirmar conexão, corredor sem duplicação e direções de Paraíso antes de usar no aplicativo."
+    },
+    {
+      "estacao": "Brás",
+      "estacao_id": 42,
+      "linha_origem": "L3",
+      "linha_destino": "L12",
+      "referencias": [],
+      "estado": "sem_duracao_por_plataforma",
+      "pendencia": "Desdobrar plataformas/sentidos e acessibilidade; verificar acesso físico e caminhar sem espera.",
+      "base_aprovada_segundos": null,
+      "margem_no_componente_segundos": 0,
+      "confianca": "baixa",
+      "aprovado_para_xano": false,
+      "verificar_plataformas": true,
+      "caminhada_candidata_segundos": 420,
+      "metodo": "modelo_classe_de_conexao",
+      "faixa_sensibilidade_segundos": [
+        300,
+        600
+      ],
+      "fontes": [
+        "https://www.reddit.com/r/saopaulo/comments/1rjqzgi/baldea%C3%A7%C3%B5es/",
+        "https://www.metrozinho.com.br/sao-paulo/guias/baldeacoes-e-integracoes/",
+        "docs/dados/tempos/inspecoes-video.csv"
+      ],
+      "limite": "Valores de classe estimados, não medidos por par/plataforma. Não inclui espera pelo trem. Confirmar conexão, corredor sem duplicação e direções de Paraíso antes de usar no aplicativo."
+    },
+    {
+      "estacao": "Brás",
+      "estacao_id": 42,
+      "linha_origem": "L3",
+      "linha_destino": "EXP-AER",
+      "referencias": [],
+      "estado": "sem_duracao_por_plataforma",
+      "pendencia": "Desdobrar plataformas/sentidos e acessibilidade; verificar acesso físico e caminhar sem espera.",
+      "base_aprovada_segundos": null,
+      "margem_no_componente_segundos": 0,
+      "confianca": "baixa",
+      "aprovado_para_xano": false,
+      "verificar_plataformas": true,
+      "caminhada_candidata_segundos": 420,
+      "metodo": "modelo_classe_de_conexao",
+      "faixa_sensibilidade_segundos": [
+        300,
+        600
+      ],
+      "fontes": [
+        "https://www.reddit.com/r/saopaulo/comments/1rjqzgi/baldea%C3%A7%C3%B5es/",
+        "https://www.metrozinho.com.br/sao-paulo/guias/baldeacoes-e-integracoes/",
+        "docs/dados/tempos/inspecoes-video.csv"
+      ],
+      "limite": "Valores de classe estimados, não medidos por par/plataforma. Não inclui espera pelo trem. Confirmar conexão, corredor sem duplicação e direções de Paraíso antes de usar no aplicativo."
+    },
+    {
+      "estacao": "Brás",
+      "estacao_id": 42,
+      "linha_origem": "L10",
+      "linha_destino": "L3",
+      "referencias": [],
+      "estado": "sem_duracao_por_plataforma",
+      "pendencia": "Desdobrar plataformas/sentidos e acessibilidade; verificar acesso físico e caminhar sem espera.",
+      "base_aprovada_segundos": null,
+      "margem_no_componente_segundos": 0,
+      "confianca": "baixa",
+      "aprovado_para_xano": false,
+      "verificar_plataformas": true,
+      "caminhada_candidata_segundos": 420,
+      "metodo": "modelo_classe_de_conexao",
+      "faixa_sensibilidade_segundos": [
+        300,
+        600
+      ],
+      "fontes": [
+        "https://www.reddit.com/r/saopaulo/comments/1rjqzgi/baldea%C3%A7%C3%B5es/",
+        "https://www.metrozinho.com.br/sao-paulo/guias/baldeacoes-e-integracoes/",
+        "docs/dados/tempos/inspecoes-video.csv"
+      ],
+      "limite": "Valores de classe estimados, não medidos por par/plataforma. Não inclui espera pelo trem. Confirmar conexão, corredor sem duplicação e direções de Paraíso antes de usar no aplicativo."
+    },
+    {
+      "estacao": "Brás",
+      "estacao_id": 42,
+      "linha_origem": "L10",
+      "linha_destino": "L11",
+      "referencias": [],
+      "estado": "sem_duracao_por_plataforma",
+      "pendencia": "Desdobrar plataformas/sentidos e acessibilidade; verificar acesso físico e caminhar sem espera.",
+      "base_aprovada_segundos": null,
+      "margem_no_componente_segundos": 0,
+      "confianca": "baixa",
+      "aprovado_para_xano": false,
+      "verificar_plataformas": true,
+      "caminhada_candidata_segundos": 420,
+      "metodo": "modelo_classe_de_conexao",
+      "faixa_sensibilidade_segundos": [
+        300,
+        600
+      ],
+      "fontes": [
+        "https://www.reddit.com/r/saopaulo/comments/1rjqzgi/baldea%C3%A7%C3%B5es/",
+        "https://www.metrozinho.com.br/sao-paulo/guias/baldeacoes-e-integracoes/",
+        "docs/dados/tempos/inspecoes-video.csv"
+      ],
+      "limite": "Valores de classe estimados, não medidos por par/plataforma. Não inclui espera pelo trem. Confirmar conexão, corredor sem duplicação e direções de Paraíso antes de usar no aplicativo."
+    },
+    {
+      "estacao": "Brás",
+      "estacao_id": 42,
+      "linha_origem": "L10",
+      "linha_destino": "L12",
+      "referencias": [],
+      "estado": "sem_duracao_por_plataforma",
+      "pendencia": "Desdobrar plataformas/sentidos e acessibilidade; verificar acesso físico e caminhar sem espera.",
+      "base_aprovada_segundos": null,
+      "margem_no_componente_segundos": 0,
+      "confianca": "baixa",
+      "aprovado_para_xano": false,
+      "verificar_plataformas": true,
+      "caminhada_candidata_segundos": 420,
+      "metodo": "modelo_classe_de_conexao",
+      "faixa_sensibilidade_segundos": [
+        300,
+        600
+      ],
+      "fontes": [
+        "https://www.reddit.com/r/saopaulo/comments/1rjqzgi/baldea%C3%A7%C3%B5es/",
+        "https://www.metrozinho.com.br/sao-paulo/guias/baldeacoes-e-integracoes/",
+        "docs/dados/tempos/inspecoes-video.csv"
+      ],
+      "limite": "Valores de classe estimados, não medidos por par/plataforma. Não inclui espera pelo trem. Confirmar conexão, corredor sem duplicação e direções de Paraíso antes de usar no aplicativo."
+    },
+    {
+      "estacao": "Brás",
+      "estacao_id": 42,
+      "linha_origem": "L10",
+      "linha_destino": "EXP-AER",
+      "referencias": [],
+      "estado": "sem_duracao_por_plataforma",
+      "pendencia": "Desdobrar plataformas/sentidos e acessibilidade; verificar acesso físico e caminhar sem espera.",
+      "base_aprovada_segundos": null,
+      "margem_no_componente_segundos": 0,
+      "confianca": "baixa",
+      "aprovado_para_xano": false,
+      "verificar_plataformas": true,
+      "caminhada_candidata_segundos": 420,
+      "metodo": "modelo_classe_de_conexao",
+      "faixa_sensibilidade_segundos": [
+        300,
+        600
+      ],
+      "fontes": [
+        "https://www.reddit.com/r/saopaulo/comments/1rjqzgi/baldea%C3%A7%C3%B5es/",
+        "https://www.metrozinho.com.br/sao-paulo/guias/baldeacoes-e-integracoes/",
+        "docs/dados/tempos/inspecoes-video.csv"
+      ],
+      "limite": "Valores de classe estimados, não medidos por par/plataforma. Não inclui espera pelo trem. Confirmar conexão, corredor sem duplicação e direções de Paraíso antes de usar no aplicativo."
+    },
+    {
+      "estacao": "Brás",
+      "estacao_id": 42,
+      "linha_origem": "L11",
+      "linha_destino": "L3",
+      "referencias": [],
+      "estado": "sem_duracao_por_plataforma",
+      "pendencia": "Desdobrar plataformas/sentidos e acessibilidade; verificar acesso físico e caminhar sem espera.",
+      "base_aprovada_segundos": null,
+      "margem_no_componente_segundos": 0,
+      "confianca": "baixa",
+      "aprovado_para_xano": false,
+      "verificar_plataformas": true,
+      "caminhada_candidata_segundos": 420,
+      "metodo": "modelo_classe_de_conexao",
+      "faixa_sensibilidade_segundos": [
+        300,
+        600
+      ],
+      "fontes": [
+        "https://www.reddit.com/r/saopaulo/comments/1rjqzgi/baldea%C3%A7%C3%B5es/",
+        "https://www.metrozinho.com.br/sao-paulo/guias/baldeacoes-e-integracoes/",
+        "docs/dados/tempos/inspecoes-video.csv"
+      ],
+      "limite": "Valores de classe estimados, não medidos por par/plataforma. Não inclui espera pelo trem. Confirmar conexão, corredor sem duplicação e direções de Paraíso antes de usar no aplicativo."
+    },
+    {
+      "estacao": "Brás",
+      "estacao_id": 42,
+      "linha_origem": "L11",
+      "linha_destino": "L10",
+      "referencias": [],
+      "estado": "sem_duracao_por_plataforma",
+      "pendencia": "Desdobrar plataformas/sentidos e acessibilidade; verificar acesso físico e caminhar sem espera.",
+      "base_aprovada_segundos": null,
+      "margem_no_componente_segundos": 0,
+      "confianca": "baixa",
+      "aprovado_para_xano": false,
+      "verificar_plataformas": true,
+      "caminhada_candidata_segundos": 420,
+      "metodo": "modelo_classe_de_conexao",
+      "faixa_sensibilidade_segundos": [
+        300,
+        600
+      ],
+      "fontes": [
+        "https://www.reddit.com/r/saopaulo/comments/1rjqzgi/baldea%C3%A7%C3%B5es/",
+        "https://www.metrozinho.com.br/sao-paulo/guias/baldeacoes-e-integracoes/",
+        "docs/dados/tempos/inspecoes-video.csv"
+      ],
+      "limite": "Valores de classe estimados, não medidos por par/plataforma. Não inclui espera pelo trem. Confirmar conexão, corredor sem duplicação e direções de Paraíso antes de usar no aplicativo."
+    },
+    {
+      "estacao": "Brás",
+      "estacao_id": 42,
+      "linha_origem": "L11",
+      "linha_destino": "L12",
+      "referencias": [],
+      "estado": "sem_duracao_por_plataforma",
+      "pendencia": "Desdobrar plataformas/sentidos e acessibilidade; verificar acesso físico e caminhar sem espera.",
+      "base_aprovada_segundos": null,
+      "margem_no_componente_segundos": 0,
+      "confianca": "baixa",
+      "aprovado_para_xano": false,
+      "verificar_plataformas": true,
+      "caminhada_candidata_segundos": 420,
+      "metodo": "modelo_classe_de_conexao",
+      "faixa_sensibilidade_segundos": [
+        300,
+        600
+      ],
+      "fontes": [
+        "https://www.reddit.com/r/saopaulo/comments/1rjqzgi/baldea%C3%A7%C3%B5es/",
+        "https://www.metrozinho.com.br/sao-paulo/guias/baldeacoes-e-integracoes/",
+        "docs/dados/tempos/inspecoes-video.csv"
+      ],
+      "limite": "Valores de classe estimados, não medidos por par/plataforma. Não inclui espera pelo trem. Confirmar conexão, corredor sem duplicação e direções de Paraíso antes de usar no aplicativo."
+    },
+    {
+      "estacao": "Brás",
+      "estacao_id": 42,
+      "linha_origem": "L11",
+      "linha_destino": "EXP-AER",
+      "referencias": [],
+      "estado": "sem_duracao_por_plataforma",
+      "pendencia": "Desdobrar plataformas/sentidos e acessibilidade; verificar acesso físico e caminhar sem espera.",
+      "base_aprovada_segundos": null,
+      "margem_no_componente_segundos": 0,
+      "confianca": "baixa",
+      "aprovado_para_xano": false,
+      "verificar_plataformas": true,
+      "caminhada_candidata_segundos": 420,
+      "metodo": "modelo_classe_de_conexao",
+      "faixa_sensibilidade_segundos": [
+        300,
+        600
+      ],
+      "fontes": [
+        "https://www.reddit.com/r/saopaulo/comments/1rjqzgi/baldea%C3%A7%C3%B5es/",
+        "https://www.metrozinho.com.br/sao-paulo/guias/baldeacoes-e-integracoes/",
+        "docs/dados/tempos/inspecoes-video.csv"
+      ],
+      "limite": "Valores de classe estimados, não medidos por par/plataforma. Não inclui espera pelo trem. Confirmar conexão, corredor sem duplicação e direções de Paraíso antes de usar no aplicativo."
+    },
+    {
+      "estacao": "Brás",
+      "estacao_id": 42,
+      "linha_origem": "L12",
+      "linha_destino": "L3",
+      "referencias": [],
+      "estado": "sem_duracao_por_plataforma",
+      "pendencia": "Desdobrar plataformas/sentidos e acessibilidade; verificar acesso físico e caminhar sem espera.",
+      "base_aprovada_segundos": null,
+      "margem_no_componente_segundos": 0,
+      "confianca": "baixa",
+      "aprovado_para_xano": false,
+      "verificar_plataformas": true,
+      "caminhada_candidata_segundos": 420,
+      "metodo": "modelo_classe_de_conexao",
+      "faixa_sensibilidade_segundos": [
+        300,
+        600
+      ],
+      "fontes": [
+        "https://www.reddit.com/r/saopaulo/comments/1rjqzgi/baldea%C3%A7%C3%B5es/",
+        "https://www.metrozinho.com.br/sao-paulo/guias/baldeacoes-e-integracoes/",
+        "docs/dados/tempos/inspecoes-video.csv"
+      ],
+      "limite": "Valores de classe estimados, não medidos por par/plataforma. Não inclui espera pelo trem. Confirmar conexão, corredor sem duplicação e direções de Paraíso antes de usar no aplicativo."
+    },
+    {
+      "estacao": "Brás",
+      "estacao_id": 42,
+      "linha_origem": "L12",
+      "linha_destino": "L10",
+      "referencias": [],
+      "estado": "sem_duracao_por_plataforma",
+      "pendencia": "Desdobrar plataformas/sentidos e acessibilidade; verificar acesso físico e caminhar sem espera.",
+      "base_aprovada_segundos": null,
+      "margem_no_componente_segundos": 0,
+      "confianca": "baixa",
+      "aprovado_para_xano": false,
+      "verificar_plataformas": true,
+      "caminhada_candidata_segundos": 420,
+      "metodo": "modelo_classe_de_conexao",
+      "faixa_sensibilidade_segundos": [
+        300,
+        600
+      ],
+      "fontes": [
+        "https://www.reddit.com/r/saopaulo/comments/1rjqzgi/baldea%C3%A7%C3%B5es/",
+        "https://www.metrozinho.com.br/sao-paulo/guias/baldeacoes-e-integracoes/",
+        "docs/dados/tempos/inspecoes-video.csv"
+      ],
+      "limite": "Valores de classe estimados, não medidos por par/plataforma. Não inclui espera pelo trem. Confirmar conexão, corredor sem duplicação e direções de Paraíso antes de usar no aplicativo."
+    },
+    {
+      "estacao": "Brás",
+      "estacao_id": 42,
+      "linha_origem": "L12",
+      "linha_destino": "L11",
+      "referencias": [],
+      "estado": "sem_duracao_por_plataforma",
+      "pendencia": "Desdobrar plataformas/sentidos e acessibilidade; verificar acesso físico e caminhar sem espera.",
+      "base_aprovada_segundos": null,
+      "margem_no_componente_segundos": 0,
+      "confianca": "baixa",
+      "aprovado_para_xano": false,
+      "verificar_plataformas": true,
+      "caminhada_candidata_segundos": 420,
+      "metodo": "modelo_classe_de_conexao",
+      "faixa_sensibilidade_segundos": [
+        300,
+        600
+      ],
+      "fontes": [
+        "https://www.reddit.com/r/saopaulo/comments/1rjqzgi/baldea%C3%A7%C3%B5es/",
+        "https://www.metrozinho.com.br/sao-paulo/guias/baldeacoes-e-integracoes/",
+        "docs/dados/tempos/inspecoes-video.csv"
+      ],
+      "limite": "Valores de classe estimados, não medidos por par/plataforma. Não inclui espera pelo trem. Confirmar conexão, corredor sem duplicação e direções de Paraíso antes de usar no aplicativo."
+    },
+    {
+      "estacao": "Brás",
+      "estacao_id": 42,
+      "linha_origem": "L12",
+      "linha_destino": "EXP-AER",
+      "referencias": [],
+      "estado": "sem_duracao_por_plataforma",
+      "pendencia": "Desdobrar plataformas/sentidos e acessibilidade; verificar acesso físico e caminhar sem espera.",
+      "base_aprovada_segundos": null,
+      "margem_no_componente_segundos": 0,
+      "confianca": "baixa",
+      "aprovado_para_xano": false,
+      "verificar_plataformas": true,
+      "caminhada_candidata_segundos": 420,
+      "metodo": "modelo_classe_de_conexao",
+      "faixa_sensibilidade_segundos": [
+        300,
+        600
+      ],
+      "fontes": [
+        "https://www.reddit.com/r/saopaulo/comments/1rjqzgi/baldea%C3%A7%C3%B5es/",
+        "https://www.metrozinho.com.br/sao-paulo/guias/baldeacoes-e-integracoes/",
+        "docs/dados/tempos/inspecoes-video.csv"
+      ],
+      "limite": "Valores de classe estimados, não medidos por par/plataforma. Não inclui espera pelo trem. Confirmar conexão, corredor sem duplicação e direções de Paraíso antes de usar no aplicativo."
+    },
+    {
+      "estacao": "Brás",
+      "estacao_id": 42,
+      "linha_origem": "EXP-AER",
+      "linha_destino": "L3",
+      "referencias": [],
+      "estado": "sem_duracao_por_plataforma",
+      "pendencia": "Desdobrar plataformas/sentidos e acessibilidade; verificar acesso físico e caminhar sem espera.",
+      "base_aprovada_segundos": null,
+      "margem_no_componente_segundos": 0,
+      "confianca": "baixa",
+      "aprovado_para_xano": false,
+      "verificar_plataformas": true,
+      "caminhada_candidata_segundos": 420,
+      "metodo": "modelo_classe_de_conexao",
+      "faixa_sensibilidade_segundos": [
+        300,
+        600
+      ],
+      "fontes": [
+        "https://www.reddit.com/r/saopaulo/comments/1rjqzgi/baldea%C3%A7%C3%B5es/",
+        "https://www.metrozinho.com.br/sao-paulo/guias/baldeacoes-e-integracoes/",
+        "docs/dados/tempos/inspecoes-video.csv"
+      ],
+      "limite": "Valores de classe estimados, não medidos por par/plataforma. Não inclui espera pelo trem. Confirmar conexão, corredor sem duplicação e direções de Paraíso antes de usar no aplicativo."
+    },
+    {
+      "estacao": "Brás",
+      "estacao_id": 42,
+      "linha_origem": "EXP-AER",
+      "linha_destino": "L10",
+      "referencias": [],
+      "estado": "sem_duracao_por_plataforma",
+      "pendencia": "Desdobrar plataformas/sentidos e acessibilidade; verificar acesso físico e caminhar sem espera.",
+      "base_aprovada_segundos": null,
+      "margem_no_componente_segundos": 0,
+      "confianca": "baixa",
+      "aprovado_para_xano": false,
+      "verificar_plataformas": true,
+      "caminhada_candidata_segundos": 420,
+      "metodo": "modelo_classe_de_conexao",
+      "faixa_sensibilidade_segundos": [
+        300,
+        600
+      ],
+      "fontes": [
+        "https://www.reddit.com/r/saopaulo/comments/1rjqzgi/baldea%C3%A7%C3%B5es/",
+        "https://www.metrozinho.com.br/sao-paulo/guias/baldeacoes-e-integracoes/",
+        "docs/dados/tempos/inspecoes-video.csv"
+      ],
+      "limite": "Valores de classe estimados, não medidos por par/plataforma. Não inclui espera pelo trem. Confirmar conexão, corredor sem duplicação e direções de Paraíso antes de usar no aplicativo."
+    },
+    {
+      "estacao": "Brás",
+      "estacao_id": 42,
+      "linha_origem": "EXP-AER",
+      "linha_destino": "L11",
+      "referencias": [],
+      "estado": "sem_duracao_por_plataforma",
+      "pendencia": "Desdobrar plataformas/sentidos e acessibilidade; verificar acesso físico e caminhar sem espera.",
+      "base_aprovada_segundos": null,
+      "margem_no_componente_segundos": 0,
+      "confianca": "baixa",
+      "aprovado_para_xano": false,
+      "verificar_plataformas": true,
+      "caminhada_candidata_segundos": 420,
+      "metodo": "modelo_classe_de_conexao",
+      "faixa_sensibilidade_segundos": [
+        300,
+        600
+      ],
+      "fontes": [
+        "https://www.reddit.com/r/saopaulo/comments/1rjqzgi/baldea%C3%A7%C3%B5es/",
+        "https://www.metrozinho.com.br/sao-paulo/guias/baldeacoes-e-integracoes/",
+        "docs/dados/tempos/inspecoes-video.csv"
+      ],
+      "limite": "Valores de classe estimados, não medidos por par/plataforma. Não inclui espera pelo trem. Confirmar conexão, corredor sem duplicação e direções de Paraíso antes de usar no aplicativo."
+    },
+    {
+      "estacao": "Brás",
+      "estacao_id": 42,
+      "linha_origem": "EXP-AER",
+      "linha_destino": "L12",
+      "referencias": [],
+      "estado": "sem_duracao_por_plataforma",
+      "pendencia": "Desdobrar plataformas/sentidos e acessibilidade; verificar acesso físico e caminhar sem espera.",
+      "base_aprovada_segundos": null,
+      "margem_no_componente_segundos": 0,
+      "confianca": "baixa",
+      "aprovado_para_xano": false,
+      "verificar_plataformas": true,
+      "caminhada_candidata_segundos": 420,
+      "metodo": "modelo_classe_de_conexao",
+      "faixa_sensibilidade_segundos": [
+        300,
+        600
+      ],
+      "fontes": [
+        "https://www.reddit.com/r/saopaulo/comments/1rjqzgi/baldea%C3%A7%C3%B5es/",
+        "https://www.metrozinho.com.br/sao-paulo/guias/baldeacoes-e-integracoes/",
+        "docs/dados/tempos/inspecoes-video.csv"
+      ],
+      "limite": "Valores de classe estimados, não medidos por par/plataforma. Não inclui espera pelo trem. Confirmar conexão, corredor sem duplicação e direções de Paraíso antes de usar no aplicativo."
+    },
+    {
+      "estacao": "Tatuapé",
+      "estacao_id": 45,
+      "linha_origem": "L3",
+      "linha_destino": "L11",
+      "referencias": [],
+      "estado": "sem_duracao_por_plataforma",
+      "pendencia": "Desdobrar plataformas/sentidos e acessibilidade; verificar acesso físico e caminhar sem espera.",
+      "base_aprovada_segundos": null,
+      "margem_no_componente_segundos": 0,
+      "confianca": "baixa",
+      "aprovado_para_xano": false,
+      "verificar_plataformas": true,
+      "caminhada_candidata_segundos": 300,
+      "metodo": "modelo_classe_de_conexao",
+      "faixa_sensibilidade_segundos": [
+        180,
+        480
+      ],
+      "fontes": [
+        "https://www.reddit.com/r/saopaulo/comments/1rjqzgi/baldea%C3%A7%C3%B5es/",
+        "https://www.metrozinho.com.br/sao-paulo/guias/baldeacoes-e-integracoes/",
+        "docs/dados/tempos/inspecoes-video.csv"
+      ],
+      "limite": "Valores de classe estimados, não medidos por par/plataforma. Não inclui espera pelo trem. Confirmar conexão, corredor sem duplicação e direções de Paraíso antes de usar no aplicativo."
+    },
+    {
+      "estacao": "Tatuapé",
+      "estacao_id": 45,
+      "linha_origem": "L3",
+      "linha_destino": "L12",
+      "referencias": [],
+      "estado": "sem_duracao_por_plataforma",
+      "pendencia": "Desdobrar plataformas/sentidos e acessibilidade; verificar acesso físico e caminhar sem espera.",
+      "base_aprovada_segundos": null,
+      "margem_no_componente_segundos": 0,
+      "confianca": "baixa",
+      "aprovado_para_xano": false,
+      "verificar_plataformas": true,
+      "caminhada_candidata_segundos": 300,
+      "metodo": "modelo_classe_de_conexao",
+      "faixa_sensibilidade_segundos": [
+        180,
+        480
+      ],
+      "fontes": [
+        "https://www.reddit.com/r/saopaulo/comments/1rjqzgi/baldea%C3%A7%C3%B5es/",
+        "https://www.metrozinho.com.br/sao-paulo/guias/baldeacoes-e-integracoes/",
+        "docs/dados/tempos/inspecoes-video.csv"
+      ],
+      "limite": "Valores de classe estimados, não medidos por par/plataforma. Não inclui espera pelo trem. Confirmar conexão, corredor sem duplicação e direções de Paraíso antes de usar no aplicativo."
+    },
+    {
+      "estacao": "Tatuapé",
+      "estacao_id": 45,
+      "linha_origem": "L11",
+      "linha_destino": "L3",
+      "referencias": [],
+      "estado": "sem_duracao_por_plataforma",
+      "pendencia": "Desdobrar plataformas/sentidos e acessibilidade; verificar acesso físico e caminhar sem espera.",
+      "base_aprovada_segundos": null,
+      "margem_no_componente_segundos": 0,
+      "confianca": "baixa",
+      "aprovado_para_xano": false,
+      "verificar_plataformas": true,
+      "caminhada_candidata_segundos": 300,
+      "metodo": "modelo_classe_de_conexao",
+      "faixa_sensibilidade_segundos": [
+        180,
+        480
+      ],
+      "fontes": [
+        "https://www.reddit.com/r/saopaulo/comments/1rjqzgi/baldea%C3%A7%C3%B5es/",
+        "https://www.metrozinho.com.br/sao-paulo/guias/baldeacoes-e-integracoes/",
+        "docs/dados/tempos/inspecoes-video.csv"
+      ],
+      "limite": "Valores de classe estimados, não medidos por par/plataforma. Não inclui espera pelo trem. Confirmar conexão, corredor sem duplicação e direções de Paraíso antes de usar no aplicativo."
+    },
+    {
+      "estacao": "Tatuapé",
+      "estacao_id": 45,
+      "linha_origem": "L11",
+      "linha_destino": "L12",
+      "referencias": [],
+      "estado": "sem_duracao_por_plataforma",
+      "pendencia": "Desdobrar plataformas/sentidos e acessibilidade; verificar acesso físico e caminhar sem espera.",
+      "base_aprovada_segundos": null,
+      "margem_no_componente_segundos": 0,
+      "confianca": "baixa",
+      "aprovado_para_xano": false,
+      "verificar_plataformas": true,
+      "caminhada_candidata_segundos": 300,
+      "metodo": "modelo_classe_de_conexao",
+      "faixa_sensibilidade_segundos": [
+        180,
+        480
+      ],
+      "fontes": [
+        "https://www.reddit.com/r/saopaulo/comments/1rjqzgi/baldea%C3%A7%C3%B5es/",
+        "https://www.metrozinho.com.br/sao-paulo/guias/baldeacoes-e-integracoes/",
+        "docs/dados/tempos/inspecoes-video.csv"
+      ],
+      "limite": "Valores de classe estimados, não medidos por par/plataforma. Não inclui espera pelo trem. Confirmar conexão, corredor sem duplicação e direções de Paraíso antes de usar no aplicativo."
+    },
+    {
+      "estacao": "Tatuapé",
+      "estacao_id": 45,
+      "linha_origem": "L12",
+      "linha_destino": "L3",
+      "referencias": [],
+      "estado": "sem_duracao_por_plataforma",
+      "pendencia": "Desdobrar plataformas/sentidos e acessibilidade; verificar acesso físico e caminhar sem espera.",
+      "base_aprovada_segundos": null,
+      "margem_no_componente_segundos": 0,
+      "confianca": "baixa",
+      "aprovado_para_xano": false,
+      "verificar_plataformas": true,
+      "caminhada_candidata_segundos": 300,
+      "metodo": "modelo_classe_de_conexao",
+      "faixa_sensibilidade_segundos": [
+        180,
+        480
+      ],
+      "fontes": [
+        "https://www.reddit.com/r/saopaulo/comments/1rjqzgi/baldea%C3%A7%C3%B5es/",
+        "https://www.metrozinho.com.br/sao-paulo/guias/baldeacoes-e-integracoes/",
+        "docs/dados/tempos/inspecoes-video.csv"
+      ],
+      "limite": "Valores de classe estimados, não medidos por par/plataforma. Não inclui espera pelo trem. Confirmar conexão, corredor sem duplicação e direções de Paraíso antes de usar no aplicativo."
+    },
+    {
+      "estacao": "Tatuapé",
+      "estacao_id": 45,
+      "linha_origem": "L12",
+      "linha_destino": "L11",
+      "referencias": [],
+      "estado": "sem_duracao_por_plataforma",
+      "pendencia": "Desdobrar plataformas/sentidos e acessibilidade; verificar acesso físico e caminhar sem espera.",
+      "base_aprovada_segundos": null,
+      "margem_no_componente_segundos": 0,
+      "confianca": "baixa",
+      "aprovado_para_xano": false,
+      "verificar_plataformas": true,
+      "caminhada_candidata_segundos": 300,
+      "metodo": "modelo_classe_de_conexao",
+      "faixa_sensibilidade_segundos": [
+        180,
+        480
+      ],
+      "fontes": [
+        "https://www.reddit.com/r/saopaulo/comments/1rjqzgi/baldea%C3%A7%C3%B5es/",
+        "https://www.metrozinho.com.br/sao-paulo/guias/baldeacoes-e-integracoes/",
+        "docs/dados/tempos/inspecoes-video.csv"
+      ],
+      "limite": "Valores de classe estimados, não medidos por par/plataforma. Não inclui espera pelo trem. Confirmar conexão, corredor sem duplicação e direções de Paraíso antes de usar no aplicativo."
+    },
+    {
+      "estacao": "Corinthians-Itaquera",
+      "estacao_id": 52,
+      "linha_origem": "L3",
+      "linha_destino": "L11",
+      "referencias": [],
+      "estado": "sem_duracao_por_plataforma",
+      "pendencia": "Desdobrar plataformas/sentidos e acessibilidade; verificar acesso físico e caminhar sem espera.",
+      "base_aprovada_segundos": null,
+      "margem_no_componente_segundos": 0,
+      "confianca": "baixa",
+      "aprovado_para_xano": false,
+      "verificar_plataformas": true,
+      "caminhada_candidata_segundos": 300,
+      "metodo": "modelo_classe_de_conexao",
+      "faixa_sensibilidade_segundos": [
+        180,
+        480
+      ],
+      "fontes": [
+        "https://www.reddit.com/r/saopaulo/comments/1rjqzgi/baldea%C3%A7%C3%B5es/",
+        "https://www.metrozinho.com.br/sao-paulo/guias/baldeacoes-e-integracoes/",
+        "docs/dados/tempos/inspecoes-video.csv"
+      ],
+      "limite": "Valores de classe estimados, não medidos por par/plataforma. Não inclui espera pelo trem. Confirmar conexão, corredor sem duplicação e direções de Paraíso antes de usar no aplicativo."
+    },
+    {
+      "estacao": "Corinthians-Itaquera",
+      "estacao_id": 52,
+      "linha_origem": "L11",
+      "linha_destino": "L3",
+      "referencias": [],
+      "estado": "sem_duracao_por_plataforma",
+      "pendencia": "Desdobrar plataformas/sentidos e acessibilidade; verificar acesso físico e caminhar sem espera.",
+      "base_aprovada_segundos": null,
+      "margem_no_componente_segundos": 0,
+      "confianca": "baixa",
+      "aprovado_para_xano": false,
+      "verificar_plataformas": true,
+      "caminhada_candidata_segundos": 300,
+      "metodo": "modelo_classe_de_conexao",
+      "faixa_sensibilidade_segundos": [
+        180,
+        480
+      ],
+      "fontes": [
+        "https://www.reddit.com/r/saopaulo/comments/1rjqzgi/baldea%C3%A7%C3%B5es/",
+        "https://www.metrozinho.com.br/sao-paulo/guias/baldeacoes-e-integracoes/",
+        "docs/dados/tempos/inspecoes-video.csv"
+      ],
+      "limite": "Valores de classe estimados, não medidos por par/plataforma. Não inclui espera pelo trem. Confirmar conexão, corredor sem duplicação e direções de Paraíso antes de usar no aplicativo."
+    },
+    {
+      "estacao": "Pinheiros",
+      "estacao_id": 56,
+      "linha_origem": "L4",
+      "linha_destino": "L9",
+      "referencias": [],
+      "estado": "sem_duracao_por_plataforma",
+      "pendencia": "Desdobrar plataformas/sentidos e acessibilidade; verificar acesso físico e caminhar sem espera.",
+      "base_aprovada_segundos": null,
+      "margem_no_componente_segundos": 0,
+      "confianca": "baixa",
+      "aprovado_para_xano": false,
+      "verificar_plataformas": true,
+      "caminhada_candidata_segundos": 480,
+      "metodo": "modelo_classe_de_conexao",
+      "faixa_sensibilidade_segundos": [
+        360,
+        660
+      ],
+      "fontes": [
+        "https://www.reddit.com/r/saopaulo/comments/1rjqzgi/baldea%C3%A7%C3%B5es/",
+        "https://www.metrozinho.com.br/sao-paulo/guias/baldeacoes-e-integracoes/",
+        "docs/dados/tempos/inspecoes-video.csv"
+      ],
+      "limite": "Valores de classe estimados, não medidos por par/plataforma. Não inclui espera pelo trem. Confirmar conexão, corredor sem duplicação e direções de Paraíso antes de usar no aplicativo."
+    },
+    {
+      "estacao": "Pinheiros",
+      "estacao_id": 56,
+      "linha_origem": "L9",
+      "linha_destino": "L4",
+      "referencias": [],
+      "estado": "sem_duracao_por_plataforma",
+      "pendencia": "Desdobrar plataformas/sentidos e acessibilidade; verificar acesso físico e caminhar sem espera.",
+      "base_aprovada_segundos": null,
+      "margem_no_componente_segundos": 0,
+      "confianca": "baixa",
+      "aprovado_para_xano": false,
+      "verificar_plataformas": true,
+      "caminhada_candidata_segundos": 480,
+      "metodo": "modelo_classe_de_conexao",
+      "faixa_sensibilidade_segundos": [
+        360,
+        660
+      ],
+      "fontes": [
+        "https://www.reddit.com/r/saopaulo/comments/1rjqzgi/baldea%C3%A7%C3%B5es/",
+        "https://www.metrozinho.com.br/sao-paulo/guias/baldeacoes-e-integracoes/",
+        "docs/dados/tempos/inspecoes-video.csv"
+      ],
+      "limite": "Valores de classe estimados, não medidos por par/plataforma. Não inclui espera pelo trem. Confirmar conexão, corredor sem duplicação e direções de Paraíso antes de usar no aplicativo."
+    },
+    {
+      "estacao": "Santo Amaro",
+      "estacao_id": 66,
+      "linha_origem": "L5",
+      "linha_destino": "L9",
+      "referencias": [],
+      "estado": "sem_duracao_por_plataforma",
+      "pendencia": "Desdobrar plataformas/sentidos e acessibilidade; verificar acesso físico e caminhar sem espera.",
+      "base_aprovada_segundos": null,
+      "margem_no_componente_segundos": 0,
+      "confianca": "baixa",
+      "aprovado_para_xano": false,
+      "verificar_plataformas": true,
+      "caminhada_candidata_segundos": 300,
+      "metodo": "modelo_classe_de_conexao",
+      "faixa_sensibilidade_segundos": [
+        180,
+        480
+      ],
+      "fontes": [
+        "https://www.reddit.com/r/saopaulo/comments/1rjqzgi/baldea%C3%A7%C3%B5es/",
+        "https://www.metrozinho.com.br/sao-paulo/guias/baldeacoes-e-integracoes/",
+        "docs/dados/tempos/inspecoes-video.csv"
+      ],
+      "limite": "Valores de classe estimados, não medidos por par/plataforma. Não inclui espera pelo trem. Confirmar conexão, corredor sem duplicação e direções de Paraíso antes de usar no aplicativo."
+    },
+    {
+      "estacao": "Santo Amaro",
+      "estacao_id": 66,
+      "linha_origem": "L9",
+      "linha_destino": "L5",
+      "referencias": [],
+      "estado": "sem_duracao_por_plataforma",
+      "pendencia": "Desdobrar plataformas/sentidos e acessibilidade; verificar acesso físico e caminhar sem espera.",
+      "base_aprovada_segundos": null,
+      "margem_no_componente_segundos": 0,
+      "confianca": "baixa",
+      "aprovado_para_xano": false,
+      "verificar_plataformas": true,
+      "caminhada_candidata_segundos": 300,
+      "metodo": "modelo_classe_de_conexao",
+      "faixa_sensibilidade_segundos": [
+        180,
+        480
+      ],
+      "fontes": [
+        "https://www.reddit.com/r/saopaulo/comments/1rjqzgi/baldea%C3%A7%C3%B5es/",
+        "https://www.metrozinho.com.br/sao-paulo/guias/baldeacoes-e-integracoes/",
+        "docs/dados/tempos/inspecoes-video.csv"
+      ],
+      "limite": "Valores de classe estimados, não medidos por par/plataforma. Não inclui espera pelo trem. Confirmar conexão, corredor sem duplicação e direções de Paraíso antes de usar no aplicativo."
+    },
+    {
+      "estacao": "Campo Belo",
+      "estacao_id": 72,
+      "linha_origem": "L5",
+      "linha_destino": "L17",
+      "referencias": [],
+      "estado": "sem_duracao_por_plataforma",
+      "pendencia": "Desdobrar plataformas/sentidos e acessibilidade; verificar acesso físico e caminhar sem espera.",
+      "base_aprovada_segundos": null,
+      "margem_no_componente_segundos": 0,
+      "confianca": "baixa",
+      "aprovado_para_xano": false,
+      "verificar_plataformas": true,
+      "caminhada_candidata_segundos": 420,
+      "metodo": "modelo_classe_de_conexao",
+      "faixa_sensibilidade_segundos": [
+        300,
+        600
+      ],
+      "fontes": [
+        "https://www.reddit.com/r/saopaulo/comments/1rjqzgi/baldea%C3%A7%C3%B5es/",
+        "https://www.metrozinho.com.br/sao-paulo/guias/baldeacoes-e-integracoes/",
+        "docs/dados/tempos/inspecoes-video.csv"
+      ],
+      "limite": "Valores de classe estimados, não medidos por par/plataforma. Não inclui espera pelo trem. Confirmar conexão, corredor sem duplicação e direções de Paraíso antes de usar no aplicativo."
+    },
+    {
+      "estacao": "Campo Belo",
+      "estacao_id": 72,
+      "linha_origem": "L17",
+      "linha_destino": "L5",
+      "referencias": [],
+      "estado": "sem_duracao_por_plataforma",
+      "pendencia": "Desdobrar plataformas/sentidos e acessibilidade; verificar acesso físico e caminhar sem espera.",
+      "base_aprovada_segundos": null,
+      "margem_no_componente_segundos": 0,
+      "confianca": "baixa",
+      "aprovado_para_xano": false,
+      "verificar_plataformas": true,
+      "caminhada_candidata_segundos": 420,
+      "metodo": "modelo_classe_de_conexao",
+      "faixa_sensibilidade_segundos": [
+        300,
+        600
+      ],
+      "fontes": [
+        "https://www.reddit.com/r/saopaulo/comments/1rjqzgi/baldea%C3%A7%C3%B5es/",
+        "https://www.metrozinho.com.br/sao-paulo/guias/baldeacoes-e-integracoes/",
+        "docs/dados/tempos/inspecoes-video.csv"
+      ],
+      "limite": "Valores de classe estimados, não medidos por par/plataforma. Não inclui espera pelo trem. Confirmar conexão, corredor sem duplicação e direções de Paraíso antes de usar no aplicativo."
+    },
+    {
+      "estacao": "Presidente Altino",
+      "estacao_id": 97,
+      "linha_origem": "L8",
+      "linha_destino": "L9",
+      "referencias": [],
+      "estado": "sem_duracao_por_plataforma",
+      "pendencia": "Desdobrar plataformas/sentidos e acessibilidade; verificar acesso físico e caminhar sem espera.",
+      "base_aprovada_segundos": null,
+      "margem_no_componente_segundos": 0,
+      "confianca": "baixa",
+      "aprovado_para_xano": false,
+      "verificar_plataformas": true,
+      "caminhada_candidata_segundos": 180,
+      "metodo": "modelo_classe_de_conexao",
+      "faixa_sensibilidade_segundos": [
+        60,
+        360
+      ],
+      "fontes": [
+        "https://www.reddit.com/r/saopaulo/comments/1rjqzgi/baldea%C3%A7%C3%B5es/",
+        "https://www.metrozinho.com.br/sao-paulo/guias/baldeacoes-e-integracoes/",
+        "docs/dados/tempos/inspecoes-video.csv"
+      ],
+      "limite": "Valores de classe estimados, não medidos por par/plataforma. Não inclui espera pelo trem. Confirmar conexão, corredor sem duplicação e direções de Paraíso antes de usar no aplicativo."
+    },
+    {
+      "estacao": "Presidente Altino",
+      "estacao_id": 97,
+      "linha_origem": "L9",
+      "linha_destino": "L8",
+      "referencias": [],
+      "estado": "sem_duracao_por_plataforma",
+      "pendencia": "Desdobrar plataformas/sentidos e acessibilidade; verificar acesso físico e caminhar sem espera.",
+      "base_aprovada_segundos": null,
+      "margem_no_componente_segundos": 0,
+      "confianca": "baixa",
+      "aprovado_para_xano": false,
+      "verificar_plataformas": true,
+      "caminhada_candidata_segundos": 180,
+      "metodo": "modelo_classe_de_conexao",
+      "faixa_sensibilidade_segundos": [
+        60,
+        360
+      ],
+      "fontes": [
+        "https://www.reddit.com/r/saopaulo/comments/1rjqzgi/baldea%C3%A7%C3%B5es/",
+        "https://www.metrozinho.com.br/sao-paulo/guias/baldeacoes-e-integracoes/",
+        "docs/dados/tempos/inspecoes-video.csv"
+      ],
+      "limite": "Valores de classe estimados, não medidos por par/plataforma. Não inclui espera pelo trem. Confirmar conexão, corredor sem duplicação e direções de Paraíso antes de usar no aplicativo."
+    },
+    {
+      "estacao": "Osasco",
+      "estacao_id": 98,
+      "linha_origem": "L8",
+      "linha_destino": "L9",
+      "referencias": [],
+      "estado": "sem_duracao_por_plataforma",
+      "pendencia": "Desdobrar plataformas/sentidos e acessibilidade; verificar acesso físico e caminhar sem espera.",
+      "base_aprovada_segundos": null,
+      "margem_no_componente_segundos": 0,
+      "confianca": "baixa",
+      "aprovado_para_xano": false,
+      "verificar_plataformas": true,
+      "caminhada_candidata_segundos": 180,
+      "metodo": "modelo_classe_de_conexao",
+      "faixa_sensibilidade_segundos": [
+        60,
+        360
+      ],
+      "fontes": [
+        "https://www.reddit.com/r/saopaulo/comments/1rjqzgi/baldea%C3%A7%C3%B5es/",
+        "https://www.metrozinho.com.br/sao-paulo/guias/baldeacoes-e-integracoes/",
+        "docs/dados/tempos/inspecoes-video.csv"
+      ],
+      "limite": "Valores de classe estimados, não medidos por par/plataforma. Não inclui espera pelo trem. Confirmar conexão, corredor sem duplicação e direções de Paraíso antes de usar no aplicativo."
+    },
+    {
+      "estacao": "Osasco",
+      "estacao_id": 98,
+      "linha_origem": "L9",
+      "linha_destino": "L8",
+      "referencias": [],
+      "estado": "sem_duracao_por_plataforma",
+      "pendencia": "Desdobrar plataformas/sentidos e acessibilidade; verificar acesso físico e caminhar sem espera.",
+      "base_aprovada_segundos": null,
+      "margem_no_componente_segundos": 0,
+      "confianca": "baixa",
+      "aprovado_para_xano": false,
+      "verificar_plataformas": true,
+      "caminhada_candidata_segundos": 180,
+      "metodo": "modelo_classe_de_conexao",
+      "faixa_sensibilidade_segundos": [
+        60,
+        360
+      ],
+      "fontes": [
+        "https://www.reddit.com/r/saopaulo/comments/1rjqzgi/baldea%C3%A7%C3%B5es/",
+        "https://www.metrozinho.com.br/sao-paulo/guias/baldeacoes-e-integracoes/",
+        "docs/dados/tempos/inspecoes-video.csv"
+      ],
+      "limite": "Valores de classe estimados, não medidos por par/plataforma. Não inclui espera pelo trem. Confirmar conexão, corredor sem duplicação e direções de Paraíso antes de usar no aplicativo."
+    },
+    {
+      "estacao": "Morumbi - Claro",
+      "estacao_id": 122,
+      "linha_origem": "L9",
+      "linha_destino": "L17",
+      "referencias": [],
+      "estado": "sem_duracao_por_plataforma",
+      "pendencia": "Desdobrar plataformas/sentidos e acessibilidade; verificar acesso físico e caminhar sem espera.",
+      "base_aprovada_segundos": null,
+      "margem_no_componente_segundos": 0,
+      "confianca": "baixa",
+      "aprovado_para_xano": false,
+      "verificar_plataformas": true,
+      "caminhada_candidata_segundos": 300,
+      "metodo": "modelo_classe_de_conexao",
+      "faixa_sensibilidade_segundos": [
+        180,
+        480
+      ],
+      "fontes": [
+        "https://www.reddit.com/r/saopaulo/comments/1rjqzgi/baldea%C3%A7%C3%B5es/",
+        "https://www.metrozinho.com.br/sao-paulo/guias/baldeacoes-e-integracoes/",
+        "docs/dados/tempos/inspecoes-video.csv"
+      ],
+      "limite": "Valores de classe estimados, não medidos por par/plataforma. Não inclui espera pelo trem. Confirmar conexão, corredor sem duplicação e direções de Paraíso antes de usar no aplicativo."
+    },
+    {
+      "estacao": "Morumbi - Claro",
+      "estacao_id": 122,
+      "linha_origem": "L17",
+      "linha_destino": "L9",
+      "referencias": [],
+      "estado": "sem_duracao_por_plataforma",
+      "pendencia": "Desdobrar plataformas/sentidos e acessibilidade; verificar acesso físico e caminhar sem espera.",
+      "base_aprovada_segundos": null,
+      "margem_no_componente_segundos": 0,
+      "confianca": "baixa",
+      "aprovado_para_xano": false,
+      "verificar_plataformas": true,
+      "caminhada_candidata_segundos": 300,
+      "metodo": "modelo_classe_de_conexao",
+      "faixa_sensibilidade_segundos": [
+        180,
+        480
+      ],
+      "fontes": [
+        "https://www.reddit.com/r/saopaulo/comments/1rjqzgi/baldea%C3%A7%C3%B5es/",
+        "https://www.metrozinho.com.br/sao-paulo/guias/baldeacoes-e-integracoes/",
+        "docs/dados/tempos/inspecoes-video.csv"
+      ],
+      "limite": "Valores de classe estimados, não medidos por par/plataforma. Não inclui espera pelo trem. Confirmar conexão, corredor sem duplicação e direções de Paraíso antes de usar no aplicativo."
+    },
+    {
+      "estacao": "São Caetano do Sul-Prefeito Walter Braido",
+      "estacao_id": 134,
+      "linha_origem": "L10",
+      "linha_destino": "EXP-L10",
+      "referencias": [],
+      "estado": "sem_duracao_por_plataforma",
+      "pendencia": "Desdobrar plataformas/sentidos e acessibilidade; verificar acesso físico e caminhar sem espera.",
+      "base_aprovada_segundos": null,
+      "margem_no_componente_segundos": 0,
+      "confianca": "baixa",
+      "aprovado_para_xano": false,
+      "verificar_plataformas": true,
+      "caminhada_candidata_segundos": 420,
+      "metodo": "modelo_classe_de_conexao",
+      "faixa_sensibilidade_segundos": [
+        300,
+        600
+      ],
+      "fontes": [
+        "https://www.reddit.com/r/saopaulo/comments/1rjqzgi/baldea%C3%A7%C3%B5es/",
+        "https://www.metrozinho.com.br/sao-paulo/guias/baldeacoes-e-integracoes/",
+        "docs/dados/tempos/inspecoes-video.csv"
+      ],
+      "limite": "Valores de classe estimados, não medidos por par/plataforma. Não inclui espera pelo trem. Confirmar conexão, corredor sem duplicação e direções de Paraíso antes de usar no aplicativo."
+    },
+    {
+      "estacao": "São Caetano do Sul-Prefeito Walter Braido",
+      "estacao_id": 134,
+      "linha_origem": "EXP-L10",
+      "linha_destino": "L10",
+      "referencias": [],
+      "estado": "sem_duracao_por_plataforma",
+      "pendencia": "Desdobrar plataformas/sentidos e acessibilidade; verificar acesso físico e caminhar sem espera.",
+      "base_aprovada_segundos": null,
+      "margem_no_componente_segundos": 0,
+      "confianca": "baixa",
+      "aprovado_para_xano": false,
+      "verificar_plataformas": true,
+      "caminhada_candidata_segundos": 420,
+      "metodo": "modelo_classe_de_conexao",
+      "faixa_sensibilidade_segundos": [
+        300,
+        600
+      ],
+      "fontes": [
+        "https://www.reddit.com/r/saopaulo/comments/1rjqzgi/baldea%C3%A7%C3%B5es/",
+        "https://www.metrozinho.com.br/sao-paulo/guias/baldeacoes-e-integracoes/",
+        "docs/dados/tempos/inspecoes-video.csv"
+      ],
+      "limite": "Valores de classe estimados, não medidos por par/plataforma. Não inclui espera pelo trem. Confirmar conexão, corredor sem duplicação e direções de Paraíso antes de usar no aplicativo."
+    },
+    {
+      "estacao": "Santo André",
+      "estacao_id": 137,
+      "linha_origem": "L10",
+      "linha_destino": "EXP-L10",
+      "referencias": [],
+      "estado": "sem_duracao_por_plataforma",
+      "pendencia": "Desdobrar plataformas/sentidos e acessibilidade; verificar acesso físico e caminhar sem espera.",
+      "base_aprovada_segundos": null,
+      "margem_no_componente_segundos": 0,
+      "confianca": "baixa",
+      "aprovado_para_xano": false,
+      "verificar_plataformas": true,
+      "caminhada_candidata_segundos": 420,
+      "metodo": "modelo_classe_de_conexao",
+      "faixa_sensibilidade_segundos": [
+        300,
+        600
+      ],
+      "fontes": [
+        "https://www.reddit.com/r/saopaulo/comments/1rjqzgi/baldea%C3%A7%C3%B5es/",
+        "https://www.metrozinho.com.br/sao-paulo/guias/baldeacoes-e-integracoes/",
+        "docs/dados/tempos/inspecoes-video.csv"
+      ],
+      "limite": "Valores de classe estimados, não medidos por par/plataforma. Não inclui espera pelo trem. Confirmar conexão, corredor sem duplicação e direções de Paraíso antes de usar no aplicativo."
+    },
+    {
+      "estacao": "Santo André",
+      "estacao_id": 137,
+      "linha_origem": "EXP-L10",
+      "linha_destino": "L10",
+      "referencias": [],
+      "estado": "sem_duracao_por_plataforma",
+      "pendencia": "Desdobrar plataformas/sentidos e acessibilidade; verificar acesso físico e caminhar sem espera.",
+      "base_aprovada_segundos": null,
+      "margem_no_componente_segundos": 0,
+      "confianca": "baixa",
+      "aprovado_para_xano": false,
+      "verificar_plataformas": true,
+      "caminhada_candidata_segundos": 420,
+      "metodo": "modelo_classe_de_conexao",
+      "faixa_sensibilidade_segundos": [
+        300,
+        600
+      ],
+      "fontes": [
+        "https://www.reddit.com/r/saopaulo/comments/1rjqzgi/baldea%C3%A7%C3%B5es/",
+        "https://www.metrozinho.com.br/sao-paulo/guias/baldeacoes-e-integracoes/",
+        "docs/dados/tempos/inspecoes-video.csv"
+      ],
+      "limite": "Valores de classe estimados, não medidos por par/plataforma. Não inclui espera pelo trem. Confirmar conexão, corredor sem duplicação e direções de Paraíso antes de usar no aplicativo."
+    },
+    {
+      "estacao": "Calmon Viana",
+      "estacao_id": 149,
+      "linha_origem": "L11",
+      "linha_destino": "L12",
+      "referencias": [],
+      "estado": "sem_duracao_por_plataforma",
+      "pendencia": "Desdobrar plataformas/sentidos e acessibilidade; verificar acesso físico e caminhar sem espera.",
+      "base_aprovada_segundos": null,
+      "margem_no_componente_segundos": 0,
+      "confianca": "baixa",
+      "aprovado_para_xano": false,
+      "verificar_plataformas": true,
+      "caminhada_candidata_segundos": 180,
+      "metodo": "modelo_classe_de_conexao",
+      "faixa_sensibilidade_segundos": [
+        60,
+        360
+      ],
+      "fontes": [
+        "https://www.reddit.com/r/saopaulo/comments/1rjqzgi/baldea%C3%A7%C3%B5es/",
+        "https://www.metrozinho.com.br/sao-paulo/guias/baldeacoes-e-integracoes/",
+        "docs/dados/tempos/inspecoes-video.csv"
+      ],
+      "limite": "Valores de classe estimados, não medidos por par/plataforma. Não inclui espera pelo trem. Confirmar conexão, corredor sem duplicação e direções de Paraíso antes de usar no aplicativo."
+    },
+    {
+      "estacao": "Calmon Viana",
+      "estacao_id": 149,
+      "linha_origem": "L12",
+      "linha_destino": "L11",
+      "referencias": [],
+      "estado": "sem_duracao_por_plataforma",
+      "pendencia": "Desdobrar plataformas/sentidos e acessibilidade; verificar acesso físico e caminhar sem espera.",
+      "base_aprovada_segundos": null,
+      "margem_no_componente_segundos": 0,
+      "confianca": "baixa",
+      "aprovado_para_xano": false,
+      "verificar_plataformas": true,
+      "caminhada_candidata_segundos": 180,
+      "metodo": "modelo_classe_de_conexao",
+      "faixa_sensibilidade_segundos": [
+        60,
+        360
+      ],
+      "fontes": [
+        "https://www.reddit.com/r/saopaulo/comments/1rjqzgi/baldea%C3%A7%C3%B5es/",
+        "https://www.metrozinho.com.br/sao-paulo/guias/baldeacoes-e-integracoes/",
+        "docs/dados/tempos/inspecoes-video.csv"
+      ],
+      "limite": "Valores de classe estimados, não medidos por par/plataforma. Não inclui espera pelo trem. Confirmar conexão, corredor sem duplicação e direções de Paraíso antes de usar no aplicativo."
+    },
+    {
+      "estacao": "Engenheiro Goulart",
+      "estacao_id": 155,
+      "linha_origem": "L12",
+      "linha_destino": "L13",
+      "referencias": [],
+      "estado": "sem_duracao_por_plataforma",
+      "pendencia": "Desdobrar plataformas/sentidos e acessibilidade; verificar acesso físico e caminhar sem espera.",
+      "base_aprovada_segundos": null,
+      "margem_no_componente_segundos": 0,
+      "confianca": "baixa",
+      "aprovado_para_xano": false,
+      "verificar_plataformas": true,
+      "caminhada_candidata_segundos": 180,
+      "metodo": "modelo_classe_de_conexao",
+      "faixa_sensibilidade_segundos": [
+        60,
+        360
+      ],
+      "fontes": [
+        "https://www.reddit.com/r/saopaulo/comments/1rjqzgi/baldea%C3%A7%C3%B5es/",
+        "https://www.metrozinho.com.br/sao-paulo/guias/baldeacoes-e-integracoes/",
+        "docs/dados/tempos/inspecoes-video.csv"
+      ],
+      "limite": "Valores de classe estimados, não medidos por par/plataforma. Não inclui espera pelo trem. Confirmar conexão, corredor sem duplicação e direções de Paraíso antes de usar no aplicativo."
+    },
+    {
+      "estacao": "Engenheiro Goulart",
+      "estacao_id": 155,
+      "linha_origem": "L13",
+      "linha_destino": "L12",
+      "referencias": [],
+      "estado": "sem_duracao_por_plataforma",
+      "pendencia": "Desdobrar plataformas/sentidos e acessibilidade; verificar acesso físico e caminhar sem espera.",
+      "base_aprovada_segundos": null,
+      "margem_no_componente_segundos": 0,
+      "confianca": "baixa",
+      "aprovado_para_xano": false,
+      "verificar_plataformas": true,
+      "caminhada_candidata_segundos": 180,
+      "metodo": "modelo_classe_de_conexao",
+      "faixa_sensibilidade_segundos": [
+        60,
+        360
+      ],
+      "fontes": [
+        "https://www.reddit.com/r/saopaulo/comments/1rjqzgi/baldea%C3%A7%C3%B5es/",
+        "https://www.metrozinho.com.br/sao-paulo/guias/baldeacoes-e-integracoes/",
+        "docs/dados/tempos/inspecoes-video.csv"
+      ],
+      "limite": "Valores de classe estimados, não medidos por par/plataforma. Não inclui espera pelo trem. Confirmar conexão, corredor sem duplicação e direções de Paraíso antes de usar no aplicativo."
+    },
+    {
+      "estacao": "Guarulhos-Cecap",
+      "estacao_id": 165,
+      "linha_origem": "L13",
+      "linha_destino": "EXP-AER",
+      "referencias": [],
+      "estado": "sem_duracao_por_plataforma",
+      "pendencia": "Desdobrar plataformas/sentidos e acessibilidade; verificar acesso físico e caminhar sem espera.",
+      "base_aprovada_segundos": null,
+      "margem_no_componente_segundos": 0,
+      "confianca": "baixa",
+      "aprovado_para_xano": false,
+      "verificar_plataformas": true,
+      "caminhada_candidata_segundos": 180,
+      "metodo": "modelo_classe_de_conexao",
+      "faixa_sensibilidade_segundos": [
+        60,
+        360
+      ],
+      "fontes": [
+        "https://www.reddit.com/r/saopaulo/comments/1rjqzgi/baldea%C3%A7%C3%B5es/",
+        "https://www.metrozinho.com.br/sao-paulo/guias/baldeacoes-e-integracoes/",
+        "docs/dados/tempos/inspecoes-video.csv"
+      ],
+      "limite": "Valores de classe estimados, não medidos por par/plataforma. Não inclui espera pelo trem. Confirmar conexão, corredor sem duplicação e direções de Paraíso antes de usar no aplicativo."
+    },
+    {
+      "estacao": "Guarulhos-Cecap",
+      "estacao_id": 165,
+      "linha_origem": "EXP-AER",
+      "linha_destino": "L13",
+      "referencias": [],
+      "estado": "sem_duracao_por_plataforma",
+      "pendencia": "Desdobrar plataformas/sentidos e acessibilidade; verificar acesso físico e caminhar sem espera.",
+      "base_aprovada_segundos": null,
+      "margem_no_componente_segundos": 0,
+      "confianca": "baixa",
+      "aprovado_para_xano": false,
+      "verificar_plataformas": true,
+      "caminhada_candidata_segundos": 180,
+      "metodo": "modelo_classe_de_conexao",
+      "faixa_sensibilidade_segundos": [
+        60,
+        360
+      ],
+      "fontes": [
+        "https://www.reddit.com/r/saopaulo/comments/1rjqzgi/baldea%C3%A7%C3%B5es/",
+        "https://www.metrozinho.com.br/sao-paulo/guias/baldeacoes-e-integracoes/",
+        "docs/dados/tempos/inspecoes-video.csv"
+      ],
+      "limite": "Valores de classe estimados, não medidos por par/plataforma. Não inclui espera pelo trem. Confirmar conexão, corredor sem duplicação e direções de Paraíso antes de usar no aplicativo."
+    },
+    {
+      "estacao": "Aeroporto-Guarulhos",
+      "estacao_id": 166,
+      "linha_origem": "L13",
+      "linha_destino": "EXP-AER",
+      "referencias": [],
+      "estado": "sem_duracao_por_plataforma",
+      "pendencia": "Desdobrar plataformas/sentidos e acessibilidade; verificar acesso físico e caminhar sem espera.",
+      "base_aprovada_segundos": null,
+      "margem_no_componente_segundos": 0,
+      "confianca": "baixa",
+      "aprovado_para_xano": false,
+      "verificar_plataformas": true,
+      "caminhada_candidata_segundos": 180,
+      "metodo": "modelo_classe_de_conexao",
+      "faixa_sensibilidade_segundos": [
+        60,
+        360
+      ],
+      "fontes": [
+        "https://www.reddit.com/r/saopaulo/comments/1rjqzgi/baldea%C3%A7%C3%B5es/",
+        "https://www.metrozinho.com.br/sao-paulo/guias/baldeacoes-e-integracoes/",
+        "docs/dados/tempos/inspecoes-video.csv"
+      ],
+      "limite": "Valores de classe estimados, não medidos por par/plataforma. Não inclui espera pelo trem. Confirmar conexão, corredor sem duplicação e direções de Paraíso antes de usar no aplicativo."
+    },
+    {
+      "estacao": "Aeroporto-Guarulhos",
+      "estacao_id": 166,
+      "linha_origem": "EXP-AER",
+      "linha_destino": "L13",
+      "referencias": [],
+      "estado": "sem_duracao_por_plataforma",
+      "pendencia": "Desdobrar plataformas/sentidos e acessibilidade; verificar acesso físico e caminhar sem espera.",
+      "base_aprovada_segundos": null,
+      "margem_no_componente_segundos": 0,
+      "confianca": "baixa",
+      "aprovado_para_xano": false,
+      "verificar_plataformas": true,
+      "caminhada_candidata_segundos": 180,
+      "metodo": "modelo_classe_de_conexao",
+      "faixa_sensibilidade_segundos": [
+        60,
+        360
+      ],
+      "fontes": [
+        "https://www.reddit.com/r/saopaulo/comments/1rjqzgi/baldea%C3%A7%C3%B5es/",
+        "https://www.metrozinho.com.br/sao-paulo/guias/baldeacoes-e-integracoes/",
+        "docs/dados/tempos/inspecoes-video.csv"
+      ],
+      "limite": "Valores de classe estimados, não medidos por par/plataforma. Não inclui espera pelo trem. Confirmar conexão, corredor sem duplicação e direções de Paraíso antes de usar no aplicativo."
+    },
+    {
+      "estacao": "Itapevi",
+      "linha_origem": "L8:tronco",
+      "linha_destino": "L8:extensao",
+      "referencias": [],
+      "estado": "troca_mesma_linha_sem_duracao",
+      "base_aprovada_segundos": null,
+      "margem_no_componente_segundos": 0,
+      "confianca": "baixa",
+      "aprovado_para_xano": false,
+      "verificar_plataformas": true,
+      "caminhada_candidata_segundos": 300,
+      "metodo": "modelo_troca_ramal",
+      "faixa_sensibilidade_segundos": [
+        180,
+        480
+      ],
+      "fontes": [
+        "https://www.reddit.com/r/saopaulo/comments/1rjqzgi/baldea%C3%A7%C3%B5es/",
+        "https://www.metrozinho.com.br/sao-paulo/guias/baldeacoes-e-integracoes/",
+        "docs/dados/tempos/inspecoes-video.csv"
+      ],
+      "limite": "Valores de classe estimados, não medidos por par/plataforma. Não inclui espera pelo trem. Confirmar conexão, corredor sem duplicação e direções de Paraíso antes de usar no aplicativo."
+    },
+    {
+      "estacao": "Itapevi",
+      "linha_origem": "L8:extensao",
+      "linha_destino": "L8:tronco",
+      "referencias": [],
+      "estado": "troca_mesma_linha_sem_duracao",
+      "base_aprovada_segundos": null,
+      "margem_no_componente_segundos": 0,
+      "confianca": "baixa",
+      "aprovado_para_xano": false,
+      "verificar_plataformas": true,
+      "caminhada_candidata_segundos": 300,
+      "metodo": "modelo_troca_ramal",
+      "faixa_sensibilidade_segundos": [
+        180,
+        480
+      ],
+      "fontes": [
+        "https://www.reddit.com/r/saopaulo/comments/1rjqzgi/baldea%C3%A7%C3%B5es/",
+        "https://www.metrozinho.com.br/sao-paulo/guias/baldeacoes-e-integracoes/",
+        "docs/dados/tempos/inspecoes-video.csv"
+      ],
+      "limite": "Valores de classe estimados, não medidos por par/plataforma. Não inclui espera pelo trem. Confirmar conexão, corredor sem duplicação e direções de Paraíso antes de usar no aplicativo."
+    },
+    {
+      "estacao": "Brooklin Paulista",
+      "linha_origem": "L17:tronco",
+      "linha_destino": "L17:ramal_Washington_Luis",
+      "referencias": [],
+      "estado": "troca_mesma_linha_sem_duracao",
+      "base_aprovada_segundos": null,
+      "margem_no_componente_segundos": 0,
+      "confianca": "baixa",
+      "aprovado_para_xano": false,
+      "verificar_plataformas": true,
+      "caminhada_candidata_segundos": 300,
+      "metodo": "modelo_troca_ramal",
+      "faixa_sensibilidade_segundos": [
+        180,
+        480
+      ],
+      "fontes": [
+        "https://www.reddit.com/r/saopaulo/comments/1rjqzgi/baldea%C3%A7%C3%B5es/",
+        "https://www.metrozinho.com.br/sao-paulo/guias/baldeacoes-e-integracoes/",
+        "docs/dados/tempos/inspecoes-video.csv"
+      ],
+      "limite": "Valores de classe estimados, não medidos por par/plataforma. Não inclui espera pelo trem. Confirmar conexão, corredor sem duplicação e direções de Paraíso antes de usar no aplicativo."
+    },
+    {
+      "estacao": "Brooklin Paulista",
+      "linha_origem": "L17:ramal_Washington_Luis",
+      "linha_destino": "L17:tronco",
+      "referencias": [],
+      "estado": "troca_mesma_linha_sem_duracao",
+      "base_aprovada_segundos": null,
+      "margem_no_componente_segundos": 0,
+      "confianca": "baixa",
+      "aprovado_para_xano": false,
+      "verificar_plataformas": true,
+      "caminhada_candidata_segundos": 300,
+      "metodo": "modelo_troca_ramal",
+      "faixa_sensibilidade_segundos": [
+        180,
+        480
+      ],
+      "fontes": [
+        "https://www.reddit.com/r/saopaulo/comments/1rjqzgi/baldea%C3%A7%C3%B5es/",
+        "https://www.metrozinho.com.br/sao-paulo/guias/baldeacoes-e-integracoes/",
+        "docs/dados/tempos/inspecoes-video.csv"
+      ],
+      "limite": "Valores de classe estimados, não medidos por par/plataforma. Não inclui espera pelo trem. Confirmar conexão, corredor sem duplicação e direções de Paraíso antes de usar no aplicativo."
+    },
+    {
+      "estacao": "Paulista → Consolação",
+      "linha_origem": "L4",
+      "linha_destino": "L2",
+      "referencias": [
+        "VIDEO-PAU-20240213:parcial"
+      ],
+      "estado": "corredor_entre_estacoes_medicao_parcial",
+      "base_aprovada_segundos": null,
+      "margem_no_componente_segundos": 0,
+      "pendencia": "Um só componente de caminhada: não cobrar novamente ao mudar de linha depois do corredor.",
+      "confianca": "baixa",
+      "aprovado_para_xano": false,
+      "verificar_plataformas": true,
+      "caminhada_candidata_segundos": 300,
+      "metodo": "modelo_corredor_5min",
+      "faixa_sensibilidade_segundos": [
+        180,
+        480
+      ],
+      "fontes": [
+        "https://www.reddit.com/r/saopaulo/comments/1rjqzgi/baldea%C3%A7%C3%B5es/",
+        "https://www.metrozinho.com.br/sao-paulo/guias/baldeacoes-e-integracoes/",
+        "docs/dados/tempos/inspecoes-video.csv"
+      ],
+      "limite": "Valores de classe estimados, não medidos por par/plataforma. Não inclui espera pelo trem. Confirmar conexão, corredor sem duplicação e direções de Paraíso antes de usar no aplicativo."
+    },
+    {
+      "estacao": "Consolação → Paulista",
+      "linha_origem": "L2",
+      "linha_destino": "L4",
+      "referencias": [],
+      "estado": "corredor_sem_medicao",
+      "base_aprovada_segundos": null,
+      "margem_no_componente_segundos": 0,
+      "pendencia": "Um só componente de caminhada: não cobrar novamente ao mudar de linha depois do corredor.",
+      "confianca": "baixa",
+      "aprovado_para_xano": false,
+      "verificar_plataformas": true,
+      "caminhada_candidata_segundos": 300,
+      "metodo": "modelo_corredor_5min",
+      "faixa_sensibilidade_segundos": [
+        180,
+        480
+      ],
+      "fontes": [
+        "https://www.reddit.com/r/saopaulo/comments/1rjqzgi/baldea%C3%A7%C3%B5es/",
+        "https://www.metrozinho.com.br/sao-paulo/guias/baldeacoes-e-integracoes/",
+        "docs/dados/tempos/inspecoes-video.csv"
+      ],
+      "limite": "Valores de classe estimados, não medidos por par/plataforma. Não inclui espera pelo trem. Confirmar conexão, corredor sem duplicação e direções de Paraíso antes de usar no aplicativo."
+    }
+  ]
+}

@@ -30,3 +30,12 @@
 - [x] Atualizar o roadmap, a visão geral e o modelo de domínio com esta entrega.
 - [x] Executar a suíte de testes e a validação estrita do OpenSpec e registrar os limites da validação.
 - [ ] Validar no Xano, com uma sessão real e a malha reimportada, os casos listados em `docs/xano/rascunhos/concorrencia-rotas/README.md`.
+
+## Evidência real de 09/11/2026
+
+- [x] Confirmar duas contas distintas, registro automático e substituição da viagem anterior com a calibração publicada.
+- [x] Confirmar conflito temporal e alternativa por República dentro dos limites aprovados (registros 52/53, HTTP 200).
+- [ ] Completar a matriz remota histórica de entradas inválidas, sessão expirada, configuração ausente e ausência de alternativa; o teste positivo não comprova esses casos.
+- [ ] Verificar confirmações simultâneas do mesmo usuário por HTTP autenticado; não confundir com buscas de usuários distintos.
+
+Evidências e pendências classificadas em `docs/xano/fechamento-trajetos-concorrencia-2026-11-09.md`. O item amplo de validação remota acima permanece aberto deliberadamente.

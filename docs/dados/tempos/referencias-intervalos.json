@@ -1,0 +1,95 @@
+{
+  "consultado_em": "2026-11-03",
+  "somente_referencia": true,
+  "aprovado_para_publicar": false,
+  "fontes": [
+    {
+      "id": "CPTM-INTERVALOS-L11",
+      "url": "https://www.cptm.sp.gov.br/dx/api/dam/v1/collections/05321fd9-3791-4689-a8ac-9e2adde39c4b/items/a3f44abf-6e70-49f7-bb3b-97bdc864f5c6/renditions/46d4c0bf-cb38-490d-b7c5-cb23ba496cc6?binary=true",
+      "linha": "L11",
+      "dias_uteis": [["04:00","08:00",420],["08:00","15:30",660],["15:30","20:00",420],["20:00","23:30",480],["23:30","24:00",900]],
+      "sabado": [["04:00","10:00",660],["10:00","19:00",480],["19:00","20:00",600],["20:00","24:00",2100]],
+      "domingo_feriado": [["04:00","24:00",2100]],
+      "estado": "pdf_oficial_lido_2026-11-04",
+      "limite": "Valores integrais; frequências menores do tronco estão em padroes-l11-candidatos.json. Sem vigência explícita extraída. Não estender 3,5 min além de Guaianases."
+    },
+    {
+      "id": "CPTM-INTERVALOS-L12",
+      "url": "https://www.cptm.sp.gov.br/dx/api/dam/v1/collections/05321fd9-3791-4689-a8ac-9e2adde39c4b/items/6b5636e0-3384-43bf-8941-6d1f8e43b8e3/renditions/aa6a03df-e9fc-4190-89db-e4a8781b8555?binary=true",
+      "linha": "L12",
+      "dias_uteis": [["04:00","04:30",540],["04:30","08:30",270],["08:30","16:00",480],["16:00","20:00",270],["20:00","21:30",480],["21:30","24:00",600]],
+      "sabado": [["04:00","18:00",480],["18:00","21:00",600],["21:00","24:00",2100]],
+      "domingo_feriado": [["04:00","24:00",2100]],
+      "consultado_em": "2026-11-04",
+      "estado": "pdf_oficial_lido",
+      "limite": "Grade programada, não medição. Sem data de vigência explícita extraída; substituir repetição diária do GTFS no ensaio e manter conferência operacional pendente."
+    },
+    {
+      "id": "ARTESP-AMBUITA-ASSISTIDA",
+      "url": "https://www.artesp.sp.gov.br/artesp/noticias/estacao%2Bambuita%2Bcomeca%2Ba%2Boperacao%2Bassistida%2Be%2Bdeve%2Btransportar%2Bmais%2Bde%2B65%2Bmil%2Bpessoas%2Bpor%2Bmes",
+      "linha": "L8:extensao",
+      "intervalo_medio_segundos": 1800,
+      "janela_informada": "04:00–00:00",
+      "estado": "comunicado_historico_assistida_indexado",
+      "limite": "Fonte oficial localizada no índice de busca; abertura integral indisponível. Confirmar vigência após operação assistida e condições por dia antes de usar 30 minutos. Não é duração de Santa Rita–Ambuitá."
+    },
+    {
+      "id": "MOTIVA-L4-MINIMO",
+      "url": "https://trilhos.motiva.com.br/linha-4-amarela/sobre/",
+      "linha": "L4",
+      "intervalo_minimo_normal_segundos": 90,
+      "intervalo_minimo_especial_segundos": 75,
+      "estado": "pagina_oficial_lida",
+      "limite": "Capacidade de reduzir intervalos; não é média por faixa nem promessa de espera de 45 segundos em todas as estações. Não usar como frequência universal."
+    },
+    {
+      "id": "CPTM-EXP-L10-POST",
+      "url": "https://pt.linkedin.com/posts/cptm_cptm-linha10-expressolinha10-activity-7488224993676447745-0ihY",
+      "linha": "EXP-L10",
+      "intervalo_segundos": 1200,
+      "tipo_dia": "dias_uteis",
+      "santo_andre_partidas": ["05:40–09:00", "16:10–19:50"],
+      "tamanduatei_partidas": ["05:50–08:50", "16:00–20:00"],
+      "estado": "post_publico_da_operadora_lido",
+      "limite": "Confirma grade, não tempos entre paradas ou todos os sentidos de atendimento de São Caetano. Data exata da postagem não extraída; cotejar PDF vigente."
+    },
+    {
+      "id": "TRIVIA-EXP-AER-GRADE",
+      "url": "https://www.triviatrens.com.br/linhas",
+      "linha": "EXP-AER",
+      "segunda_sabado_intervalo_segundos": 3600,
+      "domingo_feriado_intervalo_segundos": 1800,
+      "estado": "pagina_oficial_lida",
+      "limite": "Resumo a partir de Barra Funda sem tabela de todas as partidas; contrastar feriados e lacuna dominical de 13h30 com PDF CPTM. Não criar partidas ausentes por interpolação."
+    },
+    {
+      "id": "CPTM-INTERVALOS-L10",
+      "url": "https://www.cptm.sp.gov.br/dx/api/dam/v1/collections/05321fd9-3791-4689-a8ac-9e2adde39c4b/items/b6e68f57-4f4f-444d-b483-075f910e2c1b/renditions/4298df26-497c-47fd-a480-0b1812d6bb66?binary=true",
+      "linha": "L10",
+      "dias_uteis": [["04:00","05:00",720],["05:00","08:30",360],["08:30","16:00",480],["16:00","19:50",360],["19:50","24:00",600]],
+      "sabado": [["04:00","21:00",480],["21:00","24:00",2100]],
+      "domingo_feriado": [["04:00","24:00",2100]],
+      "estado": "pdf_oficial_guardado_na_coleta_anterior",
+      "limite": "No pico, 360 s apenas Barra Funda–Mauá; para atendimento além de Mauá, o quadro indica 720 s. Exige modelar padrão parcial e destino do trem. Não aplicar 360 s a qualquer viagem na linha."
+    },
+    {
+      "id": "CPTM-INTERVALOS-L13",
+      "url": "https://www.cptm.sp.gov.br/dx/api/dam/v1/collections/05321fd9-3791-4689-a8ac-9e2adde39c4b/items/a5767f09-3864-4b2a-930b-627adfd84220/renditions/f9c0493c-46d2-4224-8a80-c24dd88b2529?binary=true",
+      "linha": "L13",
+      "dias_uteis": [["04:00","04:30",900],["04:30","05:50",720],["05:50","08:00",600],["08:00","16:50",720],["16:50","20:00",600],["20:00","24:00",720]],
+      "sabado": [["04:00","04:16",960],["04:16","21:00",720],["21:00","24:00",2100]],
+      "domingo_feriado": [["04:00","24:00",2100]],
+      "estado": "pdf_oficial_guardado_na_coleta_anterior",
+      "limite": "Frequência programada regular; não incluir Expresso Aeroporto, que não para em Engenheiro Goulart. Confirmar vigência e efeitos da transição de operador."
+    },
+    {
+      "id": "HORARIOS-L17-20260929",
+      "url": "https://www.metro.sp.gov.br/2026/09/29/metro-amplia-horario-da-linha-17-ouro-a-partir-desta-quarta-feira-30/",
+      "linha": "L17",
+      "intervalo_medio_segundos": 540,
+      "janela_informada": "segunda_sabado 06:00–22:00",
+      "estado": "fonte_oficial_ja_documentada",
+      "limite": "Trocar em Brooklin Paulista para o ramal Washington Luís; não usar frequência antiga do GTFS."
+    }
+  ]
+}
