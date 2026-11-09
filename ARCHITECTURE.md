@@ -47,3 +47,8 @@ O cliente da main declara suporte à calibração na API oficial. Busca e regist
 A política de concorrência publicada em 09/11 admite redução parcial mínima de 40% da exposição, min(9 minutos, 45%) de acréscimo e uma baldeação extra; prefere percurso inteiramente pelo Metrô até um minuto mais lento que a alternativa elegível original. Os limites da alternativa totalmente livre permanecem separados, conforme o modelo de domínio. O [reteste real](docs/xano/publicacao-preferencia-metro-2026-11-09.md) confirmou os dois registros com a mesma versão e a alternativa por República.
 
 O laboratório em loopback continua separado da API oficial. O status das linhas ainda não participa do cálculo; a integração informativa é uma entrega própria.
+
+
+## Integração informativa inicial de status
+
+O módulo `MetroFlow/status` adiciona endpoint e cache independentes; a consulta de condições operacionais não participa da busca ou da confirmação. Veja [status operacional](docs/status-operacional.md) para configuração, limites e ativação pendente.

@@ -121,6 +121,7 @@ class SegmentView(BaseModel):
     origin: str
     destination: str
     line: str
+    line_code: str | None = Field(default=None, exclude_if=lambda value: value is None)
     operator: str
 
     # Sentido calculado pelo Xano.
@@ -259,6 +260,7 @@ class RouteView(BaseModel):
                         step.destination.name
                     ),
                     line=step.line.name,
+                    line_code=step.line.code,
                     operator=(
                         step.line.operator.name
                     ),

@@ -4,6 +4,7 @@ import reflex as rx
 
 from MetroFlow.auth.presentation.api import auth_api
 from MetroFlow.planning.presentation.api import planning_api
+from MetroFlow.status.api import status_api
 from MetroFlow.planning.presentation.state import PlanningState
 from MetroFlow.auth.presentation.pages import (
     forgot_password_page,
@@ -29,6 +30,7 @@ from MetroFlow.planning.presentation.pages import (
 
 
 auth_api.include_router(planning_api)
+auth_api.include_router(status_api)
 app = rx.App(
     api_transformer=auth_api,
     html_lang="pt-BR",

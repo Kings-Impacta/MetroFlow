@@ -23,3 +23,6 @@ reflex.stderr.log
 
 # Teste manual criado durante a validacao inicial
 /teste_integracao_xano.py
+
+# Cache de status compartilhado pelo backend
+.cache/
