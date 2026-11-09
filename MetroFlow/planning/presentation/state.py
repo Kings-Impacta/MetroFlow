@@ -1019,10 +1019,9 @@ class PlanningState(rx.State):
                     "e um destino válidos."
                 ),
                 404: (
-                    "Nenhum trajeto encontrado "
-                    "para essas estações. "
-                    "Atualize a lista ou "
-                    "escolha outro destino."
+                    "Nenhum trajeto disponível neste momento. As linhas ou integrações "
+                    "podem estar fora do horário de funcionamento. Confira os horários "
+                    "e tente novamente. Se estiverem em operação, atualize a lista de estações."
                 ),
             }.get(
                 result.get(

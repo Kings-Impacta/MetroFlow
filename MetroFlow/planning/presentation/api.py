@@ -104,7 +104,12 @@ def route(selection: RouteRequest, token: Token) -> RouteView:
             )
         if result is None:
             # O contrato atual do Xano tambem usa 404 para estacao inexistente.
-            raise HTTPException(404, "Não foi encontrado trajeto para essas estações. Atualize a lista e tente novamente.")
+            raise HTTPException(
+                404,
+                "Nenhum trajeto disponível neste momento. As linhas ou integrações "
+                "podem estar fora do horário de funcionamento. Confira os horários "
+                "e tente novamente. Se estiverem em operação, atualize a lista de estações.",
+            )
         if (result.origin.id, result.destination.id) != (selection.origin_id, selection.destination_id):
             raise ValueError("Resposta nao corresponde a selecao.")
         return RouteView.from_route(result, route_guidance(result))

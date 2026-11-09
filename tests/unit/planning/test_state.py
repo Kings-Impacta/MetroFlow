@@ -51,6 +51,7 @@ class PlanningStateTests(unittest.TestCase):
         self.state.receive_route({"request_id": self.state._request_id, "status": 404, "ok": False})
         self.assertEqual(self.state.route_status, "not_found")
         self.assertEqual(self.state.title, "")
+        self.assertIn("podem estar fora do horário de funcionamento", self.state.message)
 
     def test_sessao_expirada_limpa_dados_e_redireciona(self):
         self.state.title = "Resultado anterior"
