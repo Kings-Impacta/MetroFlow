@@ -370,6 +370,7 @@ def _instruction_card(
 
 
 def _result() -> rx.Component:
+    from MetroFlow.status.presentation import status_panel
     return rx.card(
         rx.vstack(
             rx.badge(
@@ -579,6 +580,8 @@ def _result() -> rx.Component:
                     ),
                 ),
             ),
+
+            status_panel(for_route=True),
 
             align="start",
             spacing="5",
@@ -847,35 +850,6 @@ def about_page() -> rx.Component:
 
 
 def status_page() -> rx.Component:
-    return shell(
-        rx.vstack(
-            rx.heading(
-                "Status da rede",
-                size="8",
-                color=INK,
-            ),
-
-            rx.text(
-                (
-                    "O MetroFlow ainda não recebe informações "
-                    "operacionais em tempo real. Consulte os "
-                    "canais oficiais dos operadores antes "
-                    "de viajar."
-                ),
-                color=TEXT,
-            ),
-
-            rx.link(
-                "Voltar ao planejador",
-                href="/buscar-trajeto",
-                color=BLUE,
-                font_weight="600",
-            ),
-
-            align="start",
-            spacing="5",
-            max_width="52rem",
-            margin="auto",
-            padding="4rem 1.5rem",
-        )
-    )
+    from MetroFlow.status.presentation import status_panel
+    return shell(rx.vstack(status_panel(),rx.link("Voltar ao planejador",href="/buscar-trajeto"),
+        align="start",spacing="5",max_width="52rem",margin="auto",padding="4rem 1.5rem"))

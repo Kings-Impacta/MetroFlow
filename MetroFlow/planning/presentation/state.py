@@ -120,6 +120,7 @@ class PlanningState(rx.State):
 
     title: str = ""
     station_names: list[str] = []
+    route_line_codes: list[str] = []
 
     segments: list[dict[str, str]] = []
 
@@ -142,6 +143,7 @@ class PlanningState(rx.State):
     def _clear_result(self) -> None:
         self.title = ""
         self.station_names = []
+        self.route_line_codes = []
 
         self.segments = []
         self.instructions = []
@@ -1067,6 +1069,7 @@ class PlanningState(rx.State):
         self.station_names = (
             route.stations
         )
+        self.route_line_codes = list(dict.fromkeys(step.line_code for step in route.segments if step.line_code and step.segment_type == "ferroviario"))
         self.notices = route.notices
 
         self.minutes = (

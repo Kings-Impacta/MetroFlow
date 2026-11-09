@@ -34,3 +34,8 @@ Tokens e senhas não devem aparecer na interface, em URLs ou em logs. O token de
 ## Fontes de verdade
 
 O código e os testes representam o comportamento implementado. `openspec/specs/` contém as especificações consolidadas das entregas concluídas; `openspec/changes/archive/` guarda o histórico dessas entregas, e novas mudanças ativas em `openspec/changes/` mostram o trabalho em andamento. As mudanças ativas e seus checklists ficam em `openspec/changes/`; documentos datados preservam o estado histórico, que pode ter sido superado pelo fechamento de 09/11/2026. As observações do Xano estão em [docs/xano](xano/README.md), com limites de evidência explicitados. O [README](../README.md) reúne as instruções de instalação, execução e teste.
+
+
+## Integração informativa inicial de status
+
+A integração informativa inicial de status está implementada em entrega separada: fontes desativadas por padrão, cache compartilhado e falhas sem bloquear busca/registro. A chave ARTESP ainda precisa ser configurada e a resposta real conferida; o complemento continua pendente. Veja [guia de status](status-operacional.md).

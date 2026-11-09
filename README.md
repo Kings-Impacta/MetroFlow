@@ -66,3 +66,8 @@ Os arquivos em `docs/xano/rascunhos/` registram o XanoScript observado e publica
 ## Qualidade contínua
 
 O workflow `.github/workflows/quality.yml` executa a suíte Python e a validação estrita do OpenSpec em Pull Requests e em atualizações da `main`.
+
+
+## Condições operacionais das linhas
+
+Consulte [configuração e limites da integração de status](docs/status-operacional.md). As fontes ficam desativadas até a configuração no backend. Falhas de status não bloqueiam a busca nem a concorrência.
