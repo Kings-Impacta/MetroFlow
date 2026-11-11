@@ -1,50 +1,74 @@
-# Status operacional das linhas
+# Status operacional: Direto dos Trens + CPTM
 
-## Entrega de 09/11/2026
+## Configuração preparada em 09/11/2026
 
-O cliente disponibiliza condições operacionais na página `/status` e, após uma busca, somente para as linhas do percurso. Um endpoint separado, autenticado por sessão (`GET /api/planning/line-status`), concentra a integração. Status não modifica o caminho, seus tempos nem os parâmetros de concorrência; busca e registro não fazem chamadas às fontes externas.
+O desenho definitivo mantém **Direto dos Trens como principal** e **JSON do site CPTM como complemento**, com Metrô como reserva. Enquanto o token não chega, o usuário autorizou uma configuração local provisória com Metrô, CPTM e Motiva: [cobertura de 12 linhas](demo-status-cobertura-completa.md). As fontes continuam desativadas por padrão; a ativação pública permanece separada. ARTESP e agregado Azure não participam da fábrica de fontes.
 
-A ausência de dado aparece como **indisponível**, nunca como operação normal. São preservados o rótulo e a descrição da fonte, a origem, a coleta e, quando existirem, a última mudança e a última verificação. Uma situação antiga que continua verificada pode ser atual. O booleano `operacao_normal` da ARTESP inclui operação com restrições e não é usado isoladamente para normalizar a situação.
+O endpoint autenticado `/api/planning/line-status`, a página `/status` e o quadro das linhas do trajeto continuam independentes da busca e do registro automático. Em falhas, mantêm o último retorno válido como desatualizado; sem retorno anterior, informam indisponibilidade. Isso não altera a rota, seus custos, partidas ou ocupação. Serviços especiais não herdam automaticamente o status de linhas regulares.
 
-## Fontes e ativação
+## Fontes e precedência
 
-- ARTESP: adaptador do contrato documentado em `empresas[].linhas[].status`, autenticação pelo cabeçalho `Authorization: Api-Key`, atribuição CC BY-NC 4.0 e correspondência por código de linha. A chave foi informada como disponível pelo usuário, mas não foi recebida nem configurada nesta sessão.
-- Complemento agregado Metrô/CPTM: adaptador preparado e testado com amostras sintéticas do contrato observado. Continua desativado; ativar somente depois de confirmar condições de consumo/republicação e validar amostras reais. Não é apresentado como API com contrato estável já certificado.
-- A ARTESP prevalece nas linhas delegadas 4/5/6/7/8/9/17. Nas demais, somente o complemento autorizado fornece status. Divergências entre fontes ficam em log genérico. A relação de responsabilidade exige revisão quando houver transferência de operador.
-- Expresso Aeroporto e Expresso L10 aparecem como indisponíveis: o status da linha regular não comprova a condição do serviço especial.
+1. Usar condição atual do Direto dos Trens quando disponível para a linha.
+2. Sem condição atual da principal, usar dado atual da CPTM para as linhas retornadas por ela.
+3. Os quadros do Metrô e da Motiva só participam quando explicitamente habilitados; estão ligados no iniciador local provisório, não por padrão.
+4. Se só há dados antigos, manter a mesma ordem entre as fontes, com rótulo desatualizado. Sem dado utilizável, apresentar indisponível.
 
-As fontes ficam desligadas por padrão. Configure no ambiente **do backend**, antes de iniciar o Reflex:
+A identificação da fonte acompanha o estado escolhido. Divergências são registradas sem payloads ou credenciais. Não combinar descrições ou horários de fontes diferentes como se fossem um único comunicado.
 
-```powershell
-$env:METROFLOW_ARTESP_ENABLED = "1"
-$statusKey = Read-Host "Chave ARTESP (não será exibida)" -AsSecureString
-$env:METROFLOW_ARTESP_API_KEY = [System.Net.NetworkCredential]::new("", $statusKey).Password
-$env:METROFLOW_STATUS_COMPLEMENTAR_AUTORIZADO = "0"
+O catálogo público do Direto dos Trens contempla as linhas regulares da malha, inclusive 6/7/13; o retorno efetivo será validado quando o token chegar. O JSON CPTM observado trouxe 10/11/12. O parser aceita 13 somente se ela vier de fato numa resposta CPTM, sem inventar cobertura. O quadro de reserva do Metrô foi testado para 1/2/3/4/5/15/17.
+
+## Preparação, sem ativação
+
+As fontes continuam desativadas por padrão. O usuário já solicitou token Direto dos Trens e aguarda retorno. Não há token de exemplo utilizável e não foi feita chamada ao endpoint protegido nesta implementação.
+
+```text
+METROFLOW_DDT_ENABLED=0
+METROFLOW_DDT_TOKEN=
+METROFLOW_CPTM_ENABLED=0
+METROFLOW_METRO_QUADRO_AUTORIZADO=0
+METROFLOW_MOTIVA_QUADRO_ENABLED=0
+METROFLOW_STATUS_CACHE_PATH=.cache/line-status.sqlite3
 ```
 
-Inicie o projeto normalmente nesse mesmo terminal. Não envie a chave ao chat nem a coloque no Git. O arquivo `.env.example` é apenas referência; estas instruções usam variáveis do processo e não dependem de carregamento automático de `.env`. Sem chave e ativação, a consulta retorna indisponível e o planejamento continua.
+Configurar credenciais somente no ambiente do backend, nunca no navegador ou no Git. A futura ativação depende do recebimento do token, das condições aplicáveis e de uma primeira resposta autorizada. As flags antigas `METROFLOW_ARTESP_ENABLED` e `METROFLOW_STATUS_COMPLEMENTAR_AUTORIZADO` não iniciam coletores nesta configuração. O aplicativo em uso e o Xano não foram alterados nesta preparação local.
+
+## Autenticação e transporte
+
+O fornecedor Direto dos Trens documenta token na query da requisição. O transporte dedicado usa somente HTTPS para a origem fixa do fornecedor, não segue redirecionamentos, não usa o logger de URLs do httpx e descarta detalhes de exceções. A query existe apenas na requisição interna exigida pelo protocolo, nunca em URL do frontend, resposta ou log da aplicação. A representação pública e o cache contêm somente dados normalizados; a chave do cache é um hash da credencial. Antes de ativar, revisar também qualquer instrumentação externa de rede/APM para que ela não registre essa query.
+
+A CPTM usa GET para o endpoint referenciado pelo próprio site, sem token na amostra observada. O quadro Metrô não recebe credencial Direto dos Trens nem ARTESP.
+
+## Datas e interpretação
+
+No Direto dos Trens, `criado` indica o início da ocorrência e `modificado` sua alteração; nenhum deles é inventado como última verificação da operadora. Datas sem fuso explícito não ganham deslocamento presumido. Na CPTM, `dataGeracao` com fuso pode servir como verificação da geração do lote; sem fuso, a validade usa somente a coleta local e a limitação permanece documentada. A data bruta observada fica preservada nas referências da pesquisa. No quadro do Metrô, a data local conhecida é interpretada como Brasília.
+
+Situações desconhecidas permanecem desconhecidas; campo obrigatório ausente, contrato incompatível ou duplicatas invalidam a coleta. Descrições são texto limitado a 1200 caracteres, sem HTML executável. A ausência de ocorrência na descrição não equivale por si só a operação normal.
 
 ## Cache e falhas
 
-O cache SQLite `.cache/line-status.sqlite3`, ignorado pelo Git, é compartilhado entre usuários e processos que apontam para o mesmo arquivo no servidor. Reserve uma tentativa a cada cinco minutos e no máximo 12 em uma janela móvel de uma hora por chave; erros também contam. HTTP 429 suspende novas tentativas por uma hora. Timeout, JSON inválido, tamanho excessivo, cache sem permissão e erro HTTP não são repassados ao planejador. Redirecionamentos não são seguidos com a credencial.
+O SQLite `.cache/line-status.sqlite3` é compartilhado entre usuários e processos do mesmo servidor. A política inicial conservadora limita cada fonte a uma tentativa por cinco minutos e 12 por hora; isso é um limite interno, não a cota contratual informada pelas novas fontes. As chamadas não são disparadas por usuário nem pelo cálculo de rota. Uma reserva transacional precede a rede, e falhas consomem tentativas.
 
-A reserva é transacional e antecede a chamada HTTP; consultas concorrentes reutilizam o cache ou recebem indisponível enquanto a primeira atualização termina. Uma falha conhecida torna o último dado desatualizado. A validade vence após dez minutos desde a coleta/verificação; após uma hora o valor não é exibido. Sem `verificado_em`, somente a idade da coleta é conhecida. O botão permite nova consulta, mas não ignora a reserva nem o limite da origem. O quadro indica a condição na última consulta, não uma assinatura contínua de alertas.
+`Cache-Control` é respeitado: `max-age`/`s-maxage` e `Age` limitam a validade; prazos maiores ampliam o intervalo. Validade esgotada não proíbe armazenar a última observação como desatualizada. `no-store`, `no-cache` e `private` impedem persistência da nova condição: a consulta que a recebeu pode apresentá-la, mas as demais aguardam a próxima tentativa permitida, mantendo eventual observação anterior cujo armazenamento era permitido. A reserva/cota permanece em disco. Valores vencidos nunca são apresentados como atuais.
 
-Múltiplas máquinas precisam compartilhar um coletor/cache central antes de ativar a mesma chave; arquivos SQLite separados não coordenam a cota entre servidores. O cache não contém chaves ou dados de viagens. O hash da chave serve somente para separar a cota e o cache por credencial. Descrições são apresentadas como texto, não HTML.
+HTTP 429 respeita Retry-After, com suspensão mínima conservadora de uma hora. Sem cabeçalho de validade, aplica-se o limite local de dez minutos para dado atual. Por decisão do usuário, o último estado armazenável é mantido como desatualizado até um novo retorno válido, sem descarte após uma hora. Falhas, respostas vazias ou linhas ausentes não apagam o último retorno, não renovam sua data nem inventam normalidade. A interface mantém os cartões enquanto aguarda a rede e descarta respostas atrasadas. A Motiva mantém timeout de cinco segundos e orçamento de leitura de dez segundos. O Metrô usa conexão IPv4 por requisição, com conexão de cinco segundos, leitura de quinze segundos e orçamento de processamento/leitura de vinte segundos. Não há repetição imediata de GET. HTTPS, validação de certificado e resolução DNS são preservados, sem mudar configurações do sistema ou fixar IP remoto. Timeout, resposta excessiva, erro HTTP, HTML/JSON incompatível e cache sem permissão não são propagados ao planejador.
 
-## Validação e limites
+Várias máquinas precisam compartilhar coletor/cache central antes de usar o mesmo token; arquivos separados não coordenam a cota. Instrumentação e logs não devem armazenar a requisição autenticada. Nenhuma credencial é necessária para executar os testes simulados.
 
-Testes sem rede real cobrem normalização, nulabilidade, situações desconhecidas, datas, prioridade, falhas, cota, concorrência da reserva, cache entre instâncias, sessão, proteção de credenciais e manutenção da busca/registro após falha de status. A interface foi compilada em cópia isolada, sem reiniciar o aplicativo em uso ou alterar o Xano.
+## Referências e pendências
 
-Ainda falta configurar a chave no ambiente usado pelo usuário e conferir uma resposta autenticada real, incluindo a cobertura efetiva e os horários informados. A publicação do código não significa que as fontes foram ativadas. Autorizações e ativação do complemento continuam pendentes no OpenSpec; esta entrega não conclui o P5 de lotação real.
+[Pesquisa de fontes e contratos](fontes-status-complementares-2026-11-09.md) · [Swagger Direto dos Trens](https://static.diretodostrens.com.br/swagger/) · [CPTM](https://www.cptm.sp.gov.br/cptm)
 
-Fontes: [documentação ARTESP](https://ccm.artesp.sp.gov.br/metroferroviario/api/docs/) (releitura de 09/11/2026) e [avaliação anterior do complemento](fontes-status-operacional-2026-10-21.md).
+Ainda faltam token, condições aplicáveis e amostra autorizada da principal, além da confirmação do fuso CPTM. A configuração local de três fontes e o cliente em uso já foram validados; os detalhes estão no registro da correção do Metrô. Esta entrega não conclui a parcela de lotação oficial de P5.
 
 
-### Resultado dos checks antes da entrega
+## Validação desta preparação
 
-- 231 testes e 55 subtestes aprovados, incluindo 23 testes novos de status; um aviso preexistente de depreciação do TestClient.
-- Compilação seca do Reflex aprovada; avisos do ambiente Windows e de Radix não impediram a compilação.
-- 12 itens do OpenSpec aprovados em validação estrita; `git diff --check` sem erros.
-- A execução local apontou inicialmente falhas de acesso ao diretório temporário do ambiente de testes; a repetição usou uma pasta temporária gravável dentro do checkout, sem modificar testes anteriores.
-- Nenhum token foi enviado às fontes nos testes. Ainda não há validação de uma resposta ARTESP autenticada real ou de uma ativação em produção.
+Na revisão de retenção, passaram 275 testes e 82 subtestes, incluindo falha prolongada, resposta parcial/vazia, cache CDN vencido, pedidos simultâneos e independência de busca/registro/concorrência. A compilação Reflex passou. A verificação em cache isolado preservou os 12 últimos retornos e suas datas após um dia de falha simulada. Houve consulta HTTP 200 ao Metrô durante a investigação; ainda podem ocorrer falhas externas. O cliente em uso precisa ser reiniciado para carregar a correção. Isso não comprova uma resposta real da API Direto dos Trens nem repete a concorrência com duas contas reais.
+
+## Indicadores compactos no trajeto
+
+O resultado apresenta numero/nome de cada linha e bolinha colorida junto ao texto de status no resumo do tempo estimado, sem os antigos quadros detalhados no final. Cada instrucao de embarque repete apenas o indicador da linha correspondente. A lista do resumo e unica e segue a ordem de uso, com qualquer quantidade de linhas; caminhadas nao recebem status ferroviario. Verde indica normalidade, amarelo restricao, vermelho interrupcao e cinza encerramento, situacao desconhecida ou ausencia de dado. Retornos antigos incluem desatualizado no texto; fonte, coleta e descricao ficam nos detalhes ao foco ou ao passar o ponteiro. O codigo da linha vem do resultado, sem inferir uma linha pela cor; contratos legados sem codigo exibem o nome recebido com status indisponivel. A pagina /status preserva os detalhes. Apenas o resumo inicia a atualizacao automatica, compartilhada com todos os indicadores, sem consulta adicional por embarque.
+
+### Ajuste visual de 10/11/2026
+
+Por solicitacao do usuario, os indicadores compactos passam a mostrar somente o ultimo status, sem o sufixo desatualizado. Esta decisao substitui a descricao anterior desse sufixo no trajeto; a validade interna, a data de coleta, o painel detalhado /status e a retencao em falhas permanecem iguais. O resumo usa duas colunas a partir de telas pequenas: metricas a esquerda e lista alinhada no alto a direita, reduzindo a quebra para uma linha separada. Em telas estreitas, as colunas se empilham sem sobrepor o conteudo.

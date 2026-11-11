@@ -1,67 +1,38 @@
-## Context
+## Contexto e escopo
 
-O Xano armazena a malha e calcula trajetos; o backend Python protege a sessão e
-normaliza contratos externos; o Reflex apresenta o resultado. A ARTESP oferece API
-documentada para linhas delegadas, enquanto o endpoint agregado observado para as
-demais linhas não possui contrato público de terceiros localizado.
+A entrega é informativa e independente do planejamento. O endpoint autenticado `/api/planning/line-status` normaliza dados públicos; a busca e o registro automático não consultam fontes de status. Tokens de sessão continuam em cookie HttpOnly.
 
-## Goals / Non-Goals
+## Fontes e configuração
 
-- Apresentar condições operacionais com origem e atualidade verificáveis.
-- Cobrir progressivamente a rede sem transformar ausência de dado em operação normal.
-- Respeitar autenticação, limites, licença e atribuição de cada fonte.
-- Não implementar lotação, tempos de espera, caminhada ou transferência.
-- Não alterar nesta entrega o cálculo do menor caminho ou excluir linhas por status.
-- Não depender de coleta do HTML de páginas das operadoras.
+- Metrô: quadro incorporado no site oficial, observado com linhas 1, 2, 3, 4, 5, 15 e 17.
+- CPTM: JSON público observado com 10, 11 e 12; 13 só é aceita quando efetivamente retornada.
+- Motiva: última ocorrência de cada aba das linhas 8 e 9. Vincular abas e painéis por identificadores acessíveis e selecionar a maior data, sem inferir pela cor ou posição.
+- Direto dos Trens: adaptador preparado para a API autenticada, desativado sem flag e token; não coletar o site nem reutilizar credenciais internas.
 
-## Decisions
+As fontes são desligadas por padrão. `iniciar-status-local.ps1` habilita somente Metrô/CPTM/Motiva no processo local e restaura as variáveis ao sair. ARTESP e Azure não participam da fábrica atual. A precedência é DDT, CPTM, Metrô, Motiva: preferir informação atual; sem ela, conservar o último dado com identificação própria. Linhas 6/7/13 e serviços especiais sem resposta permanecem indisponíveis; não herdar situação de serviços regulares.
 
-- O backend Python concentrará adaptadores, normalização e cache; credenciais não
-  chegarão ao Reflex.
-- Cada adaptador produzirá o mesmo modelo interno e será testável sem rede.
-- A ARTESP será prioritária para linhas delegadas. Fontes oficiais autorizadas do
-  Metrô e da CPTM serão prioritárias em suas próprias linhas.
-- O código da linha será a chave de correspondência; nomes servirão somente para
-  apresentação e validação de divergências.
-- Falha, resposta inválida ou expiração produzirá estado explícito indisponível ou
-  desatualizado. O planejamento continuará disponível.
-- A primeira versão será informativa. Utilizar ocorrências como peso ou bloqueio de
-  rota exigirá outra mudança e evidência sobre o impacto operacional.
-- A integração complementar permanecerá desabilitada enquanto os termos de uso não
-  forem confirmados.
+## Cache e retenção
 
-## Risks / Trade-offs
+SQLite persistente compartilhado entre usuários e processos do mesmo servidor, com reserva transacional antes da rede. Uma tentativa a cada cinco minutos e no máximo 12 por hora por fonte, política interna conservadora, não cota contratual. Respeitar Cache-Control, Age, Retry-After e ausência de permissão de gravação.
 
-- Endpoints sem contrato podem mudar ou ser retirados sem aviso.
-- Fontes podem divergir para a mesma linha ou atualizar em momentos diferentes.
-- O limite de 12 chamadas por hora da ARTESP exige cache compartilhado e impede uma
-  consulta por usuário.
-- Descrições livres podem citar trechos sem estrutura suficiente para modificar o
-  cálculo de rota com segurança.
+Validade vencida não significa proibição de armazenamento. Conservar a última observação armazenável até novo retorno válido, mantendo horários originais. Respostas vazias, futuras, duplicadas ou inválidas não substituem o último retorno. Em resposta parcial, atualizar somente as linhas retornadas e marcar as anteriores ausentes como desatualizadas. no-store/no-cache/private impedem gravar a nova observação, mas não apagam uma observação anterior cujo armazenamento era permitido.
 
-## Migration Plan
+Sem dado anterior, apresentar indisponibilidade; nunca fabricar normalidade. A consulta em andamento não apaga cartões. Falha do banco ou da fonte não é propagada ao planejamento. Várias máquinas exigem cache/coletor central antes de compartilhar uma credencial.
 
-1. Confirmar por escrito termos, atribuição, limites e credenciais.
-2. Implementar modelo interno e adaptadores desabilitados por padrão.
-3. Implementar cache e observabilidade sem conteúdo sensível.
-4. Publicar endpoint local protegido e apresentação informativa.
-5. Validar respostas normais, ocorrências, divergência, expiração e indisponibilidade.
-6. Ativar cada fonte somente depois de registrar sua autorização e configuração.
+## Transporte e credenciais
 
-## Open Questions
+Todas as chamadas usam HTTPS com validação de certificado, sem redirects. Credenciais DDT ficam exclusivamente no backend, em transporte dedicado à origem fixa, sem logger de URLs autenticadas; o cache usa hash da credencial, não o token.
 
-- O endpoint agregado pode ser consumido e republicado por projeto acadêmico?
-- Há SLA, limite, versão ou endereço permanente para esse serviço?
-- Qual atribuição deve acompanhar os dados do Metrô e da CPTM?
-- Quais são todos os valores possíveis de `StatusCode` e seus significados?
+O diagnóstico do Metrô reproduziu timeout de leitura com cinco segundos. IPv6 foi mais lento na comparação observada, mas também houve timeout IPv4; não se atribui a falha exclusivamente à família de rede. Somente o Metrô usa saída IPv4, conexão de cinco segundos, leitura de quinze por operação e orçamento de vinte segundos verificado durante a recepção. Não fixar IP remoto nem alterar IPv6 no sistema. Motiva e CPTM preservam seus limites. Não repetir imediatamente GET em falha; registrar apenas fonte e categoria segura do erro.
 
+## Interface
 
-## Implementação de 09/11/2026
+O resumo lista linhas únicas na ordem do percurso, alinhado à direita das métricas. Cada embarque mostra apenas sua linha. Número/nome, bolinha e texto indicam o último estado: verde normal, amarelo restrição, vermelho interrupção, cinza encerramento/desconhecido/indisponível. A cor não é o único sinal.
 
-O status usa endpoint autenticado próprio e eventos Reflex separados. A busca e o registro não consultam fontes de status, nem aguardam sua resposta. A apresentação contextual usa códigos explícitos de linha, nunca dedução do nome. A página de status também permite consultar toda a rede.
+Por decisão do usuário, o indicador compacto não inclui sufixo de idade. Validade, fonte e datas continuam no estado e no painel detalhado. Sem código no contrato legado, mostrar o nome recebido sem inferir status. Caminhadas não recebem indicador ferroviário. Um único ciclo por painel relê o backend a cada minuto e é cancelado ao desmontar; respostas antigas são descartadas. Não há uma consulta extra por indicador.
 
-Adaptadores ARTESP e agregado são desativados por padrão. ARTESP exige chave e ativação; complemento exige confirmação configurada de autorização e cobertura. Não há alteração de Xano nesta entrega. Normalizar `situacao`, não o booleano `operacao_normal`, que também abrange restrições. Preservar `atualizado_em` e `verificado_em` com significados diferentes.
+## Validação e limites
 
-Cache SQLite persistente entre usuários e processos do mesmo servidor, com reserva transacional antes da rede. Uma tentativa por 300 segundos, no máximo 12 na janela móvel de uma hora por credencial; falhas contam e HTTP 429 suspende novas tentativas por uma hora. Sem cache gravável, não consultar a origem. Em várias máquinas, exigir cache/coletor central antes de ativar. O estado fica desatualizado após 10 minutos desde coleta/verificação, imediatamente após falha conhecida, e indisponível após uma hora. Dados futuros ou sem situação válida não viram normalidade.
+A implementação local foi testada com consultas reais, falha prolongada simulada, reinício e leituras concorrentes do cache. Em 11/11, a aba logada mostrou coletas Metrô às 11:35, 11:40 e 11:46, com atualização automática observada. A busca interna seguiu pela Sé/Linha 1 e o usuário confirmou outra conta pelas linhas 4/2. Não houve auditoria adicional de IDs ou sobreposição diretamente no Xano nessa rodada.
 
-A fonte responsável prevalece; divergências são registradas sem payloads. A consulta fica disponível mesmo com todas as fontes desativadas, com estado indisponível. Sem amostras autenticadas e credenciais, testes usam contratos documentados e transporte HTTP simulado; isso não comprova ativação real.
+O coletor experimental do site Direto dos Trens foi bloqueado por verificação interativa e não integra esta entrega. A API autenticada continua pendente de token e condições aplicáveis. A validação não promete disponibilidade contínua de terceiros nem lotação oficial.

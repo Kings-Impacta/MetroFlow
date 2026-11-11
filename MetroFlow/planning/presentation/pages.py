@@ -283,6 +283,7 @@ def _station_search(
 def _instruction_card(
     instruction,
 ) -> rx.Component:
+    from MetroFlow.status.presentation import line_status_indicator
     return rx.box(
         rx.hstack(
             rx.center(
@@ -313,6 +314,10 @@ def _instruction_card(
                     instruction["detail"],
                     color=TEXT,
                     line_height="1.6",
+                ),
+                rx.cond(
+                    (instruction["kind"] == "EMBARQUE") & (instruction["line_code"] != ""),
+                    line_status_indicator(instruction["line_code"]),
                 ),
                 rx.text(
                     instruction["meta"],
@@ -370,7 +375,7 @@ def _instruction_card(
 
 
 def _result() -> rx.Component:
-    from MetroFlow.status.presentation import status_panel
+    from MetroFlow.status.presentation import route_status_summary
     return rx.card(
         rx.vstack(
             rx.badge(
@@ -386,53 +391,59 @@ def _result() -> rx.Component:
                 color=INK,
             ),
 
-            rx.flex(
-                rx.box(
-                    rx.text(
-                        "TEMPO ESTIMADO",
-                        size="1",
-                        font_weight="700",
-                        color=MUTED,
+            rx.grid(
+                rx.flex(
+                    rx.box(
+                        rx.text(
+                            "TEMPO ESTIMADO",
+                            size="1",
+                            font_weight="700",
+                            color=MUTED,
+                        ),
+                        rx.text(
+                            PlanningState.minutes,
+                            " min",
+                            weight="bold",
+                            size="6",
+                            color=INK,
+                        ),
                     ),
-                    rx.text(
-                        PlanningState.minutes,
-                        " min",
-                        weight="bold",
-                        size="6",
-                        color=INK,
+                    rx.box(
+                        rx.text(
+                            "BALDEAÇÕES",
+                            size="1",
+                            font_weight="700",
+                            color=MUTED,
+                        ),
+                        rx.text(
+                            PlanningState.transfer_count,
+                            weight="bold",
+                            size="6",
+                            color=INK,
+                        ),
                     ),
+                    rx.box(
+                        rx.text(
+                            "ESTAÇÕES",
+                            size="1",
+                            font_weight="700",
+                            color=MUTED,
+                        ),
+                        rx.text(
+                            PlanningState.station_names.length(),
+                            weight="bold",
+                            size="6",
+                            color=INK,
+                        ),
+                    ),
+                    gap="1.25rem",
+                    align="start",
+                    wrap="wrap",
                 ),
-                rx.box(
-                    rx.text(
-                        "BALDEAÇÕES",
-                        size="1",
-                        font_weight="700",
-                        color=MUTED,
-                    ),
-                    rx.text(
-                        PlanningState.transfer_count,
-                        weight="bold",
-                        size="6",
-                        color=INK,
-                    ),
-                ),
-                rx.box(
-                    rx.text(
-                        "ESTAÇÕES",
-                        size="1",
-                        font_weight="700",
-                        color=MUTED,
-                    ),
-                    rx.text(
-                        PlanningState.station_names.length(),
-                        weight="bold",
-                        size="6",
-                        color=INK,
-                    ),
-                ),
-                gap="2rem",
-                align="center",
-                wrap="wrap",
+                route_status_summary(),
+                grid_template_columns=["minmax(0, 1fr)","minmax(0, 1fr) auto"],
+                gap="1.5rem",
+                align="start",
                 width="100%",
             ),
 
@@ -580,8 +591,6 @@ def _result() -> rx.Component:
                     ),
                 ),
             ),
-
-            status_panel(for_route=True),
 
             align="start",
             spacing="5",

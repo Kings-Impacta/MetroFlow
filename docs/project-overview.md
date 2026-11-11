@@ -38,4 +38,9 @@ O código e os testes representam o comportamento implementado. `openspec/specs/
 
 ## Integração informativa inicial de status
 
-A integração informativa inicial de status está implementada em entrega separada: fontes desativadas por padrão, cache compartilhado e falhas sem bloquear busca/registro. A chave ARTESP ainda precisa ser configurada e a resposta real conferida; o complemento continua pendente. Veja [guia de status](status-operacional.md).
+A integração informativa inicial de status está implementada em entrega separada: fontes desativadas por padrão, cache compartilhado e falhas sem bloquear busca/registro. A preparação atual usa Direto dos Trens como principal e CPTM como complemento, com Metrô reservado e desativado. Aguarda-se token e amostra autorizada; ARTESP/Azure ficam fora da configuração atual. Veja [guia de status](status-operacional.md).
+
+
+## Entrega de status em 11/11/2026
+
+A configuração local validada usa Metrô, CPTM e Motiva, com 12 linhas observadas e preservação do último retorno. O iniciador portátil fica na raiz do projeto. A API Direto dos Trens aguarda token. Fontes continuam desativadas por padrão e não participam do cálculo nem do registro de viagens. Consulte o guia de status para a configuração e os limites atuais.

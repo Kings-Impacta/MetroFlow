@@ -200,6 +200,7 @@ class PlanningState(rx.State):
             "origin": first_segment.origin,
             "destination": first_segment.destination,
             "line": first_segment.line,
+            "line_code": first_segment.line_code or first_segment.line,
             "operator": first_segment.operator,
             "direction": first_segment.direction,
             "segment_type": first_segment.segment_type,
@@ -269,6 +270,7 @@ class PlanningState(rx.State):
                         segment.destination
                     ),
                     "line": segment.line,
+                    "line_code": segment.line_code or segment.line,
                     "operator": (
                         segment.operator
                     ),
@@ -541,6 +543,7 @@ class PlanningState(rx.State):
         for instruction in instructions:
             if instruction["kind"] == "EMBARQUE":
                 group = next(groups_to_board, None)
+                instruction["line_code"] = str(group["line_code"]) if group is not None else ""
                 if group is not None and int(group["wait_seconds"]) > 0:
                     minutes = (int(group["wait_seconds"]) + 59) // 60
                     result.append({
@@ -553,6 +556,7 @@ class PlanningState(rx.State):
             result.append(instruction)
         for index, instruction in enumerate(result, 1):
             instruction["step"] = str(index)
+            instruction.setdefault("line_code", "")
         return result
 
     @rx.event
@@ -1069,7 +1073,10 @@ class PlanningState(rx.State):
         self.station_names = (
             route.stations
         )
-        self.route_line_codes = list(dict.fromkeys(step.line_code for step in route.segments if step.line_code and step.segment_type == "ferroviario"))
+        self.route_line_codes = list(dict.fromkeys(
+            step.line_code or step.line for step in route.segments
+            if step.segment_type == "ferroviario"
+        ))
         self.notices = route.notices
 
         self.minutes = (

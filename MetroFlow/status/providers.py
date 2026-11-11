@@ -60,32 +60,57 @@ def normalize_aggregate(payload, now):
 
 
 class ProviderFailure(Exception):
-    def __init__(self, backoff=300):
+    def __init__(self, backoff=300, *, kind="unavailable"):
         super().__init__("Fonte de status indisponível")
         self.backoff = backoff
+        self.kind = kind
 
 
 class HttpProvider:
-    def __init__(self, url, normalizer, key="", transport=None):
+    def __init__(self, url, normalizer, key="", transport=None, response_format="json", respect_cache=False,
+                 timeout=2.0, total_timeout=4.0, local_address=None, read_timeout=None):
+        self.timeout, self.total_timeout = timeout, total_timeout
+        self.local_address = local_address
+        self.read_timeout = timeout if read_timeout is None else read_timeout
+        self.respect_cache = respect_cache
+        if response_format not in {"json", "html"}:
+            raise ValueError("Formato de resposta inválido")
+        self.response_format = response_format
         self.url, self.normalizer, self.key, self.transport = url, normalizer, key, transport
 
     def fetch(self, now):
         try:
             headers = {"Authorization":f"Api-Key {self.key}"} if self.key else {}
             started = time.monotonic()
-            with httpx.Client(timeout=httpx.Timeout(2.0), follow_redirects=False,
-                              transport=self.transport, trust_env=False) as client:
+            transport = self.transport
+            if transport is None and self.local_address is not None:
+                transport = httpx.HTTPTransport(local_address=self.local_address, trust_env=False, verify=True)
+            with httpx.Client(timeout=httpx.Timeout(self.timeout,read=self.read_timeout), follow_redirects=False,
+                              transport=transport, trust_env=False) as client:
                 with client.stream("GET", self.url, headers=headers) as response:
+                    response_headers = dict(response.headers)
                     if response.status_code == 429:
-                        raise ProviderFailure(3600)
+                        from .feeds import retry_after
+                        raise ProviderFailure(retry_after(response_headers, now))
                     response.raise_for_status()
                     raw = bytearray()
                     for chunk in response.iter_bytes():
                         raw.extend(chunk)
-                        if len(raw)>500000 or time.monotonic()-started>4:
-                            raise ProviderFailure()
-            return self.normalizer(json.loads(raw), now)
+                        if len(raw)>500000 or time.monotonic()-started>self.total_timeout:
+                            raise ProviderFailure(kind="response_limit")
+            payload = raw.decode("utf-8") if self.response_format == "html" else json.loads(raw)
+            rows = self.normalizer(payload, now)
+            if self.respect_cache:
+                from .feeds import cache_policy
+                return cache_policy(rows, response_headers)
+            return rows
         except ProviderFailure:
             raise
+        except httpx.TimeoutException as error:
+            kind = "connect_timeout" if isinstance(error,httpx.ConnectTimeout) else (
+                "read_timeout" if isinstance(error,httpx.ReadTimeout) else "timeout")
+            raise ProviderFailure(kind=kind) from None
+        except httpx.HTTPStatusError:
+            raise ProviderFailure(kind="http_status") from None
         except (httpx.HTTPError, ValueError, TypeError, KeyError):
-            raise ProviderFailure() from None
+            raise ProviderFailure(kind="invalid_response") from None
