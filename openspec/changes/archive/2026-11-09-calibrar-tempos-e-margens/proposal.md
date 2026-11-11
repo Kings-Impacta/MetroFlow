@@ -19,3 +19,9 @@ Afeta futuramente cadastro e funções Xano de planejamento e registro e normali
 ## Atualização documental de 09/11/2026
 
 A calibração foi publicada após autorização, incluindo a Linha 6 parcial; as restrições de loopback abaixo descrevem o laboratório, não impedem o contrato calibrado na API oficial. Os resultados e a versão atual estão em `docs/xano/publicacao-preferencia-metro-2026-11-09.md`.
+
+## Datas de conclusão e atualização
+
+- Última atualização versionada anterior à revisão de arquivamento: **09/11/2026**, commit `6f0a998` (PR #39), que contém o fechamento e as evidências de publicação/validação. Esta é a data usada no diretório de arquivo por solicitação do usuário.
+- Revisão documental e movimentação física para `archive`: **11/11/2026**. Essa revisão não é uma nova data de implementação ou publicação. Correções documentais de limites e contexto feitas na revisão não foram retrodatadas.
+- Publicação da calibração/cliente: **05/11/2026**; atualização da preferência pelo Metrô e reteste com duas contas: **09/11/2026**. Fonte: `docs/xano/publicacao-preferencia-metro-2026-11-09.md`.

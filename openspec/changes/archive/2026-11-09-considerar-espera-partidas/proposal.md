@@ -30,3 +30,9 @@ permitindo conexões que fecham antes da chegada do passageiro.
 
 Dois endpoints Xano, contrato Python e instruções Reflex. Sem reimportar trechos,
 substituir esquema, alterar chaves ou parâmetros da demonstração de concorrência.
+
+## Datas de conclusão e atualização
+
+- Última atualização versionada anterior à revisão de arquivamento: **09/11/2026**, commit `6f0a998` (PR #39), que contém o fechamento e as evidências de publicação/validação. Esta é a data usada no diretório de arquivo por solicitação do usuário.
+- Revisão documental e movimentação física para `archive`: **11/11/2026**. Essa revisão não é uma nova data de implementação ou publicação. Correções documentais de limites e contexto feitas na revisão não foram retrodatadas.
+- A publicação e releitura do cálculo de espera foram concluídas em **29/10/2026**; o cliente calibrado foi integrado em **05/11/2026** e o fechamento documental posterior é de **09/11/2026**. Fonte: `docs/xano/espera-partidas-2026-10-28.md` e histórico do Git.

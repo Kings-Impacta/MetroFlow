@@ -1,3 +1,7 @@
+## Purpose
+
+Preservar percursos coerentes para o passageiro, sem voltas artificiais, com ocupação prevista, transferências e limites proporcionais para as alternativas.
+
 ## ADDED Requirements
 
 ### Requirement: Informação de acesso na integração

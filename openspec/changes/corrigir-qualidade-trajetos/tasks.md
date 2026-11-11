@@ -1,9 +1,0 @@
-- [x] Ler auditoria, domínio, arquitetura e especificar escopo sem Linha 6.
-- [x] Guardar exportação atual e confirmar fontes pertinentes.
-- [x] Corrigir desvios desproporcionais, voltas e ocupação no horário previsto.
-- [x] Tratar extensão de Itapevi e compatibilidade entre busca, registro e cliente.
-- [x] Revisar dados de tempos e transferências; aplicar somente evidências suficientes e registrar lacunas.
-- [x] Comparar os cenários antes/depois e executar regressões.
-- [x] Validar OpenSpec e XanoScript, publicar dois endpoints e reler sem modificar tabelas.
-- [x] Atualizar documentação e priorizar Linha 6 por último.
-- [x] Calibrar deslocamentos e transferências por trecho/sentido no escopo de estimativas rastreáveis aprovado posteriormente; entrega de 05/11 e reteste de 09/11. Não certificar como tempos medidos.

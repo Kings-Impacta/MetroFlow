@@ -65,3 +65,7 @@ Os registros abaixo preservam a sequência de evidências obtidas durante o P0. 
 - Com o processo reiniciado e o token expirado, uma nova consulta foi bloqueada e o navegador foi redirecionado para `/login`.
 - A validade de `auth/login` e `auth/signup` foi restaurada e publicada em 86.400 segundos (24 horas), sem rascunhos pendentes no Xano.
 - A suíte local passou com 63 testes e 8 subtestes; restou apenas um aviso de depreciação do `TestClient`.
+
+## Atualização em 11/11/2026
+
+A parcela informativa de P5 está entregue na main pelo PR #41: três fontes públicas habilitáveis localmente, 12 linhas, renovação automática e retenção do último retorno. Direto dos Trens aguarda token; 6/7/13, serviços especiais e condições de ativação pública continuam pendentes. Isso não entrega lotação oficial nem várias alternativas simultâneas de P2. O reteste no Xano confirmou registros 67/68, calibração e concorrência pela Luz dentro dos limites. Consulte o [resultado e a lista atual de pendências](xano/reteste-main-status-concorrencia-2026-11-11.md); as avaliações de P5 acima descrevem seu estágio histórico.
