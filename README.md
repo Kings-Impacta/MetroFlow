@@ -8,7 +8,7 @@ O fluxo autenticado de cadastro, login, restauração de sessão e logout está 
 
 O cadastro solicita confirmação por e-mail antes do primeiro login. O sistema também permite reenviar a confirmação e recuperar a senha; após a redefinição, a sessão local é encerrada e o usuário retorna ao login. Em 06/10/2026, a entrega real de e-mails, a redefinição de senha, o novo login e o planejamento autenticado foram validados com o Xano e o Brevo. Consulte [a revisão](docs/revisao-local-2026-10-02.md) para conhecer as evidências e pendências complementares.
 
-O cálculo utiliza os tempos dos trechos e acrescenta 600 segundos por mudança de linha. Foram validadas rotas diretas, inversas, com baldeações, integrações a pé e o Expresso Aeroporto. A interface também foi verificada no Chrome após impedir que a tradução automática alterasse o DOM controlado pelo Reflex.
+O contrato calibrado usa tempos por sentido, esperas e baldeações estimadas, com margem única de um minuto no total exibido. A concorrência pode selecionar uma alternativa dentro dos limites documentados, sem representar lotação oficial. A penalidade de 600 segundos por troca permanece apenas no contrato legado. Consulte o [modelo de domínio](docs/domain-model.md) para as regras atuais.
 
 Para conhecer o projeto, leia a [visão geral](docs/project-overview.md), o [modelo de domínio](docs/domain-model.md) e a [arquitetura](ARCHITECTURE.md). O comportamento concluído está em `openspec/specs/`; o histórico das entregas está em `openspec/changes/archive/`; e novas mudanças ativas, quando existirem, ficam em `openspec/changes/`. O [registro de validação](docs/validacao-integracao-xano.md) e a [auditoria complementar de integridade do Xano](docs/xano/auditoria-integridade-2026-10-08.md) detalham evidências e limites atuais.
 
@@ -59,7 +59,7 @@ Antes de iniciar, compilar ou depurar o servidor Reflex, siga `.agents/skills/re
 
 ## Xano e escopo
 
-O Xano calcula o caminho pelo menor tempo estimado, somando os trechos e 600 segundos por mudança de linha; em empate, escolhe menos baldeações. O primeiro MVP não inclui lotação, alternativas ou tempos reais e específicos de caminhada, espera ou transferência.
+O Xano calcula o menor horário estimado de chegada e considera a sobreposição de viagens para concorrência. Busca e registro compartilham a calibração e a cronologia do trajeto. Os tempos são estimativas e a ocupação é uma demonstração interna, não medição oficial. A integração informativa de status não altera esse cálculo nem o registro automático.
 
 Os arquivos em `docs/xano/rascunhos/` registram o XanoScript observado e publicado, mas não substituem uma exportação oficial do workspace. Alterações em recursos ou dados remotos exigem autorização específica.
 
@@ -71,3 +71,11 @@ O workflow `.github/workflows/quality.yml` executa a suíte Python e a validaç�
 ## Condições operacionais das linhas
 
 Consulte [configuração e limites da integração de status](docs/status-operacional.md). As fontes ficam desativadas até a configuração no backend. Falhas de status não bloqueiam a busca nem a concorrência.
+
+Para iniciar localmente com as fontes validadas do Metrô, CPTM e Motiva, na raiz do projeto:
+
+```powershell
+.\iniciar-status-local.ps1
+```
+
+O iniciador usa o ambiente e o log do projeto, sem caminhos específicos de uma máquina e sem chave. Abra `http://localhost:3000/status` para os detalhes; no resultado da busca, os indicadores aparecem no resumo e em cada embarque. Há cobertura observada para 12 linhas; 6, 7 e 13 permanecem indisponíveis enquanto aguardamos a API Direto dos Trens. A interface consulta a cada minuto, respeitando o cache das fontes. Em falhas, conserva o último retorno e sua data até uma nova resposta válida. Pare o servidor anterior com Ctrl+C antes de executar o iniciador.

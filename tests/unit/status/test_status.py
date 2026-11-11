@@ -103,7 +103,9 @@ class CacheTests(TestCase):
         self.assertEqual(self.cache.read("key",self.provider)[0].validity,"stale")
         self.assertEqual(self.provider.fetch.call_count,2)
         self.now+=3601
-        self.assertEqual(self.cache.read("key",self.provider)[0].validity,"unavailable")
+        last=self.cache.read("key",self.provider)[0]
+        self.assertEqual(last.validity,"stale")
+        self.assertEqual(last.collected_at,NOW)
 
     def test_no_maximo_doze_tentativas_inclusive_falhas(self):
         self.provider.fetch.side_effect=ProviderFailure()
@@ -149,7 +151,7 @@ class ServiceTests(TestCase):
             self.assertFalse(StatusService.from_environment().providers)
 
     def test_ativacao_explicita_e_identificador_de_cache_sem_chave(self):
-        with patch.dict(os.environ,{"METROFLOW_ARTESP_ENABLED":"1","METROFLOW_ARTESP_API_KEY":"private-key"},clear=True):
+        with patch.dict(os.environ,{"METROFLOW_DDT_ENABLED":"1","METROFLOW_DDT_TOKEN":"private-key"},clear=True):
             service=StatusService.from_environment()
         self.assertEqual(len(service.providers),1)
         self.assertNotIn("private-key",service.providers[0][1])
@@ -157,13 +159,13 @@ class ServiceTests(TestCase):
     def test_precedencia_divergencia_ausencia_e_falha_total(self):
         cache=Mock();cache.read.side_effect=[[condition()],[condition().model_copy(update={"situation":"restricted"}),condition("L1")]]
         with self.assertLogs("MetroFlow.status.service",level="INFO"):
-            rows=StatusService(cache,[("artesp","a",None),("aggregate","b",None)]).conditions()
+            rows=StatusService(cache,[("ddt","a",None),("cptm","b",None)]).conditions()
         self.assertEqual(next(r for r in rows if r.line_code=="L4").situation,"normal")
         self.assertEqual(next(r for r in rows if r.line_code=="L1").validity,"current")
         self.assertEqual(next(r for r in rows if r.line_code=="L2").validity,"unavailable")
         cache.read.side_effect=RuntimeError("private-key")
         with self.assertLogs("MetroFlow.status.service",level="WARNING") as logs:
-            self.assertTrue(all(r.validity=="unavailable" for r in StatusService(cache,[("artesp","a",None)]).conditions()))
+            self.assertTrue(all(r.validity=="unavailable" for r in StatusService(cache,[("ddt","a",None)]).conditions()))
         self.assertNotIn("private-key",str(logs.output))
 
 

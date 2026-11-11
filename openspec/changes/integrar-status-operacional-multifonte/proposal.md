@@ -1,36 +1,26 @@
 ## Why
 
-A API Trilhos da ARTESP deixou de cobrir as linhas geridas diretamente pelo Metrô e
-pela CPTM. O MetroFlow precisa informar claramente a condição das linhas de um
-trajeto sem apresentar cobertura parcial como se representasse toda a rede e sem
-depender de coleta frágil de páginas HTML.
+O MetroFlow precisa apresentar as condições das linhas sem depender da disponibilidade de uma fonte externa para calcular ou registrar viagens. A espera pelo token Direto dos Trens e as falhas transitórias dos quadros públicos exigem cobertura explícita e preservação do último retorno.
 
 ## What Changes
 
-- Integrar condições operacionais por adaptadores de fontes autorizadas.
-- Usar a ARTESP como fonte primária da malha delegada.
-- Complementar as demais linhas somente com fonte oficial cujo uso por terceiros
-  esteja confirmado.
-- Normalizar fonte, situação, descrição, horários, validade e disponibilidade.
-- Aplicar cache compatível com os limites de cada origem.
-- Exibir condição indisponível ou desatualizada sem bloquear o planejamento.
-- Manter a condição operacional apenas informativa nesta entrega, sem mudar o
-  algoritmo de escolha do trajeto.
+- Integrar os quadros oficiais do Metrô e Motiva e o JSON CPTM, com configuração explícita no backend.
+- Preparar Direto dos Trens como principal futura, sem consultas protegidas enquanto o token não estiver configurado.
+- Compartilhar cache e limite de tentativas por fonte; conservar dados anteriores e suas datas em falhas ou respostas parciais.
+- Mostrar indicadores compactos no resumo e nos embarques, mantendo detalhes em `/status`.
+- Ajustar o transporte do Metrô sem alterar as outras fontes, TLS, busca, tempos ou concorrência.
+- Incluir um iniciador local portátil para a configuração validada de três fontes.
 
 ## Capabilities
 
 ### New Capabilities
 
-- `status-operacional-linhas`: consulta e apresentação rastreável da condição das
-  linhas usadas no planejamento.
+- `status-operacional-linhas`: consulta e apresentação informativa, com fonte, horário e validade.
 
 ### Modified Capabilities
 
-Nenhuma. A busca atual permanece com a mesma regra de cálculo.
+Nenhuma regra de escolha ou registro de trajetos é modificada.
 
 ## Impact
 
-A mudança adicionará adaptadores externos no backend, cache, um contrato interno de
-condição operacional, apresentação no Reflex e testes de normalização e falha. A
-implementação remota fica condicionada à chave da ARTESP e à confirmação dos termos
-das fontes complementares.
+O módulo de status, sua apresentação e testes são atualizados. Nenhuma credencial, cache local, arquivo de treinamento ou alteração no Xano integra esta entrega. Todas as fontes permanecem desativadas por padrão; o iniciador local as habilita somente no processo que inicia. A API Direto dos Trens aguarda token e validação autorizada.

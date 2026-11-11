@@ -50,11 +50,11 @@ class LineCondition(BaseModel):
     validity: Literal["current","stale","unavailable"] = "unavailable"
     attribution: str = ""
 
-    def aged(self, now: float, failed: bool = False) -> "LineCondition":
+    def aged(self, now: float, failed: bool = False, *, keep_last: bool = False) -> "LineCondition":
         if self.collected_at is None:
             return self
         verified = self.verified_at if self.verified_at is not None else self.collected_at
         age = max(now-self.collected_at, now-verified)
-        if self.collected_at > now+60 or verified > now+60 or age > 3600:
+        if self.collected_at > now+60 or verified > now+60 or (age > 3600 and not keep_last):
             return LineCondition(line_code=self.line_code)
-        return self.model_copy(update={"validity":"stale" if failed or age>600 else "current"})
+        return self.model_copy(update={"validity":"stale" if failed or age>600 or self.validity == "stale" else "current"})

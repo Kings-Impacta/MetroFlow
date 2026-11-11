@@ -52,3 +52,11 @@ O laboratório em loopback continua separado da API oficial. O status das linhas
 ## Integração informativa inicial de status
 
 O módulo `MetroFlow/status` adiciona endpoint e cache independentes; a consulta de condições operacionais não participa da busca ou da confirmação. Veja [status operacional](docs/status-operacional.md) para configuração, limites e ativação pendente.
+
+
+Preparação posterior de 09/11: a fábrica de status seleciona somente Direto dos Trens (principal), CPTM (complemento) e o quadro Metrô como reserva explícita desativada. Credenciais e cache permanecem no backend; flags legadas ARTESP/Azure não disparam coleta. A requisição autenticada da principal usa transporte HTTPS dedicado sem exposição em logs ou URLs públicas. Aguardam-se token e validação real, sem alteração no Xano.
+
+
+## Entrega de status em 11/11/2026
+
+A configuração local validada usa Metrô, CPTM e Motiva, com 12 linhas observadas e preservação do último retorno. O iniciador portátil fica na raiz do projeto. A API Direto dos Trens aguarda token. Fontes continuam desativadas por padrão e não participam do cálculo nem do registro de viagens. Consulte o guia de status para a configuração e os limites atuais.

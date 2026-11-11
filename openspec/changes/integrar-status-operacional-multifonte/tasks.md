@@ -1,34 +1,28 @@
-## Pesquisa e autorização
+## Implementação entregue
 
-- [x] Registrar cobertura, contrato observado, riscos e lacunas das fontes avaliadas.
-- [x] Definir precedência, cache e tratamento de indisponibilidade propostos.
-- [ ] Configurar no backend a chave ARTESP que o usuário confirmou possuir e registrar os termos aceitos para o ambiente.
-- [ ] Obter confirmação do Metrô para consumo e republicação do endpoint agregado.
-- [ ] Obter confirmação da CPTM para os dados das linhas sob sua gestão.
-- [ ] Catalogar valores e nulabilidade do contrato com amostras autorizadas.
+- [x] Preparar adaptadores Metrô, CPTM e Motiva com cobertura explícita e fontes desligadas por padrão.
+- [x] Preparar API Direto dos Trens com credencial somente no backend, sem ativação sem token.
+- [x] Manter status independente de busca, calibração, registro e concorrência.
+- [x] Compartilhar cache/reserva entre usuários e preservar limite e backoff das fontes.
+- [x] Conservar último retorno e datas em falhas prolongadas, consultas em andamento e respostas parciais/vazias.
+- [x] Respeitar política de armazenamento, sem transformar informação vencida em atual.
+- [x] Mostrar indicadores compactos no resumo e em cada embarque, com repetição automática única e layout responsivo.
+- [x] Ajustar transporte do Metrô preservando TLS e as outras fontes.
+- [x] Confirmar consultas reais e renovação automática das sete linhas do Metrô no cliente reiniciado.
+- [x] Conferir busca interna e relato do teste de duas contas com caminhos distintos.
+- [x] Excluir o coletor experimental bloqueado, caches e credenciais do pacote de entrega.
+- [x] Incluir iniciador portátil para uso local com três fontes.
 
-## Backend
+## Entrega
 
-- [x] Criar o modelo normalizado de condição operacional.
-- [x] Implementar adaptador ARTESP, autenticação, limites e cache compartilhado.
-- [ ] Implementar adaptadores complementares somente após autorização.
-- [x] Expor a condição pelo backend sem credenciais ou respostas internas.
-- [x] Preservar a busca de trajetos quando todas as fontes estiverem indisponíveis.
+- [x] Validar a versão final baseada na main: 276 testes/86 subtestes, compilação e 12 itens OpenSpec.
+- [x] Preparar pacote e fluxo de entrega com exigência dos checks tests/openspec e conferência do commit antes do merge, sem alteração no Xano.
 
-## Interface
+A publicação é registrada pelo PR e por seus checks no GitHub, sem contornar proteção da main.
 
-- [x] Apresentar status, descrição, fonte e atualização das linhas do trajeto.
-- [x] Diferenciar dado atual, desatualizado e indisponível.
-- [x] Manter os avisos informativos sem alterar a rota nesta entrega.
+## Pendências externas e operação pública
 
-## Validação
-
-- [x] Cobrir normalização, cache, limite, timeout e resposta inválida.
-- [x] Cobrir precedência e divergência entre fontes.
-- [x] Cobrir ausência parcial e total sem bloquear o planejamento.
-- [x] Validar estado/componentes Reflex, compilar a interface e executar a suíte completa (231 testes e 55 subtestes). Não representa teste visual autenticado com fontes reais.
-- [x] Executar validação estrita do OpenSpec (12 itens) e registrar limites restantes.
-
-## Entrega inicial de 09/11
-
-Adaptadores preparados com fontes desligadas por padrão. O agregado tem testes sintéticos, sem autorização ou ativação real. A ativação ARTESP e a amostra autenticada continuam pendentes. Guia e limites em `docs/status-operacional.md`.
+- [ ] Receber token Direto dos Trens e validar resposta autorizada, limites, datas e condições de uso.
+- [ ] Confirmar condições para ativação em serviço público; a configuração local não equivale a hospedagem pública.
+- [ ] Confirmar fuso de dataGeracao CPTM; enquanto ausente, usar apenas coleta local como referência de validade.
+- [ ] Revisar cobertura 6/7/13 e serviços especiais após obter a API, sem inferir normalidade.
