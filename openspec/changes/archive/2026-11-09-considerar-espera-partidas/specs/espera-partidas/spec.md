@@ -1,3 +1,7 @@
+## Purpose
+
+Selecionar o menor tempo total disponível considerando esperas por embarque, horários de funcionamento e continuidade no mesmo trem, com registro consistente.
+
 ## ADDED Requirements
 
 ### Requirement: Tempo total e preferência por serviço regular

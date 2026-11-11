@@ -6,8 +6,10 @@ context: |
   MetroFlow é um planejador de viagens do transporte ferroviário metropolitano de São Paulo.
   O frontend é implementado exclusivamente com Reflex; o backend Python protege a sessão,
   valida entradas e normaliza as respostas. O Xano autentica usuários, armazena a malha e
-  calcula os trajetos. A busca minimiza o tempo dos trechos mais 600 segundos por mudança
-  de linha; em empate, prefere menos baldeações. A consulta exige sessão válida.
+  calcula os trajetos. O contrato calibrado minimiza deslocamentos, esperas e baldeações
+  estimadas; em empate, prefere serviços regulares e menos baldeações. A penalidade fixa
+  de 600 segundos pertence ao contrato legado. A margem pública é um minuto no total,
+  fora da ocupação. A consulta exige sessão válida. Status é informativo e independente.
   Documentação e textos exibidos ao usuário devem estar em português do Brasil.
   Preserve identificadores técnicos de Python, Reflex, Xano, APIs e OpenSpec.
   Consulte docs/project-overview.md, docs/domain-model.md e AGENTS.md antes de propor mudanças.

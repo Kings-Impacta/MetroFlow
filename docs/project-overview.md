@@ -15,7 +15,7 @@ A rede reúne linhas e operadores diferentes. Para planejar uma viagem, o usuár
 - Seleção pelo tempo estimado de chegada, incluindo esperas conhecidas e trocas de trem; em empate, prefere serviços regulares e menos baldeações. A concorrência usa ocupação prevista e limites de desvio, descritos no modelo de domínio.
 - Tratamento de seleção inválida, sessão expirada, ausência de rota e indisponibilidade do serviço.
 
-O projeto não oferece ainda lotação oficial ou em tempo real, várias opções simultâneas, frequência regular completa ou tempos medidos de transferência. As esperas conhecidas dos serviços especiais são estimativas baseadas nas fontes documentadas. As próximas entregas e sua ordem estão em [roadmap-pos-mvp.md](roadmap-pos-mvp.md).
+O projeto oferece status operacional informativo, mas não lotação oficial em tempo real, várias opções simultâneas, grades oficiais completas de frequência regular ou tempos medidos de todas as transferências. As esperas conhecidas dos serviços especiais são estimativas baseadas nas fontes documentadas. As próximas entregas e sua ordem estão em [roadmap-pos-mvp.md](roadmap-pos-mvp.md).
 
 ## Estado em 09/11/2026
 
@@ -23,7 +23,7 @@ O cliente calibrado foi integrado à main pelo PR #37 e a mensagem de indisponib
 
 A concorrência foi validada com duas contas distintas nos registros 52 e 53, separados por 8,666 segundos: a primeira recebeu Linha 3 → Sé → Linha 1 (21min15s estimados), e a segunda Linha 3 → República → Linha 4 → Paulista–Consolação → Linha 2 (29min45s). A versão de busca e registro coincidiu; a alternativa reduziu 60,45% da exposição prevista. Os parâmetros de lotação 1/1% continuam intencionais para demonstração e não representam lotação oficial.
 
-A próxima frente é a integração informativa de status operacional. O [fechamento e as pendências](xano/fechamento-trajetos-concorrencia-2026-11-09.md) distinguem manutenção, verificações ainda não cobertas e os requisitos próprios dessa integração.
+A integração informativa de status operacional foi entregue posteriormente na main pelo PR #41. O [fechamento e as pendências](xano/fechamento-trajetos-concorrencia-2026-11-09.md) distinguem manutenção, verificações ainda não cobertas e os requisitos próprios dessa integração.
 
 ## Arquitetura e restrições
 
@@ -44,3 +44,5 @@ A integração informativa inicial de status está implementada em entrega separ
 ## Entrega de status em 11/11/2026
 
 A configuração local validada usa Metrô, CPTM e Motiva, com 12 linhas observadas e preservação do último retorno. O iniciador portátil fica na raiz do projeto. A API Direto dos Trens aguarda token. Fontes continuam desativadas por padrão e não participam do cálculo nem do registro de viagens. Consulte o guia de status para a configuração e os limites atuais.
+
+O [reteste da main de 11/11](xano/reteste-main-status-concorrencia-2026-11-11.md) confirmou renovação automática das três fontes e os registros calibrados 67/68, com alternativa pela Luz e limites respeitados. O documento reúne as pendências atuais.

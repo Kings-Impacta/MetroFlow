@@ -39,3 +39,7 @@
 - [ ] Verificar confirmações simultâneas do mesmo usuário por HTTP autenticado; não confundir com buscas de usuários distintos.
 
 Evidências e pendências classificadas em `docs/xano/fechamento-trajetos-concorrencia-2026-11-09.md`. O item amplo de validação remota acima permanece aberto deliberadamente.
+
+## Reteste de 11/11/2026
+
+- [x] Auditar registros 67/68 de contas distintas e reproduzir calibração e limites com o código publicado: Linha 3/Sé/Linha 1 e Linha 11/Luz/Linha 1. Evidências em `docs/xano/reteste-main-status-concorrencia-2026-11-11.md`. Os itens remotos negativos e de simultaneidade do mesmo usuário acima permanecem abertos.

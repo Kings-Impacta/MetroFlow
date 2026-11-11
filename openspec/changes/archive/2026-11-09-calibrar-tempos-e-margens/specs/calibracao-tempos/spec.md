@@ -1,3 +1,7 @@
+## Purpose
+
+Definir estimativas rastreáveis de deslocamento, espera e transferência, uma margem única no total público e cronologia compartilhada entre busca e registro.
+
 ## ADDED Requirements
 
 ### Requirement: Cobertura rastreável antes da publicação
@@ -69,7 +73,7 @@ A interface SHALL identificar o tempo como estimado e informar que pode variar c
 - **THEN** a duração é identificada como “Tempo estimado” sem promessa de chegada exata
 
 ### Requirement: Alternativa parcial com desvio limitado
-Quando a alternativa totalmente livre não couber nos limites publicados, a busca SHALL poder selecionar um percurso parcialmente ocupado que reduza em pelo menos 40% o tempo previsto em trechos ocupados. O acréscimo SHALL ficar dentro do menor valor entre 480 segundos e 45% do tempo-base principal, com no máximo uma baldeação adicional. A margem pública de 60 segundos SHALL ficar fora dessa comparação.
+Quando a alternativa totalmente livre não couber nos limites publicados, a busca SHALL poder selecionar um percurso parcialmente ocupado que reduza em pelo menos 40% o tempo previsto em trechos ocupados. O acréscimo SHALL ficar dentro do menor valor entre 540 segundos e 45% do tempo-base principal, com no máximo uma baldeação adicional. A margem pública de 60 segundos SHALL ficar fora dessa comparação.
 
 #### Scenario: República reduz a exposição com acréscimo de oito minutos
 - **WHEN** o principal tem 1155 segundos, uma baldeação e 885 segundos de exposição, e o caminho por República tem 1635 segundos, duas baldeações e 350 segundos de exposição
@@ -78,3 +82,10 @@ Quando a alternativa totalmente livre não couber nos limites publicados, a busc
 #### Scenario: Desvio excede o limite ou reduz pouco a exposição
 - **WHEN** um percurso excede o limite de tempo, acrescenta mais de uma baldeação ou reduz menos de 40% da exposição
 - **THEN** a regra parcial não seleciona esse percurso
+
+### Requirement: Preferência limitada por percurso do Metrô
+Entre alternativas elegíveis por concorrência, o sistema SHALL preferir percurso inteiramente pelo Metrô até 60 segundos acima da alternativa original, preservando min(540 segundos, 45%) de acréscimo sobre o principal, no máximo uma baldeação extra e redução mínima de 40% da exposição. Essa preferência não SHALL presumir o trem em que o usuário já está.
+
+#### Scenario: Alternativa por República excede o orçamento
+- **WHEN** o principal tem 1185 segundos, a alternativa pela Luz tem 1625 segundos e exposição zero, e República tem 1725 segundos
+- **THEN** mantém a alternativa pela Luz, pois República excede 45% sobre o principal e fica mais de 60 segundos acima da alternativa original

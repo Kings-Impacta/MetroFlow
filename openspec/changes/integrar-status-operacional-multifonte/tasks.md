@@ -18,7 +18,9 @@
 - [x] Validar a versão final baseada na main: 276 testes/86 subtestes, compilação e 12 itens OpenSpec.
 - [x] Preparar pacote e fluxo de entrega com exigência dos checks tests/openspec e conferência do commit antes do merge, sem alteração no Xano.
 
-A publicação é registrada pelo PR e por seus checks no GitHub, sem contornar proteção da main.
+A publicação foi concluída pelo PR #41, com checks tests/openspec aprovados na main.
+
+- [x] Confirmar na main a renovação automática das três fontes e auditar os registros 67/68 no Xano, reproduzindo calibração, cronologia e limites da alternativa; ver `docs/xano/reteste-main-status-concorrencia-2026-11-11.md`.
 
 ## Pendências externas e operação pública
 

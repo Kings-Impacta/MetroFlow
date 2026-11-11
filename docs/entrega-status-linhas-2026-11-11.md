@@ -39,3 +39,7 @@ Somente o Metrô utiliza a correção de transporte IPv4, conexão de cinco segu
 - A busca interna Barra Funda → Paraíso foi observada pela Sé e Linha 1; o usuário confirmou outra conta pelas linhas 4 e 2. Não houve nova auditoria de IDs e sobreposição no Xano nessa rodada.
 
 Nenhuma credencial, cache, arquivo de treinamento ou dado da malha é distribuído. A validação não promete disponibilidade contínua das origens nem representa lotação oficial. Ver [guia de status](status-operacional.md) e [correção do Metrô](correcao-consulta-metro-2026-11-11.md).
+
+## Confirmação após entrega na main
+
+O PR #41 foi integrado e os checks da main passaram. Em 11/11, o cliente reiniciado na main renovou automaticamente as fontes e o Xano confirmou as viagens 67/68, com reprodução da calibração e dos limites de concorrência. A alternativa desta rodada foi pela Luz, não por República. Veja o [reteste e as pendências revisadas](xano/reteste-main-status-concorrencia-2026-11-11.md). As evidências locais anteriores acima permanecem históricas.

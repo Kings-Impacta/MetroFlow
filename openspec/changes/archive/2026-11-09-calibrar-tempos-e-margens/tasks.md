@@ -38,3 +38,13 @@
 ## Fechamento em 09/11/2026
 
 As ressalvas de cobertura pendente nos registros intermediários acima são históricas. A entrega atual aceita estimativas e não promete medições exatas. Publicação, versão e teste real estão em `docs/xano/publicacao-preferencia-metro-2026-11-09.md`; verificações complementares em `docs/xano/fechamento-trajetos-concorrencia-2026-11-09.md`.
+
+## Revisão para arquivamento em 11/11/2026
+
+Escopo concluído e publicado; os testes de entrega e a auditoria dos registros 67/68 são descritos em `docs/xano/reteste-main-status-concorrencia-2026-11-11.md`. Pendências de validação remota geral e de dados adicionais permanecem nas mudanças próprias, sem serem marcadas como concluídas aqui.
+
+## Datas de conclusão e atualização
+
+- Última atualização versionada anterior à revisão de arquivamento: **09/11/2026**, commit `6f0a998` (PR #39), que contém o fechamento e as evidências de publicação/validação. Esta é a data usada no diretório de arquivo por solicitação do usuário.
+- Revisão documental e movimentação física para `archive`: **11/11/2026**. Essa revisão não é uma nova data de implementação ou publicação. Correções documentais de limites e contexto feitas na revisão não foram retrodatadas.
+- Publicação da calibração/cliente: **05/11/2026**; atualização da preferência pelo Metrô e reteste com duas contas: **09/11/2026**. Fonte: `docs/xano/publicacao-preferencia-metro-2026-11-09.md`.
