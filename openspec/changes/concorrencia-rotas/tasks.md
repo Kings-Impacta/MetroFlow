@@ -36,10 +36,10 @@
 - [x] Confirmar duas contas distintas, registro automático e substituição da viagem anterior com a calibração publicada.
 - [x] Confirmar conflito temporal e alternativa por República dentro dos limites aprovados (registros 52/53, HTTP 200).
 - [ ] Completar a matriz remota histórica de entradas inválidas, sessão expirada, configuração ausente e ausência de alternativa; o teste positivo não comprova esses casos.
-- [ ] Verificar confirmações simultâneas do mesmo usuário por HTTP autenticado; não confundir com buscas de usuários distintos.
+- [x] Verificar confirmações simultâneas do mesmo usuário por HTTP autenticado; falha 70/71 e 75/76 corrigida com bloqueio por conta, reteste 81/82 aprovado em 11/11. Ver `docs/xano/exclusividade-viagens-2026-11-11.md`.
 
 Evidências e pendências classificadas em `docs/xano/fechamento-trajetos-concorrencia-2026-11-09.md`. O item amplo de validação remota acima permanece aberto deliberadamente.
 
 ## Reteste de 11/11/2026
 
-- [x] Auditar registros 67/68 de contas distintas e reproduzir calibração e limites com o código publicado: Linha 3/Sé/Linha 1 e Linha 11/Luz/Linha 1. Evidências em `docs/xano/reteste-main-status-concorrencia-2026-11-11.md`. Os itens remotos negativos e de simultaneidade do mesmo usuário acima permanecem abertos.
+- [x] Auditar registros 67/68 de contas distintas e reproduzir calibração e limites com o código publicado: Linha 3/Sé/Linha 1 e Linha 11/Luz/Linha 1. Evidências em `docs/xano/reteste-main-status-concorrencia-2026-11-11.md`. A matriz remota negativa permanece incompleta; a simultaneidade do mesmo usuário foi concluída no reteste posterior 81/82.

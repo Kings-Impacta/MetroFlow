@@ -37,3 +37,7 @@ Um **aviso de acesso** informa possível novo pagamento ou necessidade de confir
 ## Orientação de estação
 
 A **orientação** é uma dica para o passageiro na estação onde ele desce de uma etapa, seja no destino ou em uma baldeação. A informação principal é o lado de desembarque; uma observação adicional em texto livre registra qualquer outra dica relevante, como o carro mais perto da escada ou o caminho da baldeação. Ela é identificada pela estação, pela linha e pelo sentido de chegada do trem. Cada orientação registra a fonte e a data de coleta. Ela não altera o trajeto, os trechos ou o tempo estimado e, quando não existe, o trajeto é apresentado sem ela.
+
+## Exclusividade da confirmação validada em 11/11/2026
+
+O registro usa bloqueio transacional do usuário autenticado antes de consultar e substituir viagens anteriores. Após adquirir o bloqueio, revalida sessão e prazo da referência; o usuário não é modificado. No teste HTTP sobreposto 81/82, ambas as confirmações tiveram sucesso e somente a última permaneceu ativa após a disputa. Cálculo, cronologia, margem e parâmetros não mudaram. Veja [correção e limites da evidência](xano/exclusividade-viagens-2026-11-11.md).
