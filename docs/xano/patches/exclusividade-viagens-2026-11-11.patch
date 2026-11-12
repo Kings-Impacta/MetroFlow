@@ -1,0 +1,32 @@
+--- a/api/planejamento/viagens/confirmar_POST.xs
++++ b/api/planejamento/viagens/confirmar_POST.xs
+@@ -761,0 +762,29 @@
++        // Serializa confirmacoes da mesma conta, inclusive quando nao ha viagem anterior.
++        // O bloqueio e liberado automaticamente no commit ou rollback da transacao.
++        db.get usuarios {
++          field_name = "id"
++          field_value = $auth.id
++          lock = true
++          output = ["id", "ativo", "email_verificado", "versao_sessao"]
++        } as $usuario_serializado
++
++        precondition ($usuario_serializado != null && $usuario_serializado.ativo && $usuario_serializado.email_verificado) {
++          error_type = "unauthorized"
++          error = "Sessão inválida."
++        }
++
++        precondition (`$auth.extras.versao_sessao` != null && `$auth.extras.versao_sessao` == ($usuario_serializado.versao_sessao ?? 1)) {
++          error_type = "unauthorized"
++          error = "Sessão inválida."
++        }
++
++        // O momento do registro e posterior a espera pelo bloqueio.
++        var.update $agora {
++          value = now
++        }
++
++        precondition ($input.calculado_em == null || ($input.calculado_em <= $agora && $agora - $input.calculado_em <= 30000)) {
++          error_type = "inputerror"
++          error = "Trajeto confirmado invalido."
++        }
++

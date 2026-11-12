@@ -41,7 +41,7 @@ Sem acionar atualização manual, as coletas do Metrô e da CPTM avançaram de 1
 | Status | Completar 6/7/13 e serviços especiais apenas com resposta efetiva; confirmar o fuso de `dataGeracao` CPTM. |
 | Operação | Coordenar coleta/cache entre máquinas antes de compartilhar uma credencial em vários servidores; o SQLite atual coordena processos do mesmo servidor. |
 | Concorrência | Completar matriz HTTP autenticada de entradas inválidas/desconexas, sessão expirada, configuração ausente e ausência de alternativa. |
-| Concorrência | Testar duas confirmações simultâneas do mesmo usuário; dois usuários distintos não comprovam exclusividade transacional. |
+| Concorrência | Concluído no reteste posterior 81/82, após correção do bloqueio por conta; ver a atualização ao final. |
 | Administração da malha | Repetir gravações simultâneas de trechos por HTTP autenticado; é outro tipo de concorrência. |
 | Trajetos | Reavaliar necessidade e certificar tempos dos retornos diretos do Expresso L10 ainda abertos no checklist. |
 | Produção | Definir parâmetros de ocupação com a equipe; 1/1% é demonstração. Manter horários, exceções e alcance operante da Linha 6 atualizados. |
@@ -52,3 +52,7 @@ Não foi encontrada falha nova no cenário auditado. Isso não encerra a matriz 
 As evidências restritas permanecem fora do repositório, em `outputs/auditoria-viagens-main-20261111/` da pasta de trabalho: exportações, reprodução, comparação ampliada e `calibracao-verificada.json`. Nenhuma credencial ou identidade das contas integra esta documentação.
 
 A revisão de arquivamento posterior concluiu três mudanças; veja [revisão das mudanças ativas](../revisao-mudancas-ativas-2026-11-11.md). As mudanças com pendências reais e a dependência de orientações continuam abertas.
+
+## Atualização posterior: exclusividade corrigida em 11/11
+
+A disputa simultânea da mesma conta foi reproduzida, corrigida no Xano após backup e validada nos registros 81/82, com apenas uma viagem ativa após a disputa. A segunda conta manteve o principal quando não havia alternativa proporcional. Malha e parâmetros preservados. A matriz de configuração ausente e sessão naturalmente expirada permanece aberta. Veja [correção e evidências](exclusividade-viagens-2026-11-11.md).

@@ -25,7 +25,7 @@ A revisão abaixo confronta os checklists e evidências locais; não representa 
 | Cobertura estimada de trechos, esperas e baldeações | Entrega modelada concluída: 419 sentidos, incluindo Linha 6 parcial; não confundir com tempos medidos ou todas as obras futuras. |
 | Alternativa calibrada com duas contas | Concluída para Barra Funda → Paraíso. Não garante rota alternativa para toda combinação: pode não haver opção elegível. |
 | Matriz remota completa da concorrência | Ainda sem evidência completa: entradas inválidas/desconexas, sessão expirada, configuração ausente, sem alternativa. Há testes locais; falta encerrar a matriz autenticada histórica no Xano. Não bloqueia desenvolvimento informativo de status. |
-| Duas confirmações simultâneas do mesmo usuário | Ainda precisa teste autenticado para confirmar a garantia de uma única viagem ativa na transação. O teste de duas contas não cobre essa disputa. Deve ser validado antes de ampliar uso em produção. |
+| Duas confirmações simultâneas do mesmo usuário | Falha reproduzida em 11/11 e corrigida com bloqueio por conta; reteste HTTP 81/82 confirmou apenas uma ativa. Ver atualização ao final. |
 | Criações administrativas simultâneas de trechos | Reteste HTTP autenticado ainda listado na mudança de pendências da malha. Separado da concorrência de passageiros e não bloqueia leitura informativa de status. |
 | Retornos diretos do Expresso L10 | Certificação/inclusão adicional ainda aberta no checklist antigo. A modelagem vigente contempla o serviço com estimativas e disponibilidade; não afirmar que novos retornos já foram cadastrados. Reavaliar fonte, necessidade e impacto em mudança própria. Não bloqueia status. |
 | Limites de demonstração 1/1% | Mantidos por decisão do usuário; definir valores de produção com a equipe antes de uso real amplo. Não trocar automaticamente nesta revisão. |
@@ -37,3 +37,7 @@ A revisão abaixo confronta os checklists e evidências locais; não representa 
 A preparação descrita originalmente nesta seção foi superada: adaptadores, cache, limites, atualização automática, retenção, interface e testes foram entregues na main pelo PR #41. A configuração local usa Metrô/CPTM/Motiva; Direto dos Trens ainda aguarda token. As condições de ativação pública e a cobertura restante continuam pendentes. Consulte o [guia vigente](../status-operacional.md) e o [reteste de 11/11](reteste-main-status-concorrencia-2026-11-11.md).
 
 Status não modifica cálculo, horários ou ocupação. Usar alertas no cálculo exigirá decisão e validação próprias.
+
+## Atualização posterior: exclusividade corrigida em 11/11
+
+A disputa simultânea da mesma conta foi reproduzida, corrigida no Xano após backup e validada nos registros 81/82, com apenas uma viagem ativa após a disputa. A segunda conta manteve o principal quando não havia alternativa proporcional. Malha e parâmetros preservados. A matriz de configuração ausente e sessão naturalmente expirada permanece aberta. Veja [correção e evidências](exclusividade-viagens-2026-11-11.md).

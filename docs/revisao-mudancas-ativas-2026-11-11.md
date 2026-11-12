@@ -7,7 +7,7 @@ Revisão dos artefatos, tarefas, especificações e evidências de entrega. O ar
 | `calibrar-tempos-e-margens` | Concluída, consolidada em `openspec/specs/calibracao-tempos` e arquivada com data de fechamento 2026-11-09. Corrigida referência antiga de 480 para 540 s e registrada preferência pelo Metrô, conforme publicação já auditada. |
 | `considerar-espera-partidas` | Concluída, consolidada em `openspec/specs/espera-partidas` e arquivada com data de fechamento 2026-11-09. |
 | `corrigir-qualidade-trajetos` | Concluída, consolidada em `openspec/specs/qualidade-trajetos` e arquivada com data de fechamento 2026-11-09. |
-| `concorrencia-rotas` | Mantida ativa: falta matriz remota de falhas e disputa simultânea do mesmo usuário. Testes positivos de duas contas não encerram esses itens. |
+| `concorrencia-rotas` | Mantida ativa: falta completar a matriz remota de falhas. A disputa simultânea do mesmo usuário foi corrigida e validada posteriormente em 81/82; ver `xano/exclusividade-viagens-2026-11-11.md`. |
 | `corrigir-pendencias-malha` | Mantida ativa: tempos/cadastro de retornos diretos do Expresso L10 e teste HTTP administrativo de gravações simultâneas. |
 | `integrar-status-operacional-multifonte` | Mantida ativa: token/amostra Direto dos Trens, condições de uso público, fuso CPTM e revisão de 6/7/13 e serviços especiais. |
 | `orientacoes-embarque-baldeacao` | Implementação concluída (26/26). Arquivamento dependente de `concorrencia-rotas`, conforme o próprio checklist: o delta de Escopo do MVP depende do texto daquela mudança. Não consolidar como concluída uma dependência ainda aberta. Cobertura parcial e dados fictícios de lado de desembarque continuam explicitados no histórico da mudança; não representam orientação certificada em campo. |
