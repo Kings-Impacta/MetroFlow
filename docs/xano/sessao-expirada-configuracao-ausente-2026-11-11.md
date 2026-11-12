@@ -40,3 +40,7 @@ Isso valida no motor remoto a regra de ausência de configuração, preservando 
 Backup do workspace e hashes dos dados anteriores, fora do Git: `outputs/sessao-configuracao-20261111/`. Evidências sem credenciais: `resultado-expiracao.json`, `resultados-remotos-configuracao.json` e `conferencia-final.json`. Os scripts e entradas restritas não integram a entrega documental.
 
 A conferência final confirmou os 26 documentos de produção idênticos aos anteriores e hashes idênticos das nove tabelas, incluindo viagens. Nenhuma viagem foi criada. As duas funções temporárias foram removidas e o conjunto original de funções foi restaurado. A remoção inicial excedeu o tempo de resposta; a ausência efetiva foi conferida por leitura posterior, sem presumir sucesso pelo timeout. O token de teste expirou e o login normal permaneceu em 86400 s.
+
+## Complementação posterior por HTTP local — 12/11/2026
+
+O usuário aceitou e solicitou o ensaio local para fechar a pendência: oito casos por HTTP real em loopback passaram, com configuração realmente ausente em SQLite descartável e cálculo exportado. A regra havia sido validada no motor remoto. O teste HTTP nativo do Xano permanece não executado e essa limitação foi preservada; o método local foi aceito para o fechamento, sem afirmar equivalência entre ambientes. Ver [execução e evidência](http-local-configuracao-ausente-2026-11-12.md).

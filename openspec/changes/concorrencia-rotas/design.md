@@ -50,3 +50,9 @@ Os registros de viagens confirmadas são mantidos sem prazo de exclusão e ficam
 ## Open Questions
 
 - Como observar falhas do registro automático sem expor detalhes internos nem bloquear o resultado da busca?
+
+## Plano de validação HTTP local — 12/11/2026
+
+Por solicitação do usuário, validar a ausência de configuração via socket HTTP real em loopback, sem custo e sem alteração do Xano. Usar banco SQLite temporário com a configuração realmente removida, o cliente de planejamento do projeto e a lambda exata de uma exportação previamente conferida. Incluir controle com ocupação/configuração, ausência de configuração, repetição e restauração exclusivamente local, além de proteção de sessão e contrato.
+
+Este laboratório implementa as leituras e a autenticação localmente; não é uma instância do Xano nem comprova sua camada SQL/JWT nativa. A evidência será combinada à execução anterior da mesma lambda no motor remoto, mantendo o método explícito. Somente depois dos resultados se poderá registrar o encerramento da pendência no escopo local aceito pelo usuário, preservando a falta de teste HTTP nativo no Xano.
