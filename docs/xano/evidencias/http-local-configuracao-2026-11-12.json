@@ -1,0 +1,112 @@
+{
+  "metodo": "HTTP real local + SQLite descartavel + cliente real + lambda exportada",
+  "limite": "Camadas de dados e autenticacao locais; nao e HTTP em runtime nativo do Xano.",
+  "sha256_exportacao": "1ee9e6b2d4f02f6da1c9dfccf242ac56c0558d324695dc2863d1d15035bee734",
+  "sha256_lambda": "34825a08b1a31ba3fdeb890005dccab042dd65b0cff760fc0b9034c8fc9ebc03",
+  "chamadas_xano": 0,
+  "casos": [
+    {
+      "caso": "referencia_sem_ocupacao",
+      "http": 200,
+      "trechos": [
+        12,
+        13,
+        14,
+        15,
+        16,
+        64,
+        65,
+        66,
+        206
+      ],
+      "tempo_fisico": 1185,
+      "tempo_publico": 1245,
+      "configuracao_sql_nula": false
+    },
+    {
+      "caso": "controle_ocupado_configurado",
+      "http": 200,
+      "trechos": [
+        154,
+        62,
+        63,
+        64,
+        65,
+        66,
+        206
+      ],
+      "tempo_fisico": 1625,
+      "tempo_publico": 1685,
+      "configuracao_sql_nula": false
+    },
+    {
+      "caso": "configuracao_realmente_ausente",
+      "http": 200,
+      "trechos": [
+        12,
+        13,
+        14,
+        15,
+        16,
+        64,
+        65,
+        66,
+        206
+      ],
+      "tempo_fisico": 1185,
+      "tempo_publico": 1245,
+      "configuracao_sql_nula": true
+    },
+    {
+      "caso": "repeticao_sem_configuracao",
+      "http": 200,
+      "trechos": [
+        12,
+        13,
+        14,
+        15,
+        16,
+        64,
+        65,
+        66,
+        206
+      ],
+      "tempo_fisico": 1185,
+      "tempo_publico": 1245,
+      "configuracao_sql_nula": true
+    },
+    {
+      "caso": "sessao_local_invalida",
+      "http": 401
+    },
+    {
+      "caso": "origem_destino_iguais",
+      "http": 400
+    },
+    {
+      "caso": "configuracao_restaurada_somente_local",
+      "http": 200,
+      "trechos": [
+        154,
+        62,
+        63,
+        64,
+        65,
+        66,
+        206
+      ],
+      "tempo_fisico": 1625,
+      "tempo_publico": 1685,
+      "configuracao_sql_nula": false
+    },
+    {
+      "caso": "contrato_sem_dados_internos",
+      "http": 200
+    }
+  ],
+  "endereco_local": "http://127.0.0.1:56419",
+  "referencia_e_ocupacao_sintetica_preservadas": true,
+  "banco_temporario_removido": true,
+  "aprovado": true,
+  "servidor_temporario_encerrado": true
+}

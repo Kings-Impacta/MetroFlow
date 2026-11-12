@@ -26,3 +26,7 @@ Não marcar a integração completa como realizada e não arquivar a mudança ge
 ## Entrega
 
 O arquivamento e esta revisão permanecem na cópia de trabalho isolada até a integração documental. A main e a pasta normal não são alteradas automaticamente por esta revisão. Validação estrita do OpenSpec e conferência de alterações documentais devem passar antes da entrega.
+
+## Atualização posterior: pendência validada localmente
+
+Após esta revisão, o usuário solicitou HTTP local isolado para concluir a configuração ausente. Oito casos passaram sem chamadas remotas, com cliente real e registro removido no SQLite temporário. A integração HTTP nativa do Xano permanece não executada, mas deixou de ser bloqueio no escopo local aceito; não confundir os ambientes. Ver [execução e evidência](xano/http-local-configuracao-ausente-2026-11-12.md). A mudança de concorrência ainda não foi arquivada nesta etapa.
