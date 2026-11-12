@@ -53,3 +53,9 @@
 - 5.3: validação no navegador com login real em 26/10/2026; as orientações apareceram nos cartões com a funcionalidade ligada por padrão.
 - Dados: 10 registros com observação de fonte secundária (site do Metrô, Wikipédia e blog). Nenhuma fonte pública informa o lado da porta; em 26/10/2026 o lado foi sorteado para demonstração e marcado como fictício na coluna `fonte`.
 - Limites: as observações precisam ser confirmadas em campo e o lado de desembarque depende da coleta; os nomes de sentido do piloto precisam ser conferidos no planejador; a associação depende de nomes iguais aos do Xano; a cobertura da malha é parcial.
+
+## Revisão para arquivamento — 12/11/2026
+
+Todas as tarefas de implementação estão concluídas. Os deltas foram alinhados às regras calibradas já publicadas antes da consolidação; nenhuma alteração de execução foi feita. A configuração ausente foi validada por **HTTP local isolado**, não por HTTP no runtime nativo do Xano; detalhes e limites em `docs/xano/http-local-configuracao-ausente-2026-11-12.md`.
+
+Conclusão funcional e última validação registradas em 26/10/2026; revisão e arquivamento em 12/11/2026 após resolver a dependência de concorrência. O arquivamento não certifica os dados de demonstração nem conclui a coleta de toda a malha: permanecem cobertura parcial, associação por nomes e dados sujeitos a confirmação em campo.

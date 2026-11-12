@@ -56,3 +56,7 @@ Evidência e limites em `docs/xano/sessao-expirada-configuracao-ausente-2026-11-
 O usuário solicitou execução local isolada para concluir o caso de configuração ausente. Os oito casos passaram por socket HTTP, com o cliente real, SQLite temporário e lambda exportada. O registro local foi realmente excluído e a rota principal foi mantida, enquanto o controle ocupado/configurado produziu alternativa. Nenhuma chamada ao Xano ou alteração em produção.
 
 A aceitação do método local revisa o critério de integração desta pendência; não transforma o ensaio em HTTP nativo do Xano. Esse último permanece não executado, com limitação expressa em `docs/xano/http-local-configuracao-ausente-2026-11-12.md`. Nenhum teste de versão anterior de sessão, primeira viagem simultânea ou rollback sob carga foi acrescentado por este ensaio.
+
+## Revisão para arquivamento — 12/11/2026
+
+Todas as tarefas de implementação estão concluídas. Os deltas foram alinhados às regras calibradas já publicadas antes da consolidação; nenhuma alteração de execução foi feita. A configuração ausente foi validada por **HTTP local isolado**, não por HTTP no runtime nativo do Xano; detalhes e limites em `docs/xano/http-local-configuracao-ausente-2026-11-12.md`.
