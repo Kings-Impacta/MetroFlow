@@ -41,3 +41,7 @@ Status não modifica cálculo, horários ou ocupação. Usar alertas no cálculo
 ## Atualização posterior: exclusividade corrigida em 11/11
 
 A disputa simultânea da mesma conta foi reproduzida, corrigida no Xano após backup e validada nos registros 81/82, com apenas uma viagem ativa após a disputa. A segunda conta manteve o principal quando não havia alternativa proporcional. Malha e parâmetros preservados. A matriz de configuração ausente e sessão naturalmente expirada permanece aberta. Veja [correção e evidências](exclusividade-viagens-2026-11-11.md).
+
+## Atualização posterior: expiração e configuração ausente
+
+A expiração foi testada em HTTP real com token assinado de curta duração, sem alterar o login normal; auth/me, busca e confirmação rejeitaram o mesmo token com 401 após vencer. A regra de configuração nula/omitida passou em execução isolada do cálculo exato no Xano, sem retirar o registro real. Essa execução não substitui integração HTTP com registro ausente no banco de produção. Ver [método, resultados e limites](sessao-expirada-configuracao-ausente-2026-11-11.md).

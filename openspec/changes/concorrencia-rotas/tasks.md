@@ -35,7 +35,7 @@
 
 - [x] Confirmar duas contas distintas, registro automático e substituição da viagem anterior com a calibração publicada.
 - [x] Confirmar conflito temporal e alternativa por República dentro dos limites aprovados (registros 52/53, HTTP 200).
-- [ ] Completar a matriz remota histórica de entradas inválidas, sessão expirada, configuração ausente e ausência de alternativa; o teste positivo não comprova esses casos.
+- [ ] Concluir, se exigida, a integração HTTP de configuração realmente ausente em ambiente isolado; entradas inválidas, ausência de alternativa e token expirado já têm evidências remotas, e a regra de configuração nula/omitida foi validada no motor Xano em isolamento.
 - [x] Verificar confirmações simultâneas do mesmo usuário por HTTP autenticado; falha 70/71 e 75/76 corrigida com bloqueio por conta, reteste 81/82 aprovado em 11/11. Ver `docs/xano/exclusividade-viagens-2026-11-11.md`.
 
 Evidências e pendências classificadas em `docs/xano/fechamento-trajetos-concorrencia-2026-11-09.md`. O item amplo de validação remota acima permanece aberto deliberadamente.
@@ -43,3 +43,10 @@ Evidências e pendências classificadas em `docs/xano/fechamento-trajetos-concor
 ## Reteste de 11/11/2026
 
 - [x] Auditar registros 67/68 de contas distintas e reproduzir calibração e limites com o código publicado: Linha 3/Sé/Linha 1 e Linha 11/Luz/Linha 1. Evidências em `docs/xano/reteste-main-status-concorrencia-2026-11-11.md`. A matriz remota negativa permanece incompleta; a simultaneidade do mesmo usuário foi concluída no reteste posterior 81/82.
+
+## Expiração e ausência de configuração em 11/11/2026
+
+- [x] Confirmar expiração de token assinado de teste em HTTP real: aceito antes do vencimento e 401 depois em auth/me, busca e confirmação, sem mudar as 24 h do login normal.
+- [x] Validar configuração nula e omitida no cálculo exato publicado, executado isoladamente no Xano, com controle positivo de ocupação e resultados completos iguais aos locais.
+
+Evidência e limites em `docs/xano/sessao-expirada-configuracao-ausente-2026-11-11.md`. O item amplo de matriz remota não implica retirar a configuração de produção: a integração HTTP com o registro realmente ausente não foi executada. Token de versão de sessão anterior também não foi testado nesta rodada.
