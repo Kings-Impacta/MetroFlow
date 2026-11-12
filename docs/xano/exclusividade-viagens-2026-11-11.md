@@ -37,3 +37,7 @@ A matriz remota de sessão naturalmente expirada e configuração ausente contin
 ## Atualização posterior: expiração e configuração ausente
 
 A expiração foi testada em HTTP real com token assinado de curta duração, sem alterar o login normal; auth/me, busca e confirmação rejeitaram o mesmo token com 401 após vencer. A regra de configuração nula/omitida passou em execução isolada do cálculo exato no Xano, sem retirar o registro real. Essa execução não substitui integração HTTP com registro ausente no banco de produção. Ver [método, resultados e limites](sessao-expirada-configuracao-ausente-2026-11-11.md).
+
+## Arquivamento documental
+
+A revisão de 12/11 concluiu o arquivamento da correção usando a data funcional de 11/11. Especificação consolidada: `openspec/specs/exclusividade-viagens/spec.md`. O arquivamento não encerra a matriz geral de concorrência; configuração ausente continua identificada como validação isolada. Ver [revisão OpenSpec](../revisao-openspec-2026-11-12.md).
