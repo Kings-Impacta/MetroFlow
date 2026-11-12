@@ -36,3 +36,7 @@ Por decisão do usuário, o indicador compacto não inclui sufixo de idade. Vali
 A implementação local foi testada com consultas reais, falha prolongada simulada, reinício e leituras concorrentes do cache. Em 11/11, a aba logada mostrou coletas Metrô às 11:35, 11:40 e 11:46, com atualização automática observada. A busca interna seguiu pela Sé/Linha 1 e o usuário confirmou outra conta pelas linhas 4/2. Não houve auditoria adicional de IDs ou sobreposição diretamente no Xano nessa rodada.
 
 O coletor experimental do site Direto dos Trens foi bloqueado por verificação interativa e não integra esta entrega. A API autenticada continua pendente de token e condições aplicáveis. A validação não promete disponibilidade contínua de terceiros nem lotação oficial.
+
+## Decisão final de escopo — 12/11/2026
+
+Entrega encerrada com escopo reduzido, por autorização do usuário. As pendências não executadas foram retiradas do compromisso atual e preservadas como melhorias futuras em `docs/melhorias-futuras-malha-status.md`; consulte também as limitações no checklist. O texto anterior preserva a proposta e as decisões históricas, não representa certificação de todas as hipóteses nem garantia de disponibilidade pública. Esta revisão é somente documental.

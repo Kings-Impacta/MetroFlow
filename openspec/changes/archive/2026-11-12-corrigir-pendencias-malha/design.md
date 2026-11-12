@@ -77,3 +77,7 @@ não aparecem nas evidências. Não substituir esquemas com PUT de xanoscript.
 2. Testes de dados e comportamento com relógio controlado.
 3. Atualizar conteúdo com campos explícitos, índice dedicado e publicação transacional.
 4. Reler dados e código, repetir auditoria e trajetos de referência, registrar limites.
+
+## Decisão final de escopo — 12/11/2026
+
+Entrega encerrada com escopo reduzido, por autorização do usuário. As pendências não executadas foram retiradas do compromisso atual e preservadas como melhorias futuras em `docs/melhorias-futuras-malha-status.md`; consulte também as limitações no checklist. O texto anterior preserva a proposta e as decisões históricas, não representa certificação de todas as hipóteses nem garantia de disponibilidade pública. Esta revisão é somente documental.

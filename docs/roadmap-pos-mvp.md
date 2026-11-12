@@ -69,3 +69,13 @@ Os registros abaixo preservam a sequência de evidências obtidas durante o P0. 
 ## Atualização em 11/11/2026
 
 A parcela informativa de P5 está entregue na main pelo PR #41: três fontes públicas habilitáveis localmente, 12 linhas, renovação automática e retenção do último retorno. Direto dos Trens aguarda token; 6/7/13, serviços especiais e condições de ativação pública continuam pendentes. Isso não entrega lotação oficial nem várias alternativas simultâneas de P2. O reteste no Xano confirmou registros 67/68, calibração e concorrência pela Luz dentro dos limites. Consulte o [resultado e a lista atual de pendências](xano/reteste-main-status-concorrencia-2026-11-11.md); as avaliações de P5 acima descrevem seu estágio histórico.
+
+## Encerramento com escopo reduzido — 12/11/2026
+
+Por decisão do usuário, `corrigir-pendencias-malha` e `integrar-status-operacional-multifonte` foram encerradas e arquivadas com o escopo já entregue, em `openspec/changes/archive/2026-11-12-corrigir-pendencias-malha/` e `openspec/changes/archive/2026-11-12-integrar-status-operacional-multifonte/`. As referências anteriores a mudanças ativas descrevem o estado antes desta decisão.
+
+Os dois itens restantes da malha e os quatro de status foram **adiados, não executados nem aprovados**, e estão preservados em [melhorias futuras e limitações](melhorias-futuras-malha-status.md). As contagens originais eram 17/19 e 15/19; não foram convertidas em alegações de execução integral. As listas arquivadas distinguem tarefas executadas e itens retirados do compromisso atual. Não há mudanças ativas no OpenSpec após este encerramento; isso não significa ausência de melhorias ou restrições.
+
+Foram consolidadas as capacidades `disponibilidade-malha` e `status-operacional-linhas`, alinhando referências históricas à calibração e à configuração local já entregues. Nenhuma alteração de código, funcionamento, malha, parâmetros, fontes ou configuração foi feita. O encerramento permanece local até entrega posterior na main.
+
+A configuração ausente foi validada por **HTTP local isolado**, não por HTTP no runtime nativo do Xano, e não comprova o teste administrativo de gravações simultâneas de trechos. A ativação pública das fontes e a validação autorizada Direto dos Trens continuam fora do escopo encerrado.

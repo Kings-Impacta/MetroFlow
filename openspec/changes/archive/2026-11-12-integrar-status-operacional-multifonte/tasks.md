@@ -24,7 +24,13 @@ A publicação foi concluída pelo PR #41, com checks tests/openspec aprovados n
 
 ## Pendências externas e operação pública
 
-- [ ] Receber token Direto dos Trens e validar resposta autorizada, limites, datas e condições de uso.
-- [ ] Confirmar condições para ativação em serviço público; a configuração local não equivale a hospedagem pública.
-- [ ] Confirmar fuso de dataGeracao CPTM; enquanto ausente, usar apenas coleta local como referência de validade.
-- [ ] Revisar cobertura 6/7/13 e serviços especiais após obter a API, sem inferir normalidade.
+- **Adiado, não executado nesta entrega:** Receber token Direto dos Trens e validar resposta autorizada, limites, datas e condições de uso.
+- **Adiado, não executado nesta entrega:** Confirmar condições para ativação em serviço público; a configuração local não equivale a hospedagem pública.
+- **Adiado, não executado nesta entrega:** Confirmar fuso de dataGeracao CPTM; enquanto ausente, usar apenas coleta local como referência de validade.
+- **Adiado, não executado nesta entrega:** Revisar cobertura 6/7/13 e serviços especiais após obter a API, sem inferir normalidade.
+
+## Encerramento com escopo reduzido — 12/11/2026
+
+Por decisão explícita do usuário, esta entrega é encerrada com o escopo implementado e validado. Os itens identificados como adiados acima não foram executados nem aprovados; foram transferidos para `docs/melhorias-futuras-malha-status.md`, fora do compromisso desta entrega. Nenhuma caixa de tarefa não realizada foi marcada como concluída. O arquivamento registra o encerramento administrativo com limitações, não a execução integral do escopo original. Não houve alteração de código, malha, parâmetros, configuração ou runtime.
+
+A configuração ausente da concorrência foi validada por **HTTP local isolado**, não por HTTP no runtime nativo do Xano; essa evidência não valida gravações administrativas simultâneas de trechos.

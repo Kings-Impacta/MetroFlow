@@ -19,8 +19,14 @@
 - [x] Conferir a grade oficial do Expresso L10 com parada em São Caetano e validar as janelas por sentido na busca e confirmação.
 - [x] Calcular feriados recorrentes depois de 2026 e testar datas móveis de 2027.
 - [x] Comparar alternativas por Sé, República/Paulista e Pinheiros, com e sem lotação controlada.
-- [ ] Certificar tempos e incluir os retornos diretos do Expresso L10 com custos documentados.
+- **Adiado, não executado nesta entrega:** Certificar tempos e incluir os retornos diretos do Expresso L10 com custos documentados.
 - [x] Integrar o cliente calibrado na main (PR #37) e validar buscas/registro no teste real de 09/11.
 - [x] Confirmar duas contas distintas em buscas e registros automáticos de Luz–Jandira após novo login, com Turquesa e Expresso Aeroporto.
 - [x] Modelar espera por partidas e desempate entre serviços regulares/especiais; validar a alternativa por República em 09/11, sem prometer tempo real exato.
-- [ ] Repetir o teste administrativo de gravações simultâneas de trechos por HTTP autenticado.
+- **Adiado, não executado nesta entrega:** Repetir o teste administrativo de gravações simultâneas de trechos por HTTP autenticado.
+
+## Encerramento com escopo reduzido — 12/11/2026
+
+Por decisão explícita do usuário, esta entrega é encerrada com o escopo implementado e validado. Os itens identificados como adiados acima não foram executados nem aprovados; foram transferidos para `docs/melhorias-futuras-malha-status.md`, fora do compromisso desta entrega. Nenhuma caixa de tarefa não realizada foi marcada como concluída. O arquivamento registra o encerramento administrativo com limitações, não a execução integral do escopo original. Não houve alteração de código, malha, parâmetros, configuração ou runtime.
+
+A configuração ausente da concorrência foi validada por **HTTP local isolado**, não por HTTP no runtime nativo do Xano; essa evidência não valida gravações administrativas simultâneas de trechos.

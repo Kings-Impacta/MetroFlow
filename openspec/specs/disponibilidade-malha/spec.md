@@ -1,4 +1,9 @@
-## ADDED Requirements
+# disponibilidade-malha Specification
+
+## Purpose
+Respeitar a disponibilidade cadastrada dos serviços ferroviários e preservar a integridade da malha e das instruções, segundo o contrato calibrado já entregue.
+
+## Requirements
 
 ### Requirement: Disponibilidade de serviços
 O sistema SHALL consultar serviços e janelas cadastradas na busca e confirmação,
@@ -36,7 +41,7 @@ com direções completas e operador independente para a Linha 7.
 
 #### Scenario: Rota de referência
 - **WHEN** a busca Jandira–Paraíso ocorre sem lotação e sem serviço especial necessário
-- **THEN** permanece pela Linha 8, Linha 3 e Linha 1 com 4080 segundos
+- **THEN** preserva a conectividade e compara os caminhos pelas linhas 8/3/1 e alternativas conforme os custos, esperas, disponibilidade e limites das especificações `calibracao-tempos`, `espera-partidas` e `concorrencia-rotas`, sem fixar o tempo histórico de 4080 segundos como contrato atual
 
 #### Scenario: Brás no Expresso
 - **WHEN** o retorno do aeroporto passa por Brás
@@ -72,5 +77,5 @@ comparando tempos de trechos e transferências e preservando a regra de concorr�
 - **THEN** essa alternativa vence a busca sem exigir uma regra de preferência
 
 #### Scenario: Rota principal lotada
-- **WHEN** há caminho que evita o trecho lotado da principal
-- **THEN** a busca escolhe a alternativa de menor tempo entre os caminhos disponíveis
+- **WHEN** há caminho elegível que evita ou reduz suficientemente a exposição ao trecho lotado da principal
+- **THEN** a busca aplica os limites de tempo, baldeações, exposição e preferência pelo Metrô definidos em `concorrencia-rotas`, mantendo o principal quando não há alternativa elegível

@@ -32,3 +32,7 @@ Dados e endpoints de planejamento no Xano; cópias locais, testes e documentaç�
 Não publica fontes de status operacional. Não inventa tempos de caminhada nem
 tarifas: gratuidade de Tatuapé/Itaquera exige contexto de tarifa que o contrato
 atual não possui. As ligações físicas permanecem disponíveis para viagens pagas.
+
+## Decisão final de escopo — 12/11/2026
+
+Entrega encerrada com escopo reduzido, por autorização do usuário. As pendências não executadas foram retiradas do compromisso atual e preservadas como melhorias futuras em `docs/melhorias-futuras-malha-status.md`; consulte também as limitações no checklist. O texto anterior preserva a proposta e as decisões históricas, não representa certificação de todas as hipóteses nem garantia de disponibilidade pública. Esta revisão é somente documental.
