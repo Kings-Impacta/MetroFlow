@@ -33,3 +33,7 @@ A segunda conta confirmou também o comportamento de trecho ocupado sem alternat
 A conferência independente após o teste confirmou novamente hashes idênticos das oito tabelas de malha/configuração. A versão de calibração permaneceu `ebe34d59abdefc843e976afe160630f9b8ba37c5ca5c66885a0c1656fab333bb`. Evidências restritas: `reteste-autenticado-aprovado.json` e `conferencia-final-reteste.json` na pasta externa do backup. O teste positivo cobre esta disputa real; não é prova exaustiva de toda carga, rollback, expiração durante bloqueio ou contas sem histórico. Os testes negativos do relatório foram reaproveitados da rodada anterior e não são novas execuções após a correção.
 
 A matriz remota de sessão naturalmente expirada e configuração ausente continua separada. A configuração não foi retirada nem alterada para fabricar esse cenário. O patch não resolve pendências administrativas de gravação de trechos nem altera preferência pelo Metrô, concorrência de passageiros, tempos ou serviços.
+
+## Atualização posterior: expiração e configuração ausente
+
+A expiração foi testada em HTTP real com token assinado de curta duração, sem alterar o login normal; auth/me, busca e confirmação rejeitaram o mesmo token com 401 após vencer. A regra de configuração nula/omitida passou em execução isolada do cálculo exato no Xano, sem retirar o registro real. Essa execução não substitui integração HTTP com registro ausente no banco de produção. Ver [método, resultados e limites](sessao-expirada-configuracao-ausente-2026-11-11.md).
