@@ -44,3 +44,13 @@ Base desta etapa: main `ee3a48e9bcab66f2248b06defdc96bd2d30e645c`. As mudanças 
 O arquivamento de orientações conclui a implementação, não certifica os dados de demonstração. Permanecem cobertura parcial, associação por nomes e observações/lados sujeitos à coleta e confirmação em campo, conforme o registro histórico do piloto. Não foram alterados esses dados nesta revisão.
 
 Permanecem ativas somente `corrigir-pendencias-malha` (17/19) e `integrar-status-operacional-multifonte` (15/19), pelos motivos registrados na tabela histórica acima. Não foram arquivadas tarefas incompletas. Nenhuma chamada de escrita no Xano, alteração de malha, parâmetros, código ou funcionamento do aplicativo foi realizada. Esta etapa permanece local até entrega posterior na main.
+
+## Encerramento com escopo reduzido — 12/11/2026
+
+Por decisão do usuário, `corrigir-pendencias-malha` e `integrar-status-operacional-multifonte` foram encerradas e arquivadas com o escopo já entregue, em `openspec/changes/archive/2026-11-12-corrigir-pendencias-malha/` e `openspec/changes/archive/2026-11-12-integrar-status-operacional-multifonte/`. As referências anteriores a mudanças ativas descrevem o estado antes desta decisão.
+
+Os dois itens restantes da malha e os quatro de status foram **adiados, não executados nem aprovados**, e estão preservados em [melhorias futuras e limitações](melhorias-futuras-malha-status.md). As contagens originais eram 17/19 e 15/19; não foram convertidas em alegações de execução integral. As listas arquivadas distinguem tarefas executadas e itens retirados do compromisso atual. Não há mudanças ativas no OpenSpec após este encerramento; isso não significa ausência de melhorias ou restrições.
+
+Foram consolidadas as capacidades `disponibilidade-malha` e `status-operacional-linhas`, alinhando referências históricas à calibração e à configuração local já entregues. Nenhuma alteração de código, funcionamento, malha, parâmetros, fontes ou configuração foi feita. O encerramento permanece local até entrega posterior na main.
+
+A configuração ausente foi validada por **HTTP local isolado**, não por HTTP no runtime nativo do Xano, e não comprova o teste administrativo de gravações simultâneas de trechos. A ativação pública das fontes e a validação autorizada Direto dos Trens continuam fora do escopo encerrado.

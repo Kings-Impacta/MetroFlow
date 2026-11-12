@@ -24,3 +24,7 @@ Nenhuma regra de escolha ou registro de trajetos é modificada.
 ## Impact
 
 O módulo de status, sua apresentação e testes são atualizados. Nenhuma credencial, cache local, arquivo de treinamento ou alteração no Xano integra esta entrega. Todas as fontes permanecem desativadas por padrão; o iniciador local as habilita somente no processo que inicia. A API Direto dos Trens aguarda token e validação autorizada.
+
+## Decisão final de escopo — 12/11/2026
+
+Entrega encerrada com escopo reduzido, por autorização do usuário. As pendências não executadas foram retiradas do compromisso atual e preservadas como melhorias futuras em `docs/melhorias-futuras-malha-status.md`; consulte também as limitações no checklist. O texto anterior preserva a proposta e as decisões históricas, não representa certificação de todas as hipóteses nem garantia de disponibilidade pública. Esta revisão é somente documental.

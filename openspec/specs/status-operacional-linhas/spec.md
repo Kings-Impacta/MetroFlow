@@ -1,4 +1,9 @@
-## ADDED Requirements
+# status-operacional-linhas Specification
+
+## Purpose
+Apresentar status informativo das linhas com fontes e datas rastreáveis, preservando o último retorno permitido e a independência do planejamento em falhas externas.
+
+## Requirements
 
 ### Requirement: Condição operacional rastreável
 
@@ -16,9 +21,9 @@ origem quando disponível e estado de validade.
 - **WHEN** a fonte retorna condição válida sem informar seu próprio horário
 - **THEN** o sistema preserva o instante da coleta e não inventa um horário da origem
 
-### Requirement: Duas fontes e reserva explícita
+### Requirement: Fontes explícitas no escopo local
 
-O sistema SHALL usar Direto dos Trens como fonte principal, CPTM como complemento das linhas efetivamente retornadas e quadro Metrô como reserva desativada por padrão. Flags antigas ARTESP/Azure não SHALL iniciar consultas nesta configuração. Nenhuma fonte SHALL ser ativada implicitamente pela presença de outra credencial.
+O sistema SHALL manter Direto dos Trens preparado como principal futura, desativado sem token e configuração explícita. A entrega local SHALL permitir habilitar Metrô, CPTM e Motiva pelo iniciador existente, com cobertura somente das linhas efetivamente retornadas. Todas as fontes SHALL permanecer desativadas por padrão. Quando habilitada e validada, a precedência SHALL ser Direto dos Trens, CPTM, Metrô e Motiva. A validação autenticada Direto dos Trens e a ativação pública estão fora da entrega encerrada, conforme `docs/melhorias-futuras-malha-status.md`. Flags antigas ARTESP/Azure não SHALL iniciar consultas nesta configuração. Nenhuma fonte SHALL ser ativada implicitamente pela presença de outra credencial.
 
 #### Scenario: Principal e complemento têm informação atual
 - **WHEN** ambas retornam condições atuais para a mesma linha
@@ -88,7 +93,6 @@ a regra atual de escolha do trajeto nesta entrega.
 - **WHEN** a linha escolhida possui condição diferente de operação normal
 - **THEN** o sistema apresenta o aviso sem recalcular ou substituir automaticamente o trajeto
 
-
 ### Requirement: Quadro oficial preparado sem ativação implícita
 
 O sistema SHALL manter o adaptador HTML do quadro do Metrô desativado por padrão e independente das flags ARTESP e agregado. A ativação pública SHALL permanecer pendente de confirmação das condições de uso. A fonte SHALL ser identificada explicitamente e nenhuma condição SHALL alterar a busca ou o registro de viagem.
@@ -104,7 +108,6 @@ O sistema SHALL manter o adaptador HTML do quadro do Metrô desativado por padr�
 #### Scenario: Fonte alternativa apresenta dado atual
 - **WHEN** uma fonte autorizada prioritária está indisponível ou desatualizada e outra fonte autorizada tem condição atual para a mesma linha
 - **THEN** o sistema apresenta a condição atual com a identificação da fonte utilizada e preserva os limites de validade
-
 
 ### Requirement: Política de cache da resposta preservada
 
