@@ -1,3 +1,7 @@
+## Purpose
+
+Registrar viagens autenticadas e selecionar alternativas proporcionais à ocupação estimada, preservando a calibração, a disponibilidade dos serviços e a exclusividade por usuário.
+
 ## ADDED Requirements
 
 ### Requirement: Confirmação de viagem
@@ -36,11 +40,11 @@ O sistema SHALL manter no máximo uma viagem ativa por usuário. Uma nova confir
 #### Scenario: Reconfirmação do mesmo trajeto
 
 - **WHEN** um usuário com viagem ativa confirma novamente o mesmo trajeto
-- **THEN** a viagem anterior é substituída e a janela recomeça no momento da nova confirmação
+- **THEN** a viagem anterior é substituída e a janela é recalculada a partir da referência válida da nova busca
 
 ### Requirement: Janela da viagem
 
-A janela da viagem SHALL começar no momento da confirmação e terminar nesse momento somado à soma de `tempo_estimado` dos trechos, sem a penalidade de baldeação. Após o fim da janela, a viagem SHALL deixar de contar e o registro SHALL ser mantido.
+No contrato calibrado, a viagem SHALL tornar-se ativa na confirmação e seu fim SHALL usar a referência `calculado_em` da busca válida, acrescida dos deslocamentos, esperas e baldeações estimados. A margem pública de 60 segundos SHALL não ampliar a ocupação. Registros legados sem cronograma explícito SHALL conservar sua interpretação histórica. Após o fim da janela, a viagem SHALL deixar de contar e o registro SHALL ser mantido.
 
 #### Scenario: Fim da janela
 
@@ -50,20 +54,20 @@ A janela da viagem SHALL começar no momento da confirmação e terminar nesse m
 #### Scenario: Baldeação não altera a janela
 
 - **WHEN** a viagem confirmada contém mudanças de linha
-- **THEN** a duração da janela não inclui os 600 segundos por mudança
+- **THEN** a janela usa os tempos específicos calibrados de baldeação, sem acrescentar a penalidade legada de 600 segundos nem a margem pública
 
 ### Requirement: Intervalo estimado em cada trecho
 
-O sistema SHALL considerar que uma viagem ativa ocupa cada trecho, no sentido percorrido, somente no intervalo que começa na confirmação somada ao `tempo_estimado` dos trechos anteriores e termina somando o `tempo_estimado` do próprio trecho.
+O sistema SHALL considerar que uma viagem ativa ocupa cada trecho, no sentido percorrido, somente no intervalo de passagem previsto pelo cronograma calibrado (`inicio_previsto_em` e duração). Esperas e baldeações anteriores SHALL deslocar o início dos trechos seguintes sem gerar ocupação ferroviária durante esses períodos. O cálculo legado SHALL permanecer disponível para registros sem cronograma explícito.
 
 #### Scenario: Trecho ainda não alcançado
 
-- **WHEN** o instante atual é anterior ao intervalo estimado da viagem em um trecho
+- **WHEN** o intervalo previsto do candidato termina antes de começar a passagem da outra viagem no mesmo trecho e sentido
 - **THEN** a viagem não conta na ocupação desse trecho
 
 #### Scenario: Trecho já percorrido
 
-- **WHEN** o instante atual é posterior ao intervalo estimado da viagem em um trecho
+- **WHEN** o intervalo previsto do candidato começa após terminar a passagem da outra viagem no mesmo trecho e sentido
 - **THEN** a viagem não conta na ocupação desse trecho
 
 ### Requirement: Trechos considerados na lotação
@@ -87,7 +91,7 @@ Somente trechos ferroviários SHALL entrar na estimativa de lotação. Trechos d
 
 ### Requirement: Ocupação estimada por trecho e sentido
 
-No momento da busca, o sistema SHALL calcular a ocupação de cada trecho em cada sentido como a quantidade de viagens ativas cujo intervalo nesse trecho e sentido contém o instante atual, e o percentual como essa ocupação dividida pelo total de viagens ativas. A viagem ativa do usuário que busca SHALL ser desconsiderada na ocupação e no total.
+No momento da busca, o sistema SHALL calcular a ocupação de cada trecho em cada sentido como a quantidade de viagens ativas cujo intervalo de passagem nesse trecho e sentido se sobrepõe ao intervalo previsto do candidato, e o percentual como essa ocupação dividida pelo total de viagens ativas. A viagem ativa do usuário que busca SHALL ser desconsiderada na ocupação e no total. Registros repetidos de outro usuário SHALL contar uma única vez, considerando o mais recente.
 
 #### Scenario: Viagem ativa de quem busca
 
@@ -123,9 +127,14 @@ Um trecho SHALL ser considerado lotado em um sentido quando, ao mesmo tempo, a o
 - **WHEN** o mínimo de usuários ou o percentual é alterado na tabela de configuração
 - **THEN** as buscas seguintes usam os novos valores sem alteração de código
 
+#### Scenario: Configuração ausente ou inválida
+
+- **WHEN** a configuração de lotação está ausente ou inválida
+- **THEN** nenhum trecho é marcado como lotado e a busca mantém o trajeto principal
+
 ### Requirement: Substituição do trajeto por lotação
 
-Quando o trajeto principal passar por um trecho lotado no sentido percorrido, o sistema SHALL apresentar no lugar dele o caminho de menor tempo que evite os trechos lotados nos sentidos em que estão lotados, sem limite de tempo extra. Se esse caminho não existir, o sistema SHALL apresentar o trajeto principal.
+Quando houver lotação no trajeto principal, o sistema SHALL tentar uma alternativa livre com acréscimo máximo de `min(600, max(120, 25% do tempo físico principal))` segundos e no máximo uma baldeação extra. Na ausência de alternativa livre elegível, SHALL avaliar alternativas com acréscimo máximo de `min(540 segundos, 45% do tempo físico principal)`, no máximo uma baldeação extra e redução mínima de 40% da exposição. Entre alternativas elegíveis, SHALL permitir preferência por caminhos pelo Metrô até 60 segundos mais lentos, preservando todos os limites. Sem alternativa elegível, SHALL apresentar o principal. A margem pública SHALL não entrar nesses limites.
 
 #### Scenario: Trajeto principal sem trecho lotado
 
@@ -134,12 +143,12 @@ Quando o trajeto principal passar por um trecho lotado no sentido percorrido, o 
 
 #### Scenario: Alternativa disponível
 
-- **WHEN** o trajeto principal passa por um trecho lotado e existe caminho que evita os trechos lotados
+- **WHEN** o trajeto principal passa por um trecho lotado e existe alternativa elegível que evita ou reduz suficientemente a exposição aos trechos lotados
 - **THEN** o sistema apresenta somente esse caminho alternativo
 
 #### Scenario: Alternativa indisponível
 
-- **WHEN** o trajeto principal passa por um trecho lotado e não existe caminho que evite os trechos lotados
+- **WHEN** o trajeto principal passa por um trecho lotado e não existe alternativa que respeite os limites de tempo, baldeações e exposição
 - **THEN** o sistema apresenta o trajeto principal
 
 ### Requirement: Lotação de uso interno
