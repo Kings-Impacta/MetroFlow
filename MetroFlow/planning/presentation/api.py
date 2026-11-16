@@ -15,6 +15,7 @@ from MetroFlow.planning.application.services import (
 )
 from MetroFlow.planning.domain.guidance import StationGuidance
 from MetroFlow.planning.domain.models import RouteResult
+from MetroFlow.planning.infrastructure.coordinates_csv import station_coordinates
 from MetroFlow.planning.infrastructure.guidance_csv import cached_guidance, guidance_enabled
 from MetroFlow.planning.infrastructure.xano_client import (
     PlanningError, PlanningUnauthorized, PlanningUnavailable, XanoPlanningClient,
@@ -89,7 +90,8 @@ def stations(token: Token) -> list[StationChoice]:
     try:
         with XanoPlanningClient.from_environment() as client:
             items = PlanningService(client).list_stations(token)
-        return [StationChoice.from_station(item)
+        coordinates = station_coordinates(item.name for item in items)
+        return [StationChoice.from_station(item, coordinates.get(item.name))
                 for item in sorted(items, key=lambda station: station.name.casefold())]
     except (PlanningError, ValueError) as error:
         public_error(error)

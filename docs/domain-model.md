@@ -54,6 +54,12 @@ Uma viagem registrada mede uma busca bem-sucedida, não uma viagem realizada.
 
 A **orientação** é uma dica para o passageiro na estação onde ele desce de uma etapa, seja no destino ou em uma baldeação. A informação principal é o lado de desembarque; uma observação adicional em texto livre registra qualquer outra dica relevante, como o carro mais perto da escada ou o caminho da baldeação. Ela é identificada pela estação, pela linha e pelo sentido de chegada do trem. Cada orientação registra a fonte e a data de coleta. Ela não altera o trajeto, os trechos ou o tempo estimado e, quando não existe, o trajeto é apresentado sem ela.
 
+## Estação mais próxima
+
+A **coordenada da estação** é a latitude e a longitude de uma estação, com fonte e data de coleta, cadastradas em `docs/dados/coordenadas-estacoes.csv`. A primeira carga, de 16/11/2026, cobre as 188 estações da malha.
+
+A **sugestão de origem** usa a localização do navegador, autorizada pelo usuário, para escolher a estação com coordenada mais próxima em linha reta, num raio de até 5 km. A sugestão só preenche a origem, que pode ser trocada como uma escolha manual. A distância exibida é aproximada e não representa o caminho a pé. A posição do usuário fica no navegador e não é armazenada. A sugestão não altera a busca, o tempo estimado nem o registro da viagem.
+
 ## Exclusividade da confirmação validada em 11/11/2026
 
 O registro usa bloqueio transacional do usuário autenticado antes de consultar e substituir viagens anteriores. Após adquirir o bloqueio, revalida sessão e prazo da referência; o usuário não é modificado. No teste HTTP sobreposto 81/82, ambas as confirmações tiveram sucesso e somente a última permaneceu ativa após a disputa. Cálculo, cronologia, margem e parâmetros não mudaram. Veja [correção e limites da evidência](xano/exclusividade-viagens-2026-11-11.md).
