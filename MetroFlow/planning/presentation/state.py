@@ -84,6 +84,83 @@ def request_script(
 """.strip()
 
 
+NEAREST_STATION_MAX_METERS = 5000
+LOCATION_TIMEOUT_MS = 10000
+
+LOCATION_FAILURE_MESSAGE = (
+    "Não foi possível obter sua localização. Escolha a origem manualmente."
+)
+LOCATION_NOT_NEAR_MESSAGE = "Nenhuma estação cadastrada a até 5 km de você."
+
+
+def location_script(
+    stations: list[dict],
+    request_id: int,
+) -> str:
+    """Obtém a posição no navegador e devolve só a estação mais próxima e a distância.
+
+    A latitude e a longitude do usuário nunca saem do navegador.
+    """
+
+    return f"""
+(async () => {{
+    const stations = {json.dumps(stations)};
+    const done = (extra) => ({{request_id: {request_id}, ...extra}});
+
+    if (!window.isSecureContext || !navigator.geolocation) {{
+        return done({{ok: false, reason: "unavailable"}});
+    }}
+
+    let position;
+    try {{
+        position = await new Promise((resolve, reject) => {{
+            navigator.geolocation.getCurrentPosition(resolve, reject, {{
+                enableHighAccuracy: true,
+                timeout: {LOCATION_TIMEOUT_MS},
+                maximumAge: 60000
+            }});
+        }});
+    }} catch (error) {{
+        const code = error && error.code;
+        const reason = code === 1 ? "denied" : code === 3 ? "timeout" : "unavailable";
+        return done({{ok: false, reason}});
+    }}
+
+    const radians = (value) => value * Math.PI / 180;
+    const here = position.coords;
+    let best = null;
+
+    for (const station of stations) {{
+        const dLat = radians(station.lat - here.latitude);
+        const dLon = radians(station.lon - here.longitude);
+        const h = Math.sin(dLat / 2) ** 2
+            + Math.cos(radians(here.latitude)) * Math.cos(radians(station.lat))
+            * Math.sin(dLon / 2) ** 2;
+        const meters = 2 * 6371000 * Math.asin(Math.sqrt(h));
+        if (best === null || meters < best.meters) {{
+            best = {{id: station.id, meters}};
+        }}
+    }}
+
+    if (best === null) {{
+        return done({{ok: false, reason: "unavailable"}});
+    }}
+
+    return done({{ok: true, station_id: String(best.id), distance_m: Math.round(best.meters)}});
+}})()
+""".strip()
+
+
+def distance_text(meters: float) -> str:
+    """Distância arredondada a dezenas de metros, com separador de milhar."""
+
+    rounded = max(10, int(round(meters / 10.0)) * 10)
+    return (
+        f"Estação mais próxima: ~{rounded:,} m "
+        "(distância em linha reta)"
+    ).replace(",", ".")
+
+
 def normalize_search(value: str) -> str:
     """Normaliza a pesquisa ignorando maiusculas, minusculas e acentos."""
 
@@ -135,6 +212,15 @@ class PlanningState(rx.State):
     has_walking_integration: bool = False
 
     _request_id: int = 0
+
+    # Sugestão da estação mais próxima. A posição do usuário não entra no estado.
+    location_available: bool = False
+    location_prompt_dismissed: bool = False
+    location_status: str = "idle"
+    location_message: str = ""
+    origin_distance_text: str = ""
+    _station_coordinates: list[dict] = []
+    _location_request_id: int = 0
 
     # Trechos do resultado apresentado, enviados ao confirmar a viagem.
     _trip_segments: list[dict[str, int]] = []
@@ -582,6 +668,21 @@ class PlanningState(rx.State):
         self.message = ""
 
         self._clear_result()
+        self._clear_location()
+
+    def _clear_location(self) -> None:
+        self._location_request_id += 1
+        self._station_coordinates = []
+        self.location_available = False
+        self.location_prompt_dismissed = False
+        self.location_status = "idle"
+        self.location_message = ""
+        self.origin_distance_text = ""
+
+    def _forget_suggestion(self) -> None:
+        # Escolha manual da origem substitui a sugestão.
+        self.origin_distance_text = ""
+        self.location_message = ""
 
     @rx.event
     def load_stations(
@@ -703,6 +804,21 @@ class PlanningState(rx.State):
             for item in choices
         ]
 
+        self._station_coordinates = [
+            {
+                "id": item.id,
+                "lat": item.latitude,
+                "lon": item.longitude,
+            }
+            for item in choices
+            if item.latitude is not None
+            and item.longitude is not None
+        ]
+
+        self.location_available = bool(
+            self._station_coordinates
+        )
+
         self.stations_status = (
             "ready"
             if choices
@@ -731,6 +847,7 @@ class PlanningState(rx.State):
 
         self.origin_query = value
         self.origin_id = ""
+        self._forget_suggestion()
 
         self.origin_matches = (
             self._filter_stations(
@@ -783,6 +900,16 @@ class PlanningState(rx.State):
         ):
             return
 
+        self._apply_origin(
+            station_id,
+            label,
+        )
+
+    def _apply_origin(
+        self,
+        station_id: str,
+        label: str,
+    ) -> None:
         self.origin_id = (
             station_id
         )
@@ -792,6 +919,7 @@ class PlanningState(rx.State):
         )
 
         self.origin_matches = []
+        self._forget_suggestion()
 
         self._clear_result()
 
@@ -851,11 +979,90 @@ class PlanningState(rx.State):
 
         self.origin_matches = []
         self.destination_matches = []
+        self._forget_suggestion()
 
         self._clear_result()
 
         self.route_status = "idle"
         self.message = ""
+
+    @rx.event
+    def dismiss_location_prompt(self) -> None:
+        self.location_prompt_dismissed = True
+        self.location_message = ""
+
+    @rx.event
+    def request_location(self):
+        """Pede a posição ao navegador somente após o toque do usuário."""
+
+        if (
+            not self.location_available
+            or self.location_status == "loading"
+            or self.route_status == "loading"
+        ):
+            return
+
+        self._location_request_id += 1
+        self.location_status = "loading"
+        self.location_message = ""
+
+        return rx.call_script(
+            location_script(
+                self._station_coordinates,
+                self._location_request_id,
+            ),
+            callback=PlanningState.receive_location,
+        )
+
+    @rx.event
+    def receive_location(
+        self,
+        result: dict,
+    ) -> None:
+        if (
+            not isinstance(result, dict)
+            or result.get("request_id")
+            != self._location_request_id
+        ):
+            return
+
+        self.location_status = "idle"
+
+        station_id = result.get("station_id")
+        distance = result.get("distance_m")
+        station = next(
+            (
+                item
+                for item in self.stations
+                if item["id"] == station_id
+            ),
+            None,
+        )
+
+        if (
+            result.get("ok") is not True
+            or station is None
+            or isinstance(distance, bool)
+            or not isinstance(distance, (int, float))
+            or not 0 <= distance < float("inf")
+        ):
+            self.location_message = LOCATION_FAILURE_MESSAGE
+            return
+
+        if distance > NEAREST_STATION_MAX_METERS:
+            self.location_message = LOCATION_NOT_NEAR_MESSAGE
+            return
+
+        if self.route_status == "loading":
+            return
+
+        self._apply_origin(
+            station["id"],
+            station["name"],
+        )
+
+        self.origin_distance_text = distance_text(distance)
+        self.location_prompt_dismissed = True
 
     @rx.event
     def select_origin(
@@ -869,6 +1076,7 @@ class PlanningState(rx.State):
             return
 
         self.origin_id = value
+        self._forget_suggestion()
 
         self._clear_result()
 

@@ -9,7 +9,8 @@ from fastapi.testclient import TestClient
 
 from MetroFlow.auth.infrastructure.session_cookie import SESSION_COOKIE_NAME
 from MetroFlow.auth.infrastructure.xano_client import XanoAuthRejected
-from MetroFlow.planning.domain.guidance import StationGuidance
+from MetroFlow.planning.domain.guidance import StationGuidance, normalize_name
+from MetroFlow.planning.domain.location import StationCoordinate
 from MetroFlow.planning.domain.models import Line, Operator, RouteResult, Segment, Station, Transfer
 from MetroFlow.planning.domain.models import TripConfirmation, TripSegment
 from MetroFlow.planning.infrastructure.xano_client import PlanningError, PlanningUnauthorized, PlanningUnavailable
@@ -53,6 +54,21 @@ class PlanningApiTests(unittest.TestCase):
         self.assertEqual(response.headers["cache-control"], "no-store")
         self.assertNotIn("private-test-token", response.text)
         self.auth.me.assert_called_once_with("private-test-token")
+
+    def test_estacoes_trazem_coordenadas_somente_quando_cadastradas(self):
+        coordinate = StationCoordinate("Paraíso", -23.575386, -46.64096, "fonte", date(2026, 11, 16))
+        registry = {normalize_name("Paraíso"): coordinate}
+        with patch.dict("os.environ", {"METROFLOW_LOCALIZACAO": "1"}), patch(
+                "MetroFlow.planning.infrastructure.coordinates_csv.cached_coordinates",
+                return_value=registry):
+            body = self.browser.get("/api/planning/stations").json()
+        self.assertEqual((body[0]["latitude"], body[0]["longitude"]), (-23.575386, -46.64096))
+        self.assertEqual((body[1]["latitude"], body[1]["longitude"]), (None, None))
+
+    def test_estacoes_sem_coordenadas_quando_localizacao_desligada(self):
+        with patch.dict("os.environ", {"METROFLOW_LOCALIZACAO": "0"}):
+            body = self.browser.get("/api/planning/stations").json()
+        self.assertTrue(all(item["latitude"] is None and item["longitude"] is None for item in body))
 
     def test_sem_cookie_nao_consulta_xano(self):
         self.browser.cookies.clear()

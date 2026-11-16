@@ -5,6 +5,7 @@ from collections.abc import Mapping
 from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr, model_validator
 
 from MetroFlow.planning.domain.guidance import StationGuidance
+from MetroFlow.planning.domain.location import StationCoordinate
 from MetroFlow.planning.domain.models import (
     MAX_TRIP_SEGMENTS, CalibrationReference, RouteResult, Station, requires_train_change,
 )
@@ -71,11 +72,15 @@ class StationChoice(BaseModel):
     id: int
     name: str
     label: str
+    # Presentes somente quando a localização está ligada e há coordenada cadastrada.
+    latitude: float | None = None
+    longitude: float | None = None
 
     @classmethod
     def from_station(
         cls,
         station: Station,
+        coordinate: StationCoordinate | None = None,
     ) -> "StationChoice":
         lines = " / ".join(
             (
@@ -93,6 +98,8 @@ class StationChoice(BaseModel):
                 if lines
                 else station.name
             ),
+            latitude=coordinate.latitude if coordinate else None,
+            longitude=coordinate.longitude if coordinate else None,
         )
 
 

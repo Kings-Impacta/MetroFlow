@@ -177,6 +177,66 @@ def home_page() -> rx.Component:
     )
 
 
+def _location_prompt() -> rx.Component:
+    """Aviso opcional; a permissão só é pedida no toque do botão."""
+
+    return rx.fragment(
+        rx.cond(
+            PlanningState.location_available
+            & ~PlanningState.location_prompt_dismissed,
+            rx.callout.root(
+                rx.vstack(
+                    rx.text(
+                        "Encontrar a estação mais próxima de você?",
+                        color=INK,
+                        font_weight="600",
+                    ),
+                    rx.flex(
+                        rx.button(
+                            rx.icon("map-pin", size=18),
+                            rx.cond(
+                                PlanningState.location_status == "loading",
+                                "Obtendo localização…",
+                                "Usar minha localização",
+                            ),
+                            type="button",
+                            background=BLUE,
+                            color=WHITE,
+                            loading=(PlanningState.location_status == "loading"),
+                            disabled=(PlanningState.route_status == "loading"),
+                            on_click=PlanningState.request_location,
+                        ),
+                        rx.button(
+                            "Agora não",
+                            type="button",
+                            variant="soft",
+                            color_scheme="gray",
+                            on_click=PlanningState.dismiss_location_prompt,
+                        ),
+                        gap="0.75rem",
+                        wrap="wrap",
+                    ),
+                    spacing="3",
+                    width="100%",
+                ),
+                color_scheme="blue",
+                variant="surface",
+                width="100%",
+            ),
+        ),
+        rx.cond(
+            PlanningState.location_message != "",
+            rx.text(
+                PlanningState.location_message,
+                color=TEXT,
+                size="2",
+                role="status",
+                aria_live="polite",
+            ),
+        ),
+    )
+
+
 def _station_search(
     label: str,
     placeholder: str,
@@ -647,6 +707,8 @@ def search_page() -> rx.Component:
                 ),
             ),
 
+            _location_prompt(),
+
             rx.card(
                 rx.form.root(
                     rx.vstack(
@@ -658,6 +720,16 @@ def search_page() -> rx.Component:
                             PlanningState.origin_id,
                             PlanningState.update_origin_query,
                             PlanningState.choose_origin,
+                        ),
+
+                        rx.cond(
+                            PlanningState.origin_distance_text != "",
+                            rx.text(
+                                PlanningState.origin_distance_text,
+                                color=GREEN,
+                                size="2",
+                                role="status",
+                            ),
                         ),
 
                         rx.center(

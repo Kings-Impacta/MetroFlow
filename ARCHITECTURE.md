@@ -54,6 +54,14 @@ As orientações de estação, com o lado de desembarque como informação princ
 
 Essa origem local é uma decisão temporária. As orientações não são dados da malha: não definem estações, linhas, trechos ou tempos e não participam do cálculo, que continua no Xano. O backend associa as dicas a um trajeto já calculado, por nome normalizado de estação, linha e sentido, e qualquer falha na leitura devolve o trajeto sem elas. Uma mudança futura poderá migrar o cadastro para o Xano. O [guia de coleta](docs/dados/README.md) descreve o formato e o estado atual dos dados.
 
+## Estação mais próxima (coordenadas locais temporárias)
+
+As coordenadas das estações vêm do arquivo `docs/dados/coordenadas-estacoes.csv`, lido e validado pelo backend Python, e não do Xano. `GET /api/planning/stations` acrescenta `latitude` e `longitude` opcionais às estações com coordenada. A funcionalidade fica ligada por padrão; com `METROFLOW_LOCALIZACAO=0`, os campos ficam nulos e o planejador permanece como antes.
+
+Quando há coordenadas, o planejador exibe o aviso "Encontrar a estação mais próxima de você?". A permissão de localização só é pedida no toque em "Usar minha localização". O cálculo ocorre no navegador: o script recebe apenas as coordenadas públicas das estações e devolve ao estado Reflex somente o identificador da estação mais próxima e a distância em linha reta. A posição do usuário não chega ao backend, ao Xano nem aos logs. A origem é preenchida pelo mesmo caminho da escolha manual, sem alterar a busca. Os navegadores só oferecem localização em HTTPS ou em `localhost`.
+
+As coordenadas não participam do cálculo de trajetos. A origem local é temporária, e uma mudança futura poderá migrá-las para a tabela de estações do Xano.
+
 O [modelo de domínio](docs/domain-model.md) detalha esses conceitos. As [evidências de validação](docs/validacao-integracao-xano.md) e a [auditoria complementar do Xano](docs/xano/auditoria-integridade-2026-10-08.md) registram o que foi verificado e os limites operacionais restantes. Registros históricos de implementação permanecem nesses documentos e no histórico do Git.
 
 ## Contrato calibrado publicado

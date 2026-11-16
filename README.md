@@ -71,6 +71,12 @@ Os arquivos em `docs/xano/rascunhos/` registram o XanoScript observado e publica
 O workflow `.github/workflows/quality.yml` executa a suíte Python e a validação estrita do OpenSpec em Pull Requests e em atualizações da `main`.
 
 
+## Estação mais próxima
+
+O planejador pode sugerir como origem a estação mais próxima do usuário. O aviso "Encontrar a estação mais próxima de você?" aparece acima da busca, e o navegador só pede a permissão de localização depois do toque em "Usar minha localização". O cálculo ocorre no navegador; a posição não é enviada ao backend nem ao Xano. As coordenadas das estações ficam em `docs/dados/coordenadas-estacoes.csv`, sem alteração no Xano. Consulte a [arquitetura](ARCHITECTURE.md) para os detalhes.
+
+A localização funciona em `http://localhost:3000` e em páginas HTTPS. Pelo endereço da rede local, como `http://192.168.x.x:3000`, o navegador do celular nega o acesso e a origem continua manual. Para testar no celular, use um túnel HTTPS ou publique o aplicativo com HTTPS. Para desligar a funcionalidade, defina `$env:METROFLOW_LOCALIZACAO="0"` antes de iniciar o servidor.
+
 ## Condições operacionais das linhas
 
 Consulte [configuração e limites da integração de status](docs/status-operacional.md). As fontes ficam desativadas até a configuração no backend. Falhas de status não bloqueiam a busca nem a concorrência.
