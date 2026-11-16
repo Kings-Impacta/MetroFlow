@@ -158,9 +158,44 @@ class AuthApiTests(unittest.TestCase):
         self.assertEqual(response.status_code, 200)
         self.assertEqual(
             response.json(),
-            {"id": 23, "email": "user@example.com"},
+            {"id": 23, "email": "user@example.com", "administrador": False},
         )
         xano.me.assert_called_once_with("token-cookie")
+
+    def test_me_informa_administrador_sem_alterar_login(self) -> None:
+        xano = self._xano_client()
+        xano.me.return_value = AuthenticatedUser(
+            id=24,
+            email="admin@example.com",
+            is_admin=True,
+        )
+        xano.login.return_value = AuthSession(
+            user=AuthenticatedUser(id=24, email="admin@example.com", is_admin=True),
+            auth_token="token-admin",
+        )
+
+        with (
+            patch(
+                "MetroFlow.auth.presentation.api.XanoAuthClient.from_environment",
+                return_value=xano,
+            ),
+            TestClient(auth_api) as client,
+        ):
+            client.cookies.set(SESSION_COOKIE_NAME, "token-cookie")
+            me = client.get("/api/auth/me")
+            login = client.post(
+                "/api/auth/login",
+                json={"email": "admin@example.com", "senha": "segredo123"},
+            )
+
+        self.assertEqual(
+            me.json(),
+            {"id": 24, "email": "admin@example.com", "administrador": True},
+        )
+        self.assertEqual(
+            login.json(),
+            {"usuario": {"id": 24, "email": "admin@example.com"}},
+        )
 
     def test_me_sem_cookie_retorna_401(self) -> None:
         with TestClient(auth_api) as client:

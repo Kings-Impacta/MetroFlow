@@ -46,6 +46,8 @@ def run_lambda(script: Path, input_data: dict[str, object]) -> object:
         input=json.dumps({"body": lambda_body(script), "input": input_data}),
         capture_output=True,
         text=True,
+        # Node.js usa UTF-8; sem isso o Windows decodifica nomes acentuados como cp1252.
+        encoding="utf-8",
         timeout=15,
     )
     assert result.returncode == 0, result.stderr

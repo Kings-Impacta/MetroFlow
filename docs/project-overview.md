@@ -46,3 +46,9 @@ A integração informativa inicial de status está implementada em entrega separ
 A configuração local validada usa Metrô, CPTM e Motiva, com 12 linhas observadas e preservação do último retorno. O iniciador portátil fica na raiz do projeto. A API Direto dos Trens aguarda token. Fontes continuam desativadas por padrão e não participam do cálculo nem do registro de viagens. Consulte o guia de status para a configuração e os limites atuais.
 
 O [reteste da main de 11/11](xano/reteste-main-status-concorrencia-2026-11-11.md) confirmou renovação automática das três fontes e os registros calibrados 67/68, com alternativa pela Luz e limites respeitados. O documento reúne as pendências atuais.
+
+## Portal administrativo — 16/11/2026
+
+A mudança `portal-administrativo` acrescenta um painel de controle em `/admin`, restrito a administradores. Nele é possível ativar e inativar estações e acompanhar indicadores agregados de uso, malha, volume de viagens, estações mais usadas e trechos lotados. O papel de administrador é concedido no Xano, e a autorização é conferida pelo Xano a cada operação.
+
+O código e os testes estão na branch `feat/portal-administrativo`, e os endpoints foram publicados no Xano em 16/11/2026. A mudança foi arquivada por decisão do usuário, com três itens adiados e não executados: a concessão dos primeiros administradores, a validação no Xano com sessões reais e o teste ponta a ponta no navegador. O [modelo de domínio](domain-model.md) descreve as regras, e o [registro do Xano](xano/rascunhos/portal-administrativo/README.md), os endpoints, a reversão e a validação pendente.

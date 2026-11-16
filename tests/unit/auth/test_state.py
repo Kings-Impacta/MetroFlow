@@ -171,6 +171,36 @@ class AuthStateTests(unittest.TestCase):
         self.assertEqual(self.state.auth_status, "idle")
         self.assertEqual(self.state.authenticated_email, "")
 
+    def test_indicacao_de_administrador_vem_somente_da_sessao_valida(self) -> None:
+        cases = [
+            ({"ok": True, "data": {"id": 1, "email": "a@example.com", "administrador": True}}, True),
+            ({"ok": True, "data": {"id": 1, "email": "a@example.com", "administrador": False}}, False),
+            ({"ok": True, "data": {"id": 1, "email": "a@example.com", "administrador": "true"}}, False),
+            ({"ok": True, "data": {"id": 1, "email": "a@example.com"}}, False),
+            ({"ok": False, "data": {"administrador": True}}, False),
+        ]
+        for result, expected in cases:
+            with self.subTest(result=result):
+                self.state.handle_session_result(result)
+                self.assertIs(self.state.is_admin, expected)
+
+    def test_sessao_protegida_invalida_limpa_indicacao_de_administrador(self) -> None:
+        self.state.is_admin = True
+
+        self.state.handle_protected_session_result({"ok": False, "status": 401})
+
+        self.assertFalse(self.state.is_admin)
+
+    def test_logout_limpa_indicacao_de_administrador(self) -> None:
+        self.state.handle_session_result(
+            {"ok": True, "data": {"id": 1, "email": "a@example.com", "administrador": True}}
+        )
+
+        self.state.handle_logout_result({"ok": True})
+
+        self.assertFalse(self.state.is_admin)
+        self.assertEqual(self.state.auth_status, "unauthenticated")
+
 
 if __name__ == "__main__":
     unittest.main()

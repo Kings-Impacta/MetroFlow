@@ -25,7 +25,10 @@ Configure as URLs no PowerShell que executará o projeto:
 ```powershell
 $env:XANO_AUTH_API_BASE_URL="https://x8ki-letl-twmt.n7.xano.io/api:75UptKSb"
 $env:XANO_PLANNING_API_BASE_URL="https://x8ki-letl-twmt.n7.xano.io/api:metroflow-planejamento"
+$env:XANO_ADMIN_API_BASE_URL="https://x8ki-letl-twmt.n7.xano.io/api:metroflow-administracao"
 ```
+
+`XANO_ADMIN_API_BASE_URL` aponta para o grupo `administracao`, usado pelo painel em `/admin`. O papel de administrador é concedido no Xano, inserindo o usuário na tabela `administradores`; veja o [registro do painel](docs/xano/rascunhos/portal-administrativo/README.md).
 
 Essas variáveis valem apenas para o terminal atual e seus processos filhos. O código lê variáveis de ambiente; não há carregamento automático de `.env` implementado nos clientes.
 

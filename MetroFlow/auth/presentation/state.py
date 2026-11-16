@@ -270,6 +270,19 @@ def interpret_session_result(result: object) -> tuple[str, str]:
     return "authenticated", email
 
 
+def interpret_admin_flag(result: object) -> bool:
+    """Le a indicacao de administrador; qualquer duvida equivale a falso.
+
+    Serve apenas para mostrar o acesso ao painel. A autorizacao real e
+    verificada pelo Xano em cada operacao administrativa.
+    """
+
+    if interpret_session_result(result)[0] != "authenticated":
+        return False
+    data = result.get("data") if isinstance(result, dict) else None
+    return isinstance(data, dict) and data.get("administrador") is True
+
+
 RESTORE_SESSION_SCRIPT = build_session_script("/api/auth/me")
 LOGOUT_SCRIPT = build_session_script("/api/auth/logout", "POST")
 
@@ -280,12 +293,14 @@ class AuthState(rx.State):
     auth_status: str = "idle"
     auth_message: str = ""
     authenticated_email: str = ""
+    is_admin: bool = False
 
     @rx.event
     def begin_auth(self) -> None:
         self.auth_status = "loading"
         self.auth_message = ""
         self.authenticated_email = ""
+        self.is_admin = False
 
     @rx.event
     def clear_auth_feedback(self) -> None:
@@ -300,6 +315,8 @@ class AuthState(rx.State):
         )
         self.auth_message = message
         self.authenticated_email = email
+        # O login nao informa o papel; a pagina seguinte restaura a sessao.
+        self.is_admin = False
 
         if status_value == "success":
             return rx.redirect("/")
@@ -332,6 +349,7 @@ class AuthState(rx.State):
         self.auth_status = status_value
         self.authenticated_email = email
         self.auth_message = ""
+        self.is_admin = interpret_admin_flag(result)
 
     @rx.event
     def handle_protected_session_result(self, result: dict[str, Any]):
@@ -339,6 +357,7 @@ class AuthState(rx.State):
         self.auth_status = status_value
         self.authenticated_email = email
         self.auth_message = ""
+        self.is_admin = interpret_admin_flag(result)
 
         if status_value != "authenticated":
             return rx.redirect("/login")
@@ -349,6 +368,7 @@ class AuthState(rx.State):
             self.auth_status = "unauthenticated"
             self.authenticated_email = ""
             self.auth_message = ""
+            self.is_admin = False
             return rx.redirect("/login")
 
         self.auth_message = "Nao foi possivel encerrar a sessao."
@@ -380,6 +400,7 @@ class AuthState(rx.State):
             self.auth_status = "idle"
             self.auth_message = ""
             self.authenticated_email = ""
+            self.is_admin = False
             return rx.redirect("/login")
 
         self.auth_status = "error"

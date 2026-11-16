@@ -36,6 +36,12 @@ class PublicUserResponse(BaseModel):
     email: str
 
 
+class SessionUserResponse(PublicUserResponse):
+    """Consulta da sessao; `administrador` so adapta a interface."""
+
+    administrador: bool = False
+
+
 class AuthResponse(BaseModel):
     usuario: PublicUserResponse
 
@@ -186,8 +192,8 @@ def login(credentials: CredentialsRequest, response: Response) -> AuthResponse:
     return _auth_response(response, session)
 
 
-@auth_api.get("/api/auth/me", response_model=PublicUserResponse)
-def me(request: Request) -> PublicUserResponse:
+@auth_api.get("/api/auth/me", response_model=SessionUserResponse)
+def me(request: Request) -> SessionUserResponse:
     auth_token = get_session_token(request)
 
     if auth_token is None:
@@ -202,7 +208,7 @@ def me(request: Request) -> PublicUserResponse:
     except XanoAuthError as error:
         _raise_public_error(error)
 
-    return _public_user(user)
+    return SessionUserResponse(id=user.id, email=user.email, administrador=user.is_admin)
 
 
 @auth_api.post("/api/auth/logout", status_code=status.HTTP_204_NO_CONTENT)

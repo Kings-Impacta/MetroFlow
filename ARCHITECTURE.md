@@ -5,14 +5,20 @@ O MetroFlow usa uma organização modular para manter a interface, as regras loc
 ```text
 MetroFlow/
 ├── MetroFlow.py              composição da aplicação e registro de rotas
+├── admin/
+│   ├── domain/               indicadores, estações e suas invariantes
+│   ├── application/          casos de uso e contrato com o Xano
+│   ├── infrastructure/       cliente do grupo `administracao` do Xano
+│   └── presentation/         API, estado e página do painel administrativo
 ├── auth/
 │   ├── infrastructure/       cliente Xano e cookie de sessão
 │   └── presentation/         API, estado e páginas de autenticação
-└── planning/
-    ├── domain/               modelos e validações do resultado
-    ├── application/          casos de uso e contratos
-    ├── infrastructure/       cliente da API de planejamento do Xano
-    └── presentation/         API, estado, páginas e instruções de trajeto
+├── planning/
+│   ├── domain/               modelos e validações do resultado
+│   ├── application/          casos de uso e contratos
+│   ├── infrastructure/       cliente da API de planejamento do Xano
+│   └── presentation/         API, estado, páginas e instruções de trajeto
+└── status/                   status operacional informativo das linhas
 
 tests/unit/                  testes por módulo e responsabilidade
 docs/                        visão geral, domínio, integração e evidências
@@ -25,6 +31,16 @@ openspec/                    configuração, mudanças e especificações
 O usuário se autentica pelo Xano. O token permanece no backend e em cookie HttpOnly; a interface recebe apenas os dados públicos necessários. As páginas e os endpoints de planejamento exigem uma sessão válida. Uma resposta de sessão expirada remove o estado autenticado e conduz ao login.
 
 O navegador consulta os endpoints locais `/api/planning/stations` e `/api/planning/route` e, após uma busca bem-sucedida, registra automaticamente a viagem em `/api/planning/trip`. O backend valida a sessão e os parâmetros, chama o Xano e normaliza a resposta. No registro, o navegador envia somente os trechos e o sentido percorrido; o Xano obtém o usuário pela sessão e o tempo pelo cadastro. O domínio local verifica invariantes do trajeto antes de apresentá-lo. A interface descarta resultados e confirmações de consultas antigas quando o usuário muda a seleção ou encerra a sessão.
+
+## Painel administrativo
+
+A página `/admin` usa o mesmo cookie HttpOnly. O navegador chama `/api/admin/indicators`, `/api/admin/stations` e `POST /api/admin/stations/{id}/status`; o backend repassa o token ao grupo `administracao` do Xano sem consultar `auth/me` antes, para gastar uma única requisição por operação. Cada endpoint do Xano repete as verificações de sessão da busca e confere a concessão em `administradores`.
+
+O backend distingue 401 de 403. Com 401, a interface descarta os dados e conduz ao login. Com 403, mostra acesso restrito sem encerrar a sessão. Nenhuma resposta administrativa é guardada em cache, e erros do Xano chegam à interface só como mensagens genéricas.
+
+O Xano apura os indicadores e grava a situação da estação junto com o histórico, na mesma transação. O backend valida e normaliza o contrato. Indicadores e estações são carregados separadamente, então uma falha nos indicadores não bloqueia a lista. Não há consulta periódica, para respeitar o limite de requisições do plano gratuito.
+
+`auth/me` passa a informar `administrador`, usado apenas para mostrar o link no cabeçalho. A situação `ativa` da estação já era respeitada pela listagem, pela busca e pela confirmação, então o cálculo de trajetos não mudou.
 
 ## Cálculo e apresentação
 
