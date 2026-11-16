@@ -2,6 +2,7 @@
 
 import reflex as rx
 
+from MetroFlow.admin.presentation.state import AdminState
 from MetroFlow.auth.presentation.state import (
     AuthState,
     LOGOUT_SCRIPT,
@@ -54,6 +55,17 @@ def header() -> rx.Component:
                     color=INK,
                     font_weight="500",
                 ),
+                # Apenas exibe o acesso; o Xano autoriza cada operação.
+                rx.cond(
+                    AuthState.is_admin,
+                    rx.link(
+                        "Administração",
+                        href="/admin",
+                        color=INK,
+                        font_weight="500",
+                    ),
+                    rx.fragment(),
+                ),
                 rx.cond(
                     AuthState.auth_status == "authenticated",
                     rx.button(
@@ -62,6 +74,7 @@ def header() -> rx.Component:
                         color_scheme="blue",
                         on_click=[
                             PlanningState.clear_planner,
+                            AdminState.clear_panel,
                             rx.call_script(
                                 LOGOUT_SCRIPT,
                                 callback=AuthState.handle_logout_result,

@@ -79,3 +79,7 @@ Os dois itens restantes da malha e os quatro de status foram **adiados, não exe
 Foram consolidadas as capacidades `disponibilidade-malha` e `status-operacional-linhas`, alinhando referências históricas à calibração e à configuração local já entregues. Nenhuma alteração de código, funcionamento, malha, parâmetros, fontes ou configuração foi feita. O encerramento permanece local até entrega posterior na main.
 
 A configuração ausente foi validada por **HTTP local isolado**, não por HTTP no runtime nativo do Xano, e não comprova o teste administrativo de gravações simultâneas de trechos. A ativação pública das fontes e a validação autorizada Direto dos Trens continuam fora do escopo encerrado.
+
+## Portal administrativo (P6) — 16/11/2026
+
+A área administrativa, antes em espera, foi retomada pela mudança `portal-administrativo`. A entrega inclui a página `/admin`, restrita a administradores, com ativação e inativação de estações, registro das alterações e indicadores agregados de uso, malha, volume, ranking e lotação. Código e testes estão na branch `feat/portal-administrativo`, e as tabelas e os endpoints foram publicados no Xano em 16/11/2026. A mudança foi arquivada por decisão do usuário em `openspec/changes/archive/2026-11-16-portal-administrativo/`. Três itens foram **adiados, não executados**: a concessão dos primeiros administradores, a validação no Xano com sessões reais e o teste ponta a ponta no navegador.

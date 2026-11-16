@@ -96,6 +96,30 @@ class XanoAuthClientTests(unittest.TestCase):
             auth_token,
             "\n".join(captured_logs.output),
         )
+
+    def test_me_aceita_somente_true_como_administrador(self) -> None:
+        cases = [
+            ({}, False),
+            ({"administrador": True}, True),
+            ({"administrador": False}, False),
+            ({"administrador": "true"}, False),
+            ({"administrador": 1}, False),
+            ({"administrador": None}, False),
+        ]
+        for extra, expected in cases:
+            with self.subTest(extra=extra):
+                transport = httpx.MockTransport(
+                    lambda _request, extra=extra: httpx.Response(
+                        200,
+                        json={"id": 12, "email": "user@example.com", **extra},
+                    )
+                )
+                with XanoAuthClient(BASE_URL, transport=transport) as client:
+                    user = client.me("token")
+
+                self.assertEqual(user.is_admin, expected)
+                self.assertEqual(user.email, "user@example.com")
+
     def test_rejeicao_nao_expoe_token(self) -> None:
         auth_token = "token-que-nao-pode-vazar"
 

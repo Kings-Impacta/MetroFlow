@@ -59,12 +59,17 @@ O sistema SHALL autenticar somente uma conta ativa e com e-mail verificado quand
 
 ### Requirement: Consulta da sessão atual
 
-O sistema SHALL permitir que o cliente consulte a identidade associada a um token de sessão válido e SHALL recusar uma sessão ausente, inválida ou expirada antes de consultar o planejamento.
+O sistema SHALL permitir que o cliente consulte a identidade associada a um token de sessão válido, incluindo a indicação de que o usuário é administrador, e SHALL recusar uma sessão ausente, inválida ou expirada antes de consultar o planejamento. A indicação SHALL servir somente para adaptar a interface e SHALL não autorizar operações administrativas.
 
 #### Scenario: Sessão válida
 
 - **WHEN** o cliente consulta a sessão atual com um token válido
-- **THEN** o sistema retorna o identificador e o e-mail do usuário autenticado
+- **THEN** o sistema retorna o identificador, o e-mail e a indicação de administrador do usuário autenticado
+
+#### Scenario: Indicação de administrador indisponível
+
+- **WHEN** a resposta do Xano não contém a indicação de administrador ou contém um valor que não é booleano verdadeiro
+- **THEN** o usuário é tratado como não administrador e a consulta da sessão continua válida
 
 #### Scenario: Sessão ausente, inválida ou expirada
 

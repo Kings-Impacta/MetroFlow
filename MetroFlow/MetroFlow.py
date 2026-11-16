@@ -2,6 +2,9 @@
 
 import reflex as rx
 
+from MetroFlow.admin.presentation.api import admin_api
+from MetroFlow.admin.presentation.pages import admin_page
+from MetroFlow.admin.presentation.state import AdminState
 from MetroFlow.auth.presentation.api import auth_api
 from MetroFlow.planning.presentation.api import planning_api
 from MetroFlow.status.api import status_api
@@ -31,6 +34,7 @@ from MetroFlow.planning.presentation.pages import (
 
 auth_api.include_router(planning_api)
 auth_api.include_router(status_api)
+auth_api.include_router(admin_api)
 app = rx.App(
     api_transformer=auth_api,
     html_lang="pt-BR",
@@ -91,6 +95,12 @@ app.add_page(
     route="/sobre",
     title="Sobre | MetroFlow",
     on_load=restore_session,
+)
+app.add_page(
+    admin_page,
+    route="/admin",
+    title="Painel administrativo | MetroFlow",
+    on_load=[restore_session, AdminState.load_panel],
 )
 app.add_page(
     login_page,

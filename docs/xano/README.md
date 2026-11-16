@@ -2,6 +2,10 @@
 
 A malha foi restaurada e recebeu a calibração publicada em 05/11, incluindo a Linha 6 parcial. Busca e registro foram alinhados novamente em 09/11 e o teste real confirmou a alternativa por República. Consulte [publicação e reteste](publicacao-preferencia-metro-2026-11-09.md) e [pendências atuais](fechamento-trajetos-concorrencia-2026-11-09.md). As capturas e pendências datadas abaixo representam seus respectivos momentos e não o estado atual.
 
+# Portal administrativo — 16/11/2026
+
+Publicado em 16/11/2026 pelo Xano CLI. A pasta `rascunhos/portal-administrativo/` contém as cópias publicadas das tabelas `administradores` e `estacoes_situacao_historico`, do grupo `administracao` com três endpoints e da nova versão de `auth/me`, que acrescenta o campo `administrador`. O [README da pasta](rascunhos/portal-administrativo/README.md) descreve as regras, como conceder o papel, a publicação, a reversão e a validação com sessões reais, que ainda está pendente.
+
 # Comparação dos rascunhos Xano — 13/09/2026
 
 ## Incidente da tabela `trechos` — 26/10/2026

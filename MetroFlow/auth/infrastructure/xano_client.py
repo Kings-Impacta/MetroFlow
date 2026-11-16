@@ -37,6 +37,8 @@ class AuthenticatedUser:
 
     id: int
     email: str
+    # Somente adapta a interface; a autorizacao real fica no Xano.
+    is_admin: bool = False
 
 
 @dataclass(frozen=True, slots=True)
@@ -209,7 +211,12 @@ class XanoAuthClient:
         ):
             raise XanoAuthError("Resposta de usuario invalida.")
 
-        return AuthenticatedUser(id=user_id, email=email)
+        # Qualquer valor diferente do booleano true equivale a nao administrador.
+        return AuthenticatedUser(
+            id=user_id,
+            email=email,
+            is_admin=payload.get("administrador") is True,
+        )
 
     @classmethod
     def _decode_session(cls, payload: dict[str, Any]) -> AuthSession:
