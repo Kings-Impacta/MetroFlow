@@ -328,7 +328,7 @@ def _restricted() -> rx.Component:
 def _access_error() -> rx.Component:
     return rx.vstack(
         rx.callout(
-            "Não foi possível verificar o acesso ao painel. Tente novamente.",
+            "O serviço administrativo está temporariamente indisponível. Tente novamente em instantes.",
             icon="triangle_alert",
             color_scheme="red",
             role="alert",

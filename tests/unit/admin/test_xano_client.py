@@ -177,3 +177,79 @@ def test_configuracao_por_variavel_de_ambiente() -> None:
     with patch.dict("os.environ", {"XANO_ADMIN_API_BASE_URL": ""}):
         with XanoAdminClient.from_environment() as client:
             assert str(client._http.base_url) == f"{DEFAULT_XANO_ADMIN_API_BASE_URL}/"
+
+
+@pytest.mark.parametrize("first", ["timeout", "network", "protocol", 502, 503, 504])
+def test_get_recupera_uma_falha_transitoria_sem_expor_credencial(first):
+    calls = []
+    def handler(request):
+        calls.append(request)
+        if len(calls) == 1:
+            errors = {"timeout": httpx.ReadTimeout, "network": httpx.ConnectError,
+                      "protocol": httpx.RemoteProtocolError}
+            if first in errors:
+                raise errors[first](TOKEN, request=request)
+            return httpx.Response(first)
+        return httpx.Response(200, json=INDICATORS)
+    with patch("MetroFlow.admin.infrastructure.xano_client.time.sleep") as pause:
+        with client_for(handler) as client:
+            assert client.indicators(TOKEN).active_routes == 2
+    assert len(calls) == 2
+    pause.assert_called_once_with(1.0)
+    assert all(TOKEN not in str(r.url) for r in calls)
+
+
+def test_get_persistente_para_apos_duas_tentativas():
+    calls = []
+    def handler(request):
+        calls.append(request)
+        raise httpx.ReadTimeout(TOKEN, request=request)
+    with patch("MetroFlow.admin.infrastructure.xano_client.time.sleep"):
+        with client_for(handler) as client, pytest.raises(AdminUnavailable) as error:
+            client.indicators(TOKEN)
+    assert len(calls) == 2
+    assert TOKEN not in str(error.value)
+
+
+@pytest.mark.parametrize("status, headers, error", [
+    (401, {}, AdminUnauthorized), (403, {}, AdminForbidden),
+    (429, {"Retry-After": "60"}, AdminUnavailable),
+    (503, {"Retry-After": "30"}, AdminUnavailable),
+    (200, {}, AdminError),
+])
+def test_get_nao_repete_rejeicao_limite_retry_after_ou_contrato(status, headers, error):
+    calls = []
+    def handler(request):
+        calls.append(request)
+        return httpx.Response(status, json={}, headers=headers)
+    with patch("MetroFlow.admin.infrastructure.xano_client.time.sleep") as pause:
+        with client_for(handler) as client, pytest.raises(error):
+            client.indicators(TOKEN)
+    assert len(calls) == 1
+    pause.assert_not_called()
+
+
+def test_revogacao_na_segunda_tentativa_bloqueia_acesso():
+    calls = []
+    def handler(request):
+        calls.append(request)
+        return httpx.Response(503 if len(calls) == 1 else 403)
+    with patch("MetroFlow.admin.infrastructure.xano_client.time.sleep"):
+        with client_for(handler) as client, pytest.raises(AdminForbidden):
+            client.indicators(TOKEN)
+    assert len(calls) == 2
+
+
+@pytest.mark.parametrize("failure", ["timeout", 503])
+def test_post_nunca_e_repetido_automaticamente(failure):
+    calls = []
+    def handler(request):
+        calls.append(request)
+        if failure == "timeout":
+            raise httpx.ReadTimeout(TOKEN, request=request)
+        return httpx.Response(failure)
+    with patch("MetroFlow.admin.infrastructure.xano_client.time.sleep") as pause:
+        with client_for(handler) as client, pytest.raises(AdminUnavailable):
+            client.set_station_status(7, False, TOKEN)
+    assert len(calls) == 1
+    pause.assert_not_called()

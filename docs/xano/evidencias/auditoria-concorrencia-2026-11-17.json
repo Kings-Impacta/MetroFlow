@@ -1,0 +1,56 @@
+{
+  "registros": [
+    {
+      "registro": 89,
+      "referencia_em": 1794946216000,
+      "confirmada_em": 1794946218551,
+      "fim_janela": 1794947371000,
+      "versao_calibracao": "ebe34d59abdefc843e976afe160630f9b8ba37c5ca5c66885a0c1656fab333bb",
+      "trechos_e_padroes_reproduzidos": true,
+      "tempo_fisico": 1155,
+      "tempo_publico": 1215,
+      "baldeacoes": 1,
+      "auditoria_local": {
+        "principal_segundos": 1155,
+        "principal_baldeacoes": 1,
+        "exposicao_principal": 0,
+        "selecionado_segundos": 1155,
+        "selecionado_baldeacoes": 1,
+        "exposicao_selecionado": 0
+      },
+      "acrescimo_segundos": 0,
+      "teto_parcial_segundos": 519.75,
+      "reducao_exposicao_percentual": null,
+      "cronologia_e_fim_reproduzidos": true
+    },
+    {
+      "registro": 90,
+      "referencia_em": 1794946224000,
+      "confirmada_em": 1794946225511,
+      "fim_janela": 1794947889000,
+      "versao_calibracao": "ebe34d59abdefc843e976afe160630f9b8ba37c5ca5c66885a0c1656fab333bb",
+      "trechos_e_padroes_reproduzidos": true,
+      "tempo_fisico": 1665,
+      "tempo_publico": 1725,
+      "baldeacoes": 2,
+      "auditoria_local": {
+        "principal_segundos": 1155,
+        "principal_baldeacoes": 1,
+        "exposicao_principal": 885,
+        "selecionado_segundos": 1665,
+        "selecionado_baldeacoes": 2,
+        "exposicao_selecionado": 350
+      },
+      "acrescimo_segundos": 510,
+      "teto_parcial_segundos": 519.75,
+      "reducao_exposicao_percentual": 60.451977401129945,
+      "cronologia_e_fim_reproduzidos": true
+    }
+  ],
+  "intervalo_confirmacoes_segundos": 6.96,
+  "usuarios_distintos": true,
+  "versoes_iguais": true,
+  "margem_unica_60_segundos": true,
+  "sobreposicao_das_janelas": true,
+  "sem_escritas_no_xano": true
+}

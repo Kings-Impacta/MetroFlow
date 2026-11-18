@@ -1,0 +1,42 @@
+{
+  "configuracao_lotacao": {
+    "antes": "5a271fd06ed07bb79d415fceb4222d586920713a81eac831dfb58d76d6dbacd9",
+    "depois": "5a271fd06ed07bb79d415fceb4222d586920713a81eac831dfb58d76d6dbacd9",
+    "identica": true
+  },
+  "disponibilidade_servicos": {
+    "antes": "46c15058b1b6ded696394f899487bb9dd9ff54de0ded7a65739c7d386ec3308b",
+    "depois": "46c15058b1b6ded696394f899487bb9dd9ff54de0ded7a65739c7d386ec3308b",
+    "identica": true
+  },
+  "estacoes": {
+    "antes": "cad1cf72cb6ae29d3fc3dc03e687f2674598843fc08dcba3f728c5b5ef11d7fb",
+    "depois": "cad1cf72cb6ae29d3fc3dc03e687f2674598843fc08dcba3f728c5b5ef11d7fb",
+    "identica": true
+  },
+  "estacoes_linhas": {
+    "antes": "43e47b8047ca926ea4a5c4426bde54ac836893be8b64ca0f1a261455d08154e3",
+    "depois": "43e47b8047ca926ea4a5c4426bde54ac836893be8b64ca0f1a261455d08154e3",
+    "identica": true
+  },
+  "linhas": {
+    "antes": "ca38562e73b174fd25054a50dfa09933bdda992d0f8230ca9d6e79f38f0c5475",
+    "depois": "ca38562e73b174fd25054a50dfa09933bdda992d0f8230ca9d6e79f38f0c5475",
+    "identica": true
+  },
+  "operadores": {
+    "antes": "85294f86e7aad19012369e7205a643ff6425d1c162aed565eeeb8866d6b46da2",
+    "depois": "85294f86e7aad19012369e7205a643ff6425d1c162aed565eeeb8866d6b46da2",
+    "identica": true
+  },
+  "servicos": {
+    "antes": "36015987b369dc8e93ce0137e42255ac1a89ff3845fabb5ce49e71620ff451dd",
+    "depois": "36015987b369dc8e93ce0137e42255ac1a89ff3845fabb5ce49e71620ff451dd",
+    "identica": true
+  },
+  "trechos": {
+    "antes": "aa299631978c9a0f6b8f25a1736db2f4b387adc5de76186ce9a1d766a7dc9a2f",
+    "depois": "aa299631978c9a0f6b8f25a1736db2f4b387adc5de76186ce9a1d766a7dc9a2f",
+    "identica": true
+  }
+}

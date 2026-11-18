@@ -29,7 +29,7 @@ class AdminPageTests(unittest.TestCase):
         for value in (
             "O acesso a este painel é restrito a administradores.",
             "Verificando acesso…",
-            "Não foi possível verificar o acesso ao painel. Tente novamente.",
+            "O serviço administrativo está temporariamente indisponível. Tente novamente em instantes.",
             "Atualizar indicadores",
             "Pesquisar por nome ou código",
             "Trechos lotados agora",
