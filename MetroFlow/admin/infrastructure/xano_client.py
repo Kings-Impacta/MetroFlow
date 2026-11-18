@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import os
+import time
 from typing import Any
 
 import httpx
@@ -120,17 +121,31 @@ class XanoAdminClient:
         if not auth_token:
             raise AdminUnauthorized("Sessão ausente.", status_code=401)
 
-        try:
-            response = self._http.request(
-                method,
-                path,
-                json=json,
-                headers={"Authorization": f"Bearer {auth_token}"},
-            )
-        except httpx.TimeoutException as exc:
-            raise AdminUnavailable("O serviço excedeu o tempo de resposta.") from exc
-        except httpx.RequestError as exc:
-            raise AdminUnavailable("O serviço está indisponível.") from exc
+        # GET é idempotente; alterações nunca podem ser repetidas por esta camada.
+        attempts = 2 if method == "GET" else 1
+        for attempt in range(attempts):
+            try:
+                response = self._http.request(
+                    method, path, json=json,
+                    headers={"Authorization": f"Bearer {auth_token}"},
+                )
+            except (httpx.TimeoutException, httpx.NetworkError, httpx.RemoteProtocolError) as exc:
+                if attempt + 1 < attempts:
+                    time.sleep(1.0)
+                    continue
+                raise AdminUnavailable("O serviço está temporariamente indisponível.") from exc
+            except httpx.RequestError as exc:
+                raise AdminUnavailable("O serviço está indisponível.") from exc
+
+            if (
+                attempt + 1 < attempts
+                and response.status_code in {502, 503, 504}
+                and "Retry-After" not in response.headers
+            ):
+                response.close()
+                time.sleep(1.0)
+                continue
+            break
 
         status = response.status_code
         if status == 401:
