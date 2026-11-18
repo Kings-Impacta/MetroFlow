@@ -31,8 +31,16 @@ A auditoria executou primeiro o corpo exato e depois uma cópia local instrument
 - Suíte completa: 440 testes e 119 subtestes aprovados; um aviso de depreciação já existente do TestClient.
 - Compilação Reflex `--dry`: concluída; sem atualização de dependências. O arquivo gerado de lock alterado pelo compilador foi restaurado ao conteúdo original.
 - OpenSpec estrito: 16 itens aprovados, incluindo a mudança de recuperação.
-- Cliente corrigido ainda precisa ser instalado/reiniciado e conferido em sessão real; não apresentar esta etapa como concluída antes disso.
+- Instalação/reinício executados pelo usuário em 17/11; os dois arquivos alterados foram comparados por hash normalizado e correspondem à correção validada. A recarga da janela administrativa apresentou indicadores apurados às 22:18:39 e depois às 22:19:24 de 17/11. A atualização manual final ainda precisa ser concluída após novo login: em 18/11, a janela anônima estava em `/login`. Não se atribui o motivo do redirecionamento sem evidência adicional.
 
 A pendência anterior de configuração ausente permanece validada por **HTTP local isolado**, não pelo runtime nativo do Xano. Nenhuma alteração da situação de estação, teste administrativo de escrita, concessão ou revogação foi realizada aqui. Os parâmetros demonstrativos 1 usuário/1% permaneceram iguais.
 
 Evidências sanitizadas: [auditoria](evidencias/auditoria-concorrencia-2026-11-17.json) e [hashes](evidencias/preservacao-malha-2026-11-17.json). Dados brutos e credenciais não integram a entrega.
+
+## Validação final em sessão real — 18/11/2026
+
+Após novo login administrativo na janela anônima do Chrome, o painel carregou normalmente. A apuração inicial foi `18/11/2026 às 20:18:26`. O clique em **Atualizar indicadores** produziu nova apuração às **20:18:56**, sem erro de verificação de acesso, mantendo a sessão autorizada e a lista de estações.
+
+Foram observadas 188 estações ativas, zero inativas, 17 linhas e 213 trechos cadastrados ativos. O critério demonstrativo continuou em 1 usuário/1%. Não foram acionados controles de ativação/inativação, concessão ou revogação. A leitura de zero viagens ativas é uma fotografia da apuração atual; não invalida as janelas históricas dos registros 89/90 já auditados.
+
+A instalação dos dois arquivos corrigidos foi conferida por hash e o usuário reiniciou o servidor. O ensaio conclui a validação funcional da abertura e atualização manual na versão local corrigida; não reproduziu intencionalmente lentidão do fornecedor nem prova ausência de falhas futuras. As falhas transitórias e as recusas de autorização continuam cobertas pelos testes simulados documentados acima. A correção ainda não foi entregue à main.
