@@ -101,6 +101,8 @@ Outras contas com viagens sobrepostas podem influenciar a rota retornada. O sist
 
 Isso **não significa que toda segunda busca terá uma rota diferente**. Se não houver sobreposição relevante ou alternativa proporcional, o caminho principal pode continuar sendo escolhido. A interface apresenta um único trajeto, sem exibir dados de ocupação dos demais passageiros.
 
+**Proposta de uso em escala — não validada:** em um cenário futuro, o critério de concorrência poderá ser avaliado para fluxos maiores, por exemplo, mais de 100 usuários com viagens previstas nos mesmos trechos, sentido e faixa de horário. O objetivo é distribuir a demanda e reduzir o impacto da concentração de passageiros no tempo até o destino, respeitando os limites das alternativas. Esse volume não foi testado: não houve teste de carga ou validação de capacidade para mais de 100 usuários, e esse número não é o limite configurado atualmente. A demonstração mantém o critério de 1 usuário/1%, sem alteração dos parâmetros.
+
 ### 4.5 Consultar o status detalhado
 
 1. Abra [Condições operacionais das linhas](http://localhost:3000/status), no mesmo servidor do aplicativo. Se estiver usando outra porta, acrescente `/status` ao endereço em uso.
@@ -169,6 +171,8 @@ Viagens já registradas não são encerradas por essa alteração. Use esses con
 | Entrada incompleta ou inválida | Tentar buscar sem as duas estações selecionadas ou com origem igual ao destino. | Mensagem de validação, sem criar um trajeto válido. |
 
 No teste de **17/11/2026**, a primeira conta recebeu Linha 3 → Sé → Linha 1, com **1215 segundos estimados (21 min arredondados)**; a segunda recebeu Linha 3 → República → Linha 4 → Paulista/Consolação → Linha 2, com **1725 segundos (29 min arredondados)**. São referências de uma rodada validada, **não tempos fixos nem promessa de repetir o mesmo caminho**. Horários, ocupação prevista e disponibilidade mudam o resultado. Consulte a [auditoria da rodada](docs/xano/acesso-administrativo-concorrencia-2026-11-17.md).
+
+**Exemplo da gravação de 22/11/2026 — Palmeiras-Barra Funda → Brigadeiro:** em duas contas distintas, os resumos mostraram **1830 segundos (31 min arredondados)** pelas linhas **3 → 1 → 2**, com trocas em **Sé e Paraíso**, e **1890 segundos (32 min arredondados)** pelas linhas **3 → 4 → 2**, via **República e Paulista/Consolação**. Ambos apresentaram duas baldeações. São os resultados exibidos naquela gravação, não tempos fixos nem garantia de uma rota alternativa em toda segunda busca. Esse complemento demonstra os caminhos na interface; não constitui uma nova auditoria dos registros e limites no Xano.
 
 Não há credenciais de demonstração publicadas no repositório. O grupo deve preparar previamente contas próprias e uma concessão administrativa autorizada.
 
