@@ -1,0 +1,27 @@
+# Publicação inicial autorizada em 23/11/2026: somente Free e status desligados.
+services:
+  - type: web
+    name: metroflow-demo
+    runtime: python
+    plan: free
+    autoDeployTrigger: "off"
+    buildCommand: uv sync --frozen --no-dev && uv run --no-sync python -m deploy.render.build
+    startCommand: uv run --no-sync python -m deploy.render.serve
+    healthCheckPath: /ping
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.12.14
+      - key: UV_VERSION
+        value: 0.12.23
+      - key: NODE_VERSION
+        value: 22.22.0
+      - key: METROFLOW_ENV
+        value: production
+      - key: METROFLOW_DDT_ENABLED
+        value: "0"
+      - key: METROFLOW_CPTM_ENABLED
+        value: "0"
+      - key: METROFLOW_METRO_QUADRO_AUTORIZADO
+        value: "0"
+      - key: METROFLOW_MOTIVA_QUADRO_ENABLED
+        value: "0"
