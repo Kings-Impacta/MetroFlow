@@ -2,6 +2,7 @@
 import hashlib
 import logging
 import os
+from functools import lru_cache
 from .cache import SharedStatusCache
 from .metro_board import METRO_BOARD_URL, normalize_metro_board
 from .domain import LINE_CODES, SERVICE_CODES, LineCondition
@@ -10,6 +11,27 @@ from .feeds import CPTM_URL, DiretoDosTrensProvider, normalize_cptm
 from .motiva_board import MOTIVA_URL, normalize_motiva_board
 
 logger = logging.getLogger(__name__)
+
+
+@lru_cache(maxsize=4)
+def snapshot_service(url):
+    from .xano_snapshot import XanoStatusSnapshotReader
+    return SnapshotStatusService(XanoStatusSnapshotReader(url))
+
+
+class SnapshotStatusService:
+    """Uma leitura agregada por servidor; falhas preservam o último retorno."""
+    def __init__(self, reader):
+        self.reader = reader
+
+    def conditions(self):
+        candidates = self.reader.conditions()
+        result = []
+        for code in (*LINE_CODES, *SERVICE_CODES):
+            rows = [r for r in candidates if r.line_code == code and r.validity != "unavailable"]
+            result.append(next((r for r in rows if r.validity == "current"),
+                               rows[0] if rows else LineCondition(line_code=code)))
+        return result
 
 
 class StatusService:
@@ -37,6 +59,10 @@ class StatusService:
 
     @classmethod
     def from_environment(cls):
+        url = os.getenv("METROFLOW_STATUS_XANO_URL", "").strip()
+        if url:
+            # O modo remoto não consulta as fontes nem abre o banco local.
+            return snapshot_service(url)
         providers = []
         token = os.getenv("METROFLOW_DDT_TOKEN", "")
         if os.getenv("METROFLOW_DDT_ENABLED") == "1" and token.strip():

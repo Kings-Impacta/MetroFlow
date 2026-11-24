@@ -1,0 +1,30 @@
+[
+  {
+    "codigo": "cptm",
+    "autorizada": false,
+    "habilitada": false,
+    "condicoes": {},
+    "controle": {}
+  },
+  {
+    "codigo": "metro",
+    "autorizada": false,
+    "habilitada": false,
+    "condicoes": {},
+    "controle": {}
+  },
+  {
+    "codigo": "motiva",
+    "autorizada": false,
+    "habilitada": false,
+    "condicoes": {},
+    "controle": {}
+  },
+  {
+    "codigo": "ddt",
+    "autorizada": false,
+    "habilitada": false,
+    "condicoes": {},
+    "controle": {}
+  }
+]

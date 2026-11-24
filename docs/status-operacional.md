@@ -76,3 +76,8 @@ Por solicitacao do usuario, os indicadores compactos passam a mostrar somente o 
 ## Reteste após integração na main
 
 Em 11/11, foram confirmadas renovação automática de Metrô/CPTM/Motiva e duas viagens calibradas no Xano, com alternativa dentro dos limites. Veja [evidências e pendências atuais](xano/reteste-main-status-concorrencia-2026-11-11.md). A validade antiga da Motiva foi sinalizada no painel, sem apagar o retorno nem afetar a busca.
+
+
+## Leitura persistente no site — preparação de 24/11/2026
+
+O modo `METROFLOW_STATUS_XANO_URL` lê somente um snapshot agregado do Xano, compartilhado no backend, preservando o último retorno em falha e sem consultar fontes no fluxo de viagens. A estrutura de status é independente das tabelas da malha e da configuração de lotação. O coletor local opcional transmite payloads aceitos pelo cache com datas originais; sem coletor ativo, o retorno fica antigo e permanece armazenado. As fontes ainda precisam de liberação antes de alimentar o site. A instalação e os limites de evidência estão em [persistência de status](xano/rascunhos/status-persistente/README.md).

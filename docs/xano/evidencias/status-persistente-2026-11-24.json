@@ -1,0 +1,20 @@
+{
+  "persistencia_nativa": true,
+  "retencao_datas_valor": true,
+  "teste_sem_lambda": true,
+  "redutor_lambda_testado_localmente": true,
+  "registro_teste_removido": true,
+  "funcao_teste_removida": true,
+  "tabelas_protegidas_identicas": true,
+  "fontes": 4,
+  "fontes_desligadas_e_vazias": true,
+  "snapshot_http": 200,
+  "controle_sem_sessao_http": 401,
+  "http_autenticado": {
+    "snapshot_http": 200,
+    "sem_sessao_http": 401,
+    "admin_fonte_desativada_http": 400,
+    "passageiro_http": 403,
+    "snapshot_preservado": true
+  }
+}

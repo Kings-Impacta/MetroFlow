@@ -1,5 +1,22 @@
 # Preparação para Render Free — sem publicação
 
+## Integração de leitura de status — 24/11/2026
+
+O serviço existente `metroflow-demo.onrender.com` está publicado. O modo remoto usa
+`METROFLOW_STATUS_XANO_URL=https://x8ki-letl-twmt.n7.xano.io/api:metroflow-status-operacional`.
+Após a entrega do código e checks, essa variável deve ser aplicada ao serviço
+existente e uma nova publicação manual deve carregar a versão validada. Não criar
+outro serviço. As quatro flags de coleta permanecem em `0`; ler o banco não consulta
+operadoras nem altera o cálculo de trajetos. Não configurar credenciais do coletor
+no Render. O snapshot permanece vazio até a liberação e alimentação das fontes.
+
+O leitor compartilha o último retorno entre sessões. HTTP 503/429 e dados inválidos
+preservam valores e horários; a volta de um servidor novo recupera o registro Xano.
+Isso não garante coleta enquanto o coletor local estiver desligado. Consulte
+`docs/xano/rascunhos/status-persistente/README.md` para a operação e a evidência real.
+
+O restante deste documento preserva o histórico da preparação inicial.
+
 Estado: pacote local atualizado para a main `03342d5` (PR #54), em 23/11/2026. Nenhum serviço foi criado, nenhum push/merge foi realizado e nenhum dado ou parâmetro do Xano foi alterado. O README de uso continua indicando execução local.
 
 ## Arquivos e configuração
