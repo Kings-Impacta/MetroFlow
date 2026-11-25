@@ -17,6 +17,9 @@ services:
         value: 22.22.0
       - key: METROFLOW_ENV
         value: production
+      # Leitura agregada; não habilita coleta direta nem cria dados de status.
+      - key: METROFLOW_STATUS_XANO_URL
+        value: https://x8ki-letl-twmt.n7.xano.io/api:metroflow-status-operacional
       - key: METROFLOW_DDT_ENABLED
         value: "0"
       - key: METROFLOW_CPTM_ENABLED
